@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Research & Data Portal hosted free on GitHub Pages." />
+  <title>Research & Data Portal</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#home">Research & Data Portal</a>
+      <button id="menuBtn" class="menu-btn" aria-label="Toggle navigation">☰</button>
+      <nav id="navLinks" class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#data">Data</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">OPEN • REPRODUCIBLE • VERSIONED</span>
+          <h1 id="heroTitle">Research & Data Portal</h1>
+          <p id="heroSubtitle" class="lead">A clean, free, GitHub-hosted website for research projects, publications and public datasets.</p>
+          <div class="actions">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn" href="#data">Explore Data</a>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <div class="metric"><strong id="projectCount">0</strong><span>Projects</span></div>
+          <div class="metric"><strong id="publicationCount">0</strong><span>Publications</span></div>
+          <div class="metric"><strong id="datasetCount">0</strong><span>Datasets</span></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container narrow">
+        <p class="section-kicker">ABOUT</p>
+        <h2>Built for research communication</h2>
+        <p id="aboutText"></p>
+      </div>
+    </section>
+
+    <section id="projects" class="section alt">
+      <div class="container">
+        <p class="section-kicker">PROJECTS</p>
+        <h2>Featured work</h2>
+        <div id="projectsGrid" class="cards"></div>
+      </div>
+    </section>
+
+    <section id="publications" class="section">
+      <div class="container">
+        <p class="section-kicker">PUBLICATIONS</p>
+        <h2>Selected outputs</h2>
+        <div id="publicationList" class="list"></div>
+      </div>
+    </section>
+
+    <section id="data" class="section alt">
+      <div class="container">
+        <p class="section-kicker">DATA</p>
+        <h2>GitHub-hosted data</h2>
+        <p class="muted">This table is loaded from <code>data/content.json</code>. Editing that file in GitHub updates the website after deployment.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Dataset</th><th>Description</th><th>Updated</th><th>Link</th></tr></thead>
+            <tbody id="datasetTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container narrow">
+        <p class="section-kicker">CONTACT</p>
+        <h2>Get in touch</h2>
+        <p id="contactText"></p>
+        <a id="contactBtn" class="btn primary" href="#">Email</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <span>© <span id="year"></span> Research & Data Portal</span>
+      <span>Hosted with GitHub Pages</span>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
