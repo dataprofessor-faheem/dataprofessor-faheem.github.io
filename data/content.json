@@ -1,0 +1,43 @@
+{
+  "site": {
+    "title": "Research & Data Portal",
+    "subtitle": "A clean, free, GitHub-hosted website for research projects, publications and public datasets.",
+    "about": "This website is designed as a lightweight research portfolio and data hub. The website itself is hosted with GitHub Pages, while structured content is stored in a version-controlled JSON file inside the same repository.",
+    "contact_text": "For research collaboration, data questions or project enquiries, use the email button below.",
+    "email": "your-email@example.com"
+  },
+  "projects": [
+    {
+      "title": "Research Project One",
+      "category": "Bioinformatics",
+      "description": "Replace this placeholder with a concise description of your project, methods, outcomes and repository link.",
+      "url": ""
+    },
+    {
+      "title": "Research Project Two",
+      "category": "Machine Learning",
+      "description": "Use this card for a second project, software tool, analysis pipeline or publication-linked resource.",
+      "url": ""
+    },
+    {
+      "title": "Open Research Resource",
+      "category": "Data",
+      "description": "Use this section to highlight a dataset, supplementary resource, reproducible workflow or public repository.",
+      "url": ""
+    }
+  ],
+  "publications": [
+    {
+      "title": "Selected Publication Title",
+      "citation": "Author(s). Journal, volume, pages, year. DOI or URL."
+    }
+  ],
+  "datasets": [
+    {
+      "name": "Example dataset",
+      "description": "A small public dataset or index stored in the repository.",
+      "updated": "2026-09-09",
+      "url": ""
+    }
+  ]
+}
