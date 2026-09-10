@@ -1,0 +1,9 @@
+{
+  "name": "GDR — Global Discovery & Research Network",
+  "short_name": "GDR Discovery",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#071a2f",
+  "icons": []
+}
