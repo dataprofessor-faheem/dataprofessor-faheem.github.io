@@ -1,0 +1,9 @@
+{
+  "name": "JBR Global Discovery & Research Network",
+  "short_name": "JBR Discovery",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b2447",
+  "icons": []
+}
