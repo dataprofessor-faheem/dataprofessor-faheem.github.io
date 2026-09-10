@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Dr. Mohd Faheem Khan, PhD",
+    "role": "Founder",
+    "expertise": ["Artificial Intelligence & Machine Learning", "Biotechnology", "Bioinformatics"]
+  },
+  {
+    "name": "Dr. Khurshid Ahmad, PhD",
+    "role": "Co-Founder",
+    "expertise": ["Drug Discovery", "Health Informatics", "Bioinformatics"]
+  }
+]
