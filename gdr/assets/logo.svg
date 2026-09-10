@@ -1,10 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="t">
-<title id="t">GDR Global Discovery & Research Network</title>
-<rect width="64" height="64" rx="16" fill="#071a2f"/>
-<circle cx="20" cy="22" r="6" fill="#6ed8cd"/>
-<circle cx="44" cy="19" r="5" fill="#ffffff"/>
-<circle cx="42" cy="44" r="7" fill="#c29a42"/>
-<circle cx="18" cy="44" r="4" fill="#ffffff"/>
-<path d="M24 23 39 20M23 27l15 13M22 43l13 1M43 24l-1 12" stroke="#dff7f3" stroke-width="3" stroke-linecap="round"/>
-<text x="32" y="37" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#071a2f">GDR</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+<title id="title">GDR Global Discovery & Research Network</title>
+<desc id="desc">A scientific emblem combining a globe, leaf, DNA helix and connected research nodes.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#061a30"/>
+    <stop offset="0.55" stop-color="#0b3d5f"/>
+    <stop offset="1" stop-color="#0b7d75"/>
+  </linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#f6d77c"/>
+    <stop offset="0.5" stop-color="#d7aa48"/>
+    <stop offset="1" stop-color="#a87823"/>
+  </linearGradient>
+  <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#9be15d"/>
+    <stop offset="1" stop-color="#22a87a"/>
+  </linearGradient>
+  <radialGradient id="earth" cx="35%" cy="25%" r="80%">
+    <stop offset="0" stop-color="#3bc8df"/>
+    <stop offset="0.5" stop-color="#1679b8"/>
+    <stop offset="1" stop-color="#0a335d"/>
+  </radialGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="15" flood-color="#020b16" flood-opacity=".28"/></filter>
+</defs>
+<rect x="18" y="18" width="476" height="476" rx="118" fill="url(#bg)"/>
+<circle cx="238" cy="252" r="126" fill="#ffffff" opacity=".05"/>
+<circle cx="238" cy="252" r="112" fill="url(#earth)" stroke="#bceef1" stroke-opacity=".5" stroke-width="3" filter="url(#shadow)"/>
+<!-- stylized continents -->
+<path d="M168 194c19-24 47-40 77-45l18 12-13 17-25 7-8 20-22 5-12 21-27-10-10-18 22-9zm77 51 31-9 20 18 17 5 10 18-12 14-18-4-12 21-18 10-6 32-21 10-15-19 5-21-17-19 8-19 21-3 7-34z" fill="#8ddf79" opacity=".92"/>
+<path d="M178 289l19 6 9 19-9 18-13 7-11-14-13-9 4-18z" fill="#79cf72" opacity=".9"/>
+<!-- orbital discovery ring -->
+<ellipse cx="238" cy="252" rx="151" ry="96" fill="none" stroke="url(#gold)" stroke-width="9" transform="rotate(-24 238 252)"/>
+<circle cx="365" cy="161" r="10" fill="#f4d271"/><circle cx="105" cy="303" r="8" fill="#6ee2d4"/><circle cx="350" cy="358" r="7" fill="#ffffff"/>
+<!-- DNA helix -->
+<g fill="none" stroke-linecap="round">
+  <path d="M170 188c70 36 70 96 0 132s-70 96 0 132" stroke="#d7f7ef" stroke-width="13"/>
+  <path d="M227 188c-70 36-70 96 0 132s70 96 0 132" stroke="url(#green)" stroke-width="13"/>
+  <path d="M183 209h31M164 243h63M162 278h65M179 314h37M182 350h32M164 386h63M178 422h37" stroke="#ecfdf9" stroke-width="7" opacity=".88"/>
+</g>
+<!-- leaves -->
+<path d="M93 156c17-59 68-95 124-88-9 51-48 96-112 103 24-26 51-45 82-60-38 7-68 22-94 45z" fill="url(#green)"/>
+<path d="M120 103c-7-37 9-68 43-84 13 36 2 70-29 91 1-22 6-41 16-57-16 14-25 30-30 50z" fill="#7ad65a"/>
+<!-- GDR monogram -->
+<g font-family="Inter, Arial, sans-serif" font-weight="800" text-anchor="middle">
+  <text x="330" y="392" font-size="88" fill="#ffffff" letter-spacing="4">GDR</text>
+  <text x="330" y="426" font-size="19" fill="#9ce7df" letter-spacing="3">DISCOVERY NETWORK</text>
+</g>
+<!-- spark -->
+<path d="M410 84l8 20 20 8-20 8-8 20-8-20-20-8 20-8z" fill="#f5d67b"/>
 </svg>
