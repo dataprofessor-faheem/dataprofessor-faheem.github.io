@@ -1,0 +1,35 @@
+[
+  {
+    "id": "JBR-DISC-2026-001",
+    "title": "Plant–Microbiome–Metabolome Discovery Initiative",
+    "status": "Open for collaborators",
+    "summary": "Integrate plant science, microbiome profiling, metabolomics and AI to prioritize understudied bioactive mechanisms for subsequent experimental validation.",
+    "research_gap": "Plant secondary metabolites, environmental context and associated microbial communities are often studied separately, limiting integrated discovery of context-dependent bioactivity.",
+    "hypothesis": "Joint modelling of plant, metabolomic and microbial features can prioritize reproducible biological relationships that are missed by single-domain analyses.",
+    "disciplines": ["Plant Science", "Microbiology", "Metabolomics", "Bioinformatics", "AI/ML"],
+    "expertise_needed": ["Plant biologist", "Metabolomics specialist", "Microbiome scientist", "Bioinformatician", "AI/ML scientist"],
+    "expected_outputs": ["Evidence map", "Integrated analysis plan", "Candidate mechanisms", "Experimental validation roadmap"]
+  },
+  {
+    "id": "JBR-DISC-2026-002",
+    "title": "Explainable Multimodal Biomarker Discovery",
+    "status": "Concept development",
+    "summary": "Develop an interpretable framework combining clinical, omics and imaging signals to identify robust biomarkers while explicitly controlling data leakage and generalization error.",
+    "research_gap": "High-performing biomarker models can fail to generalize because information leakage, cohort shift and opaque modelling are not assessed consistently across data modalities.",
+    "hypothesis": "Leakage-aware multimodal modelling with external validation and interpretable feature stability can produce more trustworthy biomarker candidates.",
+    "disciplines": ["Health Informatics", "Bioinformatics", "Biostatistics", "AI/ML", "Clinical Research"],
+    "expertise_needed": ["Health informatician", "Biostatistician", "Omics scientist", "ML scientist", "Clinical collaborator"],
+    "expected_outputs": ["Benchmark framework", "Validation protocol", "Interpretable model", "Candidate biomarker panel"]
+  },
+  {
+    "id": "JBR-DISC-2026-003",
+    "title": "AI-Assisted Natural Product Drug Discovery Network",
+    "status": "Planned",
+    "summary": "Link natural-product knowledge, target biology, molecular modelling, toxicity assessment and laboratory validation in a staged discovery pipeline.",
+    "research_gap": "Natural-product screening studies frequently stop at isolated in-silico predictions without integrated target evidence, toxicity characterization and independent validation.",
+    "hypothesis": "A staged evidence-to-experiment workflow can reduce false-positive prioritization and identify better-supported natural-product candidates.",
+    "disciplines": ["Drug Discovery", "Bioinformatics", "Biochemistry", "AI/ML", "Toxicology"],
+    "expertise_needed": ["Drug-discovery scientist", "Molecular modeller", "Biochemist", "Toxicologist", "Experimental laboratory"],
+    "expected_outputs": ["Target evidence matrix", "Prioritized candidates", "Reproducible modelling workflow", "Validation protocol"]
+  }
+]
