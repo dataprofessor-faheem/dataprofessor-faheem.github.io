@@ -1,0 +1,71 @@
+[
+  {
+    "id": "GDR-PROJ-2026-001",
+    "challenge_id": "GDR-DISC-2026-001",
+    "title": "Plant–Microbiome–Metabolome Discovery Initiative",
+    "short_title": "PMM Discovery Initiative",
+    "status": "Team formation",
+    "stage": 5,
+    "summary": "A multidisciplinary discovery program integrating plant biology, microbiome science, metabolomics, bioinformatics and AI/ML to identify reproducible biological relationships and prioritize experimentally testable mechanisms.",
+    "research_question": "Can integrated plant, microbial and metabolomic data reveal context-dependent biological relationships and candidate bioactive mechanisms that are missed when each domain is studied independently?",
+    "working_hypothesis": "Joint modelling of plant, metabolomic and microbial features will identify reproducible cross-domain associations and candidate mechanisms suitable for targeted experimental validation.",
+    "leadership": [
+      {
+        "name": "Dr. Mohd Faheem Khan, PhD",
+        "role": "Founding Project Lead",
+        "expertise": "AI & Machine Learning; Biotechnology; Bioinformatics"
+      },
+      {
+        "name": "Dr. Khurshid Ahmad, PhD",
+        "role": "Founding Co-Lead",
+        "expertise": "Drug Discovery; Health Informatics; Bioinformatics"
+      }
+    ],
+    "open_roles": [
+      "Plant biologist",
+      "Metabolomics specialist",
+      "Microbiome scientist",
+      "Bioinformatician",
+      "AI/ML scientist",
+      "Experimental validation laboratory"
+    ],
+    "milestones": [
+      {"id":"M1","title":"Evidence map and gap confirmation","status":"in-progress","target":"Phase 1"},
+      {"id":"M2","title":"Multidisciplinary expertise map","status":"in-progress","target":"Phase 1"},
+      {"id":"M3","title":"International collaborator recruitment","status":"in-progress","target":"Phase 2"},
+      {"id":"M4","title":"Protocol and statistical analysis plan","status":"planned","target":"Phase 2"},
+      {"id":"M5","title":"Data acquisition and harmonization","status":"planned","target":"Phase 3"},
+      {"id":"M6","title":"Integrated computational analysis","status":"planned","target":"Phase 3"},
+      {"id":"M7","title":"Independent experimental validation","status":"planned","target":"Phase 4"},
+      {"id":"M8","title":"Reproducibility and internal scientific review","status":"planned","target":"Phase 4"},
+      {"id":"M9","title":"Manuscript, dataset and software outputs","status":"planned","target":"Phase 5"}
+    ],
+    "protocol": {
+      "version": "0.1-draft",
+      "status": "Framework development",
+      "ethics": "To be determined from final study design and participating institutions",
+      "preregistration": "Recommended before confirmatory analyses where applicable"
+    },
+    "data_status": "Source identification and governance planning",
+    "analysis_status": "Analysis plan not yet locked",
+    "reproducibility": [
+      "Dataset provenance",
+      "Versioned protocol",
+      "Analysis code",
+      "Software environment",
+      "Random seeds where applicable",
+      "SHA-256 file checksums",
+      "Change log",
+      "CRediT contributor record"
+    ],
+    "expected_outputs": [
+      "Evidence map",
+      "Integrated research protocol",
+      "Curated multidisciplinary dataset where licensing permits",
+      "Reproducible analytical workflow",
+      "Candidate biological mechanisms",
+      "Experimental validation roadmap",
+      "Peer-reviewed manuscript"
+    ]
+  }
+]
