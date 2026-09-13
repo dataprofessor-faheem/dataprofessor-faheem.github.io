@@ -1,4 +1,5 @@
-// GDR shared-backend bridge. Works in fallback mode until config.js is populated.
+// GDR shared-backend bridge.
+// Public browser code uses only a Supabase publishable key; RLS remains the security boundary.
 window.GDRBackend = (() => {
   let client = null;
   const config = () => window.GDR_CONFIG || {};
@@ -21,7 +22,7 @@ window.GDRBackend = (() => {
   async function signUp(email, password) {
     const c = await ensureClient();
     if (!c) throw new Error('Shared backend is not configured yet.');
-    return c.auth.signUp({ email, password });
+    return c.auth.signUp({ email, password, options: { emailRedirectTo: config().siteUrl + 'gdr/portal/' } });
   }
 
   async function signIn(email, password) {
@@ -36,10 +37,43 @@ window.GDRBackend = (() => {
     return c.auth.signOut();
   }
 
+  async function currentUser() {
+    const c = await ensureClient();
+    if (!c) return null;
+    const { data, error } = await c.auth.getUser();
+    if (error) throw error;
+    return data.user || null;
+  }
+
+  async function getMyProfile() {
+    const c = await ensureClient();
+    if (!c) return { mode: 'local', profile: null };
+    const user = await currentUser();
+    if (!user) return { mode: 'shared', profile: null };
+    const { data, error } = await c.from('profiles').select('*').eq('user_id', user.id).maybeSingle();
+    if (error) throw error;
+    return { mode: 'shared', profile: data };
+  }
+
+  async function getMyRole() {
+    const r = await getMyProfile();
+    return r.profile?.role || null;
+  }
+
+  async function requireAdmin() {
+    const c = await ensureClient();
+    if (!c) throw new Error('Production backend is not connected. Admin access is disabled until authentication is active.');
+    const session = await getSession();
+    if (!session.session) throw new Error('Please sign in with an authorized founder/admin account.');
+    const profile = await getMyProfile();
+    if (!profile.profile || !['admin','founder'].includes(profile.profile.role)) throw new Error('Access denied. Founder/Admin role required.');
+    return { client: c, session: session.session, profile: profile.profile };
+  }
+
   async function saveProfile(profile) {
     const c = await ensureClient();
     if (!c) return { mode: 'local' };
-    const { data: { user } } = await c.auth.getUser();
+    const user = await currentUser();
     if (!user) throw new Error('Please sign in first.');
     const row = {
       user_id: user.id,
@@ -58,20 +92,10 @@ window.GDRBackend = (() => {
     return { mode: 'shared' };
   }
 
-  async function getMyProfile() {
-    const c = await ensureClient();
-    if (!c) return { mode: 'local', profile: null };
-    const { data: { user } } = await c.auth.getUser();
-    if (!user) return { mode: 'shared', profile: null };
-    const { data, error } = await c.from('profiles').select('*').eq('user_id', user.id).maybeSingle();
-    if (error) throw error;
-    return { mode: 'shared', profile: data };
-  }
-
   async function submitIdea(idea) {
     const c = await ensureClient();
     if (!c) return { mode: 'local' };
-    const { data: { user } } = await c.auth.getUser();
+    const user = await currentUser();
     if (!user) throw new Error('Please sign in to submit an idea to GDR.');
     const row = {
       submitted_by: user.id,
@@ -85,5 +109,75 @@ window.GDRBackend = (() => {
     return { mode: 'shared', id: data.id };
   }
 
-  return { ensureClient, getSession, signUp, signIn, signOut, saveProfile, getMyProfile, submitIdea };
+  async function submitApplication(application) {
+    const c = await ensureClient();
+    if (!c) return { mode: 'local' };
+    const user = await currentUser();
+    if (!user) throw new Error('Please sign in to apply for a Discovery Challenge.');
+    const row = {
+      challenge_id: application.challenge_id,
+      researcher_id: user.id,
+      proposed_role: application.proposed_role,
+      contribution: application.contribution
+    };
+    const { data, error } = await c.from('applications').insert(row).select('id').single();
+    if (error) throw error;
+    return { mode: 'shared', id: data.id };
+  }
+
+  async function adminSummary() {
+    const { client: c } = await requireAdmin();
+    const tables = ['profiles','research_ideas','discovery_challenges','projects','datasets','applications'];
+    const out = {};
+    for (const table of tables) {
+      const { count, error } = await c.from(table).select('*', { count: 'exact', head: true });
+      if (error && table !== 'datasets') throw error;
+      out[table] = error ? 0 : (count || 0);
+    }
+    return out;
+  }
+
+  async function listAdminIdeas(limit = 50) {
+    const { client: c } = await requireAdmin();
+    const { data, error } = await c.from('research_ideas').select('id,title,primary_domain,status,created_at').order('created_at',{ascending:false}).limit(limit);
+    if (error) throw error;
+    return data || [];
+  }
+
+  async function setIdeaStatus(id, status) {
+    const { client: c } = await requireAdmin();
+    const { error } = await c.from('research_ideas').update({ status, updated_at: new Date().toISOString() }).eq('id', id);
+    if (error) throw error;
+    return true;
+  }
+
+  async function registerDataset(dataset) {
+    const { client: c } = await requireAdmin();
+    const { data, error } = await c.from('datasets').insert(dataset).select('id,dataset_code').single();
+    if (error) throw error;
+    return data;
+  }
+
+  async function registerProject(project) {
+    const { client: c } = await requireAdmin();
+    const { data, error } = await c.from('projects').insert(project).select('id,project_code').single();
+    if (error) throw error;
+    return data;
+  }
+
+  async function sendEmail(type, payload) {
+    const c = await ensureClient();
+    if (!c) throw new Error('Email service is not active until the backend is connected.');
+    const fn = config().emailFunctionName || 'send-gdr-email';
+    const { data, error } = await c.functions.invoke(fn, { body: { type, ...payload } });
+    if (error) throw error;
+    return data;
+  }
+
+  return {
+    ensureClient, getSession, signUp, signIn, signOut, currentUser,
+    saveProfile, getMyProfile, getMyRole, requireAdmin,
+    submitIdea, submitApplication, adminSummary, listAdminIdeas,
+    setIdeaStatus, registerDataset, registerProject, sendEmail
+  };
 })();
