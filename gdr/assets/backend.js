@@ -114,10 +114,18 @@ window.GDRBackend = (() => {
     if (!c) return { mode: 'local' };
     const user = await currentUser();
     if (!user) throw new Error('Please sign in to apply for a Discovery Challenge.');
+    let challengeId = application.challenge_id || null;
+    if (!challengeId && application.challenge_public_id) {
+      const { data: ch, error: chErr } = await c.from('discovery_challenges').select('id').eq('public_id', application.challenge_public_id).maybeSingle();
+      if (chErr) throw chErr;
+      if (!ch) throw new Error('This Discovery Challenge is not yet registered in the shared database.');
+      challengeId = ch.id;
+    }
+    if (!challengeId) throw new Error('Challenge identifier is missing.');
     const row = {
-      challenge_id: application.challenge_id,
+      challenge_id: challengeId,
       researcher_id: user.id,
-      proposed_role: application.proposed_role,
+      proposed_role: application.proposed_role || application.specialization || 'Research collaborator',
       contribution: application.contribution
     };
     const { data, error } = await c.from('applications').insert(row).select('id').single();
