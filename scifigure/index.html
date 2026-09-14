@@ -3,69 +3,82 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="SciFigure Commons — free scientific figure planning, open icon discovery, graphical abstract guidance and professional color palette suggestions.">
-<title>SciFigure Commons — Open Scientific Figure Studio</title>
+<meta name="description" content="SciFigure Commons by CITics Bio Solutions and GDR Network — verified-access scientific illustration studio for publication-grade biological, chemical, physical, mathematical and bioinformatics figures.">
+<title>SciFigure Commons | CITics Bio Solutions × GDR Network</title>
 <link rel="stylesheet" href="./style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 <header class="topbar">
-  <div class="brand"><span class="mark">SC</span><div><strong>SciFigure Commons</strong><small>Open Scientific Figure Studio</small></div></div>
-  <nav><a href="#planner">AI Planner</a><a href="#icons">Free Icons</a><a href="#palette">Colors</a><a href="#roadmap">Roadmap</a></nav>
+  <a class="brand" href="#top"><span class="mark">SF</span><div><strong>SciFigure Commons</strong><small>CITics Bio Solutions × GDR Network</small></div></a>
+  <nav><a href="#studio">Studio</a><a href="#assets">Assets</a><a href="#ai">AI Assistant</a><a href="#access">Verified Access</a></nav>
+  <div class="account-actions"><button class="ghost" id="openAuth">Sign in / Register</button><button class="ghost hidden" id="signOut">Sign out</button></div>
 </header>
-<main>
+
+<main id="top">
 <section class="hero">
   <div>
-    <span class="eyebrow">FREE • OPEN • RESEARCHER-FIRST</span>
-    <h1>Create publication-ready scientific figures without expensive design software.</h1>
-    <p>Plan graphical abstracts, discover legally reusable scientific icons, choose professional color combinations and follow a guided scientific-design workflow.</p>
-    <div class="actions"><a class="btn primary" href="#planner">Start with AI Planner</a><a class="btn" href="#icons">Search Free Icons</a></div>
+    <span class="eyebrow">PUBLICATION-GRADE • VERIFIED ACCESS • RESEARCHER-FIRST</span>
+    <h1>Build clear scientific illustrations without expensive design subscriptions.</h1>
+    <p>One clean studio for biological, chemical, physical, mathematical and bioinformatics figures — with open-license asset discovery, editable vector elements, professional palettes and guided figure planning.</p>
+    <div class="actions"><a class="btn primary" href="#studio">Open Figure Studio</a><a class="btn" href="#access">Request verified access</a></div>
+    <div class="trust-row"><span>High-resolution vector workflow</span><span>White publication canvas</span><span>License-aware assets</span><span>Admin-approved accounts</span></div>
   </div>
-  <div class="hero-card">
-    <div class="mini-label">Design workflow</div>
-    <ol><li>Describe your science</li><li>Generate a figure plan</li><li>Find reusable icons</li><li>Select journal-style colors</li><li>Build and export</li></ol>
+  <aside class="hero-card">
+    <span class="mini-label">Core workflow</span>
+    <ol><li>Register with scientific/student identity</li><li>Admin verifies access</li><li>Plan figure with AI guidance</li><li>Find open high-quality assets</li><li>Build on clean white canvas</li><li>Save and export publication artwork</li></ol>
+  </aside>
+</section>
+
+<section id="studio" class="section studio-section">
+  <div class="section-head"><span class="eyebrow">SCIENTIFIC FIGURE STUDIO</span><h2>One white canvas. Five scientific domains.</h2><p>The MVP already provides vector shapes, arrows, text, color controls, domain libraries and project saving. Advanced icon ingestion and export are the next build layer.</p></div>
+  <div class="studio-shell">
+    <aside class="left-rail">
+      <div class="rail-block"><label>Domain<select id="studioDomain"><option value="biological">Biological</option><option value="chemical">Chemical</option><option value="physical">Physical</option><option value="mathematical">Mathematical</option><option value="bioinformatics">Bioinformatics</option></select></label></div>
+      <div class="rail-block"><b>Insert</b><div class="tool-grid"><button data-tool="text">Text</button><button data-tool="box">Box</button><button data-tool="circle">Circle</button><button data-tool="arrow">Arrow</button><button data-tool="connector">Connector</button><button data-tool="label">Label</button></div></div>
+      <div class="rail-block"><b>Quick scientific elements</b><div id="domainElements" class="asset-chips"></div></div>
+      <div class="rail-block"><b>Open asset search</b><input id="studioSearch" type="search" placeholder="e.g. mitochondria"><button class="btn small" id="findAsset">Find free assets</button></div>
+    </aside>
+
+    <section class="canvas-area">
+      <div class="canvas-toolbar"><input id="projectTitle" value="Untitled scientific figure" aria-label="Project title"><span class="status-pill" id="accessStatus">Guest preview</span><button id="undoBtn">Undo</button><button id="clearCanvas">Clear</button><button class="primary-mini" id="saveProject">Save project</button></div>
+      <div class="canvas-wrap"><svg id="figureCanvas" viewBox="0 0 1600 1000" role="img" aria-label="Scientific figure canvas"><rect width="1600" height="1000" fill="#ffffff"/></svg></div>
+      <div class="canvas-note">Publication canvas: 1600 × 1000 • white background • vector-first workflow</div>
+    </section>
+
+    <aside class="right-rail">
+      <div class="rail-block"><b>Style</b><label>Primary color<input id="elementColor" type="color" value="#24557a"></label><label>Accent color<input id="accentColor" type="color" value="#2b8c82"></label><label>Line width<input id="lineWidth" type="range" min="1" max="12" value="4"></label></div>
+      <div class="rail-block"><b>Professional palettes</b><select id="paletteType"><option value="biomedical">Biomedical</option><option value="molecular">Molecular</option><option value="immune">Immunology</option><option value="cancer">Cancer</option><option value="eco">Plant / Environment</option><option value="data">Bioinformatics / Data</option><option value="physics">Physics</option><option value="chemistry">Chemistry</option></select><button class="btn small" id="suggestPalette">Apply suggestion</button><div id="paletteOutput" class="mini-palette"></div></div>
+      <div class="rail-block"><b>Export target</b><select><option>Journal figure</option><option>Graphical abstract</option><option>Poster panel</option><option>Presentation</option><option>Teaching illustration</option></select><small>SVG / high-resolution PNG / PDF export is scheduled for the next editor release.</small></div>
+    </aside>
   </div>
 </section>
 
-<section id="planner" class="section">
-  <div class="section-head"><span class="eyebrow">AI SCIENTIFIC DESIGN ASSISTANT</span><h2>Turn a research idea into a figure plan</h2><p>This first MVP provides an intelligent rule-based planner. A later release can connect a full language model through a secure backend.</p></div>
-  <div class="planner-grid">
-    <div class="panel">
-      <label>Research topic<textarea id="topic" placeholder="Example: Gut microbiome dysbiosis promotes colorectal cancer through inflammation, metabolites and immune modulation."></textarea></label>
-      <div class="two"><label>Figure type<select id="figureType"><option>Graphical Abstract</option><option>Mechanism Figure</option><option>Experimental Workflow</option><option>Bioinformatics Pipeline</option><option>Clinical Pathway</option><option>Poster Figure</option></select></label><label>Field<select id="field"><option>Biomedical Science</option><option>Molecular Biology</option><option>Bioinformatics</option><option>Immunology</option><option>Cancer Biology</option><option>Microbiology</option><option>Plant Science</option><option>Nanotechnology</option></select></label></div>
-      <button class="btn primary full" id="generatePlan">Generate Figure Plan</button>
-    </div>
-    <div class="panel result" id="planResult"><div class="empty">Your recommended layout, icon keywords, labels and palette will appear here.</div></div>
+<section id="assets" class="section alt">
+  <div class="section-head"><span class="eyebrow">OPEN ASSET DISCOVERY</span><h2>Search high-quality scientific icons and illustrations legally.</h2><p>Vector assets are preferred because they can be resized without losing quality and, when their license permits adaptation, recolored to fit your figure.</p></div>
+  <div class="asset-source-grid">
+    <article><span class="license">MULTIPLE OPEN LICENSES</span><h3>Bioicons</h3><p>Scientific SVG icons across biology, chemistry, bioinformatics, laboratory equipment, human physiology, imaging and more. Check the license of each asset before reuse.</p><a href="https://bioicons.com/" target="_blank" rel="noopener">Explore Bioicons →</a></article>
+    <article><span class="license green">CC BY 4.0</span><h3>Servier Medical Art</h3><p>Professional medical illustrations that can be reused and adapted with attribution under CC BY 4.0.</p><a href="https://smart.servier.com/" target="_blank" rel="noopener">Explore Servier Medical Art →</a></article>
+    <article><span class="license blue">PLATFORM INDEX</span><h3>SciFigure Asset Registry</h3><p>Our database records source, style, license, attribution requirement, SVG editability and scientific domain before an asset is approved for the platform.</p><button class="btn small" id="showRegistry">View approved registry</button></article>
   </div>
+  <div id="registryResults" class="registry"></div>
 </section>
 
-<section id="icons" class="section alt">
-  <div class="section-head"><span class="eyebrow">OPEN-ASSET DISCOVERY</span><h2>Search free scientific icon sources</h2><p>Always verify the specific asset license before reuse. SciFigure Commons will eventually store per-asset license metadata and generate attribution automatically.</p></div>
-  <div class="search-row"><input id="iconQuery" type="search" placeholder="Try: mitochondria, T cell, PCR, neuron, virus"><button class="btn primary" id="searchIcons">Search Sources</button></div>
-  <div id="iconResults" class="source-grid">
-    <article><span class="license cc0">MULTIPLE OPEN LICENSES</span><h3>Bioicons</h3><p>Large scientific icon collection covering biology, medicine, laboratory equipment and computational science.</p><a target="_blank" rel="noopener" href="https://bioicons.com/">Open Bioicons →</a></article>
-    <article><span class="license ccby">CC BY 4.0</span><h3>Servier Medical Art</h3><p>Professional medical and biomedical illustrations. Attribution is required.</p><a target="_blank" rel="noopener" href="https://smart.servier.com/">Open Servier Medical Art →</a></article>
-  </div>
+<section id="ai" class="section">
+  <div class="section-head"><span class="eyebrow">AI SCIENTIFIC DESIGN ASSISTANT</span><h2>Describe the science; receive a visual plan.</h2><p>The current assistant is local and cost-free. The architecture is ready for a secure AI backend later, without exposing model keys in the browser.</p></div>
+  <div class="planner-grid"><div class="panel"><label>Research concept<textarea id="topic" placeholder="Example: oxidative stress activates lipid peroxidation and ferroptosis in neuronal injury"></textarea></label><div class="two"><label>Figure type<select id="figureType"><option>Graphical Abstract</option><option>Mechanism Figure</option><option>Experimental Workflow</option><option>Bioinformatics Pipeline</option><option>Clinical Pathway</option><option>Mathematical Model</option></select></label><label>Field<select id="field"><option>Biomedical Science</option><option>Molecular Biology</option><option>Bioinformatics</option><option>Immunology</option><option>Cancer Biology</option><option>Chemistry</option><option>Physics</option><option>Mathematics</option><option>Plant Science</option></select></label></div><button class="btn primary full" id="generatePlan">Generate figure plan</button></div><div class="panel result" id="planResult"><div class="empty">Layout, icon keywords, palette and design guidance will appear here.</div></div></div>
 </section>
 
-<section id="palette" class="section">
-  <div class="section-head"><span class="eyebrow">PROFESSIONAL COLOR ASSISTANT</span><h2>Scientific color combinations that stay clean and readable</h2><p>Choose a purpose and receive a restrained palette intended for figures, pathways and graphical abstracts.</p></div>
-  <div class="palette-controls"><select id="paletteType"><option value="biomedical">Biomedical / Clinical</option><option value="molecular">Molecular Biology</option><option value="immune">Immunology</option><option value="cancer">Cancer Mechanism</option><option value="eco">Plant / Environmental</option><option value="data">Bioinformatics / Data Science</option></select><button class="btn primary" id="suggestPalette">Suggest Palette</button></div>
-  <div id="paletteOutput" class="palette-output"></div>
-</section>
-
-<section id="roadmap" class="section alt">
-  <div class="section-head"><span class="eyebrow">BUILD ROADMAP</span><h2>Step-by-step development</h2></div>
-  <div class="timeline">
-    <article><b>01</b><div><h3>Foundation</h3><p>Brand, licensing rules, repository architecture and live landing page.</p><span>IN PROGRESS</span></div></article>
-    <article><b>02</b><div><h3>Open Asset Index</h3><p>Searchable scientific icon metadata with license and attribution fields.</p></div></article>
-    <article><b>03</b><div><h3>Canvas Editor</h3><p>Drag, resize, rotate, group, layer, align and label scientific SVG components.</p></div></article>
-    <article><b>04</b><div><h3>AI Design Assistant</h3><p>Text-to-plan, layout critique, icon suggestions, color recommendations and scientific consistency checks.</p></div></article>
-    <article><b>05</b><div><h3>Templates & Export</h3><p>Graphical abstracts, workflows and publication-quality SVG/PNG/PDF export.</p></div></article>
-    <article><b>06</b><div><h3>Accounts & Community</h3><p>Saved projects, contributor uploads, moderation, attribution and collaborative libraries.</p></div></article>
-  </div>
+<section id="access" class="section alt">
+  <div class="section-head"><span class="eyebrow">VERIFIED ACCESS MODEL</span><h2>Free access for genuine students and researchers.</h2><p>Users register first. Their account remains pending until an administrator verifies their academic or scientific identity. Approved users can save figure projects.</p></div>
+  <div class="access-grid"><article><b>1</b><h3>Register</h3><p>Email, name, institution, discipline and account type.</p></article><article><b>2</b><h3>Provide scientific identity</h3><p>Student ID reference, ORCID, institutional profile or another verifiable scientific identifier.</p></article><article><b>3</b><h3>Admin review</h3><p>The platform administrator approves, rejects or suspends access.</p></article><article><b>4</b><h3>Create</h3><p>Approved users save projects and use the publication studio.</p></article></div>
+  <div id="adminPanel" class="admin-panel hidden"><div class="section-head compact"><span class="eyebrow">ADMIN CONSOLE</span><h2>Pending verification requests</h2></div><div id="pendingUsers"></div></div>
 </section>
 </main>
-<footer><strong>SciFigure Commons</strong><span>Built to make scientific visualization more accessible.</span><small>Prototype MVP • Verify asset licenses before publication.</small></footer>
+
+<div class="modal hidden" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle"><div class="modal-card"><button class="modal-close" id="closeAuth">×</button><h2 id="authTitle">Verified scientific access</h2><div class="auth-tabs"><button class="active" data-auth-tab="login">Sign in</button><button data-auth-tab="register">Register</button></div><form id="loginForm"><label>Email<input type="email" name="email" required></label><label>Password<input type="password" name="password" required></label><button class="btn primary full">Sign in</button></form><form id="registerForm" class="hidden"><div class="two"><label>Full name<input name="full_name" required></label><label>Account type<select name="account_type"><option value="student">Student</option><option value="researcher">Researcher</option><option value="faculty">Faculty</option><option value="other">Other</option></select></label></div><div class="two"><label>Institution<input name="institution" required></label><label>Discipline<input name="discipline" required></label></div><div class="two"><label>Scientific ID type<select name="scientific_id_type"><option>Student ID</option><option>ORCID</option><option>Institutional profile</option><option>Researcher ID</option><option>Other</option></select></label><label>ID / reference<input name="scientific_id_value" required></label></div><label>Verification URL (optional)<input type="url" name="scientific_id_url" placeholder="https://..."></label><label>Email<input type="email" name="email" required></label><label>Password<input type="password" name="password" minlength="8" required></label><button class="btn primary full">Create pending account</button><small>Do not enter passwords or confidential identity documents into the ID field. Use only a non-sensitive identifier/reference suitable for administrator verification.</small></form><p id="authMessage" class="form-message"></p></div></div>
+
+<footer><strong>SciFigure Commons</strong><span>CITics Bio Solutions × GDR Network</span><small>Open scientific visualization initiative • assets remain subject to their individual licenses and attribution terms.</small></footer>
 <script src="./app.js"></script>
 </body>
 </html>
