@@ -1,53 +1,49 @@
-const palettes={
- biomedical:[['Deep Navy','#123A63'],['Clinical Blue','#3D7EA6'],['Teal','#2A8C82'],['Soft Aqua','#A8DADC'],['Warm White','#F7FAFC']],
- molecular:[['Indigo','#344EAD'],['Violet','#7A5AF8'],['Cyan','#2FB7C4'],['Soft Gray','#E9EEF5'],['Ink','#1F2937']],
- immune:[['Deep Blue','#214E7A'],['T Cell Teal','#1F8A70'],['Signal Gold','#D9A441'],['Cytokine Rose','#C96A7B'],['Background','#F8FAFC']],
- cancer:[['Charcoal','#2B2D42'],['Tumor Red','#B84A62'],['Mutation Plum','#7B4F8C'],['Stroma Sand','#D6B98C'],['Pale Gray','#F3F4F6']],
- eco:[['Forest','#2F6B4F'],['Leaf','#67A65B'],['Earth','#9B7653'],['Water','#4C93B6'],['Pale Green','#EFF6EE']],
- data:[['Midnight','#23395B'],['Azure','#3D77A8'],['Cyan','#3EA7A3'],['Signal Orange','#D98C3F'],['Canvas','#F6F8FB']]
-};
+const SUPABASE_URL='https://klwzkmfzxrikqslkclik.supabase.co';
+const SUPABASE_KEY='sb_publishable_PeoU1Z8jnXXptuck9Zb_Jg_QEeBLZKm';
+const sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
 
-const typeLayouts={
- 'Graphical Abstract':['Problem / biological context','Core mechanism or experimental intervention','Main outcome / conclusion'],
- 'Mechanism Figure':['Trigger / upstream factor','Molecular or cellular mechanism','Downstream biological effect'],
- 'Experimental Workflow':['Samples / inputs','Methods / assays / computational analysis','Results / validation'],
- 'Bioinformatics Pipeline':['Data acquisition','Preprocessing + analysis','Models / interpretation / validation'],
- 'Clinical Pathway':['Patient / cohort','Assessment / intervention','Outcome / decision'],
- 'Poster Figure':['Research question','Methods + central visual','Key result + take-home message']
-};
+const $=s=>document.querySelector(s); const $$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
 
-function tokens(text){return [...new Set(text.toLowerCase().replace(/[^a-z0-9\s-]/g,' ').split(/\s+/).filter(x=>x.length>3))].slice(0,10)}
-function renderPalette(name){
- const p=palettes[name]||palettes.biomedical;
- document.querySelector('#paletteOutput').innerHTML=p.map(([n,h])=>`<div class="swatch"><div class="swatch-color" style="background:${h}"></div><div class="swatch-meta"><strong>${n}</strong>${h}</div></div>`).join('');
- return p.map(x=>x[1]).join(', ');
-}
+const palettes={biomedical:['#123A63','#3D7EA6','#2A8C82','#A8DADC','#F7FAFC'],molecular:['#344EAD','#7A5AF8','#2FB7C4','#E9EEF5','#1F2937'],immune:['#214E7A','#1F8A70','#D9A441','#C96A7B','#F8FAFC'],cancer:['#2B2D42','#B84A62','#7B4F8C','#D6B98C','#F3F4F6'],eco:['#2F6B4F','#67A65B','#9B7653','#4C93B6','#EFF6EE'],data:['#23395B','#3D77A8','#3EA7A3','#D98C3F','#F6F8FB'],physics:['#203864','#4472C4','#5B9BD5','#A5A5A5','#F2F2F2'],chemistry:['#243B53','#3C8DAD','#E0A458','#A23B72','#F7F7F7']};
+const domains={biological:['Cell','Nucleus','Mitochondrion','DNA','Protein','Receptor','Virus','Bacterium'],chemical:['Molecule','Atom','Bond','Reaction','Flask','Beaker','Crystal','Catalyst'],physical:['Force','Wave','Lens','Circuit','Magnet','Photon','Field','Vector'],mathematical:['Equation','Function','Matrix','Graph','Axis','Probability','Geometry','Model'],bioinformatics:['DNA sequence','Database','Pipeline','Network','Heatmap','Model','Server','Genome']};
+const layouts={'Graphical Abstract':['Context / research problem','Central mechanism or intervention','Main result / conclusion'],'Mechanism Figure':['Upstream trigger','Core molecular/cellular mechanism','Downstream biological effect'],'Experimental Workflow':['Samples / inputs','Experimental or computational methods','Analysis and validation'],'Bioinformatics Pipeline':['Data acquisition','Preprocessing / modelling','Interpretation / validation'],'Clinical Pathway':['Patient / cohort','Assessment / intervention','Decision / outcome'],'Mathematical Model':['Variables / assumptions','Model / equations','Simulation / inference / outcome']};
 
-document.querySelector('#suggestPalette').addEventListener('click',()=>renderPalette(document.querySelector('#paletteType').value));
-renderPalette('biomedical');
+let history=[]; let currentUser=null; let currentProfile=null; let isAdmin=false;
+const canvas=$('#figureCanvas');
+function snapshot(){history.push(canvas.innerHTML); if(history.length>30)history.shift()}
+function svgEl(tag,attrs={}){const e=document.createElementNS('http://www.w3.org/2000/svg',tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));return e}
+function addText(text='Scientific label',x=180,y=180){snapshot();const t=svgEl('text',{x,y,fill:$('#elementColor').value,'font-size':'42','font-family':'Arial, sans-serif','font-weight':'600'});t.textContent=text;canvas.appendChild(t)}
+function addShape(kind){snapshot();const color=$('#elementColor').value,accent=$('#accentColor').value,w=$('#lineWidth').value;if(kind==='box'||kind==='label'){canvas.appendChild(svgEl('rect',{x:220,y:220,width:360,height:170,rx:kind==='label'?35:16,fill:kind==='label'?'#ffffff':accent+'22',stroke:color,'stroke-width':w}))}else if(kind==='circle'){canvas.appendChild(svgEl('circle',{cx:380,cy:310,r:110,fill:accent+'22',stroke:color,'stroke-width':w}))}else if(kind==='arrow'||kind==='connector'){let defs=canvas.querySelector('defs');if(!defs){defs=svgEl('defs');const marker=svgEl('marker',{id:'arrowhead',markerWidth:'10',markerHeight:'7',refX:'9',refY:'3.5',orient:'auto'});marker.appendChild(svgEl('polygon',{points:'0 0, 10 3.5, 0 7',fill:color}));defs.appendChild(marker);canvas.appendChild(defs)}canvas.appendChild(svgEl('line',{x1:220,y1:300,x2:620,y2:300,stroke:color,'stroke-width':w,'stroke-linecap':'round',...(kind==='arrow'?{'marker-end':'url(#arrowhead)'}:{'stroke-dasharray':'14 10'})}))}}
 
-document.querySelector('#generatePlan').addEventListener('click',()=>{
- const topic=document.querySelector('#topic').value.trim();
- const type=document.querySelector('#figureType').value;
- const field=document.querySelector('#field').value;
- if(!topic){document.querySelector('#topic').focus();return;}
- const keys=tokens(topic);
- let paletteKey='biomedical';
- if(field.includes('Bioinformatics')) paletteKey='data';
- else if(field.includes('Immunology')) paletteKey='immune';
- else if(field.includes('Cancer')) paletteKey='cancer';
- else if(field.includes('Plant')) paletteKey='eco';
- else if(field.includes('Molecular')) paletteKey='molecular';
- const steps=typeLayouts[type]||typeLayouts['Graphical Abstract'];
- const iconHints=[...keys.slice(0,6),'arrow','cell','molecule'].filter((v,i,a)=>a.indexOf(v)===i).slice(0,8);
- const colors=palettes[paletteKey];
- document.querySelector('#planResult').innerHTML=`<div class="plan-box"><span class="eyebrow">RECOMMENDED PLAN</span><h3>${type} • ${field}</h3><p><strong>Visual story:</strong> Keep one clear left-to-right scientific narrative with a single visual emphasis per stage.</p><ol>${steps.map(s=>`<li>${s}</li>`).join('')}</ol><p><strong>Suggested icon searches</strong></p><div class="tag-row">${iconHints.map(k=>`<span class="tag">${k}</span>`).join('')}</div><p><strong>Professional palette</strong></p><div class="tag-row">${colors.map(([n,h])=>`<span class="tag"><i style="display:inline-block;width:9px;height:9px;border-radius:50%;background:${h};margin-right:5px"></i>${n} ${h}</span>`).join('')}</div><p><strong>Design rules:</strong> Use 1 main message, 2–3 accent colors, short labels, consistent arrow style, generous spacing, and avoid decorative elements that do not communicate science.</p></div>`;
-});
+function renderDomain(){const d=$('#studioDomain').value;$('#domainElements').innerHTML=domains[d].map(x=>`<button data-quick="${esc(x)}">${esc(x)}</button>`).join('');$$('[data-quick]').forEach(b=>b.onclick=()=>addText(b.dataset.quick,180+Math.random()*250,180+Math.random()*250))}
+renderDomain();$('#studioDomain').onchange=renderDomain;
+$$('[data-tool]').forEach(b=>b.onclick=()=>b.dataset.tool==='text'?addText():addShape(b.dataset.tool));
+$('#undoBtn').onclick=()=>{if(history.length)canvas.innerHTML=history.pop()};
+$('#clearCanvas').onclick=()=>{snapshot();canvas.innerHTML='<rect width="1600" height="1000" fill="#ffffff"/>'};
 
-document.querySelector('#searchIcons').addEventListener('click',()=>{
- const q=document.querySelector('#iconQuery').value.trim()||'scientific icon';
- const e=encodeURIComponent(q);
- document.querySelector('#iconResults').innerHTML=`
- <article><span class="license cc0">MULTIPLE OPEN LICENSES</span><h3>Bioicons</h3><p>Search Bioicons for <strong>${q}</strong>. Check the license shown for each individual icon.</p><a target="_blank" rel="noopener" href="https://bioicons.com/">Search Bioicons →</a></article>
- <article><span class="license ccby">CC BY 4.0</span><h3>Servier Medical Art</h3><p>Search medical and biomedical artwork for <strong>${q}</strong>. Attribution is required for reused artwork.</p><a target="_blank" rel="noopener" href="https://smart.servier.com/?s=${e}">Search Servier →</a></article>`;
-});
+function renderPalette(){const p=palettes[$('#paletteType').value]||palettes.biomedical;$('#miniPalette')?.remove();$('#paletteOutput').innerHTML=p.map(c=>`<i title="${c}" style="background:${c}"></i>`).join('');$('#elementColor').value=p[0];$('#accentColor').value=p[2]||p[1]}
+$('#suggestPalette').onclick=renderPalette;renderPalette();
+
+$('#findAsset').onclick=()=>{const q=$('#studioSearch').value.trim()||$('#studioDomain').value;window.open('https://bioicons.com/','_blank','noopener');setTimeout(()=>window.open('https://smart.servier.com/?s='+encodeURIComponent(q),'_blank','noopener'),150)};
+
+function tokenize(text){return [...new Set(text.toLowerCase().replace(/[^a-z0-9\s-]/g,' ').split(/\s+/).filter(x=>x.length>3))].slice(0,10)}
+$('#generatePlan').onclick=()=>{const topic=$('#topic').value.trim();if(!topic){$('#topic').focus();return}const type=$('#figureType').value,field=$('#field').value;let pk='biomedical';if(/bioinformatics/i.test(field))pk='data';else if(/immun/i.test(field))pk='immune';else if(/cancer/i.test(field))pk='cancer';else if(/plant/i.test(field))pk='eco';else if(/molecular/i.test(field))pk='molecular';else if(/physics/i.test(field))pk='physics';else if(/chem/i.test(field))pk='chemistry';const steps=layouts[type]||layouts['Graphical Abstract'];const keys=[...tokenize(topic),'arrow','label'].slice(0,9);$('#planResult').innerHTML=`<div><span class="eyebrow">RECOMMENDED VISUAL PLAN</span><h3>${esc(type)} • ${esc(field)}</h3><ol>${steps.map(s=>`<li>${esc(s)}</li>`).join('')}</ol><p><strong>Suggested asset searches</strong></p><div class="tag-row">${keys.map(k=>`<span class="tag">${esc(k)}</span>`).join('')}</div><p><strong>Palette</strong></p><div class="tag-row">${palettes[pk].map(c=>`<span class="tag"><i style="display:inline-block;width:9px;height:9px;border-radius:50%;background:${c};margin-right:5px"></i>${c}</span>`).join('')}</div><p><strong>Design guidance:</strong> keep one reading direction, use short labels, preserve white space, keep line weights consistent, and use vector assets whenever available.</p></div>`};
+
+const modal=$('#authModal');$('#openAuth').onclick=()=>modal.classList.remove('hidden');$('#closeAuth').onclick=()=>modal.classList.add('hidden');modal.onclick=e=>{if(e.target===modal)modal.classList.add('hidden')};
+$$('[data-auth-tab]').forEach(b=>b.onclick=()=>{$$('[data-auth-tab]').forEach(x=>x.classList.remove('active'));b.classList.add('active');$('#loginForm').classList.toggle('hidden',b.dataset.authTab!=='login');$('#registerForm').classList.toggle('hidden',b.dataset.authTab!=='register');$('#authMessage').textContent=''});
+
+$('#loginForm').onsubmit=async e=>{e.preventDefault();const f=new FormData(e.target);const {error}=await sb.auth.signInWithPassword({email:f.get('email'),password:f.get('password')});$('#authMessage').textContent=error?error.message:'Signed in successfully.';if(!error){modal.classList.add('hidden');await refreshSession()}};
+$('#registerForm').onsubmit=async e=>{e.preventDefault();const f=new FormData(e.target);$('#authMessage').textContent='Creating account…';const {data,error}=await sb.auth.signUp({email:f.get('email'),password:f.get('password')});if(error){$('#authMessage').textContent=error.message;return}if(data.user){const profile={user_id:data.user.id,full_name:f.get('full_name'),account_type:f.get('account_type'),institution:f.get('institution'),discipline:f.get('discipline'),scientific_id_type:f.get('scientific_id_type'),scientific_id_value:f.get('scientific_id_value'),scientific_id_url:f.get('scientific_id_url')||null};const {error:pe}=await sb.from('sf_profiles').insert(profile);$('#authMessage').textContent=pe?pe.message:'Registration submitted. Your account remains pending until administrator verification.'}}
+$('#signOut').onclick=async()=>{await sb.auth.signOut();await refreshSession()};
+
+async function refreshSession(){const {data:{user}}=await sb.auth.getUser();currentUser=user||null;currentProfile=null;isAdmin=false;$('#openAuth').classList.toggle('hidden',!!user);$('#signOut').classList.toggle('hidden',!user);if(!user){$('#accessStatus').textContent='Guest preview';$('#adminPanel').classList.add('hidden');return}const {data:p}=await sb.from('sf_profiles').select('*').eq('user_id',user.id).maybeSingle();currentProfile=p||null;const {data:a}=await sb.from('sf_admins').select('role').eq('user_id',user.id).maybeSingle();isAdmin=!!a;let status=p?.verification_status||'profile required';$('#accessStatus').textContent=isAdmin?'Administrator':status==='approved'?'Verified user':'Pending verification';if(isAdmin){$('#adminPanel').classList.remove('hidden');await loadPending()}else $('#adminPanel').classList.add('hidden')}
+
+async function loadPending(){const {data,error}=await sb.from('sf_profiles').select('*').eq('verification_status','pending').order('created_at',{ascending:true});if(error){$('#pendingUsers').textContent=error.message;return}$('#pendingUsers').innerHTML=(data||[]).length?(data||[]).map(u=>`<div class="pending-card"><div><strong>${esc(u.full_name||'Unnamed user')}</strong><small>${esc(u.account_type)} • ${esc(u.institution||'')} • ${esc(u.discipline||'')}</small></div><div><small>${esc(u.scientific_id_type||'ID')}: ${esc(u.scientific_id_value||'')}</small>${u.scientific_id_url?`<a href="${esc(u.scientific_id_url)}" target="_blank" rel="noopener">Verification link</a>`:''}</div><div class="pending-actions"><button class="approve" data-approve="${u.user_id}">Approve</button><button class="reject" data-reject="${u.user_id}">Reject</button></div></div>`).join(''):'<p>No pending verification requests.</p>';$$('[data-approve]').forEach(b=>b.onclick=()=>setVerification(b.dataset.approve,'approved'));$$('[data-reject]').forEach(b=>b.onclick=()=>setVerification(b.dataset.reject,'rejected'))}
+async function setVerification(uid,status){const {error}=await sb.rpc('sf_admin_set_verification',{target_user:uid,new_status:status,note:null});if(error)alert(error.message);await loadPending()}
+
+$('#saveProject').onclick=async()=>{if(!currentUser){modal.classList.remove('hidden');$('#authMessage').textContent='Please sign in first.';return}if(!isAdmin&&currentProfile?.verification_status!=='approved'){alert('Your account must be approved by the administrator before projects can be saved.');return}const payload={user_id:currentUser.id,title:$('#projectTitle').value.trim()||'Untitled scientific figure',domain:$('#studioDomain').value,canvas_width:1600,canvas_height:1000,background:'#ffffff',project_json:{svg:canvas.innerHTML}};const {error}=await sb.from('sf_projects').insert(payload);alert(error?error.message:'Project saved successfully.')};
+
+$('#showRegistry').onclick=async()=>{const {data,error}=await sb.from('sf_assets').select('name,domain,style,license_name,source_name,source_url').eq('approved',true).limit(30);if(error){$('#registryResults').textContent=error.message;return}$('#registryResults').innerHTML=(data||[]).length?(data||[]).map(a=>`<div class="registry-row"><strong>${esc(a.name)}</strong><span>${esc(a.domain)}</span><span>${esc(a.style)}</span><span>${esc(a.license_name||'License recorded')}</span></div>`).join(''):'<p>No assets have been approved into the internal registry yet. External open-license sources remain available above.</p>'};
+
+refreshSession();
