@@ -60,14 +60,35 @@ window.GDRBackend = (() => {
     return r.profile?.role || null;
   }
 
-  async function requireAdmin() {
-    const c = await ensureClient();
-    if (!c) throw new Error('Production backend is not connected. Admin access is disabled until authentication is active.');
+  function routeForRole(role) {
+    if (role === 'founder' || role === 'admin') return '/gdr/admin/';
+    if (role === 'manager') return '/gdr/manager/';
+    return '/gdr/portal/';
+  }
+
+  async function routeSignedInUser() {
     const session = await getSession();
-    if (!session.session) throw new Error('Please sign in with an authorized founder/admin account.');
+    if (!session.session) return '/gdr/portal/';
+    const role = await getMyRole();
+    return routeForRole(role);
+  }
+
+  async function requireRole(roles) {
+    const c = await ensureClient();
+    if (!c) throw new Error('Production backend is not connected.');
+    const session = await getSession();
+    if (!session.session) throw new Error('Please sign in first.');
     const profile = await getMyProfile();
-    if (!profile.profile || !['admin','founder'].includes(profile.profile.role)) throw new Error('Access denied. Founder/Admin role required.');
+    if (!profile.profile || !roles.includes(profile.profile.role)) throw new Error('Access denied for this account role.');
     return { client: c, session: session.session, profile: profile.profile };
+  }
+
+  async function requireAdmin() {
+    return requireRole(['founder','admin']);
+  }
+
+  async function requireManagerOrAbove() {
+    return requireRole(['manager','admin','founder']);
   }
 
   async function saveProfile(profile) {
@@ -118,7 +139,7 @@ window.GDRBackend = (() => {
     if (!challengeId && application.challenge_public_id) {
       const { data: ch, error: chErr } = await c.from('discovery_challenges').select('id').eq('public_id', application.challenge_public_id).maybeSingle();
       if (chErr) throw chErr;
-      if (!ch) throw new Error('This Discovery Challenge is not yet registered in the shared database.');
+      if (!ch) throw new Error('This Discovery Challenge is not registered in the shared database.');
       challengeId = ch.id;
     }
     if (!challengeId) throw new Error('Challenge identifier is missing.');
@@ -133,44 +154,103 @@ window.GDRBackend = (() => {
     return { mode: 'shared', id: data.id };
   }
 
-  async function adminSummary() {
-    const { client: c } = await requireAdmin();
+  async function summaryForOperations() {
+    const { client: c } = await requireManagerOrAbove();
     const tables = ['profiles','research_ideas','discovery_challenges','projects','datasets','applications'];
     const out = {};
     for (const table of tables) {
       const { count, error } = await c.from(table).select('*', { count: 'exact', head: true });
-      if (error && table !== 'datasets') throw error;
-      out[table] = error ? 0 : (count || 0);
+      if (error) throw error;
+      out[table] = count || 0;
     }
     return out;
   }
 
-  async function listAdminIdeas(limit = 50) {
-    const { client: c } = await requireAdmin();
-    const { data, error } = await c.from('research_ideas').select('id,title,primary_domain,status,created_at').order('created_at',{ascending:false}).limit(limit);
+  async function adminSummary() {
+    await requireAdmin();
+    return summaryForOperations();
+  }
+
+  async function listIdeas(limit = 100) {
+    const { client: c } = await requireManagerOrAbove();
+    const { data, error } = await c.from('research_ideas').select('id,title,primary_domain,status,created_at,submitted_by').order('created_at',{ascending:false}).limit(limit);
     if (error) throw error;
     return data || [];
   }
 
+  async function listAdminIdeas(limit = 100) {
+    await requireAdmin();
+    return listIdeas(limit);
+  }
+
   async function setIdeaStatus(id, status) {
-    const { client: c } = await requireAdmin();
+    const { client: c } = await requireManagerOrAbove();
     const { error } = await c.from('research_ideas').update({ status, updated_at: new Date().toISOString() }).eq('id', id);
     if (error) throw error;
     return true;
   }
 
+  async function listResearchers(limit = 200) {
+    const { client: c } = await requireManagerOrAbove();
+    const { data, error } = await c.from('profiles').select('user_id,full_name,institution,country,primary_discipline,role,verified,created_at').order('created_at',{ascending:false}).limit(limit);
+    if (error) throw error;
+    return data || [];
+  }
+
+  async function listProjects(limit = 200) {
+    const { client: c } = await requireManagerOrAbove();
+    const { data, error } = await c.from('projects').select('id,project_code,title,status,created_at,updated_at').order('created_at',{ascending:false}).limit(limit);
+    if (error) throw error;
+    return data || [];
+  }
+
+  async function listApplications(limit = 200) {
+    const { client: c } = await requireManagerOrAbove();
+    const { data, error } = await c.from('applications').select('id,challenge_id,researcher_id,proposed_role,contribution,status,created_at').order('created_at',{ascending:false}).limit(limit);
+    if (error) throw error;
+    return data || [];
+  }
+
+  async function setApplicationStatus(id, status) {
+    const { client: c } = await requireManagerOrAbove();
+    const { error } = await c.from('applications').update({ status }).eq('id', id);
+    if (error) throw error;
+    return true;
+  }
+
+  async function listChallenges(limit = 100) {
+    const { client: c } = await requireManagerOrAbove();
+    const { data, error } = await c.from('discovery_challenges').select('id,public_id,title,status,is_public,created_at').order('created_at',{ascending:false}).limit(limit);
+    if (error) throw error;
+    return data || [];
+  }
+
+  async function listDatasets(limit = 200) {
+    const { client: c } = await requireManagerOrAbove();
+    const { data, error } = await c.from('datasets').select('id,dataset_code,title,access_level,current_version,created_at').order('created_at',{ascending:false}).limit(limit);
+    if (error) throw error;
+    return data || [];
+  }
+
   async function registerDataset(dataset) {
-    const { client: c } = await requireAdmin();
+    const { client: c } = await requireManagerOrAbove();
     const { data, error } = await c.from('datasets').insert(dataset).select('id,dataset_code').single();
     if (error) throw error;
     return data;
   }
 
   async function registerProject(project) {
-    const { client: c } = await requireAdmin();
+    const { client: c } = await requireManagerOrAbove();
     const { data, error } = await c.from('projects').insert(project).select('id,project_code').single();
     if (error) throw error;
     return data;
+  }
+
+  async function listAuditEvents(limit = 100) {
+    const { client: c } = await requireManagerOrAbove();
+    const { data, error } = await c.from('audit_events').select('id,actor_user_id,entity_type,entity_id,action,metadata,created_at').order('created_at',{ascending:false}).limit(limit);
+    if (error) throw error;
+    return data || [];
   }
 
   async function sendEmail(type, payload) {
@@ -184,8 +264,11 @@ window.GDRBackend = (() => {
 
   return {
     ensureClient, getSession, signUp, signIn, signOut, currentUser,
-    saveProfile, getMyProfile, getMyRole, requireAdmin,
-    submitIdea, submitApplication, adminSummary, listAdminIdeas,
-    setIdeaStatus, registerDataset, registerProject, sendEmail
+    saveProfile, getMyProfile, getMyRole, routeForRole, routeSignedInUser,
+    requireRole, requireAdmin, requireManagerOrAbove,
+    submitIdea, submitApplication, summaryForOperations, adminSummary,
+    listIdeas, listAdminIdeas, setIdeaStatus, listResearchers, listProjects,
+    listApplications, setApplicationStatus, listChallenges, listDatasets,
+    registerDataset, registerProject, listAuditEvents, sendEmail
   };
 })();
