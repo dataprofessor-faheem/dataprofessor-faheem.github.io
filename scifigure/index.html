@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="SciFigure Commons — free scientific figure planning, open icon discovery, graphical abstract guidance and professional color palette suggestions.">
+<title>SciFigure Commons — Open Scientific Figure Studio</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="mark">SC</span><div><strong>SciFigure Commons</strong><small>Open Scientific Figure Studio</small></div></div>
+  <nav><a href="#planner">AI Planner</a><a href="#icons">Free Icons</a><a href="#palette">Colors</a><a href="#roadmap">Roadmap</a></nav>
+</header>
+<main>
+<section class="hero">
+  <div>
+    <span class="eyebrow">FREE • OPEN • RESEARCHER-FIRST</span>
+    <h1>Create publication-ready scientific figures without expensive design software.</h1>
+    <p>Plan graphical abstracts, discover legally reusable scientific icons, choose professional color combinations and follow a guided scientific-design workflow.</p>
+    <div class="actions"><a class="btn primary" href="#planner">Start with AI Planner</a><a class="btn" href="#icons">Search Free Icons</a></div>
+  </div>
+  <div class="hero-card">
+    <div class="mini-label">Design workflow</div>
+    <ol><li>Describe your science</li><li>Generate a figure plan</li><li>Find reusable icons</li><li>Select journal-style colors</li><li>Build and export</li></ol>
+  </div>
+</section>
+
+<section id="planner" class="section">
+  <div class="section-head"><span class="eyebrow">AI SCIENTIFIC DESIGN ASSISTANT</span><h2>Turn a research idea into a figure plan</h2><p>This first MVP provides an intelligent rule-based planner. A later release can connect a full language model through a secure backend.</p></div>
+  <div class="planner-grid">
+    <div class="panel">
+      <label>Research topic<textarea id="topic" placeholder="Example: Gut microbiome dysbiosis promotes colorectal cancer through inflammation, metabolites and immune modulation."></textarea></label>
+      <div class="two"><label>Figure type<select id="figureType"><option>Graphical Abstract</option><option>Mechanism Figure</option><option>Experimental Workflow</option><option>Bioinformatics Pipeline</option><option>Clinical Pathway</option><option>Poster Figure</option></select></label><label>Field<select id="field"><option>Biomedical Science</option><option>Molecular Biology</option><option>Bioinformatics</option><option>Immunology</option><option>Cancer Biology</option><option>Microbiology</option><option>Plant Science</option><option>Nanotechnology</option></select></label></div>
+      <button class="btn primary full" id="generatePlan">Generate Figure Plan</button>
+    </div>
+    <div class="panel result" id="planResult"><div class="empty">Your recommended layout, icon keywords, labels and palette will appear here.</div></div>
+  </div>
+</section>
+
+<section id="icons" class="section alt">
+  <div class="section-head"><span class="eyebrow">OPEN-ASSET DISCOVERY</span><h2>Search free scientific icon sources</h2><p>Always verify the specific asset license before reuse. SciFigure Commons will eventually store per-asset license metadata and generate attribution automatically.</p></div>
+  <div class="search-row"><input id="iconQuery" type="search" placeholder="Try: mitochondria, T cell, PCR, neuron, virus"><button class="btn primary" id="searchIcons">Search Sources</button></div>
+  <div id="iconResults" class="source-grid">
+    <article><span class="license cc0">MULTIPLE OPEN LICENSES</span><h3>Bioicons</h3><p>Large scientific icon collection covering biology, medicine, laboratory equipment and computational science.</p><a target="_blank" rel="noopener" href="https://bioicons.com/">Open Bioicons →</a></article>
+    <article><span class="license ccby">CC BY 4.0</span><h3>Servier Medical Art</h3><p>Professional medical and biomedical illustrations. Attribution is required.</p><a target="_blank" rel="noopener" href="https://smart.servier.com/">Open Servier Medical Art →</a></article>
+  </div>
+</section>
+
+<section id="palette" class="section">
+  <div class="section-head"><span class="eyebrow">PROFESSIONAL COLOR ASSISTANT</span><h2>Scientific color combinations that stay clean and readable</h2><p>Choose a purpose and receive a restrained palette intended for figures, pathways and graphical abstracts.</p></div>
+  <div class="palette-controls"><select id="paletteType"><option value="biomedical">Biomedical / Clinical</option><option value="molecular">Molecular Biology</option><option value="immune">Immunology</option><option value="cancer">Cancer Mechanism</option><option value="eco">Plant / Environmental</option><option value="data">Bioinformatics / Data Science</option></select><button class="btn primary" id="suggestPalette">Suggest Palette</button></div>
+  <div id="paletteOutput" class="palette-output"></div>
+</section>
+
+<section id="roadmap" class="section alt">
+  <div class="section-head"><span class="eyebrow">BUILD ROADMAP</span><h2>Step-by-step development</h2></div>
+  <div class="timeline">
+    <article><b>01</b><div><h3>Foundation</h3><p>Brand, licensing rules, repository architecture and live landing page.</p><span>IN PROGRESS</span></div></article>
+    <article><b>02</b><div><h3>Open Asset Index</h3><p>Searchable scientific icon metadata with license and attribution fields.</p></div></article>
+    <article><b>03</b><div><h3>Canvas Editor</h3><p>Drag, resize, rotate, group, layer, align and label scientific SVG components.</p></div></article>
+    <article><b>04</b><div><h3>AI Design Assistant</h3><p>Text-to-plan, layout critique, icon suggestions, color recommendations and scientific consistency checks.</p></div></article>
+    <article><b>05</b><div><h3>Templates & Export</h3><p>Graphical abstracts, workflows and publication-quality SVG/PNG/PDF export.</p></div></article>
+    <article><b>06</b><div><h3>Accounts & Community</h3><p>Saved projects, contributor uploads, moderation, attribution and collaborative libraries.</p></div></article>
+  </div>
+</section>
+</main>
+<footer><strong>SciFigure Commons</strong><span>Built to make scientific visualization more accessible.</span><small>Prototype MVP • Verify asset licenses before publication.</small></footer>
+<script src="./app.js"></script>
+</body>
+</html>
