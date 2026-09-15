@@ -1,0 +1,80 @@
+name: SciFigure quality checks
+
+on:
+  push:
+    paths:
+      - 'scifigure/**'
+      - '.github/workflows/scifigure-qa.yml'
+  pull_request:
+    paths:
+      - 'scifigure/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: JavaScript syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          for f in scifigure/*.js; do
+            echo "Checking $f"
+            node --check "$f"
+          done
+
+      - name: HTML structure and local references
+        shell: python
+        run: |
+          from html.parser import HTMLParser
+          from pathlib import Path
+
+          root = Path('scifigure')
+          html = (root / 'index.html').read_text(encoding='utf-8')
+
+          class Parser(HTMLParser):
+              def __init__(self):
+                  super().__init__(); self.ids=[]; self.refs=[]
+              def handle_starttag(self, tag, attrs):
+                  d=dict(attrs)
+                  if d.get('id'): self.ids.append(d['id'])
+                  if tag == 'script' and d.get('src'): self.refs.append(d['src'])
+                  if tag == 'link' and d.get('href'): self.refs.append(d['href'])
+
+          p=Parser(); p.feed(html)
+          duplicates=sorted({x for x in p.ids if p.ids.count(x)>1})
+          if duplicates:
+              raise SystemExit(f'Duplicate IDs: {duplicates}')
+
+          required={
+              'figureCanvas','studioDomain','domainElements','elementColor','accentColor',
+              'lineWidth','paletteType','paletteOutput','projectTitle','saveProject',
+              'undoBtn','clearCanvas','authModal','loginForm','registerForm','accessStatus'
+          }
+          missing=sorted(required-set(p.ids))
+          if missing:
+              raise SystemExit(f'Missing required IDs: {missing}')
+
+          for ref in p.refs:
+              clean=ref.split('?',1)[0]
+              if clean.startswith('./'):
+                  path=root/clean[2:]
+                  if not path.exists():
+                      raise SystemExit(f'Missing local reference: {ref}')
+          print(f'HTML OK: {len(p.ids)} IDs; required controls present; local references exist.')
+
+      - name: CSS structural check
+        shell: python
+        run: |
+          from pathlib import Path
+          for path in Path('scifigure').glob('*.css'):
+              text=path.read_text(encoding='utf-8')
+              if text.count('{') != text.count('}'):
+                  raise SystemExit(f'Unbalanced CSS braces in {path}')
+              print(f'CSS OK: {path}')
