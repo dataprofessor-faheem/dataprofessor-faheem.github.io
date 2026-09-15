@@ -7,6 +7,7 @@
 <title>SciFigure Commons | CITics Bio Solutions × GDR Network</title>
 <link rel="stylesheet" href="./style.css">
 <link rel="stylesheet" href="./v04.css?v=20260915">
+<link rel="stylesheet" href="./v05.css?v=20260915">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
@@ -32,7 +33,7 @@
 </section>
 
 <section id="studio" class="section studio-section">
-  <div class="section-head"><span class="eyebrow">SCIENTIFIC FIGURE STUDIO</span><h2>One white canvas. Five scientific domains.</h2><p>The studio now supports draggable vector objects, starter scientific illustrations, object-level styling, advanced alignment, grouping, saved projects, and vector/raster export.</p></div>
+  <div class="section-head"><span class="eyebrow">SCIENTIFIC FIGURE STUDIO</span><h2>One white canvas. Five scientific domains.</h2><p>The studio now supports draggable vector objects, starter scientific illustrations, object-level styling, advanced alignment, grouping, assisted draft generation, saved projects, and vector/raster export.</p></div>
   <div class="studio-shell">
     <aside class="left-rail">
       <div class="rail-block"><label>Domain<select id="studioDomain"><option value="biological">Biological</option><option value="chemical">Chemical</option><option value="physical">Physical</option><option value="mathematical">Mathematical</option><option value="bioinformatics">Bioinformatics</option></select></label></div>
@@ -66,7 +67,7 @@
 </section>
 
 <section id="ai" class="section">
-  <div class="section-head"><span class="eyebrow">AI SCIENTIFIC DESIGN ASSISTANT</span><h2>Describe the science; receive a visual plan.</h2><p>The current assistant is local and cost-free. The architecture is ready for a secure AI backend later, without exposing model keys in the browser.</p></div>
+  <div class="section-head"><span class="eyebrow">AI SCIENTIFIC DESIGN ASSISTANT</span><h2>Describe the science; receive a visual plan.</h2><p>The current assistant is local and cost-free. Version 0.5 can also convert a concept into an editable draft figure; a secure model backend can later improve semantic understanding without exposing model keys in the browser.</p></div>
   <div class="planner-grid"><div class="panel"><label>Research concept<textarea id="topic" placeholder="Example: oxidative stress activates lipid peroxidation and ferroptosis in neuronal injury"></textarea></label><div class="two"><label>Figure type<select id="figureType"><option>Graphical Abstract</option><option>Mechanism Figure</option><option>Experimental Workflow</option><option>Bioinformatics Pipeline</option><option>Clinical Pathway</option><option>Mathematical Model</option></select></label><label>Field<select id="field"><option>Biomedical Science</option><option>Molecular Biology</option><option>Bioinformatics</option><option>Immunology</option><option>Cancer Biology</option><option>Chemistry</option><option>Physics</option><option>Mathematics</option><option>Plant Science</option></select></label></div><button class="btn primary full" id="generatePlan">Generate figure plan</button></div><div class="panel result" id="planResult"><div class="empty">Layout, icon keywords, palette and design guidance will appear here.</div></div></div>
 </section>
 
@@ -82,5 +83,6 @@
 <footer><strong>SciFigure Commons</strong><span>CITics Bio Solutions × GDR Network</span><small>Open scientific visualization initiative • assets remain subject to their individual licenses and attribution terms.</small></footer>
 <script src="./app.js"></script>
 <script src="./v04.js?v=20260915"></script>
+<script src="./v05.js?v=20260915"></script>
 </body>
 </html>
