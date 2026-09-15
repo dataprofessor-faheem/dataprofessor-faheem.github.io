@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Saudi AgroClimate Intelligence & Crop Health Decision Support System — real-time weather, crop stress and disease-risk early warning MVP.">
+<title>Saudi AgroClimate DSS | GDR Network</title>
+<link rel="stylesheet" href="./styles.css?v=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="mark">SA</div><div><strong>Saudi AgroClimate DSS</strong><small>GDR Network • Climate × Crop × AI</small></div></div>
+  <div class="status"><span class="pulse"></span><span id="apiStatus">Connecting live data…</span></div>
+</header>
+<main>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">National agricultural intelligence prototype</p>
+      <h1>Climate-driven crop health<br><em>early warning for Saudi Arabia</em></h1>
+      <p class="lead">A decision-support MVP combining live weather, agro-climatic zones, crop vulnerability and transparent disease/stress risk scoring. The production architecture is designed to accept Saudi NCM feeds, satellite observations, field records and future climate models.</p>
+    </div>
+    <div class="hero-card"><span>Operational horizon</span><strong>NOW → 7 DAYS → 2050</strong><p>Current conditions, early warning and climate-resilience planning in one platform.</p></div>
+  </section>
+
+  <section class="controls panel">
+    <div class="field"><label>Agro-climatic location</label><select id="locationSelect"></select></div>
+    <div class="field"><label>Crop</label><select id="cropSelect"><option value="date-palm">Date palm</option><option value="wheat">Wheat</option><option value="potato">Potato</option><option value="tomato">Tomato / protected crop</option></select></div>
+    <div class="field"><label>Forecast horizon</label><select id="horizonSelect"><option value="24">Next 24 hours</option><option value="72" selected>Next 72 hours</option><option value="168">Next 7 days</option></select></div>
+    <button id="refreshBtn">Refresh intelligence</button>
+  </section>
+
+  <section class="metrics" id="metrics">
+    <article><span>Temperature</span><strong id="temp">—</strong><small>Current 2 m air temperature</small></article>
+    <article><span>Relative humidity</span><strong id="humidity">—</strong><small>Current atmospheric moisture</small></article>
+    <article><span>Precipitation</span><strong id="precip">—</strong><small>Current precipitation</small></article>
+    <article><span>Wind</span><strong id="wind">—</strong><small>10 m wind speed</small></article>
+    <article><span>ET₀</span><strong id="eto">—</strong><small>Reference evapotranspiration</small></article>
+    <article><span>Soil moisture</span><strong id="soil">—</strong><small>Upper soil layer</small></article>
+  </section>
+
+  <section class="grid2">
+    <article class="panel risk-panel">
+      <div class="section-head"><div><p class="eyebrow">Explainable risk engine</p><h2>Crop health risk</h2></div><span id="updatedAt">—</span></div>
+      <div class="risk-wrap"><div class="gauge"><div id="gaugeFill" class="gauge-fill"></div><div class="gauge-center"><strong id="riskScore">—</strong><span id="riskLevel">Calculating</span></div></div>
+      <div class="risk-copy"><h3 id="riskTitle">Analyzing environmental suitability…</h3><p id="riskExplanation">The first model uses transparent climate rules. It will be replaced or calibrated with Saudi field observations and disease labels.</p><div id="drivers" class="chips"></div></div></div>
+      <div class="notice"><strong>Decision-support only.</strong> Disease risk is environmental suitability, not a laboratory diagnosis. Production alerts should be validated with field scouting and locally approved agronomic guidance.</div>
+    </article>
+
+    <article class="panel">
+      <div class="section-head"><div><p class="eyebrow">Agro-climatic context</p><h2 id="zoneName">—</h2></div><span class="tag" id="zoneTag">ZONE</span></div>
+      <p id="zoneDescription" class="zone-description"></p>
+      <div class="mini-grid"><div><span>Coordinates</span><strong id="coords">—</strong></div><div><span>Primary stress</span><strong id="primaryStress">—</strong></div><div><span>Selected crop</span><strong id="selectedCrop">—</strong></div><div><span>Data mode</span><strong>Live API + DSS</strong></div></div>
+    </article>
+  </section>
+
+  <section class="panel forecast-panel">
+    <div class="section-head"><div><p class="eyebrow">Early-warning window</p><h2>Hourly environmental risk outlook</h2></div><span id="forecastPeriod">72 h</span></div>
+    <div class="chart" id="forecastChart"><p>Loading forecast…</p></div>
+  </section>
+
+  <section class="three">
+    <article class="panel"><p class="eyebrow">Biotic engine</p><h3>Disease & pest suitability</h3><p>Temperature, humidity, precipitation, wind, crop stage and future leaf-wetness/NCM variables feed pathogen-specific models.</p><div class="progress"><i id="bioticBar"></i></div><strong id="bioticScore">—</strong></article>
+    <article class="panel"><p class="eyebrow">Abiotic engine</p><h3>Heat & water stress</h3><p>Heat load, evapotranspiration and soil-moisture deficit are converted into interpretable stress indicators.</p><div class="progress"><i id="abioticBar"></i></div><strong id="abioticScore">—</strong></article>
+    <article class="panel"><p class="eyebrow">Next intelligence layer</p><h3>Satellite + field validation</h3><p>Sentinel vegetation indices, farm observations, disease confirmations and IoT sensors will calibrate the national prediction system.</p><a href="https://api-doc.ncm.gov.sa/" target="_blank" rel="noopener">Saudi NCM API documentation ↗</a></article>
+  </section>
+
+  <section class="architecture panel">
+    <p class="eyebrow">Production architecture</p><h2>From national data to farmer action</h2>
+    <div class="flow"><div>NCM / Weather APIs<small>observations + forecast</small></div><b>→</b><div>Satellite & Soil<small>crop condition</small></div><b>→</b><div>Risk Engine<small>biotic + abiotic</small></div><b>→</b><div>Decision Support<small>probability + confidence</small></div><b>→</b><div>Farmer / Government<small>alerts + national dashboard</small></div></div>
+  </section>
+</main>
+<footer><span>Saudi AgroClimate Intelligence & Crop Health DSS • Founding MVP 2026</span><span>Developed as a GDR Network research technology project</span></footer>
+<script src="./app.js?v=1"></script>
+</body>
+</html>
