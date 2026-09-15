@@ -6,6 +6,7 @@
 <meta name="description" content="SciFigure Commons by CITics Bio Solutions and GDR Network — verified-access scientific illustration studio for publication-grade biological, chemical, physical, mathematical and bioinformatics figures.">
 <title>SciFigure Commons | CITics Bio Solutions × GDR Network</title>
 <link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./v04.css?v=20260915">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
@@ -31,7 +32,7 @@
 </section>
 
 <section id="studio" class="section studio-section">
-  <div class="section-head"><span class="eyebrow">SCIENTIFIC FIGURE STUDIO</span><h2>One white canvas. Five scientific domains.</h2><p>The MVP already provides vector shapes, arrows, text, color controls, domain libraries and project saving. Advanced icon ingestion and export are the next build layer.</p></div>
+  <div class="section-head"><span class="eyebrow">SCIENTIFIC FIGURE STUDIO</span><h2>One white canvas. Five scientific domains.</h2><p>The studio now supports draggable vector objects, starter scientific illustrations, object-level styling, advanced alignment, grouping, saved projects, and vector/raster export.</p></div>
   <div class="studio-shell">
     <aside class="left-rail">
       <div class="rail-block"><label>Domain<select id="studioDomain"><option value="biological">Biological</option><option value="chemical">Chemical</option><option value="physical">Physical</option><option value="mathematical">Mathematical</option><option value="bioinformatics">Bioinformatics</option></select></label></div>
@@ -49,7 +50,7 @@
     <aside class="right-rail">
       <div class="rail-block"><b>Style</b><label>Primary color<input id="elementColor" type="color" value="#24557a"></label><label>Accent color<input id="accentColor" type="color" value="#2b8c82"></label><label>Line width<input id="lineWidth" type="range" min="1" max="12" value="4"></label></div>
       <div class="rail-block"><b>Professional palettes</b><select id="paletteType"><option value="biomedical">Biomedical</option><option value="molecular">Molecular</option><option value="immune">Immunology</option><option value="cancer">Cancer</option><option value="eco">Plant / Environment</option><option value="data">Bioinformatics / Data</option><option value="physics">Physics</option><option value="chemistry">Chemistry</option></select><button class="btn small" id="suggestPalette">Apply suggestion</button><div id="paletteOutput" class="mini-palette"></div></div>
-      <div class="rail-block"><b>Export target</b><select><option>Journal figure</option><option>Graphical abstract</option><option>Poster panel</option><option>Presentation</option><option>Teaching illustration</option></select><small>SVG / high-resolution PNG / PDF export is scheduled for the next editor release.</small></div>
+      <div class="rail-block"><b>Export target</b><select><option>Journal figure</option><option>Graphical abstract</option><option>Poster panel</option><option>Presentation</option><option>Teaching illustration</option></select><small>Use SVG for scalable journal artwork and PNG for high-resolution raster output.</small></div>
     </aside>
   </div>
 </section>
@@ -80,5 +81,6 @@
 
 <footer><strong>SciFigure Commons</strong><span>CITics Bio Solutions × GDR Network</span><small>Open scientific visualization initiative • assets remain subject to their individual licenses and attribution terms.</small></footer>
 <script src="./app.js"></script>
+<script src="./v04.js?v=20260915"></script>
 </body>
 </html>
