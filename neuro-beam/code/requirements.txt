@@ -1,0 +1,13 @@
+pandas>=2.0
+numpy>=1.26
+scipy>=1.11
+scikit-learn>=1.4
+statsmodels>=0.14
+matplotlib>=3.8
+pyyaml>=6.0
+requests>=2.31
+dandi>=0.67
+pynwb>=2.8
+h5py>=3.10
+umap-learn>=0.5
+hdbscan>=0.8
