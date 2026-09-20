@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="description" content="NEURO-BEAM — Neuronal BioElectricity–Activity–Molecular Atlas"/>
+  <title>NEURO-BEAM | Bioelectric–Genomic Atlas</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="mark">NB</div>
+      <div><strong>NEURO-BEAM</strong><span>Neuronal BioElectricity–Activity–Molecular Atlas</span></div>
+    </div>
+    <nav>
+      <a href="#atlas">Atlas</a><a href="#pipeline">Pipeline</a><a href="#datasets">Datasets</a>
+      <a href="#statistics">Statistics</a><a href="#code">Code</a>
+      <a class="pill" href="https://github.com/dataprofessor-faheem/dataprofessor-faheem.github.io/tree/main/neuro-beam">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">MULTISCALE • MULTIMODAL • EXPLAINABLE</div>
+        <h1>From brain circuitry to neuronal bioelectric states, gene regulation and genome stability.</h1>
+        <p>NEURO-BEAM is an open, reproducible framework integrating electrophysiology, transcriptomics, morphology, spatial atlases, connectomics, chromatin context and somatic-mosaicism resources.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#pipeline">Explore the project</a>
+          <a class="btn" href="#datasets">View locked datasets</a>
+        </div>
+        <div class="status"><span class="dot"></span><strong>Project status:</strong> Phase 1 initialized — dataset lock, QC protocol and bioelectric discovery pipeline deployed.</div>
+      </div>
+
+      <div class="hero-art" aria-label="Brain-neuron-DNA research concept">
+        <svg viewBox="0 0 900 620" role="img">
+          <defs>
+            <radialGradient id="g1"><stop offset="0" stop-color="#66e0ff" stop-opacity=".9"/><stop offset="1" stop-color="#66e0ff" stop-opacity="0"/></radialGradient>
+            <radialGradient id="g2"><stop offset="0" stop-color="#ba77ff" stop-opacity=".9"/><stop offset="1" stop-color="#ba77ff" stop-opacity="0"/></radialGradient>
+            <linearGradient id="line" x1="0" x2="1"><stop stop-color="#5be7ff"/><stop offset=".55" stop-color="#9f7cff"/><stop offset="1" stop-color="#ff7dbd"/></linearGradient>
+          </defs>
+          <circle cx="180" cy="280" r="180" fill="url(#g1)" opacity=".35"/>
+          <circle cx="680" cy="320" r="190" fill="url(#g2)" opacity=".27"/>
+          <path class="brain" d="M110 305c-35-60-5-139 61-160 18-52 84-76 130-37 49-22 112 7 121 63 58 8 85 76 56 123 35 56-2 129-67 135-27 53-98 65-142 28-47 28-111 11-133-40-58-8-83-77-26-112z"/>
+          <g class="neuron">
+            <circle cx="510" cy="278" r="26"/>
+            <path d="M486 279C430 250 400 226 364 193M486 288C435 306 402 334 370 378M506 251C493 203 478 174 451 144M529 270C578 246 613 217 643 177M531 292C582 315 618 351 653 394M517 302C520 354 524 399 533 447"/>
+            <g class="synapses"><circle cx="364" cy="193" r="6"/><circle cx="370" cy="378" r="6"/><circle cx="451" cy="144" r="6"/><circle cx="643" cy="177" r="6"/><circle cx="653" cy="394" r="6"/></g>
+          </g>
+          <path class="pulse" d="M88 506h79l20-60 25 113 30-87 23 34h86"/>
+          <g class="dna">
+            <path d="M665 470c80-65 80-145 0-210M748 470c-80-65-80-145 0-210"/>
+            <path d="M682 448h49M667 418h78M659 386h94M658 354h96M667 322h78M682 290h49"/>
+          </g>
+          <path class="bridge" d="M322 325C390 300 422 297 482 284M543 282C600 293 628 312 675 337"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="metrics" id="atlas">
+      <article><b>7,292</b><span>starting Patch-seq neuron pool</span></article>
+      <article><b>3</b><span>locked Phase-1 DANDI cohorts</span></article>
+      <article><b>25–50</b><span>candidate electrophysiology variables</span></article>
+      <article><b>6+</b><span>multiscale data layers</span></article>
+    </section>
+
+    <section class="section" id="pipeline">
+      <div class="section-head"><span>01</span><div><h2>Scientific workflow</h2><p>One coordinated biological story from electrical phenotype to molecular regulation.</p></div></div>
+      <div class="flow">
+        <div class="node"><strong>Brain region</strong><small>ABC Atlas / MERFISH</small></div>
+        <i>→</i><div class="node"><strong>Neuron identity</strong><small>Patch-seq</small></div>
+        <i>→</i><div class="node accent1"><strong>Bioelectric state</strong><small>Vm • AP • firing • rheobase</small></div>
+        <i>→</i><div class="node accent2"><strong>Gene regulation</strong><small>RNA • TF • pathway modules</small></div>
+        <i>→</i><div class="node"><strong>Regulatory context</strong><small>chromatin • DNA repair</small></div>
+        <i>→</i><div class="node accent3"><strong>Prediction</strong><small>NeuroBEAM-Net</small></div>
+      </div>
+      <div class="callout">
+        <b>Primary hypothesis</b>
+        <p>Distinct cortical neurons occupy reproducible electrophysiological states or axes associated with transcriptional programs beyond broad cell-type identity, and those relationships generalize to an independent cortical region.</p>
+      </div>
+    </section>
+
+    <section class="section" id="datasets">
+      <div class="section-head"><span>02</span><div><h2>Locked dataset architecture</h2><p>Large source archives remain external; the repository stores code, metadata, manifests and derived outputs.</p></div></div>
+      <div class="cards">
+        <article class="card"><div class="tag cyan">DISCOVERY</div><h3>DANDI 000020</h3><p>Mouse visual-cortex Patch-seq electrophysiology; inhibitory-rich discovery cohort.</p><a href="https://dandiarchive.org/dandiset/000020" target="_blank">Open source ↗</a></article>
+        <article class="card"><div class="tag violet">EXTENSION</div><h3>DANDI 001455</h3><p>Excitatory visual-cortex Patch-seq with electrophysiology, transcriptomics and morphology.</p><a href="https://dandiarchive.org/dandiset/001455" target="_blank">Open source ↗</a></article>
+        <article class="card"><div class="tag pink">VALIDATION</div><h3>DANDI 000008</h3><p>Primary motor-cortex Patch-seq reserved for independent frozen-signature validation.</p><a href="https://dandiarchive.org/dandiset/000008" target="_blank">Open source ↗</a></article>
+        <article class="card"><div class="tag">SPATIAL</div><h3>Allen ABC Atlas</h3><p>Whole-brain transcriptomic and MERFISH reference for spatial projection.</p><a href="https://brain-map.org/bkp/explore/abc-atlas" target="_blank">Open atlas ↗</a></article>
+        <article class="card"><div class="tag">CONNECTOME</div><h3>MICrONS</h3><p>High-resolution cortical circuitry, EM reconstructions and functional imaging.</p><a href="https://www.microns-explorer.org/" target="_blank">Open explorer ↗</a></article>
+        <article class="card"><div class="tag">DNA / GENOME</div><h3>4DN + SMaHT</h3><p>Regulatory chromatin context and somatic-mosaicism resources for later integration.</p><a href="https://data.4dnucleome.org/" target="_blank">4DN ↗</a> · <a href="https://commonfund.nih.gov/smaht" target="_blank">SMaHT ↗</a></article>
+      </div>
+    </section>
+
+    <section class="section" id="statistics">
+      <div class="section-head"><span>03</span><div><h2>Advanced statistical framework</h2><p>Inference is donor-aware, effect-size focused and externally validated.</p></div></div>
+      <div class="stats-grid">
+        <div><b>Unsupervised discovery</b><p>Robust scaling, PCA, GMM, HDBSCAN, hierarchical and consensus clustering.</p></div>
+        <div><b>Cluster evidence</b><p>Silhouette, Calinski–Harabasz, Davies–Bouldin, bootstrap stability and donor stability.</p></div>
+        <div><b>Gene coupling</b><p>Mixed-effects models, pseudobulk confirmation, BH-FDR, effect size and 95% CI.</p></div>
+        <div><b>Validation</b><p>Donor-level splits, untouched external motor-cortex cohort, calibration and reproducibility checks.</p></div>
+        <div><b>Explainable ML</b><p>Elastic Net, RF, XGBoost, SVM and later pathway-aware multimodal NeuroBEAM-Net.</p></div>
+        <div><b>Research integrity</b><p>No causal language from association alone; no UMAP-defined clusters; no donor leakage.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="code">
+      <div class="section-head"><span>04</span><div><h2>Reproducible source</h2><p>The live project includes the analysis protocol, data dictionary and executable Python scaffolds.</p></div></div>
+      <div class="code-list">
+        <a href="code/01_acquire_dandi_metadata.py"><b>01</b><span>Acquire DANDI metadata and asset inventories</span></a>
+        <a href="code/02_build_master_neuron_table.py"><b>02</b><span>Build one-neuron-per-row master table</span></a>
+        <a href="code/03_bioelectric_discovery.py"><b>03</b><span>Bioelectric state discovery baseline</span></a>
+        <a href="code/04_make_qc_dashboard_data.py"><b>04</b><span>Generate dashboard-ready QC summaries</span></a>
+        <a href="docs/analysis_protocol.md"><b>DOC</b><span>Pre-specified analysis protocol</span></a>
+        <a href="docs/data_dictionary.csv"><b>CSV</b><span>Master data dictionary</span></a>
+        <a href="docs/dataset_manifest.csv"><b>CSV</b><span>Locked dataset manifest</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>NEURO-BEAM</strong><br/><span>Open multiscale neuroscience research framework.</span></div>
+    <div>Hosted on GitHub Pages · <span id="year"></span></div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
