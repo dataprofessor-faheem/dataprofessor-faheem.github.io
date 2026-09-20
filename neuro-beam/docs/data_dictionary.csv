@@ -1,0 +1,40 @@
+block,variable,unit_or_type,role
+ID,dataset_id,string,source identifier
+ID,specimen_id,string,unique neuron identifier
+ID,donor_id,string,grouping/split variable
+ID,brain_region,string,covariate/visualization
+ID,cortical_layer,string,covariate
+ID,cell_class,string,annotation withheld during unsupervised discovery
+ID,cell_subclass,string,annotation withheld during unsupervised discovery
+EPHYS,resting_membrane_potential_mV,mV,core feature
+EPHYS,input_resistance_MOhm,MOhm,core feature
+EPHYS,membrane_time_constant_ms,ms,core feature
+EPHYS,capacitance_pF,pF,core feature
+EPHYS,rheobase_pA,pA,core feature
+EPHYS,AP_threshold_mV,mV,core feature
+EPHYS,AP_amplitude_mV,mV,core feature
+EPHYS,AP_width_ms,ms,core feature
+EPHYS,AP_upstroke_mV_per_ms,mV/ms,core feature
+EPHYS,AP_downstroke_mV_per_ms,mV/ms,core feature
+EPHYS,AHP_amplitude_mV,mV,core feature
+EPHYS,firing_rate_Hz,Hz,core feature
+EPHYS,max_firing_rate_Hz,Hz,core feature
+EPHYS,adaptation_index,numeric,core feature
+EPHYS,mean_ISI_ms,ms,core feature
+EPHYS,ISI_CV,numeric,core feature
+EPHYS,sag_ratio,numeric,core feature
+EPHYS,burst_index,numeric,optional feature
+RNA,raw_counts,matrix,immutable source representation
+RNA,normalized_expression,matrix,exploration/ML representation
+RNA,genes_detected,count,QC
+RNA,mitochondrial_fraction,fraction,QC
+MORPH,total_dendritic_length,um,secondary modality
+MORPH,branch_points,count,secondary modality
+MORPH,max_branch_order,count,secondary modality
+MORPH,Sholl_auc,numeric,secondary modality
+QC,ephys_qc_pass,boolean,modality QC
+QC,rna_qc_pass,boolean,modality QC
+QC,morphology_qc_pass,boolean,modality QC
+QC,has_ephys,boolean,availability
+QC,has_rna,boolean,availability
+QC,has_morphology,boolean,availability
