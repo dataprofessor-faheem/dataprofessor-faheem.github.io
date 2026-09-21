@@ -252,6 +252,67 @@
       </div>
     </section>
 
+
+    <section class="section" id="bioelectric-disease-coupling">
+      <div class="section-head"><span>BIOE</span><div><h2>Bioelectric Signal–Disease Coupling</h2><p>Same-cell Patch-seq gene associations anchored to measured neuronal electrical traits, then connected to disease genomics.</p></div></div>
+
+      <div class="analysis-kpis">
+        <article><b id="bioe-cells">—</b><span>matched Patch-seq neurons</span></article>
+        <article><b id="bioe-genes">—</b><span>genes tested</span></article>
+        <article><b id="bioe-features">—</b><span>electrical traits</span></article>
+        <article><b id="bioe-shared">—</b><span>disease-panel genes with ephys coupling</span></article>
+      </div>
+
+      <div class="bioe-toolbar">
+        <label>Electrical trait
+          <select id="bioelectric-feature-select"></select>
+        </label>
+        <a class="btn" href="data/bioelectric_gene_associations.csv" download>Download gene–ephys associations</a>
+        <a class="btn" href="data/bioelectric_gene_scores.csv" download>Download Bioelectric Coupling Scores</a>
+        <a class="btn" href="data/disease_bioelectric_scores.csv" download>Download disease scores</a>
+      </div>
+
+      <div class="advanced-grid">
+        <article class="viz-card">
+          <div class="viz-title"><h3>Top genes linked to selected bioelectric trait</h3><span>Spearman ρ · BH-FDR</span></div>
+          <div id="bioe-feature-gene-table" class="rank-table"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Bioelectric Coupling Score</h3><span>candidate disease-panel genes</span></div>
+          <div id="bioe-bcs-chart" class="module-burden-chart"></div>
+        </article>
+
+        <article class="viz-card wide-card">
+          <div class="viz-title"><h3>Disease × bioelectric gene matrix</h3><span>mutation % weighted by neuronal coupling evidence</span></div>
+          <div id="bioe-disease-matrix" class="heatmap-wrap"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Exploratory Bioelectric Alteration Index</h3><span>disease-level prioritization</span></div>
+          <div id="bioe-disease-score-chart" class="module-burden-chart"></div>
+          <p class="micro-note">EBAI is a hypothesis-generation metric combining disease mutation prevalence with empirical neuronal gene–electrical coupling. It is not a causal effect estimate.</p>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Top disease-specific contributors</h3><span>gene · electrical trait · direction</span></div>
+          <select id="bioe-disease-select"></select>
+          <div id="bioe-contributor-table" class="rank-table"></div>
+        </article>
+
+        <article class="viz-card wide-card">
+          <div class="viz-title"><h3>Mechanistic interpretation framework</h3><span>association-preserving research flow</span></div>
+          <div class="bridge-logic">
+            <div><b>Measured bioelectric trait</b><span>Vm · R<sub>in</sub> · F-I slope · adaptation · sag · threshold</span></div><i>→</i>
+            <div><b>Same-cell gene association</b><span>Patch-seq transcriptome + electrophysiology</span></div><i>→</i>
+            <div><b>Disease genomic alteration</b><span>mutation prevalence with sequenced denominator</span></div><i>→</i>
+            <div><b>Research prioritization</b><span>genes/pathways for experimental follow-up</span></div>
+          </div>
+          <div class="data-note"><b>Interpretation:</b> this layer links independent observational evidence across matched neuronal Patch-seq and cancer genomics. It identifies testable candidates; it does not prove that a cancer mutation changes neuronal voltage or that a bioelectric state causes disease.</div>
+        </article>
+      </div>
+    </section>
+
     <section class="section" id="pipeline">
       <div class="section-head"><span>01</span><div><h2>Scientific workflow</h2><p>One coordinated biological story from electrical phenotype to molecular regulation.</p></div></div>
       <div class="flow">
