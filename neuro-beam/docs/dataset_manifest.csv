@@ -1,8 +1,0 @@
-dataset_id,role,species,region,primary_modalities,accession,planned_use,raw_download_strategy
-DANDI_000020,discovery,Mus musculus,visual cortex,electrophysiology+Patch-seq metadata,000020,bioelectric-state discovery and inhibitory-neuron coupling,metadata/features first; selective NWB streaming after QC
-DANDI_001455,discovery_extension,Mus musculus,visual cortex,electrophysiology+transcriptomics+morphology,001455,excitatory-neuron extension,metadata/features first; selective NWB streaming after QC
-DANDI_000008,external_validation,Mus musculus,primary motor cortex,electrophysiology+transcriptomics+morphology,000008,frozen-signature external validation,no use during feature selection/model tuning
-ABC_ATLAS,spatial_extension,Mus musculus/Homo sapiens,whole brain,scRNA-seq+MERFISH+spatial annotations,Allen ABC Atlas,whole-brain projection after Step 4,processed matrices/programmatic access
-MICRONS,structural_extension,Mus musculus,visual cortex,EM connectomics+functional imaging,MICrONS Explorer,HD morphology/connectomic context,query derived features rather than full EM volume
-4DN,regulatory_extension,multiple,context-specific,Hi-C+chromatin tracing+microscopy,4D Nucleome,regulatory-context analysis,selected compatible experiments only
-SMaHT,genome_stability_extension,Homo sapiens,multiple incl brain,somatic mosaicism,NIH SMaHT,mutation/genome-stability context,only after compatible brain data are identified
