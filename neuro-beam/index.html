@@ -44,7 +44,7 @@
     </div>
     <nav>
       <a href="#atlas">Atlas</a><a href="#live-data">Live Data</a><a href="#discovery-engine">Discovery Engine</a><a href="#model-validation">Validation</a><a href="#dynamic-neuron">Dynamic Neuron</a><a href="#stability">Stability</a><a href="#disease-explorer">Disease Explorer</a><a href="#platform-about">About</a><a href="#datasets">Datasets</a>
-      <a href="#signature-explorer">Signature Explorer</a><a href="#statistics">Statistics</a>
+      <a href="#discovery-studio">Discovery Studio</a><a href="#signature-explorer">Signature Explorer</a><a href="#statistics">Statistics</a>
       
     </nav>
   </header>
@@ -492,6 +492,84 @@
       </div>
     </section>
 
+
+
+    <section class="section discovery-studio" id="discovery-studio">
+      <div class="section-head"><span>AI+</span><div><h2>NEURO-BEAM Discovery Studio</h2><p>Top-500 cancer–bioelectric gene discovery with explainable ranking and gene-conditioned membrane-dynamics simulation.</p></div></div>
+
+      <div class="discovery-banner">
+        <div><span class="eyebrow">DISCOVERY ENGINE</span><h3>From pan-cancer genomic recurrence to measured neuronal electrical phenotype and dynamic simulation.</h3><p>The ranking integrates cancer mutation evidence with same-cell Patch-seq electrophysiology–transcriptome associations. The dynamic model is phenotype-constrained and explicitly non-causal.</p></div>
+        <div class="discovery-downloads">
+          <a class="btn primary" href="data/top500_cancer_bioelectric_genes.csv" download>Top-500 catalog CSV</a>
+          <a class="btn" href="data/top500_cancer_matrix.csv" download>Cancer matrix CSV</a>
+          <a class="btn" href="data/top500_bioelectric_matrix.csv" download>Bioelectric matrix CSV</a>
+          <a class="btn" href="data/top500_dynamic_model_parameters.csv" download>Dynamic model parameters CSV</a>
+        </div>
+      </div>
+
+      <div class="discovery-controls">
+        <div class="control-block"><label>Search / select top gene</label><input id="top500-gene-search" list="top500-gene-list" placeholder="SCN1A, EGFR, KCNQ3…"><datalist id="top500-gene-list"></datalist></div>
+        <div class="control-block"><label>Expression-like condition</label><select id="dynamic-condition"><option value="baseline">Baseline</option><option value="high">Higher-expression-like phenotype</option><option value="low">Lower-expression-like phenotype</option></select></div>
+        <div class="control-block"><label>Association strength <span id="dynamic-strength-label">100%</span></label><input id="dynamic-strength" type="range" min="0" max="200" value="100"></div>
+        <div class="control-block"><label>Injected current <span id="dynamic-current-label">180 pA</span></label><input id="dynamic-current" type="range" min="-100" max="500" value="180" step="10"></div>
+      </div>
+
+      <div class="discovery-kpis">
+        <article><span>Rank</span><b id="disc-rank">—</b><small>Top-500 discovery priority</small></article>
+        <article><span>Discovery score</span><b id="disc-score">—</b><small id="disc-components">—</small></article>
+        <article><span>Best electrical trait</span><b id="disc-best-trait">—</b><small id="disc-best-rho">—</small></article>
+        <article><span>Pan-cancer mutation</span><b id="disc-cancer-mean">—</b><small id="disc-cancer-max">—</small></article>
+        <article><span>Significant traits</span><b id="disc-sig-traits">—</b><small>BH-FDR q&lt;0.05</small></article>
+      </div>
+
+      <div class="discovery-grid">
+        <article class="viz-card">
+          <div class="viz-title"><h3>Top-500 ranked gene table</h3><span>click a row to model</span></div>
+          <div class="top500-table-wrap" id="top500-table"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Selected gene: pan-cancer profile</h3><span>mutation-sequenced prevalence</span></div>
+          <div id="top500-cancer-profile" class="signature-bars"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Selected gene: electrical fingerprint</h3><span>18 same-cell Patch-seq traits</span></div>
+          <div id="top500-electrical-fingerprint" class="fingerprint-chart"></div>
+        </article>
+
+        <article class="viz-card neuron-simulator-card">
+          <div class="viz-title"><h3>Neuron activity animation</h3><span>gene-conditioned phenotype model</span></div>
+          <canvas id="gene-neuron-canvas" width="720" height="360"></canvas>
+          <div class="sim-status"><span class="dot"></span><span id="gene-sim-status">ready</span></div>
+        </article>
+
+        <article class="viz-card wide-card">
+          <div class="viz-title"><h3>Membrane potential dynamics</h3><span>baseline vs selected gene-conditioned phenotype</span></div>
+          <canvas id="gene-voltage-canvas" width="1280" height="430"></canvas>
+          <div class="sim-legend"><span><i class="sim-line baseline"></i>Baseline</span><span><i class="sim-line conditioned"></i>Gene-conditioned</span></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Dynamic numerical outputs</h3><span>simulation-derived</span></div>
+          <div id="dynamic-output-grid" class="signature-detail-card"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Parameter shift</h3><span>association-conditioned model</span></div>
+          <div id="dynamic-parameter-table" class="matrix-wrap"></div>
+        </article>
+
+        <article class="viz-card wide-card">
+          <div class="viz-title"><h3>Model definition & integrity</h3><span>transparent, reproducible, non-causal</span></div>
+          <div class="signature-equations">
+            <div><code>τm dV/dt = −(V−EL) + Rm(Iinj − w + Ih)</code><p>Adaptive leaky integrate-and-fire membrane equation with an Ih-like sag contribution.</p></div>
+            <div><code>dw/dt = −w/τw ; spike ⇒ w ← w + b</code><p>Adaptation term controls spike-frequency adaptation. Gene-specific shifts are derived from observed Patch-seq correlations.</p></div>
+          </div>
+          <div class="data-note"><b>Model boundary:</b> “higher-expression-like” and “lower-expression-like” are phenotype-conditioned simulations constructed from observational correlation fingerprints. They are not experimental gene knock-in/knock-out predictions and should be used for hypothesis generation and model comparison.</div>
+        </article>
+      </div>
+    </section>
 
     <section class="section signature-lab" id="signature-explorer">
       <div class="section-head"><span>SIG</span><div><h2>Cancer × Gene × Bioelectric Signature Explorer</h2><p>Exact numerical exploration of cohort mutation prevalence against same-neuron electrophysiology–transcriptome associations.</p></div></div>
