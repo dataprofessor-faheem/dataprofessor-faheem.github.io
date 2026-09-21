@@ -1,0 +1,25 @@
+name: NEURO-BEAM M1 External Diagnostic
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/neurobeam-m1-diagnostic.yml"
+      - "neuro-beam/code/17_m1_external_diagnostic.py"
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install pandas
+      - run: python neuro-beam/code/17_m1_external_diagnostic.py
+      - run: |
+          git config user.name "neuro-beam-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add neuro-beam/data/m1_external_validation_diagnostic.json
+          git diff --cached --quiet || git commit -m "Update M1 external validation diagnostic"
+          git pull --rebase origin main
+          git push origin main
