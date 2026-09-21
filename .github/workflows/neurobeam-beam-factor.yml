@@ -1,0 +1,33 @@
+name: NEURO-BEAM BEAM-Factor
+concurrency:
+  group: neurobeam-beam-factor
+  cancel-in-progress: true
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/neurobeam-beam-factor.yml"
+      - "neuro-beam/code/20_beam_factor.py"
+      - "neuro-beam/data/top500_bioelectric_matrix.csv"
+      - "neuro-beam/data/top500_cancer_matrix.csv"
+permissions:
+  contents: write
+jobs:
+  factor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pandas numpy scipy
+      - run: python neuro-beam/code/20_beam_factor.py
+      - name: Commit BEAM-Factor outputs
+        run: |
+          git config user.name "neuro-beam-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add neuro-beam/data/beam_factor_cv.csv neuro-beam/data/beam_factor_external_m1.csv neuro-beam/data/beam_factor_gene_embeddings.csv neuro-beam/data/beam_factor_view_loadings.csv neuro-beam/data/beam_factor_results.json
+          git diff --cached --quiet || git commit -m "Update BEAM-Factor multi-view representation"
+          git pull --rebase origin main
+          git push origin main
