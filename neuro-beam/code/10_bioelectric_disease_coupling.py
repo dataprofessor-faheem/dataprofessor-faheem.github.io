@@ -24,7 +24,7 @@ ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/"data"; DATA.mkdir(parents=True,exist_ok=True)
 
 BASE="https://raw.githubusercontent.com/daifengwanglab/scMNC/main/mouse_visual_cortex/data/"
-E_URL=BASE+"efeature_filtered.csv"
+E_URL=BASE+"efeature.csv"
 G_URL=BASE+"geneExp_filtered.csv"
 M_URL=BASE+"20200711_patchseq_metadata_mouse.csv"
 D_BRIDGE=DATA/"disease_bioelectric_bridge.json"
@@ -56,45 +56,51 @@ def first_existing(cols,cands):
     return None
 
 def load_aligned():
+    # Reconstruct the exact source alignment used in data_clean_visual.R:
+    # ephys ID -> third numeric token (ephys session) -> metadata
+    # ephys_session_id -> transcriptomics_sample_id.
     e=pd.read_csv(E_URL)
     g=pd.read_csv(G_URL)
     m=pd.read_csv(M_URL)
 
-    # Electrophysiology cell IDs: source preprocessing maps session IDs to
-    # transcriptomics_sample_id and orders ephys rows to metadata cellnames.
-    e_id=first_existing(e.columns,["session_idg","transcriptomics_sample_id","cellnames"])
-    if e_id is None:
-        # robust fallback: first nonnumeric column with substantial uniqueness
-        for c in e.columns:
-            if e[c].dtype=="object" and e[c].nunique()>1000:
-                e_id=c; break
-    if e_id is None:
-        raise RuntimeError("Could not identify electrophysiology cell ID column")
+    if "ID" not in e.columns:
+        raise RuntimeError("Original electrophysiology table lacks ID")
 
-    # Gene matrix from source preprocessing is gene x cell.
+    def third_numeric_token(v):
+        import re
+        toks=re.findall(r"\d+",str(v))
+        return toks[2] if len(toks)>=3 else None
+
+    e=e.copy()
+    e["_session_key"]=e["ID"].map(third_numeric_token).astype(str)
+
+    if "ephys_session_id" not in m.columns or "transcriptomics_sample_id" not in m.columns:
+        raise RuntimeError("Metadata missing ephys_session_id/transcriptomics_sample_id")
+
+    mmap=m[["ephys_session_id","transcriptomics_sample_id","t_type"]].copy()
+    mmap["_session_key"]=mmap["ephys_session_id"].astype(str)
+    # In case CSV parsing renders integer IDs as 123.0, normalize both forms.
+    mmap["_session_key"]=mmap["_session_key"].str.replace(r"\.0$","",regex=True)
+    e["_session_key"]=e["_session_key"].str.replace(r"\.0$","",regex=True)
+    e=e.merge(mmap,on="_session_key",how="left")
+
     gene_col=first_existing(g.columns,["gene","Gene","GENE"])
     if gene_col is None:
         gene_col=g.columns[0]
-    g= g.drop_duplicates(subset=[gene_col]).set_index(gene_col)
+    g=g.drop_duplicates(subset=[gene_col]).set_index(gene_col)
 
-    e_ids=e[e_id].astype(str)
-    shared=[x for x in e_ids if x in g.columns]
+    # Restrict to exactly those same-cell IDs present as gene-expression columns.
+    e=e[e["transcriptomics_sample_id"].astype(str).isin(g.columns)].copy()
+    e=e.drop_duplicates(subset=["transcriptomics_sample_id"],keep="first")
+    e=e.set_index(e["transcriptomics_sample_id"].astype(str))
+    shared=[x for x in e.index.astype(str) if x in g.columns]
     if len(shared)<1000:
-        raise RuntimeError(f"Insufficient explicit same-cell overlap: {len(shared)}")
+        raise RuntimeError(f"Insufficient explicit same-cell overlap after source reconstruction: {len(shared)}")
 
-    e=e.set_index(e_id).loc[shared]
+    e=e.loc[shared]
     g=g[shared]
-
-    # Metadata and broad class.
-    mid="transcriptomics_sample_id"
-    if mid not in m.columns:
-        raise RuntimeError("Metadata lacks transcriptomics_sample_id")
-    m=m.set_index(mid)
-    broad=pd.Series(index=shared,dtype=object)
-    if "t_type" in m.columns:
-        broad=m.reindex(shared)["t_type"].fillna("").astype(str).str.split().str[0]
-    else:
-        broad[:] = "Unknown"
+    broad=e["t_type"].fillna("").astype(str).str.split().str[0]
+    broad.index=shared
 
     return e,g,broad
 
