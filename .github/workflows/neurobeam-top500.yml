@@ -1,0 +1,28 @@
+name: NEURO-BEAM Top500 Discovery Engine
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/neurobeam-top500.yml"
+      - "neuro-beam/code/14_build_top500_discovery_panel.py"
+      - "neuro-beam/data/bioelectric_gene_associations.csv"
+      - "neuro-beam/data/disease_bioelectric_bridge.json"
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install pandas numpy requests
+      - run: python neuro-beam/code/14_build_top500_discovery_panel.py
+      - name: Commit discovery outputs
+        run: |
+          git config user.name "neuro-beam-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add neuro-beam/data/top500_*.csv neuro-beam/data/top500_cancer_bioelectric_genes.json
+          git diff --cached --quiet || git commit -m "Update top500 cancer bioelectric discovery panel"
+          git pull --rebase origin main
+          git push origin main
