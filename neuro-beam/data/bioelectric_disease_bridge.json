@@ -28,88 +28,1225 @@
     "threshold_i_ramp"
   ],
   "associationMethod": "Spearman rank correlation; BH-FDR within each electrical feature",
-  "candidatePanelSharedGenes": [],
-  "geneBioelectricScores": [],
+  "candidatePanelSharedGenes": [
+    "ATP1A3",
+    "BRAF",
+    "CACNA1A",
+    "CACNA1C",
+    "CAMK2A",
+    "EGFR",
+    "GPX4",
+    "HCN1",
+    "KCNC1",
+    "KCNQ2",
+    "KCNQ3",
+    "PPARGC1A",
+    "PPP3CA",
+    "SCN1A",
+    "SCN8A"
+  ],
+  "geneBioelectricScores": [
+    {
+      "gene": "EGFR",
+      "mouseGene": "Egfr",
+      "bioelectricCouplingScore": 1.0,
+      "bestFeature": "upstroke_downstroke_ratio_long_square",
+      "rho": 0.560686310138353,
+      "q": 1.0993664888902868e-299,
+      "sameDirectionFraction": 1.0,
+      "classesTested": 5
+    },
+    {
+      "gene": "PPARGC1A",
+      "mouseGene": "Ppargc1a",
+      "bioelectricCouplingScore": 1.0,
+      "bestFeature": "upstroke_downstroke_ratio_long_square",
+      "rho": -0.5307439860290708,
+      "q": 7.607724822344536e-263,
+      "sameDirectionFraction": 1.0,
+      "classesTested": 5
+    },
+    {
+      "gene": "KCNC1",
+      "mouseGene": "Kcnc1",
+      "bioelectricCouplingScore": 0.9696156843162117,
+      "bestFeature": "threshold_i_long_square",
+      "rho": 0.38784627372648467,
+      "q": 1.1681431440218865e-129,
+      "sameDirectionFraction": 1.0,
+      "classesTested": 5
+    },
+    {
+      "gene": "SCN1A",
+      "mouseGene": "Scn1a",
+      "bioelectricCouplingScore": 0.8623159022454345,
+      "bestFeature": "threshold_i_long_square",
+      "rho": 0.3449263608981738,
+      "q": 4.296422164138435e-101,
+      "sameDirectionFraction": 1.0,
+      "classesTested": 5
+    },
+    {
+      "gene": "SCN8A",
+      "mouseGene": "Scn8a",
+      "bioelectricCouplingScore": 0.801690846323724,
+      "bestFeature": "upstroke_downstroke_ratio_long_square",
+      "rho": -0.3206763385294896,
+      "q": 3.259429062514536e-87,
+      "sameDirectionFraction": 1.0,
+      "classesTested": 5
+    },
+    {
+      "gene": "KCNQ3",
+      "mouseGene": "Kcnq3",
+      "bioelectricCouplingScore": 0.8,
+      "bestFeature": "upstroke_downstroke_ratio_long_square",
+      "rho": -0.4122669449519742,
+      "q": 1.2533341755718163e-148,
+      "sameDirectionFraction": 0.8,
+      "classesTested": 5
+    },
+    {
+      "gene": "CACNA1A",
+      "mouseGene": "Cacna1a",
+      "bioelectricCouplingScore": 0.7326010418321407,
+      "bestFeature": "upstroke_downstroke_ratio_long_square",
+      "rho": -0.39072055564380836,
+      "q": 2.5041355547275205e-132,
+      "sameDirectionFraction": 0.75,
+      "classesTested": 5
+    },
+    {
+      "gene": "HCN1",
+      "mouseGene": "Hcn1",
+      "bioelectricCouplingScore": 0.7045764071876308,
+      "bestFeature": "upstroke_downstroke_ratio_long_square",
+      "rho": -0.2818305628750523,
+      "q": 7.293517713310564e-67,
+      "sameDirectionFraction": 1.0,
+      "classesTested": 5
+    },
+    {
+      "gene": "ATP1A3",
+      "mouseGene": "Atp1a3",
+      "bioelectricCouplingScore": 0.5061811659762504,
+      "bestFeature": "upstroke_downstroke_ratio_long_square",
+      "rho": -0.20247246639050018,
+      "q": 1.4277108681042477e-34,
+      "sameDirectionFraction": 1.0,
+      "classesTested": 5
+    },
+    {
+      "gene": "PPP3CA",
+      "mouseGene": "Ppp3ca",
+      "bioelectricCouplingScore": 0.5043365091275022,
+      "bestFeature": "upstroke_downstroke_ratio_long_square",
+      "rho": -0.20173460365100085,
+      "q": 2.5214201852703598e-34,
+      "sameDirectionFraction": 1.0,
+      "classesTested": 5
+    },
+    {
+      "gene": "CACNA1C",
+      "mouseGene": "Cacna1c",
+      "bioelectricCouplingScore": 0.38962881437111824,
+      "bestFeature": "avg_isi",
+      "rho": 0.1558515257484473,
+      "q": 1.4681592751632052e-20,
+      "sameDirectionFraction": 1.0,
+      "classesTested": 5
+    },
+    {
+      "gene": "CAMK2A",
+      "mouseGene": "Camk2a",
+      "bioelectricCouplingScore": 0.33557738854697006,
+      "bestFeature": "threshold_v_short_square",
+      "rho": 0.13423095541878802,
+      "q": 9.818299433085566e-15,
+      "sameDirectionFraction": 1.0,
+      "classesTested": 5
+    },
+    {
+      "gene": "GPX4",
+      "mouseGene": "Gpx4",
+      "bioelectricCouplingScore": 0.3045668038010085,
+      "bestFeature": "fast_trough_v_long_square",
+      "rho": 0.12182672152040339,
+      "q": 4.2349785593969497e-13,
+      "sameDirectionFraction": 1.0,
+      "classesTested": 5
+    },
+    {
+      "gene": "KCNQ2",
+      "mouseGene": "Kcnq2",
+      "bioelectricCouplingScore": 0.19196048263896198,
+      "bestFeature": "threshold_i_ramp",
+      "rho": 0.07678419305558479,
+      "q": 6.097831416020692e-06,
+      "sameDirectionFraction": 1.0,
+      "classesTested": 5
+    },
+    {
+      "gene": "BRAF",
+      "mouseGene": "Braf",
+      "bioelectricCouplingScore": 0.18439591282442852,
+      "bestFeature": "threshold_v_ramp",
+      "rho": 0.07375836512977141,
+      "q": 2.8971554232555626e-05,
+      "sameDirectionFraction": 1.0,
+      "classesTested": 5
+    }
+  ],
   "diseaseBioelectricScores": [
-    {
-      "studyId": "gbm_tcga_pan_can_atlas_2018",
-      "name": "Glioblastoma Multiforme (TCGA, PanCancer Atlas)",
-      "cancerTypeName": "Diffuse Glioma",
-      "exploratoryBioelectricAlterationIndex": null,
-      "nGenesContributing": 0,
-      "topContributors": []
-    },
-    {
-      "studyId": "lgg_tcga_pan_can_atlas_2018",
-      "name": "Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",
-      "cancerTypeName": "Diffuse Glioma",
-      "exploratoryBioelectricAlterationIndex": null,
-      "nGenesContributing": 0,
-      "topContributors": []
-    },
-    {
-      "studyId": "brca_tcga_pan_can_atlas_2018",
-      "name": "Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",
-      "cancerTypeName": "Invasive Breast Carcinoma",
-      "exploratoryBioelectricAlterationIndex": null,
-      "nGenesContributing": 0,
-      "topContributors": []
-    },
-    {
-      "studyId": "luad_tcga_pan_can_atlas_2018",
-      "name": "Lung Adenocarcinoma (TCGA, PanCancer Atlas)",
-      "cancerTypeName": "Lung Adenocarcinoma",
-      "exploratoryBioelectricAlterationIndex": null,
-      "nGenesContributing": 0,
-      "topContributors": []
-    },
-    {
-      "studyId": "coadread_tcga_pan_can_atlas_2018",
-      "name": "Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",
-      "cancerTypeName": "Colorectal Adenocarcinoma",
-      "exploratoryBioelectricAlterationIndex": null,
-      "nGenesContributing": 0,
-      "topContributors": []
-    },
-    {
-      "studyId": "paad_tcga_pan_can_atlas_2018",
-      "name": "Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",
-      "cancerTypeName": "Pancreatic Adenocarcinoma",
-      "exploratoryBioelectricAlterationIndex": null,
-      "nGenesContributing": 0,
-      "topContributors": []
-    },
     {
       "studyId": "skcm_tcga_pan_can_atlas_2018",
       "name": "Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",
       "cancerTypeName": "Cutaneous Melanoma",
-      "exploratoryBioelectricAlterationIndex": null,
-      "nGenesContributing": 0,
-      "topContributors": []
-    },
-    {
-      "studyId": "prad_tcga_pan_can_atlas_2018",
-      "name": "Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",
-      "cancerTypeName": "Prostate Adenocarcinoma",
-      "exploratoryBioelectricAlterationIndex": null,
-      "nGenesContributing": 0,
-      "topContributors": []
+      "exploratoryBioelectricAlterationIndex": 6.979338243606746,
+      "nGenesContributing": 15,
+      "topContributors": [
+        {
+          "gene": "SCN1A",
+          "mutationPercent": 20.227272727272727,
+          "BCS": 0.8623159022454345,
+          "contribution": 0.17442298931782652,
+          "bestFeature": "threshold_i_long_square",
+          "rho": 0.3449263608981738
+        },
+        {
+          "gene": "KCNQ3",
+          "mutationPercent": 16.136363636363637,
+          "BCS": 0.8,
+          "contribution": 0.12909090909090912,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.4122669449519742
+        },
+        {
+          "gene": "CACNA1A",
+          "mutationPercent": 14.090909090909092,
+          "BCS": 0.7326010418321407,
+          "contribution": 0.10323014680361985,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.39072055564380836
+        },
+        {
+          "gene": "HCN1",
+          "mutationPercent": 14.318181818181818,
+          "BCS": 0.7045764071876308,
+          "contribution": 0.10088253102913805,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.2818305628750523
+        },
+        {
+          "gene": "BRAF",
+          "mutationPercent": 52.95454545454545,
+          "BCS": 0.18439591282442852,
+          "contribution": 0.09764601747293601,
+          "bestFeature": "threshold_v_ramp",
+          "rho": 0.07375836512977141
+        },
+        {
+          "gene": "SCN8A",
+          "mutationPercent": 11.136363636363637,
+          "BCS": 0.801690846323724,
+          "contribution": 0.08927920788605109,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.3206763385294896
+        },
+        {
+          "gene": "EGFR",
+          "mutationPercent": 7.954545454545454,
+          "BCS": 1.0,
+          "contribution": 0.07954545454545454,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": 0.560686310138353
+        },
+        {
+          "gene": "PPARGC1A",
+          "mutationPercent": 7.7272727272727275,
+          "BCS": 1.0,
+          "contribution": 0.07727272727272727,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.5307439860290708
+        },
+        {
+          "gene": "CACNA1C",
+          "mutationPercent": 18.863636363636363,
+          "BCS": 0.38962881437111824,
+          "contribution": 0.07349816271091549,
+          "bestFeature": "avg_isi",
+          "rho": 0.1558515257484473
+        },
+        {
+          "gene": "ATP1A3",
+          "mutationPercent": 10.227272727272727,
+          "BCS": 0.5061811659762504,
+          "contribution": 0.05176852833848015,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.20247246639050018
+        },
+        {
+          "gene": "KCNC1",
+          "mutationPercent": 3.1818181818181817,
+          "BCS": 0.9696156843162117,
+          "contribution": 0.030851408137334006,
+          "bestFeature": "threshold_i_long_square",
+          "rho": 0.38784627372648467
+        },
+        {
+          "gene": "PPP3CA",
+          "mutationPercent": 3.1818181818181817,
+          "BCS": 0.5043365091275022,
+          "contribution": 0.016047070744965978,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.20173460365100085
+        }
+      ]
     },
     {
       "studyId": "ucec_tcga_pan_can_atlas_2018",
       "name": "Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",
       "cancerTypeName": "Endometrial Carcinoma",
-      "exploratoryBioelectricAlterationIndex": null,
-      "nGenesContributing": 0,
-      "topContributors": []
+      "exploratoryBioelectricAlterationIndex": 4.971152527323252,
+      "nGenesContributing": 15,
+      "topContributors": [
+        {
+          "gene": "SCN1A",
+          "mutationPercent": 12.572533849129593,
+          "BCS": 0.8623159022454345,
+          "contribution": 0.10841495869623452,
+          "bestFeature": "threshold_i_long_square",
+          "rho": 0.3449263608981738
+        },
+        {
+          "gene": "CACNA1A",
+          "mutationPercent": 11.798839458413926,
+          "BCS": 0.7326010418321407,
+          "contribution": 0.08643842079644214,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.39072055564380836
+        },
+        {
+          "gene": "HCN1",
+          "mutationPercent": 10.831721470019342,
+          "BCS": 0.7045764071876308,
+          "contribution": 0.07631775397003351,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.2818305628750523
+        },
+        {
+          "gene": "SCN8A",
+          "mutationPercent": 9.090909090909092,
+          "BCS": 0.801690846323724,
+          "contribution": 0.07288098602942945,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.3206763385294896
+        },
+        {
+          "gene": "KCNQ3",
+          "mutationPercent": 8.897485493230175,
+          "BCS": 0.8,
+          "contribution": 0.07117988394584139,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.4122669449519742
+        },
+        {
+          "gene": "EGFR",
+          "mutationPercent": 6.963249516441006,
+          "BCS": 1.0,
+          "contribution": 0.06963249516441006,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": 0.560686310138353
+        },
+        {
+          "gene": "PPARGC1A",
+          "mutationPercent": 6.189555125725338,
+          "BCS": 1.0,
+          "contribution": 0.06189555125725338,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.5307439860290708
+        },
+        {
+          "gene": "KCNC1",
+          "mutationPercent": 5.415860735009671,
+          "BCS": 0.9696156843162117,
+          "contribution": 0.05251303512737704,
+          "bestFeature": "threshold_i_long_square",
+          "rho": 0.38784627372648467
+        },
+        {
+          "gene": "CACNA1C",
+          "mutationPercent": 12.572533849129593,
+          "BCS": 0.38962881437111824,
+          "contribution": 0.04898621457277115,
+          "bestFeature": "avg_isi",
+          "rho": 0.1558515257484473
+        },
+        {
+          "gene": "ATP1A3",
+          "mutationPercent": 6.963249516441006,
+          "BCS": 0.5061811659762504,
+          "contribution": 0.0352466575921567,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.20247246639050018
+        },
+        {
+          "gene": "PPP3CA",
+          "mutationPercent": 4.835589941972921,
+          "BCS": 0.5043365091275022,
+          "contribution": 0.024387645509066833,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.20173460365100085
+        },
+        {
+          "gene": "KCNQ2",
+          "mutationPercent": 6.769825918762089,
+          "BCS": 0.19196048263896198,
+          "contribution": 0.012995390507473248,
+          "bestFeature": "threshold_i_ramp",
+          "rho": 0.07678419305558479
+        }
+      ]
+    },
+    {
+      "studyId": "luad_tcga_pan_can_atlas_2018",
+      "name": "Lung Adenocarcinoma (TCGA, PanCancer Atlas)",
+      "cancerTypeName": "Lung Adenocarcinoma",
+      "exploratoryBioelectricAlterationIndex": 3.172892749512223,
+      "nGenesContributing": 15,
+      "topContributors": [
+        {
+          "gene": "EGFR",
+          "mutationPercent": 12.36749116607774,
+          "BCS": 1.0,
+          "contribution": 0.12367491166077739,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": 0.560686310138353
+        },
+        {
+          "gene": "HCN1",
+          "mutationPercent": 10.60070671378092,
+          "BCS": 0.7045764071876308,
+          "contribution": 0.07469007850045557,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.2818305628750523
+        },
+        {
+          "gene": "SCN1A",
+          "mutationPercent": 5.830388692579505,
+          "BCS": 0.8623159022454345,
+          "contribution": 0.05027636885883276,
+          "bestFeature": "threshold_i_long_square",
+          "rho": 0.3449263608981738
+        },
+        {
+          "gene": "CACNA1A",
+          "mutationPercent": 5.477031802120141,
+          "BCS": 0.7326010418321407,
+          "contribution": 0.04012479204380982,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.39072055564380836
+        },
+        {
+          "gene": "PPARGC1A",
+          "mutationPercent": 3.8869257950530036,
+          "BCS": 1.0,
+          "contribution": 0.038869257950530034,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.5307439860290708
+        },
+        {
+          "gene": "CACNA1C",
+          "mutationPercent": 9.89399293286219,
+          "BCS": 0.38962881437111824,
+          "contribution": 0.03854984735827318,
+          "bestFeature": "avg_isi",
+          "rho": 0.1558515257484473
+        },
+        {
+          "gene": "SCN8A",
+          "mutationPercent": 4.593639575971731,
+          "BCS": 0.801690846323724,
+          "contribution": 0.0368267879936693,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.3206763385294896
+        },
+        {
+          "gene": "BRAF",
+          "mutationPercent": 7.243816254416961,
+          "BCS": 0.18439591282442852,
+          "contribution": 0.013357301105656484,
+          "bestFeature": "threshold_v_ramp",
+          "rho": 0.07375836512977141
+        },
+        {
+          "gene": "KCNQ3",
+          "mutationPercent": 1.5901060070671378,
+          "BCS": 0.8,
+          "contribution": 0.012720848056537101,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.4122669449519742
+        },
+        {
+          "gene": "KCNC1",
+          "mutationPercent": 1.2367491166077738,
+          "BCS": 0.9696156843162117,
+          "contribution": 0.011991713410271169,
+          "bestFeature": "threshold_i_long_square",
+          "rho": 0.38784627372648467
+        },
+        {
+          "gene": "ATP1A3",
+          "mutationPercent": 2.2968197879858656,
+          "BCS": 0.5061811659762504,
+          "contribution": 0.011626069183200098,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.20247246639050018
+        },
+        {
+          "gene": "PPP3CA",
+          "mutationPercent": 2.2968197879858656,
+          "BCS": 0.5043365091275022,
+          "contribution": 0.011583700739677611,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.20173460365100085
+        }
+      ]
+    },
+    {
+      "studyId": "coadread_tcga_pan_can_atlas_2018",
+      "name": "Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",
+      "cancerTypeName": "Colorectal Adenocarcinoma",
+      "exploratoryBioelectricAlterationIndex": 2.764188643963293,
+      "nGenesContributing": 15,
+      "topContributors": [
+        {
+          "gene": "SCN1A",
+          "mutationPercent": 8.801498127340825,
+          "BCS": 0.8623159022454345,
+          "contribution": 0.07589671798789406,
+          "bestFeature": "threshold_i_long_square",
+          "rho": 0.3449263608981738
+        },
+        {
+          "gene": "CACNA1A",
+          "mutationPercent": 7.865168539325842,
+          "BCS": 0.7326010418321407,
+          "contribution": 0.057620306660954884,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.39072055564380836
+        },
+        {
+          "gene": "KCNQ3",
+          "mutationPercent": 5.430711610486892,
+          "BCS": 0.8,
+          "contribution": 0.04344569288389513,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.4122669449519742
+        },
+        {
+          "gene": "SCN8A",
+          "mutationPercent": 4.868913857677903,
+          "BCS": 0.801690846323724,
+          "contribution": 0.03903363671239106,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.3206763385294896
+        },
+        {
+          "gene": "PPARGC1A",
+          "mutationPercent": 3.745318352059925,
+          "BCS": 1.0,
+          "contribution": 0.03745318352059925,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.5307439860290708
+        },
+        {
+          "gene": "HCN1",
+          "mutationPercent": 4.681647940074907,
+          "BCS": 0.7045764071876308,
+          "contribution": 0.0329857868533535,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.2818305628750523
+        },
+        {
+          "gene": "CACNA1C",
+          "mutationPercent": 8.05243445692884,
+          "BCS": 0.38962881437111824,
+          "contribution": 0.03137460490254323,
+          "bestFeature": "avg_isi",
+          "rho": 0.1558515257484473
+        },
+        {
+          "gene": "EGFR",
+          "mutationPercent": 2.808988764044944,
+          "BCS": 1.0,
+          "contribution": 0.02808988764044944,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": 0.560686310138353
+        },
+        {
+          "gene": "BRAF",
+          "mutationPercent": 11.610486891385769,
+          "BCS": 0.18439591282442852,
+          "contribution": 0.021409263286731404,
+          "bestFeature": "threshold_v_ramp",
+          "rho": 0.07375836512977141
+        },
+        {
+          "gene": "KCNC1",
+          "mutationPercent": 1.3108614232209739,
+          "BCS": 0.9696156843162117,
+          "contribution": 0.012710317959201278,
+          "bestFeature": "threshold_i_long_square",
+          "rho": 0.38784627372648467
+        },
+        {
+          "gene": "ATP1A3",
+          "mutationPercent": 2.059925093632959,
+          "BCS": 0.5061811659762504,
+          "contribution": 0.01042695285718868,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.20247246639050018
+        },
+        {
+          "gene": "PPP3CA",
+          "mutationPercent": 1.8726591760299625,
+          "BCS": 0.5043365091275022,
+          "contribution": 0.009444503916245359,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.20173460365100085
+        }
+      ]
+    },
+    {
+      "studyId": "gbm_tcga_pan_can_atlas_2018",
+      "name": "Glioblastoma Multiforme (TCGA, PanCancer Atlas)",
+      "cancerTypeName": "Diffuse Glioma",
+      "exploratoryBioelectricAlterationIndex": 2.2406513660839114,
+      "nGenesContributing": 15,
+      "topContributors": [
+        {
+          "gene": "EGFR",
+          "mutationPercent": 23.67758186397985,
+          "BCS": 1.0,
+          "contribution": 0.2367758186397985,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": 0.560686310138353
+        },
+        {
+          "gene": "HCN1",
+          "mutationPercent": 3.526448362720403,
+          "BCS": 0.7045764071876308,
+          "contribution": 0.024846523175382447,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.2818305628750523
+        },
+        {
+          "gene": "SCN1A",
+          "mutationPercent": 2.0151133501259446,
+          "BCS": 0.8623159022454345,
+          "contribution": 0.01737664286640674,
+          "bestFeature": "threshold_i_long_square",
+          "rho": 0.3449263608981738
+        },
+        {
+          "gene": "SCN8A",
+          "mutationPercent": 1.5113350125944585,
+          "BCS": 0.801690846323724,
+          "contribution": 0.012116234453255274,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.3206763385294896
+        },
+        {
+          "gene": "PPARGC1A",
+          "mutationPercent": 1.0075566750629723,
+          "BCS": 1.0,
+          "contribution": 0.010075566750629723,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.5307439860290708
+        },
+        {
+          "gene": "CACNA1A",
+          "mutationPercent": 1.0075566750629723,
+          "BCS": 0.7326010418321407,
+          "contribution": 0.007381370698560611,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.39072055564380836
+        },
+        {
+          "gene": "KCNQ3",
+          "mutationPercent": 0.7556675062972292,
+          "BCS": 0.8,
+          "contribution": 0.006045340050377834,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.4122669449519742
+        },
+        {
+          "gene": "CACNA1C",
+          "mutationPercent": 1.5113350125944585,
+          "BCS": 0.38962881437111824,
+          "contribution": 0.005888596690747379,
+          "bestFeature": "avg_isi",
+          "rho": 0.1558515257484473
+        },
+        {
+          "gene": "ATP1A3",
+          "mutationPercent": 1.0075566750629723,
+          "BCS": 0.5061811659762504,
+          "contribution": 0.005100062125705293,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.20247246639050018
+        },
+        {
+          "gene": "BRAF",
+          "mutationPercent": 2.0151133501259446,
+          "BCS": 0.18439591282442852,
+          "contribution": 0.0037157866564116577,
+          "bestFeature": "threshold_v_ramp",
+          "rho": 0.07375836512977141
+        },
+        {
+          "gene": "KCNC1",
+          "mutationPercent": 0.2518891687657431,
+          "BCS": 0.9696156843162117,
+          "contribution": 0.002442356887446377,
+          "bestFeature": "threshold_i_long_square",
+          "rho": 0.38784627372648467
+        },
+        {
+          "gene": "KCNQ2",
+          "mutationPercent": 0.7556675062972292,
+          "BCS": 0.19196048263896198,
+          "contribution": 0.0014505829922339696,
+          "bestFeature": "threshold_i_ramp",
+          "rho": 0.07678419305558479
+        }
+      ]
+    },
+    {
+      "studyId": "paad_tcga_pan_can_atlas_2018",
+      "name": "Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",
+      "cancerTypeName": "Pancreatic Adenocarcinoma",
+      "exploratoryBioelectricAlterationIndex": 0.7717576026317512,
+      "nGenesContributing": 15,
+      "topContributors": [
+        {
+          "gene": "SCN1A",
+          "mutationPercent": 2.2346368715083798,
+          "BCS": 0.8623159022454345,
+          "contribution": 0.019269629100456636,
+          "bestFeature": "threshold_i_long_square",
+          "rho": 0.3449263608981738
+        },
+        {
+          "gene": "KCNQ3",
+          "mutationPercent": 2.2346368715083798,
+          "BCS": 0.8,
+          "contribution": 0.017877094972067038,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.4122669449519742
+        },
+        {
+          "gene": "HCN1",
+          "mutationPercent": 2.2346368715083798,
+          "BCS": 0.7045764071876308,
+          "contribution": 0.015744724182963816,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.2818305628750523
+        },
+        {
+          "gene": "CACNA1A",
+          "mutationPercent": 1.675977653631285,
+          "BCS": 0.7326010418321407,
+          "contribution": 0.012278229751376659,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.39072055564380836
+        },
+        {
+          "gene": "KCNC1",
+          "mutationPercent": 1.1173184357541899,
+          "BCS": 0.9696156843162117,
+          "contribution": 0.01083369479682918,
+          "bestFeature": "threshold_i_long_square",
+          "rho": 0.38784627372648467
+        },
+        {
+          "gene": "SCN8A",
+          "mutationPercent": 1.1173184357541899,
+          "BCS": 0.801690846323724,
+          "contribution": 0.008957439623728759,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.3206763385294896
+        },
+        {
+          "gene": "CACNA1C",
+          "mutationPercent": 2.2346368715083798,
+          "BCS": 0.38962881437111824,
+          "contribution": 0.00870678914795795,
+          "bestFeature": "avg_isi",
+          "rho": 0.1558515257484473
+        },
+        {
+          "gene": "EGFR",
+          "mutationPercent": 0.5586592178770949,
+          "BCS": 1.0,
+          "contribution": 0.005586592178770949,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": 0.560686310138353
+        },
+        {
+          "gene": "PPARGC1A",
+          "mutationPercent": 0.5586592178770949,
+          "BCS": 1.0,
+          "contribution": 0.005586592178770949,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.5307439860290708
+        },
+        {
+          "gene": "KCNQ2",
+          "mutationPercent": 1.675977653631285,
+          "BCS": 0.19196048263896198,
+          "contribution": 0.003217214792831765,
+          "bestFeature": "threshold_i_ramp",
+          "rho": 0.07678419305558479
+        },
+        {
+          "gene": "ATP1A3",
+          "mutationPercent": 0.5586592178770949,
+          "BCS": 0.5061811659762504,
+          "contribution": 0.00282782774288408,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.20247246639050018
+        },
+        {
+          "gene": "PPP3CA",
+          "mutationPercent": 0.5586592178770949,
+          "BCS": 0.5043365091275022,
+          "contribution": 0.002817522397360347,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.20173460365100085
+        }
+      ]
     },
     {
       "studyId": "ov_tcga_pan_can_atlas_2018",
       "name": "Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",
       "cancerTypeName": "High-Grade Serous Ovarian Cancer",
-      "exploratoryBioelectricAlterationIndex": null,
-      "nGenesContributing": 0,
-      "topContributors": []
+      "exploratoryBioelectricAlterationIndex": 0.705634198266689,
+      "nGenesContributing": 15,
+      "topContributors": [
+        {
+          "gene": "SCN1A",
+          "mutationPercent": 2.294455066921606,
+          "BCS": 0.8623159022454345,
+          "contribution": 0.019785450911941137,
+          "bestFeature": "threshold_i_long_square",
+          "rho": 0.3449263608981738
+        },
+        {
+          "gene": "CACNA1A",
+          "mutationPercent": 2.48565965583174,
+          "BCS": 0.7326010418321407,
+          "contribution": 0.01820996853502453,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.39072055564380836
+        },
+        {
+          "gene": "SCN8A",
+          "mutationPercent": 1.9120458891013383,
+          "BCS": 0.801690846323724,
+          "contribution": 0.015328696870434493,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.3206763385294896
+        },
+        {
+          "gene": "CACNA1C",
+          "mutationPercent": 3.0592734225621414,
+          "BCS": 0.38962881437111824,
+          "contribution": 0.011919810764699602,
+          "bestFeature": "avg_isi",
+          "rho": 0.1558515257484473
+        },
+        {
+          "gene": "EGFR",
+          "mutationPercent": 1.147227533460803,
+          "BCS": 1.0,
+          "contribution": 0.011472275334608031,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": 0.560686310138353
+        },
+        {
+          "gene": "PPARGC1A",
+          "mutationPercent": 0.9560229445506692,
+          "BCS": 1.0,
+          "contribution": 0.009560229445506692,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.5307439860290708
+        },
+        {
+          "gene": "KCNQ3",
+          "mutationPercent": 0.7648183556405354,
+          "BCS": 0.8,
+          "contribution": 0.006118546845124283,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.4122669449519742
+        },
+        {
+          "gene": "HCN1",
+          "mutationPercent": 0.5736137667304015,
+          "BCS": 0.7045764071876308,
+          "contribution": 0.004041547268762701,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.2818305628750523
+        },
+        {
+          "gene": "ATP1A3",
+          "mutationPercent": 0.5736137667304015,
+          "BCS": 0.5061811659762504,
+          "contribution": 0.0029035248526362357,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.20247246639050018
+        },
+        {
+          "gene": "PPP3CA",
+          "mutationPercent": 0.3824091778202677,
+          "BCS": 0.5043365091275022,
+          "contribution": 0.0019286290980019202,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.20173460365100085
+        },
+        {
+          "gene": "KCNC1",
+          "mutationPercent": 0.19120458891013384,
+          "BCS": 0.9696156843162117,
+          "contribution": 0.0018539496832049936,
+          "bestFeature": "threshold_i_long_square",
+          "rho": 0.38784627372648467
+        },
+        {
+          "gene": "CAMK2A",
+          "mutationPercent": 0.3824091778202677,
+          "BCS": 0.33557738854697006,
+          "contribution": 0.0012832787324931934,
+          "bestFeature": "threshold_v_short_square",
+          "rho": 0.13423095541878802
+        }
+      ]
+    },
+    {
+      "studyId": "brca_tcga_pan_can_atlas_2018",
+      "name": "Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",
+      "cancerTypeName": "Invasive Breast Carcinoma",
+      "exploratoryBioelectricAlterationIndex": 0.6863764683033372,
+      "nGenesContributing": 15,
+      "topContributors": [
+        {
+          "gene": "CACNA1A",
+          "mutationPercent": 2.4390243902439024,
+          "BCS": 0.7326010418321407,
+          "contribution": 0.017868318093466846,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.39072055564380836
+        },
+        {
+          "gene": "SCN1A",
+          "mutationPercent": 1.6885553470919326,
+          "BCS": 0.8623159022454345,
+          "contribution": 0.014560681276189327,
+          "bestFeature": "threshold_i_long_square",
+          "rho": 0.3449263608981738
+        },
+        {
+          "gene": "EGFR",
+          "mutationPercent": 1.4071294559099436,
+          "BCS": 1.0,
+          "contribution": 0.014071294559099437,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": 0.560686310138353
+        },
+        {
+          "gene": "SCN8A",
+          "mutationPercent": 1.4071294559099436,
+          "BCS": 0.801690846323724,
+          "contribution": 0.01128082804395484,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.3206763385294896
+        },
+        {
+          "gene": "KCNQ3",
+          "mutationPercent": 1.125703564727955,
+          "BCS": 0.8,
+          "contribution": 0.00900562851782364,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.4122669449519742
+        },
+        {
+          "gene": "PPARGC1A",
+          "mutationPercent": 0.8442776735459663,
+          "BCS": 1.0,
+          "contribution": 0.008442776735459663,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.5307439860290708
+        },
+        {
+          "gene": "CACNA1C",
+          "mutationPercent": 1.9699812382739212,
+          "BCS": 0.38962881437111824,
+          "contribution": 0.0076756145420201535,
+          "bestFeature": "avg_isi",
+          "rho": 0.1558515257484473
+        },
+        {
+          "gene": "HCN1",
+          "mutationPercent": 0.8442776735459663,
+          "BCS": 0.7045764071876308,
+          "contribution": 0.005948581298957483,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.2818305628750523
+        },
+        {
+          "gene": "ATP1A3",
+          "mutationPercent": 0.7504690431519699,
+          "BCS": 0.5061811659762504,
+          "contribution": 0.0037987329529174515,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.20247246639050018
+        },
+        {
+          "gene": "PPP3CA",
+          "mutationPercent": 0.5628517823639775,
+          "BCS": 0.5043365091275022,
+          "contribution": 0.00283866703073641,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.20173460365100085
+        },
+        {
+          "gene": "KCNC1",
+          "mutationPercent": 0.28142589118198874,
+          "BCS": 0.9696156843162117,
+          "contribution": 0.0027287495806272376,
+          "bestFeature": "threshold_i_long_square",
+          "rho": 0.38784627372648467
+        },
+        {
+          "gene": "KCNQ2",
+          "mutationPercent": 1.0318949343339587,
+          "BCS": 0.19196048263896198,
+          "contribution": 0.001980830496274467,
+          "bestFeature": "threshold_i_ramp",
+          "rho": 0.07678419305558479
+        }
+      ]
+    },
+    {
+      "studyId": "lgg_tcga_pan_can_atlas_2018",
+      "name": "Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",
+      "cancerTypeName": "Diffuse Glioma",
+      "exploratoryBioelectricAlterationIndex": 0.6516229899116209,
+      "nGenesContributing": 15,
+      "topContributors": [
+        {
+          "gene": "EGFR",
+          "mutationPercent": 6.809338521400778,
+          "BCS": 1.0,
+          "contribution": 0.06809338521400778,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": 0.560686310138353
+        },
+        {
+          "gene": "SCN1A",
+          "mutationPercent": 0.7782101167315175,
+          "BCS": 0.8623159022454345,
+          "contribution": 0.006710629589458635,
+          "bestFeature": "threshold_i_long_square",
+          "rho": 0.3449263608981738
+        },
+        {
+          "gene": "HCN1",
+          "mutationPercent": 0.7782101167315175,
+          "BCS": 0.7045764071876308,
+          "contribution": 0.005483084880837594,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.2818305628750523
+        },
+        {
+          "gene": "SCN8A",
+          "mutationPercent": 0.38910505836575876,
+          "BCS": 0.801690846323724,
+          "contribution": 0.0031194196355008716,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.3206763385294896
+        },
+        {
+          "gene": "KCNQ3",
+          "mutationPercent": 0.38910505836575876,
+          "BCS": 0.8,
+          "contribution": 0.0031128404669260703,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.4122669449519742
+        },
+        {
+          "gene": "CAMK2A",
+          "mutationPercent": 0.5836575875486382,
+          "BCS": 0.33557738854697006,
+          "contribution": 0.0019586228903519655,
+          "bestFeature": "threshold_v_short_square",
+          "rho": 0.13423095541878802
+        },
+        {
+          "gene": "PPARGC1A",
+          "mutationPercent": 0.19455252918287938,
+          "BCS": 1.0,
+          "contribution": 0.0019455252918287938,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.5307439860290708
+        },
+        {
+          "gene": "KCNC1",
+          "mutationPercent": 0.19455252918287938,
+          "BCS": 0.9696156843162117,
+          "contribution": 0.0018864118371910734,
+          "bestFeature": "threshold_i_long_square",
+          "rho": 0.38784627372648467
+        },
+        {
+          "gene": "CACNA1A",
+          "mutationPercent": 0.19455252918287938,
+          "BCS": 0.7326010418321407,
+          "contribution": 0.0014252938557045539,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.39072055564380836
+        },
+        {
+          "gene": "BRAF",
+          "mutationPercent": 0.5836575875486382,
+          "BCS": 0.18439591282442852,
+          "contribution": 0.0010762407363293493,
+          "bestFeature": "threshold_v_ramp",
+          "rho": 0.07375836512977141
+        },
+        {
+          "gene": "ATP1A3",
+          "mutationPercent": 0.19455252918287938,
+          "BCS": 0.5061811659762504,
+          "contribution": 0.0009847882606541837,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.20247246639050018
+        },
+        {
+          "gene": "PPP3CA",
+          "mutationPercent": 0.19455252918287938,
+          "BCS": 0.5043365091275022,
+          "contribution": 0.0009811994341001988,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.20173460365100085
+        }
+      ]
+    },
+    {
+      "studyId": "prad_tcga_pan_can_atlas_2018",
+      "name": "Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",
+      "cancerTypeName": "Prostate Adenocarcinoma",
+      "exploratoryBioelectricAlterationIndex": 0.5399400352104478,
+      "nGenesContributing": 15,
+      "topContributors": [
+        {
+          "gene": "CACNA1A",
+          "mutationPercent": 2.0242914979757085,
+          "BCS": 0.7326010418321407,
+          "contribution": 0.014829980603889488,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.39072055564380836
+        },
+        {
+          "gene": "SCN1A",
+          "mutationPercent": 1.6194331983805668,
+          "BCS": 0.8623159022454345,
+          "contribution": 0.013964629995877482,
+          "bestFeature": "threshold_i_long_square",
+          "rho": 0.3449263608981738
+        },
+        {
+          "gene": "HCN1",
+          "mutationPercent": 1.214574898785425,
+          "BCS": 0.7045764071876308,
+          "contribution": 0.008557608184465151,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.2818305628750523
+        },
+        {
+          "gene": "PPARGC1A",
+          "mutationPercent": 0.8097165991902834,
+          "BCS": 1.0,
+          "contribution": 0.008097165991902834,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.5307439860290708
+        },
+        {
+          "gene": "SCN8A",
+          "mutationPercent": 0.8097165991902834,
+          "BCS": 0.801690846323724,
+          "contribution": 0.006491423856872259,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.3206763385294896
+        },
+        {
+          "gene": "EGFR",
+          "mutationPercent": 0.6072874493927125,
+          "BCS": 1.0,
+          "contribution": 0.006072874493927125,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": 0.560686310138353
+        },
+        {
+          "gene": "KCNC1",
+          "mutationPercent": 0.6072874493927125,
+          "BCS": 0.9696156843162117,
+          "contribution": 0.0058883543581956166,
+          "bestFeature": "threshold_i_long_square",
+          "rho": 0.38784627372648467
+        },
+        {
+          "gene": "KCNQ3",
+          "mutationPercent": 0.6072874493927125,
+          "BCS": 0.8,
+          "contribution": 0.0048582995951417,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.4122669449519742
+        },
+        {
+          "gene": "ATP1A3",
+          "mutationPercent": 0.6072874493927125,
+          "BCS": 0.5061811659762504,
+          "contribution": 0.0030739746921634634,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.20247246639050018
+        },
+        {
+          "gene": "BRAF",
+          "mutationPercent": 1.417004048582996,
+          "BCS": 0.18439591282442852,
+          "contribution": 0.002612897550143724,
+          "bestFeature": "threshold_v_ramp",
+          "rho": 0.07375836512977141
+        },
+        {
+          "gene": "CACNA1C",
+          "mutationPercent": 0.6072874493927125,
+          "BCS": 0.38962881437111824,
+          "contribution": 0.0023661668888934305,
+          "bestFeature": "avg_isi",
+          "rho": 0.1558515257484473
+        },
+        {
+          "gene": "PPP3CA",
+          "mutationPercent": 0.4048582995951417,
+          "BCS": 0.5043365091275022,
+          "contribution": 0.002041848215091102,
+          "bestFeature": "upstroke_downstroke_ratio_long_square",
+          "rho": -0.20173460365100085
+        }
+      ]
     }
   ],
   "topAssociations": [
