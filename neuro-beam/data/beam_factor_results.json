@@ -1,0 +1,171 @@
+{
+  "modelName": "BEAM-Factor",
+  "objective": "shared-gene weighted multi-view matrix factorization",
+  "genes": 500,
+  "electricalTraits": 18,
+  "cancerCohorts": 10,
+  "bestRank": 12,
+  "bestCancerWeight": 0.25,
+  "cv": [
+    {
+      "rank": 4,
+      "alpha": 0.0,
+      "mean_ephys_rmse": 0.25325312884027584,
+      "sd_ephys_rmse": 0.0015399170833443263,
+      "mean_cancer_rmse": null,
+      "sd_cancer_rmse": null
+    },
+    {
+      "rank": 4,
+      "alpha": 0.25,
+      "mean_ephys_rmse": 0.27475276449283587,
+      "sd_ephys_rmse": 0.005935506605727682,
+      "mean_cancer_rmse": 0.6793197238222881,
+      "sd_cancer_rmse": 0.017203864911234525
+    },
+    {
+      "rank": 4,
+      "alpha": 1.0,
+      "mean_ephys_rmse": 0.27617734149837075,
+      "sd_ephys_rmse": 0.005284642796539112,
+      "mean_cancer_rmse": 0.68139012490005,
+      "sd_cancer_rmse": 0.017104455718411835
+    },
+    {
+      "rank": 4,
+      "alpha": 4.0,
+      "mean_ephys_rmse": 0.4479836535002379,
+      "sd_ephys_rmse": 0.014565674017363795,
+      "mean_cancer_rmse": 0.756556853695089,
+      "sd_cancer_rmse": 0.025033580958955137
+    },
+    {
+      "rank": 8,
+      "alpha": 0.0,
+      "mean_ephys_rmse": 0.18566840480183328,
+      "sd_ephys_rmse": 0.005413952438506355,
+      "mean_cancer_rmse": null,
+      "sd_cancer_rmse": null
+    },
+    {
+      "rank": 8,
+      "alpha": 0.25,
+      "mean_ephys_rmse": 0.2443655118531761,
+      "sd_ephys_rmse": 0.009224487785270697,
+      "mean_cancer_rmse": 0.7868351193508046,
+      "sd_cancer_rmse": 0.02507508217963002
+    },
+    {
+      "rank": 8,
+      "alpha": 1.0,
+      "mean_ephys_rmse": 0.27392995067889303,
+      "sd_ephys_rmse": 0.005139235038057365,
+      "mean_cancer_rmse": 0.9590785399478399,
+      "sd_cancer_rmse": 0.03476461022368606
+    },
+    {
+      "rank": 8,
+      "alpha": 4.0,
+      "mean_ephys_rmse": 0.31581132926994016,
+      "sd_ephys_rmse": 0.028618893367097508,
+      "mean_cancer_rmse": 1.1701345460152162,
+      "sd_cancer_rmse": 0.042539720353539846
+    },
+    {
+      "rank": 12,
+      "alpha": 0.0,
+      "mean_ephys_rmse": 0.18537626936409712,
+      "sd_ephys_rmse": 0.01034416409906586,
+      "mean_cancer_rmse": null,
+      "sd_cancer_rmse": null
+    },
+    {
+      "rank": 12,
+      "alpha": 0.25,
+      "mean_ephys_rmse": 0.2359745662290978,
+      "sd_ephys_rmse": 0.005992792988817493,
+      "mean_cancer_rmse": 0.8534112052007579,
+      "sd_cancer_rmse": 0.024106168109313278
+    },
+    {
+      "rank": 12,
+      "alpha": 1.0,
+      "mean_ephys_rmse": 0.2523689584988758,
+      "sd_ephys_rmse": 0.0031791884593266842,
+      "mean_cancer_rmse": 1.0272231945913617,
+      "sd_cancer_rmse": 0.016654357279799283
+    },
+    {
+      "rank": 12,
+      "alpha": 4.0,
+      "mean_ephys_rmse": 0.27562852242697744,
+      "sd_ephys_rmse": 0.005637057509317165,
+      "mean_cancer_rmse": 1.0876149476809869,
+      "sd_cancer_rmse": 0.0200894136879995
+    }
+  ],
+  "externalM1": [
+    {
+      "trait": "vrest",
+      "n_genes": 499,
+      "raw_v1_vs_m1_spearman": 0.2994810826472222,
+      "ephys_factor_vs_m1_spearman": 0.3045721322162397,
+      "joint_factor_vs_m1_spearman": 0.31793872081512414
+    },
+    {
+      "trait": "ri",
+      "n_genes": 499,
+      "raw_v1_vs_m1_spearman": 0.5650621725378467,
+      "ephys_factor_vs_m1_spearman": 0.564629693121182,
+      "joint_factor_vs_m1_spearman": 0.5578452326339425
+    },
+    {
+      "trait": "sag",
+      "n_genes": 499,
+      "raw_v1_vs_m1_spearman": 0.6269941328440012,
+      "ephys_factor_vs_m1_spearman": 0.6279460125069415,
+      "joint_factor_vs_m1_spearman": 0.624710819228819
+    },
+    {
+      "trait": "tau",
+      "n_genes": 499,
+      "raw_v1_vs_m1_spearman": 0.8480876934592074,
+      "ephys_factor_vs_m1_spearman": 0.8489147934423064,
+      "joint_factor_vs_m1_spearman": 0.8499976338218604
+    },
+    {
+      "trait": "adaptation",
+      "n_genes": 499,
+      "raw_v1_vs_m1_spearman": -0.8471239346162204,
+      "ephys_factor_vs_m1_spearman": -0.8518225849288938,
+      "joint_factor_vs_m1_spearman": -0.8539344713523431
+    },
+    {
+      "trait": "latency",
+      "n_genes": 499,
+      "raw_v1_vs_m1_spearman": 0.4208030518869063,
+      "ephys_factor_vs_m1_spearman": 0.41929932153463545,
+      "joint_factor_vs_m1_spearman": 0.4123997392375111
+    },
+    {
+      "trait": "upstroke_downstroke_ratio_long_square",
+      "n_genes": 499,
+      "raw_v1_vs_m1_spearman": 0.5690279836781996,
+      "ephys_factor_vs_m1_spearman": 0.5688785764299683,
+      "joint_factor_vs_m1_spearman": 0.5624095419755172
+    },
+    {
+      "trait": "threshold_i_long_square",
+      "n_genes": 499,
+      "raw_v1_vs_m1_spearman": 0.6937191008523069,
+      "ephys_factor_vs_m1_spearman": 0.6938989303909022,
+      "joint_factor_vs_m1_spearman": 0.6976365260641765
+    }
+  ],
+  "externalSummary": {
+    "rawMeanSpearman": 0.39700641041118373,
+    "ephysFactorMeanSpearman": 0.39703960933916016,
+    "jointFactorMeanSpearman": 0.39612546780307595
+  },
+  "guardrail": "Cancer view is an independent genomic context. Improved reconstruction or external reproducibility would support shared statistical structure, not causal cancer-to-neuron effects."
+}
