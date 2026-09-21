@@ -1,0 +1,3656 @@
+{
+  "source": "Open Targets Platform GraphQL API",
+  "evidenceType": "integrated target-disease association score",
+  "diseases": [
+    {
+      "requested": "Alzheimer disease",
+      "query": "Alzheimer disease",
+      "diseaseId": "MONDO_0004975",
+      "resolvedName": "Alzheimer disease",
+      "targetCount": 13367
+    },
+    {
+      "requested": "Parkinson disease",
+      "query": "Parkinson disease",
+      "diseaseId": "MONDO_0005180",
+      "resolvedName": "Parkinson disease",
+      "targetCount": 8923
+    },
+    {
+      "requested": "epilepsy",
+      "query": "epilepsy",
+      "diseaseId": "MONDO_0005027",
+      "resolvedName": "epilepsy",
+      "targetCount": 7902
+    },
+    {
+      "requested": "amyotrophic lateral sclerosis",
+      "query": "amyotrophic lateral sclerosis",
+      "diseaseId": "MONDO_0004976",
+      "resolvedName": "amyotrophic lateral sclerosis",
+      "targetCount": 6292
+    },
+    {
+      "requested": "stroke",
+      "query": "stroke",
+      "diseaseId": "HP_0001297",
+      "resolvedName": "Stroke",
+      "targetCount": 5898
+    }
+  ],
+  "errors": [],
+  "top500GenesWithAnyNeurologicalEvidence": 199,
+  "rows": [
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "SORL1",
+      "target_id": "ENSG00000137642",
+      "target_name": "sortilin related receptor 1",
+      "open_targets_association_score": 0.6861184602782842,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "GRIN2A",
+      "target_id": "ENSG00000183454",
+      "target_name": "glutamate ionotropic receptor NMDA type subunit 2A",
+      "open_targets_association_score": 0.6234275987159364,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "GRIN3A",
+      "target_id": "ENSG00000198785",
+      "target_name": "glutamate ionotropic receptor NMDA type subunit 3A",
+      "open_targets_association_score": 0.6108729890407243,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "KIF1A",
+      "target_id": "ENSG00000130294",
+      "target_name": "kinesin family member 1A",
+      "open_targets_association_score": 0.5034704720071452,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "GABRB1",
+      "target_id": "ENSG00000163288",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit beta1",
+      "open_targets_association_score": 0.4580347874927561,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "HTR2C",
+      "target_id": "ENSG00000147246",
+      "target_name": "5-hydroxytryptamine receptor 2C",
+      "open_targets_association_score": 0.4466922398530804,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "CHRNA7",
+      "target_id": "ENSG00000175344",
+      "target_name": "cholinergic receptor nicotinic alpha 7 subunit",
+      "open_targets_association_score": 0.44193458881829933,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "PTK2B",
+      "target_id": "ENSG00000120899",
+      "target_name": "protein tyrosine kinase 2 beta",
+      "open_targets_association_score": 0.4378117054781248,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "EGFR",
+      "target_id": "ENSG00000146648",
+      "target_name": "epidermal growth factor receptor",
+      "open_targets_association_score": 0.4267000848812753,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "PDE4B",
+      "target_id": "ENSG00000184588",
+      "target_name": "phosphodiesterase 4B",
+      "open_targets_association_score": 0.39694705729996865,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "CDH13",
+      "target_id": "ENSG00000140945",
+      "target_name": "cadherin 13",
+      "open_targets_association_score": 0.3878801719866538,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "PTPRO",
+      "target_id": "ENSG00000151490",
+      "target_name": "protein tyrosine phosphatase receptor type O",
+      "open_targets_association_score": 0.37507607730687276,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "CNTNAP2",
+      "target_id": "ENSG00000174469",
+      "target_name": "contactin associated protein 2",
+      "open_targets_association_score": 0.3742076154835612,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "SCN8A",
+      "target_id": "ENSG00000196876",
+      "target_name": "sodium voltage-gated channel alpha subunit 8",
+      "open_targets_association_score": 0.3740886421096306,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "GOT1",
+      "target_id": "ENSG00000120053",
+      "target_name": "glutamic-oxaloacetic transaminase 1",
+      "open_targets_association_score": 0.37181547143407667,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "KIT",
+      "target_id": "ENSG00000157404",
+      "target_name": "KIT proto-oncogene, receptor tyrosine kinase",
+      "open_targets_association_score": 0.37061534777865246,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "GABRA1",
+      "target_id": "ENSG00000022355",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit alpha1",
+      "open_targets_association_score": 0.3680726893812746,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "CACNA1A",
+      "target_id": "ENSG00000141837",
+      "target_name": "calcium voltage-gated channel subunit alpha1 A",
+      "open_targets_association_score": 0.3639140901609733,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "CHRM3",
+      "target_id": "ENSG00000133019",
+      "target_name": "cholinergic receptor muscarinic 3",
+      "open_targets_association_score": 0.36043904040734126,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "SCN1A",
+      "target_id": "ENSG00000144285",
+      "target_name": "sodium voltage-gated channel alpha subunit 1",
+      "open_targets_association_score": 0.3603493813140169,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "SDK1",
+      "target_id": "ENSG00000146555",
+      "target_name": "sidekick cell adhesion molecule 1",
+      "open_targets_association_score": 0.35968440414816794,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "CNR1",
+      "target_id": "ENSG00000118432",
+      "target_name": "cannabinoid receptor 1",
+      "open_targets_association_score": 0.3562773670762637,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "SCN3A",
+      "target_id": "ENSG00000153253",
+      "target_name": "sodium voltage-gated channel alpha subunit 3",
+      "open_targets_association_score": 0.3459309271664763,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "DOCK3",
+      "target_id": "ENSG00000088538",
+      "target_name": "dedicator of cytokinesis 3",
+      "open_targets_association_score": 0.3418626974822397,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "KHDRBS2",
+      "target_id": "ENSG00000112232",
+      "target_name": "KH RNA binding domain containing, signal transduction associated 2",
+      "open_targets_association_score": 0.340440739117211,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "PTPRD",
+      "target_id": "ENSG00000153707",
+      "target_name": "protein tyrosine phosphatase receptor type D",
+      "open_targets_association_score": 0.3388299300595241,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "NFIB",
+      "target_id": "ENSG00000147862",
+      "target_name": "nuclear factor I B",
+      "open_targets_association_score": 0.33729546697692925,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "PTPRN2",
+      "target_id": "ENSG00000155093",
+      "target_name": "protein tyrosine phosphatase receptor type N2",
+      "open_targets_association_score": 0.3285054425289494,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "GRIA1",
+      "target_id": "ENSG00000155511",
+      "target_name": "glutamate ionotropic receptor AMPA type subunit 1",
+      "open_targets_association_score": 0.32769101896128894,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "SLIT3",
+      "target_id": "ENSG00000184347",
+      "target_name": "slit guidance ligand 3",
+      "open_targets_association_score": 0.32068946777060325,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "BCL11A",
+      "target_id": "ENSG00000119866",
+      "target_name": "BCL11 transcription factor A",
+      "open_targets_association_score": 0.3159295594267656,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "RYR2",
+      "target_id": "ENSG00000198626",
+      "target_name": "ryanodine receptor 2",
+      "open_targets_association_score": 0.31458912978296477,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "GABRG2",
+      "target_id": "ENSG00000113327",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit gamma2",
+      "open_targets_association_score": 0.31389913384500767,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "ZMAT4",
+      "target_id": "ENSG00000165061",
+      "target_name": "zinc finger matrin-type 4",
+      "open_targets_association_score": 0.3079267651175039,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "ANO5",
+      "target_id": "ENSG00000171714",
+      "target_name": "anoctamin 5",
+      "open_targets_association_score": 0.30681403876551044,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "NR2F2",
+      "target_id": "ENSG00000185551",
+      "target_name": "nuclear receptor subfamily 2 group F member 2",
+      "open_targets_association_score": 0.3062287507407024,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "CACNA1C",
+      "target_id": "ENSG00000151067",
+      "target_name": "calcium voltage-gated channel subunit alpha1 C",
+      "open_targets_association_score": 0.3054463966751894,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "ADARB2",
+      "target_id": "ENSG00000185736",
+      "target_name": "adenosine deaminase RNA specific B2 (inactive)",
+      "open_targets_association_score": 0.3047684659359167,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "GRIA4",
+      "target_id": "ENSG00000152578",
+      "target_name": "glutamate ionotropic receptor AMPA type subunit 4",
+      "open_targets_association_score": 0.30473550787950837,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "GABRA2",
+      "target_id": "ENSG00000151834",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit alpha2",
+      "open_targets_association_score": 0.30150993546110205,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "CELF4",
+      "target_id": "ENSG00000101489",
+      "target_name": "CUGBP Elav-like family member 4",
+      "open_targets_association_score": 0.30133819046891397,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "MPDZ",
+      "target_id": "ENSG00000107186",
+      "target_name": "multiple PDZ domain crumbs cell polarity complex component",
+      "open_targets_association_score": 0.2999128878088299,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "GABRB2",
+      "target_id": "ENSG00000145864",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit beta2",
+      "open_targets_association_score": 0.2972827521715188,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "KCND3",
+      "target_id": "ENSG00000171385",
+      "target_name": "potassium voltage-gated channel subfamily D member 3",
+      "open_targets_association_score": 0.2944673731583942,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "RPH3A",
+      "target_id": "ENSG00000089169",
+      "target_name": "rabphilin 3A",
+      "open_targets_association_score": 0.2886517602564424,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "KALRN",
+      "target_id": "ENSG00000160145",
+      "target_name": "kalirin RhoGEF kinase",
+      "open_targets_association_score": 0.28592283973661975,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "KCNJ3",
+      "target_id": "ENSG00000162989",
+      "target_name": "potassium inwardly rectifying channel subfamily J member 3",
+      "open_targets_association_score": 0.28247078154646377,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "SORCS1",
+      "target_id": "ENSG00000108018",
+      "target_name": "sortilin related VPS10 domain containing receptor 1",
+      "open_targets_association_score": 0.2815491930172139,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "CACNA1D",
+      "target_id": "ENSG00000157388",
+      "target_name": "calcium voltage-gated channel subunit alpha1 D",
+      "open_targets_association_score": 0.281191527721494,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "SLC6A1",
+      "target_id": "ENSG00000157103",
+      "target_name": "solute carrier family 6 member 1",
+      "open_targets_association_score": 0.2778027779974791,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "NRXN3",
+      "target_id": "ENSG00000021645",
+      "target_name": "neurexin 3",
+      "open_targets_association_score": 0.2772087469811687,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "CUX1",
+      "target_id": "ENSG00000257923",
+      "target_name": "cut like homeobox 1",
+      "open_targets_association_score": 0.27335288021421134,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "GHR",
+      "target_id": "ENSG00000112964",
+      "target_name": "growth hormone receptor",
+      "open_targets_association_score": 0.2682109616042133,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "ROBO2",
+      "target_id": "ENSG00000185008",
+      "target_name": "roundabout guidance receptor 2",
+      "open_targets_association_score": 0.2677672794843187,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "PRICKLE1",
+      "target_id": "ENSG00000139174",
+      "target_name": "prickle planar cell polarity protein 1",
+      "open_targets_association_score": 0.2650465072431903,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "GRIK1",
+      "target_id": "ENSG00000171189",
+      "target_name": "glutamate ionotropic receptor kainate type subunit 1",
+      "open_targets_association_score": 0.2636926663534173,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Alzheimer disease",
+      "disease_id": "MONDO_0004975",
+      "resolved_disease_name": "Alzheimer disease",
+      "gene": "DLGAP2",
+      "target_id": "ENSG00000198010",
+      "target_name": "DLG associated protein 2",
+      "open_targets_association_score": 0.26190617755794454,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "GRIN2A",
+      "target_id": "ENSG00000183454",
+      "target_name": "glutamate ionotropic receptor NMDA type subunit 2A",
+      "open_targets_association_score": 0.6290039778265303,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "GRIN3A",
+      "target_id": "ENSG00000198785",
+      "target_name": "glutamate ionotropic receptor NMDA type subunit 3A",
+      "open_targets_association_score": 0.6017081699817503,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "CHRM3",
+      "target_id": "ENSG00000133019",
+      "target_name": "cholinergic receptor muscarinic 3",
+      "open_targets_association_score": 0.5519780154336957,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "SCN8A",
+      "target_id": "ENSG00000196876",
+      "target_name": "sodium voltage-gated channel alpha subunit 8",
+      "open_targets_association_score": 0.5511732679185428,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "HTR2C",
+      "target_id": "ENSG00000147246",
+      "target_name": "5-hydroxytryptamine receptor 2C",
+      "open_targets_association_score": 0.550766572204934,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "SCN1A",
+      "target_id": "ENSG00000144285",
+      "target_name": "sodium voltage-gated channel alpha subunit 1",
+      "open_targets_association_score": 0.5460439193210946,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "SCN3A",
+      "target_id": "ENSG00000153253",
+      "target_name": "sodium voltage-gated channel alpha subunit 3",
+      "open_targets_association_score": 0.5261945636027173,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "KIF1A",
+      "target_id": "ENSG00000130294",
+      "target_name": "kinesin family member 1A",
+      "open_targets_association_score": 0.49434263754701707,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "SLC2A13",
+      "target_id": "ENSG00000151229",
+      "target_name": "solute carrier family 2 member 13",
+      "open_targets_association_score": 0.47440100158134596,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "GABRB1",
+      "target_id": "ENSG00000163288",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit beta1",
+      "open_targets_association_score": 0.4448728869428179,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "PTPRO",
+      "target_id": "ENSG00000151490",
+      "target_name": "protein tyrosine phosphatase receptor type O",
+      "open_targets_association_score": 0.3893921580752473,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "GRIA1",
+      "target_id": "ENSG00000155511",
+      "target_name": "glutamate ionotropic receptor AMPA type subunit 1",
+      "open_targets_association_score": 0.3862918832541391,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "ADRA1A",
+      "target_id": "ENSG00000120907",
+      "target_name": "adrenoceptor alpha 1A",
+      "open_targets_association_score": 0.3806751432125205,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "GRIA3",
+      "target_id": "ENSG00000125675",
+      "target_name": "glutamate ionotropic receptor AMPA type subunit 3",
+      "open_targets_association_score": 0.37940934737167253,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "GRIA4",
+      "target_id": "ENSG00000152578",
+      "target_name": "glutamate ionotropic receptor AMPA type subunit 4",
+      "open_targets_association_score": 0.375803377261728,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "GOT1",
+      "target_id": "ENSG00000120053",
+      "target_name": "glutamic-oxaloacetic transaminase 1",
+      "open_targets_association_score": 0.3754526436838977,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "TOX3",
+      "target_id": "ENSG00000103460",
+      "target_name": "TOX high mobility group box family member 3",
+      "open_targets_association_score": 0.3683966056580023,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "CACNA1A",
+      "target_id": "ENSG00000141837",
+      "target_name": "calcium voltage-gated channel subunit alpha1 A",
+      "open_targets_association_score": 0.3604482300567952,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "PKP2",
+      "target_id": "ENSG00000057294",
+      "target_name": "plakophilin 2",
+      "open_targets_association_score": 0.3477675847712119,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "NFIB",
+      "target_id": "ENSG00000147862",
+      "target_name": "nuclear factor I B",
+      "open_targets_association_score": 0.34340710092936655,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "SV2C",
+      "target_id": "ENSG00000122012",
+      "target_name": "synaptic vesicle glycoprotein 2C",
+      "open_targets_association_score": 0.3414914956807287,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "PTPRD",
+      "target_id": "ENSG00000153707",
+      "target_name": "protein tyrosine phosphatase receptor type D",
+      "open_targets_association_score": 0.3299854980732297,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "ADCY1",
+      "target_id": "ENSG00000164742",
+      "target_name": "adenylate cyclase 1",
+      "open_targets_association_score": 0.3297273373806755,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "LRRC4C",
+      "target_id": "ENSG00000148948",
+      "target_name": "leucine rich repeat containing 4C",
+      "open_targets_association_score": 0.3277324951496411,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "NR2F2",
+      "target_id": "ENSG00000185551",
+      "target_name": "nuclear receptor subfamily 2 group F member 2",
+      "open_targets_association_score": 0.32472004505595636,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "GABRA1",
+      "target_id": "ENSG00000022355",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit alpha1",
+      "open_targets_association_score": 0.322679707732752,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "GABRG2",
+      "target_id": "ENSG00000113327",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit gamma2",
+      "open_targets_association_score": 0.31982244114200203,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "SLIT3",
+      "target_id": "ENSG00000184347",
+      "target_name": "slit guidance ligand 3",
+      "open_targets_association_score": 0.3148586077371966,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "CCSER1",
+      "target_id": "ENSG00000184305",
+      "target_name": "coiled-coil serine rich protein 1",
+      "open_targets_association_score": 0.3095185072109107,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "CNR1",
+      "target_id": "ENSG00000118432",
+      "target_name": "cannabinoid receptor 1",
+      "open_targets_association_score": 0.30884721113190705,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "GABRD",
+      "target_id": "ENSG00000187730",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit delta",
+      "open_targets_association_score": 0.30156082478607904,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "GABRA2",
+      "target_id": "ENSG00000151834",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit alpha2",
+      "open_targets_association_score": 0.3000304022472861,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "GABRG3",
+      "target_id": "ENSG00000182256",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit gamma3",
+      "open_targets_association_score": 0.2988754652013964,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "GABRB2",
+      "target_id": "ENSG00000145864",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit beta2",
+      "open_targets_association_score": 0.29832109541936935,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "ARID5B",
+      "target_id": "ENSG00000150347",
+      "target_name": "AT-rich interaction domain 5B",
+      "open_targets_association_score": 0.2969011727958399,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "KLF12",
+      "target_id": "ENSG00000118922",
+      "target_name": "KLF transcription factor 12",
+      "open_targets_association_score": 0.29493606069995587,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "DLG2",
+      "target_id": "ENSG00000150672",
+      "target_name": "discs large MAGUK scaffold protein 2",
+      "open_targets_association_score": 0.28896378123139593,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "RYR2",
+      "target_id": "ENSG00000198626",
+      "target_name": "ryanodine receptor 2",
+      "open_targets_association_score": 0.2878185501937619,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "ITGA8",
+      "target_id": "ENSG00000077943",
+      "target_name": "integrin subunit alpha 8",
+      "open_targets_association_score": 0.2799487791880503,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "GRM5",
+      "target_id": "ENSG00000168959",
+      "target_name": "glutamate metabotropic receptor 5",
+      "open_targets_association_score": 0.276278509414729,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "PPARGC1A",
+      "target_id": "ENSG00000109819",
+      "target_name": "PPARG coactivator 1 alpha",
+      "open_targets_association_score": 0.26716622333129925,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "MAP3K5",
+      "target_id": "ENSG00000197442",
+      "target_name": "mitogen-activated protein kinase kinase kinase 5",
+      "open_targets_association_score": 0.2533211964942854,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "DSCAM",
+      "target_id": "ENSG00000171587",
+      "target_name": "DS cell adhesion molecule",
+      "open_targets_association_score": 0.25065953625818527,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "L3MBTL4",
+      "target_id": "ENSG00000154655",
+      "target_name": "L3MBTL histone methyl-lysine binding protein 4",
+      "open_targets_association_score": 0.24971189833949903,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "PRICKLE1",
+      "target_id": "ENSG00000139174",
+      "target_name": "prickle planar cell polarity protein 1",
+      "open_targets_association_score": 0.24798548540065452,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "CHRNA7",
+      "target_id": "ENSG00000175344",
+      "target_name": "cholinergic receptor nicotinic alpha 7 subunit",
+      "open_targets_association_score": 0.24548232025830788,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "LRP1B",
+      "target_id": "ENSG00000168702",
+      "target_name": "LDL receptor related protein 1B",
+      "open_targets_association_score": 0.24449739486734381,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "CDH8",
+      "target_id": "ENSG00000150394",
+      "target_name": "cadherin 8",
+      "open_targets_association_score": 0.23410694183048059,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "TMEM108",
+      "target_id": "ENSG00000144868",
+      "target_name": "transmembrane protein 108",
+      "open_targets_association_score": 0.22261219380806538,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "USP25",
+      "target_id": "ENSG00000155313",
+      "target_name": "ubiquitin specific peptidase 25",
+      "open_targets_association_score": 0.22230403728821613,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "EXOC4",
+      "target_id": "ENSG00000131558",
+      "target_name": "exocyst complex component 4",
+      "open_targets_association_score": 0.21318662280297637,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "MPDZ",
+      "target_id": "ENSG00000107186",
+      "target_name": "multiple PDZ domain crumbs cell polarity complex component",
+      "open_targets_association_score": 0.21014506553817672,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "Parkinson disease",
+      "disease_id": "MONDO_0005180",
+      "resolved_disease_name": "Parkinson disease",
+      "gene": "GRM8",
+      "target_id": "ENSG00000179603",
+      "target_name": "glutamate metabotropic receptor 8",
+      "open_targets_association_score": 0.2056675766726306,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "SCN1A",
+      "target_id": "ENSG00000144285",
+      "target_name": "sodium voltage-gated channel alpha subunit 1",
+      "open_targets_association_score": 0.9263323779429171,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "SCN8A",
+      "target_id": "ENSG00000196876",
+      "target_name": "sodium voltage-gated channel alpha subunit 8",
+      "open_targets_association_score": 0.903823762835905,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "SCN3A",
+      "target_id": "ENSG00000153253",
+      "target_name": "sodium voltage-gated channel alpha subunit 3",
+      "open_targets_association_score": 0.894460693741088,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "GABRG2",
+      "target_id": "ENSG00000113327",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit gamma2",
+      "open_targets_association_score": 0.8841054387376303,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "GABRA1",
+      "target_id": "ENSG00000022355",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit alpha1",
+      "open_targets_association_score": 0.8837925339369063,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "CACNA1A",
+      "target_id": "ENSG00000141837",
+      "target_name": "calcium voltage-gated channel subunit alpha1 A",
+      "open_targets_association_score": 0.8829651718956277,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "GRIN2A",
+      "target_id": "ENSG00000183454",
+      "target_name": "glutamate ionotropic receptor NMDA type subunit 2A",
+      "open_targets_association_score": 0.8822493988191843,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "KCNT1",
+      "target_id": "ENSG00000107147",
+      "target_name": "potassium sodium-activated channel subfamily T member 1",
+      "open_targets_association_score": 0.8687499698089268,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "GABRB2",
+      "target_id": "ENSG00000145864",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit beta2",
+      "open_targets_association_score": 0.8638157159893031,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "CDKL5",
+      "target_id": "ENSG00000008086",
+      "target_name": "cyclin dependent kinase like 5",
+      "open_targets_association_score": 0.8637499962365669,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "CACNA1E",
+      "target_id": "ENSG00000198216",
+      "target_name": "calcium voltage-gated channel subunit alpha1 E",
+      "open_targets_association_score": 0.835130954919131,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "KCNMA1",
+      "target_id": "ENSG00000156113",
+      "target_name": "potassium calcium-activated channel subfamily M alpha 1",
+      "open_targets_association_score": 0.8324153387252603,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "GABRB1",
+      "target_id": "ENSG00000163288",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit beta1",
+      "open_targets_association_score": 0.8272181396258289,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "GABRA2",
+      "target_id": "ENSG00000151834",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit alpha2",
+      "open_targets_association_score": 0.8166783385286545,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "SPTAN1",
+      "target_id": "ENSG00000197694",
+      "target_name": "spectrin alpha, non-erythrocytic 1",
+      "open_targets_association_score": 0.807697001920735,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "PLCB1",
+      "target_id": "ENSG00000182621",
+      "target_name": "phospholipase C beta 1",
+      "open_targets_association_score": 0.8064438258240364,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "RELN",
+      "target_id": "ENSG00000189056",
+      "target_name": "reelin",
+      "open_targets_association_score": 0.804468081934537,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "CYFIP2",
+      "target_id": "ENSG00000055163",
+      "target_name": "cytoplasmic FMR1 interacting protein 2",
+      "open_targets_association_score": 0.7962794754393655,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "ATP1A3",
+      "target_id": "ENSG00000105409",
+      "target_name": "ATPase Na+/K+ transporting subunit alpha 3",
+      "open_targets_association_score": 0.7922434779946997,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "HCN1",
+      "target_id": "ENSG00000164588",
+      "target_name": "hyperpolarization activated cyclic nucleotide gated potassium channel 1",
+      "open_targets_association_score": 0.7857715167293005,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "SLC6A1",
+      "target_id": "ENSG00000157103",
+      "target_name": "solute carrier family 6 member 1",
+      "open_targets_association_score": 0.7833230004380453,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "KCNC2",
+      "target_id": "ENSG00000166006",
+      "target_name": "potassium voltage-gated channel subfamily C member 2",
+      "open_targets_association_score": 0.783168707077881,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "KCNB1",
+      "target_id": "ENSG00000158445",
+      "target_name": "potassium voltage-gated channel subfamily B member 1",
+      "open_targets_association_score": 0.7776961374244227,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "CACNA2D1",
+      "target_id": "ENSG00000153956",
+      "target_name": "calcium voltage-gated channel auxiliary subunit alpha2delta 1",
+      "open_targets_association_score": 0.7700466415048871,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "KCNH5",
+      "target_id": "ENSG00000140015",
+      "target_name": "potassium voltage-gated channel subfamily H member 5",
+      "open_targets_association_score": 0.766108717705375,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "FGF13",
+      "target_id": "ENSG00000129682",
+      "target_name": "fibroblast growth factor 13",
+      "open_targets_association_score": 0.7492441571433426,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "GABBR2",
+      "target_id": "ENSG00000136928",
+      "target_name": "gamma-aminobutyric acid type B receptor subunit 2",
+      "open_targets_association_score": 0.7435996565055847,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "PRICKLE1",
+      "target_id": "ENSG00000139174",
+      "target_name": "prickle planar cell polarity protein 1",
+      "open_targets_association_score": 0.7417637605738908,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "SV2A",
+      "target_id": "ENSG00000159164",
+      "target_name": "synaptic vesicle glycoprotein 2A",
+      "open_targets_association_score": 0.7346885292508288,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "KCNQ3",
+      "target_id": "ENSG00000184156",
+      "target_name": "potassium voltage-gated channel subfamily Q member 3",
+      "open_targets_association_score": 0.7346037885498529,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "SERPINI1",
+      "target_id": "ENSG00000163536",
+      "target_name": "serpin family I member 1",
+      "open_targets_association_score": 0.7312161790601593,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "GRIA3",
+      "target_id": "ENSG00000125675",
+      "target_name": "glutamate ionotropic receptor AMPA type subunit 3",
+      "open_targets_association_score": 0.7171122168854208,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "CUX2",
+      "target_id": "ENSG00000111249",
+      "target_name": "cut like homeobox 2",
+      "open_targets_association_score": 0.7133956696371112,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "CACNA1B",
+      "target_id": "ENSG00000148408",
+      "target_name": "calcium voltage-gated channel subunit alpha1 B",
+      "open_targets_association_score": 0.7116003376491933,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "GABRD",
+      "target_id": "ENSG00000187730",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit delta",
+      "open_targets_association_score": 0.7031884390366856,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "GAD1",
+      "target_id": "ENSG00000128683",
+      "target_name": "glutamate decarboxylase 1",
+      "open_targets_association_score": 0.7014362611328124,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "CACNB4",
+      "target_id": "ENSG00000182389",
+      "target_name": "calcium voltage-gated channel auxiliary subunit beta 4",
+      "open_targets_association_score": 0.6821228602214261,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "PHACTR1",
+      "target_id": "ENSG00000112137",
+      "target_name": "phosphatase and actin regulator 1",
+      "open_targets_association_score": 0.6762563306470598,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "FGF12",
+      "target_id": "ENSG00000114279",
+      "target_name": "fibroblast growth factor 12",
+      "open_targets_association_score": 0.6757902934829023,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "KCNT2",
+      "target_id": "ENSG00000162687",
+      "target_name": "potassium sodium-activated channel subfamily T member 2",
+      "open_targets_association_score": 0.6712032119899465,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "CACNA1C",
+      "target_id": "ENSG00000151067",
+      "target_name": "calcium voltage-gated channel subunit alpha1 C",
+      "open_targets_association_score": 0.6597181898245467,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "GRIK1",
+      "target_id": "ENSG00000171189",
+      "target_name": "glutamate ionotropic receptor kainate type subunit 1",
+      "open_targets_association_score": 0.6367696053710438,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "GRIA4",
+      "target_id": "ENSG00000152578",
+      "target_name": "glutamate ionotropic receptor AMPA type subunit 4",
+      "open_targets_association_score": 0.633061812323663,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "CACNA1D",
+      "target_id": "ENSG00000157388",
+      "target_name": "calcium voltage-gated channel subunit alpha1 D",
+      "open_targets_association_score": 0.629486897117807,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "GRIA1",
+      "target_id": "ENSG00000155511",
+      "target_name": "glutamate ionotropic receptor AMPA type subunit 1",
+      "open_targets_association_score": 0.6206215643678269,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "CACNA2D3",
+      "target_id": "ENSG00000157445",
+      "target_name": "calcium voltage-gated channel auxiliary subunit alpha2delta 3",
+      "open_targets_association_score": 0.6117329076888689,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "CNR1",
+      "target_id": "ENSG00000118432",
+      "target_name": "cannabinoid receptor 1",
+      "open_targets_association_score": 0.6105214481281263,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "CACNB2",
+      "target_id": "ENSG00000165995",
+      "target_name": "calcium voltage-gated channel auxiliary subunit beta 2",
+      "open_targets_association_score": 0.6084977630429612,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "GRIK3",
+      "target_id": "ENSG00000163873",
+      "target_name": "glutamate ionotropic receptor kainate type subunit 3",
+      "open_targets_association_score": 0.607634259573349,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "GABRG3",
+      "target_id": "ENSG00000182256",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit gamma3",
+      "open_targets_association_score": 0.6072132920344452,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "CACNG3",
+      "target_id": "ENSG00000006116",
+      "target_name": "calcium voltage-gated channel auxiliary subunit gamma 3",
+      "open_targets_association_score": 0.6068205754536847,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "HTR2C",
+      "target_id": "ENSG00000147246",
+      "target_name": "5-hydroxytryptamine receptor 2C",
+      "open_targets_association_score": 0.5954461861983297,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "MAST3",
+      "target_id": "ENSG00000099308",
+      "target_name": "microtubule associated serine/threonine kinase 3",
+      "open_targets_association_score": 0.5870543088439201,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "GRIN3A",
+      "target_id": "ENSG00000198785",
+      "target_name": "glutamate ionotropic receptor NMDA type subunit 3A",
+      "open_targets_association_score": 0.5663882949616653,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "RBFOX1",
+      "target_id": "ENSG00000078328",
+      "target_name": "RNA binding fox-1 homolog 1",
+      "open_targets_association_score": 0.5640842586085648,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "KCNC1",
+      "target_id": "ENSG00000129159",
+      "target_name": "potassium voltage-gated channel subfamily C member 1",
+      "open_targets_association_score": 0.5615001986579592,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "RAPGEF2",
+      "target_id": "ENSG00000109756",
+      "target_name": "Rap guanine nucleotide exchange factor 2",
+      "open_targets_association_score": 0.5556320105981755,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "KCNQ5",
+      "target_id": "ENSG00000185760",
+      "target_name": "potassium voltage-gated channel subfamily Q member 5",
+      "open_targets_association_score": 0.5547804785442509,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "CNTNAP2",
+      "target_id": "ENSG00000174469",
+      "target_name": "contactin associated protein 2",
+      "open_targets_association_score": 0.5209352327737578,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "ANO4",
+      "target_id": "ENSG00000151572",
+      "target_name": "anoctamin 4",
+      "open_targets_association_score": 0.5158898021871751,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "GRM7",
+      "target_id": "ENSG00000196277",
+      "target_name": "glutamate metabotropic receptor 7",
+      "open_targets_association_score": 0.39797348571789903,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "PRICKLE2",
+      "target_id": "ENSG00000163637",
+      "target_name": "prickle planar cell polarity protein 2",
+      "open_targets_association_score": 0.37931802248893803,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "BSN",
+      "target_id": "ENSG00000164061",
+      "target_name": "bassoon presynaptic cytomatrix protein",
+      "open_targets_association_score": 0.3691486353686302,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "PCDH7",
+      "target_id": "ENSG00000169851",
+      "target_name": "protocadherin 7",
+      "open_targets_association_score": 0.3684649531959468,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "KCND3",
+      "target_id": "ENSG00000171385",
+      "target_name": "potassium voltage-gated channel subfamily D member 3",
+      "open_targets_association_score": 0.36437644250025764,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "RYR2",
+      "target_id": "ENSG00000198626",
+      "target_name": "ryanodine receptor 2",
+      "open_targets_association_score": 0.3631868372643823,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "CHL1",
+      "target_id": "ENSG00000134121",
+      "target_name": "cell adhesion molecule L1 like",
+      "open_targets_association_score": 0.3495239092769333,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "EGFR",
+      "target_id": "ENSG00000146648",
+      "target_name": "epidermal growth factor receptor",
+      "open_targets_association_score": 0.3409447464374072,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "SV2C",
+      "target_id": "ENSG00000122012",
+      "target_name": "synaptic vesicle glycoprotein 2C",
+      "open_targets_association_score": 0.327704544056281,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "SPOCK1",
+      "target_id": "ENSG00000152377",
+      "target_name": "SPARC (osteonectin), cwcv and kazal like domains proteoglycan 1",
+      "open_targets_association_score": 0.2786026172988079,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "NPAS3",
+      "target_id": "ENSG00000151322",
+      "target_name": "neuronal PAS domain protein 3",
+      "open_targets_association_score": 0.2672414821059833,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "RPH3A",
+      "target_id": "ENSG00000089169",
+      "target_name": "rabphilin 3A",
+      "open_targets_association_score": 0.2641225649950596,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "NRXN3",
+      "target_id": "ENSG00000021645",
+      "target_name": "neurexin 3",
+      "open_targets_association_score": 0.25351165158265937,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "BAIAP2",
+      "target_id": "ENSG00000175866",
+      "target_name": "BAR/IMD domain containing adaptor protein 2",
+      "open_targets_association_score": 0.2466714336048632,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "NTRK3",
+      "target_id": "ENSG00000140538",
+      "target_name": "neurotrophic receptor tyrosine kinase 3",
+      "open_targets_association_score": 0.24513236583922593,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "THSD7A",
+      "target_id": "ENSG00000005108",
+      "target_name": "thrombospondin type 1 domain containing 7A",
+      "open_targets_association_score": 0.21667299359633554,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "GRM3",
+      "target_id": "ENSG00000198822",
+      "target_name": "glutamate metabotropic receptor 3",
+      "open_targets_association_score": 0.21518086881645382,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "KCNH7",
+      "target_id": "ENSG00000184611",
+      "target_name": "potassium voltage-gated channel subfamily H member 7",
+      "open_targets_association_score": 0.2025199433122537,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "ADRA1A",
+      "target_id": "ENSG00000120907",
+      "target_name": "adrenoceptor alpha 1A",
+      "open_targets_association_score": 0.18589353385286772,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "DYNC1H1",
+      "target_id": "ENSG00000197102",
+      "target_name": "dynein cytoplasmic 1 heavy chain 1",
+      "open_targets_association_score": 0.17602698156402918,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "ATP8A2",
+      "target_id": "ENSG00000132932",
+      "target_name": "ATPase phospholipid transporting 8A2",
+      "open_targets_association_score": 0.13866828317730764,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "GRM5",
+      "target_id": "ENSG00000168959",
+      "target_name": "glutamate metabotropic receptor 5",
+      "open_targets_association_score": 0.1356298098857348,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "USP25",
+      "target_id": "ENSG00000155313",
+      "target_name": "ubiquitin specific peptidase 25",
+      "open_targets_association_score": 0.13055080638333447,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "IGF1",
+      "target_id": "ENSG00000017427",
+      "target_name": "insulin like growth factor 1",
+      "open_targets_association_score": 0.1228140076697251,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "ATXN1",
+      "target_id": "ENSG00000124788",
+      "target_name": "ataxin 1",
+      "open_targets_association_score": 0.12168864520834105,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "MEF2C",
+      "target_id": "ENSG00000081189",
+      "target_name": "myocyte enhancer factor 2C",
+      "open_targets_association_score": 0.11962493007043834,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "ADCY8",
+      "target_id": "ENSG00000155897",
+      "target_name": "adenylate cyclase 8",
+      "open_targets_association_score": 0.11929210305169981,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "SPTBN4",
+      "target_id": "ENSG00000160460",
+      "target_name": "spectrin beta, non-erythrocytic 4",
+      "open_targets_association_score": 0.11847207416290545,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "PPARGC1A",
+      "target_id": "ENSG00000109819",
+      "target_name": "PPARG coactivator 1 alpha",
+      "open_targets_association_score": 0.11730220062294672,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "KCNAB1",
+      "target_id": "ENSG00000169282",
+      "target_name": "potassium voltage-gated channel subfamily A regulatory beta subunit 1",
+      "open_targets_association_score": 0.11590371786639915,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "TRPM2",
+      "target_id": "ENSG00000142185",
+      "target_name": "transient receptor potential cation channel subfamily M member 2",
+      "open_targets_association_score": 0.1130021357881443,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "DPP6",
+      "target_id": "ENSG00000130226",
+      "target_name": "dipeptidyl peptidase like 6",
+      "open_targets_association_score": 0.11245452787729245,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "MYO16",
+      "target_id": "ENSG00000041515",
+      "target_name": "myosin XVI",
+      "open_targets_association_score": 0.11228880759602121,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "EPHA4",
+      "target_id": "ENSG00000116106",
+      "target_name": "EPH receptor A4",
+      "open_targets_association_score": 0.11155571044993544,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "GRID2",
+      "target_id": "ENSG00000152208",
+      "target_name": "glutamate ionotropic receptor delta type subunit 2",
+      "open_targets_association_score": 0.11136038001087102,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "ADAM23",
+      "target_id": "ENSG00000114948",
+      "target_name": "ADAM metallopeptidase domain 23",
+      "open_targets_association_score": 0.11087326589240756,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "DSCAM",
+      "target_id": "ENSG00000171587",
+      "target_name": "DS cell adhesion molecule",
+      "open_targets_association_score": 0.1097199960337326,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "ASIC2",
+      "target_id": "ENSG00000108684",
+      "target_name": "acid sensing ion channel subunit 2",
+      "open_targets_association_score": 0.10942798294035698,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "GABBR1",
+      "target_id": "ENSG00000204681",
+      "target_name": "gamma-aminobutyric acid type B receptor subunit 1",
+      "open_targets_association_score": 0.10856609759825564,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "HECW1",
+      "target_id": "ENSG00000002746",
+      "target_name": "HECT, C2 and WW domain containing E3 ubiquitin protein ligase 1",
+      "open_targets_association_score": 0.10800230567946667,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "DAB1",
+      "target_id": "ENSG00000173406",
+      "target_name": "DAB adaptor protein 1",
+      "open_targets_association_score": 0.10757926516009533,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "TRPC3",
+      "target_id": "ENSG00000138741",
+      "target_name": "transient receptor potential cation channel subfamily C member 3",
+      "open_targets_association_score": 0.1056174923078355,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "KIT",
+      "target_id": "ENSG00000157404",
+      "target_name": "KIT proto-oncogene, receptor tyrosine kinase",
+      "open_targets_association_score": 0.10423162860743608,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "LRRTM3",
+      "target_id": "ENSG00000198739",
+      "target_name": "leucine rich repeat transmembrane neuronal 3",
+      "open_targets_association_score": 0.10320899584606055,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "LAMP5",
+      "target_id": "ENSG00000125869",
+      "target_name": "lysosome associated membrane protein 5",
+      "open_targets_association_score": 0.10296421689832422,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "CHRM3",
+      "target_id": "ENSG00000133019",
+      "target_name": "cholinergic receptor muscarinic 3",
+      "open_targets_association_score": 0.10295622761634851,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "CHRNA7",
+      "target_id": "ENSG00000175344",
+      "target_name": "cholinergic receptor nicotinic alpha 7 subunit",
+      "open_targets_association_score": 0.10225510374535242,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "DGKG",
+      "target_id": "ENSG00000058866",
+      "target_name": "diacylglycerol kinase gamma",
+      "open_targets_association_score": 0.10206991328402641,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "RORA",
+      "target_id": "ENSG00000069667",
+      "target_name": "RAR related orphan receptor A",
+      "open_targets_association_score": 0.1006649197616297,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "MYO5A",
+      "target_id": "ENSG00000197535",
+      "target_name": "myosin VA",
+      "open_targets_association_score": 0.09976625593927013,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "CNTN6",
+      "target_id": "ENSG00000134115",
+      "target_name": "contactin 6",
+      "open_targets_association_score": 0.09882005421743033,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "DAPK1",
+      "target_id": "ENSG00000196730",
+      "target_name": "death associated protein kinase 1",
+      "open_targets_association_score": 0.09854118097047748,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "ROBO1",
+      "target_id": "ENSG00000169855",
+      "target_name": "roundabout guidance receptor 1",
+      "open_targets_association_score": 0.09800717024274193,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "KALRN",
+      "target_id": "ENSG00000160145",
+      "target_name": "kalirin RhoGEF kinase",
+      "open_targets_association_score": 0.0971567442763191,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "NF1",
+      "target_id": "ENSG00000196712",
+      "target_name": "neurofibromin 1",
+      "open_targets_association_score": 0.09693524653435937,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "MAP1B",
+      "target_id": "ENSG00000131711",
+      "target_name": "microtubule associated protein 1B",
+      "open_targets_association_score": 0.09649795717788844,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "ITPR1",
+      "target_id": "ENSG00000150995",
+      "target_name": "inositol 1,4,5-trisphosphate receptor type 1",
+      "open_targets_association_score": 0.09575211509050023,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "PLXNA2",
+      "target_id": "ENSG00000076356",
+      "target_name": "plexin A2",
+      "open_targets_association_score": 0.09536343895930469,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "epilepsy",
+      "disease_id": "MONDO_0005027",
+      "resolved_disease_name": "epilepsy",
+      "gene": "KIF1A",
+      "target_id": "ENSG00000130294",
+      "target_name": "kinesin family member 1A",
+      "open_targets_association_score": 0.09349698248141257,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "ERBB4",
+      "target_id": "ENSG00000178568",
+      "target_name": "erb-b2 receptor tyrosine kinase 4",
+      "open_targets_association_score": 0.7039750922427951,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "SCN8A",
+      "target_id": "ENSG00000196876",
+      "target_name": "sodium voltage-gated channel alpha subunit 8",
+      "open_targets_association_score": 0.6082664271637692,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "SCN1A",
+      "target_id": "ENSG00000144285",
+      "target_name": "sodium voltage-gated channel alpha subunit 1",
+      "open_targets_association_score": 0.6030084324773017,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "SCN3A",
+      "target_id": "ENSG00000153253",
+      "target_name": "sodium voltage-gated channel alpha subunit 3",
+      "open_targets_association_score": 0.5829958506807971,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "PPARGC1A",
+      "target_id": "ENSG00000109819",
+      "target_name": "PPARG coactivator 1 alpha",
+      "open_targets_association_score": 0.3943218745619763,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "KIT",
+      "target_id": "ENSG00000157404",
+      "target_name": "KIT proto-oncogene, receptor tyrosine kinase",
+      "open_targets_association_score": 0.3847978573582581,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "GRIN2A",
+      "target_id": "ENSG00000183454",
+      "target_name": "glutamate ionotropic receptor NMDA type subunit 2A",
+      "open_targets_association_score": 0.3499624350628309,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "OPCML",
+      "target_id": "ENSG00000183715",
+      "target_name": "opioid binding protein/cell adhesion molecule like",
+      "open_targets_association_score": 0.32823069092683677,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "LINGO2",
+      "target_id": "ENSG00000174482",
+      "target_name": "leucine rich repeat and Ig domain containing 2",
+      "open_targets_association_score": 0.30906262028149895,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "UST",
+      "target_id": "ENSG00000111962",
+      "target_name": "uronyl 2-sulfotransferase",
+      "open_targets_association_score": 0.3049941338540768,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "PCSK2",
+      "target_id": "ENSG00000125851",
+      "target_name": "proprotein convertase subtilisin/kexin type 2",
+      "open_targets_association_score": 0.2999179960907784,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "LUZP2",
+      "target_id": "ENSG00000187398",
+      "target_name": "leucine zipper protein 2",
+      "open_targets_association_score": 0.2932775216873324,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "LRP1B",
+      "target_id": "ENSG00000168702",
+      "target_name": "LDL receptor related protein 1B",
+      "open_targets_association_score": 0.2915503901359802,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "GRIN3A",
+      "target_id": "ENSG00000198785",
+      "target_name": "glutamate ionotropic receptor NMDA type subunit 3A",
+      "open_targets_association_score": 0.26190347636443745,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "NPAS3",
+      "target_id": "ENSG00000151322",
+      "target_name": "neuronal PAS domain protein 3",
+      "open_targets_association_score": 0.2609003068919443,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "TENM4",
+      "target_id": "ENSG00000149256",
+      "target_name": "teneurin transmembrane protein 4",
+      "open_targets_association_score": 0.25495710741173383,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "RBFOX1",
+      "target_id": "ENSG00000078328",
+      "target_name": "RNA binding fox-1 homolog 1",
+      "open_targets_association_score": 0.2507786994416819,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "MAGI1",
+      "target_id": "ENSG00000151276",
+      "target_name": "membrane associated guanylate kinase, WW and PDZ domain containing 1",
+      "open_targets_association_score": 0.24898712154221728,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "LRFN5",
+      "target_id": "ENSG00000165379",
+      "target_name": "leucine rich repeat and fibronectin type III domain containing 5",
+      "open_targets_association_score": 0.23247976385916044,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "PDE4B",
+      "target_id": "ENSG00000184588",
+      "target_name": "phosphodiesterase 4B",
+      "open_targets_association_score": 0.21601839845250076,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "HTR2C",
+      "target_id": "ENSG00000147246",
+      "target_name": "5-hydroxytryptamine receptor 2C",
+      "open_targets_association_score": 0.19828884567912383,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "COL24A1",
+      "target_id": "ENSG00000171502",
+      "target_name": "collagen type XXIV alpha 1 chain",
+      "open_targets_association_score": 0.18883690351667834,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "ROBO2",
+      "target_id": "ENSG00000185008",
+      "target_name": "roundabout guidance receptor 2",
+      "open_targets_association_score": 0.15252028515149457,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "CACNA1A",
+      "target_id": "ENSG00000141837",
+      "target_name": "calcium voltage-gated channel subunit alpha1 A",
+      "open_targets_association_score": 0.13952685013833757,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "DYNC1H1",
+      "target_id": "ENSG00000197102",
+      "target_name": "dynein cytoplasmic 1 heavy chain 1",
+      "open_targets_association_score": 0.13511352524247935,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "IGF1",
+      "target_id": "ENSG00000017427",
+      "target_name": "insulin like growth factor 1",
+      "open_targets_association_score": 0.12499552498095008,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "ATXN1",
+      "target_id": "ENSG00000124788",
+      "target_name": "ataxin 1",
+      "open_targets_association_score": 0.11502128193039526,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "DMD",
+      "target_id": "ENSG00000198947",
+      "target_name": "dystrophin",
+      "open_targets_association_score": 0.11383538288982173,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "CHRM3",
+      "target_id": "ENSG00000133019",
+      "target_name": "cholinergic receptor muscarinic 3",
+      "open_targets_association_score": 0.10749983115979314,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "GRIA1",
+      "target_id": "ENSG00000155511",
+      "target_name": "glutamate ionotropic receptor AMPA type subunit 1",
+      "open_targets_association_score": 0.1045563964797268,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "KIF1A",
+      "target_id": "ENSG00000130294",
+      "target_name": "kinesin family member 1A",
+      "open_targets_association_score": 0.10305253946567161,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "OXR1",
+      "target_id": "ENSG00000164830",
+      "target_name": "oxidation resistance 1",
+      "open_targets_association_score": 0.0996492007958558,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "GRIA4",
+      "target_id": "ENSG00000152578",
+      "target_name": "glutamate ionotropic receptor AMPA type subunit 4",
+      "open_targets_association_score": 0.09908990379476783,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "EPHA4",
+      "target_id": "ENSG00000116106",
+      "target_name": "EPH receptor A4",
+      "open_targets_association_score": 0.09832611254224861,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "KCNQ3",
+      "target_id": "ENSG00000184156",
+      "target_name": "potassium voltage-gated channel subfamily Q member 3",
+      "open_targets_association_score": 0.09583944791683686,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "ATP1A3",
+      "target_id": "ENSG00000105409",
+      "target_name": "ATPase Na+/K+ transporting subunit alpha 3",
+      "open_targets_association_score": 0.09235282402614811,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "MAP1B",
+      "target_id": "ENSG00000131711",
+      "target_name": "microtubule associated protein 1B",
+      "open_targets_association_score": 0.0915233276721912,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "NTRK3",
+      "target_id": "ENSG00000140538",
+      "target_name": "neurotrophic receptor tyrosine kinase 3",
+      "open_targets_association_score": 0.08838031205355994,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "MYO5A",
+      "target_id": "ENSG00000197535",
+      "target_name": "myosin VA",
+      "open_targets_association_score": 0.08826966755177848,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "GRIA3",
+      "target_id": "ENSG00000125675",
+      "target_name": "glutamate ionotropic receptor AMPA type subunit 3",
+      "open_targets_association_score": 0.08813632266127902,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "ANK1",
+      "target_id": "ENSG00000029534",
+      "target_name": "ankyrin 1",
+      "open_targets_association_score": 0.08785840575629382,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "ANO5",
+      "target_id": "ENSG00000171714",
+      "target_name": "anoctamin 5",
+      "open_targets_association_score": 0.08776533577135108,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "KCNQ5",
+      "target_id": "ENSG00000185760",
+      "target_name": "potassium voltage-gated channel subfamily Q member 5",
+      "open_targets_association_score": 0.08604310131517545,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "GABRA1",
+      "target_id": "ENSG00000022355",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit alpha1",
+      "open_targets_association_score": 0.08560536420935663,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "RELN",
+      "target_id": "ENSG00000189056",
+      "target_name": "reelin",
+      "open_targets_association_score": 0.08538540667993258,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "SPTBN4",
+      "target_id": "ENSG00000160460",
+      "target_name": "spectrin beta, non-erythrocytic 4",
+      "open_targets_association_score": 0.08416896086835304,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "HECW1",
+      "target_id": "ENSG00000002746",
+      "target_name": "HECT, C2 and WW domain containing E3 ubiquitin protein ligase 1",
+      "open_targets_association_score": 0.08371287194988643,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "NCAM1",
+      "target_id": "ENSG00000149294",
+      "target_name": "neural cell adhesion molecule 1",
+      "open_targets_association_score": 0.08131724764878748,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "ARPP21",
+      "target_id": "ENSG00000172995",
+      "target_name": "cAMP regulated phosphoprotein 21",
+      "open_targets_association_score": 0.08126296692306516,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "GAS7",
+      "target_id": "ENSG00000007237",
+      "target_name": "growth arrest specific 7",
+      "open_targets_association_score": 0.08098136864945593,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "RORA",
+      "target_id": "ENSG00000069667",
+      "target_name": "RAR related orphan receptor A",
+      "open_targets_association_score": 0.08076574532308606,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "KCNC2",
+      "target_id": "ENSG00000166006",
+      "target_name": "potassium voltage-gated channel subfamily C member 2",
+      "open_targets_association_score": 0.0804273685973147,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "COL19A1",
+      "target_id": "ENSG00000082293",
+      "target_name": "collagen type XIX alpha 1 chain",
+      "open_targets_association_score": 0.08030039269301484,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "GABRG2",
+      "target_id": "ENSG00000113327",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit gamma2",
+      "open_targets_association_score": 0.07904675511560688,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "TLN2",
+      "target_id": "ENSG00000171914",
+      "target_name": "talin 2",
+      "open_targets_association_score": 0.0784330580497534,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "CIT",
+      "target_id": "ENSG00000122966",
+      "target_name": "citron rho-interacting serine/threonine kinase",
+      "open_targets_association_score": 0.07831057296274221,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "GRID2",
+      "target_id": "ENSG00000152208",
+      "target_name": "glutamate ionotropic receptor delta type subunit 2",
+      "open_targets_association_score": 0.07752755261595952,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "DAB1",
+      "target_id": "ENSG00000173406",
+      "target_name": "DAB adaptor protein 1",
+      "open_targets_association_score": 0.07635579571089571,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "ATP8A2",
+      "target_id": "ENSG00000132932",
+      "target_name": "ATPase phospholipid transporting 8A2",
+      "open_targets_association_score": 0.07596765620923836,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "GHR",
+      "target_id": "ENSG00000112964",
+      "target_name": "growth hormone receptor",
+      "open_targets_association_score": 0.07593608393216537,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "CHRNA7",
+      "target_id": "ENSG00000175344",
+      "target_name": "cholinergic receptor nicotinic alpha 7 subunit",
+      "open_targets_association_score": 0.07554976667909928,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "BSN",
+      "target_id": "ENSG00000164061",
+      "target_name": "bassoon presynaptic cytomatrix protein",
+      "open_targets_association_score": 0.07414760035980293,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "UNC5C",
+      "target_id": "ENSG00000182168",
+      "target_name": "unc-5 netrin receptor C",
+      "open_targets_association_score": 0.07305291375929761,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "DSCAM",
+      "target_id": "ENSG00000171587",
+      "target_name": "DS cell adhesion molecule",
+      "open_targets_association_score": 0.07297317234024324,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "LIMCH1",
+      "target_id": "ENSG00000064042",
+      "target_name": "LIM and calponin homology domains 1",
+      "open_targets_association_score": 0.07277128691434649,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "MEF2C",
+      "target_id": "ENSG00000081189",
+      "target_name": "myocyte enhancer factor 2C",
+      "open_targets_association_score": 0.07234900644419712,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "KCNMA1",
+      "target_id": "ENSG00000156113",
+      "target_name": "potassium calcium-activated channel subfamily M alpha 1",
+      "open_targets_association_score": 0.07220544452428013,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "TRIO",
+      "target_id": "ENSG00000038382",
+      "target_name": "trio Rho guanine nucleotide exchange factor",
+      "open_targets_association_score": 0.07167492208406326,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "ITPR1",
+      "target_id": "ENSG00000150995",
+      "target_name": "inositol 1,4,5-trisphosphate receptor type 1",
+      "open_targets_association_score": 0.07132585403731038,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "DOCK3",
+      "target_id": "ENSG00000088538",
+      "target_name": "dedicator of cytokinesis 3",
+      "open_targets_association_score": 0.06989750453829661,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "amyotrophic lateral sclerosis",
+      "disease_id": "MONDO_0004976",
+      "resolved_disease_name": "amyotrophic lateral sclerosis",
+      "gene": "ADAM23",
+      "target_id": "ENSG00000114948",
+      "target_name": "ADAM metallopeptidase domain 23",
+      "open_targets_association_score": 0.06668636973443193,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "PDE4B",
+      "target_id": "ENSG00000184588",
+      "target_name": "phosphodiesterase 4B",
+      "open_targets_association_score": 0.4074814704203045,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "ADRA1A",
+      "target_id": "ENSG00000120907",
+      "target_name": "adrenoceptor alpha 1A",
+      "open_targets_association_score": 0.3941718911858448,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "PDE2A",
+      "target_id": "ENSG00000186642",
+      "target_name": "phosphodiesterase 2A",
+      "open_targets_association_score": 0.3841115292487627,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "CUX2",
+      "target_id": "ENSG00000111249",
+      "target_name": "cut like homeobox 2",
+      "open_targets_association_score": 0.38320559237467344,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "PDE1C",
+      "target_id": "ENSG00000154678",
+      "target_name": "phosphodiesterase 1C",
+      "open_targets_association_score": 0.38018474329273777,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "PDE1A",
+      "target_id": "ENSG00000115252",
+      "target_name": "phosphodiesterase 1A",
+      "open_targets_association_score": 0.38018474329273777,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "GABRD",
+      "target_id": "ENSG00000187730",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit delta",
+      "open_targets_association_score": 0.36687798349456385,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "HDAC9",
+      "target_id": "ENSG00000048052",
+      "target_name": "histone deacetylase 9",
+      "open_targets_association_score": 0.3605591987410883,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "GABRG2",
+      "target_id": "ENSG00000113327",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit gamma2",
+      "open_targets_association_score": 0.359578781364541,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "GABRA1",
+      "target_id": "ENSG00000022355",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit alpha1",
+      "open_targets_association_score": 0.3571765123090905,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "GABRB2",
+      "target_id": "ENSG00000145864",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit beta2",
+      "open_targets_association_score": 0.3571765123090905,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "GABRA2",
+      "target_id": "ENSG00000151834",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit alpha2",
+      "open_targets_association_score": 0.3571765123090905,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "GABRG3",
+      "target_id": "ENSG00000182256",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit gamma3",
+      "open_targets_association_score": 0.3571765123090905,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "GABRB1",
+      "target_id": "ENSG00000163288",
+      "target_name": "gamma-aminobutyric acid type A receptor subunit beta1",
+      "open_targets_association_score": 0.3571765123090905,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "CACNA1C",
+      "target_id": "ENSG00000151067",
+      "target_name": "calcium voltage-gated channel subunit alpha1 C",
+      "open_targets_association_score": 0.34442736705787474,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "GRIN2A",
+      "target_id": "ENSG00000183454",
+      "target_name": "glutamate ionotropic receptor NMDA type subunit 2A",
+      "open_targets_association_score": 0.34280952247162105,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "CACNA1D",
+      "target_id": "ENSG00000157388",
+      "target_name": "calcium voltage-gated channel subunit alpha1 D",
+      "open_targets_association_score": 0.3424584817125773,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "GRIN3A",
+      "target_id": "ENSG00000198785",
+      "target_name": "glutamate ionotropic receptor NMDA type subunit 3A",
+      "open_targets_association_score": 0.32680006255531086,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "ABCC8",
+      "target_id": "ENSG00000006071",
+      "target_name": "ATP binding cassette subfamily C member 8",
+      "open_targets_association_score": 0.30058947667621044,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "SCN1A",
+      "target_id": "ENSG00000144285",
+      "target_name": "sodium voltage-gated channel alpha subunit 1",
+      "open_targets_association_score": 0.2639225661160153,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "KIT",
+      "target_id": "ENSG00000157404",
+      "target_name": "KIT proto-oncogene, receptor tyrosine kinase",
+      "open_targets_association_score": 0.26107691786631765,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "SCN8A",
+      "target_id": "ENSG00000196876",
+      "target_name": "sodium voltage-gated channel alpha subunit 8",
+      "open_targets_association_score": 0.2609182443538621,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "SCN3A",
+      "target_id": "ENSG00000153253",
+      "target_name": "sodium voltage-gated channel alpha subunit 3",
+      "open_targets_association_score": 0.2602714796081639,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "PTPRN2",
+      "target_id": "ENSG00000155093",
+      "target_name": "protein tyrosine phosphatase receptor type N2",
+      "open_targets_association_score": 0.24750880212347845,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "CUX1",
+      "target_id": "ENSG00000257923",
+      "target_name": "cut like homeobox 1",
+      "open_targets_association_score": 0.23723268860607047,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "DCC",
+      "target_id": "ENSG00000187323",
+      "target_name": "DCC netrin 1 receptor",
+      "open_targets_association_score": 0.21277260954425153,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "CIT",
+      "target_id": "ENSG00000122966",
+      "target_name": "citron rho-interacting serine/threonine kinase",
+      "open_targets_association_score": 0.192174534296591,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "IGF1",
+      "target_id": "ENSG00000017427",
+      "target_name": "insulin like growth factor 1",
+      "open_targets_association_score": 0.11761447456852386,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "SLC6A1",
+      "target_id": "ENSG00000157103",
+      "target_name": "solute carrier family 6 member 1",
+      "open_targets_association_score": 0.09899542967867571,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "GRIA1",
+      "target_id": "ENSG00000155511",
+      "target_name": "glutamate ionotropic receptor AMPA type subunit 1",
+      "open_targets_association_score": 0.09611641798213141,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "CHRNA7",
+      "target_id": "ENSG00000175344",
+      "target_name": "cholinergic receptor nicotinic alpha 7 subunit",
+      "open_targets_association_score": 0.09430528296076868,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "EGFR",
+      "target_id": "ENSG00000146648",
+      "target_name": "epidermal growth factor receptor",
+      "open_targets_association_score": 0.09372323602957462,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "GRIA4",
+      "target_id": "ENSG00000152578",
+      "target_name": "glutamate ionotropic receptor AMPA type subunit 4",
+      "open_targets_association_score": 0.0929493334532025,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "GRIA3",
+      "target_id": "ENSG00000125675",
+      "target_name": "glutamate ionotropic receptor AMPA type subunit 3",
+      "open_targets_association_score": 0.09276454352586014,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "DAPK1",
+      "target_id": "ENSG00000196730",
+      "target_name": "death associated protein kinase 1",
+      "open_targets_association_score": 0.09110144100308251,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "PPARGC1A",
+      "target_id": "ENSG00000109819",
+      "target_name": "PPARG coactivator 1 alpha",
+      "open_targets_association_score": 0.08851994521736747,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "GAP43",
+      "target_id": "ENSG00000172020",
+      "target_name": "growth associated protein 43",
+      "open_targets_association_score": 0.08769391569211385,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "NR3C2",
+      "target_id": "ENSG00000151623",
+      "target_name": "nuclear receptor subfamily 3 group C member 2",
+      "open_targets_association_score": 0.08712924831373524,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "TRPM2",
+      "target_id": "ENSG00000142185",
+      "target_name": "transient receptor potential cation channel subfamily M member 2",
+      "open_targets_association_score": 0.08489085062431828,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "EPHA4",
+      "target_id": "ENSG00000116106",
+      "target_name": "EPH receptor A4",
+      "open_targets_association_score": 0.08295388211455323,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "KCNB1",
+      "target_id": "ENSG00000158445",
+      "target_name": "potassium voltage-gated channel subfamily B member 1",
+      "open_targets_association_score": 0.08045240100859453,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "KCNC1",
+      "target_id": "ENSG00000129159",
+      "target_name": "potassium voltage-gated channel subfamily C member 1",
+      "open_targets_association_score": 0.07969065616638883,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "VIP",
+      "target_id": "ENSG00000146469",
+      "target_name": "vasoactive intestinal peptide",
+      "open_targets_association_score": 0.07813320403579649,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "SPARCL1",
+      "target_id": "ENSG00000152583",
+      "target_name": "SPARC like 1",
+      "open_targets_association_score": 0.07800167533298175,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "GRM5",
+      "target_id": "ENSG00000168959",
+      "target_name": "glutamate metabotropic receptor 5",
+      "open_targets_association_score": 0.07762488939453314,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "COL24A1",
+      "target_id": "ENSG00000171502",
+      "target_name": "collagen type XXIV alpha 1 chain",
+      "open_targets_association_score": 0.07585626517403506,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "USP25",
+      "target_id": "ENSG00000155313",
+      "target_name": "ubiquitin specific peptidase 25",
+      "open_targets_association_score": 0.07574333799621472,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "LAMA4",
+      "target_id": "ENSG00000112769",
+      "target_name": "laminin subunit alpha 4",
+      "open_targets_association_score": 0.075301895392008,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "KCNQ5",
+      "target_id": "ENSG00000185760",
+      "target_name": "potassium voltage-gated channel subfamily Q member 5",
+      "open_targets_association_score": 0.07456273568263859,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "KCNQ3",
+      "target_id": "ENSG00000184156",
+      "target_name": "potassium voltage-gated channel subfamily Q member 3",
+      "open_targets_association_score": 0.07456273568263859,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "KCND3",
+      "target_id": "ENSG00000171385",
+      "target_name": "potassium voltage-gated channel subfamily D member 3",
+      "open_targets_association_score": 0.07447034071896741,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "COL11A1",
+      "target_id": "ENSG00000060718",
+      "target_name": "collagen type XI alpha 1 chain",
+      "open_targets_association_score": 0.07428555079162506,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "KCNB2",
+      "target_id": "ENSG00000182674",
+      "target_name": "potassium voltage-gated channel subfamily B member 2",
+      "open_targets_association_score": 0.07391597093694036,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "KCNH5",
+      "target_id": "ENSG00000140015",
+      "target_name": "potassium voltage-gated channel subfamily H member 5",
+      "open_targets_association_score": 0.07391597093694036,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "KCNH7",
+      "target_id": "ENSG00000184611",
+      "target_name": "potassium voltage-gated channel subfamily H member 7",
+      "open_targets_association_score": 0.07391597093694036,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "KCNC2",
+      "target_id": "ENSG00000166006",
+      "target_name": "potassium voltage-gated channel subfamily C member 2",
+      "open_targets_association_score": 0.07391597093694036,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "RGS12",
+      "target_id": "ENSG00000159788",
+      "target_name": "regulator of G protein signaling 12",
+      "open_targets_association_score": 0.06916532836085922,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "ARPP21",
+      "target_id": "ENSG00000172995",
+      "target_name": "cAMP regulated phosphoprotein 21",
+      "open_targets_association_score": 0.06869052243598166,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "KCNMA1",
+      "target_id": "ENSG00000156113",
+      "target_name": "potassium calcium-activated channel subfamily M alpha 1",
+      "open_targets_association_score": 0.0635964120463834,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "SLC8A1",
+      "target_id": "ENSG00000183023",
+      "target_name": "solute carrier family 8 member A1",
+      "open_targets_association_score": 0.0584972616920051,
+      "evidence_type": "Open Targets integrated target-disease association"
+    },
+    {
+      "disease": "stroke",
+      "disease_id": "HP_0001297",
+      "resolved_disease_name": "Stroke",
+      "gene": "ITGA8",
+      "target_id": "ENSG00000077943",
+      "target_name": "integrin subunit alpha 8",
+      "open_targets_association_score": 0.05710008754878643,
+      "evidence_type": "Open Targets integrated target-disease association"
+    }
+  ],
+  "guardrail": "Open Targets association scores integrate heterogeneous genetic/functional evidence and are not mutation prevalence, effect size, or neuronal physiology."
+}

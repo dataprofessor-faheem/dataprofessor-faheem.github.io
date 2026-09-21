@@ -1,0 +1,362 @@
+disease,disease_id,resolved_disease_name,gene,target_id,target_name,open_targets_association_score,evidence_type
+Alzheimer disease,MONDO_0004975,Alzheimer disease,SORL1,ENSG00000137642,sortilin related receptor 1,0.6861184602782842,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,GRIN2A,ENSG00000183454,glutamate ionotropic receptor NMDA type subunit 2A,0.6234275987159364,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,GRIN3A,ENSG00000198785,glutamate ionotropic receptor NMDA type subunit 3A,0.6108729890407243,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,KIF1A,ENSG00000130294,kinesin family member 1A,0.5034704720071452,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,GABRB1,ENSG00000163288,gamma-aminobutyric acid type A receptor subunit beta1,0.4580347874927561,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,HTR2C,ENSG00000147246,5-hydroxytryptamine receptor 2C,0.4466922398530804,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,CHRNA7,ENSG00000175344,cholinergic receptor nicotinic alpha 7 subunit,0.44193458881829933,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,PTK2B,ENSG00000120899,protein tyrosine kinase 2 beta,0.4378117054781248,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,EGFR,ENSG00000146648,epidermal growth factor receptor,0.4267000848812753,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,PDE4B,ENSG00000184588,phosphodiesterase 4B,0.39694705729996865,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,CDH13,ENSG00000140945,cadherin 13,0.3878801719866538,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,PTPRO,ENSG00000151490,protein tyrosine phosphatase receptor type O,0.37507607730687276,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,CNTNAP2,ENSG00000174469,contactin associated protein 2,0.3742076154835612,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,SCN8A,ENSG00000196876,sodium voltage-gated channel alpha subunit 8,0.3740886421096306,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,GOT1,ENSG00000120053,glutamic-oxaloacetic transaminase 1,0.37181547143407667,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,KIT,ENSG00000157404,"KIT proto-oncogene, receptor tyrosine kinase",0.37061534777865246,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,GABRA1,ENSG00000022355,gamma-aminobutyric acid type A receptor subunit alpha1,0.3680726893812746,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,CACNA1A,ENSG00000141837,calcium voltage-gated channel subunit alpha1 A,0.3639140901609733,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,CHRM3,ENSG00000133019,cholinergic receptor muscarinic 3,0.36043904040734126,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,SCN1A,ENSG00000144285,sodium voltage-gated channel alpha subunit 1,0.3603493813140169,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,SDK1,ENSG00000146555,sidekick cell adhesion molecule 1,0.35968440414816794,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,CNR1,ENSG00000118432,cannabinoid receptor 1,0.3562773670762637,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,SCN3A,ENSG00000153253,sodium voltage-gated channel alpha subunit 3,0.3459309271664763,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,DOCK3,ENSG00000088538,dedicator of cytokinesis 3,0.3418626974822397,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,KHDRBS2,ENSG00000112232,"KH RNA binding domain containing, signal transduction associated 2",0.340440739117211,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,PTPRD,ENSG00000153707,protein tyrosine phosphatase receptor type D,0.3388299300595241,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,NFIB,ENSG00000147862,nuclear factor I B,0.33729546697692925,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,PTPRN2,ENSG00000155093,protein tyrosine phosphatase receptor type N2,0.3285054425289494,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,GRIA1,ENSG00000155511,glutamate ionotropic receptor AMPA type subunit 1,0.32769101896128894,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,SLIT3,ENSG00000184347,slit guidance ligand 3,0.32068946777060325,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,BCL11A,ENSG00000119866,BCL11 transcription factor A,0.3159295594267656,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,RYR2,ENSG00000198626,ryanodine receptor 2,0.31458912978296477,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,GABRG2,ENSG00000113327,gamma-aminobutyric acid type A receptor subunit gamma2,0.31389913384500767,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,ZMAT4,ENSG00000165061,zinc finger matrin-type 4,0.3079267651175039,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,ANO5,ENSG00000171714,anoctamin 5,0.30681403876551044,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,NR2F2,ENSG00000185551,nuclear receptor subfamily 2 group F member 2,0.3062287507407024,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,CACNA1C,ENSG00000151067,calcium voltage-gated channel subunit alpha1 C,0.3054463966751894,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,ADARB2,ENSG00000185736,adenosine deaminase RNA specific B2 (inactive),0.3047684659359167,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,GRIA4,ENSG00000152578,glutamate ionotropic receptor AMPA type subunit 4,0.30473550787950837,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,GABRA2,ENSG00000151834,gamma-aminobutyric acid type A receptor subunit alpha2,0.30150993546110205,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,CELF4,ENSG00000101489,CUGBP Elav-like family member 4,0.30133819046891397,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,MPDZ,ENSG00000107186,multiple PDZ domain crumbs cell polarity complex component,0.2999128878088299,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,GABRB2,ENSG00000145864,gamma-aminobutyric acid type A receptor subunit beta2,0.2972827521715188,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,KCND3,ENSG00000171385,potassium voltage-gated channel subfamily D member 3,0.2944673731583942,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,RPH3A,ENSG00000089169,rabphilin 3A,0.2886517602564424,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,KALRN,ENSG00000160145,kalirin RhoGEF kinase,0.28592283973661975,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,KCNJ3,ENSG00000162989,potassium inwardly rectifying channel subfamily J member 3,0.28247078154646377,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,SORCS1,ENSG00000108018,sortilin related VPS10 domain containing receptor 1,0.2815491930172139,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,CACNA1D,ENSG00000157388,calcium voltage-gated channel subunit alpha1 D,0.281191527721494,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,SLC6A1,ENSG00000157103,solute carrier family 6 member 1,0.2778027779974791,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,NRXN3,ENSG00000021645,neurexin 3,0.2772087469811687,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,CUX1,ENSG00000257923,cut like homeobox 1,0.27335288021421134,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,GHR,ENSG00000112964,growth hormone receptor,0.2682109616042133,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,ROBO2,ENSG00000185008,roundabout guidance receptor 2,0.2677672794843187,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,PRICKLE1,ENSG00000139174,prickle planar cell polarity protein 1,0.2650465072431903,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,GRIK1,ENSG00000171189,glutamate ionotropic receptor kainate type subunit 1,0.2636926663534173,Open Targets integrated target-disease association
+Alzheimer disease,MONDO_0004975,Alzheimer disease,DLGAP2,ENSG00000198010,DLG associated protein 2,0.26190617755794454,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,GRIN2A,ENSG00000183454,glutamate ionotropic receptor NMDA type subunit 2A,0.6290039778265303,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,GRIN3A,ENSG00000198785,glutamate ionotropic receptor NMDA type subunit 3A,0.6017081699817503,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,CHRM3,ENSG00000133019,cholinergic receptor muscarinic 3,0.5519780154336957,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,SCN8A,ENSG00000196876,sodium voltage-gated channel alpha subunit 8,0.5511732679185428,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,HTR2C,ENSG00000147246,5-hydroxytryptamine receptor 2C,0.550766572204934,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,SCN1A,ENSG00000144285,sodium voltage-gated channel alpha subunit 1,0.5460439193210946,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,SCN3A,ENSG00000153253,sodium voltage-gated channel alpha subunit 3,0.5261945636027173,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,KIF1A,ENSG00000130294,kinesin family member 1A,0.49434263754701707,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,SLC2A13,ENSG00000151229,solute carrier family 2 member 13,0.47440100158134596,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,GABRB1,ENSG00000163288,gamma-aminobutyric acid type A receptor subunit beta1,0.4448728869428179,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,PTPRO,ENSG00000151490,protein tyrosine phosphatase receptor type O,0.3893921580752473,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,GRIA1,ENSG00000155511,glutamate ionotropic receptor AMPA type subunit 1,0.3862918832541391,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,ADRA1A,ENSG00000120907,adrenoceptor alpha 1A,0.3806751432125205,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,GRIA3,ENSG00000125675,glutamate ionotropic receptor AMPA type subunit 3,0.37940934737167253,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,GRIA4,ENSG00000152578,glutamate ionotropic receptor AMPA type subunit 4,0.375803377261728,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,GOT1,ENSG00000120053,glutamic-oxaloacetic transaminase 1,0.3754526436838977,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,TOX3,ENSG00000103460,TOX high mobility group box family member 3,0.3683966056580023,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,CACNA1A,ENSG00000141837,calcium voltage-gated channel subunit alpha1 A,0.3604482300567952,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,PKP2,ENSG00000057294,plakophilin 2,0.3477675847712119,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,NFIB,ENSG00000147862,nuclear factor I B,0.34340710092936655,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,SV2C,ENSG00000122012,synaptic vesicle glycoprotein 2C,0.3414914956807287,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,PTPRD,ENSG00000153707,protein tyrosine phosphatase receptor type D,0.3299854980732297,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,ADCY1,ENSG00000164742,adenylate cyclase 1,0.3297273373806755,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,LRRC4C,ENSG00000148948,leucine rich repeat containing 4C,0.3277324951496411,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,NR2F2,ENSG00000185551,nuclear receptor subfamily 2 group F member 2,0.32472004505595636,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,GABRA1,ENSG00000022355,gamma-aminobutyric acid type A receptor subunit alpha1,0.322679707732752,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,GABRG2,ENSG00000113327,gamma-aminobutyric acid type A receptor subunit gamma2,0.31982244114200203,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,SLIT3,ENSG00000184347,slit guidance ligand 3,0.3148586077371966,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,CCSER1,ENSG00000184305,coiled-coil serine rich protein 1,0.3095185072109107,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,CNR1,ENSG00000118432,cannabinoid receptor 1,0.30884721113190705,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,GABRD,ENSG00000187730,gamma-aminobutyric acid type A receptor subunit delta,0.30156082478607904,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,GABRA2,ENSG00000151834,gamma-aminobutyric acid type A receptor subunit alpha2,0.3000304022472861,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,GABRG3,ENSG00000182256,gamma-aminobutyric acid type A receptor subunit gamma3,0.2988754652013964,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,GABRB2,ENSG00000145864,gamma-aminobutyric acid type A receptor subunit beta2,0.29832109541936935,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,ARID5B,ENSG00000150347,AT-rich interaction domain 5B,0.2969011727958399,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,KLF12,ENSG00000118922,KLF transcription factor 12,0.29493606069995587,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,DLG2,ENSG00000150672,discs large MAGUK scaffold protein 2,0.28896378123139593,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,RYR2,ENSG00000198626,ryanodine receptor 2,0.2878185501937619,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,ITGA8,ENSG00000077943,integrin subunit alpha 8,0.2799487791880503,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,GRM5,ENSG00000168959,glutamate metabotropic receptor 5,0.276278509414729,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,PPARGC1A,ENSG00000109819,PPARG coactivator 1 alpha,0.26716622333129925,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,MAP3K5,ENSG00000197442,mitogen-activated protein kinase kinase kinase 5,0.2533211964942854,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,DSCAM,ENSG00000171587,DS cell adhesion molecule,0.25065953625818527,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,L3MBTL4,ENSG00000154655,L3MBTL histone methyl-lysine binding protein 4,0.24971189833949903,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,PRICKLE1,ENSG00000139174,prickle planar cell polarity protein 1,0.24798548540065452,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,CHRNA7,ENSG00000175344,cholinergic receptor nicotinic alpha 7 subunit,0.24548232025830788,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,LRP1B,ENSG00000168702,LDL receptor related protein 1B,0.24449739486734381,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,CDH8,ENSG00000150394,cadherin 8,0.23410694183048059,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,TMEM108,ENSG00000144868,transmembrane protein 108,0.22261219380806538,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,USP25,ENSG00000155313,ubiquitin specific peptidase 25,0.22230403728821613,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,EXOC4,ENSG00000131558,exocyst complex component 4,0.21318662280297637,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,MPDZ,ENSG00000107186,multiple PDZ domain crumbs cell polarity complex component,0.21014506553817672,Open Targets integrated target-disease association
+Parkinson disease,MONDO_0005180,Parkinson disease,GRM8,ENSG00000179603,glutamate metabotropic receptor 8,0.2056675766726306,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,SCN1A,ENSG00000144285,sodium voltage-gated channel alpha subunit 1,0.9263323779429171,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,SCN8A,ENSG00000196876,sodium voltage-gated channel alpha subunit 8,0.903823762835905,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,SCN3A,ENSG00000153253,sodium voltage-gated channel alpha subunit 3,0.894460693741088,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,GABRG2,ENSG00000113327,gamma-aminobutyric acid type A receptor subunit gamma2,0.8841054387376303,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,GABRA1,ENSG00000022355,gamma-aminobutyric acid type A receptor subunit alpha1,0.8837925339369063,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,CACNA1A,ENSG00000141837,calcium voltage-gated channel subunit alpha1 A,0.8829651718956277,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,GRIN2A,ENSG00000183454,glutamate ionotropic receptor NMDA type subunit 2A,0.8822493988191843,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,KCNT1,ENSG00000107147,potassium sodium-activated channel subfamily T member 1,0.8687499698089268,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,GABRB2,ENSG00000145864,gamma-aminobutyric acid type A receptor subunit beta2,0.8638157159893031,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,CDKL5,ENSG00000008086,cyclin dependent kinase like 5,0.8637499962365669,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,CACNA1E,ENSG00000198216,calcium voltage-gated channel subunit alpha1 E,0.835130954919131,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,KCNMA1,ENSG00000156113,potassium calcium-activated channel subfamily M alpha 1,0.8324153387252603,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,GABRB1,ENSG00000163288,gamma-aminobutyric acid type A receptor subunit beta1,0.8272181396258289,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,GABRA2,ENSG00000151834,gamma-aminobutyric acid type A receptor subunit alpha2,0.8166783385286545,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,SPTAN1,ENSG00000197694,"spectrin alpha, non-erythrocytic 1",0.807697001920735,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,PLCB1,ENSG00000182621,phospholipase C beta 1,0.8064438258240364,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,RELN,ENSG00000189056,reelin,0.804468081934537,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,CYFIP2,ENSG00000055163,cytoplasmic FMR1 interacting protein 2,0.7962794754393655,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,ATP1A3,ENSG00000105409,ATPase Na+/K+ transporting subunit alpha 3,0.7922434779946997,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,HCN1,ENSG00000164588,hyperpolarization activated cyclic nucleotide gated potassium channel 1,0.7857715167293005,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,SLC6A1,ENSG00000157103,solute carrier family 6 member 1,0.7833230004380453,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,KCNC2,ENSG00000166006,potassium voltage-gated channel subfamily C member 2,0.783168707077881,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,KCNB1,ENSG00000158445,potassium voltage-gated channel subfamily B member 1,0.7776961374244227,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,CACNA2D1,ENSG00000153956,calcium voltage-gated channel auxiliary subunit alpha2delta 1,0.7700466415048871,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,KCNH5,ENSG00000140015,potassium voltage-gated channel subfamily H member 5,0.766108717705375,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,FGF13,ENSG00000129682,fibroblast growth factor 13,0.7492441571433426,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,GABBR2,ENSG00000136928,gamma-aminobutyric acid type B receptor subunit 2,0.7435996565055847,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,PRICKLE1,ENSG00000139174,prickle planar cell polarity protein 1,0.7417637605738908,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,SV2A,ENSG00000159164,synaptic vesicle glycoprotein 2A,0.7346885292508288,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,KCNQ3,ENSG00000184156,potassium voltage-gated channel subfamily Q member 3,0.7346037885498529,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,SERPINI1,ENSG00000163536,serpin family I member 1,0.7312161790601593,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,GRIA3,ENSG00000125675,glutamate ionotropic receptor AMPA type subunit 3,0.7171122168854208,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,CUX2,ENSG00000111249,cut like homeobox 2,0.7133956696371112,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,CACNA1B,ENSG00000148408,calcium voltage-gated channel subunit alpha1 B,0.7116003376491933,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,GABRD,ENSG00000187730,gamma-aminobutyric acid type A receptor subunit delta,0.7031884390366856,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,GAD1,ENSG00000128683,glutamate decarboxylase 1,0.7014362611328124,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,CACNB4,ENSG00000182389,calcium voltage-gated channel auxiliary subunit beta 4,0.6821228602214261,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,PHACTR1,ENSG00000112137,phosphatase and actin regulator 1,0.6762563306470598,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,FGF12,ENSG00000114279,fibroblast growth factor 12,0.6757902934829023,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,KCNT2,ENSG00000162687,potassium sodium-activated channel subfamily T member 2,0.6712032119899465,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,CACNA1C,ENSG00000151067,calcium voltage-gated channel subunit alpha1 C,0.6597181898245467,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,GRIK1,ENSG00000171189,glutamate ionotropic receptor kainate type subunit 1,0.6367696053710438,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,GRIA4,ENSG00000152578,glutamate ionotropic receptor AMPA type subunit 4,0.633061812323663,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,CACNA1D,ENSG00000157388,calcium voltage-gated channel subunit alpha1 D,0.629486897117807,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,GRIA1,ENSG00000155511,glutamate ionotropic receptor AMPA type subunit 1,0.6206215643678269,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,CACNA2D3,ENSG00000157445,calcium voltage-gated channel auxiliary subunit alpha2delta 3,0.6117329076888689,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,CNR1,ENSG00000118432,cannabinoid receptor 1,0.6105214481281263,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,CACNB2,ENSG00000165995,calcium voltage-gated channel auxiliary subunit beta 2,0.6084977630429612,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,GRIK3,ENSG00000163873,glutamate ionotropic receptor kainate type subunit 3,0.607634259573349,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,GABRG3,ENSG00000182256,gamma-aminobutyric acid type A receptor subunit gamma3,0.6072132920344452,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,CACNG3,ENSG00000006116,calcium voltage-gated channel auxiliary subunit gamma 3,0.6068205754536847,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,HTR2C,ENSG00000147246,5-hydroxytryptamine receptor 2C,0.5954461861983297,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,MAST3,ENSG00000099308,microtubule associated serine/threonine kinase 3,0.5870543088439201,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,GRIN3A,ENSG00000198785,glutamate ionotropic receptor NMDA type subunit 3A,0.5663882949616653,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,RBFOX1,ENSG00000078328,RNA binding fox-1 homolog 1,0.5640842586085648,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,KCNC1,ENSG00000129159,potassium voltage-gated channel subfamily C member 1,0.5615001986579592,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,RAPGEF2,ENSG00000109756,Rap guanine nucleotide exchange factor 2,0.5556320105981755,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,KCNQ5,ENSG00000185760,potassium voltage-gated channel subfamily Q member 5,0.5547804785442509,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,CNTNAP2,ENSG00000174469,contactin associated protein 2,0.5209352327737578,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,ANO4,ENSG00000151572,anoctamin 4,0.5158898021871751,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,GRM7,ENSG00000196277,glutamate metabotropic receptor 7,0.39797348571789903,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,PRICKLE2,ENSG00000163637,prickle planar cell polarity protein 2,0.37931802248893803,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,BSN,ENSG00000164061,bassoon presynaptic cytomatrix protein,0.3691486353686302,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,PCDH7,ENSG00000169851,protocadherin 7,0.3684649531959468,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,KCND3,ENSG00000171385,potassium voltage-gated channel subfamily D member 3,0.36437644250025764,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,RYR2,ENSG00000198626,ryanodine receptor 2,0.3631868372643823,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,CHL1,ENSG00000134121,cell adhesion molecule L1 like,0.3495239092769333,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,EGFR,ENSG00000146648,epidermal growth factor receptor,0.3409447464374072,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,SV2C,ENSG00000122012,synaptic vesicle glycoprotein 2C,0.327704544056281,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,SPOCK1,ENSG00000152377,"SPARC (osteonectin), cwcv and kazal like domains proteoglycan 1",0.2786026172988079,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,NPAS3,ENSG00000151322,neuronal PAS domain protein 3,0.2672414821059833,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,RPH3A,ENSG00000089169,rabphilin 3A,0.2641225649950596,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,NRXN3,ENSG00000021645,neurexin 3,0.25351165158265937,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,BAIAP2,ENSG00000175866,BAR/IMD domain containing adaptor protein 2,0.2466714336048632,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,NTRK3,ENSG00000140538,neurotrophic receptor tyrosine kinase 3,0.24513236583922593,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,THSD7A,ENSG00000005108,thrombospondin type 1 domain containing 7A,0.21667299359633554,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,GRM3,ENSG00000198822,glutamate metabotropic receptor 3,0.21518086881645382,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,KCNH7,ENSG00000184611,potassium voltage-gated channel subfamily H member 7,0.2025199433122537,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,ADRA1A,ENSG00000120907,adrenoceptor alpha 1A,0.18589353385286772,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,DYNC1H1,ENSG00000197102,dynein cytoplasmic 1 heavy chain 1,0.17602698156402918,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,ATP8A2,ENSG00000132932,ATPase phospholipid transporting 8A2,0.13866828317730764,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,GRM5,ENSG00000168959,glutamate metabotropic receptor 5,0.1356298098857348,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,USP25,ENSG00000155313,ubiquitin specific peptidase 25,0.13055080638333447,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,IGF1,ENSG00000017427,insulin like growth factor 1,0.1228140076697251,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,ATXN1,ENSG00000124788,ataxin 1,0.12168864520834105,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,MEF2C,ENSG00000081189,myocyte enhancer factor 2C,0.11962493007043834,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,ADCY8,ENSG00000155897,adenylate cyclase 8,0.11929210305169981,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,SPTBN4,ENSG00000160460,"spectrin beta, non-erythrocytic 4",0.11847207416290545,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,PPARGC1A,ENSG00000109819,PPARG coactivator 1 alpha,0.11730220062294672,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,KCNAB1,ENSG00000169282,potassium voltage-gated channel subfamily A regulatory beta subunit 1,0.11590371786639915,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,TRPM2,ENSG00000142185,transient receptor potential cation channel subfamily M member 2,0.1130021357881443,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,DPP6,ENSG00000130226,dipeptidyl peptidase like 6,0.11245452787729245,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,MYO16,ENSG00000041515,myosin XVI,0.11228880759602121,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,EPHA4,ENSG00000116106,EPH receptor A4,0.11155571044993544,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,GRID2,ENSG00000152208,glutamate ionotropic receptor delta type subunit 2,0.11136038001087102,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,ADAM23,ENSG00000114948,ADAM metallopeptidase domain 23,0.11087326589240756,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,DSCAM,ENSG00000171587,DS cell adhesion molecule,0.1097199960337326,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,ASIC2,ENSG00000108684,acid sensing ion channel subunit 2,0.10942798294035698,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,GABBR1,ENSG00000204681,gamma-aminobutyric acid type B receptor subunit 1,0.10856609759825564,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,HECW1,ENSG00000002746,"HECT, C2 and WW domain containing E3 ubiquitin protein ligase 1",0.10800230567946667,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,DAB1,ENSG00000173406,DAB adaptor protein 1,0.10757926516009533,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,TRPC3,ENSG00000138741,transient receptor potential cation channel subfamily C member 3,0.1056174923078355,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,KIT,ENSG00000157404,"KIT proto-oncogene, receptor tyrosine kinase",0.10423162860743608,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,LRRTM3,ENSG00000198739,leucine rich repeat transmembrane neuronal 3,0.10320899584606055,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,LAMP5,ENSG00000125869,lysosome associated membrane protein 5,0.10296421689832422,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,CHRM3,ENSG00000133019,cholinergic receptor muscarinic 3,0.10295622761634851,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,CHRNA7,ENSG00000175344,cholinergic receptor nicotinic alpha 7 subunit,0.10225510374535242,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,DGKG,ENSG00000058866,diacylglycerol kinase gamma,0.10206991328402641,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,RORA,ENSG00000069667,RAR related orphan receptor A,0.1006649197616297,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,MYO5A,ENSG00000197535,myosin VA,0.09976625593927013,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,CNTN6,ENSG00000134115,contactin 6,0.09882005421743033,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,DAPK1,ENSG00000196730,death associated protein kinase 1,0.09854118097047748,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,ROBO1,ENSG00000169855,roundabout guidance receptor 1,0.09800717024274193,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,KALRN,ENSG00000160145,kalirin RhoGEF kinase,0.0971567442763191,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,NF1,ENSG00000196712,neurofibromin 1,0.09693524653435937,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,MAP1B,ENSG00000131711,microtubule associated protein 1B,0.09649795717788844,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,ITPR1,ENSG00000150995,"inositol 1,4,5-trisphosphate receptor type 1",0.09575211509050023,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,PLXNA2,ENSG00000076356,plexin A2,0.09536343895930469,Open Targets integrated target-disease association
+epilepsy,MONDO_0005027,epilepsy,KIF1A,ENSG00000130294,kinesin family member 1A,0.09349698248141257,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,ERBB4,ENSG00000178568,erb-b2 receptor tyrosine kinase 4,0.7039750922427951,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,SCN8A,ENSG00000196876,sodium voltage-gated channel alpha subunit 8,0.6082664271637692,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,SCN1A,ENSG00000144285,sodium voltage-gated channel alpha subunit 1,0.6030084324773017,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,SCN3A,ENSG00000153253,sodium voltage-gated channel alpha subunit 3,0.5829958506807971,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,PPARGC1A,ENSG00000109819,PPARG coactivator 1 alpha,0.3943218745619763,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,KIT,ENSG00000157404,"KIT proto-oncogene, receptor tyrosine kinase",0.3847978573582581,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,GRIN2A,ENSG00000183454,glutamate ionotropic receptor NMDA type subunit 2A,0.3499624350628309,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,OPCML,ENSG00000183715,opioid binding protein/cell adhesion molecule like,0.32823069092683677,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,LINGO2,ENSG00000174482,leucine rich repeat and Ig domain containing 2,0.30906262028149895,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,UST,ENSG00000111962,uronyl 2-sulfotransferase,0.3049941338540768,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,PCSK2,ENSG00000125851,proprotein convertase subtilisin/kexin type 2,0.2999179960907784,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,LUZP2,ENSG00000187398,leucine zipper protein 2,0.2932775216873324,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,LRP1B,ENSG00000168702,LDL receptor related protein 1B,0.2915503901359802,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,GRIN3A,ENSG00000198785,glutamate ionotropic receptor NMDA type subunit 3A,0.26190347636443745,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,NPAS3,ENSG00000151322,neuronal PAS domain protein 3,0.2609003068919443,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,TENM4,ENSG00000149256,teneurin transmembrane protein 4,0.25495710741173383,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,RBFOX1,ENSG00000078328,RNA binding fox-1 homolog 1,0.2507786994416819,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,MAGI1,ENSG00000151276,"membrane associated guanylate kinase, WW and PDZ domain containing 1",0.24898712154221728,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,LRFN5,ENSG00000165379,leucine rich repeat and fibronectin type III domain containing 5,0.23247976385916044,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,PDE4B,ENSG00000184588,phosphodiesterase 4B,0.21601839845250076,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,HTR2C,ENSG00000147246,5-hydroxytryptamine receptor 2C,0.19828884567912383,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,COL24A1,ENSG00000171502,collagen type XXIV alpha 1 chain,0.18883690351667834,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,ROBO2,ENSG00000185008,roundabout guidance receptor 2,0.15252028515149457,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,CACNA1A,ENSG00000141837,calcium voltage-gated channel subunit alpha1 A,0.13952685013833757,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,DYNC1H1,ENSG00000197102,dynein cytoplasmic 1 heavy chain 1,0.13511352524247935,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,IGF1,ENSG00000017427,insulin like growth factor 1,0.12499552498095008,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,ATXN1,ENSG00000124788,ataxin 1,0.11502128193039526,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,DMD,ENSG00000198947,dystrophin,0.11383538288982173,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,CHRM3,ENSG00000133019,cholinergic receptor muscarinic 3,0.10749983115979314,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,GRIA1,ENSG00000155511,glutamate ionotropic receptor AMPA type subunit 1,0.1045563964797268,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,KIF1A,ENSG00000130294,kinesin family member 1A,0.10305253946567161,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,OXR1,ENSG00000164830,oxidation resistance 1,0.0996492007958558,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,GRIA4,ENSG00000152578,glutamate ionotropic receptor AMPA type subunit 4,0.09908990379476783,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,EPHA4,ENSG00000116106,EPH receptor A4,0.09832611254224861,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,KCNQ3,ENSG00000184156,potassium voltage-gated channel subfamily Q member 3,0.09583944791683686,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,ATP1A3,ENSG00000105409,ATPase Na+/K+ transporting subunit alpha 3,0.09235282402614811,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,MAP1B,ENSG00000131711,microtubule associated protein 1B,0.0915233276721912,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,NTRK3,ENSG00000140538,neurotrophic receptor tyrosine kinase 3,0.08838031205355994,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,MYO5A,ENSG00000197535,myosin VA,0.08826966755177848,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,GRIA3,ENSG00000125675,glutamate ionotropic receptor AMPA type subunit 3,0.08813632266127902,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,ANK1,ENSG00000029534,ankyrin 1,0.08785840575629382,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,ANO5,ENSG00000171714,anoctamin 5,0.08776533577135108,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,KCNQ5,ENSG00000185760,potassium voltage-gated channel subfamily Q member 5,0.08604310131517545,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,GABRA1,ENSG00000022355,gamma-aminobutyric acid type A receptor subunit alpha1,0.08560536420935663,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,RELN,ENSG00000189056,reelin,0.08538540667993258,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,SPTBN4,ENSG00000160460,"spectrin beta, non-erythrocytic 4",0.08416896086835304,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,HECW1,ENSG00000002746,"HECT, C2 and WW domain containing E3 ubiquitin protein ligase 1",0.08371287194988643,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,NCAM1,ENSG00000149294,neural cell adhesion molecule 1,0.08131724764878748,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,ARPP21,ENSG00000172995,cAMP regulated phosphoprotein 21,0.08126296692306516,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,GAS7,ENSG00000007237,growth arrest specific 7,0.08098136864945593,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,RORA,ENSG00000069667,RAR related orphan receptor A,0.08076574532308606,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,KCNC2,ENSG00000166006,potassium voltage-gated channel subfamily C member 2,0.0804273685973147,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,COL19A1,ENSG00000082293,collagen type XIX alpha 1 chain,0.08030039269301484,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,GABRG2,ENSG00000113327,gamma-aminobutyric acid type A receptor subunit gamma2,0.07904675511560688,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,TLN2,ENSG00000171914,talin 2,0.0784330580497534,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,CIT,ENSG00000122966,citron rho-interacting serine/threonine kinase,0.07831057296274221,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,GRID2,ENSG00000152208,glutamate ionotropic receptor delta type subunit 2,0.07752755261595952,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,DAB1,ENSG00000173406,DAB adaptor protein 1,0.07635579571089571,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,ATP8A2,ENSG00000132932,ATPase phospholipid transporting 8A2,0.07596765620923836,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,GHR,ENSG00000112964,growth hormone receptor,0.07593608393216537,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,CHRNA7,ENSG00000175344,cholinergic receptor nicotinic alpha 7 subunit,0.07554976667909928,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,BSN,ENSG00000164061,bassoon presynaptic cytomatrix protein,0.07414760035980293,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,UNC5C,ENSG00000182168,unc-5 netrin receptor C,0.07305291375929761,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,DSCAM,ENSG00000171587,DS cell adhesion molecule,0.07297317234024324,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,LIMCH1,ENSG00000064042,LIM and calponin homology domains 1,0.07277128691434649,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,MEF2C,ENSG00000081189,myocyte enhancer factor 2C,0.07234900644419712,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,KCNMA1,ENSG00000156113,potassium calcium-activated channel subfamily M alpha 1,0.07220544452428013,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,TRIO,ENSG00000038382,trio Rho guanine nucleotide exchange factor,0.07167492208406326,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,ITPR1,ENSG00000150995,"inositol 1,4,5-trisphosphate receptor type 1",0.07132585403731038,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,DOCK3,ENSG00000088538,dedicator of cytokinesis 3,0.06989750453829661,Open Targets integrated target-disease association
+amyotrophic lateral sclerosis,MONDO_0004976,amyotrophic lateral sclerosis,ADAM23,ENSG00000114948,ADAM metallopeptidase domain 23,0.06668636973443193,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,PDE4B,ENSG00000184588,phosphodiesterase 4B,0.4074814704203045,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,ADRA1A,ENSG00000120907,adrenoceptor alpha 1A,0.3941718911858448,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,PDE2A,ENSG00000186642,phosphodiesterase 2A,0.3841115292487627,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,CUX2,ENSG00000111249,cut like homeobox 2,0.38320559237467344,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,PDE1C,ENSG00000154678,phosphodiesterase 1C,0.38018474329273777,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,PDE1A,ENSG00000115252,phosphodiesterase 1A,0.38018474329273777,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,GABRD,ENSG00000187730,gamma-aminobutyric acid type A receptor subunit delta,0.36687798349456385,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,HDAC9,ENSG00000048052,histone deacetylase 9,0.3605591987410883,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,GABRG2,ENSG00000113327,gamma-aminobutyric acid type A receptor subunit gamma2,0.359578781364541,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,GABRA1,ENSG00000022355,gamma-aminobutyric acid type A receptor subunit alpha1,0.3571765123090905,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,GABRB2,ENSG00000145864,gamma-aminobutyric acid type A receptor subunit beta2,0.3571765123090905,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,GABRA2,ENSG00000151834,gamma-aminobutyric acid type A receptor subunit alpha2,0.3571765123090905,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,GABRG3,ENSG00000182256,gamma-aminobutyric acid type A receptor subunit gamma3,0.3571765123090905,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,GABRB1,ENSG00000163288,gamma-aminobutyric acid type A receptor subunit beta1,0.3571765123090905,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,CACNA1C,ENSG00000151067,calcium voltage-gated channel subunit alpha1 C,0.34442736705787474,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,GRIN2A,ENSG00000183454,glutamate ionotropic receptor NMDA type subunit 2A,0.34280952247162105,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,CACNA1D,ENSG00000157388,calcium voltage-gated channel subunit alpha1 D,0.3424584817125773,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,GRIN3A,ENSG00000198785,glutamate ionotropic receptor NMDA type subunit 3A,0.32680006255531086,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,ABCC8,ENSG00000006071,ATP binding cassette subfamily C member 8,0.30058947667621044,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,SCN1A,ENSG00000144285,sodium voltage-gated channel alpha subunit 1,0.2639225661160153,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,KIT,ENSG00000157404,"KIT proto-oncogene, receptor tyrosine kinase",0.26107691786631765,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,SCN8A,ENSG00000196876,sodium voltage-gated channel alpha subunit 8,0.2609182443538621,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,SCN3A,ENSG00000153253,sodium voltage-gated channel alpha subunit 3,0.2602714796081639,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,PTPRN2,ENSG00000155093,protein tyrosine phosphatase receptor type N2,0.24750880212347845,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,CUX1,ENSG00000257923,cut like homeobox 1,0.23723268860607047,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,DCC,ENSG00000187323,DCC netrin 1 receptor,0.21277260954425153,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,CIT,ENSG00000122966,citron rho-interacting serine/threonine kinase,0.192174534296591,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,IGF1,ENSG00000017427,insulin like growth factor 1,0.11761447456852386,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,SLC6A1,ENSG00000157103,solute carrier family 6 member 1,0.09899542967867571,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,GRIA1,ENSG00000155511,glutamate ionotropic receptor AMPA type subunit 1,0.09611641798213141,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,CHRNA7,ENSG00000175344,cholinergic receptor nicotinic alpha 7 subunit,0.09430528296076868,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,EGFR,ENSG00000146648,epidermal growth factor receptor,0.09372323602957462,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,GRIA4,ENSG00000152578,glutamate ionotropic receptor AMPA type subunit 4,0.0929493334532025,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,GRIA3,ENSG00000125675,glutamate ionotropic receptor AMPA type subunit 3,0.09276454352586014,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,DAPK1,ENSG00000196730,death associated protein kinase 1,0.09110144100308251,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,PPARGC1A,ENSG00000109819,PPARG coactivator 1 alpha,0.08851994521736747,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,GAP43,ENSG00000172020,growth associated protein 43,0.08769391569211385,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,NR3C2,ENSG00000151623,nuclear receptor subfamily 3 group C member 2,0.08712924831373524,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,TRPM2,ENSG00000142185,transient receptor potential cation channel subfamily M member 2,0.08489085062431828,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,EPHA4,ENSG00000116106,EPH receptor A4,0.08295388211455323,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,KCNB1,ENSG00000158445,potassium voltage-gated channel subfamily B member 1,0.08045240100859453,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,KCNC1,ENSG00000129159,potassium voltage-gated channel subfamily C member 1,0.07969065616638883,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,VIP,ENSG00000146469,vasoactive intestinal peptide,0.07813320403579649,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,SPARCL1,ENSG00000152583,SPARC like 1,0.07800167533298175,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,GRM5,ENSG00000168959,glutamate metabotropic receptor 5,0.07762488939453314,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,COL24A1,ENSG00000171502,collagen type XXIV alpha 1 chain,0.07585626517403506,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,USP25,ENSG00000155313,ubiquitin specific peptidase 25,0.07574333799621472,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,LAMA4,ENSG00000112769,laminin subunit alpha 4,0.075301895392008,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,KCNQ5,ENSG00000185760,potassium voltage-gated channel subfamily Q member 5,0.07456273568263859,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,KCNQ3,ENSG00000184156,potassium voltage-gated channel subfamily Q member 3,0.07456273568263859,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,KCND3,ENSG00000171385,potassium voltage-gated channel subfamily D member 3,0.07447034071896741,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,COL11A1,ENSG00000060718,collagen type XI alpha 1 chain,0.07428555079162506,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,KCNB2,ENSG00000182674,potassium voltage-gated channel subfamily B member 2,0.07391597093694036,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,KCNH5,ENSG00000140015,potassium voltage-gated channel subfamily H member 5,0.07391597093694036,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,KCNH7,ENSG00000184611,potassium voltage-gated channel subfamily H member 7,0.07391597093694036,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,KCNC2,ENSG00000166006,potassium voltage-gated channel subfamily C member 2,0.07391597093694036,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,RGS12,ENSG00000159788,regulator of G protein signaling 12,0.06916532836085922,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,ARPP21,ENSG00000172995,cAMP regulated phosphoprotein 21,0.06869052243598166,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,KCNMA1,ENSG00000156113,potassium calcium-activated channel subfamily M alpha 1,0.0635964120463834,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,SLC8A1,ENSG00000183023,solute carrier family 8 member A1,0.0584972616920051,Open Targets integrated target-disease association
+stroke,HP_0001297,Stroke,ITGA8,ENSG00000077943,integrin subunit alpha 8,0.05710008754878643,Open Targets integrated target-disease association
