@@ -14,7 +14,7 @@
       <div><strong>NEURO-BEAM</strong><span>Neuronal BioElectricity–Activity–Molecular Atlas</span></div>
     </div>
     <nav>
-      <a href="#atlas">Atlas</a><a href="#pipeline">Pipeline</a><a href="#datasets">Datasets</a>
+      <a href="#atlas">Atlas</a><a href="#live-data">Live Data</a><a href="#pipeline">Pipeline</a><a href="#datasets">Datasets</a>
       <a href="#statistics">Statistics</a><a href="#code">Code</a>
       <a class="pill" href="https://github.com/dataprofessor-faheem/dataprofessor-faheem.github.io/tree/main/neuro-beam">GitHub</a>
     </nav>
@@ -30,7 +30,7 @@
           <a class="btn primary" href="#pipeline">Explore the project</a>
           <a class="btn" href="#datasets">View locked datasets</a>
         </div>
-        <div class="status"><span class="dot"></span><strong>Project status:</strong> Phase 1 initialized — dataset lock, QC protocol and bioelectric discovery pipeline deployed.</div>
+        <div class="status"><span class="dot"></span><strong>Project status:</strong> Phase 1 active — first real Patch-seq validation cohort ingested and published.</div>
       </div>
 
       <div class="hero-art" aria-label="Brain-neuron-DNA research concept">
@@ -63,6 +63,24 @@
       <article><b>3</b><span>locked Phase-1 DANDI cohorts</span></article>
       <article><b>25–50</b><span>candidate electrophysiology variables</span></article>
       <article><b>6+</b><span>multiscale data layers</span></article>
+    </section>
+
+    
+    <section class="section live-data" id="live-data">
+      <div class="section-head"><span>LIVE</span><div><h2>Verified Patch-seq cohort snapshot</h2><p>Real source-derived metadata from the reserved M1 external-validation cohort.</p></div></div>
+      <div class="live-kpis">
+        <article><b id="k-neurons">—</b><span>metadata neurons</span></article>
+        <article><b id="k-ephys">—</b><span>matched ephys neurons</span></article>
+        <article><b id="k-mice">—</b><span>unique mice</span></article>
+        <article><b id="k-features">—</b><span>ephys features</span></article>
+      </div>
+      <div class="viz-grid">
+        <article class="viz-card"><div class="viz-title"><h3>RNA-family composition</h3><span>M1 Patch-seq</span></div><div id="family-chart" class="bar-chart"></div></article>
+        <article class="viz-card"><div class="viz-title"><h3>Cortical-layer distribution</h3><span>all 1,329 metadata neurons</span></div><div id="layer-chart" class="bar-chart"></div></article>
+        <article class="viz-card"><div class="viz-title"><h3>Sex composition</h3><span>source metadata</span></div><div id="sex-chart" class="donut-wrap"></div></article>
+        <article class="viz-card feature-card"><div class="viz-title"><h3>Electrophysiology feature space</h3><span>29 processed variables</span></div><div id="feature-list" class="feature-list"></div></article>
+      </div>
+      <div class="data-note"><b>Validation firewall:</b> this M1 cohort is displayed and characterized now, but remains excluded from discovery feature selection and model tuning. It is reserved for frozen-signature external validation.</div>
     </section>
 
     <section class="section" id="pipeline">
