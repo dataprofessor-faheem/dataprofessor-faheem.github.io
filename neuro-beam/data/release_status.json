@@ -51,6 +51,51 @@
       "detail": "metrics=9"
     },
     {
+      "check": "v3_file_ml_negative_controls.json",
+      "pass": true,
+      "detail": "present"
+    },
+    {
+      "check": "v3_file_ml_calibration_uncertainty.json",
+      "pass": true,
+      "detail": "present"
+    },
+    {
+      "check": "v3_file_cbef_sensitivity_summary.json",
+      "pass": true,
+      "detail": "present"
+    },
+    {
+      "check": "v3_file_gene_external_m1_replication.json",
+      "pass": true,
+      "detail": "present"
+    },
+    {
+      "check": "v3_file_neurobeam_pareto_evidence.json",
+      "pass": true,
+      "detail": "present"
+    },
+    {
+      "check": "v3_file_neurological_disease_evidence.json",
+      "pass": true,
+      "detail": "present"
+    },
+    {
+      "check": "v3_tier_A_exists",
+      "pass": true,
+      "detail": "Tier A count=25"
+    },
+    {
+      "check": "v3_negative_control_signal",
+      "pass": true,
+      "detail": "mean signal-null delta=0.6651371661734502"
+    },
+    {
+      "check": "v3_neuro_disease_overlap",
+      "pass": true,
+      "detail": "genes with neuro evidence=199"
+    },
+    {
       "check": "file_bioelectric_gene_associations.csv",
       "pass": true,
       "detail": "present"
@@ -76,8 +121,8 @@
       "detail": "present"
     }
   ],
-  "passed": 15,
-  "total": 15,
+  "passed": 24,
+  "total": 24,
   "publicationReady": true,
   "interpretation": "PublicationReady is an engineering/integrity gate, not a prediction of journal acceptance."
 }
