@@ -42,13 +42,13 @@
     },
     {
       "check": "external_m1_cells",
-      "pass": false,
-      "detail": "external validation not yet available: FileNotFoundError(2, 'No such file or directory')"
+      "pass": true,
+      "detail": "n=1304"
     },
     {
       "check": "external_m1_metrics",
-      "pass": false,
-      "detail": "external validation not yet available"
+      "pass": true,
+      "detail": "metrics=9"
     },
     {
       "check": "file_bioelectric_gene_associations.csv",
@@ -76,8 +76,8 @@
       "detail": "present"
     }
   ],
-  "passed": 13,
+  "passed": 15,
   "total": 15,
-  "publicationReady": false,
+  "publicationReady": true,
   "interpretation": "PublicationReady is an engineering/integrity gate, not a prediction of journal acceptance."
 }
