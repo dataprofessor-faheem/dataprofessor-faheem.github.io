@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "top500Genes": 500,
+  "cohorts": 10,
+  "top500CancerRows": 5000,
+  "fullMappedGenes": 1268,
+  "fullCancerRows": 12680,
+  "dynamicModels": 500,
+  "bioelectricRows": 9000
+}
