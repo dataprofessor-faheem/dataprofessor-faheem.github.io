@@ -1,61 +1,27 @@
 # NEURO-BEAM
 ## Neuronal BioElectricity–Activity–Molecular Atlas
 
-Live project: https://www.gdrnetwork.org/neuro-beam/
+**NEURO-BEAM** is a scientific Bio-IT research platform developed for integrated exploration of neuronal bioelectric phenotypes, molecular signatures and comparative disease genomics.
 
-NEURO-BEAM is a reproducible public-data research framework designed to discover neuronal bioelectric states, link them to transcriptional regulation, validate them across cortical regions, and later integrate spatial brain mapping, morphology/connectomics, chromatin context and somatic-mosaicism evidence.
+**Developed by:**  
+**Dr. Mohd Faheem Khan** and **Dr. Khurshid Ahmad**  
+Founders & Lead Scientists, **GDRN Network**
 
-### Phase 1 locked datasets
-- DANDI 000020 — discovery
-- DANDI 001455 — excitatory discovery extension
-- DANDI 000008 — untouched external validation
-- Allen ABC Atlas — spatial extension
-- MICrONS — structural/connectomic extension
-- 4D Nucleome — regulatory context
-- NIH SMaHT — somatic-mosaicism context
+### Scientific purpose
+NEURO-BEAM provides researchers with an interactive environment for bioelectric-signal exploration, gene-level molecular interrogation, cross-cohort cancer-genomics comparison and analysis-ready numerical exports. The platform is intended for hypothesis generation, comparative computational research and downstream statistical investigation.
 
-### Reproducibility rules
-- Donor/animal-level splitting; never neuron-level leakage across train/test.
-- Raw counts and raw waveforms are never overwritten.
-- Preprocessing, imputation and feature selection happen inside training folds.
-- UMAP is visualization, not evidence of cluster existence.
-- Inference reports effect size, 95% CI, FDR, neuron count and donor count.
-- Association is not described as causal without perturbational evidence.
+### Research capabilities
+- Neuronal bioelectric phenotype exploration
+- Same-cell gene–electrophysiology association analysis
+- Cancer cohort × gene × electrical-signal signature exploration
+- Exact mutation prevalence, Spearman rho, BH-FDR and matched-neuron sample size
+- Cross-cohort comparative visualization
+- Analysis-ready CSV exports for independent research
 
-Large raw neuroscience data are not committed to this repository. They remain at their authoritative public archives and are accessed programmatically or selectively streamed.
+### Citation
+Khan MF, Ahmad K. *NEURO-BEAM: Neuronal BioElectricity–Activity–Molecular Atlas*. GDRN Network. Available at: https://www.gdrnetwork.org/neuro-beam/
 
+### Research interpretation
+Cross-domain molecular and bioelectric associations are provided for scientific exploration and hypothesis generation. They should not be interpreted as causal or clinical effects without appropriate experimental or clinical validation.
 
-### First verified data ingestion
-The external-validation M1 Patch-seq processed release is now ingested at metadata/feature level:
-- 1,329 metadata neurons
-- 1,328 matched electrophysiology neurons
-- 266 unique mice
-- 29 electrophysiological features
-- sex: 645 male, 684 female
-- major RNA families: Pvalb 289, Sst 272, IT 254, Vip 153, CT 106, Lamp5 91
-
-This cohort remains excluded from discovery tuning and is reserved for frozen-signature validation.
-
-
-## Cancer × Gene × Bioelectric Signature Explorer
-
-The live portal now includes a research-grade 3D signature cube:
-
-- 10 cancer cohorts
-- 15 shared genes
-- 18 measured neuronal electrical traits
-- 2,700 study × gene × signal records
-
-Each record contains mutation-sequenced cohort size, mutation prevalence, Spearman rho, p-value, BH-FDR q, matched-neuron n, signed mutation × bioelectric score, absolute score, Bioelectric Coupling Score, direction-consistency metrics and provenance.
-
-Downloads:
-- data/cancer_gene_bioelectric_signature_cube.csv
-- data/bioelectric_gene_associations.csv
-- data/bioelectric_gene_scores.csv
-- data/disease_bioelectric_scores.csv
-
-Documentation:
-- docs/signature_explorer_plan.md
-- docs/signature_explorer_master_prompt.md
-
-The explorer supports user-selected cohorts, gene and electrical signal, exact numerical comparison and filtered CSV export. Cross-domain results are exploratory and association-based; they are not causal or clinical effect estimates.
+**Platform:** https://www.gdrnetwork.org/neuro-beam/
