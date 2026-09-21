@@ -272,7 +272,22 @@ function renderAdvancedHeatmap(){
 }
 function renderAdvancedDisease(d){
   advancedDiseaseData=d;
-  document.getElementById("adv-study-count").textContent=(d.studies||[]).length;
+  const failed=(d.errors||[]).length;
+  const total=(d.studies||[]).length;
+  if(total>0 && failed===total){
+    document.getElementById("adv-study-count").textContent=total;
+    document.getElementById("adv-gene-count").textContent=(d.genes||Object.keys(d.geneByStudyPercent||{})).length;
+    document.getElementById("adv-top-gene").textContent="NA";
+    document.getElementById("adv-errors").textContent=failed;
+    const hm=document.getElementById("gene-disease-heatmap");
+    if(hm) hm.innerHTML='<div class="data-note warning-note"><b>Data withheld:</b> cBioPortal mutation retrieval failed for all selected studies. Zero values are not displayed because they would be misleading. The backend is being revalidated against the documented API request.</div>';
+    const mb=document.getElementById("module-burden-chart"); if(mb) mb.innerHTML='<p class="micro-note">Module burden withheld until successful molecular retrieval.</p>';
+    const tg=document.getElementById("top-gene-table"); if(tg) tg.innerHTML='<p class="micro-note">Gene ranking withheld until successful molecular retrieval.</p>';
+    const ms=document.getElementById("mutation-spectrum"); if(ms) ms.innerHTML='<p class="micro-note">Mutation spectrum withheld until successful molecular retrieval.</p>';
+    const sp=document.getElementById("study-provenance"); if(sp) sp.innerHTML='<p class="micro-note">Study denominators are available, but molecular values are withheld because mutation retrieval failed.</p>';
+    return;
+  }
+  document.getElementById("adv-study-count").textContent=total;
   document.getElementById("adv-gene-count").textContent=(d.genes||Object.keys(d.geneByStudyPercent||{})).length;
   document.getElementById("adv-top-gene").textContent=d.geneSummary?.[0]?.gene||"—";
   document.getElementById("adv-errors").textContent=(d.errors||[]).length;
