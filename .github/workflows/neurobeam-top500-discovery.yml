@@ -1,5 +1,9 @@
 name: NEURO-BEAM Top500 Discovery Engine
 
+concurrency:
+  group: neurobeam-top500-discovery
+  cancel-in-progress: true
+
 on:
   workflow_dispatch:
   push:
