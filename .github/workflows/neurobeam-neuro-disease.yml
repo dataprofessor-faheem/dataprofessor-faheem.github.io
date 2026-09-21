@@ -1,0 +1,30 @@
+name: NEURO-BEAM Neurological Disease Evidence
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/neurobeam-neuro-disease.yml"
+      - "neuro-beam/code/25_neurological_disease_evidence.py"
+      - "neuro-beam/data/top500_gene_catalog.csv"
+permissions:
+  contents: write
+jobs:
+  project:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests pandas
+      - run: python neuro-beam/code/25_neurological_disease_evidence.py
+      - run: |
+          git config user.name "neuro-beam-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add neuro-beam/data/neurological_disease_*.csv neuro-beam/data/neurological_disease_evidence.json
+          git diff --cached --quiet || git commit -m "Update neurological disease evidence projection"
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main
+            if git push origin main; then exit 0; fi
+            sleep $((i*2))
+          done
+          exit 1
