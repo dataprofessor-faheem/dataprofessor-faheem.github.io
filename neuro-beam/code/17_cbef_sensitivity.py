@@ -1,4 +1,5 @@
 """CBEF sensitivity, ablation and ranking-stability analysis."""
+# Revalidated for NEURO-BEAM 3.0 release.
 from __future__ import annotations
 import json, math
 from pathlib import Path
