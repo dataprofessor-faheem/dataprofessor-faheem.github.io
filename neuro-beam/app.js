@@ -274,7 +274,9 @@ function renderAdvancedDisease(d){
   advancedDiseaseData=d;
   const failed=(d.errors||[]).length;
   const total=(d.studies||[]).length;
-  if(total>0 && failed===total){
+  const matrixVals=Object.values(d.geneByStudyPercent||{}).flatMap(x=>Object.values(x||{}));
+  const validMolecularCells=matrixVals.filter(v=>v!==null && Number.isFinite(Number(v))).length;
+  if(total>0 && validMolecularCells===0){
     document.getElementById("adv-study-count").textContent=total;
     document.getElementById("adv-gene-count").textContent=(d.genes||Object.keys(d.geneByStudyPercent||{})).length;
     document.getElementById("adv-top-gene").textContent="NA";
