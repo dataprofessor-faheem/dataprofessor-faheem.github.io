@@ -14,7 +14,7 @@
       <div><strong>NEURO-BEAM</strong><span>Neuronal BioElectricity–Activity–Molecular Atlas</span></div>
     </div>
     <nav>
-      <a href="#atlas">Atlas</a><a href="#live-data">Live Data</a><a href="#pipeline">Pipeline</a><a href="#datasets">Datasets</a>
+      <a href="#atlas">Atlas</a><a href="#live-data">Live Data</a><a href="#dynamic-neuron">Dynamic Neuron</a><a href="#pipeline">Pipeline</a><a href="#datasets">Datasets</a>
       <a href="#statistics">Statistics</a><a href="#code">Code</a>
       <a class="pill" href="https://github.com/dataprofessor-faheem/dataprofessor-faheem.github.io/tree/main/neuro-beam">GitHub</a>
     </nav>
@@ -81,6 +81,45 @@
         <article class="viz-card feature-card"><div class="viz-title"><h3>Electrophysiology feature space</h3><span>29 processed variables</span></div><div id="feature-list" class="feature-list"></div></article>
       </div>
       <div class="data-note"><b>Validation firewall:</b> this M1 cohort is displayed and characterized now, but remains excluded from discovery feature selection and model tuning. It is reserved for frozen-signature external validation.</div>
+    </section>
+
+    
+    <section class="section dynamic-section" id="dynamic-neuron">
+      <div class="section-head"><span>DYN</span><div><h2>Dynamic Neuronal Bioelectric Explorer</h2><p>Interactive electrical-state visualization derived from measured electrophysiology. This is not a raw in-vivo brain movie.</p></div></div>
+      <div class="dynamic-grid">
+        <article class="viz-card neuron-stage-card">
+          <div class="viz-title"><h3>Neuron activity animation</h3><span id="dyn-mode-label">feature-derived</span></div>
+          <div class="neuron-stage">
+            <canvas id="neuron-canvas" width="780" height="380" aria-label="Animated neuron"></canvas>
+            <div class="activity-badge"><span class="dot"></span><span id="activity-state">electrical state</span></div>
+          </div>
+          <div class="dynamic-controls">
+            <label>State <select id="state-select"></select></label>
+            <label>Drive <input id="drive-slider" type="range" min="0" max="100" value="55"></label>
+            <button id="pause-neuron" class="mini-btn">Pause</button>
+          </div>
+          <p class="micro-note">Animation parameters are mapped from state-level electrophysiology summaries (resting potential, threshold/current, F-I slope, adaptation, latency). It is an explanatory visualization, not a substitute for raw voltage traces.</p>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Membrane potential dynamics</h3><span>derived illustrative waveform</span></div>
+          <canvas id="trace-canvas" width="620" height="300"></canvas>
+          <div id="state-readout" class="state-readout"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Bioelectric PCA landscape</h3><span>real discovery output</span></div>
+          <canvas id="pca-canvas" width="620" height="380"></canvas>
+          <div class="canvas-legend" id="pca-legend"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Cluster validity diagnostics</h3><span>baseline K-means only</span></div>
+          <div id="cluster-diagnostic-chart" class="metric-lines"></div>
+          <p class="micro-note">These diagnostics are screening evidence only. Final state definitions require consensus/GMM/HDBSCAN, bootstrap stability and donor-aware validation.</p>
+        </article>
+      </div>
+      <div class="data-note warning-note"><b>Interpretation guardrail:</b> a visually distinct animated state does not establish a biological class. The final atlas will only name states after stability, donor and external-validation criteria are satisfied. True live-brain dynamics will be added from calcium-imaging/Neuropixels data as a separate module.</div>
     </section>
 
     <section class="section" id="pipeline">
