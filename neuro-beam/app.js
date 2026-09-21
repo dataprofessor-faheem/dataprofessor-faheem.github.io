@@ -371,3 +371,168 @@ function renderBioelectricDisease(d){
   document.getElementById("bioe-disease-matrix").innerHTML=h;
 }
 fetch("data/bioelectric_disease_bridge.json").then(r=>r.ok?r.json():Promise.reject()).then(renderBioelectricDisease).catch(()=>{});
+
+
+/* === Cancer × Gene × Bioelectric Signature Explorer === */
+let signatureCube=null;
+let signatureSelectedStudies=new Set();
+
+function sigFmt(v,d=4){
+  if(v===null||v===undefined||Number.isNaN(Number(v))) return "NA";
+  const n=Number(v);
+  if(Math.abs(n)>0 && Math.abs(n)<0.0001) return n.toExponential(3);
+  return n.toFixed(d);
+}
+function sigCsvEscape(v){
+  if(v===null||v===undefined)return "";
+  const s=String(v);
+  return /[",\n]/.test(s)?'"'+s.replaceAll('"','""')+'"':s;
+}
+function signatureRowsFiltered(){
+  if(!signatureCube)return[];
+  const gene=document.getElementById("signature-gene-select")?.value;
+  const signal=document.getElementById("signature-signal-select")?.value;
+  return signatureCube.rows.filter(r=>r.gene===gene && r.electrical_feature===signal && signatureSelectedStudies.has(r.study_id));
+}
+function exportCurrentSignatureCsv(){
+  const rows=signatureRowsFiltered();
+  if(!rows.length)return;
+  const cols=Object.keys(rows[0]);
+  const csv=[cols.join(","),...rows.map(r=>cols.map(c=>sigCsvEscape(r[c])).join(","))].join("\n");
+  const blob=new Blob([csv],{type:"text/csv;charset=utf-8"});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+  const gene=document.getElementById("signature-gene-select").value;
+  const sig=document.getElementById("signature-signal-select").value;
+  a.href=url;a.download=`NEURO_BEAM_${gene}_${sig}_selected_cohorts.csv`;a.click();
+  setTimeout(()=>URL.revokeObjectURL(url),500);
+}
+function renderSignatureCohorts(){
+  const root=document.getElementById("signature-cohort-selector");
+  root.innerHTML=signatureCube.studies.map(s=>{
+    const active=signatureSelectedStudies.has(s.studyId);
+    return `<button class="cohort-pill ${active?'active':''}" data-sig-study="${s.studyId}" title="${s.name} · mutation n=${s.mutationSequencedDenominator}">${s.cancerTypeName}</button>`;
+  }).join("");
+  root.querySelectorAll("[data-sig-study]").forEach(b=>b.addEventListener("click",()=>{
+    const id=b.dataset.sigStudy;
+    if(signatureSelectedStudies.has(id))signatureSelectedStudies.delete(id);
+    else if(signatureSelectedStudies.size<10)signatureSelectedStudies.add(id);
+    document.getElementById("signature-cohort-count").textContent=`${signatureSelectedStudies.size} / 10`;
+    renderSignatureCohorts();renderSignatureExplorer();
+  }));
+}
+function renderSignatureBars(rows,metric){
+  const root=document.getElementById("signature-cohort-bars");
+  const values=rows.map(r=>Number(r[metric])).filter(Number.isFinite);
+  const mx=Math.max(.000001,...values.map(Math.abs));
+  const labels={
+    mutation_percent:"Mutation prevalence (%)",
+    spearman_rho:"Spearman rho",
+    signed_mutation_bioelectric_score:"Signed mutation × bioelectric score",
+    absolute_mutation_bioelectric_score:"Absolute mutation × bioelectric score"
+  };
+  document.getElementById("signature-chart-label").textContent=labels[metric]||metric;
+  const studyMap=Object.fromEntries(signatureCube.studies.map(s=>[s.studyId,s]));
+  root.innerHTML=rows.sort((a,b)=>Math.abs(Number(b[metric]))-Math.abs(Number(a[metric]))).map(r=>{
+    const v=Number(r[metric]),pct=Math.min(100,Math.abs(v)/mx*100);
+    const s=studyMap[r.study_id];
+    return `<div class="signature-bar-row"><span class="signature-bar-label" title="${r.study_name}">${s?.cancerTypeName||r.cancer_type}</span><div class="signature-bar-track"><div class="signature-bar-fill ${v<0?'negative':''}" style="width:${pct.toFixed(1)}%"></div></div><span class="signature-bar-value ${v<0?'rho-neg':'rho-pos'}">${sigFmt(v,metric==='mutation_percent'?2:5)}</span></div>`;
+  }).join("");
+}
+function renderGeneFingerprint(gene){
+  const root=document.getElementById("gene-electrical-fingerprint");
+  const unique=new Map();
+  signatureCube.rows.filter(r=>r.gene===gene).forEach(r=>{if(!unique.has(r.electrical_feature))unique.set(r.electrical_feature,r)});
+  const rows=[...unique.values()].sort((a,b)=>Math.abs(b.spearman_rho)-Math.abs(a.spearman_rho));
+  const mx=Math.max(.001,...rows.map(r=>Math.abs(Number(r.spearman_rho))));
+  root.innerHTML=rows.map(r=>{
+    const v=Number(r.spearman_rho),pct=Math.min(50,Math.abs(v)/mx*50);
+    const style=v>=0?`left:50%;width:${pct}%`:`right:50%;width:${pct}%`;
+    return `<div class="fingerprint-row"><span class="fingerprint-label" title="${r.electrical_feature}">${r.electrical_feature.replaceAll("_"," ")}</span><div class="fingerprint-axis"><span class="fingerprint-seg ${v>=0?'pos':'neg'}" style="${style}"></span></div><span class="fingerprint-value ${v>=0?'rho-pos':'rho-neg'}">${v>=0?'+':''}${v.toFixed(3)}</span></div>`;
+  }).join("");
+}
+function renderSignatureMatrix(gene){
+  const signals=signatureCube.electricalFeatures;
+  const studies=signatureCube.studies.filter(s=>signatureSelectedStudies.has(s.studyId));
+  const lookup=new Map(signatureCube.rows.filter(r=>r.gene===gene).map(r=>[`${r.study_id}|${r.electrical_feature}`,r]));
+  const vals=[];
+  lookup.forEach(r=>{if(signatureSelectedStudies.has(r.study_id)&&r.signed_mutation_bioelectric_score!=null)vals.push(Math.abs(Number(r.signed_mutation_bioelectric_score)))});
+  const mx=Math.max(.000001,...vals);
+  let h='<table class="heatmap-table"><thead><tr><th>Electrical signal</th>'+studies.map(s=>`<th title="${s.name}">${s.cancerTypeName.slice(0,13)}</th>`).join('')+'</tr></thead><tbody>';
+  signals.forEach(sig=>{
+    h+=`<tr><td>${sig.replaceAll("_"," ")}</td>`;
+    studies.forEach(s=>{
+      const r=lookup.get(`${s.studyId}|${sig}`);
+      const v=r?.signed_mutation_bioelectric_score;
+      let bg="rgba(255,255,255,.02)";
+      if(v!==null&&v!==undefined){
+        const t=Math.min(1,Math.abs(Number(v))/mx);
+        bg=Number(v)>=0?`rgba(88,223,255,${.08+.72*t})`:`rgba(255,125,189,${.08+.72*t})`;
+      }
+      h+=`<td class="heat-cell" style="background:${bg}" title="${r?gene+' · '+sig+' · '+s.cancerTypeName+'\nmutation '+sigFmt(r.mutation_percent,3)+'%\nrho '+sigFmt(r.spearman_rho,5)+'\nq '+sigFmt(r.bh_fdr_q,5)+'\nsigned '+sigFmt(v,6):'NA'}">${v==null||v===undefined?'—':sigFmt(v,4)}</td>`;
+    });
+    h+='</tr>';
+  });
+  h+='</tbody></table>';
+  document.getElementById("signature-signal-matrix").innerHTML=h;
+}
+function renderSignatureExactTable(rows){
+  const root=document.getElementById("signature-exact-table");
+  let h='<table class="matrix-table"><thead><tr><th>Cohort</th><th>Mutation n</th><th>Mutation %</th><th>ρ</th><th>p</th><th>BH q</th><th>Neuron n</th><th>Signed</th><th>Absolute</th><th>BCS</th></tr></thead><tbody>';
+  rows.forEach(r=>{
+    h+=`<tr><td><b>${r.cancer_type}</b><br><small>${r.study_id}</small></td><td>${r.mutation_sequenced_n}</td><td>${sigFmt(r.mutation_percent,4)}</td><td class="${Number(r.spearman_rho)>=0?'rho-pos':'rho-neg'}">${sigFmt(r.spearman_rho,6)}</td><td>${sigFmt(r.p_value,6)}</td><td>${sigFmt(r.bh_fdr_q,6)}</td><td>${r.matched_neuron_n}</td><td>${sigFmt(r.signed_mutation_bioelectric_score,7)}</td><td>${sigFmt(r.absolute_mutation_bioelectric_score,7)}</td><td>${sigFmt(r.bioelectric_coupling_score,5)}</td></tr>`;
+  });
+  h+='</tbody></table>';root.innerHTML=h;
+}
+function renderSignatureExplorer(){
+  if(!signatureCube)return;
+  const gene=document.getElementById("signature-gene-select").value;
+  const signal=document.getElementById("signature-signal-select").value;
+  const metric=document.getElementById("signature-metric-select").value;
+  const rows=signatureRowsFiltered();
+  if(!rows.length)return;
+
+  const ref=rows[0];
+  document.getElementById("sig-kpi-gene").textContent=gene;
+  document.getElementById("sig-kpi-mouse").textContent=`mouse ortholog: ${ref.mouse_gene}`;
+  document.getElementById("sig-kpi-signal").textContent=signal.replaceAll("_"," ");
+  document.getElementById("sig-kpi-rho").textContent=(Number(ref.spearman_rho)>=0?"+":"")+sigFmt(ref.spearman_rho,4);
+  document.getElementById("sig-kpi-direction").textContent=Number(ref.spearman_rho)>=0?"positive neuronal association":"negative neuronal association";
+  document.getElementById("sig-kpi-q").textContent=sigFmt(ref.bh_fdr_q,4);
+  document.getElementById("sig-kpi-n").textContent=`matched neuronal n=${ref.matched_neuron_n}`;
+  document.getElementById("sig-kpi-bcs").textContent=sigFmt(ref.bioelectric_coupling_score,3);
+  document.getElementById("sig-kpi-consistency").textContent=`direction consistency ${sigFmt((ref.same_direction_fraction_across_classes||0)*100,0)}% across ${ref.classes_tested} classes`;
+
+  renderSignatureBars(rows,metric);
+  renderGeneFingerprint(gene);
+  renderSignatureMatrix(gene);
+  renderSignatureExactTable(rows);
+
+  const d=document.getElementById("signature-detail-card");
+  d.innerHTML=[
+    ["Gene",gene],["Mouse gene",ref.mouse_gene],["Electrical trait",signal.replaceAll("_"," ")],
+    ["Spearman ρ",(Number(ref.spearman_rho)>=0?"+":"")+sigFmt(ref.spearman_rho,6)],
+    ["p-value",sigFmt(ref.p_value,6)],["BH-FDR q",sigFmt(ref.bh_fdr_q,6)],
+    ["Matched neurons",ref.matched_neuron_n],["Best gene-level trait",ref.best_electrical_feature.replaceAll("_"," ")],
+    ["BCS",sigFmt(ref.bioelectric_coupling_score,5)],["Class direction consistency",sigFmt((ref.same_direction_fraction_across_classes||0)*100,1)+"%"]
+  ].map(([k,v])=>`<div><span>${k}</span><b>${v}</b></div>`).join("");
+}
+fetch("data/cancer_gene_bioelectric_signature_cube.json").then(r=>r.json()).then(d=>{
+  signatureCube=d;
+  d.studies.forEach(s=>signatureSelectedStudies.add(s.studyId));
+  const gs=document.getElementById("signature-gene-select");
+  const ss=document.getElementById("signature-signal-select");
+  gs.innerHTML=d.genes.map(g=>`<option value="${g}">${g}</option>`).join("");
+  ss.innerHTML=d.electricalFeatures.map(s=>`<option value="${s}">${s.replaceAll("_"," ")}</option>`).join("");
+  // Start with a strongly interpretable ion-channel gene and threshold-current phenotype.
+  if(d.genes.includes("SCN1A"))gs.value="SCN1A";
+  if(d.electricalFeatures.includes("threshold_i_long_square"))ss.value="threshold_i_long_square";
+  renderSignatureCohorts();
+  [gs,ss,document.getElementById("signature-metric-select")].forEach(x=>x.addEventListener("change",renderSignatureExplorer));
+  document.getElementById("download-filtered-signature").addEventListener("click",exportCurrentSignatureCsv);
+  renderSignatureExplorer();
+}).catch(err=>{
+  console.error("Signature cube unavailable",err);
+  const el=document.getElementById("signature-exact-table");
+  if(el)el.innerHTML='<div class="data-note warning-note"><b>Signature cube unavailable:</b> the analysis file could not be loaded.</div>';
+});
