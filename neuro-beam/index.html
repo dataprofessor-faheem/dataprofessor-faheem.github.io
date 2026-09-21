@@ -191,6 +191,67 @@
       </div>
     </section>
 
+
+    <section class="section" id="advanced-disease-analysis">
+      <div class="section-head"><span>DX+</span><div><h2>Advanced Cross-Disease Molecular Analysis</h2><p>Research-facing mutation matrices, pathway burden, cross-study rankings and reusable exports.</p></div></div>
+
+      <div class="research-actions">
+        <a class="btn" href="data/disease_bioelectric_gene_study_matrix.csv" download>Download gene × study CSV</a>
+        <a class="btn" href="data/disease_bioelectric_module_matrix.csv" download>Download module matrix CSV</a>
+        <a class="btn" href="data/disease_bioelectric_bridge.json" target="_blank">Open full JSON provenance</a>
+      </div>
+
+      <div class="analysis-kpis">
+        <article><b id="adv-study-count">—</b><span>studies analyzed</span></article>
+        <article><b id="adv-gene-count">—</b><span>candidate genes</span></article>
+        <article><b id="adv-top-gene">—</b><span>top mean mutation gene</span></article>
+        <article><b id="adv-errors">—</b><span>API/data errors</span></article>
+      </div>
+
+      <div class="advanced-grid">
+        <article class="viz-card wide-card">
+          <div class="viz-title"><h3>Gene × disease mutation heatmap</h3><span>% mutation-sequenced samples</span></div>
+          <div class="heatmap-controls">
+            <label>Module <select id="heatmap-module-filter"><option value="ALL">All modules</option></select></label>
+            <label>Sort <select id="heatmap-sort"><option value="mean">Mean mutation %</option><option value="max">Maximum mutation %</option><option value="alpha">Gene name</option></select></label>
+          </div>
+          <div id="gene-disease-heatmap" class="heatmap-wrap"></div>
+          <p class="micro-note">Each cell uses the mutation-sequenced denominator for that study where available. Hover values are descriptive somatic mutation prevalence, not expression or causal effect.</p>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Module burden across studies</h3><span>any panel-gene mutation</span></div>
+          <div id="module-burden-chart" class="module-burden-chart"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Top cross-disease genes</h3><span>ranked by mean mutation prevalence</span></div>
+          <div id="top-gene-table" class="rank-table"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Mutation spectrum</h3><span>per selected default cohort</span></div>
+          <div id="mutation-spectrum" class="spectrum-grid"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Study provenance & denominators</h3><span>reproducibility metadata</span></div>
+          <div id="study-provenance" class="matrix-wrap"></div>
+        </article>
+
+        <article class="viz-card wide-card">
+          <div class="viz-title"><h3>Disease–Bioelectric Research Bridge</h3><span>candidate mechanistic modules</span></div>
+          <div class="bridge-logic">
+            <div><b>Disease genomics</b><span>somatic mutation prevalence</span></div><i>→</i>
+            <div><b>Shared gene modules</b><span>ion channel · Ca²⁺ · metabolism · DNA repair</span></div><i>→</i>
+            <div><b>Neuronal signatures</b><span>to be frozen after transcriptomic coupling</span></div><i>→</i>
+            <div><b>Cross-domain prioritization</b><span>hypothesis generation only</span></div>
+          </div>
+          <div class="data-note"><b>Research-use guardrail:</b> this layer is suitable for exploratory prioritization, comparative visualization and hypothesis generation. It should not be interpreted as evidence that cancer mutations cause neuronal bioelectric phenotypes.</div>
+        </article>
+      </div>
+    </section>
+
     <section class="section" id="pipeline">
       <div class="section-head"><span>01</span><div><h2>Scientific workflow</h2><p>One coordinated biological story from electrical phenotype to molecular regulation.</p></div></div>
       <div class="flow">
