@@ -42,7 +42,8 @@ def load_vis():
     mm=m[["ephys_session_id","transcriptomics_sample_id"]].copy();mm["_session_id"]=mm.ephys_session_id.astype(str).str.replace(r"\.0$","",regex=True)
     e["_session_id"]=e["_session_id"].astype(str).str.replace(r"\.0$","",regex=True);e=e.merge(mm,on="_session_id",how="left")
     gene_col="gene" if "gene" in g.columns else g.columns[0];g=g.drop_duplicates(gene_col).set_index(gene_col)
-    e=e[e.transcriptomics_sample_id.astype(str).isin(g.columns)].drop_duplicates("transcriptomics_sample_id").set_index(e.transcriptomics_sample_id.astype(str))
+    e=e[e.transcriptomics_sample_id.astype(str).isin(g.columns)].drop_duplicates("transcriptomics_sample_id").copy()
+    e.index=e["transcriptomics_sample_id"].astype(str)
     shared=[x for x in e.index if x in g.columns];e=e.loc[shared];g=g[shared]
     return e,g
 
