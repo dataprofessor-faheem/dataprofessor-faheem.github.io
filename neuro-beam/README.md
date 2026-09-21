@@ -72,3 +72,23 @@ Frozen cross-region M1 rank transfer is strongest for:
 - docs/scientific_release_gates.md
 
 The release audit indicates artifact completeness and internal reproducibility readiness only; it does not predict editorial acceptance.
+
+
+## NEURO-BEAM 3.0 evidence release
+
+The strengthened release now includes:
+- 24/24 engineering/scientific-integrity checks passed
+- leakage and permutation controls
+- subject-bootstrap predictive confidence intervals
+- residual-interval 90% / 95% coverage analysis
+- 300-resample discovery-ranking stability
+- 1,000-iteration cross-domain permutation control
+- gene-level M1 replication for 473 Top-500 genes
+- five-dimensional Pareto evidence prioritization
+- 25 Tier-A replicated genes
+- 51 Tier-B robust genes
+- 424 Tier-C exploratory Top-500 genes
+- Open Targets neurological-disease evidence for Alzheimer disease, Parkinson disease, epilepsy, ALS and stroke
+- 199 Top-500 genes with at least one neurological-disease evidence record
+
+Negative experimental results are retained transparently: CBEF-guided latent priors do not materially outperform the unweighted latent model, and BEAM-Factor does not improve average external M1 reproducibility. These modules remain ablations rather than headline novelty.
