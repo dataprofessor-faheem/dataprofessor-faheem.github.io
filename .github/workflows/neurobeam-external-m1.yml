@@ -1,0 +1,29 @@
+name: NEURO-BEAM External M1 Validation
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/neurobeam-external-m1.yml"
+      - "neuro-beam/code/16_external_m1_validation.py"
+      - "neuro-beam/data/top500_gene_catalog.csv"
+permissions:
+  contents: write
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pandas numpy scipy scikit-learn
+      - run: python neuro-beam/code/16_external_m1_validation.py
+      - name: Commit external validation
+        run: |
+          git config user.name "neuro-beam-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add neuro-beam/data/external_m1_validation.csv neuro-beam/data/external_m1_validation.json
+          git diff --cached --quiet || git commit -m "Update external M1 validation"
+          git pull --rebase origin main
+          git push origin main
