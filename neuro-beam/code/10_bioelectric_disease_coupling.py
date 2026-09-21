@@ -140,7 +140,14 @@ def main():
     # Candidate panel genes from disease bridge; compute within-class robustness.
     disease=json.loads(D_BRIDGE.read_text(encoding="utf-8"))
     candidate=set(disease.get("geneByStudyPercent",{}).keys())
-    shared_candidates=sorted(candidate.intersection(set(genes)))
+    # Mouse Patch-seq symbols are typically title case (Tp53, Kcnc2), while
+    # cBioPortal human HUGO symbols are uppercase. Match case-insensitively
+    # while preserving the mouse symbol for expression lookup and human symbol
+    # for disease lookup.
+    gene_upper_to_mouse={str(g).upper():str(g) for g in genes}
+    shared_human=sorted(candidate.intersection(set(gene_upper_to_mouse.keys())))
+    shared_candidates=[gene_upper_to_mouse[g] for g in shared_human]
+    mouse_to_human={gene_upper_to_mouse[g]:g for g in shared_human}
     class_names=[c for c in sorted(broad.dropna().unique()) if c and c!="Unknown"]
 
     robust_rows=[]
@@ -183,12 +190,12 @@ def main():
         best=max(use,key=lambda r:abs(r["rho"])*max(.25,r["sameDirectionFraction"]))
         bcs=min(1.0,abs(best["rho"])*2.5)*max(.25,best["sameDirectionFraction"])
         item={
-            "gene":gene,"bioelectricCouplingScore":float(bcs),
+            "gene":mouse_to_human.get(gene,gene.upper()),"mouseGene":gene,"bioelectricCouplingScore":float(bcs),
             "bestFeature":best["feature"],"rho":best["rho"],"q":best["q"],
             "sameDirectionFraction":best["sameDirectionFraction"],
             "classesTested":best["classesTested"]
         }
-        gene_scores.append(item);by_gene[gene]=item
+        gene_scores.append(item);by_gene[mouse_to_human.get(gene,gene.upper())]=item
     gene_scores.sort(key=lambda x:x["bioelectricCouplingScore"],reverse=True)
 
     # Disease EBAI: mutation prevalence weighted by empirical neuronal BCS.
@@ -231,7 +238,7 @@ def main():
         "nGenesTested":int(G.shape[0]),
         "electricalFeatures":features,
         "associationMethod":"Spearman rank correlation; BH-FDR within each electrical feature",
-        "candidatePanelSharedGenes":shared_candidates,
+        "candidatePanelSharedGenes":shared_human,
         "geneBioelectricScores":gene_scores,
         "diseaseBioelectricScores":disease_scores,
         "topAssociations":top_assoc,
