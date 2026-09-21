@@ -66,13 +66,15 @@ def load_aligned():
     if "ID" not in e.columns:
         raise RuntimeError("Original electrophysiology table lacks ID")
 
-    def third_numeric_token(v):
+    def ephys_session_token(v):
         import re
         toks=re.findall(r"\d+",str(v))
-        return toks[2] if len(toks)>=3 else None
+        # Source R code uses the 3rd token after splitting on non-digits;
+        # the first token is empty, so this is the 2nd numeric token.
+        return toks[1] if len(toks)>=2 else None
 
     e=e.copy()
-    e["_session_key"]=e["ID"].map(third_numeric_token).astype(str)
+    e["_session_key"]=e["ID"].map(ephys_session_token).astype(str)
 
     if "ephys_session_id" not in m.columns or "transcriptomics_sample_id" not in m.columns:
         raise RuntimeError("Metadata missing ephys_session_id/transcriptomics_sample_id")
