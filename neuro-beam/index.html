@@ -14,7 +14,7 @@
       <div><strong>NEURO-BEAM</strong><span>Neuronal BioElectricity–Activity–Molecular Atlas</span></div>
     </div>
     <nav>
-      <a href="#atlas">Atlas</a><a href="#live-data">Live Data</a><a href="#dynamic-neuron">Dynamic Neuron</a><a href="#stability">Stability</a><a href="#pipeline">Pipeline</a><a href="#datasets">Datasets</a>
+      <a href="#atlas">Atlas</a><a href="#live-data">Live Data</a><a href="#dynamic-neuron">Dynamic Neuron</a><a href="#stability">Stability</a><a href="#disease-explorer">Disease Explorer</a><a href="#pipeline">Pipeline</a><a href="#datasets">Datasets</a>
       <a href="#statistics">Statistics</a><a href="#code">Code</a>
       <a class="pill" href="https://github.com/dataprofessor-faheem/dataprofessor-faheem.github.io/tree/main/neuro-beam">GitHub</a>
     </nav>
@@ -142,6 +142,53 @@
         </article>
       </div>
       <div id="validation-interpretation" class="data-note"><b>Methodological firewall:</b> transcriptomic class labels are not used to create the electrical states; correspondence is evaluated only after the electrical solution is frozen.</div>
+    </section>
+
+    
+    <section class="section disease-section" id="disease-explorer">
+      <div class="section-head"><span>DX</span><div><h2>10-Disease Genomic Explorer</h2><p>cBioPortal-style oncology cohort selection, comparison and gene-focused exploration. Select up to 10 public studies.</p></div></div>
+
+      <div class="disease-toolbar">
+        <div class="search-box">
+          <input id="disease-search" type="search" placeholder="Search disease, cancer type, study name or ID…"/>
+          <span id="disease-count-label">Loading public cBioPortal studies…</span>
+        </div>
+        <div class="gene-query-box">
+          <input id="gene-query" type="text" value="TP53 EGFR PTEN KRAS PIK3CA" placeholder="Genes: TP53 EGFR PTEN"/>
+          <button id="open-cbio-query" class="mini-btn">Open cBioPortal query ↗</button>
+        </div>
+      </div>
+
+      <div class="selected-strip">
+        <div><b>Selected cohorts</b><span id="selected-limit">0 / 10</span></div>
+        <div id="selected-diseases" class="selected-chips"></div>
+      </div>
+
+      <div class="disease-grid">
+        <article class="viz-card disease-browser-card">
+          <div class="viz-title"><h3>Available public studies</h3><span>click + to add</span></div>
+          <div id="disease-browser" class="disease-browser"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Selected cohort comparison</h3><span>cancer type • samples • genome</span></div>
+          <div id="disease-comparison" class="disease-comparison"><p class="micro-note">Choose up to 10 disease/study cohorts.</p></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Sample-size landscape</h3><span>selected studies</span></div>
+          <div id="disease-sample-bars" class="bar-chart"></div>
+        </article>
+
+        <article class="viz-card bridge-card">
+          <div class="viz-title"><h3>Disease ↔ Bioelectric Bridge</h3><span>future integrative layer</span></div>
+          <p>This panel will compare disease-associated genes with NEURO-BEAM ion-channel, activity-response, calcium, mitochondrial, oxidative-stress and DNA-repair signatures after the neuronal transcriptomic signature is frozen.</p>
+          <div class="bridge-tags">
+            <span>Ion channels</span><span>Ca²⁺ signaling</span><span>Activity genes</span><span>Mitochondria</span><span>DNA repair</span><span>Chromatin</span>
+          </div>
+          <div class="data-note"><b>Scope:</b> cBioPortal is an oncology genomics resource. Alzheimer’s, Parkinson’s, epilepsy, ALS, stroke and other non-cancer neurological disorders will be connected through separate disease-specific datasets rather than mislabelled as cBioPortal cohorts.</div>
+        </article>
+      </div>
     </section>
 
     <section class="section" id="pipeline">
