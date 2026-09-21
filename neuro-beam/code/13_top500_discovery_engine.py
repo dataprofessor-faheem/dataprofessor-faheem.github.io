@@ -13,6 +13,8 @@ from collections import defaultdict
 import numpy as np
 import pandas as pd
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/"data"
@@ -22,7 +24,17 @@ BASE="https://www.cbioportal.org/api"
 MYGENE="https://mygene.info/v3"
 
 S=requests.Session()
-S.headers.update({"accept":"application/json","User-Agent":"NEURO-BEAM-CBEF/1.0"})
+S.headers.update({"accept":"application/json","User-Agent":"NEURO-BEAM-CBEF/1.1"})
+_retry=Retry(
+    total=6, connect=6, read=6, status=6,
+    backoff_factor=1.5,
+    status_forcelist=(429,500,502,503,504),
+    allowed_methods=frozenset(["GET","POST"]),
+    respect_retry_after_header=True,
+    raise_on_status=False
+)
+_adapter=HTTPAdapter(max_retries=_retry, pool_connections=20, pool_maxsize=20)
+S.mount("https://",_adapter)
 
 def pct_rank(s):
     s=pd.Series(s,dtype=float)
@@ -142,8 +154,8 @@ def main():
         denom=len(set(sample_ids)) or int(s.get("mutationSequencedDenominator") or s.get("catalogSampleCount") or 0)
         altered=defaultdict(set); events=defaultdict(int)
         try:
-            for start in range(0,len(ids),250):
-                chunk=ids[start:start+250]
+            for start in range(0,len(ids),100):
+                chunk=ids[start:start+100]
                 rows=fetch_mutations_batch(prof,chunk,sample_ids)
                 for m in rows:
                     eid=(m.get("gene") or {}).get("entrezGeneId") or m.get("entrezGeneId")
@@ -170,6 +182,15 @@ def main():
             "denominator":denom,"sampleListId":list_id,"mutationProfileId":prof
         })
         print("completed",sid,"n=",denom,flush=True)
+
+    failed_ids=sorted({x.get("studyId") for x in errors if x.get("studyId")})
+    successful_ids=[x["studyId"] for x in study_meta if x["studyId"] not in failed_ids]
+    expected_ids=[x["studyId"] for x in study_meta]
+    if failed_ids:
+        raise RuntimeError(
+            "CBEF requires complete cohort coverage; refusing to overwrite the last valid ranking. "
+            f"Successful={len(successful_ids)}/{len(expected_ids)}; failed={failed_ids}"
+        )
 
     # Cancer evidence summary.
     crows=[]
@@ -261,6 +282,9 @@ def main():
         "nMappedGenes":int(len(df)),
         "nRankedGenes":int(len(top)),
         "studies":study_meta,
+        "successfulCohorts":successful_ids,
+        "failedCohorts":failed_ids,
+        "cohortCoverage":f"{len(successful_ids)}/{len(expected_ids)}",
         "errors":errors,
         "genes":[]
     }
