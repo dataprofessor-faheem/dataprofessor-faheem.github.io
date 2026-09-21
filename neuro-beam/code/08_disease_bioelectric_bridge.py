@@ -43,8 +43,11 @@ GENES=sorted({g for gs in MODULES.values() for g in gs})
 S=requests.Session()
 S.headers.update({"accept":"application/json","User-Agent":"NEURO-BEAM/2.1"})
 MYGENE="https://mygene.info/v3"
+ENTREZ_OVERRIDES={"H2AFX":3014}
 
 def resolve_entrez(symbol):
+    if symbol in ENTREZ_OVERRIDES:
+        return ENTREZ_OVERRIDES[symbol]
     r=S.get(MYGENE+"/query",params={
         "q":f"symbol:{symbol}",
         "species":"human",
