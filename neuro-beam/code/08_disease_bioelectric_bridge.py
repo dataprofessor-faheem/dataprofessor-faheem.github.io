@@ -104,23 +104,27 @@ def main():
         meta=byid[sid]
         prof=mutation_profile(sid)
         lid,sample_ids,denom_source=sample_list(sid)
-        denom=len(set(sample_ids)) if sample_ids else int(meta.get("sampleCount") or 0)
+        denom_set=set(map(str,sample_ids))
+        denom=len(denom_set) if denom_set else int(meta.get("sampleCount") or 0)
+        retrieval_list=sid+"_all"
 
         mutated=defaultdict(set); events=defaultdict(int); vartypes=defaultdict(int); total_events=0
         fetch_ok=True
         try:
-            for m in mutations(prof,lid):
+            for m in mutations(prof,retrieval_list):
+                samp=str(m.get("sampleId") or "")
+                if denom_set and samp not in denom_set:
+                    continue
                 total_events+=1
                 sym=symbol(m)
                 vt=str(m.get("mutationType") or m.get("variantClassification") or "Other")
                 vartypes[vt]+=1
                 if sym in GENES:
-                    samp=str(m.get("sampleId") or "")
                     if samp: mutated[sym].add(samp)
                     events[sym]+=1
         except Exception as e:
             fetch_ok=False
-            errors.append({"studyId":sid,"error":repr(e),"profile":prof,"sampleListId":lid})
+            errors.append({"studyId":sid,"error":repr(e),"profile":prof,"retrievalSampleListId":retrieval_list,"denominatorSampleListId":lid})
 
         for g in GENES:
             if fetch_ok:
@@ -141,7 +145,7 @@ def main():
         studies.append({
             "studyId":sid,"name":meta.get("name",sid),"cancerTypeName":meta.get("cancerTypeName",""),
             "catalogSampleCount":int(meta.get("sampleCount") or 0),
-            "mutationProfileId":prof,"sampleListId":lid,"denominatorSource":denom_source,
+            "mutationProfileId":prof,"sampleListId":lid,"retrievalSampleListId":retrieval_list,"denominatorSource":denom_source,
             "mutationSequencedDenominator":denom,"mutationEventsFetched":total_events,
             "mutationFetchOk":fetch_ok
         })
