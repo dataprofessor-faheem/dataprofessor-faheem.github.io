@@ -1,4 +1,8 @@
 name: NEURO-BEAM Predictive Benchmark
+
+concurrency:
+  group: neurobeam-predictive-benchmark
+  cancel-in-progress: true
 on:
   workflow_dispatch:
   push:
