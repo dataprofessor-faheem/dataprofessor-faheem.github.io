@@ -8,182 +8,199 @@
   "metadata_rows": 4435,
   "qc_neurons": 3654,
   "numeric_features_input": 41,
-  "numeric_features_after_qc": 41,
+  "excluded_protocol_timing_features": [
+    "rheobase_sweep_num",
+    "thumbnail_sweep_num",
+    "peak_t_long_square",
+    "trough_t_long_square",
+    "fast_trough_t_long_square",
+    "threshold_t_long_square",
+    "peak_t_ramp",
+    "trough_t_ramp",
+    "fast_trough_t_ramp",
+    "threshold_t_ramp",
+    "peak_t_short_square",
+    "trough_t_short_square",
+    "fast_trough_t_short_square",
+    "threshold_t_short_square"
+  ],
+  "numeric_features_after_qc": 27,
   "pca_components": 10,
   "explained_variance_first3": [
-    0.9983139673726917,
-    0.00046748263576471975,
-    0.00035309082412871777
+    0.2516075240295354,
+    0.16691481041988954,
+    0.10432198667960475
   ],
-  "explained_variance_total": 0.9997653713638779,
-  "baseline_best_k": 2,
+  "explained_variance_total": 0.8828414262243552,
+  "baseline_best_k": 5,
   "cluster_sizes": {
-    "E1": 3649,
-    "E2": 5
+    "E1": 776,
+    "E2": 978,
+    "E3": 9,
+    "E4": 295,
+    "E5": 1596
   },
   "cluster_diagnostics": [
     {
       "k": 2,
-      "silhouette": 0.9950331092740097,
-      "calinski_harabasz": 14474.207540596622,
-      "davies_bouldin": 0.19970107723437536
+      "silhouette": 0.1852495345917192,
+      "calinski_harabasz": 821.208302846502,
+      "davies_bouldin": 1.8801440568546517
     },
     {
       "k": 3,
-      "silhouette": 0.9877763203629233,
-      "calinski_harabasz": 16233.47813908286,
-      "davies_bouldin": 0.31670320208245845
+      "silhouette": 0.17557131302339637,
+      "calinski_harabasz": 714.8578779618858,
+      "davies_bouldin": 1.7977031467586302
     },
     {
       "k": 4,
-      "silhouette": 0.9878199485731683,
-      "calinski_harabasz": 21953.50799813049,
-      "davies_bouldin": 0.2453912162093741
+      "silhouette": 0.18942166347792214,
+      "calinski_harabasz": 673.2841052887488,
+      "davies_bouldin": 1.5988920690106383
     },
     {
       "k": 5,
-      "silhouette": 0.9815695040063424,
-      "calinski_harabasz": 27788.349010865237,
-      "davies_bouldin": 0.24100836531490927
+      "silhouette": 0.19201318208153104,
+      "calinski_harabasz": 625.8050680390568,
+      "davies_bouldin": 1.3750421836805269
     },
     {
       "k": 6,
-      "silhouette": 0.9797570720321379,
-      "calinski_harabasz": 33256.37245260906,
-      "davies_bouldin": 0.3159907302581381
+      "silhouette": 0.1643208931094184,
+      "calinski_harabasz": 596.2508582280419,
+      "davies_bouldin": 1.5210105971427847
     },
     {
       "k": 7,
-      "silhouette": 0.980022685265665,
-      "calinski_harabasz": 43409.680794224994,
-      "davies_bouldin": 0.265566931338252
+      "silhouette": 0.1745660047633247,
+      "calinski_harabasz": 579.1665206199052,
+      "davies_bouldin": 1.432909437359209
     },
     {
       "k": 8,
-      "silhouette": 0.9804458499758326,
-      "calinski_harabasz": 55029.996040474405,
-      "davies_bouldin": 0.2370630823767161
+      "silhouette": 0.17523493548481364,
+      "calinski_harabasz": 551.6591136198044,
+      "davies_bouldin": 1.451515844335527
     },
     {
       "k": 9,
-      "silhouette": 0.9203054462003197,
-      "calinski_harabasz": 82202.94871919627,
-      "davies_bouldin": 0.2763914963391325
+      "silhouette": 0.174884456272289,
+      "calinski_harabasz": 525.7369470706772,
+      "davies_bouldin": 1.4180282224797252
     },
     {
       "k": 10,
-      "silhouette": 0.9089351823932462,
-      "calinski_harabasz": 89486.78439144176,
-      "davies_bouldin": 0.34446100655045014
+      "silhouette": 0.16008608641009486,
+      "calinski_harabasz": 505.65725536711926,
+      "davies_bouldin": 1.452982049115496
     }
   ],
   "top_loadings": {
     "PC1": [
       {
-        "feature": "threshold_t_short_square",
-        "loading": 0.7534819919590809
+        "feature": "fast_trough_v_short_square",
+        "loading": 0.3080679787539715
       },
       {
-        "feature": "peak_t_short_square",
-        "loading": 0.6484844748343841
+        "feature": "trough_v_long_square",
+        "loading": 0.30003844988658446
       },
       {
-        "feature": "fast_trough_t_short_square",
-        "loading": 0.10831464493855075
+        "feature": "fast_trough_v_ramp",
+        "loading": 0.2912250326575948
       },
       {
-        "feature": "trough_t_short_square",
-        "loading": 0.0005254200183838417
+        "feature": "fast_trough_v_long_square",
+        "loading": 0.28855693237256796
+      },
+      {
+        "feature": "trough_v_ramp",
+        "loading": 0.28545789933487203
+      },
+      {
+        "feature": "adaptation",
+        "loading": 0.27034604257608674
       },
       {
         "feature": "threshold_v_short_square",
-        "loading": 0.0001973857052842455
+        "loading": 0.24136129963183622
       },
       {
-        "feature": "threshold_v_ramp",
-        "loading": 0.0001848441415711259
-      },
-      {
-        "feature": "thumbnail_sweep_num",
-        "loading": 0.00017121254062613112
-      },
-      {
-        "feature": "trough_v_short_square",
-        "loading": -0.00016917325061518475
+        "feature": "f_i_curve_slope",
+        "loading": -0.22611701385174604
       }
     ],
     "PC2": [
       {
-        "feature": "fast_trough_t_short_square",
-        "loading": 0.7170027417443589
+        "feature": "adaptation",
+        "loading": 0.4502913998902247
       },
       {
-        "feature": "threshold_t_long_square",
-        "loading": 0.336603888014387
+        "feature": "threshold_v_long_square",
+        "loading": -0.3310087252816883
       },
       {
-        "feature": "fast_trough_t_long_square",
-        "loading": 0.3365575686834459
+        "feature": "threshold_v_ramp",
+        "loading": -0.3086996437002356
       },
       {
-        "feature": "peak_t_long_square",
-        "loading": 0.3362685302769692
+        "feature": "avg_isi",
+        "loading": 0.2710031669792364
       },
       {
-        "feature": "trough_t_long_square",
-        "loading": 0.3119949819041036
+        "feature": "threshold_v_short_square",
+        "loading": -0.25658528655980317
       },
       {
-        "feature": "latency",
-        "loading": 0.12276747187114699
+        "feature": "threshold_i_long_square",
+        "loading": -0.23124384619668362
       },
       {
-        "feature": "threshold_t_short_square",
-        "loading": -0.0852957338519387
+        "feature": "f_i_curve_slope",
+        "loading": -0.2182266768462473
       },
       {
-        "feature": "upstroke_downstroke_ratio_long_square",
-        "loading": 0.06163236932039743
+        "feature": "vm_for_sag",
+        "loading": -0.19813389311750668
       }
     ],
     "PC3": [
       {
-        "feature": "fast_trough_t_short_square",
-        "loading": 0.6692084097126461
-      },
-      {
-        "feature": "threshold_t_long_square",
-        "loading": -0.36401851923209355
-      },
-      {
-        "feature": "peak_t_long_square",
-        "loading": -0.363546591993438
-      },
-      {
-        "feature": "fast_trough_t_long_square",
-        "loading": -0.36223129139181703
-      },
-      {
-        "feature": "trough_t_long_square",
-        "loading": -0.3351588879581237
-      },
-      {
         "feature": "latency",
-        "loading": -0.14715468701740014
-      },
-      {
-        "feature": "threshold_t_short_square",
-        "loading": -0.07292760714765815
+        "loading": 0.6121948974796504
       },
       {
         "feature": "adaptation",
-        "loading": 0.05744825365587733
+        "loading": 0.3970745110236507
+      },
+      {
+        "feature": "avg_isi",
+        "loading": 0.32857598332599924
+      },
+      {
+        "feature": "threshold_i_short_square",
+        "loading": 0.2927736018560141
+      },
+      {
+        "feature": "ri",
+        "loading": -0.23578564167736948
+      },
+      {
+        "feature": "threshold_i_long_square",
+        "loading": 0.1970085226152992
+      },
+      {
+        "feature": "threshold_i_ramp",
+        "loading": 0.19072465977112663
+      },
+      {
+        "feature": "trough_v_short_square",
+        "loading": -0.18121108270617886
       }
     ]
   },
   "cluster_profile_features": [
-    "rheobase_sweep_num",
-    "thumbnail_sweep_num",
     "vrest",
     "ri",
     "sag",
@@ -195,60 +212,128 @@
     "avg_isi",
     "upstroke_downstroke_ratio_long_square",
     "peak_v_long_square",
-    "peak_t_long_square",
     "trough_v_long_square",
-    "trough_t_long_square",
     "fast_trough_v_long_square",
-    "fast_trough_t_long_square",
     "threshold_v_long_square",
-    "threshold_i_long_square"
+    "threshold_i_long_square",
+    "upstroke_downstroke_ratio_ramp",
+    "peak_v_ramp",
+    "trough_v_ramp",
+    "fast_trough_v_ramp",
+    "threshold_v_ramp"
   ],
   "cluster_profiles": {
     "E1": {
-      "rheobase_sweep_num": 14.0,
-      "thumbnail_sweep_num": 17.0,
-      "vrest": -68.65602,
-      "ri": 196.40629,
-      "sag": 0.05754,
-      "tau": 14.31235,
-      "vm_for_sag": -89.40625,
-      "f_i_curve_slope": 0.30161,
-      "adaptation": 0.03211,
-      "latency": 0.02634,
-      "avg_isi": 48.60222,
-      "upstroke_downstroke_ratio_long_square": 2.27225,
-      "peak_v_long_square": 27.15625,
-      "peak_t_long_square": 0.5979,
-      "trough_v_long_square": -52.28125,
-      "trough_t_long_square": 0.60564,
-      "fast_trough_v_long_square": -51.19375,
-      "fast_trough_t_long_square": 0.59956,
-      "threshold_v_long_square": -35.5375,
-      "threshold_i_long_square": 90.0
+      "vrest": -71.15863,
+      "ri": 113.35931,
+      "sag": 0.03732,
+      "tau": 7.70442,
+      "vm_for_sag": -83.47813,
+      "f_i_curve_slope": 0.74964,
+      "adaptation": 0.00457,
+      "latency": 0.01615,
+      "avg_isi": 20.37339,
+      "upstroke_downstroke_ratio_long_square": 1.41546,
+      "peak_v_long_square": 20.5,
+      "trough_v_long_square": -56.04063,
+      "fast_trough_v_long_square": -55.86875,
+      "threshold_v_long_square": -32.23438,
+      "threshold_i_long_square": 230.0,
+      "upstroke_downstroke_ratio_ramp": 1.29178,
+      "peak_v_ramp": 17.50313,
+      "trough_v_ramp": -54.3125,
+      "fast_trough_v_ramp": -53.93854,
+      "threshold_v_ramp": -29.49271
     },
     "E2": {
-      "rheobase_sweep_num": 11.0,
-      "thumbnail_sweep_num": 14.0,
-      "vrest": -63.74525,
-      "ri": 223.43753,
-      "sag": 0.03552,
-      "tau": 17.92288,
-      "vm_for_sag": -88.53126,
-      "f_i_curve_slope": 0.36897,
-      "adaptation": 0.05454,
-      "latency": 0.01826,
-      "avg_isi": 45.50308,
-      "upstroke_downstroke_ratio_long_square": 2.68489,
-      "peak_v_long_square": 26.41875,
-      "peak_t_long_square": 0.61922,
-      "trough_v_long_square": -52.28125,
-      "trough_t_long_square": 0.62266,
-      "fast_trough_v_long_square": -51.59375,
-      "fast_trough_t_long_square": 0.6205,
-      "threshold_v_long_square": -35.09375,
-      "threshold_i_long_square": 40.0
+      "vrest": -63.27809,
+      "ri": 226.71861,
+      "sag": 0.06111,
+      "tau": 15.92313,
+      "vm_for_sag": -87.56562,
+      "f_i_curve_slope": 0.24575,
+      "adaptation": 0.04783,
+      "latency": 0.02627,
+      "avg_isi": 53.26418,
+      "upstroke_downstroke_ratio_long_square": 2.87539,
+      "peak_v_long_square": 32.36563,
+      "trough_v_long_square": -45.59063,
+      "fast_trough_v_long_square": -43.76563,
+      "threshold_v_long_square": -31.53438,
+      "threshold_i_long_square": 70.0,
+      "upstroke_downstroke_ratio_ramp": 2.7097,
+      "peak_v_ramp": 31.09375,
+      "trough_v_ramp": -43.9375,
+      "fast_trough_v_ramp": -42.26563,
+      "threshold_v_ramp": -28.18906
+    },
+    "E3": {
+      "vrest": -73.68537,
+      "ri": 117.18754,
+      "sag": 0.03895,
+      "tau": 8.50921,
+      "vm_for_sag": -85.53126,
+      "f_i_curve_slope": 0.20759,
+      "adaptation": -0.00408,
+      "latency": 0.38106,
+      "avg_isi": 63.15,
+      "upstroke_downstroke_ratio_long_square": 2.83539,
+      "peak_v_long_square": 22.78125,
+      "trough_v_long_square": -57.9375,
+      "fast_trough_v_long_square": -56.3125,
+      "threshold_v_long_square": -33.40625,
+      "threshold_i_long_square": 239.99998,
+      "upstroke_downstroke_ratio_ramp": 2.703,
+      "peak_v_ramp": 24.03125,
+      "trough_v_ramp": -59.6875,
+      "fast_trough_v_ramp": -55.79688,
+      "threshold_v_ramp": -32.65625
+    },
+    "E4": {
+      "vrest": -69.28639,
+      "ri": 200.55802,
+      "sag": 0.05644,
+      "tau": 15.19902,
+      "vm_for_sag": -91.40626,
+      "f_i_curve_slope": 0.10625,
+      "adaptation": 0.34227,
+      "latency": 0.02158,
+      "avg_isi": 113.28667,
+      "upstroke_downstroke_ratio_long_square": 2.72109,
+      "peak_v_long_square": 31.8125,
+      "trough_v_long_square": -50.5,
+      "fast_trough_v_long_square": -48.78125,
+      "threshold_v_long_square": -38.24375,
+      "threshold_i_long_square": 80.0,
+      "upstroke_downstroke_ratio_ramp": 2.41433,
+      "peak_v_ramp": 28.24167,
+      "trough_v_ramp": -48.89583,
+      "fast_trough_v_ramp": -47.14792,
+      "threshold_v_ramp": -34.13281
+    },
+    "E5": {
+      "vrest": -70.12301,
+      "ri": 216.71879,
+      "sag": 0.07069,
+      "tau": 17.58851,
+      "vm_for_sag": -93.56563,
+      "f_i_curve_slope": 0.28897,
+      "adaptation": 0.03496,
+      "latency": 0.0298,
+      "avg_isi": 55.07055,
+      "upstroke_downstroke_ratio_long_square": 2.41068,
+      "peak_v_long_square": 27.77813,
+      "trough_v_long_square": -54.10625,
+      "fast_trough_v_long_square": -52.9375,
+      "threshold_v_long_square": -38.53125,
+      "threshold_i_long_square": 70.0,
+      "upstroke_downstroke_ratio_ramp": 2.24055,
+      "peak_v_ramp": 25.59271,
+      "trough_v_ramp": -53.52032,
+      "fast_trough_v_ramp": -52.0625,
+      "threshold_v_ramp": -36.50521
     }
   },
-  "method_note": "K-means/PCA are baseline discovery diagnostics only. Final bioelectric states require GMM/HDBSCAN/consensus, bootstrap stability and donor-aware validation before biological naming.",
+  "method_note": "K-means/PCA are baseline discovery diagnostics only. Protocol bookkeeping/absolute event-time variables are excluded. Final bioelectric states require GMM/HDBSCAN/consensus, bootstrap stability and donor-aware validation before biological naming.",
   "label_blinding": "Known transcriptomic/cell-type labels were not used to define baseline electrical states."
 }
