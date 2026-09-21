@@ -78,10 +78,10 @@ def sample_list(study):
     return study+"_all",[],"catalog-fallback"
 
 def mutations(profile,list_id):
-    page=0; size=10000
+    page=0; size=1000
     while True:
         rows=get(f"/molecular-profiles/{profile}/mutations",{
-            "sampleListId":list_id,"projection":"DETAILED","pageSize":size,"pageNumber":page
+            "sampleListId":list_id,"projection":"DETAILED","pageSize":size,"pageNumber":page,"direction":"ASC"
         })
         if not rows: break
         yield from rows
