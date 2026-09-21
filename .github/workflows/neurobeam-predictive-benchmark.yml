@@ -1,0 +1,29 @@
+name: NEURO-BEAM Predictive Benchmark
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/neurobeam-predictive-benchmark.yml"
+      - "neuro-beam/code/15_predictive_benchmark.py"
+      - "neuro-beam/data/top500_gene_catalog.csv"
+permissions:
+  contents: write
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pandas numpy scipy scikit-learn
+      - run: python neuro-beam/code/15_predictive_benchmark.py
+      - name: Commit benchmark outputs
+        run: |
+          git config user.name "neuro-beam-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add neuro-beam/data/predictive_benchmark_folds.csv neuro-beam/data/predictive_benchmark_summary.csv neuro-beam/data/predictive_benchmark.json
+          git diff --cached --quiet || git commit -m "Update leakage-safe predictive benchmark"
+          git pull --rebase origin main
+          git push origin main
