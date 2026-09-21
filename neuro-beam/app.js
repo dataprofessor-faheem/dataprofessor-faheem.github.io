@@ -536,3 +536,8 @@ fetch("data/cancer_gene_bioelectric_signature_cube.json").then(r=>r.json()).then
   const el=document.getElementById("signature-exact-table");
   if(el)el.innerHTML='<div class="data-note warning-note"><b>Signature cube unavailable:</b> the analysis file could not be loaded.</div>';
 });
+
+document.getElementById("copy-platform-citation")?.addEventListener("click",async e=>{
+  const citation="Khan MF, Ahmad K. NEURO-BEAM: Neuronal BioElectricity–Activity–Molecular Atlas. GDRN Network. Available at: https://www.gdrnetwork.org/neuro-beam/";
+  try{await navigator.clipboard.writeText(citation);e.target.textContent="Citation copied";setTimeout(()=>e.target.textContent="Copy citation",1600);}catch(_){}
+});
