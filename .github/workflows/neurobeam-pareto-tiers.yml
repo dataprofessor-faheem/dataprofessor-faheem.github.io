@@ -1,0 +1,32 @@
+name: NEURO-BEAM Pareto Evidence Tiers
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/neurobeam-pareto-tiers.yml"
+      - "neuro-beam/code/24_pareto_evidence_tiers.py"
+      - "neuro-beam/data/cbef_bootstrap_gene_stability.csv"
+      - "neuro-beam/data/gene_external_m1_replication_summary.csv"
+      - "neuro-beam/data/ml_extratrees_global_feature_importance.csv"
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install pandas numpy
+      - run: python neuro-beam/code/24_pareto_evidence_tiers.py
+      - run: |
+          git config user.name "neuro-beam-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add neuro-beam/data/neurobeam_pareto_evidence_catalog.csv neuro-beam/data/top500_evidence_tiers.csv neuro-beam/data/neurobeam_pareto_evidence.json
+          git diff --cached --quiet || git commit -m "Update Pareto ranking and evidence tiers"
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main
+            if git push origin main; then exit 0; fi
+            sleep $((i*2))
+          done
+          exit 1
