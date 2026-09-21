@@ -8,6 +8,11 @@ on:
       - "neuro-beam/data/top500_*"
       - "neuro-beam/data/ml_*"
       - "neuro-beam/data/m1_external_validation_*"
+      - "neuro-beam/data/gene_external_m1_replication.json"
+      - "neuro-beam/data/neurological_disease_evidence.json"
+      - "neuro-beam/data/neurobeam_pareto_evidence.json"
+      - "neuro-beam/data/ml_negative_controls.json"
+      - "neuro-beam/data/ml_calibration_uncertainty.json"
 permissions:
   contents: write
 jobs:
