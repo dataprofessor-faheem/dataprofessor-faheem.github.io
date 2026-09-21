@@ -11,6 +11,7 @@ on:
       - ".github/workflows/neurobeam-top500-discovery.yml"
       - "neuro-beam/code/13_top500_discovery_engine.py"
       - "neuro-beam/code/14_build_dynamic_models.py"
+      - "neuro-beam/code/18_release_integrity_check.py"
       - "neuro-beam/data/bioelectric_gene_associations.csv"
       - "neuro-beam/data/disease_bioelectric_bridge.json"
 
@@ -31,11 +32,13 @@ jobs:
         run: python neuro-beam/code/13_top500_discovery_engine.py
       - name: Build correlation-informed dynamic models
         run: python neuro-beam/code/14_build_dynamic_models.py
+      - name: Verify scientific release integrity
+        run: python neuro-beam/code/18_release_integrity_check.py
       - name: Commit research outputs
         run: |
           git config user.name "neuro-beam-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add neuro-beam/data/top500_gene_catalog.csv neuro-beam/data/cbef_full_gene_catalog.csv neuro-beam/data/top500_cancer_matrix.csv neuro-beam/data/cbef_full_cancer_matrix.csv neuro-beam/data/top500_bioelectric_matrix.csv neuro-beam/data/top500_discovery_catalog.json neuro-beam/data/top500_dynamic_models.json neuro-beam/data/top500_dynamic_model_parameters.csv
+          git add neuro-beam/data/cbef_release_integrity.json neuro-beam/data/top500_gene_catalog.csv neuro-beam/data/cbef_full_gene_catalog.csv neuro-beam/data/top500_cancer_matrix.csv neuro-beam/data/cbef_full_cancer_matrix.csv neuro-beam/data/top500_bioelectric_matrix.csv neuro-beam/data/top500_discovery_catalog.json neuro-beam/data/top500_dynamic_models.json neuro-beam/data/top500_dynamic_model_parameters.csv
           git diff --cached --quiet || git commit -m "Update CBEF Top-500 discovery engine"
           git pull --rebase origin main
           git push origin main
