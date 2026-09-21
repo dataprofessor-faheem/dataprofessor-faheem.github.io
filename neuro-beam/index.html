@@ -14,7 +14,7 @@
       <div><strong>NEURO-BEAM</strong><span>Neuronal BioElectricity–Activity–Molecular Atlas</span></div>
     </div>
     <nav>
-      <a href="#atlas">Atlas</a><a href="#live-data">Live Data</a><a href="#dynamic-neuron">Dynamic Neuron</a><a href="#pipeline">Pipeline</a><a href="#datasets">Datasets</a>
+      <a href="#atlas">Atlas</a><a href="#live-data">Live Data</a><a href="#dynamic-neuron">Dynamic Neuron</a><a href="#stability">Stability</a><a href="#pipeline">Pipeline</a><a href="#datasets">Datasets</a>
       <a href="#statistics">Statistics</a><a href="#code">Code</a>
       <a class="pill" href="https://github.com/dataprofessor-faheem/dataprofessor-faheem.github.io/tree/main/neuro-beam">GitHub</a>
     </nav>
@@ -120,6 +120,28 @@
         </article>
       </div>
       <div class="data-note warning-note"><b>Interpretation guardrail:</b> a visually distinct animated state does not establish a biological class. The final atlas will only name states after stability, donor and external-validation criteria are satisfied. True live-brain dynamics will be added from calcium-imaging/Neuropixels data as a separate module.</div>
+    </section>
+
+    
+    <section class="section" id="stability">
+      <div class="section-head"><span>VAL</span><div><h2>State Stability & Biological Validation</h2><p>Bootstrap stability, alternative clustering support and blinded label-reveal analysis.</p></div></div>
+      <div class="live-kpis validation-kpis">
+        <article><b id="val-ari">—</b><span>bootstrap ARI mean</span></article>
+        <article><b id="val-gmm">—</b><span>GMM best k (BIC)</span></article>
+        <article><b id="val-hdb">—</b><span>HDBSCAN clusters</span></article>
+        <article><b id="val-nmi">—</b><span>state ↔ class NMI</span></article>
+      </div>
+      <div class="viz-grid">
+        <article class="viz-card">
+          <div class="viz-title"><h3>State-wise bootstrap stability</h3><span>mean Jaccard with 5–95% interval</span></div>
+          <div id="stability-bars" class="stability-bars"><p class="micro-note">Validation results will appear automatically when the GitHub analysis completes.</p></div>
+        </article>
+        <article class="viz-card">
+          <div class="viz-title"><h3>Electrical state × transcriptomic class</h3><span>labels revealed only after state freezing</span></div>
+          <div id="state-class-table" class="matrix-wrap"><p class="micro-note">Awaiting validation output.</p></div>
+        </article>
+      </div>
+      <div id="validation-interpretation" class="data-note"><b>Methodological firewall:</b> transcriptomic class labels are not used to create the electrical states; correspondence is evaluated only after the electrical solution is frozen.</div>
     </section>
 
     <section class="section" id="pipeline">
