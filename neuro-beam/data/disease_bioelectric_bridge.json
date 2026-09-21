@@ -1,0 +1,1642 @@
+{
+  "source": "cBioPortal public REST API",
+  "apiBase": "https://www.cbioportal.org/api",
+  "analysisType": "advanced exploratory cross-study mutation bridge",
+  "signatureStatus": "candidate mechanistic panel; NOT frozen Bioelectric Gene Signature",
+  "generatedStudyIds": [
+    "gbm_tcga_pan_can_atlas_2018",
+    "lgg_tcga_pan_can_atlas_2018",
+    "brca_tcga_pan_can_atlas_2018",
+    "luad_tcga_pan_can_atlas_2018",
+    "coadread_tcga_pan_can_atlas_2018",
+    "paad_tcga_pan_can_atlas_2018",
+    "skcm_tcga_pan_can_atlas_2018",
+    "prad_tcga_pan_can_atlas_2018",
+    "ucec_tcga_pan_can_atlas_2018",
+    "ov_tcga_pan_can_atlas_2018"
+  ],
+  "modules": {
+    "Ion channels / membrane excitability": [
+      "SCN1A",
+      "SCN2A",
+      "SCN8A",
+      "KCNQ2",
+      "KCNQ3",
+      "KCNA1",
+      "KCNC1",
+      "HCN1",
+      "CACNA1C",
+      "CACNA1A",
+      "CLCN2",
+      "ATP1A3"
+    ],
+    "Activity / calcium signaling": [
+      "NPAS4",
+      "ARC",
+      "FOS",
+      "EGR1",
+      "BDNF",
+      "CAMK2A",
+      "CREB1",
+      "PPP3CA"
+    ],
+    "DNA damage / chromatin": [
+      "ATM",
+      "ATR",
+      "H2AFX",
+      "PARP1",
+      "BRCA1",
+      "BRCA2",
+      "TOP2B",
+      "TP53"
+    ],
+    "PI3K-MAPK-mTOR / cancer signaling": [
+      "EGFR",
+      "PTEN",
+      "PIK3CA",
+      "KRAS",
+      "BRAF",
+      "AKT1",
+      "MTOR"
+    ],
+    "Oxidative / mitochondrial stress": [
+      "NFE2L2",
+      "KEAP1",
+      "SOD2",
+      "GPX4",
+      "TFAM",
+      "PPARGC1A"
+    ]
+  },
+  "studies": [
+    {
+      "studyId": "gbm_tcga_pan_can_atlas_2018",
+      "name": "Glioblastoma Multiforme (TCGA, PanCancer Atlas)",
+      "cancerTypeName": "Diffuse Glioma",
+      "catalogSampleCount": 592,
+      "mutationProfileId": "gbm_tcga_pan_can_atlas_2018_mutations",
+      "sampleListId": "gbm_tcga_pan_can_atlas_2018_sequenced",
+      "denominatorSource": "mutation-sequenced",
+      "mutationSequencedDenominator": 397,
+      "mutationEventsFetched": 0
+    },
+    {
+      "studyId": "lgg_tcga_pan_can_atlas_2018",
+      "name": "Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",
+      "cancerTypeName": "Diffuse Glioma",
+      "catalogSampleCount": 514,
+      "mutationProfileId": "lgg_tcga_pan_can_atlas_2018_mutations",
+      "sampleListId": "lgg_tcga_pan_can_atlas_2018_sequenced",
+      "denominatorSource": "mutation-sequenced",
+      "mutationSequencedDenominator": 514,
+      "mutationEventsFetched": 0
+    },
+    {
+      "studyId": "brca_tcga_pan_can_atlas_2018",
+      "name": "Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",
+      "cancerTypeName": "Invasive Breast Carcinoma",
+      "catalogSampleCount": 1084,
+      "mutationProfileId": "brca_tcga_pan_can_atlas_2018_mutations",
+      "sampleListId": "brca_tcga_pan_can_atlas_2018_sequenced",
+      "denominatorSource": "mutation-sequenced",
+      "mutationSequencedDenominator": 1066,
+      "mutationEventsFetched": 0
+    },
+    {
+      "studyId": "luad_tcga_pan_can_atlas_2018",
+      "name": "Lung Adenocarcinoma (TCGA, PanCancer Atlas)",
+      "cancerTypeName": "Lung Adenocarcinoma",
+      "catalogSampleCount": 566,
+      "mutationProfileId": "luad_tcga_pan_can_atlas_2018_mutations",
+      "sampleListId": "luad_tcga_pan_can_atlas_2018_sequenced",
+      "denominatorSource": "mutation-sequenced",
+      "mutationSequencedDenominator": 566,
+      "mutationEventsFetched": 0
+    },
+    {
+      "studyId": "coadread_tcga_pan_can_atlas_2018",
+      "name": "Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",
+      "cancerTypeName": "Colorectal Adenocarcinoma",
+      "catalogSampleCount": 594,
+      "mutationProfileId": "coadread_tcga_pan_can_atlas_2018_mutations",
+      "sampleListId": "coadread_tcga_pan_can_atlas_2018_sequenced",
+      "denominatorSource": "mutation-sequenced",
+      "mutationSequencedDenominator": 534,
+      "mutationEventsFetched": 0
+    },
+    {
+      "studyId": "paad_tcga_pan_can_atlas_2018",
+      "name": "Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",
+      "cancerTypeName": "Pancreatic Adenocarcinoma",
+      "catalogSampleCount": 184,
+      "mutationProfileId": "paad_tcga_pan_can_atlas_2018_mutations",
+      "sampleListId": "paad_tcga_pan_can_atlas_2018_sequenced",
+      "denominatorSource": "mutation-sequenced",
+      "mutationSequencedDenominator": 179,
+      "mutationEventsFetched": 0
+    },
+    {
+      "studyId": "skcm_tcga_pan_can_atlas_2018",
+      "name": "Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",
+      "cancerTypeName": "Cutaneous Melanoma",
+      "catalogSampleCount": 448,
+      "mutationProfileId": "skcm_tcga_pan_can_atlas_2018_mutations",
+      "sampleListId": "skcm_tcga_pan_can_atlas_2018_sequenced",
+      "denominatorSource": "mutation-sequenced",
+      "mutationSequencedDenominator": 440,
+      "mutationEventsFetched": 0
+    },
+    {
+      "studyId": "prad_tcga_pan_can_atlas_2018",
+      "name": "Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",
+      "cancerTypeName": "Prostate Adenocarcinoma",
+      "catalogSampleCount": 494,
+      "mutationProfileId": "prad_tcga_pan_can_atlas_2018_mutations",
+      "sampleListId": "prad_tcga_pan_can_atlas_2018_sequenced",
+      "denominatorSource": "mutation-sequenced",
+      "mutationSequencedDenominator": 494,
+      "mutationEventsFetched": 0
+    },
+    {
+      "studyId": "ucec_tcga_pan_can_atlas_2018",
+      "name": "Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",
+      "cancerTypeName": "Endometrial Carcinoma",
+      "catalogSampleCount": 529,
+      "mutationProfileId": "ucec_tcga_pan_can_atlas_2018_mutations",
+      "sampleListId": "ucec_tcga_pan_can_atlas_2018_sequenced",
+      "denominatorSource": "mutation-sequenced",
+      "mutationSequencedDenominator": 517,
+      "mutationEventsFetched": 0
+    },
+    {
+      "studyId": "ov_tcga_pan_can_atlas_2018",
+      "name": "Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",
+      "cancerTypeName": "High-Grade Serous Ovarian Cancer",
+      "catalogSampleCount": 585,
+      "mutationProfileId": "ov_tcga_pan_can_atlas_2018_mutations",
+      "sampleListId": "ov_tcga_pan_can_atlas_2018_sequenced",
+      "denominatorSource": "mutation-sequenced",
+      "mutationSequencedDenominator": 523,
+      "mutationEventsFetched": 0
+    }
+  ],
+  "geneByStudyPercent": {
+    "AKT1": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "ARC": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "ATM": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "ATP1A3": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "ATR": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "BDNF": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "BRAF": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "BRCA1": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "BRCA2": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "CACNA1A": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "CACNA1C": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "CAMK2A": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "CLCN2": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "CREB1": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "EGFR": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "EGR1": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "FOS": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "GPX4": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "H2AFX": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "HCN1": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "KCNA1": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "KCNC1": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "KCNQ2": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "KCNQ3": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "KEAP1": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "KRAS": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "MTOR": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "NFE2L2": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "NPAS4": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "PARP1": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "PIK3CA": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "PPARGC1A": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "PPP3CA": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "PTEN": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "SCN1A": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "SCN2A": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "SCN8A": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "SOD2": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "TFAM": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "TOP2B": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "TP53": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    }
+  },
+  "geneByStudyEventCount": {
+    "AKT1": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "ARC": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "ATM": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "ATP1A3": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "ATR": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "BDNF": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "BRAF": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "BRCA1": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "BRCA2": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "CACNA1A": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "CACNA1C": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "CAMK2A": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "CLCN2": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "CREB1": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "EGFR": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "EGR1": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "FOS": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "GPX4": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "H2AFX": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "HCN1": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "KCNA1": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "KCNC1": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "KCNQ2": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "KCNQ3": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "KEAP1": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "KRAS": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "MTOR": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "NFE2L2": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "NPAS4": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "PARP1": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "PIK3CA": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "PPARGC1A": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "PPP3CA": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "PTEN": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "SCN1A": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "SCN2A": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "SCN8A": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "SOD2": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "TFAM": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "TOP2B": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    },
+    "TP53": {
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 0,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 0,
+      "coadread_tcga_pan_can_atlas_2018": 0,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 0,
+      "prad_tcga_pan_can_atlas_2018": 0,
+      "ucec_tcga_pan_can_atlas_2018": 0,
+      "ov_tcga_pan_can_atlas_2018": 0
+    }
+  },
+  "moduleByStudyPercent": {
+    "Ion channels / membrane excitability": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "Activity / calcium signaling": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "DNA damage / chromatin": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "PI3K-MAPK-mTOR / cancer signaling": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    },
+    "Oxidative / mitochondrial stress": {
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.0,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.0,
+      "coadread_tcga_pan_can_atlas_2018": 0.0,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.0,
+      "prad_tcga_pan_can_atlas_2018": 0.0,
+      "ucec_tcga_pan_can_atlas_2018": 0.0,
+      "ov_tcga_pan_can_atlas_2018": 0.0
+    }
+  },
+  "mutationTypeCounts": {
+    "gbm_tcga_pan_can_atlas_2018": {},
+    "lgg_tcga_pan_can_atlas_2018": {},
+    "brca_tcga_pan_can_atlas_2018": {},
+    "luad_tcga_pan_can_atlas_2018": {},
+    "coadread_tcga_pan_can_atlas_2018": {},
+    "paad_tcga_pan_can_atlas_2018": {},
+    "skcm_tcga_pan_can_atlas_2018": {},
+    "prad_tcga_pan_can_atlas_2018": {},
+    "ucec_tcga_pan_can_atlas_2018": {},
+    "ov_tcga_pan_can_atlas_2018": {}
+  },
+  "geneSummary": [
+    {
+      "gene": "AKT1",
+      "module": "PI3K-MAPK-mTOR / cancer signaling",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "ARC",
+      "module": "Activity / calcium signaling",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "ATM",
+      "module": "DNA damage / chromatin",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "ATP1A3",
+      "module": "Ion channels / membrane excitability",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "ATR",
+      "module": "DNA damage / chromatin",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "BDNF",
+      "module": "Activity / calcium signaling",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "BRAF",
+      "module": "PI3K-MAPK-mTOR / cancer signaling",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "BRCA1",
+      "module": "DNA damage / chromatin",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "BRCA2",
+      "module": "DNA damage / chromatin",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "CACNA1A",
+      "module": "Ion channels / membrane excitability",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "CACNA1C",
+      "module": "Ion channels / membrane excitability",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "CAMK2A",
+      "module": "Activity / calcium signaling",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "CLCN2",
+      "module": "Ion channels / membrane excitability",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "CREB1",
+      "module": "Activity / calcium signaling",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "EGFR",
+      "module": "PI3K-MAPK-mTOR / cancer signaling",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "EGR1",
+      "module": "Activity / calcium signaling",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "FOS",
+      "module": "Activity / calcium signaling",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "GPX4",
+      "module": "Oxidative / mitochondrial stress",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "H2AFX",
+      "module": "DNA damage / chromatin",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "HCN1",
+      "module": "Ion channels / membrane excitability",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "KCNA1",
+      "module": "Ion channels / membrane excitability",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "KCNC1",
+      "module": "Ion channels / membrane excitability",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "KCNQ2",
+      "module": "Ion channels / membrane excitability",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "KCNQ3",
+      "module": "Ion channels / membrane excitability",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "KEAP1",
+      "module": "Oxidative / mitochondrial stress",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "KRAS",
+      "module": "PI3K-MAPK-mTOR / cancer signaling",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "MTOR",
+      "module": "PI3K-MAPK-mTOR / cancer signaling",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "NFE2L2",
+      "module": "Oxidative / mitochondrial stress",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "NPAS4",
+      "module": "Activity / calcium signaling",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "PARP1",
+      "module": "DNA damage / chromatin",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "PIK3CA",
+      "module": "PI3K-MAPK-mTOR / cancer signaling",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "PPARGC1A",
+      "module": "Oxidative / mitochondrial stress",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "PPP3CA",
+      "module": "Activity / calcium signaling",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "PTEN",
+      "module": "PI3K-MAPK-mTOR / cancer signaling",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "SCN1A",
+      "module": "Ion channels / membrane excitability",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "SCN2A",
+      "module": "Ion channels / membrane excitability",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "SCN8A",
+      "module": "Ion channels / membrane excitability",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "SOD2",
+      "module": "Oxidative / mitochondrial stress",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "TFAM",
+      "module": "Oxidative / mitochondrial stress",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "TOP2B",
+      "module": "DNA damage / chromatin",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    },
+    {
+      "gene": "TP53",
+      "module": "DNA damage / chromatin",
+      "meanPercent": 0.0,
+      "medianPercent": 0.0,
+      "maxPercent": 0.0,
+      "studiesWithMutation": 0
+    }
+  ],
+  "errors": [
+    {
+      "studyId": "gbm_tcga_pan_can_atlas_2018",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/gbm_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=gbm_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=10000&pageNumber=0')",
+      "profile": "gbm_tcga_pan_can_atlas_2018_mutations",
+      "sampleListId": "gbm_tcga_pan_can_atlas_2018_sequenced"
+    },
+    {
+      "studyId": "lgg_tcga_pan_can_atlas_2018",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/lgg_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=lgg_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=10000&pageNumber=0')",
+      "profile": "lgg_tcga_pan_can_atlas_2018_mutations",
+      "sampleListId": "lgg_tcga_pan_can_atlas_2018_sequenced"
+    },
+    {
+      "studyId": "brca_tcga_pan_can_atlas_2018",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/brca_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=brca_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=10000&pageNumber=0')",
+      "profile": "brca_tcga_pan_can_atlas_2018_mutations",
+      "sampleListId": "brca_tcga_pan_can_atlas_2018_sequenced"
+    },
+    {
+      "studyId": "luad_tcga_pan_can_atlas_2018",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/luad_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=luad_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=10000&pageNumber=0')",
+      "profile": "luad_tcga_pan_can_atlas_2018_mutations",
+      "sampleListId": "luad_tcga_pan_can_atlas_2018_sequenced"
+    },
+    {
+      "studyId": "coadread_tcga_pan_can_atlas_2018",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/coadread_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=coadread_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=10000&pageNumber=0')",
+      "profile": "coadread_tcga_pan_can_atlas_2018_mutations",
+      "sampleListId": "coadread_tcga_pan_can_atlas_2018_sequenced"
+    },
+    {
+      "studyId": "paad_tcga_pan_can_atlas_2018",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/paad_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=paad_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=10000&pageNumber=0')",
+      "profile": "paad_tcga_pan_can_atlas_2018_mutations",
+      "sampleListId": "paad_tcga_pan_can_atlas_2018_sequenced"
+    },
+    {
+      "studyId": "skcm_tcga_pan_can_atlas_2018",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/skcm_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=skcm_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=10000&pageNumber=0')",
+      "profile": "skcm_tcga_pan_can_atlas_2018_mutations",
+      "sampleListId": "skcm_tcga_pan_can_atlas_2018_sequenced"
+    },
+    {
+      "studyId": "prad_tcga_pan_can_atlas_2018",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/prad_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=prad_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=10000&pageNumber=0')",
+      "profile": "prad_tcga_pan_can_atlas_2018_mutations",
+      "sampleListId": "prad_tcga_pan_can_atlas_2018_sequenced"
+    },
+    {
+      "studyId": "ucec_tcga_pan_can_atlas_2018",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/ucec_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=ucec_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=10000&pageNumber=0')",
+      "profile": "ucec_tcga_pan_can_atlas_2018_mutations",
+      "sampleListId": "ucec_tcga_pan_can_atlas_2018_sequenced"
+    },
+    {
+      "studyId": "ov_tcga_pan_can_atlas_2018",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/ov_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=ov_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=10000&pageNumber=0')",
+      "profile": "ov_tcga_pan_can_atlas_2018_mutations",
+      "sampleListId": "ov_tcga_pan_can_atlas_2018_sequenced"
+    }
+  ],
+  "downloads": {
+    "geneStudyMatrix": "data/disease_bioelectric_gene_study_matrix.csv",
+    "moduleMatrix": "data/disease_bioelectric_module_matrix.csv"
+  },
+  "interpretation": "Cancer somatic-mutation frequencies provide disease-genomic context only. They do not establish causation of neuronal electrical phenotypes and should not be extrapolated to non-cancer neurological disease."
+}

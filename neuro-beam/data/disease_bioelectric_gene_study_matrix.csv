@@ -1,0 +1,411 @@
+studyId,studyName,cancerType,gene,module,mutationPercent,mutationEvents,denominator,denominatorSource
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,AKT1,PI3K-MAPK-mTOR / cancer signaling,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,AKT1,PI3K-MAPK-mTOR / cancer signaling,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,AKT1,PI3K-MAPK-mTOR / cancer signaling,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,AKT1,PI3K-MAPK-mTOR / cancer signaling,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,AKT1,PI3K-MAPK-mTOR / cancer signaling,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,AKT1,PI3K-MAPK-mTOR / cancer signaling,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,AKT1,PI3K-MAPK-mTOR / cancer signaling,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,AKT1,PI3K-MAPK-mTOR / cancer signaling,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,AKT1,PI3K-MAPK-mTOR / cancer signaling,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,AKT1,PI3K-MAPK-mTOR / cancer signaling,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,ARC,Activity / calcium signaling,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,ARC,Activity / calcium signaling,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,ARC,Activity / calcium signaling,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,ARC,Activity / calcium signaling,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,ARC,Activity / calcium signaling,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,ARC,Activity / calcium signaling,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,ARC,Activity / calcium signaling,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,ARC,Activity / calcium signaling,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,ARC,Activity / calcium signaling,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,ARC,Activity / calcium signaling,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,ATM,DNA damage / chromatin,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,ATM,DNA damage / chromatin,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,ATM,DNA damage / chromatin,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,ATM,DNA damage / chromatin,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,ATM,DNA damage / chromatin,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,ATM,DNA damage / chromatin,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,ATM,DNA damage / chromatin,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,ATM,DNA damage / chromatin,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,ATM,DNA damage / chromatin,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,ATM,DNA damage / chromatin,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,ATP1A3,Ion channels / membrane excitability,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,ATP1A3,Ion channels / membrane excitability,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,ATP1A3,Ion channels / membrane excitability,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,ATP1A3,Ion channels / membrane excitability,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,ATP1A3,Ion channels / membrane excitability,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,ATP1A3,Ion channels / membrane excitability,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,ATP1A3,Ion channels / membrane excitability,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,ATP1A3,Ion channels / membrane excitability,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,ATP1A3,Ion channels / membrane excitability,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,ATP1A3,Ion channels / membrane excitability,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,ATR,DNA damage / chromatin,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,ATR,DNA damage / chromatin,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,ATR,DNA damage / chromatin,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,ATR,DNA damage / chromatin,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,ATR,DNA damage / chromatin,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,ATR,DNA damage / chromatin,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,ATR,DNA damage / chromatin,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,ATR,DNA damage / chromatin,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,ATR,DNA damage / chromatin,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,ATR,DNA damage / chromatin,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,BDNF,Activity / calcium signaling,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,BDNF,Activity / calcium signaling,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,BDNF,Activity / calcium signaling,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,BDNF,Activity / calcium signaling,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,BDNF,Activity / calcium signaling,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,BDNF,Activity / calcium signaling,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,BDNF,Activity / calcium signaling,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,BDNF,Activity / calcium signaling,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,BDNF,Activity / calcium signaling,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,BDNF,Activity / calcium signaling,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,BRAF,PI3K-MAPK-mTOR / cancer signaling,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,BRAF,PI3K-MAPK-mTOR / cancer signaling,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,BRAF,PI3K-MAPK-mTOR / cancer signaling,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,BRAF,PI3K-MAPK-mTOR / cancer signaling,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,BRAF,PI3K-MAPK-mTOR / cancer signaling,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,BRAF,PI3K-MAPK-mTOR / cancer signaling,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,BRAF,PI3K-MAPK-mTOR / cancer signaling,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,BRAF,PI3K-MAPK-mTOR / cancer signaling,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,BRAF,PI3K-MAPK-mTOR / cancer signaling,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,BRAF,PI3K-MAPK-mTOR / cancer signaling,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,BRCA1,DNA damage / chromatin,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,BRCA1,DNA damage / chromatin,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,BRCA1,DNA damage / chromatin,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,BRCA1,DNA damage / chromatin,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,BRCA1,DNA damage / chromatin,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,BRCA1,DNA damage / chromatin,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,BRCA1,DNA damage / chromatin,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,BRCA1,DNA damage / chromatin,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,BRCA1,DNA damage / chromatin,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,BRCA1,DNA damage / chromatin,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,BRCA2,DNA damage / chromatin,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,BRCA2,DNA damage / chromatin,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,BRCA2,DNA damage / chromatin,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,BRCA2,DNA damage / chromatin,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,BRCA2,DNA damage / chromatin,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,BRCA2,DNA damage / chromatin,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,BRCA2,DNA damage / chromatin,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,BRCA2,DNA damage / chromatin,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,BRCA2,DNA damage / chromatin,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,BRCA2,DNA damage / chromatin,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,CACNA1A,Ion channels / membrane excitability,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,CACNA1A,Ion channels / membrane excitability,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,CACNA1A,Ion channels / membrane excitability,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,CACNA1A,Ion channels / membrane excitability,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,CACNA1A,Ion channels / membrane excitability,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,CACNA1A,Ion channels / membrane excitability,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,CACNA1A,Ion channels / membrane excitability,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,CACNA1A,Ion channels / membrane excitability,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,CACNA1A,Ion channels / membrane excitability,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,CACNA1A,Ion channels / membrane excitability,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,CACNA1C,Ion channels / membrane excitability,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,CACNA1C,Ion channels / membrane excitability,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,CACNA1C,Ion channels / membrane excitability,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,CACNA1C,Ion channels / membrane excitability,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,CACNA1C,Ion channels / membrane excitability,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,CACNA1C,Ion channels / membrane excitability,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,CACNA1C,Ion channels / membrane excitability,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,CACNA1C,Ion channels / membrane excitability,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,CACNA1C,Ion channels / membrane excitability,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,CACNA1C,Ion channels / membrane excitability,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,CAMK2A,Activity / calcium signaling,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,CAMK2A,Activity / calcium signaling,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,CAMK2A,Activity / calcium signaling,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,CAMK2A,Activity / calcium signaling,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,CAMK2A,Activity / calcium signaling,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,CAMK2A,Activity / calcium signaling,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,CAMK2A,Activity / calcium signaling,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,CAMK2A,Activity / calcium signaling,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,CAMK2A,Activity / calcium signaling,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,CAMK2A,Activity / calcium signaling,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,CLCN2,Ion channels / membrane excitability,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,CLCN2,Ion channels / membrane excitability,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,CLCN2,Ion channels / membrane excitability,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,CLCN2,Ion channels / membrane excitability,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,CLCN2,Ion channels / membrane excitability,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,CLCN2,Ion channels / membrane excitability,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,CLCN2,Ion channels / membrane excitability,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,CLCN2,Ion channels / membrane excitability,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,CLCN2,Ion channels / membrane excitability,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,CLCN2,Ion channels / membrane excitability,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,CREB1,Activity / calcium signaling,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,CREB1,Activity / calcium signaling,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,CREB1,Activity / calcium signaling,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,CREB1,Activity / calcium signaling,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,CREB1,Activity / calcium signaling,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,CREB1,Activity / calcium signaling,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,CREB1,Activity / calcium signaling,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,CREB1,Activity / calcium signaling,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,CREB1,Activity / calcium signaling,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,CREB1,Activity / calcium signaling,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,EGFR,PI3K-MAPK-mTOR / cancer signaling,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,EGFR,PI3K-MAPK-mTOR / cancer signaling,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,EGFR,PI3K-MAPK-mTOR / cancer signaling,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,EGFR,PI3K-MAPK-mTOR / cancer signaling,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,EGFR,PI3K-MAPK-mTOR / cancer signaling,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,EGFR,PI3K-MAPK-mTOR / cancer signaling,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,EGFR,PI3K-MAPK-mTOR / cancer signaling,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,EGFR,PI3K-MAPK-mTOR / cancer signaling,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,EGFR,PI3K-MAPK-mTOR / cancer signaling,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,EGFR,PI3K-MAPK-mTOR / cancer signaling,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,EGR1,Activity / calcium signaling,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,EGR1,Activity / calcium signaling,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,EGR1,Activity / calcium signaling,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,EGR1,Activity / calcium signaling,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,EGR1,Activity / calcium signaling,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,EGR1,Activity / calcium signaling,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,EGR1,Activity / calcium signaling,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,EGR1,Activity / calcium signaling,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,EGR1,Activity / calcium signaling,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,EGR1,Activity / calcium signaling,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,FOS,Activity / calcium signaling,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,FOS,Activity / calcium signaling,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,FOS,Activity / calcium signaling,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,FOS,Activity / calcium signaling,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,FOS,Activity / calcium signaling,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,FOS,Activity / calcium signaling,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,FOS,Activity / calcium signaling,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,FOS,Activity / calcium signaling,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,FOS,Activity / calcium signaling,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,FOS,Activity / calcium signaling,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,GPX4,Oxidative / mitochondrial stress,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,GPX4,Oxidative / mitochondrial stress,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,GPX4,Oxidative / mitochondrial stress,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,GPX4,Oxidative / mitochondrial stress,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,GPX4,Oxidative / mitochondrial stress,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,GPX4,Oxidative / mitochondrial stress,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,GPX4,Oxidative / mitochondrial stress,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,GPX4,Oxidative / mitochondrial stress,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,GPX4,Oxidative / mitochondrial stress,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,GPX4,Oxidative / mitochondrial stress,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,H2AFX,DNA damage / chromatin,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,H2AFX,DNA damage / chromatin,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,H2AFX,DNA damage / chromatin,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,H2AFX,DNA damage / chromatin,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,H2AFX,DNA damage / chromatin,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,H2AFX,DNA damage / chromatin,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,H2AFX,DNA damage / chromatin,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,H2AFX,DNA damage / chromatin,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,H2AFX,DNA damage / chromatin,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,H2AFX,DNA damage / chromatin,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,HCN1,Ion channels / membrane excitability,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,HCN1,Ion channels / membrane excitability,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,HCN1,Ion channels / membrane excitability,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,HCN1,Ion channels / membrane excitability,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,HCN1,Ion channels / membrane excitability,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,HCN1,Ion channels / membrane excitability,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,HCN1,Ion channels / membrane excitability,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,HCN1,Ion channels / membrane excitability,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,HCN1,Ion channels / membrane excitability,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,HCN1,Ion channels / membrane excitability,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,KCNA1,Ion channels / membrane excitability,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,KCNA1,Ion channels / membrane excitability,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,KCNA1,Ion channels / membrane excitability,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,KCNA1,Ion channels / membrane excitability,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,KCNA1,Ion channels / membrane excitability,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,KCNA1,Ion channels / membrane excitability,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,KCNA1,Ion channels / membrane excitability,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,KCNA1,Ion channels / membrane excitability,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,KCNA1,Ion channels / membrane excitability,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,KCNA1,Ion channels / membrane excitability,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,KCNC1,Ion channels / membrane excitability,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,KCNC1,Ion channels / membrane excitability,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,KCNC1,Ion channels / membrane excitability,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,KCNC1,Ion channels / membrane excitability,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,KCNC1,Ion channels / membrane excitability,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,KCNC1,Ion channels / membrane excitability,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,KCNC1,Ion channels / membrane excitability,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,KCNC1,Ion channels / membrane excitability,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,KCNC1,Ion channels / membrane excitability,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,KCNC1,Ion channels / membrane excitability,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,KCNQ2,Ion channels / membrane excitability,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,KCNQ2,Ion channels / membrane excitability,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,KCNQ2,Ion channels / membrane excitability,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,KCNQ2,Ion channels / membrane excitability,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,KCNQ2,Ion channels / membrane excitability,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,KCNQ2,Ion channels / membrane excitability,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,KCNQ2,Ion channels / membrane excitability,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,KCNQ2,Ion channels / membrane excitability,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,KCNQ2,Ion channels / membrane excitability,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,KCNQ2,Ion channels / membrane excitability,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,KCNQ3,Ion channels / membrane excitability,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,KCNQ3,Ion channels / membrane excitability,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,KCNQ3,Ion channels / membrane excitability,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,KCNQ3,Ion channels / membrane excitability,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,KCNQ3,Ion channels / membrane excitability,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,KCNQ3,Ion channels / membrane excitability,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,KCNQ3,Ion channels / membrane excitability,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,KCNQ3,Ion channels / membrane excitability,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,KCNQ3,Ion channels / membrane excitability,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,KCNQ3,Ion channels / membrane excitability,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,KEAP1,Oxidative / mitochondrial stress,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,KEAP1,Oxidative / mitochondrial stress,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,KEAP1,Oxidative / mitochondrial stress,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,KEAP1,Oxidative / mitochondrial stress,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,KEAP1,Oxidative / mitochondrial stress,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,KEAP1,Oxidative / mitochondrial stress,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,KEAP1,Oxidative / mitochondrial stress,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,KEAP1,Oxidative / mitochondrial stress,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,KEAP1,Oxidative / mitochondrial stress,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,KEAP1,Oxidative / mitochondrial stress,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,KRAS,PI3K-MAPK-mTOR / cancer signaling,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,KRAS,PI3K-MAPK-mTOR / cancer signaling,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,KRAS,PI3K-MAPK-mTOR / cancer signaling,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,KRAS,PI3K-MAPK-mTOR / cancer signaling,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,KRAS,PI3K-MAPK-mTOR / cancer signaling,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,KRAS,PI3K-MAPK-mTOR / cancer signaling,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,KRAS,PI3K-MAPK-mTOR / cancer signaling,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,KRAS,PI3K-MAPK-mTOR / cancer signaling,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,KRAS,PI3K-MAPK-mTOR / cancer signaling,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,KRAS,PI3K-MAPK-mTOR / cancer signaling,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,MTOR,PI3K-MAPK-mTOR / cancer signaling,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,MTOR,PI3K-MAPK-mTOR / cancer signaling,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,MTOR,PI3K-MAPK-mTOR / cancer signaling,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,MTOR,PI3K-MAPK-mTOR / cancer signaling,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,MTOR,PI3K-MAPK-mTOR / cancer signaling,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,MTOR,PI3K-MAPK-mTOR / cancer signaling,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,MTOR,PI3K-MAPK-mTOR / cancer signaling,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,MTOR,PI3K-MAPK-mTOR / cancer signaling,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,MTOR,PI3K-MAPK-mTOR / cancer signaling,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,MTOR,PI3K-MAPK-mTOR / cancer signaling,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,NFE2L2,Oxidative / mitochondrial stress,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,NFE2L2,Oxidative / mitochondrial stress,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,NFE2L2,Oxidative / mitochondrial stress,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,NFE2L2,Oxidative / mitochondrial stress,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,NFE2L2,Oxidative / mitochondrial stress,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,NFE2L2,Oxidative / mitochondrial stress,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,NFE2L2,Oxidative / mitochondrial stress,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,NFE2L2,Oxidative / mitochondrial stress,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,NFE2L2,Oxidative / mitochondrial stress,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,NFE2L2,Oxidative / mitochondrial stress,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,NPAS4,Activity / calcium signaling,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,NPAS4,Activity / calcium signaling,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,NPAS4,Activity / calcium signaling,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,NPAS4,Activity / calcium signaling,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,NPAS4,Activity / calcium signaling,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,NPAS4,Activity / calcium signaling,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,NPAS4,Activity / calcium signaling,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,NPAS4,Activity / calcium signaling,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,NPAS4,Activity / calcium signaling,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,NPAS4,Activity / calcium signaling,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,PARP1,DNA damage / chromatin,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,PARP1,DNA damage / chromatin,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,PARP1,DNA damage / chromatin,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,PARP1,DNA damage / chromatin,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,PARP1,DNA damage / chromatin,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,PARP1,DNA damage / chromatin,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,PARP1,DNA damage / chromatin,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,PARP1,DNA damage / chromatin,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,PARP1,DNA damage / chromatin,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,PARP1,DNA damage / chromatin,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,PIK3CA,PI3K-MAPK-mTOR / cancer signaling,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,PIK3CA,PI3K-MAPK-mTOR / cancer signaling,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,PIK3CA,PI3K-MAPK-mTOR / cancer signaling,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,PIK3CA,PI3K-MAPK-mTOR / cancer signaling,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,PIK3CA,PI3K-MAPK-mTOR / cancer signaling,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,PIK3CA,PI3K-MAPK-mTOR / cancer signaling,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,PIK3CA,PI3K-MAPK-mTOR / cancer signaling,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,PIK3CA,PI3K-MAPK-mTOR / cancer signaling,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,PIK3CA,PI3K-MAPK-mTOR / cancer signaling,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,PIK3CA,PI3K-MAPK-mTOR / cancer signaling,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,PPARGC1A,Oxidative / mitochondrial stress,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,PPARGC1A,Oxidative / mitochondrial stress,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,PPARGC1A,Oxidative / mitochondrial stress,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,PPARGC1A,Oxidative / mitochondrial stress,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,PPARGC1A,Oxidative / mitochondrial stress,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,PPARGC1A,Oxidative / mitochondrial stress,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,PPARGC1A,Oxidative / mitochondrial stress,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,PPARGC1A,Oxidative / mitochondrial stress,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,PPARGC1A,Oxidative / mitochondrial stress,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,PPARGC1A,Oxidative / mitochondrial stress,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,PPP3CA,Activity / calcium signaling,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,PPP3CA,Activity / calcium signaling,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,PPP3CA,Activity / calcium signaling,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,PPP3CA,Activity / calcium signaling,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,PPP3CA,Activity / calcium signaling,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,PPP3CA,Activity / calcium signaling,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,PPP3CA,Activity / calcium signaling,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,PPP3CA,Activity / calcium signaling,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,PPP3CA,Activity / calcium signaling,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,PPP3CA,Activity / calcium signaling,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,PTEN,PI3K-MAPK-mTOR / cancer signaling,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,PTEN,PI3K-MAPK-mTOR / cancer signaling,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,PTEN,PI3K-MAPK-mTOR / cancer signaling,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,PTEN,PI3K-MAPK-mTOR / cancer signaling,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,PTEN,PI3K-MAPK-mTOR / cancer signaling,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,PTEN,PI3K-MAPK-mTOR / cancer signaling,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,PTEN,PI3K-MAPK-mTOR / cancer signaling,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,PTEN,PI3K-MAPK-mTOR / cancer signaling,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,PTEN,PI3K-MAPK-mTOR / cancer signaling,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,PTEN,PI3K-MAPK-mTOR / cancer signaling,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,SCN1A,Ion channels / membrane excitability,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,SCN1A,Ion channels / membrane excitability,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,SCN1A,Ion channels / membrane excitability,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,SCN1A,Ion channels / membrane excitability,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,SCN1A,Ion channels / membrane excitability,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,SCN1A,Ion channels / membrane excitability,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,SCN1A,Ion channels / membrane excitability,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,SCN1A,Ion channels / membrane excitability,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,SCN1A,Ion channels / membrane excitability,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,SCN1A,Ion channels / membrane excitability,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,SCN2A,Ion channels / membrane excitability,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,SCN2A,Ion channels / membrane excitability,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,SCN2A,Ion channels / membrane excitability,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,SCN2A,Ion channels / membrane excitability,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,SCN2A,Ion channels / membrane excitability,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,SCN2A,Ion channels / membrane excitability,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,SCN2A,Ion channels / membrane excitability,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,SCN2A,Ion channels / membrane excitability,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,SCN2A,Ion channels / membrane excitability,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,SCN2A,Ion channels / membrane excitability,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,SCN8A,Ion channels / membrane excitability,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,SCN8A,Ion channels / membrane excitability,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,SCN8A,Ion channels / membrane excitability,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,SCN8A,Ion channels / membrane excitability,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,SCN8A,Ion channels / membrane excitability,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,SCN8A,Ion channels / membrane excitability,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,SCN8A,Ion channels / membrane excitability,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,SCN8A,Ion channels / membrane excitability,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,SCN8A,Ion channels / membrane excitability,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,SCN8A,Ion channels / membrane excitability,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,SOD2,Oxidative / mitochondrial stress,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,SOD2,Oxidative / mitochondrial stress,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,SOD2,Oxidative / mitochondrial stress,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,SOD2,Oxidative / mitochondrial stress,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,SOD2,Oxidative / mitochondrial stress,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,SOD2,Oxidative / mitochondrial stress,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,SOD2,Oxidative / mitochondrial stress,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,SOD2,Oxidative / mitochondrial stress,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,SOD2,Oxidative / mitochondrial stress,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,SOD2,Oxidative / mitochondrial stress,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,TFAM,Oxidative / mitochondrial stress,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,TFAM,Oxidative / mitochondrial stress,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,TFAM,Oxidative / mitochondrial stress,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,TFAM,Oxidative / mitochondrial stress,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,TFAM,Oxidative / mitochondrial stress,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,TFAM,Oxidative / mitochondrial stress,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,TFAM,Oxidative / mitochondrial stress,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,TFAM,Oxidative / mitochondrial stress,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,TFAM,Oxidative / mitochondrial stress,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,TFAM,Oxidative / mitochondrial stress,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,TOP2B,DNA damage / chromatin,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,TOP2B,DNA damage / chromatin,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,TOP2B,DNA damage / chromatin,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,TOP2B,DNA damage / chromatin,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,TOP2B,DNA damage / chromatin,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,TOP2B,DNA damage / chromatin,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,TOP2B,DNA damage / chromatin,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,TOP2B,DNA damage / chromatin,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,TOP2B,DNA damage / chromatin,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,TOP2B,DNA damage / chromatin,0.0,0,523,mutation-sequenced
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,TP53,DNA damage / chromatin,0.0,0,397,mutation-sequenced
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,TP53,DNA damage / chromatin,0.0,0,514,mutation-sequenced
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,TP53,DNA damage / chromatin,0.0,0,1066,mutation-sequenced
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,TP53,DNA damage / chromatin,0.0,0,566,mutation-sequenced
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,TP53,DNA damage / chromatin,0.0,0,534,mutation-sequenced
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,TP53,DNA damage / chromatin,0.0,0,179,mutation-sequenced
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,TP53,DNA damage / chromatin,0.0,0,440,mutation-sequenced
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,TP53,DNA damage / chromatin,0.0,0,494,mutation-sequenced
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,TP53,DNA damage / chromatin,0.0,0,517,mutation-sequenced
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,TP53,DNA damage / chromatin,0.0,0,523,mutation-sequenced
