@@ -1,0 +1,598 @@
+{
+  "nCells": 3654,
+  "nGenes": 1302,
+  "nSubjects": 936,
+  "traits": [
+    "vrest",
+    "ri",
+    "sag",
+    "tau",
+    "f_i_curve_slope",
+    "adaptation",
+    "latency",
+    "avg_isi",
+    "upstroke_downstroke_ratio_long_square",
+    "peak_v_long_square",
+    "trough_v_long_square",
+    "fast_trough_v_long_square",
+    "threshold_v_long_square",
+    "threshold_i_long_square",
+    "threshold_v_short_square",
+    "threshold_i_short_square",
+    "threshold_v_ramp",
+    "threshold_i_ramp"
+  ],
+  "models": [
+    {
+      "model": "extra_trees_var400",
+      "mean_trait_r2": 0.3410932463396873,
+      "median_trait_r2": 0.26851029176499697,
+      "mean_trait_spearman": 0.6123163296266754,
+      "mean_trait_mae": 16.989027967002983,
+      "traits": 18,
+      "n_genes": 400
+    },
+    {
+      "model": "pls_all",
+      "mean_trait_r2": 0.30794185327744733,
+      "median_trait_r2": 0.20381793357327302,
+      "mean_trait_spearman": 0.5747991770924358,
+      "mean_trait_mae": 18.967501122552864,
+      "traits": 18,
+      "n_genes": 1302
+    },
+    {
+      "model": "ridge_all",
+      "mean_trait_r2": 0.016570692090884246,
+      "median_trait_r2": -0.05503891632025965,
+      "mean_trait_spearman": 0.4755035352730083,
+      "mean_trait_mae": 21.06233560434641,
+      "traits": 18,
+      "n_genes": 1302
+    }
+  ],
+  "perTrait": [
+    {
+      "model": "extra_trees_var400",
+      "trait": "adaptation",
+      "mean_r2": 0.20423126257512836,
+      "sd_r2": 0.017353645580524532,
+      "mean_mae": 0.06459853093777439,
+      "mean_spearman": 0.6924808404205953,
+      "folds": 5,
+      "n_genes": 400
+    },
+    {
+      "model": "extra_trees_var400",
+      "trait": "avg_isi",
+      "mean_r2": 0.2877120579184528,
+      "sd_r2": 0.03699383610760132,
+      "mean_mae": 21.76009417185744,
+      "mean_spearman": 0.6745729122997435,
+      "folds": 5,
+      "n_genes": 400
+    },
+    {
+      "model": "extra_trees_var400",
+      "trait": "f_i_curve_slope",
+      "mean_r2": 0.5519343288141481,
+      "sd_r2": 0.034639472726792735,
+      "mean_mae": 0.13926282535688495,
+      "mean_spearman": 0.6489365013343502,
+      "folds": 5,
+      "n_genes": 400
+    },
+    {
+      "model": "extra_trees_var400",
+      "trait": "fast_trough_v_long_square",
+      "mean_r2": 0.3320272539923642,
+      "sd_r2": 0.036125425742910985,
+      "mean_mae": 4.419167073269091,
+      "mean_spearman": 0.6158554300545918,
+      "folds": 5,
+      "n_genes": 400
+    },
+    {
+      "model": "extra_trees_var400",
+      "trait": "latency",
+      "mean_r2": 0.18766954316675644,
+      "sd_r2": 0.09997567765661954,
+      "mean_mae": 0.011493594350982449,
+      "mean_spearman": 0.6257171665229933,
+      "folds": 5,
+      "n_genes": 400
+    },
+    {
+      "model": "extra_trees_var400",
+      "trait": "peak_v_long_square",
+      "mean_r2": 0.1518877161430469,
+      "sd_r2": 0.015212152720380137,
+      "mean_mae": 7.766970273489084,
+      "mean_spearman": 0.43147064929784956,
+      "folds": 5,
+      "n_genes": 400
+    },
+    {
+      "model": "extra_trees_var400",
+      "trait": "ri",
+      "mean_r2": 0.558424966682608,
+      "sd_r2": 0.013660477019035068,
+      "mean_mae": 43.112110862902895,
+      "mean_spearman": 0.7954161509515275,
+      "folds": 5,
+      "n_genes": 400
+    },
+    {
+      "model": "extra_trees_var400",
+      "trait": "sag",
+      "mean_r2": 0.2123478188261796,
+      "sd_r2": 0.05561238562823038,
+      "mean_mae": 0.040388196894330555,
+      "mean_spearman": 0.5635310495149095,
+      "folds": 5,
+      "n_genes": 400
+    },
+    {
+      "model": "extra_trees_var400",
+      "trait": "tau",
+      "mean_r2": 0.6050992535343502,
+      "sd_r2": 0.09704242831930182,
+      "mean_mae": 3.7875752628174695,
+      "mean_spearman": 0.8650465570501717,
+      "folds": 5,
+      "n_genes": 400
+    },
+    {
+      "model": "extra_trees_var400",
+      "trait": "threshold_i_long_square",
+      "mean_r2": 0.6787034254081101,
+      "sd_r2": 0.017523160871005007,
+      "mean_mae": 35.83153912395657,
+      "mean_spearman": 0.8022837661650117,
+      "folds": 5,
+      "n_genes": 400
+    },
+    {
+      "model": "extra_trees_var400",
+      "trait": "threshold_i_ramp",
+      "mean_r2": 0.5588150407692934,
+      "sd_r2": 0.02577171940865323,
+      "mean_mae": 50.67748815200854,
+      "mean_spearman": 0.7525283986365452,
+      "folds": 5,
+      "n_genes": 400
+    },
+    {
+      "model": "extra_trees_var400",
+      "trait": "threshold_i_short_square",
+      "mean_r2": 0.3760703768409575,
+      "sd_r2": 0.02664851007550272,
+      "mean_mae": 113.74902680106379,
+      "mean_spearman": 0.6444574591516921,
+      "folds": 5,
+      "n_genes": 400
+    },
+    {
+      "model": "extra_trees_var400",
+      "trait": "threshold_v_long_square",
+      "mean_r2": 0.1384108275594298,
+      "sd_r2": 0.01311954841998396,
+      "mean_mae": 4.454068067141398,
+      "mean_spearman": 0.42557380057163263,
+      "folds": 5,
+      "n_genes": 400
+    },
+    {
+      "model": "extra_trees_var400",
+      "trait": "threshold_v_ramp",
+      "mean_r2": 0.08395803034394107,
+      "sd_r2": 0.015315221652401121,
+      "mean_mae": 5.6332044219488,
+      "mean_spearman": 0.34361481239662134,
+      "folds": 5,
+      "n_genes": 400
+    },
+    {
+      "model": "extra_trees_var400",
+      "trait": "threshold_v_short_square",
+      "mean_r2": 0.10280352601156488,
+      "sd_r2": 0.02065246114315381,
+      "mean_mae": 4.963965852798365,
+      "mean_spearman": 0.37509583634577426,
+      "folds": 5,
+      "n_genes": 400
+    },
+    {
+      "model": "extra_trees_var400",
+      "trait": "trough_v_long_square",
+      "mean_r2": 0.24930852561154113,
+      "sd_r2": 0.02941823616700826,
+      "mean_mae": 4.372259600959649,
+      "mean_spearman": 0.5346584479719706,
+      "folds": 5,
+      "n_genes": 400
+    },
+    {
+      "model": "extra_trees_var400",
+      "trait": "upstroke_downstroke_ratio_long_square",
+      "mean_r2": 0.7503234149643927,
+      "sd_r2": 0.02301849378538446,
+      "mean_mae": 0.32276866150219785,
+      "mean_spearman": 0.9057785358665139,
+      "folds": 5,
+      "n_genes": 400
+    },
+    {
+      "model": "extra_trees_var400",
+      "trait": "vrest",
+      "mean_r2": 0.10995106495210558,
+      "sd_r2": 0.023866601210373598,
+      "mean_mae": 4.696521932798438,
+      "mean_spearman": 0.32467561872766154,
+      "folds": 5,
+      "n_genes": 400
+    },
+    {
+      "model": "pls_all",
+      "trait": "adaptation",
+      "mean_r2": 0.1702945501603908,
+      "sd_r2": 0.027836784800095913,
+      "mean_mae": 0.06850837513484385,
+      "mean_spearman": 0.6342623528443118,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "pls_all",
+      "trait": "avg_isi",
+      "mean_r2": 0.2848487910083003,
+      "sd_r2": 0.031886804963520046,
+      "mean_mae": 22.4025398328756,
+      "mean_spearman": 0.6522422802002954,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "pls_all",
+      "trait": "f_i_curve_slope",
+      "mean_r2": 0.5096475739596877,
+      "sd_r2": 0.05076139580015746,
+      "mean_mae": 0.1477164253966084,
+      "mean_spearman": 0.5582856276577457,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "pls_all",
+      "trait": "fast_trough_v_long_square",
+      "mean_r2": 0.3246568634928676,
+      "sd_r2": 0.03871587535658775,
+      "mean_mae": 4.474311981496842,
+      "mean_spearman": 0.6010029725407954,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "pls_all",
+      "trait": "latency",
+      "mean_r2": 0.14560472610117697,
+      "sd_r2": 0.07721208493929993,
+      "mean_mae": 0.012173377584451238,
+      "mean_spearman": 0.5789998828474182,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "pls_all",
+      "trait": "peak_v_long_square",
+      "mean_r2": 0.1627858241812727,
+      "sd_r2": 0.013457713785953522,
+      "mean_mae": 7.706206123878253,
+      "mean_spearman": 0.44266242776797826,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "pls_all",
+      "trait": "ri",
+      "mean_r2": 0.5539611175533589,
+      "sd_r2": 0.03254024815166374,
+      "mean_mae": 44.66491165633871,
+      "mean_spearman": 0.7752652265705301,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "pls_all",
+      "trait": "sag",
+      "mean_r2": 0.17458538024545522,
+      "sd_r2": 0.04296138594484996,
+      "mean_mae": 0.04206152953979875,
+      "mean_spearman": 0.47005862445602364,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "pls_all",
+      "trait": "tau",
+      "mean_r2": 0.6152400770845265,
+      "sd_r2": 0.10309184354228852,
+      "mean_mae": 3.854650480059385,
+      "mean_spearman": 0.8492713516398347,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "pls_all",
+      "trait": "threshold_i_long_square",
+      "mean_r2": 0.6205143154130541,
+      "sd_r2": 0.029263856910572053,
+      "mean_mae": 40.289115891947155,
+      "mean_spearman": 0.7761534863512979,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "pls_all",
+      "trait": "threshold_i_ramp",
+      "mean_r2": 0.4880704946234208,
+      "sd_r2": 0.032350782176781584,
+      "mean_mae": 54.91975935392799,
+      "mean_spearman": 0.7146385541908462,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "pls_all",
+      "trait": "threshold_i_short_square",
+      "mean_r2": 0.12012038222030005,
+      "sd_r2": 0.057146610057159125,
+      "mean_mae": 138.09703947828754,
+      "mean_spearman": 0.5309928123839196,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "pls_all",
+      "trait": "threshold_v_long_square",
+      "mean_r2": 0.133661524154778,
+      "sd_r2": 0.022513758815244245,
+      "mean_mae": 4.467061771446578,
+      "mean_spearman": 0.3931034487517861,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "pls_all",
+      "trait": "threshold_v_ramp",
+      "mean_r2": 0.06077878657219109,
+      "sd_r2": 0.024406025139317247,
+      "mean_mae": 5.731970532120615,
+      "mean_spearman": 0.2996893144370427,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "pls_all",
+      "trait": "threshold_v_short_square",
+      "mean_r2": 0.10749184611790194,
+      "sd_r2": 0.02212815014608659,
+      "mean_mae": 4.991010166831817,
+      "mean_spearman": 0.36945284429277064,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "pls_all",
+      "trait": "trough_v_long_square",
+      "mean_r2": 0.23305048690109081,
+      "sd_r2": 0.034998454076984736,
+      "mean_mae": 4.452781717574625,
+      "mean_spearman": 0.5099006939408228,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "pls_all",
+      "trait": "upstroke_downstroke_ratio_long_square",
+      "mean_r2": 0.7614972615505161,
+      "sd_r2": 0.018564118202270247,
+      "mean_mae": 0.3184503696844214,
+      "mean_spearman": 0.8987401761868321,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "pls_all",
+      "trait": "vrest",
+      "mean_r2": 0.07614335765376241,
+      "sd_r2": 0.03473477396869375,
+      "mean_mae": 4.774751141826365,
+      "mean_spearman": 0.2916631106035914,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "ridge_all",
+      "trait": "adaptation",
+      "mean_r2": -0.2754687065741487,
+      "sd_r2": 0.08457073323215016,
+      "mean_mae": 0.09786566976262233,
+      "mean_spearman": 0.39445713381635983,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "ridge_all",
+      "trait": "avg_isi",
+      "mean_r2": -0.019288355268724123,
+      "sd_r2": 0.05465568688775979,
+      "mean_mae": 30.598049041012125,
+      "mean_spearman": 0.504870107613226,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "ridge_all",
+      "trait": "f_i_curve_slope",
+      "mean_r2": 0.3180557106305143,
+      "sd_r2": 0.06999441989488583,
+      "mean_mae": 0.18236390550076767,
+      "mean_spearman": 0.5301316868404715,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "ridge_all",
+      "trait": "fast_trough_v_long_square",
+      "mean_r2": 0.01866170015403945,
+      "sd_r2": 0.06306684905492305,
+      "mean_mae": 5.530772830236702,
+      "mean_spearman": 0.4823642243867357,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "ridge_all",
+      "trait": "latency",
+      "mean_r2": -0.5312968383153491,
+      "sd_r2": 0.3869577385673024,
+      "mean_mae": 0.020455023148925264,
+      "mean_spearman": 0.3413738251494095,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "ridge_all",
+      "trait": "peak_v_long_square",
+      "mean_r2": -0.25751926047045026,
+      "sd_r2": 0.07609378315695377,
+      "mean_mae": 9.577078974814341,
+      "mean_spearman": 0.283489266682653,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "ridge_all",
+      "trait": "ri",
+      "mean_r2": 0.4481118462602991,
+      "sd_r2": 0.044701397058568536,
+      "mean_mae": 50.41608781739008,
+      "mean_spearman": 0.7254470375669747,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "ridge_all",
+      "trait": "sag",
+      "mean_r2": -0.09078947737179519,
+      "sd_r2": 0.13745285504731292,
+      "mean_mae": 0.05094714909438815,
+      "mean_spearman": 0.4505899304400412,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "ridge_all",
+      "trait": "tau",
+      "mean_r2": 0.4686132693886746,
+      "sd_r2": 0.05975937603298807,
+      "mean_mae": 4.852417449218241,
+      "mean_spearman": 0.755164178743627,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "ridge_all",
+      "trait": "threshold_i_long_square",
+      "mean_r2": 0.5571010618419823,
+      "sd_r2": 0.030042949465550563,
+      "mean_mae": 43.872604332098916,
+      "mean_spearman": 0.7353526071920895,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "ridge_all",
+      "trait": "threshold_i_ramp",
+      "mean_r2": 0.3545439276288498,
+      "sd_r2": 0.053932683702098375,
+      "mean_mae": 61.813316057726354,
+      "mean_spearman": 0.6587348845894757,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "ridge_all",
+      "trait": "threshold_i_short_square",
+      "mean_r2": 0.07846681910222716,
+      "sd_r2": 0.08091548895584456,
+      "mean_mae": 141.23613933244206,
+      "mean_spearman": 0.5190378140348687,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "ridge_all",
+      "trait": "threshold_v_long_square",
+      "mean_r2": -0.2709248035441944,
+      "sd_r2": 0.0851225032935951,
+      "mean_mae": 5.546443010926955,
+      "mean_spearman": 0.2898355184712454,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "ridge_all",
+      "trait": "threshold_v_ramp",
+      "mean_r2": -0.3975973533481332,
+      "sd_r2": 0.08203419109688397,
+      "mean_mae": 7.159748047613348,
+      "mean_spearman": 0.18551060983140327,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "ridge_all",
+      "trait": "threshold_v_short_square",
+      "mean_r2": -0.3013536299947726,
+      "sd_r2": 0.09376861150228345,
+      "mean_mae": 6.349121081034687,
+      "mean_spearman": 0.25647676426855354,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "ridge_all",
+      "trait": "trough_v_long_square",
+      "mean_r2": -0.12094085091864266,
+      "sd_r2": 0.0883931843596156,
+      "mean_mae": 5.544456481074233,
+      "mean_spearman": 0.38414486070688947,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "ridge_all",
+      "trait": "upstroke_downstroke_ratio_long_square",
+      "mean_r2": 0.7067485541579767,
+      "sd_r2": 0.029042342315223645,
+      "mean_mae": 0.3582336548110576,
+      "mean_spearman": 0.878818473657948,
+      "folds": 5,
+      "n_genes": 1302
+    },
+    {
+      "model": "ridge_all",
+      "trait": "vrest",
+      "mean_r2": -0.3868511557224366,
+      "sd_r2": 0.07692531358972489,
+      "mean_mae": 5.915941020329545,
+      "mean_spearman": 0.18326471092217755,
+      "folds": 5,
+      "n_genes": 1302
+    }
+  ],
+  "split": "5-fold GroupKFold using subject ID parsed from electrophysiology NWB identifiers",
+  "guardrail": "All preprocessing is fitted inside each model pipeline; subject groups do not cross train/test folds."
+}
