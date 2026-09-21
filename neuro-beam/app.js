@@ -129,3 +129,43 @@ Promise.all([
   document.getElementById("pause-neuron").addEventListener("click",e=>{animRunning=!animRunning;e.target.textContent=animRunning?"Pause":"Resume";});
   renderReadout(states[0]||"E1");drawPCA();drawClusterDiagnostics();animate();
 }).catch(err=>console.error("Dynamic discovery data unavailable",err));
+
+
+function renderValidation(d){
+  const f=(x,n=3)=>Number.isFinite(Number(x))?Number(x).toFixed(n):"—";
+  document.getElementById("val-ari").textContent=f(d.bootstrap_ari_mean,3);
+  document.getElementById("val-gmm").textContent=d.gmm_best_k_bic ?? "—";
+  document.getElementById("val-hdb").textContent=d.hdbscan_clusters ?? "—";
+  document.getElementById("val-nmi").textContent=f(d.state_class_nmi,3);
+
+  const sroot=document.getElementById("stability-bars");
+  const st=d.state_stability||{};
+  sroot.innerHTML=Object.entries(st).map(([k,v])=>{
+    const mean=Math.max(0,Math.min(1,Number(v.mean_jaccard||0)));
+    const lo=Math.max(0,Math.min(1,Number(v.p05||0)));
+    const hi=Math.max(0,Math.min(1,Number(v.p95||0)));
+    return `<div class="stab-row"><b>${k}</b><div class="stab-track"><div class="stab-fill" style="width:${(mean*100).toFixed(1)}%"></div><div class="stab-band" style="left:${(lo*100).toFixed(1)}%;width:${Math.max(1,(hi-lo)*100).toFixed(1)}%"></div></div><span>${mean.toFixed(3)} · n=${v.n}</span></div>`;
+  }).join("");
+
+  const cont=d.contingency||{};
+  const states=Object.keys(cont);
+  const classes=[...new Set(states.flatMap(s=>Object.keys(cont[s]||{})))];
+  const totals={}; classes.forEach(c=>totals[c]=states.reduce((a,s)=>a+(cont[s]?.[c]||0),0));
+  let table='<table class="matrix-table"><thead><tr><th>State</th>'+classes.map(c=>`<th>${c}</th>`).join('')+'</tr></thead><tbody>';
+  states.forEach(s=>{
+    const row=cont[s]||{}; const max=Math.max(...classes.map(c=>row[c]||0),0);
+    table+=`<tr><td><b>${s}</b></td>`+classes.map(c=>`<td class="${(row[c]||0)===max&&max>0?'matrix-cell-hi':''}">${row[c]||0}</td>`).join('')+'</tr>';
+  });
+  table+='</tbody></table>';
+  document.getElementById("state-class-table").innerHTML=table;
+
+  const rare=Object.entries(st).filter(([,v])=>Number(v.n)<25).map(([k])=>k);
+  let msg=`<b>Validation summary:</b> bootstrap ARI mean ${f(d.bootstrap_ari_mean)}; GMM BIC favors k=${d.gmm_best_k_bic}; HDBSCAN finds ${d.hdbscan_clusters} cluster(s) with ${f((d.hdbscan_noise_fraction||0)*100,1)}% noise. Post hoc state↔class NMI is ${f(d.state_class_nmi)}.`;
+  if(rare.length) msg+=` Rare candidate state(s) ${rare.join(", ")} remain provisional because n<25.`;
+  msg+=' These metrics describe reproducibility/correspondence, not causality.';
+  document.getElementById("validation-interpretation").innerHTML=msg;
+}
+fetch("data/visual_cortex_stability_validation.json").then(r=>{
+  if(!r.ok) throw new Error("not ready");
+  return r.json();
+}).then(renderValidation).catch(()=>{});
