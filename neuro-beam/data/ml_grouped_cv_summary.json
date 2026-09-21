@@ -1,0 +1,247 @@
+{
+  "nCells": 3654,
+  "nSubjects": 936,
+  "nGenes": 1302,
+  "targets": [
+    "vrest",
+    "ri",
+    "tau",
+    "f_i_curve_slope",
+    "adaptation",
+    "latency",
+    "avg_isi",
+    "upstroke_downstroke_ratio_long_square",
+    "threshold_v_long_square",
+    "threshold_i_long_square",
+    "sag"
+  ],
+  "split": "5-fold GroupKFold by subject ID",
+  "normalization": "within-cell gene percentile rank",
+  "models": [
+    "Ridge(alpha=100)",
+    "ExtraTrees(220 trees; fold-local top-300 variance genes)"
+  ],
+  "summary": [
+    {
+      "model": "ExtraTrees",
+      "target": "adaptation",
+      "r2_mean": 0.21087461009144004,
+      "r2_sd": 0.015555456270536299,
+      "spearman_mean": 0.708070723142543,
+      "spearman_sd": 0.021989096609979254,
+      "mae_mean": 0.06458083126021152,
+      "mae_sd": 0.0031405809765039593
+    },
+    {
+      "model": "ExtraTrees",
+      "target": "avg_isi",
+      "r2_mean": 0.28654085950248664,
+      "r2_sd": 0.03850897610404337,
+      "spearman_mean": 0.6782408219495691,
+      "spearman_sd": 0.029125187391027253,
+      "mae_mean": 21.78906683460694,
+      "mae_sd": 1.0305799126178257
+    },
+    {
+      "model": "ExtraTrees",
+      "target": "f_i_curve_slope",
+      "r2_mean": 0.5402933172510525,
+      "r2_sd": 0.027027022032659498,
+      "spearman_mean": 0.6580299963705104,
+      "spearman_sd": 0.028463695174854725,
+      "mae_mean": 0.14060055333338306,
+      "mae_sd": 0.0039019497704094147
+    },
+    {
+      "model": "ExtraTrees",
+      "target": "latency",
+      "r2_mean": 0.16789757806132738,
+      "r2_sd": 0.07746265931120583,
+      "spearman_mean": 0.613914568909647,
+      "spearman_sd": 0.03218782681782931,
+      "mae_mean": 0.011938006927670903,
+      "mae_sd": 0.00035935227991118864
+    },
+    {
+      "model": "ExtraTrees",
+      "target": "ri",
+      "r2_mean": 0.5577581904133566,
+      "r2_sd": 0.010874628913694447,
+      "spearman_mean": 0.7990590179652259,
+      "spearman_sd": 0.010336416848642607,
+      "mae_mean": 43.37008185742128,
+      "mae_sd": 1.6706857010256946
+    },
+    {
+      "model": "ExtraTrees",
+      "target": "sag",
+      "r2_mean": 0.22621347016130738,
+      "r2_sd": 0.06043418549332609,
+      "spearman_mean": 0.5840659227819806,
+      "spearman_sd": 0.02258672574647549,
+      "mae_mean": 0.03984719464868076,
+      "mae_sd": 0.002502563535446082
+    },
+    {
+      "model": "ExtraTrees",
+      "target": "tau",
+      "r2_mean": 0.6127777665865488,
+      "r2_sd": 0.09534738482340017,
+      "spearman_mean": 0.8744227711758731,
+      "spearman_sd": 0.00609718593522445,
+      "mae_mean": 3.7352627925058206,
+      "mae_sd": 0.22022727140539675
+    },
+    {
+      "model": "ExtraTrees",
+      "target": "threshold_i_long_square",
+      "r2_mean": 0.6735890770643888,
+      "r2_sd": 0.01591648073333062,
+      "spearman_mean": 0.8082141925362185,
+      "spearman_sd": 0.014857859863827412,
+      "mae_mean": 35.939661667623696,
+      "mae_sd": 0.39271551815522715
+    },
+    {
+      "model": "ExtraTrees",
+      "target": "threshold_v_long_square",
+      "r2_mean": 0.14231451144614318,
+      "r2_sd": 0.010861809965276751,
+      "spearman_mean": 0.43333254060731247,
+      "spearman_sd": 0.017449647698239548,
+      "mae_mean": 4.434564066829802,
+      "mae_sd": 0.1253953520786189
+    },
+    {
+      "model": "ExtraTrees",
+      "target": "upstroke_downstroke_ratio_long_square",
+      "r2_mean": 0.7323831952180492,
+      "r2_sd": 0.027517112728142123,
+      "spearman_mean": 0.9085914333709859,
+      "spearman_sd": 0.007585112812888567,
+      "mae_mean": 0.333940838302622,
+      "mae_sd": 0.010291689643579459
+    },
+    {
+      "model": "ExtraTrees",
+      "target": "vrest",
+      "r2_mean": 0.11097055025081444,
+      "r2_sd": 0.026996767721260265,
+      "spearman_mean": 0.3250742277289901,
+      "spearman_sd": 0.04024913505591988,
+      "mae_mean": 4.688560744384654,
+      "mae_sd": 0.04096404281326835
+    },
+    {
+      "model": "Ridge",
+      "target": "adaptation",
+      "r2_mean": -0.23785023260998214,
+      "r2_sd": 0.0789290882030525,
+      "spearman_mean": 0.40381923838006173,
+      "spearman_sd": 0.029144510602875623,
+      "mae_mean": 0.0968330395628921,
+      "mae_sd": 0.0032761976817186544
+    },
+    {
+      "model": "Ridge",
+      "target": "avg_isi",
+      "r2_mean": -0.0009554511291816059,
+      "r2_sd": 0.062187752218188445,
+      "spearman_mean": 0.5020957956495351,
+      "spearman_sd": 0.05140525575914092,
+      "mae_mean": 30.58620586189813,
+      "mae_sd": 1.319681118127707
+    },
+    {
+      "model": "Ridge",
+      "target": "f_i_curve_slope",
+      "r2_mean": 0.32863659578996635,
+      "r2_sd": 0.08173962359273329,
+      "spearman_mean": 0.5289896974535628,
+      "spearman_sd": 0.04519647533631589,
+      "mae_mean": 0.1816092456586008,
+      "mae_sd": 0.005612976561216353
+    },
+    {
+      "model": "Ridge",
+      "target": "latency",
+      "r2_mean": -0.5121583519999239,
+      "r2_sd": 0.4124881889068721,
+      "spearman_mean": 0.3364239815676541,
+      "spearman_sd": 0.04143455789111903,
+      "mae_mean": 0.020357176689628866,
+      "mae_sd": 0.0007668925938839108
+    },
+    {
+      "model": "Ridge",
+      "target": "ri",
+      "r2_mean": 0.4524006588440598,
+      "r2_sd": 0.05023827506377781,
+      "spearman_mean": 0.7258084229719886,
+      "spearman_sd": 0.024777703420664408,
+      "mae_mean": 50.45822195656339,
+      "mae_sd": 0.8591618307459136
+    },
+    {
+      "model": "Ridge",
+      "target": "sag",
+      "r2_mean": -0.08175004587400825,
+      "r2_sd": 0.12327157653012936,
+      "spearman_mean": 0.4547411919090255,
+      "spearman_sd": 0.04339901263171041,
+      "mae_mean": 0.050621143703098094,
+      "mae_sd": 0.0021157547097756966
+    },
+    {
+      "model": "Ridge",
+      "target": "tau",
+      "r2_mean": 0.4859543251869856,
+      "r2_sd": 0.0636835099377689,
+      "spearman_mean": 0.7581789368431266,
+      "spearman_sd": 0.03959581960294757,
+      "mae_mean": 4.750385104464795,
+      "mae_sd": 0.09482627456501862
+    },
+    {
+      "model": "Ridge",
+      "target": "threshold_i_long_square",
+      "r2_mean": 0.5676165310957513,
+      "r2_sd": 0.0302296795648907,
+      "spearman_mean": 0.7345937734200719,
+      "spearman_sd": 0.02404669885837502,
+      "mae_mean": 43.56247448048158,
+      "mae_sd": 1.160934253800479
+    },
+    {
+      "model": "Ridge",
+      "target": "threshold_v_long_square",
+      "r2_mean": -0.2743386500818268,
+      "r2_sd": 0.09079081420052329,
+      "spearman_mean": 0.2686949174086296,
+      "spearman_sd": 0.041693148021257447,
+      "mae_mean": 5.626730228737737,
+      "mae_sd": 0.13341766522344442
+    },
+    {
+      "model": "Ridge",
+      "target": "upstroke_downstroke_ratio_long_square",
+      "r2_mean": 0.7155961419014312,
+      "r2_sd": 0.03249506308178169,
+      "spearman_mean": 0.8798272308933438,
+      "spearman_sd": 0.009285876665808306,
+      "mae_mean": 0.35446810012236235,
+      "mae_sd": 0.009077597099475745
+    },
+    {
+      "model": "Ridge",
+      "target": "vrest",
+      "r2_mean": -0.34151268013135233,
+      "r2_sd": 0.07232469183381436,
+      "spearman_mean": 0.19917130631099605,
+      "spearman_sd": 0.035000877795865505,
+      "mae_mean": 5.783804784868003,
+      "mae_sd": 0.1374215175238754
+    }
+  ],
+  "interpretation": "Internal grouped-CV benchmark only; external M1 remains required for generalization claims."
+}
