@@ -319,3 +319,55 @@ function renderAdvancedDisease(d){
   p+='</tbody></table>';document.getElementById("study-provenance").innerHTML=p;
 }
 fetch("data/disease_bioelectric_bridge.json").then(r=>r.ok?r.json():Promise.reject()).then(renderAdvancedDisease).catch(()=>{});
+
+
+let bioeBridgeData=null;
+function renderBioeFeatureGenes(){
+  const d=bioeBridgeData;if(!d)return;
+  const feature=document.getElementById("bioelectric-feature-select")?.value;
+  const root=document.getElementById("bioe-feature-gene-table");
+  let rows=(d.topAssociations||[]).filter(x=>x.feature===feature && Number.isFinite(+x.rho));
+  rows=rows.sort((a,b)=>Math.abs(+b.rho)-Math.abs(+a.rho)).slice(0,30);
+  root.innerHTML=rows.map((r,i)=>`<div class="rank-row"><span>#${i+1}</span><b>${r.gene}</b><small>${r.q<=0.05?'<span class="sig-badge">FDR</span>':''} q=${Number(r.q).toExponential(1)}</small><span class="rank-score ${r.rho>=0?'rho-pos':'rho-neg'}">${r.rho>=0?'+':''}${Number(r.rho).toFixed(3)}</span></div>`).join("")||'<p class="micro-note">No associations available for this trait.</p>';
+}
+function renderBioeContributors(){
+  const d=bioeBridgeData;if(!d)return;
+  const sid=document.getElementById("bioe-disease-select")?.value;
+  const row=(d.diseaseBioelectricScores||[]).find(x=>x.studyId===sid);
+  const root=document.getElementById("bioe-contributor-table");
+  root.innerHTML=(row?.topContributors||[]).map((x,i)=>`<div class="rank-row"><span>#${i+1}</span><b>${x.gene}</b><small>${x.bestFeature} · mut ${Number(x.mutationPercent).toFixed(1)}%</small><span class="rank-score ${x.rho>=0?'rho-pos':'rho-neg'}">${x.rho>=0?'+':''}${Number(x.rho).toFixed(3)}</span></div>`).join("")||'<p class="micro-note">No contributor data.</p>';
+}
+function renderBioelectricDisease(d){
+  bioeBridgeData=d;
+  document.getElementById("bioe-cells").textContent=Number(d.nMatchedCells||0).toLocaleString();
+  document.getElementById("bioe-genes").textContent=Number(d.nGenesTested||0).toLocaleString();
+  document.getElementById("bioe-features").textContent=(d.electricalFeatures||[]).length;
+  document.getElementById("bioe-shared").textContent=(d.candidatePanelSharedGenes||[]).length;
+
+  const fs=document.getElementById("bioelectric-feature-select");
+  fs.innerHTML=(d.electricalFeatures||[]).map(x=>`<option value="${x}">${x.replaceAll("_"," ")}</option>`).join("");
+  fs.addEventListener("change",renderBioeFeatureGenes);renderBioeFeatureGenes();
+
+  const gs=(d.geneBioelectricScores||[]).slice(0,30), mx=Math.max(.001,...gs.map(x=>x.bioelectricCouplingScore||0));
+  document.getElementById("bioe-bcs-chart").innerHTML=gs.map(x=>`<div class="bioe-score-row"><span>${x.gene}</span><div class="mini-bar"><span style="width:${(x.bioelectricCouplingScore/mx*100).toFixed(1)}%"></span></div><b>${x.bioelectricCouplingScore.toFixed(3)}</b></div>`).join("");
+
+  const diseases=d.diseaseBioelectricScores||[];
+  const dsel=document.getElementById("bioe-disease-select");
+  dsel.innerHTML=diseases.map(x=>`<option value="${x.studyId}">${x.cancerTypeName||x.name}</option>`).join("");
+  dsel.addEventListener("change",renderBioeContributors);renderBioeContributors();
+
+  const ds=diseases.filter(x=>x.exploratoryBioelectricAlterationIndex!=null);
+  const dmax=Math.max(.001,...ds.map(x=>x.exploratoryBioelectricAlterationIndex||0));
+  document.getElementById("bioe-disease-score-chart").innerHTML=ds.map(x=>`<div class="mini-bar-row"><span title="${x.name}">${(x.cancerTypeName||x.name).slice(0,20)}</span><div class="mini-bar"><span style="width:${(x.exploratoryBioelectricAlterationIndex/dmax*100).toFixed(1)}%"></span></div><b>${x.exploratoryBioelectricAlterationIndex.toFixed(2)}</b></div>`).join("");
+
+  const genes=(d.geneBioelectricScores||[]).slice(0,30);
+  let h='<table class="heatmap-table"><thead><tr><th>Gene</th><th>Best electrical trait</th>'+diseases.map(x=>`<th title="${x.name}">${(x.cancerTypeName||x.studyId).slice(0,13)}</th>`).join('')+'</tr></thead><tbody>';
+  const maxContrib=Math.max(.001,...genes.flatMap(g=>diseases.map(ds=>{const c=(ds.topContributors||[]).find(x=>x.gene===g.gene);return c?c.contribution:0;})));
+  genes.forEach(g=>{
+    h+=`<tr><td><b>${g.gene}</b></td><td>${g.bestFeature.replaceAll("_"," ")}</td>`;
+    diseases.forEach(ds=>{const c=(ds.topContributors||[]).find(x=>x.gene===g.gene);const v=c?c.contribution:null;h+=`<td class="heat-cell" style="background:${heatColor(v,maxContrib)}" title="${v==null?'Not among top contributors':'weighted contribution '+v.toFixed(4)}">${v==null?'—':v.toFixed(3)}</td>`;});
+    h+='</tr>';
+  });h+='</tbody></table>';
+  document.getElementById("bioe-disease-matrix").innerHTML=h;
+}
+fetch("data/bioelectric_disease_bridge.json").then(r=>r.ok?r.json():Promise.reject()).then(renderBioelectricDisease).catch(()=>{});
