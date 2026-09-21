@@ -8,7 +8,7 @@ from scipy.stats import spearmanr
 
 ROOT=Path(__file__).resolve().parents[1];DATA=ROOT/"data"
 MBASE="https://raw.githubusercontent.com/berenslab/mini-atlas/master/data/"
-BIO=DATA/"top500_bioelectric_matrix.csv"
+BIO=DATA/"top500_bioelectric_matrix.csv"\nCAT=DATA/"top500_gene_catalog.csv"
 
 # Traits with closest semantic correspondence. Sag/adaptation are deliberately excluded.
 MAP={
@@ -22,7 +22,8 @@ MAP={
 
 def main():
     b=pd.read_csv(BIO)
-    meta=b[["gene","mouse_gene","rank"]].drop_duplicates().sort_values("rank")
+    cat=pd.read_csv(CAT)
+    meta=cat[["gene","mouse_gene","rank"]].drop_duplicates().sort_values("rank")
     eph=pd.read_csv(MBASE+"m1_patchseq_ephys_features.csv")
     ex=pd.read_csv(MBASE+"m1_patchseq_exon_counts.csv.gz",compression="gzip")
     intr=pd.read_csv(MBASE+"m1_patchseq_intron_counts.csv.gz",compression="gzip")
