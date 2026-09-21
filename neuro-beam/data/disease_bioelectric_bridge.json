@@ -76,6 +76,7 @@
       "catalogSampleCount": 592,
       "mutationProfileId": "gbm_tcga_pan_can_atlas_2018_mutations",
       "sampleListId": "gbm_tcga_pan_can_atlas_2018_sequenced",
+      "retrievalSampleListId": "gbm_tcga_pan_can_atlas_2018_all",
       "denominatorSource": "mutation-sequenced",
       "mutationSequencedDenominator": 397,
       "mutationEventsFetched": 0,
@@ -88,6 +89,7 @@
       "catalogSampleCount": 514,
       "mutationProfileId": "lgg_tcga_pan_can_atlas_2018_mutations",
       "sampleListId": "lgg_tcga_pan_can_atlas_2018_sequenced",
+      "retrievalSampleListId": "lgg_tcga_pan_can_atlas_2018_all",
       "denominatorSource": "mutation-sequenced",
       "mutationSequencedDenominator": 514,
       "mutationEventsFetched": 0,
@@ -100,6 +102,7 @@
       "catalogSampleCount": 1084,
       "mutationProfileId": "brca_tcga_pan_can_atlas_2018_mutations",
       "sampleListId": "brca_tcga_pan_can_atlas_2018_sequenced",
+      "retrievalSampleListId": "brca_tcga_pan_can_atlas_2018_all",
       "denominatorSource": "mutation-sequenced",
       "mutationSequencedDenominator": 1066,
       "mutationEventsFetched": 0,
@@ -112,6 +115,7 @@
       "catalogSampleCount": 566,
       "mutationProfileId": "luad_tcga_pan_can_atlas_2018_mutations",
       "sampleListId": "luad_tcga_pan_can_atlas_2018_sequenced",
+      "retrievalSampleListId": "luad_tcga_pan_can_atlas_2018_all",
       "denominatorSource": "mutation-sequenced",
       "mutationSequencedDenominator": 566,
       "mutationEventsFetched": 0,
@@ -124,6 +128,7 @@
       "catalogSampleCount": 594,
       "mutationProfileId": "coadread_tcga_pan_can_atlas_2018_mutations",
       "sampleListId": "coadread_tcga_pan_can_atlas_2018_sequenced",
+      "retrievalSampleListId": "coadread_tcga_pan_can_atlas_2018_all",
       "denominatorSource": "mutation-sequenced",
       "mutationSequencedDenominator": 534,
       "mutationEventsFetched": 0,
@@ -136,6 +141,7 @@
       "catalogSampleCount": 184,
       "mutationProfileId": "paad_tcga_pan_can_atlas_2018_mutations",
       "sampleListId": "paad_tcga_pan_can_atlas_2018_sequenced",
+      "retrievalSampleListId": "paad_tcga_pan_can_atlas_2018_all",
       "denominatorSource": "mutation-sequenced",
       "mutationSequencedDenominator": 179,
       "mutationEventsFetched": 0,
@@ -148,6 +154,7 @@
       "catalogSampleCount": 448,
       "mutationProfileId": "skcm_tcga_pan_can_atlas_2018_mutations",
       "sampleListId": "skcm_tcga_pan_can_atlas_2018_sequenced",
+      "retrievalSampleListId": "skcm_tcga_pan_can_atlas_2018_all",
       "denominatorSource": "mutation-sequenced",
       "mutationSequencedDenominator": 440,
       "mutationEventsFetched": 0,
@@ -160,6 +167,7 @@
       "catalogSampleCount": 494,
       "mutationProfileId": "prad_tcga_pan_can_atlas_2018_mutations",
       "sampleListId": "prad_tcga_pan_can_atlas_2018_sequenced",
+      "retrievalSampleListId": "prad_tcga_pan_can_atlas_2018_all",
       "denominatorSource": "mutation-sequenced",
       "mutationSequencedDenominator": 494,
       "mutationEventsFetched": 0,
@@ -172,6 +180,7 @@
       "catalogSampleCount": 529,
       "mutationProfileId": "ucec_tcga_pan_can_atlas_2018_mutations",
       "sampleListId": "ucec_tcga_pan_can_atlas_2018_sequenced",
+      "retrievalSampleListId": "ucec_tcga_pan_can_atlas_2018_all",
       "denominatorSource": "mutation-sequenced",
       "mutationSequencedDenominator": 517,
       "mutationEventsFetched": 0,
@@ -184,6 +193,7 @@
       "catalogSampleCount": 585,
       "mutationProfileId": "ov_tcga_pan_can_atlas_2018_mutations",
       "sampleListId": "ov_tcga_pan_can_atlas_2018_sequenced",
+      "retrievalSampleListId": "ov_tcga_pan_can_atlas_2018_all",
       "denominatorSource": "mutation-sequenced",
       "mutationSequencedDenominator": 523,
       "mutationEventsFetched": 0,
@@ -1585,63 +1595,73 @@
   "errors": [
     {
       "studyId": "gbm_tcga_pan_can_atlas_2018",
-      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/gbm_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=gbm_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED')",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/gbm_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=gbm_tcga_pan_can_atlas_2018_all&projection=DETAILED')",
       "profile": "gbm_tcga_pan_can_atlas_2018_mutations",
-      "sampleListId": "gbm_tcga_pan_can_atlas_2018_sequenced"
+      "retrievalSampleListId": "gbm_tcga_pan_can_atlas_2018_all",
+      "denominatorSampleListId": "gbm_tcga_pan_can_atlas_2018_sequenced"
     },
     {
       "studyId": "lgg_tcga_pan_can_atlas_2018",
-      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/lgg_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=lgg_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED')",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/lgg_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=lgg_tcga_pan_can_atlas_2018_all&projection=DETAILED')",
       "profile": "lgg_tcga_pan_can_atlas_2018_mutations",
-      "sampleListId": "lgg_tcga_pan_can_atlas_2018_sequenced"
+      "retrievalSampleListId": "lgg_tcga_pan_can_atlas_2018_all",
+      "denominatorSampleListId": "lgg_tcga_pan_can_atlas_2018_sequenced"
     },
     {
       "studyId": "brca_tcga_pan_can_atlas_2018",
-      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/brca_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=brca_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED')",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/brca_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=brca_tcga_pan_can_atlas_2018_all&projection=DETAILED')",
       "profile": "brca_tcga_pan_can_atlas_2018_mutations",
-      "sampleListId": "brca_tcga_pan_can_atlas_2018_sequenced"
+      "retrievalSampleListId": "brca_tcga_pan_can_atlas_2018_all",
+      "denominatorSampleListId": "brca_tcga_pan_can_atlas_2018_sequenced"
     },
     {
       "studyId": "luad_tcga_pan_can_atlas_2018",
-      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/luad_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=luad_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED')",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/luad_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=luad_tcga_pan_can_atlas_2018_all&projection=DETAILED')",
       "profile": "luad_tcga_pan_can_atlas_2018_mutations",
-      "sampleListId": "luad_tcga_pan_can_atlas_2018_sequenced"
+      "retrievalSampleListId": "luad_tcga_pan_can_atlas_2018_all",
+      "denominatorSampleListId": "luad_tcga_pan_can_atlas_2018_sequenced"
     },
     {
       "studyId": "coadread_tcga_pan_can_atlas_2018",
-      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/coadread_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=coadread_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED')",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/coadread_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=coadread_tcga_pan_can_atlas_2018_all&projection=DETAILED')",
       "profile": "coadread_tcga_pan_can_atlas_2018_mutations",
-      "sampleListId": "coadread_tcga_pan_can_atlas_2018_sequenced"
+      "retrievalSampleListId": "coadread_tcga_pan_can_atlas_2018_all",
+      "denominatorSampleListId": "coadread_tcga_pan_can_atlas_2018_sequenced"
     },
     {
       "studyId": "paad_tcga_pan_can_atlas_2018",
-      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/paad_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=paad_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED')",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/paad_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=paad_tcga_pan_can_atlas_2018_all&projection=DETAILED')",
       "profile": "paad_tcga_pan_can_atlas_2018_mutations",
-      "sampleListId": "paad_tcga_pan_can_atlas_2018_sequenced"
+      "retrievalSampleListId": "paad_tcga_pan_can_atlas_2018_all",
+      "denominatorSampleListId": "paad_tcga_pan_can_atlas_2018_sequenced"
     },
     {
       "studyId": "skcm_tcga_pan_can_atlas_2018",
-      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/skcm_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=skcm_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED')",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/skcm_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=skcm_tcga_pan_can_atlas_2018_all&projection=DETAILED')",
       "profile": "skcm_tcga_pan_can_atlas_2018_mutations",
-      "sampleListId": "skcm_tcga_pan_can_atlas_2018_sequenced"
+      "retrievalSampleListId": "skcm_tcga_pan_can_atlas_2018_all",
+      "denominatorSampleListId": "skcm_tcga_pan_can_atlas_2018_sequenced"
     },
     {
       "studyId": "prad_tcga_pan_can_atlas_2018",
-      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/prad_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=prad_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED')",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/prad_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=prad_tcga_pan_can_atlas_2018_all&projection=DETAILED')",
       "profile": "prad_tcga_pan_can_atlas_2018_mutations",
-      "sampleListId": "prad_tcga_pan_can_atlas_2018_sequenced"
+      "retrievalSampleListId": "prad_tcga_pan_can_atlas_2018_all",
+      "denominatorSampleListId": "prad_tcga_pan_can_atlas_2018_sequenced"
     },
     {
       "studyId": "ucec_tcga_pan_can_atlas_2018",
-      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/ucec_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=ucec_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED')",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/ucec_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=ucec_tcga_pan_can_atlas_2018_all&projection=DETAILED')",
       "profile": "ucec_tcga_pan_can_atlas_2018_mutations",
-      "sampleListId": "ucec_tcga_pan_can_atlas_2018_sequenced"
+      "retrievalSampleListId": "ucec_tcga_pan_can_atlas_2018_all",
+      "denominatorSampleListId": "ucec_tcga_pan_can_atlas_2018_sequenced"
     },
     {
       "studyId": "ov_tcga_pan_can_atlas_2018",
-      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/ov_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=ov_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED')",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/ov_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=ov_tcga_pan_can_atlas_2018_all&projection=DETAILED')",
       "profile": "ov_tcga_pan_can_atlas_2018_mutations",
-      "sampleListId": "ov_tcga_pan_can_atlas_2018_sequenced"
+      "retrievalSampleListId": "ov_tcga_pan_can_atlas_2018_all",
+      "denominatorSampleListId": "ov_tcga_pan_can_atlas_2018_sequenced"
     }
   ],
   "downloads": {
