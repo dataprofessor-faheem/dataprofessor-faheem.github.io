@@ -1,4 +1,8 @@
 name: NEURO-BEAM External M1 Validation
+
+concurrency:
+  group: neurobeam-external-m1
+  cancel-in-progress: true
 on:
   workflow_dispatch:
   push:
