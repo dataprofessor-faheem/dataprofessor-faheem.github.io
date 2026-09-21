@@ -1,0 +1,96 @@
+{
+  "nCells": 3654,
+  "nSubjects": 936,
+  "permutations": 8,
+  "comparisons": [
+    {
+      "target": "adaptation",
+      "grouped_spearman": 0.7062282851116304,
+      "naive_random_spearman": 0.7102172616492195,
+      "leakage_inflation_delta": 0.003988976537589117,
+      "permuted_mean_spearman": 0.04368576097045007,
+      "signal_over_null_delta": 0.6625425241411803
+    },
+    {
+      "target": "avg_isi",
+      "grouped_spearman": 0.6780566365420595,
+      "naive_random_spearman": 0.6814059161390933,
+      "leakage_inflation_delta": 0.003349279597033794,
+      "permuted_mean_spearman": -0.010287033769808822,
+      "signal_over_null_delta": 0.6883436703118683
+    },
+    {
+      "target": "f_i_curve_slope",
+      "grouped_spearman": 0.6580050885006999,
+      "naive_random_spearman": 0.6557079286685438,
+      "leakage_inflation_delta": -0.0022971598321561704,
+      "permuted_mean_spearman": -0.02127901082893021,
+      "signal_over_null_delta": 0.6792840993296302
+    },
+    {
+      "target": "latency",
+      "grouped_spearman": 0.6104580247222977,
+      "naive_random_spearman": 0.6087285815411707,
+      "leakage_inflation_delta": -0.0017294431811269995,
+      "permuted_mean_spearman": -0.019820135911591666,
+      "signal_over_null_delta": 0.6302781606338894
+    },
+    {
+      "target": "ri",
+      "grouped_spearman": 0.7980027719634523,
+      "naive_random_spearman": 0.7987776486059631,
+      "leakage_inflation_delta": 0.0007748766425108577,
+      "permuted_mean_spearman": 0.025785083302499644,
+      "signal_over_null_delta": 0.7722176886609526
+    },
+    {
+      "target": "sag",
+      "grouped_spearman": 0.5854671478789559,
+      "naive_random_spearman": 0.5769269131082873,
+      "leakage_inflation_delta": -0.008540234770668675,
+      "permuted_mean_spearman": 0.014850357657951672,
+      "signal_over_null_delta": 0.5706167902210043
+    },
+    {
+      "target": "tau",
+      "grouped_spearman": 0.8726408381957654,
+      "naive_random_spearman": 0.8727531747927267,
+      "leakage_inflation_delta": 0.00011233659696130438,
+      "permuted_mean_spearman": 0.019058474407303513,
+      "signal_over_null_delta": 0.853582363788462
+    },
+    {
+      "target": "threshold_i_long_square",
+      "grouped_spearman": 0.8076489262740664,
+      "naive_random_spearman": 0.8059713872159182,
+      "leakage_inflation_delta": -0.0016775390581481586,
+      "permuted_mean_spearman": 0.012835089507255731,
+      "signal_over_null_delta": 0.7948138367668106
+    },
+    {
+      "target": "threshold_v_long_square",
+      "grouped_spearman": 0.42857039950311043,
+      "naive_random_spearman": 0.4285622602252161,
+      "leakage_inflation_delta": -8.139277894336772e-06,
+      "permuted_mean_spearman": 0.017727659871491712,
+      "signal_over_null_delta": 0.4108427396316187
+    },
+    {
+      "target": "upstroke_downstroke_ratio_long_square",
+      "grouped_spearman": 0.9072009729550496,
+      "naive_random_spearman": 0.9083941735865203,
+      "leakage_inflation_delta": 0.001193200631470659,
+      "permuted_mean_spearman": -0.023414611017152177,
+      "signal_over_null_delta": 0.9306155839722018
+    },
+    {
+      "target": "vrest",
+      "grouped_spearman": 0.32511996127068304,
+      "naive_random_spearman": 0.32835549959194743,
+      "leakage_inflation_delta": 0.0032355383212643862,
+      "permuted_mean_spearman": 0.001748590820349299,
+      "signal_over_null_delta": 0.32337137045033376
+    }
+  ],
+  "guardrail": "Naive random split is included only as a leakage diagnostic. Grouped split is the valid evaluation."
+}
