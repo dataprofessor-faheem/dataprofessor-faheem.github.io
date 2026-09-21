@@ -1575,61 +1575,61 @@
   "errors": [
     {
       "studyId": "gbm_tcga_pan_can_atlas_2018",
-      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/gbm_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=gbm_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=10000&pageNumber=0')",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/gbm_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=gbm_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=1000&pageNumber=0&direction=ASC')",
       "profile": "gbm_tcga_pan_can_atlas_2018_mutations",
       "sampleListId": "gbm_tcga_pan_can_atlas_2018_sequenced"
     },
     {
       "studyId": "lgg_tcga_pan_can_atlas_2018",
-      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/lgg_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=lgg_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=10000&pageNumber=0')",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/lgg_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=lgg_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=1000&pageNumber=0&direction=ASC')",
       "profile": "lgg_tcga_pan_can_atlas_2018_mutations",
       "sampleListId": "lgg_tcga_pan_can_atlas_2018_sequenced"
     },
     {
       "studyId": "brca_tcga_pan_can_atlas_2018",
-      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/brca_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=brca_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=10000&pageNumber=0')",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/brca_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=brca_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=1000&pageNumber=0&direction=ASC')",
       "profile": "brca_tcga_pan_can_atlas_2018_mutations",
       "sampleListId": "brca_tcga_pan_can_atlas_2018_sequenced"
     },
     {
       "studyId": "luad_tcga_pan_can_atlas_2018",
-      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/luad_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=luad_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=10000&pageNumber=0')",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/luad_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=luad_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=1000&pageNumber=0&direction=ASC')",
       "profile": "luad_tcga_pan_can_atlas_2018_mutations",
       "sampleListId": "luad_tcga_pan_can_atlas_2018_sequenced"
     },
     {
       "studyId": "coadread_tcga_pan_can_atlas_2018",
-      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/coadread_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=coadread_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=10000&pageNumber=0')",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/coadread_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=coadread_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=1000&pageNumber=0&direction=ASC')",
       "profile": "coadread_tcga_pan_can_atlas_2018_mutations",
       "sampleListId": "coadread_tcga_pan_can_atlas_2018_sequenced"
     },
     {
       "studyId": "paad_tcga_pan_can_atlas_2018",
-      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/paad_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=paad_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=10000&pageNumber=0')",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/paad_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=paad_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=1000&pageNumber=0&direction=ASC')",
       "profile": "paad_tcga_pan_can_atlas_2018_mutations",
       "sampleListId": "paad_tcga_pan_can_atlas_2018_sequenced"
     },
     {
       "studyId": "skcm_tcga_pan_can_atlas_2018",
-      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/skcm_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=skcm_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=10000&pageNumber=0')",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/skcm_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=skcm_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=1000&pageNumber=0&direction=ASC')",
       "profile": "skcm_tcga_pan_can_atlas_2018_mutations",
       "sampleListId": "skcm_tcga_pan_can_atlas_2018_sequenced"
     },
     {
       "studyId": "prad_tcga_pan_can_atlas_2018",
-      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/prad_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=prad_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=10000&pageNumber=0')",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/prad_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=prad_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=1000&pageNumber=0&direction=ASC')",
       "profile": "prad_tcga_pan_can_atlas_2018_mutations",
       "sampleListId": "prad_tcga_pan_can_atlas_2018_sequenced"
     },
     {
       "studyId": "ucec_tcga_pan_can_atlas_2018",
-      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/ucec_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=ucec_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=10000&pageNumber=0')",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/ucec_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=ucec_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=1000&pageNumber=0&direction=ASC')",
       "profile": "ucec_tcga_pan_can_atlas_2018_mutations",
       "sampleListId": "ucec_tcga_pan_can_atlas_2018_sequenced"
     },
     {
       "studyId": "ov_tcga_pan_can_atlas_2018",
-      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/ov_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=ov_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=10000&pageNumber=0')",
+      "error": "HTTPError('400 Client Error: Bad Request for url: https://www.cbioportal.org/api/molecular-profiles/ov_tcga_pan_can_atlas_2018_mutations/mutations?sampleListId=ov_tcga_pan_can_atlas_2018_sequenced&projection=DETAILED&pageSize=1000&pageNumber=0&direction=ASC')",
       "profile": "ov_tcga_pan_can_atlas_2018_mutations",
       "sampleListId": "ov_tcga_pan_can_atlas_2018_sequenced"
     }
