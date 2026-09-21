@@ -1,0 +1,26 @@
+name: NEURO-BEAM Calibration Uncertainty
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/neurobeam-calibration.yml"
+      - "neuro-beam/code/21_calibration_uncertainty.py"
+      - "neuro-beam/data/ml_grouped_cv_predictions.csv"
+permissions:
+  contents: write
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install pandas numpy scipy
+      - run: python neuro-beam/code/21_calibration_uncertainty.py
+      - run: |
+          git config user.name "neuro-beam-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add neuro-beam/data/ml_calibration_uncertainty.csv neuro-beam/data/ml_crossconformal_coverage.csv neuro-beam/data/ml_calibration_uncertainty.json
+          git diff --cached --quiet || git commit -m "Update calibration and uncertainty analysis"
+          git pull --rebase origin main
+          git push origin main
