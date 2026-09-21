@@ -1,0 +1,124 @@
+{
+  "discoveryRegion": "visual cortex",
+  "externalRegion": "primary motor cortex",
+  "nTrainVIS": 3654,
+  "nExternalM1": 1304,
+  "nSharedGenes": 1274,
+  "nSelectedGenes": 300,
+  "expressionRepresentation": "within-cell percentile rank",
+  "featureSelection": "top 300 variance genes in VIS only",
+  "model": "ExtraTrees; fixed before external evaluation",
+  "harmonization": {
+    "vrest": {
+      "m1": "Resting membrane potential (mV)",
+      "visMultiplier": 1.0
+    },
+    "ri": {
+      "m1": "Input resistance (MOhm)",
+      "visMultiplier": 1.0
+    },
+    "tau": {
+      "m1": "Membrane time constant (ms)",
+      "visMultiplier": 1.0
+    },
+    "latency": {
+      "m1": "Latency (ms)",
+      "visMultiplier": 1000.0
+    },
+    "upstroke_downstroke_ratio_long_square": {
+      "m1": "Upstroke-to-downstroke ratio",
+      "visMultiplier": 1.0
+    },
+    "sag": {
+      "m1": "Sag ratio",
+      "visMultiplier": 1.0
+    },
+    "threshold_v_long_square": {
+      "m1": "AP threshold (mV)",
+      "visMultiplier": 1.0
+    },
+    "threshold_i_long_square": {
+      "m1": "Rheobase (pA)",
+      "visMultiplier": 1.0
+    },
+    "adaptation": {
+      "m1": "Spike frequency adaptation",
+      "visMultiplier": 1.0
+    }
+  },
+  "metrics": [
+    {
+      "target_vis": "vrest",
+      "target_m1": "Resting membrane potential (mV)",
+      "n_m1": 1304,
+      "spearman": 0.22939302586370483,
+      "r2": -0.5501276114876459,
+      "mae": 8.576553751993456
+    },
+    {
+      "target_vis": "ri",
+      "target_m1": "Input resistance (MOhm)",
+      "n_m1": 1304,
+      "spearman": 0.5561967401560213,
+      "r2": 0.11971178138626615,
+      "mae": 78.70871355765516
+    },
+    {
+      "target_vis": "tau",
+      "target_m1": "Membrane time constant (ms)",
+      "n_m1": 1304,
+      "spearman": 0.4997263526635375,
+      "r2": 0.27482610004279395,
+      "mae": 4.420736276025239
+    },
+    {
+      "target_vis": "latency",
+      "target_m1": "Latency (ms)",
+      "n_m1": 1304,
+      "spearman": 0.2554634732354029,
+      "r2": -0.4915673236683855,
+      "mae": 71.42870380767933
+    },
+    {
+      "target_vis": "upstroke_downstroke_ratio_long_square",
+      "target_m1": "Upstroke-to-downstroke ratio",
+      "n_m1": 1304,
+      "spearman": 0.6271674024418086,
+      "r2": 0.1946049270983955,
+      "mae": 0.9128169256210962
+    },
+    {
+      "target_vis": "sag",
+      "target_m1": "Sag ratio",
+      "n_m1": 1304,
+      "spearman": 0.32676733017525644,
+      "r2": -95.16364127257519,
+      "mae": 1.0398871891810517
+    },
+    {
+      "target_vis": "threshold_v_long_square",
+      "target_m1": "AP threshold (mV)",
+      "n_m1": 1304,
+      "spearman": 0.18495674056066805,
+      "r2": -0.029006918295447104,
+      "mae": 5.666866039988092
+    },
+    {
+      "target_vis": "threshold_i_long_square",
+      "target_m1": "Rheobase (pA)",
+      "n_m1": 1304,
+      "spearman": 0.6121202897426967,
+      "r2": -0.4338616839854572,
+      "mae": 71.22424147105885
+    },
+    {
+      "target_vis": "adaptation",
+      "target_m1": "Spike frequency adaptation",
+      "n_m1": 1304,
+      "spearman": -0.4612773207792682,
+      "r2": -17.413710824038453,
+      "mae": 0.686379609768838
+    }
+  ],
+  "guardrail": "M1 outcomes were not used to tune feature selection or model hyperparameters."
+}
