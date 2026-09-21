@@ -209,6 +209,30 @@ function cbeDrawNeuron(){
   ctx.fillStyle="#7f99a8";ctx.font="11px system-ui";ctx.fillText(`CBEF rank #${g.rank} · ${cbeModelFor(g.gene)?.modelMode||"phenotype"}`,20,h-23);
   const status=document.getElementById("cbe-live-status");if(status)status.textContent=recent?"spike event":"membrane integration";
 }
+function cbeExportSelectedGeneReport(){
+  if(!cbeSelectedGene)return;
+  const model=cbeModelFor(cbeSelectedGene.gene);
+  const report={
+    generatedAt:new Date().toISOString(),
+    method:cbeCatalog?.method||"CBEF v1.0",
+    gene:cbeSelectedGene,
+    dynamicModel:model,
+    interpretation:{
+      ranking:"Cross-domain evidence-fusion prioritization; not a causal disease mechanism.",
+      simulation:"Correlation-informed normalized counterfactual; not a physical gene-effect estimate.",
+      cancer:"Somatic mutation prevalence is an independent disease-genomic evidence layer."
+    },
+    sources:{
+      portal:window.location.href.split("#")[0],
+      top500Catalog:"data/top500_discovery_catalog.json",
+      dynamicModels:"data/top500_dynamic_models.json"
+    }
+  };
+  const blob=new Blob([JSON.stringify(report,null,2)],{type:"application/json"});
+  const url=URL.createObjectURL(blob),a=document.createElement("a");
+  a.href=url;a.download=`NEURO_BEAM_${cbeSelectedGene.gene}_research_report.json`;a.click();
+  setTimeout(()=>URL.revokeObjectURL(url),500);
+}
 function cbeAnimate(){
   if(cbeAnimRunning){cbeAnimT++;cbeDrawNeuron();}
   requestAnimationFrame(cbeAnimate);
@@ -238,6 +262,7 @@ Promise.all([
   document.getElementById("cbe-drive")?.addEventListener("input",e=>{
     document.getElementById("cbe-drive-label").textContent=`${e.target.value}%`;cbeDrawMembrane();
   });
+  document.getElementById("cbe-export-gene-report")?.addEventListener("click",cbeExportSelectedGeneReport);
   cbeRenderAll();cbeAnimate();
 }).catch(err=>{
   console.error("CBEF discovery engine unavailable",err);
