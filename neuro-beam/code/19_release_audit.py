@@ -1,4 +1,5 @@
 """NEURO-BEAM publication release audit."""
+# External M1 validation required for publication-ready status.
 from pathlib import Path
 import json
 import pandas as pd
