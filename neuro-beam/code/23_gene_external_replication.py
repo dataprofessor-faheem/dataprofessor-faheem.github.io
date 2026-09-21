@@ -8,7 +8,8 @@ from scipy.stats import spearmanr
 
 ROOT=Path(__file__).resolve().parents[1];DATA=ROOT/"data"
 MBASE="https://raw.githubusercontent.com/berenslab/mini-atlas/master/data/"
-BIO=DATA/"top500_bioelectric_matrix.csv"\nCAT=DATA/"top500_gene_catalog.csv"
+BIO=DATA/"top500_bioelectric_matrix.csv"
+CAT=DATA/"top500_gene_catalog.csv"
 
 # Traits with closest semantic correspondence. Sag/adaptation are deliberately excluded.
 MAP={
