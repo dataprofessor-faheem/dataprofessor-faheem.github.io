@@ -169,3 +169,76 @@ fetch("data/visual_cortex_stability_validation.json").then(r=>{
   if(!r.ok) throw new Error("not ready");
   return r.json();
 }).then(renderValidation).catch(()=>{});
+
+
+let cbioCatalog=null;
+let selectedStudies=[];
+
+function studyLabel(s){
+  return s.cancerTypeName && s.cancerTypeName!==s.cancerTypeId ? s.cancerTypeName : (s.cancerTypeId||"Cancer study");
+}
+function renderSelectedStudies(){
+  const root=document.getElementById("selected-diseases");
+  const limit=document.getElementById("selected-limit");
+  if(!root||!limit)return;
+  limit.textContent=`${selectedStudies.length} / 10`;
+  root.innerHTML=selectedStudies.map(s=>`<span class="selected-chip" title="${s.name}">${studyLabel(s)}<button data-remove-study="${s.studyId}" aria-label="Remove">×</button></span>`).join("");
+  root.querySelectorAll("[data-remove-study]").forEach(b=>b.addEventListener("click",()=>{
+    selectedStudies=selectedStudies.filter(s=>s.studyId!==b.dataset.removeStudy);
+    renderSelectedStudies(); renderStudyBrowser(); renderDiseaseComparison();
+  }));
+}
+function addStudy(id){
+  if(!cbioCatalog||selectedStudies.length>=10||selectedStudies.some(s=>s.studyId===id))return;
+  const s=cbioCatalog.studies.find(x=>x.studyId===id); if(!s)return;
+  selectedStudies.push(s);
+  renderSelectedStudies(); renderStudyBrowser(); renderDiseaseComparison();
+}
+function renderStudyBrowser(){
+  if(!cbioCatalog)return;
+  const root=document.getElementById("disease-browser");
+  const q=(document.getElementById("disease-search")?.value||"").trim().toLowerCase();
+  const rows=cbioCatalog.studies.filter(s=>{
+    const hay=[s.studyId,s.name,s.cancerTypeName,s.cancerTypeId,s.description].join(" ").toLowerCase();
+    return !q||hay.includes(q);
+  }).slice(0,120);
+  document.getElementById("disease-count-label").textContent=`${cbioCatalog.generatedStudyCount.toLocaleString()} public studies · showing ${rows.length}`;
+  root.innerHTML=rows.map(s=>{
+    const chosen=selectedStudies.some(x=>x.studyId===s.studyId);
+    const disabled=chosen||selectedStudies.length>=10;
+    const desc=(s.description||"").replace(/<[^>]*>/g," ").slice(0,130);
+    return `<div class="disease-item"><div><h4>${s.name}</h4><p>${studyLabel(s)} · ${Number(s.sampleCount||0).toLocaleString()} samples · ${s.studyId}<br>${desc}</p></div><button data-add-study="${s.studyId}" ${disabled?"disabled":""} title="Add study">+</button></div>`;
+  }).join("");
+  root.querySelectorAll("[data-add-study]").forEach(b=>b.addEventListener("click",()=>addStudy(b.dataset.addStudy)));
+}
+function renderDiseaseComparison(){
+  const root=document.getElementById("disease-comparison");
+  const bars=document.getElementById("disease-sample-bars");
+  if(!root||!bars)return;
+  if(!selectedStudies.length){
+    root.innerHTML='<p class="micro-note">Choose up to 10 disease/study cohorts.</p>'; bars.innerHTML=""; return;
+  }
+  root.innerHTML='<table class="disease-table"><thead><tr><th>Disease / study</th><th>Samples</th><th>Genome</th><th>Explore</th></tr></thead><tbody>'+
+    selectedStudies.map(s=>`<tr><td><b>${studyLabel(s)}</b><br><span>${s.name}</span></td><td>${Number(s.sampleCount||0).toLocaleString()}</td><td>${s.referenceGenome||"—"}</td><td><a target="_blank" rel="noopener" href="${s.cbioSummaryUrl}">cBioPortal ↗</a></td></tr>`).join("")+
+    '</tbody></table>';
+  const data={}; selectedStudies.forEach(s=>data[studyLabel(s)]=Number(s.sampleCount||0));
+  barChart(bars,data);
+}
+function openCbioQuery(){
+  if(!selectedStudies.length)return;
+  const genes=(document.getElementById("gene-query")?.value||"TP53").trim().split(/[\s,;]+/).filter(Boolean).slice(0,20).join(" ");
+  const ids=selectedStudies.map(s=>s.studyId).join(",");
+  const url="https://www.cbioportal.org/results/oncoprint?cancer_study_list="+encodeURIComponent(ids)+"&case_set_id=all&gene_list="+encodeURIComponent(genes);
+  window.open(url,"_blank","noopener");
+}
+fetch("data/cbioportal_study_catalog.json").then(r=>r.json()).then(d=>{
+  cbioCatalog=d;
+  selectedStudies=(d.defaultStudyIds||[]).map(id=>d.studies.find(s=>s.studyId===id)).filter(Boolean).slice(0,10);
+  renderSelectedStudies(); renderStudyBrowser(); renderDiseaseComparison();
+  document.getElementById("disease-search")?.addEventListener("input",renderStudyBrowser);
+  document.getElementById("open-cbio-query")?.addEventListener("click",openCbioQuery);
+}).catch(err=>{
+  console.error("cBioPortal catalog unavailable",err);
+  const root=document.getElementById("disease-browser");
+  if(root)root.innerHTML='<p class="micro-note">The cBioPortal study catalog is being generated. Refresh after the catalog workflow completes.</p>';
+});
