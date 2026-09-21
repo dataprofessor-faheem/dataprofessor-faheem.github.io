@@ -742,3 +742,32 @@ Promise.all([
   console.error("Top500 Discovery Studio unavailable",err);
   const el=document.getElementById("top500-table");if(el)el.innerHTML='<div class="data-note warning-note"><b>Discovery data unavailable:</b> the Top-500 build pipeline has not completed successfully.</div>';
 });
+
+
+/* === Predictive validation === */
+function nbRenderMLBars(rootId,rows,key,labelKey,external=false){
+  const root=document.getElementById(rootId);if(!root)return;
+  const good=rows.filter(r=>Number.isFinite(Number(r[key]))).sort((a,b)=>Number(b[key])-Number(a[key]));
+  const mx=Math.max(.001,...good.map(r=>Math.max(0,Number(r[key]))));
+  root.innerHTML=good.map(r=>{
+    const v=Number(r[key]),pct=Math.max(0,v)/mx*100;
+    const lab=r[labelKey]||r.target||r.target_vis||"";
+    return `<div class="ml-metric-row"><span title="${lab}">${String(lab).replaceAll("_"," ")}</span><div class="ml-metric-bar ${external?'external':''}"><span style="width:${pct.toFixed(1)}%"></span></div><b>${v.toFixed(3)}</b></div>`;
+  }).join("");
+}
+Promise.all([
+  fetch("data/ml_grouped_cv_summary.json").then(r=>r.json()),
+  fetch("data/m1_external_validation_summary.json").then(r=>r.ok?r.json():null).catch(()=>null)
+]).then(([internal,external])=>{
+  document.getElementById("ml-cells").textContent=Number(internal.nCells||0).toLocaleString();
+  document.getElementById("ml-subjects").textContent=Number(internal.nSubjects||0).toLocaleString();
+  const et=(internal.summary||[]).filter(x=>x.model==="ExtraTrees");
+  nbRenderMLBars("ml-internal-chart",et,"spearman_mean","target",false);
+  if(external){
+    document.getElementById("ml-ext-cells").textContent=Number(external.nExternalM1||0).toLocaleString();
+    document.getElementById("ml-shared-genes").textContent=Number(external.nSharedGenes||0).toLocaleString();
+    nbRenderMLBars("ml-external-chart",external.metrics||[],"spearman","target_vis",true);
+  }else{
+    document.getElementById("ml-external-chart").innerHTML='<p class="micro-note">Frozen M1 evaluation is being generated.</p>';
+  }
+}).catch(err=>console.error("ML validation data unavailable",err));
