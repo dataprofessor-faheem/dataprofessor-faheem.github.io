@@ -41,7 +41,25 @@ MODULES={
 GENES=sorted({g for gs in MODULES.values() for g in gs})
 
 S=requests.Session()
-S.headers.update({"accept":"application/json","User-Agent":"NEURO-BEAM/2.0"})
+S.headers.update({"accept":"application/json","User-Agent":"NEURO-BEAM/2.1"})
+MYGENE="https://mygene.info/v3"
+
+def resolve_entrez(symbol):
+    r=S.get(MYGENE+"/query",params={
+        "q":f"symbol:{symbol}",
+        "species":"human",
+        "fields":"entrezgene,symbol",
+        "size":5
+    },timeout=60)
+    r.raise_for_status()
+    hits=r.json().get("hits",[])
+    exact=[h for h in hits if str(h.get("symbol","")).upper()==symbol.upper() and h.get("entrezgene")]
+    if exact:
+        return int(exact[0]["entrezgene"])
+    for h in hits:
+        if h.get("entrezgene"):
+            return int(h["entrezgene"])
+    return None
 
 def get(path,params=None,allow404=False):
     r=S.get(BASE+path,params=params,timeout=120)
@@ -77,11 +95,12 @@ def sample_list(study):
         return lid,ids,"best-available"
     return study+"_all",[],"catalog-fallback"
 
-def mutations(profile,list_id):
-    # Follow cBioPortal's documented GET example exactly: molecularProfileId
-    # is in the path; sampleListId + projection are the only query arguments.
+def mutations(profile,list_id,entrez_id):
+    # Current cBioPortal GET endpoint requires entrezGeneId in addition to
+    # sampleListId. The diagnostic endpoint returns HTTP 400 if it is omitted.
     rows=get(f"/molecular-profiles/{profile}/mutations",{
         "sampleListId":list_id,
+        "entrezGeneId":int(entrez_id),
         "projection":"DETAILED"
     })
     yield from rows
@@ -94,6 +113,15 @@ def main():
     cat=json.loads(CATALOG.read_text(encoding="utf-8"))
     selected=cat["defaultStudyIds"][:10]
     byid={s["studyId"]:s for s in cat["studies"]}
+
+    gene_entrez={}
+    gene_resolution_errors=[]
+    for g in GENES:
+        try:
+            gene_entrez[g]=resolve_entrez(g)
+        except Exception as e:
+            gene_entrez[g]=None
+            gene_resolution_errors.append({"gene":g,"error":repr(e)})
 
     matrix={g:{} for g in GENES}
     event_matrix={g:{} for g in GENES}
@@ -109,34 +137,40 @@ def main():
         retrieval_list=sid+"_all"
 
         mutated=defaultdict(set); events=defaultdict(int); vartypes=defaultdict(int); total_events=0
-        fetch_ok=True
-        try:
-            for m in mutations(prof,retrieval_list):
-                samp=str(m.get("sampleId") or "")
-                if denom_set and samp not in denom_set:
-                    continue
-                total_events+=1
-                sym=symbol(m)
-                vt=str(m.get("mutationType") or m.get("variantClassification") or "Other")
-                vartypes[vt]+=1
-                if sym in GENES:
-                    if samp: mutated[sym].add(samp)
-                    events[sym]+=1
-        except Exception as e:
-            fetch_ok=False
-            errors.append({"studyId":sid,"error":repr(e),"profile":prof,"retrievalSampleListId":retrieval_list,"denominatorSampleListId":lid})
-
+        gene_fetch_failures=[]
         for g in GENES:
-            if fetch_ok:
+            eid=gene_entrez.get(g)
+            if not eid:
+                matrix[g][sid]=None
+                event_matrix[g][sid]=None
+                gene_fetch_failures.append({"gene":g,"error":"Entrez ID unresolved"})
+                continue
+            try:
+                rows=list(mutations(prof,retrieval_list,eid))
+                for m in rows:
+                    samp=str(m.get("sampleId") or "")
+                    if denom_set and samp not in denom_set:
+                        continue
+                    total_events+=1
+                    vt=str(m.get("mutationType") or m.get("variantClassification") or "Other")
+                    vartypes[vt]+=1
+                    if samp:
+                        mutated[g].add(samp)
+                    events[g]+=1
                 n=len(mutated[g]); pct=(100*n/denom) if denom else None
                 matrix[g][sid]=pct; event_matrix[g][sid]=events[g]
-            else:
+            except Exception as e:
                 matrix[g][sid]=None; event_matrix[g][sid]=None
+                gene_fetch_failures.append({"gene":g,"error":repr(e)})
+        fetch_ok=(len(gene_fetch_failures)==0)
+        if gene_fetch_failures:
+            errors.append({"studyId":sid,"geneFetchFailures":gene_fetch_failures,"profile":prof,"retrievalSampleListId":retrieval_list,"denominatorSampleListId":lid})
 
         for mod,genes in MODULES.items():
-            if fetch_ok:
+            valid=[g for g in genes if matrix[g][sid] is not None]
+            if valid:
                 union=set()
-                for g in genes: union |= mutated[g]
+                for g in valid: union |= mutated[g]
                 module_matrix[mod][sid]=(100*len(union)/denom) if denom else None
             else:
                 module_matrix[mod][sid]=None
@@ -194,7 +228,7 @@ def main():
     payload={
         "source":"cBioPortal public REST API",
         "apiBase":BASE,
-        "analysisType":"advanced exploratory cross-study mutation bridge",
+        "analysisType":"advanced exploratory cross-study gene-specific mutation bridge",
         "signatureStatus":"candidate mechanistic panel; NOT frozen Bioelectric Gene Signature",
         "generatedStudyIds":selected,
         "modules":MODULES,
@@ -204,6 +238,8 @@ def main():
         "moduleByStudyPercent":module_matrix,
         "mutationTypeCounts":mutation_type_counts,
         "geneSummary":gene_summary,
+        "geneEntrezMap":gene_entrez,
+        "geneResolutionErrors":gene_resolution_errors,
         "errors":errors,
         "downloads":{
             "geneStudyMatrix":"data/disease_bioelectric_gene_study_matrix.csv",
