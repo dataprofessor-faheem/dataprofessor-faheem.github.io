@@ -1,0 +1,712 @@
+{
+  "modelName": "CBEF-guided multi-task latent regression",
+  "nCells": 3654,
+  "nGenes": 500,
+  "nSubjects": 936,
+  "traits": [
+    "vrest",
+    "ri",
+    "sag",
+    "tau",
+    "f_i_curve_slope",
+    "adaptation",
+    "latency",
+    "avg_isi",
+    "upstroke_downstroke_ratio_long_square",
+    "peak_v_long_square",
+    "trough_v_long_square",
+    "fast_trough_v_long_square",
+    "threshold_v_long_square",
+    "threshold_i_long_square",
+    "threshold_v_short_square",
+    "threshold_i_short_square",
+    "threshold_v_ramp",
+    "threshold_i_ramp"
+  ],
+  "models": [
+    {
+      "model": "latent_bioelectric_prior",
+      "mean_trait_r2": 0.332956404614681,
+      "median_trait_r2": 0.2741943664599797,
+      "mean_trait_spearman": 0.5986096736896578,
+      "mean_trait_mae": 17.31456099968651,
+      "traits": 18
+    },
+    {
+      "model": "latent_cbef_prior",
+      "mean_trait_r2": 0.3328090622959752,
+      "median_trait_r2": 0.2742036462193109,
+      "mean_trait_spearman": 0.5985264242223081,
+      "mean_trait_mae": 17.317590677015655,
+      "traits": 18
+    },
+    {
+      "model": "latent_cancer_prior",
+      "mean_trait_r2": 0.33216861406254783,
+      "median_trait_r2": 0.2741927069248148,
+      "mean_trait_spearman": 0.597920940933915,
+      "mean_trait_mae": 17.335631672428867,
+      "traits": 18
+    },
+    {
+      "model": "latent_unweighted",
+      "mean_trait_r2": 0.3321686140625478,
+      "median_trait_r2": 0.2741927069248147,
+      "mean_trait_spearman": 0.597920940933915,
+      "mean_trait_mae": 17.335631672428867,
+      "traits": 18
+    }
+  ],
+  "perTrait": [
+    {
+      "model": "latent_bioelectric_prior",
+      "trait": "adaptation",
+      "mean_r2": 0.17274095550851903,
+      "sd_r2": 0.03058902605204668,
+      "mean_spearman": 0.6195348969699863,
+      "mean_mae": 0.06956069301635492,
+      "folds": 5
+    },
+    {
+      "model": "latent_bioelectric_prior",
+      "trait": "avg_isi",
+      "mean_r2": 0.28226673335363933,
+      "sd_r2": 0.035111020553473565,
+      "mean_spearman": 0.6495459678827675,
+      "mean_mae": 22.73448284468686,
+      "folds": 5
+    },
+    {
+      "model": "latent_bioelectric_prior",
+      "trait": "f_i_curve_slope",
+      "mean_r2": 0.5406775893528268,
+      "sd_r2": 0.051827969562211564,
+      "mean_spearman": 0.633616999347639,
+      "mean_mae": 0.14044121881651456,
+      "folds": 5
+    },
+    {
+      "model": "latent_bioelectric_prior",
+      "trait": "fast_trough_v_long_square",
+      "mean_r2": 0.3118280207370786,
+      "sd_r2": 0.04131815191156817,
+      "mean_spearman": 0.6039348186461378,
+      "mean_mae": 4.53866888935521,
+      "folds": 5
+    },
+    {
+      "model": "latent_bioelectric_prior",
+      "trait": "latency",
+      "mean_r2": 0.144466219285672,
+      "sd_r2": 0.08994660174715947,
+      "mean_spearman": 0.5926651568550365,
+      "mean_mae": 0.012271665865348102,
+      "folds": 5
+    },
+    {
+      "model": "latent_bioelectric_prior",
+      "trait": "peak_v_long_square",
+      "mean_r2": 0.1575690486577423,
+      "sd_r2": 0.019702872656940523,
+      "mean_spearman": 0.44100898510626446,
+      "mean_mae": 7.71962181416748,
+      "folds": 5
+    },
+    {
+      "model": "latent_bioelectric_prior",
+      "trait": "ri",
+      "mean_r2": 0.5720637438877197,
+      "sd_r2": 0.01954795739889915,
+      "mean_spearman": 0.7907198419642476,
+      "mean_mae": 42.79211122055707,
+      "folds": 5
+    },
+    {
+      "model": "latent_bioelectric_prior",
+      "trait": "sag",
+      "mean_r2": 0.26612199956632004,
+      "sd_r2": 0.07036815457124593,
+      "mean_spearman": 0.583878216401305,
+      "mean_mae": 0.038754880646412714,
+      "folds": 5
+    },
+    {
+      "model": "latent_bioelectric_prior",
+      "trait": "tau",
+      "mean_r2": 0.6254196960669349,
+      "sd_r2": 0.09764810554596921,
+      "mean_spearman": 0.8514599638893184,
+      "mean_mae": 3.7640008233711866,
+      "folds": 5
+    },
+    {
+      "model": "latent_bioelectric_prior",
+      "trait": "threshold_i_long_square",
+      "mean_r2": 0.6711491024138587,
+      "sd_r2": 0.022272551208277938,
+      "mean_spearman": 0.794858964378933,
+      "mean_mae": 36.87826227625842,
+      "folds": 5
+    },
+    {
+      "model": "latent_bioelectric_prior",
+      "trait": "threshold_i_ramp",
+      "mean_r2": 0.5553353741085504,
+      "sd_r2": 0.03364307957557106,
+      "mean_spearman": 0.748198066160162,
+      "mean_mae": 50.8616145446985,
+      "folds": 5
+    },
+    {
+      "model": "latent_bioelectric_prior",
+      "trait": "threshold_i_short_square",
+      "mean_r2": 0.34576161949706546,
+      "sd_r2": 0.02950283919918594,
+      "mean_spearman": 0.6262264324367749,
+      "mean_mae": 117.1141904200288,
+      "folds": 5
+    },
+    {
+      "model": "latent_bioelectric_prior",
+      "trait": "threshold_v_long_square",
+      "mean_r2": 0.1217089607165188,
+      "sd_r2": 0.03798915729702145,
+      "mean_spearman": 0.4105038506845566,
+      "mean_mae": 4.5234565840669605,
+      "folds": 5
+    },
+    {
+      "model": "latent_bioelectric_prior",
+      "trait": "threshold_v_ramp",
+      "mean_r2": 0.0572705580628079,
+      "sd_r2": 0.06277625305223641,
+      "mean_spearman": 0.3284401453622851,
+      "mean_mae": 5.743411217884141,
+      "folds": 5
+    },
+    {
+      "model": "latent_bioelectric_prior",
+      "trait": "threshold_v_short_square",
+      "mean_r2": 0.08318948595377999,
+      "sd_r2": 0.035545014158602915,
+      "mean_spearman": 0.36902771287798525,
+      "mean_mae": 5.128083315214934,
+      "folds": 5
+    },
+    {
+      "model": "latent_bioelectric_prior",
+      "trait": "trough_v_long_square",
+      "mean_r2": 0.22364873903555588,
+      "sd_r2": 0.04419298125100901,
+      "mean_spearman": 0.5226798462402763,
+      "mean_mae": 4.50930786148703,
+      "folds": 5
+    },
+    {
+      "model": "latent_bioelectric_prior",
+      "trait": "upstroke_downstroke_ratio_long_square",
+      "mean_r2": 0.7881086693029653,
+      "sd_r2": 0.024516341166052086,
+      "mean_spearman": 0.9144676434783546,
+      "mean_mae": 0.2949220937593584,
+      "folds": 5
+    },
+    {
+      "model": "latent_bioelectric_prior",
+      "trait": "vrest",
+      "mean_r2": 0.07388876755670308,
+      "sd_r2": 0.04971608078517964,
+      "mean_spearman": 0.2942066177318091,
+      "mean_mae": 4.798935630476575,
+      "folds": 5
+    },
+    {
+      "model": "latent_cancer_prior",
+      "trait": "adaptation",
+      "mean_r2": 0.1722872946291888,
+      "sd_r2": 0.03209024616894459,
+      "mean_spearman": 0.6185061435967661,
+      "mean_mae": 0.06955647689255344,
+      "folds": 5
+    },
+    {
+      "model": "latent_cancer_prior",
+      "trait": "avg_isi",
+      "mean_r2": 0.28221587011909294,
+      "sd_r2": 0.03574589600118792,
+      "mean_spearman": 0.6500671703024586,
+      "mean_mae": 22.704869824005428,
+      "folds": 5
+    },
+    {
+      "model": "latent_cancer_prior",
+      "trait": "f_i_curve_slope",
+      "mean_r2": 0.5391038433569895,
+      "sd_r2": 0.05264873912211467,
+      "mean_spearman": 0.6326478766371194,
+      "mean_mae": 0.1406923355172552,
+      "folds": 5
+    },
+    {
+      "model": "latent_cancer_prior",
+      "trait": "fast_trough_v_long_square",
+      "mean_r2": 0.31073165996217667,
+      "sd_r2": 0.040448904507621966,
+      "mean_spearman": 0.6031962704828361,
+      "mean_mae": 4.54183596223003,
+      "folds": 5
+    },
+    {
+      "model": "latent_cancer_prior",
+      "trait": "latency",
+      "mean_r2": 0.1439402652780426,
+      "sd_r2": 0.08800953344567361,
+      "mean_spearman": 0.5906252773833697,
+      "mean_mae": 0.01229552642034384,
+      "folds": 5
+    },
+    {
+      "model": "latent_cancer_prior",
+      "trait": "peak_v_long_square",
+      "mean_r2": 0.15845380100567447,
+      "sd_r2": 0.02053202965138606,
+      "mean_spearman": 0.44221077309079615,
+      "mean_mae": 7.720808774798837,
+      "folds": 5
+    },
+    {
+      "model": "latent_cancer_prior",
+      "trait": "ri",
+      "mean_r2": 0.5713131759370491,
+      "sd_r2": 0.019614172323444992,
+      "mean_spearman": 0.7898083433582898,
+      "mean_mae": 42.842316999005526,
+      "folds": 5
+    },
+    {
+      "model": "latent_cancer_prior",
+      "trait": "sag",
+      "mean_r2": 0.2661695437305366,
+      "sd_r2": 0.07109584445823561,
+      "mean_spearman": 0.5831573061346192,
+      "mean_mae": 0.038790097450711825,
+      "folds": 5
+    },
+    {
+      "model": "latent_cancer_prior",
+      "trait": "tau",
+      "mean_r2": 0.6242440880933732,
+      "sd_r2": 0.09772175458875962,
+      "mean_spearman": 0.8511290212811433,
+      "mean_mae": 3.7681077195830177,
+      "folds": 5
+    },
+    {
+      "model": "latent_cancer_prior",
+      "trait": "threshold_i_long_square",
+      "mean_r2": 0.6690787794093911,
+      "sd_r2": 0.022095765856949248,
+      "mean_spearman": 0.7934780402449334,
+      "mean_mae": 37.03985916952655,
+      "folds": 5
+    },
+    {
+      "model": "latent_cancer_prior",
+      "trait": "threshold_i_ramp",
+      "mean_r2": 0.5535512556965572,
+      "sd_r2": 0.03399907327896157,
+      "mean_spearman": 0.747129643875965,
+      "mean_mae": 50.98964659473023,
+      "folds": 5
+    },
+    {
+      "model": "latent_cancer_prior",
+      "trait": "threshold_i_short_square",
+      "mean_r2": 0.34477390914798967,
+      "sd_r2": 0.029757991138349302,
+      "mean_spearman": 0.6247145632088229,
+      "mean_mae": 117.16781874951796,
+      "folds": 5
+    },
+    {
+      "model": "latent_cancer_prior",
+      "trait": "threshold_v_long_square",
+      "mean_r2": 0.12163995974632553,
+      "sd_r2": 0.03993809251647962,
+      "mean_spearman": 0.41039607235201314,
+      "mean_mae": 4.521158915954109,
+      "folds": 5
+    },
+    {
+      "model": "latent_cancer_prior",
+      "trait": "threshold_v_ramp",
+      "mean_r2": 0.05538058433193034,
+      "sd_r2": 0.06333517723277161,
+      "mean_spearman": 0.32687657507548007,
+      "mean_mae": 5.74736301732675,
+      "folds": 5
+    },
+    {
+      "model": "latent_cancer_prior",
+      "trait": "threshold_v_short_square",
+      "mean_r2": 0.08290568135162327,
+      "sd_r2": 0.03681245827703746,
+      "mean_spearman": 0.3687837327172935,
+      "mean_mae": 5.1291318087607225,
+      "folds": 5
+    },
+    {
+      "model": "latent_cancer_prior",
+      "trait": "trough_v_long_square",
+      "mean_r2": 0.22276785756276837,
+      "sd_r2": 0.04295623029877914,
+      "mean_spearman": 0.521996719494348,
+      "mean_mae": 4.511349330731088,
+      "folds": 5
+    },
+    {
+      "model": "latent_cancer_prior",
+      "trait": "upstroke_downstroke_ratio_long_square",
+      "mean_r2": 0.7874089294215014,
+      "sd_r2": 0.024339770499066677,
+      "mean_spearman": 0.913831043959029,
+      "mean_mae": 0.2955624517215079,
+      "folds": 5
+    },
+    {
+      "model": "latent_cancer_prior",
+      "trait": "vrest",
+      "mean_r2": 0.07306855434564963,
+      "sd_r2": 0.0497726966020086,
+      "mean_spearman": 0.29402236361518747,
+      "mean_mae": 4.800206349546999,
+      "folds": 5
+    },
+    {
+      "model": "latent_cbef_prior",
+      "trait": "adaptation",
+      "mean_r2": 0.1728293370397067,
+      "sd_r2": 0.031034917097477265,
+      "mean_spearman": 0.6195423900949935,
+      "mean_mae": 0.0695550069849408,
+      "folds": 5
+    },
+    {
+      "model": "latent_cbef_prior",
+      "trait": "avg_isi",
+      "mean_r2": 0.28230894256525946,
+      "sd_r2": 0.03512442843255128,
+      "mean_spearman": 0.6498420022646886,
+      "mean_mae": 22.72113527416153,
+      "folds": 5
+    },
+    {
+      "model": "latent_cbef_prior",
+      "trait": "f_i_curve_slope",
+      "mean_r2": 0.5402425742009426,
+      "sd_r2": 0.05197738401846645,
+      "mean_spearman": 0.6334530864777136,
+      "mean_mae": 0.14050159995587452,
+      "folds": 5
+    },
+    {
+      "model": "latent_cbef_prior",
+      "trait": "fast_trough_v_long_square",
+      "mean_r2": 0.3116360865234557,
+      "sd_r2": 0.04119095140895946,
+      "mean_spearman": 0.6038962255960572,
+      "mean_mae": 4.538844256946684,
+      "folds": 5
+    },
+    {
+      "model": "latent_cbef_prior",
+      "trait": "latency",
+      "mean_r2": 0.1443708555569612,
+      "sd_r2": 0.08960962471809801,
+      "mean_spearman": 0.592432157124169,
+      "mean_mae": 0.012273736664525477,
+      "folds": 5
+    },
+    {
+      "model": "latent_cbef_prior",
+      "trait": "peak_v_long_square",
+      "mean_r2": 0.15808096349469433,
+      "sd_r2": 0.019515325559986387,
+      "mean_spearman": 0.44166080792259993,
+      "mean_mae": 7.7191102564532175,
+      "folds": 5
+    },
+    {
+      "model": "latent_cbef_prior",
+      "trait": "ri",
+      "mean_r2": 0.5719314868967623,
+      "sd_r2": 0.019576974637217925,
+      "mean_spearman": 0.7905207319010058,
+      "mean_mae": 42.80054961769025,
+      "folds": 5
+    },
+    {
+      "model": "latent_cbef_prior",
+      "trait": "sag",
+      "mean_r2": 0.26609834987336245,
+      "sd_r2": 0.07068628201415363,
+      "mean_spearman": 0.5835497191036403,
+      "mean_mae": 0.03876879626684323,
+      "folds": 5
+    },
+    {
+      "model": "latent_cbef_prior",
+      "trait": "tau",
+      "mean_r2": 0.6252211172485919,
+      "sd_r2": 0.0977134216857931,
+      "mean_spearman": 0.8513739563272604,
+      "mean_mae": 3.7643061176752894,
+      "folds": 5
+    },
+    {
+      "model": "latent_cbef_prior",
+      "trait": "threshold_i_long_square",
+      "mean_r2": 0.6707367584465077,
+      "sd_r2": 0.022201855318550373,
+      "mean_spearman": 0.794562335336748,
+      "mean_mae": 36.91024810220853,
+      "folds": 5
+    },
+    {
+      "model": "latent_cbef_prior",
+      "trait": "threshold_i_ramp",
+      "mean_r2": 0.5550123407024798,
+      "sd_r2": 0.033733054490663286,
+      "mean_spearman": 0.7482017229367776,
+      "mean_mae": 50.88969080971977,
+      "folds": 5
+    },
+    {
+      "model": "latent_cbef_prior",
+      "trait": "threshold_i_short_square",
+      "mean_r2": 0.3455466128993513,
+      "sd_r2": 0.02956677099418276,
+      "mean_spearman": 0.6258060248978581,
+      "mean_mae": 117.11238691216799,
+      "folds": 5
+    },
+    {
+      "model": "latent_cbef_prior",
+      "trait": "threshold_v_long_square",
+      "mean_r2": 0.12167783086199087,
+      "sd_r2": 0.03850179008376321,
+      "mean_spearman": 0.4104696374550364,
+      "mean_mae": 4.522869351429257,
+      "folds": 5
+    },
+    {
+      "model": "latent_cbef_prior",
+      "trait": "threshold_v_ramp",
+      "mean_r2": 0.056519118171105553,
+      "sd_r2": 0.06279185152307683,
+      "mean_spearman": 0.3278335789314414,
+      "mean_mae": 5.745111352706445,
+      "folds": 5
+    },
+    {
+      "model": "latent_cbef_prior",
+      "trait": "threshold_v_short_square",
+      "mean_r2": 0.0831210496467564,
+      "sd_r2": 0.035815469988277795,
+      "mean_spearman": 0.3690554018403324,
+      "mean_mae": 5.128079680557532,
+      "folds": 5
+    },
+    {
+      "model": "latent_cbef_prior",
+      "trait": "trough_v_long_square",
+      "mean_r2": 0.22351262590196636,
+      "sd_r2": 0.044006364685436616,
+      "mean_spearman": 0.5227040964871605,
+      "mean_mae": 4.50935979873921,
+      "folds": 5
+    },
+    {
+      "model": "latent_cbef_prior",
+      "trait": "upstroke_downstroke_ratio_long_square",
+      "mean_r2": 0.7879743499952342,
+      "sd_r2": 0.0244884726996055,
+      "mean_spearman": 0.9143239145831892,
+      "mean_mae": 0.29499942135954804,
+      "folds": 5
+    },
+    {
+      "model": "latent_cbef_prior",
+      "trait": "vrest",
+      "mean_r2": 0.07374272130242436,
+      "sd_r2": 0.049845841448331464,
+      "mean_spearman": 0.29424784672087173,
+      "mean_mae": 4.798842094594352,
+      "folds": 5
+    },
+    {
+      "model": "latent_unweighted",
+      "trait": "adaptation",
+      "mean_r2": 0.17228729462918874,
+      "sd_r2": 0.03209024616894459,
+      "mean_spearman": 0.6185061435967661,
+      "mean_mae": 0.06955647689255344,
+      "folds": 5
+    },
+    {
+      "model": "latent_unweighted",
+      "trait": "avg_isi",
+      "mean_r2": 0.2822158701190928,
+      "sd_r2": 0.035745896001187855,
+      "mean_spearman": 0.6500671703024586,
+      "mean_mae": 22.70486982400543,
+      "folds": 5
+    },
+    {
+      "model": "latent_unweighted",
+      "trait": "f_i_curve_slope",
+      "mean_r2": 0.5391038433569895,
+      "sd_r2": 0.0526487391221148,
+      "mean_spearman": 0.6326478766371194,
+      "mean_mae": 0.1406923355172552,
+      "folds": 5
+    },
+    {
+      "model": "latent_unweighted",
+      "trait": "fast_trough_v_long_square",
+      "mean_r2": 0.31073165996217667,
+      "sd_r2": 0.040448904507621807,
+      "mean_spearman": 0.6031962704828361,
+      "mean_mae": 4.541835962230029,
+      "folds": 5
+    },
+    {
+      "model": "latent_unweighted",
+      "trait": "latency",
+      "mean_r2": 0.14394026527804243,
+      "sd_r2": 0.08800953344567368,
+      "mean_spearman": 0.5906252773833697,
+      "mean_mae": 0.012295526420343839,
+      "folds": 5
+    },
+    {
+      "model": "latent_unweighted",
+      "trait": "peak_v_long_square",
+      "mean_r2": 0.1584538010056744,
+      "sd_r2": 0.020532029651386126,
+      "mean_spearman": 0.44221077309079615,
+      "mean_mae": 7.720808774798837,
+      "folds": 5
+    },
+    {
+      "model": "latent_unweighted",
+      "trait": "ri",
+      "mean_r2": 0.5713131759370491,
+      "sd_r2": 0.019614172323444843,
+      "mean_spearman": 0.7898083433582898,
+      "mean_mae": 42.842316999005526,
+      "folds": 5
+    },
+    {
+      "model": "latent_unweighted",
+      "trait": "sag",
+      "mean_r2": 0.2661695437305366,
+      "sd_r2": 0.07109584445823554,
+      "mean_spearman": 0.5831573061346192,
+      "mean_mae": 0.03879009745071183,
+      "folds": 5
+    },
+    {
+      "model": "latent_unweighted",
+      "trait": "tau",
+      "mean_r2": 0.6242440880933732,
+      "sd_r2": 0.0977217545887597,
+      "mean_spearman": 0.8511290212811433,
+      "mean_mae": 3.768107719583017,
+      "folds": 5
+    },
+    {
+      "model": "latent_unweighted",
+      "trait": "threshold_i_long_square",
+      "mean_r2": 0.6690787794093911,
+      "sd_r2": 0.022095765856949265,
+      "mean_spearman": 0.7934780402449334,
+      "mean_mae": 37.03985916952656,
+      "folds": 5
+    },
+    {
+      "model": "latent_unweighted",
+      "trait": "threshold_i_ramp",
+      "mean_r2": 0.5535512556965572,
+      "sd_r2": 0.0339990732789617,
+      "mean_spearman": 0.747129643875965,
+      "mean_mae": 50.98964659473022,
+      "folds": 5
+    },
+    {
+      "model": "latent_unweighted",
+      "trait": "threshold_i_short_square",
+      "mean_r2": 0.3447739091479898,
+      "sd_r2": 0.029757991138349257,
+      "mean_spearman": 0.6247145632088229,
+      "mean_mae": 117.16781874951796,
+      "folds": 5
+    },
+    {
+      "model": "latent_unweighted",
+      "trait": "threshold_v_long_square",
+      "mean_r2": 0.12163995974632558,
+      "sd_r2": 0.039938092516479416,
+      "mean_spearman": 0.41039607235201314,
+      "mean_mae": 4.521158915954109,
+      "folds": 5
+    },
+    {
+      "model": "latent_unweighted",
+      "trait": "threshold_v_ramp",
+      "mean_r2": 0.0553805843319304,
+      "sd_r2": 0.06333517723277154,
+      "mean_spearman": 0.32687657507548007,
+      "mean_mae": 5.74736301732675,
+      "folds": 5
+    },
+    {
+      "model": "latent_unweighted",
+      "trait": "threshold_v_short_square",
+      "mean_r2": 0.08290568135162317,
+      "sd_r2": 0.03681245827703733,
+      "mean_spearman": 0.3687837327172935,
+      "mean_mae": 5.1291318087607225,
+      "folds": 5
+    },
+    {
+      "model": "latent_unweighted",
+      "trait": "trough_v_long_square",
+      "mean_r2": 0.2227678575627685,
+      "sd_r2": 0.04295623029877896,
+      "mean_spearman": 0.521996719494348,
+      "mean_mae": 4.511349330731088,
+      "folds": 5
+    },
+    {
+      "model": "latent_unweighted",
+      "trait": "upstroke_downstroke_ratio_long_square",
+      "mean_r2": 0.7874089294215014,
+      "sd_r2": 0.024339770499066573,
+      "mean_spearman": 0.913831043959029,
+      "mean_mae": 0.2955624517215079,
+      "folds": 5
+    },
+    {
+      "model": "latent_unweighted",
+      "trait": "vrest",
+      "mean_r2": 0.07306855434564954,
+      "sd_r2": 0.049772696602008754,
+      "mean_spearman": 0.29402236361518747,
+      "mean_mae": 4.800206349546999,
+      "folds": 5
+    }
+  ],
+  "priorDefinition": "standardized gene features multiplied by sqrt(0.10 + 0.90*evidence_score) before PLS latent-factor learning",
+  "guardrail": "CBEF priors are fixed before each grouped CV fit; imputation and standardization are training-fold-only."
+}
