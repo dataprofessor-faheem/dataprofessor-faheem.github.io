@@ -99,3 +99,8 @@ footer{max-width:1500px;margin:auto;padding:34px 5vw 50px;border-top:1px solid v
 @media(max-width:560px){.discovery-controls,.discovery-kpis{grid-template-columns:1fr}}
 
 #ml-internal-chart,#ml-external-chart{max-height:520px;overflow:auto}.ml-metric-row{display:grid;grid-template-columns:155px 1fr 60px;gap:8px;align-items:center;font-size:10px;margin:7px 0}.ml-metric-bar{height:9px;background:#132633;border-radius:99px;overflow:hidden}.ml-metric-bar span{display:block;height:100%;background:linear-gradient(90deg,#59e5b2,#58dfff)}.ml-metric-bar.external span{background:linear-gradient(90deg,#a57aff,#ff7dbd)}
+
+.evidence-tier{display:inline-flex;align-items:center;padding:3px 7px;border-radius:999px;font-size:9px;border:1px solid #345064}.tier-a{background:rgba(89,229,178,.12);color:#7af0c2;border-color:#3b8069}.tier-b{background:rgba(88,223,255,.10);color:#7ee7ff;border-color:#356d80}.tier-c{background:rgba(165,122,255,.11);color:#c7afff;border-color:#5a4778}
+.evidence-meter{height:7px;background:#142735;border-radius:99px;overflow:hidden}.evidence-meter span{display:block;height:100%;background:linear-gradient(90deg,#59e5b2,#58dfff)}
+.evidence-gene-row{display:grid;grid-template-columns:54px 92px 1.2fr repeat(5,72px);gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid #1e3341;font-size:9px}.evidence-gene-row.header{color:#7891a1;font-weight:600}.evidence-gene-row b{font-size:11px}
+@media(max-width:900px){.evidence-gene-row{grid-template-columns:48px 78px 1fr repeat(3,64px)}.evidence-gene-row .optional-col{display:none}}
