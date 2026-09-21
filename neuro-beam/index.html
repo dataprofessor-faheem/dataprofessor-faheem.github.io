@@ -44,7 +44,7 @@
     </div>
     <nav>
       <a href="#atlas">Atlas</a><a href="#live-data">Live Data</a><a href="#discovery-engine">Discovery Engine</a><a href="#model-validation">Validation</a><a href="#dynamic-neuron">Dynamic Neuron</a><a href="#stability">Stability</a><a href="#disease-explorer">Disease Explorer</a><a href="#platform-about">About</a><a href="#datasets">Datasets</a>
-      <a href="#discovery-studio">Discovery Studio</a><a href="#signature-explorer">Signature Explorer</a><a href="#statistics">Statistics</a>
+      <a href="#evidence-engine">Evidence Engine</a><a href="#discovery-studio">Discovery Studio</a><a href="#signature-explorer">Signature Explorer</a><a href="#statistics">Statistics</a>
       
     </nav>
   </header>
@@ -493,6 +493,39 @@
     </section>
 
 
+
+
+    <section class="section" id="evidence-engine">
+      <div class="section-head"><span>EV+</span><div><h2>NEURO-BEAM 3.0 Evidence Engine</h2><p>Multi-objective Pareto prioritization, external replication, bootstrap stability, predictive importance and negative-control validation.</p></div></div>
+      <div class="analysis-kpis">
+        <article><b id="tier-a-count">—</b><span>Tier A replicated genes</span></article>
+        <article><b id="tier-b-count">—</b><span>Tier B robust genes</span></article>
+        <article><b id="pareto-front1-count">—</b><span>Pareto front 1 genes</span></article>
+        <article><b id="negative-null-gap">—</b><span>mean signal-over-null</span></article>
+      </div>
+      <div class="advanced-grid">
+        <article class="viz-card wide-card">
+          <div class="viz-title"><h3>Multi-objective gene evidence</h3><span>no single score determines the Pareto front</span></div>
+          <div id="pareto-evidence-table" class="matrix-wrap"></div>
+        </article>
+        <article class="viz-card">
+          <div class="viz-title"><h3>Evidence-tier composition</h3><span>replicated · robust · exploratory</span></div>
+          <div id="tier-composition" class="module-burden-chart"></div>
+        </article>
+        <article class="viz-card">
+          <div class="viz-title"><h3>Leakage & permutation controls</h3><span>grouped real vs null</span></div>
+          <div id="negative-control-chart" class="module-burden-chart"></div>
+        </article>
+        <article class="viz-card wide-card">
+          <div class="viz-title"><h3>Neurological-disease evidence</h3><span>Open Targets association score; separate from cancer mutation prevalence</span></div>
+          <div id="neuro-disease-evidence" class="matrix-wrap"><p class="micro-note">Neurological disease evidence will appear automatically after the projection workflow completes.</p></div>
+        </article>
+        <article class="viz-card wide-card">
+          <div class="viz-title"><h3>Evidence semantics</h3><span>research-integrity layer</span></div>
+          <div class="data-note"><b>Tier A</b> requires strong bioelectric evidence, cancer evidence, bootstrap stability, predictive importance and external M1 replication. <b>Tier B</b> is robust but incompletely replicated. <b>Tier C</b> is exploratory. Neurological disease association scores are kept separate from cancer mutation percentages and are never treated as the same biological measurement.</div>
+        </article>
+      </div>
+    </section>
 
     <section class="section discovery-studio" id="discovery-studio">
       <div class="section-head"><span>AI+</span><div><h2>NEURO-BEAM Discovery Studio</h2><p>Top-500 cancer–bioelectric gene discovery with explainable ranking and gene-conditioned membrane-dynamics simulation.</p></div></div>
