@@ -1,4 +1,4 @@
-"""Calibration and uncertainty analysis for NEURO-BEAM grouped-CV predictions."""
+"""Fast calibration and uncertainty analysis for NEURO-BEAM grouped-CV predictions."""
 from __future__ import annotations
 import json
 from pathlib import Path
@@ -6,88 +6,61 @@ import numpy as np
 import pandas as pd
 from scipy.stats import spearmanr
 
-ROOT=Path(__file__).resolve().parents[1]
-DATA=ROOT/"data"
-PRED=DATA/"ml_grouped_cv_predictions.csv"
+ROOT=Path(__file__).resolve().parents[1];DATA=ROOT/"data"
+df=pd.read_csv(DATA/"ml_grouped_cv_predictions.csv")
 
-def bootstrap_ci(df, target, model_col, nboot=1000, seed=20260921):
+def metric_bootstrap(sub,col,nboot=250,seed=20260921):
     rng=np.random.default_rng(seed)
-    sub=df[df.target==target].copy()
-    subjects=sub.subject_id.astype(str).unique()
+    subjects=sub.subject_id.astype(str).to_numpy()
+    uniq=np.unique(subjects)
+    groups={s:np.where(subjects==s)[0] for s in uniq}
+    y=sub.observed.to_numpy(float);p=sub[col].to_numpy(float)
     vals=[]
     for _ in range(nboot):
-        ss=rng.choice(subjects,size=len(subjects),replace=True)
-        parts=[]
-        for s in ss:
-            q=sub[sub.subject_id.astype(str)==str(s)]
-            if len(q): parts.append(q)
-        if not parts: continue
-        x=pd.concat(parts,ignore_index=True)
-        y=x.observed.to_numpy(float);p=x[model_col].to_numpy(float)
-        if len(y)<20: continue
-        r=spearmanr(y,p).statistic
-        vals.append(float(r))
-    if not vals:return [None,None]
-    return [float(np.quantile(vals,.025)),float(np.quantile(vals,.975))]
+        draw=rng.choice(uniq,size=len(uniq),replace=True)
+        idx=np.concatenate([groups[s] for s in draw])
+        yy=y[idx];pp=p[idx]
+        r=spearmanr(yy,pp).statistic
+        if np.isfinite(r):vals.append(float(r))
+    return (float(np.quantile(vals,.025)),float(np.quantile(vals,.975))) if vals else (None,None)
 
-def calibration(y,p):
+def cal(y,p):
     y=np.asarray(y,float);p=np.asarray(p,float)
-    ok=np.isfinite(y)&np.isfinite(p);y=y[ok];p=p[ok]
-    if len(y)<10:return {}
     A=np.column_stack([np.ones(len(p)),p])
-    coef=np.linalg.lstsq(A,y,rcond=None)[0]
-    return {"intercept":float(coef[0]),"slope":float(coef[1])}
+    b=np.linalg.lstsq(A,y,rcond=None)[0]
+    return float(b[0]),float(b[1])
 
-def main():
-    df=pd.read_csv(PRED)
-    models={"Ridge":"ridge_pred","ExtraTrees":"extratrees_pred"}
-    rows=[]
-    conformal=[]
-    for target in sorted(df.target.unique()):
-        sub=df[df.target==target].copy()
-        for model,col in models.items():
-            y=sub.observed.to_numpy(float);p=sub[col].to_numpy(float)
-            err=np.abs(y-p)
-            cal=calibration(y,p)
-            rho=spearmanr(y,p).statistic
-            ci=bootstrap_ci(df,target,col,nboot=600)
-            rows.append({
-              "target":target,"model":model,"n":len(sub),
-              "spearman":float(rho),"spearman_ci_low":ci[0],"spearman_ci_high":ci[1],
-              "calibration_intercept":cal.get("intercept"),
-              "calibration_slope":cal.get("slope"),
-              "median_abs_error":float(np.median(err)),
-              "p90_abs_error":float(np.quantile(err,.90)),
-              "p95_abs_error":float(np.quantile(err,.95))
-            })
-            # Leave-one-fold-out residual quantile coverage.
-            for fold in sorted(sub.fold.unique()):
-                test=sub[sub.fold==fold];calib=sub[sub.fold!=fold]
-                q90=float(np.quantile(np.abs(calib.observed-calib[col]),.90))
-                q95=float(np.quantile(np.abs(calib.observed-calib[col]),.95))
-                e=np.abs(test.observed-test[col])
-                conformal.append({
-                  "target":target,"model":model,"fold":int(fold),"n":len(test),
-                  "q90":q90,"q95":q95,
-                  "coverage90":float(np.mean(e<=q90)),
-                  "coverage95":float(np.mean(e<=q95))
-                })
+rows=[];cov=[]
+for target in sorted(df.target.unique()):
+    sub=df[df.target==target].copy()
+    for model,col in {"Ridge":"ridge_pred","ExtraTrees":"extratrees_pred"}.items():
+        y=sub.observed.to_numpy(float);p=sub[col].to_numpy(float);e=np.abs(y-p)
+        lo,hi=metric_bootstrap(sub,col)
+        inter,slope=cal(y,p)
+        rows.append({
+          "target":target,"model":model,"n":len(sub),
+          "spearman":float(spearmanr(y,p).statistic),
+          "spearman_ci_low":lo,"spearman_ci_high":hi,
+          "calibration_intercept":inter,"calibration_slope":slope,
+          "median_abs_error":float(np.median(e)),
+          "p90_abs_error":float(np.quantile(e,.90)),
+          "p95_abs_error":float(np.quantile(e,.95))
+        })
+        for fold in sorted(sub.fold.unique()):
+            te=sub[sub.fold==fold];ca=sub[sub.fold!=fold]
+            ce=np.abs(ca.observed-ca[col]);teerr=np.abs(te.observed-te[col])
+            q90=float(np.quantile(ce,.90));q95=float(np.quantile(ce,.95))
+            cov.append({"target":target,"model":model,"fold":int(fold),"n":len(te),"q90":q90,"q95":q95,
+                        "coverage90":float(np.mean(teerr<=q90)),"coverage95":float(np.mean(teerr<=q95))})
 
-    r=pd.DataFrame(rows);c=pd.DataFrame(conformal)
-    r.to_csv(DATA/"ml_calibration_uncertainty.csv",index=False)
-    c.to_csv(DATA/"ml_crossconformal_coverage.csv",index=False)
-    summary={
-      "method":"subject-bootstrap confidence intervals plus leave-one-fold-out residual intervals",
-      "bootstrapUnit":"subject",
-      "models":models,
-      "metrics":r.to_dict(orient="records"),
-      "coverageSummary":c.groupby(["model","target"]).agg(
-          coverage90=("coverage90","mean"),coverage95=("coverage95","mean"),
-          q90=("q90","mean"),q95=("q95","mean")
-      ).reset_index().to_dict(orient="records"),
-      "guardrail":"Residual intervals quantify empirical predictive uncertainty under the grouped-CV distribution; they are not mechanistic uncertainty."
-    }
-    (DATA/"ml_calibration_uncertainty.json").write_text(json.dumps(summary,indent=2),encoding="utf-8")
-    print(json.dumps({"rows":len(r),"coverageRows":len(c),"extraTrees":r[r.model=="ExtraTrees"].head(5).to_dict(orient="records")},indent=2))
-
-if __name__=="__main__":main()
+r=pd.DataFrame(rows);c=pd.DataFrame(cov)
+r.to_csv(DATA/"ml_calibration_uncertainty.csv",index=False)
+c.to_csv(DATA/"ml_crossconformal_coverage.csv",index=False)
+summary={
+ "method":"subject bootstrap (250 resamples) + leave-one-fold-out residual coverage",
+ "metrics":r.to_dict(orient="records"),
+ "coverageSummary":c.groupby(["model","target"]).agg(coverage90=("coverage90","mean"),coverage95=("coverage95","mean"),q90=("q90","mean"),q95=("q95","mean")).reset_index().to_dict(orient="records"),
+ "guardrail":"Intervals describe predictive uncertainty under grouped-CV sampling, not mechanistic uncertainty."
+}
+(DATA/"ml_calibration_uncertainty.json").write_text(json.dumps(summary,indent=2),encoding="utf-8")
+print(json.dumps({"rows":len(r),"coverageRows":len(c)},indent=2))
