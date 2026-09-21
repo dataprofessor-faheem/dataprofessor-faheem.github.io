@@ -3,6 +3,7 @@
 from pathlib import Path
 import json
 import pandas as pd
+import numpy as np
 ROOT=Path(__file__).resolve().parents[1];D=ROOT/"data"
 checks=[]
 def add(name,ok,detail):checks.append({"check":name,"pass":bool(ok),"detail":detail})
@@ -43,6 +44,32 @@ try:
 except Exception as e:
     add("external_m1_cells",False,"external validation not yet available: "+repr(e))
     add("external_m1_metrics",False,"external validation not yet available")
+
+
+# NEURO-BEAM 3.0 evidence requirements.
+for fn in [
+ "ml_negative_controls.json",
+ "ml_calibration_uncertainty.json",
+ "cbef_sensitivity_summary.json",
+ "gene_external_m1_replication.json",
+ "neurobeam_pareto_evidence.json",
+ "neurological_disease_evidence.json"
+]:
+    add("v3_file_"+fn,exists(fn),"present" if exists(fn) else "missing")
+
+try:
+    p=json.loads((D/"neurobeam_pareto_evidence.json").read_text())
+    add("v3_tier_A_exists",int(p.get("counts",{}).get("A — replicated",0))>0,"Tier A count="+str(p.get("counts",{}).get("A — replicated",0)))
+except Exception as e:add("v3_tier_A_exists",False,repr(e))
+try:
+    n=json.loads((D/"ml_negative_controls.json").read_text())
+    ds=[float(x["signal_over_null_delta"]) for x in n.get("comparisons",[])]
+    add("v3_negative_control_signal",len(ds)>=5 and float(np.mean(ds))>0.20,"mean signal-null delta="+str(float(np.mean(ds)) if ds else None))
+except Exception as e:add("v3_negative_control_signal",False,repr(e))
+try:
+    nd=json.loads((D/"neurological_disease_evidence.json").read_text())
+    add("v3_neuro_disease_overlap",int(nd.get("top500GenesWithAnyNeurologicalEvidence",0))>=50,"genes with neuro evidence="+str(nd.get("top500GenesWithAnyNeurologicalEvidence")))
+except Exception as e:add("v3_neuro_disease_overlap",False,repr(e))
 
 required=[
  "bioelectric_gene_associations.csv","cancer_gene_bioelectric_signature_cube.csv",
