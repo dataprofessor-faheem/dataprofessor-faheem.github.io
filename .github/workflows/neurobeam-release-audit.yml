@@ -1,0 +1,28 @@
+name: NEURO-BEAM Release Audit
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/neurobeam-release-audit.yml"
+      - "neuro-beam/code/19_release_audit.py"
+      - "neuro-beam/data/top500_*"
+      - "neuro-beam/data/ml_*"
+      - "neuro-beam/data/m1_external_validation_*"
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install pandas
+      - run: python neuro-beam/code/19_release_audit.py
+      - run: |
+          git config user.name "neuro-beam-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add neuro-beam/data/release_status.json
+          git diff --cached --quiet || git commit -m "Update NEURO-BEAM release audit"
+          git pull --rebase origin main
+          git push origin main
