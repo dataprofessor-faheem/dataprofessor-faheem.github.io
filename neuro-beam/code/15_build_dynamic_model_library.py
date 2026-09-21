@@ -1,4 +1,4 @@
-"""Build gene-conditioned dynamic membrane model parameter library.
+"""Build gene-conditioned dynamic membrane model parameter library.\n\n# Top-500 artifacts required.
 
 The simulator is phenotype-constrained, not causal. Each gene's observed
 Patch-seq correlation fingerprint is mapped to parameter shifts in an adaptive
