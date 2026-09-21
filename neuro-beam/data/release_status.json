@@ -1,0 +1,83 @@
+{
+  "checks": [
+    {
+      "check": "top500_catalog_500",
+      "pass": true,
+      "detail": "n=500"
+    },
+    {
+      "check": "top500_unique_ranks",
+      "pass": true,
+      "detail": "unique rank count=500"
+    },
+    {
+      "check": "top500_unique_genes",
+      "pass": true,
+      "detail": "unique gene count=500"
+    },
+    {
+      "check": "top500_cancer_matrix.csv_rows",
+      "pass": true,
+      "detail": "rows=5000 expected=5000"
+    },
+    {
+      "check": "top500_bioelectric_matrix.csv_rows",
+      "pass": true,
+      "detail": "rows=9000 expected=9000"
+    },
+    {
+      "check": "dynamic_model_library_500",
+      "pass": true,
+      "detail": "n=500"
+    },
+    {
+      "check": "grouped_cv_subjects",
+      "pass": true,
+      "detail": "subjects=936"
+    },
+    {
+      "check": "grouped_cv_cells",
+      "pass": true,
+      "detail": "cells=3654"
+    },
+    {
+      "check": "external_m1_cells",
+      "pass": false,
+      "detail": "external validation not yet available: FileNotFoundError(2, 'No such file or directory')"
+    },
+    {
+      "check": "external_m1_metrics",
+      "pass": false,
+      "detail": "external validation not yet available"
+    },
+    {
+      "check": "file_bioelectric_gene_associations.csv",
+      "pass": true,
+      "detail": "present"
+    },
+    {
+      "check": "file_cancer_gene_bioelectric_signature_cube.csv",
+      "pass": true,
+      "detail": "present"
+    },
+    {
+      "check": "file_top500_cancer_bioelectric_genes.csv",
+      "pass": true,
+      "detail": "present"
+    },
+    {
+      "check": "file_top500_dynamic_model_parameters.csv",
+      "pass": true,
+      "detail": "present"
+    },
+    {
+      "check": "file_ml_grouped_cv_summary.csv",
+      "pass": true,
+      "detail": "present"
+    }
+  ],
+  "passed": 13,
+  "total": 15,
+  "publicationReady": false,
+  "interpretation": "PublicationReady is an engineering/integrity gate, not a prediction of journal acceptance."
+}
