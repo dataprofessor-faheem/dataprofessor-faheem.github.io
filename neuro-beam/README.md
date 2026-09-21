@@ -35,3 +35,27 @@ The external-validation M1 Patch-seq processed release is now ingested at metada
 - major RNA families: Pvalb 289, Sst 272, IT 254, Vip 153, CT 106, Lamp5 91
 
 This cohort remains excluded from discovery tuning and is reserved for frozen-signature validation.
+
+
+## Cancer × Gene × Bioelectric Signature Explorer
+
+The live portal now includes a research-grade 3D signature cube:
+
+- 10 cancer cohorts
+- 15 shared genes
+- 18 measured neuronal electrical traits
+- 2,700 study × gene × signal records
+
+Each record contains mutation-sequenced cohort size, mutation prevalence, Spearman rho, p-value, BH-FDR q, matched-neuron n, signed mutation × bioelectric score, absolute score, Bioelectric Coupling Score, direction-consistency metrics and provenance.
+
+Downloads:
+- data/cancer_gene_bioelectric_signature_cube.csv
+- data/bioelectric_gene_associations.csv
+- data/bioelectric_gene_scores.csv
+- data/disease_bioelectric_scores.csv
+
+Documentation:
+- docs/signature_explorer_plan.md
+- docs/signature_explorer_master_prompt.md
+
+The explorer supports user-selected cohorts, gene and electrical signal, exact numerical comparison and filtered CSV export. Cross-domain results are exploratory and association-based; they are not causal or clinical effect estimates.
