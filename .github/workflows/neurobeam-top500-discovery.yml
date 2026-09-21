@@ -31,7 +31,7 @@ jobs:
         run: |
           git config user.name "neuro-beam-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add neuro-beam/data/top500_gene_catalog.csv neuro-beam/data/top500_cancer_matrix.csv neuro-beam/data/top500_bioelectric_matrix.csv neuro-beam/data/top500_discovery_catalog.json neuro-beam/data/top500_dynamic_models.json neuro-beam/data/top500_dynamic_model_parameters.csv
+          git add neuro-beam/data/top500_gene_catalog.csv neuro-beam/data/cbef_full_gene_catalog.csv neuro-beam/data/top500_cancer_matrix.csv neuro-beam/data/cbef_full_cancer_matrix.csv neuro-beam/data/top500_bioelectric_matrix.csv neuro-beam/data/top500_discovery_catalog.json neuro-beam/data/top500_dynamic_models.json neuro-beam/data/top500_dynamic_model_parameters.csv
           git diff --cached --quiet || git commit -m "Update CBEF Top-500 discovery engine"
           git pull --rebase origin main
           git push origin main
