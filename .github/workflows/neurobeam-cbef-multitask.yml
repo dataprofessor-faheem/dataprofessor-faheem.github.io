@@ -1,0 +1,32 @@
+name: NEURO-BEAM CBEF MultiTask Model
+concurrency:
+  group: neurobeam-cbef-multitask
+  cancel-in-progress: true
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/neurobeam-cbef-multitask.yml"
+      - "neuro-beam/code/19_cbe_guided_multitask.py"
+      - "neuro-beam/data/top500_gene_catalog.csv"
+permissions:
+  contents: write
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pandas numpy scipy scikit-learn
+      - run: python neuro-beam/code/19_cbe_guided_multitask.py
+      - name: Commit multitask outputs
+        run: |
+          git config user.name "neuro-beam-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add neuro-beam/data/cbef_multitask_folds.csv neuro-beam/data/cbef_multitask_trait_summary.csv neuro-beam/data/cbef_multitask_benchmark.json
+          git diff --cached --quiet || git commit -m "Update CBEF-guided multitask benchmark"
+          git pull --rebase origin main
+          git push origin main
