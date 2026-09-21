@@ -1,4 +1,8 @@
 name: NEURO-BEAM CBEF Sensitivity
+
+concurrency:
+  group: neurobeam-cbef-sensitivity
+  cancel-in-progress: true
 on:
   workflow_dispatch:
   push:
