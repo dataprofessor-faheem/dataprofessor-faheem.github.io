@@ -1,0 +1,11 @@
+studyId,name,cancerTypeName,exploratoryBioelectricAlterationIndex,nGenesContributing
+gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,,0
+lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,,0
+brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,,0
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,,0
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,,0
+paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,,0
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,,0
+prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,,0
+ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,,0
+ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,,0
