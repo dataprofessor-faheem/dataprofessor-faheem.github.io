@@ -1,4 +1,7 @@
 name: NEURO-BEAM Calibration Uncertainty
+concurrency:
+  group: neurobeam-calibration
+  cancel-in-progress: true
 on:
   workflow_dispatch:
   push:
