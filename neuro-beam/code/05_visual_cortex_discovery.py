@@ -42,6 +42,20 @@ def main():
 
     # Numeric-only electrophysiology; labels/IDs never enter the discovery matrix.
     num=e.select_dtypes(include=[np.number]).copy()
+
+    # Exclude acquisition/protocol bookkeeping and absolute event-time columns.
+    # These can dominate PCA despite carrying little biological information.
+    exclude_exact={"rheobase_sweep_num","thumbnail_sweep_num"}
+    exclude_substrings=("_sweep_num",)
+    exclude_prefixes=("threshold_t_","peak_t_","trough_t_","fast_trough_t_")
+    exclude_cols=[
+        c for c in num.columns
+        if c in exclude_exact
+        or any(x in c for x in exclude_substrings)
+        or any(c.startswith(p) for p in exclude_prefixes)
+    ]
+    num=num.drop(columns=exclude_cols,errors="ignore")
+
     # Remove high-missing and constant/near-constant features.
     miss=num.isna().mean()
     num=num.loc[:,miss<=0.20]
@@ -123,6 +137,7 @@ def main():
         "metadata_rows":int(len(m)),
         "qc_neurons":int(len(num)),
         "numeric_features_input":int(e.select_dtypes(include=[np.number]).shape[1]),
+        "excluded_protocol_timing_features":exclude_cols,
         "numeric_features_after_qc":int(num.shape[1]),
         "pca_components":int(ncomp),
         "explained_variance_first3":[float(x) for x in pca.explained_variance_ratio_[:3]],
@@ -133,7 +148,7 @@ def main():
         "top_loadings":top_loadings,
         "cluster_profile_features":profile_cols,
         "cluster_profiles":cluster_profiles,
-        "method_note":"K-means/PCA are baseline discovery diagnostics only. Final bioelectric states require GMM/HDBSCAN/consensus, bootstrap stability and donor-aware validation before biological naming.",
+        "method_note":"K-means/PCA are baseline discovery diagnostics only. Protocol bookkeeping/absolute event-time variables are excluded. Final bioelectric states require GMM/HDBSCAN/consensus, bootstrap stability and donor-aware validation before biological naming.",
         "label_blinding":"Known transcriptomic/cell-type labels were not used to define baseline electrical states."
     }
     (OUT/"visual_cortex_discovery.json").write_text(json.dumps(result,indent=2))
