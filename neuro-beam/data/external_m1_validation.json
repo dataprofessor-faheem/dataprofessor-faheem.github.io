@@ -1,0 +1,203 @@
+{
+  "discoveryRegion": "visual cortex",
+  "externalRegion": "motor cortex",
+  "expressionHarmonization": "per-gene within-dataset z-standardization after log transform/CPM",
+  "outcomeHarmonization": "within-dataset z-standardization per electrical trait",
+  "models": [
+    {
+      "model": "ridge_cbe_top500",
+      "mean_external_r2": -0.06491042758336582,
+      "mean_external_spearman": 0.24373527677721696,
+      "median_external_spearman": 0.3182028333058191,
+      "mean_external_mae_z": 0.7714881467593666,
+      "traits": 8
+    },
+    {
+      "model": "ridge_shared_all",
+      "mean_external_r2": -0.24972014592318242,
+      "mean_external_spearman": 0.2338185685403191,
+      "median_external_spearman": 0.24791837950432422,
+      "mean_external_mae_z": 0.8482197515920926,
+      "traits": 8
+    }
+  ],
+  "perTrait": [
+    {
+      "model": "ridge_shared_all",
+      "v1_trait": "vrest",
+      "m1_trait": "Resting membrane potential (mV)",
+      "n_train": 3654,
+      "n_external": 1328,
+      "n_genes": 1274,
+      "external_r2": -0.43842406863715633,
+      "external_mae_z": 0.9563469239699217,
+      "external_spearman": 0.06876096596912275
+    },
+    {
+      "model": "ridge_cbe_top500",
+      "v1_trait": "vrest",
+      "m1_trait": "Resting membrane potential (mV)",
+      "n_train": 3654,
+      "n_external": 1328,
+      "n_genes": 499,
+      "external_r2": -0.16562664554942175,
+      "external_mae_z": 0.8627648516349878,
+      "external_spearman": 0.01658922461263084
+    },
+    {
+      "model": "ridge_shared_all",
+      "v1_trait": "ri",
+      "m1_trait": "Input resistance (MOhm)",
+      "n_train": 3654,
+      "n_external": 1328,
+      "n_genes": 1274,
+      "external_r2": -0.19044765624653115,
+      "external_mae_z": 0.8529478745474739,
+      "external_spearman": 0.26744237219886696
+    },
+    {
+      "model": "ridge_cbe_top500",
+      "v1_trait": "ri",
+      "m1_trait": "Input resistance (MOhm)",
+      "n_train": 3654,
+      "n_external": 1328,
+      "n_genes": 499,
+      "external_r2": 0.07816853727864548,
+      "external_mae_z": 0.7256678793183697,
+      "external_spearman": 0.36815994140385966
+    },
+    {
+      "model": "ridge_shared_all",
+      "v1_trait": "sag",
+      "m1_trait": "Sag ratio",
+      "n_train": 3654,
+      "n_external": 1328,
+      "n_genes": 1274,
+      "external_r2": -0.11228713253252853,
+      "external_mae_z": 0.8049694693165895,
+      "external_spearman": 0.22839438680978144
+    },
+    {
+      "model": "ridge_cbe_top500",
+      "v1_trait": "sag",
+      "m1_trait": "Sag ratio",
+      "n_train": 3654,
+      "n_external": 1328,
+      "n_genes": 499,
+      "external_r2": 0.07443156696758435,
+      "external_mae_z": 0.707955344659001,
+      "external_spearman": 0.2716423753999249
+    },
+    {
+      "model": "ridge_shared_all",
+      "v1_trait": "tau",
+      "m1_trait": "Membrane time constant (ms)",
+      "n_train": 3654,
+      "n_external": 1328,
+      "n_genes": 1274,
+      "external_r2": 0.046607321833944115,
+      "external_mae_z": 0.7541450674899169,
+      "external_spearman": 0.394370265217897
+    },
+    {
+      "model": "ridge_cbe_top500",
+      "v1_trait": "tau",
+      "m1_trait": "Membrane time constant (ms)",
+      "n_train": 3654,
+      "n_external": 1328,
+      "n_genes": 499,
+      "external_r2": 0.19451202626337816,
+      "external_mae_z": 0.6884271879348008,
+      "external_spearman": 0.4320921953871705
+    },
+    {
+      "model": "ridge_shared_all",
+      "v1_trait": "adaptation",
+      "m1_trait": "Spike frequency adaptation",
+      "n_train": 3654,
+      "n_external": 1304,
+      "n_genes": 1274,
+      "external_r2": -0.7508174870028737,
+      "external_mae_z": 1.0190123867582421,
+      "external_spearman": -0.17565010522837676
+    },
+    {
+      "model": "ridge_cbe_top500",
+      "v1_trait": "adaptation",
+      "m1_trait": "Spike frequency adaptation",
+      "n_train": 3654,
+      "n_external": 1304,
+      "n_genes": 499,
+      "external_r2": -0.6072707039406091,
+      "external_mae_z": 0.9943875078189996,
+      "external_spearman": -0.2934623733702258
+    },
+    {
+      "model": "ridge_shared_all",
+      "v1_trait": "latency",
+      "m1_trait": "Latency (ms)",
+      "n_train": 3654,
+      "n_external": 1328,
+      "n_genes": 1274,
+      "external_r2": -0.3459442348966548,
+      "external_mae_z": 0.8427086636043084,
+      "external_spearman": 0.1583988236028478
+    },
+    {
+      "model": "ridge_cbe_top500",
+      "v1_trait": "latency",
+      "m1_trait": "Latency (ms)",
+      "n_train": 3654,
+      "n_external": 1328,
+      "n_genes": 499,
+      "external_r2": -0.0939950042713682,
+      "external_mae_z": 0.7359092325783676,
+      "external_spearman": 0.17524814901340713
+    },
+    {
+      "model": "ridge_shared_all",
+      "v1_trait": "upstroke_downstroke_ratio_long_square",
+      "m1_trait": "Upstroke-to-downstroke ratio",
+      "n_train": 3654,
+      "n_external": 1328,
+      "n_genes": 1274,
+      "external_r2": 0.09817336915913921,
+      "external_mae_z": 0.7352141759354743,
+      "external_spearman": 0.5678073651757215
+    },
+    {
+      "model": "ridge_cbe_top500",
+      "v1_trait": "upstroke_downstroke_ratio_long_square",
+      "m1_trait": "Upstroke-to-downstroke ratio",
+      "n_train": 3654,
+      "n_external": 1328,
+      "n_genes": 499,
+      "external_r2": 0.20042106469484156,
+      "external_mae_z": 0.6898807442884737,
+      "external_spearman": 0.6148494105592551
+    },
+    {
+      "model": "ridge_shared_all",
+      "v1_trait": "threshold_i_long_square",
+      "m1_trait": "Rheobase (pA)",
+      "n_train": 3654,
+      "n_external": 1328,
+      "n_genes": 1274,
+      "external_r2": -0.30462127906279823,
+      "external_mae_z": 0.8204134511148137,
+      "external_spearman": 0.3610244745766921
+    },
+    {
+      "model": "ridge_cbe_top500",
+      "v1_trait": "threshold_i_long_square",
+      "m1_trait": "Rheobase (pA)",
+      "n_train": 3654,
+      "n_external": 1328,
+      "n_genes": 499,
+      "external_r2": -0.19992426210997705,
+      "external_mae_z": 0.766912425841933,
+      "external_spearman": 0.3647632912117133
+    }
+  ],
+  "guardrail": "External M1 outcomes are not used during V1 fitting or feature selection; standardization uses only within-dataset marginal distributions."
+}
