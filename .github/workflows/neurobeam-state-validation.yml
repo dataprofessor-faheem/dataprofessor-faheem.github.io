@@ -28,4 +28,5 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add neuro-beam/data/visual_cortex_stability_validation.json neuro-beam/data/visual_cortex_state_labels_revealed.csv
           git diff --cached --quiet || git commit -m "Update NEURO-BEAM state stability validation"
-          git push
+          git pull --rebase origin main
+          git push origin main
