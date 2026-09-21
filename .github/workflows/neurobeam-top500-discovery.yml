@@ -1,0 +1,37 @@
+name: NEURO-BEAM Top500 Discovery Engine
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/neurobeam-top500-discovery.yml"
+      - "neuro-beam/code/13_top500_discovery_engine.py"
+      - "neuro-beam/code/14_build_dynamic_models.py"
+      - "neuro-beam/data/bioelectric_gene_associations.csv"
+      - "neuro-beam/data/disease_bioelectric_bridge.json"
+
+permissions:
+  contents: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pandas numpy requests
+      - name: Build CBEF Top-500 gene discovery catalog
+        run: python neuro-beam/code/13_top500_discovery_engine.py
+      - name: Build correlation-informed dynamic models
+        run: python neuro-beam/code/14_build_dynamic_models.py
+      - name: Commit research outputs
+        run: |
+          git config user.name "neuro-beam-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add neuro-beam/data/top500_gene_catalog.csv neuro-beam/data/top500_cancer_matrix.csv neuro-beam/data/top500_bioelectric_matrix.csv neuro-beam/data/top500_discovery_catalog.json neuro-beam/data/top500_dynamic_models.json neuro-beam/data/top500_dynamic_model_parameters.csv
+          git diff --cached --quiet || git commit -m "Update CBEF Top-500 discovery engine"
+          git pull --rebase origin main
+          git push origin main
