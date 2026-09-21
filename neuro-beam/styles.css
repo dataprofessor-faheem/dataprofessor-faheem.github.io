@@ -97,3 +97,5 @@ footer{max-width:1500px;margin:auto;padding:34px 5vw 50px;border-top:1px solid v
 @media(max-width:1050px){.discovery-controls{grid-template-columns:1fr 1fr}.discovery-kpis{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:800px){.discovery-banner,.discovery-grid{grid-template-columns:1fr}.discovery-downloads{flex-direction:row;flex-wrap:wrap}.wide-card{grid-column:auto}.discovery-kpis{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.discovery-controls,.discovery-kpis{grid-template-columns:1fr}}
+
+#ml-internal-chart,#ml-external-chart{max-height:520px;overflow:auto}.ml-metric-row{display:grid;grid-template-columns:155px 1fr 60px;gap:8px;align-items:center;font-size:10px;margin:7px 0}.ml-metric-bar{height:9px;background:#132633;border-radius:99px;overflow:hidden}.ml-metric-bar span{display:block;height:100%;background:linear-gradient(90deg,#59e5b2,#58dfff)}.ml-metric-bar.external span{background:linear-gradient(90deg,#a57aff,#ff7dbd)}
