@@ -242,3 +242,63 @@ fetch("data/cbioportal_study_catalog.json").then(r=>r.json()).then(d=>{
   const root=document.getElementById("disease-browser");
   if(root)root.innerHTML='<p class="micro-note">The cBioPortal study catalog is being generated. Refresh after the catalog workflow completes.</p>';
 });
+
+
+let advancedDiseaseData=null;
+function heatColor(v,max){
+  if(v==null||!Number.isFinite(+v)) return "rgba(255,255,255,.02)";
+  const t=Math.max(0,Math.min(1,(+v)/(max||1)));
+  return `rgba(${Math.round(70+170*t)},${Math.round(110-35*t)},${Math.round(180+40*t)},${0.10+0.70*t})`;
+}
+function renderAdvancedHeatmap(){
+  const d=advancedDiseaseData;if(!d)return;
+  const moduleFilter=document.getElementById("heatmap-module-filter")?.value||"ALL";
+  const sort=document.getElementById("heatmap-sort")?.value||"mean";
+  const modules=d.modules||{};
+  const membership={};Object.entries(modules).forEach(([m,gs])=>gs.forEach(g=>membership[g]=m));
+  let genes=(d.geneSummary||[]).filter(g=>moduleFilter==="ALL"||g.module===moduleFilter);
+  if(sort==="max")genes=genes.slice().sort((a,b)=>(b.maxPercent||0)-(a.maxPercent||0));
+  else if(sort==="alpha")genes=genes.slice().sort((a,b)=>a.gene.localeCompare(b.gene));
+  else genes=genes.slice().sort((a,b)=>(b.meanPercent||0)-(a.meanPercent||0));
+  const studies=d.studies||[];
+  const vals=[];genes.forEach(g=>studies.forEach(s=>{const v=d.geneByStudyPercent?.[g.gene]?.[s.studyId];if(v!=null)vals.push(+v)}));const max=Math.max(1,...vals);
+  let h='<table class="heatmap-table"><thead><tr><th>Gene</th><th>Module</th>'+studies.map(s=>`<th title="${s.name}">${(s.cancerTypeName||s.studyId).slice(0,14)}</th>`).join('')+'</tr></thead><tbody>';
+  genes.forEach(g=>{
+    h+=`<tr><td><b>${g.gene}</b></td><td>${g.module.replace(/ \/ .*/,"")}</td>`;
+    studies.forEach(s=>{const v=d.geneByStudyPercent?.[g.gene]?.[s.studyId];h+=`<td class="heat-cell" title="${s.name} · ${g.gene}: ${v==null?'NA':(+v).toFixed(2)+'%'}" style="background:${heatColor(v,max)}">${v==null?'—':(+v).toFixed(1)}</td>`;});
+    h+='</tr>';
+  });h+='</tbody></table>';
+  document.getElementById("gene-disease-heatmap").innerHTML=h;
+}
+function renderAdvancedDisease(d){
+  advancedDiseaseData=d;
+  document.getElementById("adv-study-count").textContent=(d.studies||[]).length;
+  document.getElementById("adv-gene-count").textContent=(d.genes||Object.keys(d.geneByStudyPercent||{})).length;
+  document.getElementById("adv-top-gene").textContent=d.geneSummary?.[0]?.gene||"—";
+  document.getElementById("adv-errors").textContent=(d.errors||[]).length;
+
+  const mf=document.getElementById("heatmap-module-filter");
+  Object.keys(d.modules||{}).forEach(m=>{const o=document.createElement("option");o.value=m;o.textContent=m;mf.appendChild(o);});
+  mf.addEventListener("change",renderAdvancedHeatmap);
+  document.getElementById("heatmap-sort").addEventListener("change",renderAdvancedHeatmap);
+  renderAdvancedHeatmap();
+
+  const modRoot=document.getElementById("module-burden-chart");
+  modRoot.innerHTML=Object.entries(d.moduleByStudyPercent||{}).map(([m,vals])=>{
+    const arr=Object.entries(vals).sort((a,b)=>(b[1]||0)-(a[1]||0)); const mx=Math.max(1,...arr.map(x=>x[1]||0));
+    return `<div class="module-group"><h4>${m}</h4>${arr.map(([sid,v])=>{const s=d.studies.find(x=>x.studyId===sid);return `<div class="mini-bar-row"><span title="${s?.name||sid}">${(s?.cancerTypeName||sid).slice(0,18)}</span><div class="mini-bar"><span style="width:${((v||0)/mx*100).toFixed(1)}%"></span></div><b>${v==null?'—':(+v).toFixed(1)}</b></div>`;}).join("")}</div>`;
+  }).join("");
+
+  document.getElementById("top-gene-table").innerHTML=(d.geneSummary||[]).slice(0,24).map((g,i)=>`<div class="rank-row"><span>#${i+1}</span><b>${g.gene}</b><small>${g.module}</small><span class="rank-score">${g.meanPercent==null?'—':g.meanPercent.toFixed(2)}%</span></div>`).join("");
+
+  const spec=document.getElementById("mutation-spectrum");
+  spec.innerHTML=(d.studies||[]).map(s=>{
+    const obj=d.mutationTypeCounts?.[s.studyId]||{};const arr=Object.entries(obj).slice(0,6);const mx=Math.max(1,...arr.map(x=>x[1]));
+    return `<div class="spectrum-study"><h4>${s.cancerTypeName||s.studyId}</h4>${arr.map(([k,v])=>`<div class="spectrum-line"><span>${k}</span><div class="mini-bar"><span style="width:${(v/mx*100).toFixed(1)}%"></span></div><b>${v}</b></div>`).join("")}</div>`;
+  }).join("");
+
+  let p='<table class="matrix-table"><thead><tr><th>Study</th><th>Sequenced n</th><th>Denominator source</th><th>Mutation profile</th><th>Events fetched</th></tr></thead><tbody>';
+  (d.studies||[]).forEach(s=>p+=`<tr><td><b>${s.cancerTypeName||s.studyId}</b><br>${s.studyId}</td><td>${s.mutationSequencedDenominator}</td><td>${s.denominatorSource}</td><td>${s.mutationProfileId}</td><td>${Number(s.mutationEventsFetched||0).toLocaleString()}</td></tr>`);
+  p+='</tbody></table>';document.getElementById("study-provenance").innerHTML=p;
+}
+fetch("data/disease_bioelectric_bridge.json").then(r=>r.ok?r.json():Promise.reject()).then(renderAdvancedDisease).catch(()=>{});
