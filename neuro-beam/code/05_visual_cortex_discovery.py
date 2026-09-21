@@ -67,20 +67,21 @@ def main():
     eval_rows=[]
     label_by_k={}
     rng=np.random.default_rng(42)
-    metric_idx=np.arange(len(pcs))
-    if len(metric_idx)>2000:
-        metric_idx=rng.choice(metric_idx,2000,replace=False)
     use=pcs[:,:min(8,ncomp)]
     for k in range(2,min(10,len(use)-1)+1):
         model=KMeans(n_clusters=k,n_init=50,random_state=42)
         labels=model.fit_predict(use)
         label_by_k[k]=labels
-        u=use[metric_idx]; l=labels[metric_idx]
+        # Cohort is small enough for full-cohort validity metrics; this also
+        # prevents rare clusters disappearing from a random metric subsample.
+        unique=np.unique(labels)
+        if len(unique)<2:
+            continue
         eval_rows.append({
             "k":k,
-            "silhouette":float(silhouette_score(u,l)),
-            "calinski_harabasz":float(calinski_harabasz_score(u,l)),
-            "davies_bouldin":float(davies_bouldin_score(u,l))
+            "silhouette":float(silhouette_score(use,labels)),
+            "calinski_harabasz":float(calinski_harabasz_score(use,labels)),
+            "davies_bouldin":float(davies_bouldin_score(use,labels))
         })
     ev=pd.DataFrame(eval_rows)
     best_k=int(ev.sort_values(["silhouette","calinski_harabasz"],ascending=[False,False]).iloc[0]["k"])
