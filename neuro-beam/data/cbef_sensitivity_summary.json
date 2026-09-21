@@ -1,0 +1,475 @@
+{
+  "nGenes": 1268,
+  "nCohorts": 10,
+  "bootstrapIterations": 300,
+  "permutationIterations": 1000,
+  "ablations": [
+    {
+      "method": "bioelectric_only",
+      "rank_spearman_vs_default": 0.8488604468015002,
+      "top20_jaccard": 0.21212121212121213,
+      "top50_jaccard": 0.28205128205128205,
+      "top100_jaccard": 0.2903225806451613,
+      "top500_jaccard": 0.6447368421052632
+    },
+    {
+      "method": "cancer_only",
+      "rank_spearman_vs_default": 0.7463734722859605,
+      "top20_jaccard": 0.1111111111111111,
+      "top50_jaccard": 0.16279069767441862,
+      "top100_jaccard": 0.21951219512195122,
+      "top500_jaccard": 0.5432098765432098
+    },
+    {
+      "method": "equal_mean",
+      "rank_spearman_vs_default": 0.9962735787039317,
+      "top20_jaccard": 0.9047619047619048,
+      "top50_jaccard": 0.9230769230769231,
+      "top100_jaccard": 0.9047619047619048,
+      "top500_jaccard": 0.9342359767891683
+    },
+    {
+      "method": "harmonic_mean",
+      "rank_spearman_vs_default": 0.9662180021145859,
+      "top20_jaccard": 0.9047619047619048,
+      "top50_jaccard": 0.8518518518518519,
+      "top100_jaccard": 0.9230769230769231,
+      "top500_jaccard": 0.8796992481203008
+    },
+    {
+      "method": "synergy_only",
+      "rank_spearman_vs_default": 0.9849357446986268,
+      "top20_jaccard": 0.9047619047619048,
+      "top50_jaccard": 0.8867924528301887,
+      "top100_jaccard": 0.941747572815534,
+      "top500_jaccard": 0.9120458891013384
+    },
+    {
+      "method": "default_cbef",
+      "rank_spearman_vs_default": 0.9999999999999999,
+      "top20_jaccard": 1.0,
+      "top50_jaccard": 1.0,
+      "top100_jaccard": 1.0,
+      "top500_jaccard": 1.0
+    }
+  ],
+  "weightSensitivity": {
+    "medianRankSpearman": 0.9881716787213799,
+    "minRankSpearman": 0.9045873422540031,
+    "medianTop50Jaccard": 0.8181818181818182,
+    "minTop50Jaccard": 0.5625
+  },
+  "cohortBootstrap": {
+    "meanTop50Jaccard": 0.8178053670892493,
+    "meanTop100Jaccard": 0.8543657235667538,
+    "meanTop500Jaccard": 0.9118742951552499
+  },
+  "permutationNegativeControl": {
+    "observedTop50MeanScore": 0.8889380883513283,
+    "nullMean": 0.8716866381879912,
+    "null95": 0.8805275566949737,
+    "empiricalP": 0.000999000999000999
+  },
+  "topStableGenes": [
+    {
+      "gene": "SLIT2",
+      "base_rank": 1,
+      "top20_selection_frequency": 1.0,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "FAM135B",
+      "base_rank": 2,
+      "top20_selection_frequency": 1.0,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "DSCAM",
+      "base_rank": 3,
+      "top20_selection_frequency": 1.0,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "CACNA2D3",
+      "base_rank": 4,
+      "top20_selection_frequency": 0.9766666666666667,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "EGFR",
+      "base_rank": 5,
+      "top20_selection_frequency": 0.9066666666666666,
+      "top50_selection_frequency": 0.9966666666666667,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "NRXN1",
+      "base_rank": 6,
+      "top20_selection_frequency": 0.9966666666666667,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "KCNT2",
+      "base_rank": 7,
+      "top20_selection_frequency": 1.0,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "GRIN3A",
+      "base_rank": 8,
+      "top20_selection_frequency": 0.9133333333333333,
+      "top50_selection_frequency": 0.9966666666666667,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "CNTNAP4",
+      "base_rank": 9,
+      "top20_selection_frequency": 0.9966666666666667,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "CSMD3",
+      "base_rank": 10,
+      "top20_selection_frequency": 1.0,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "KCNH7",
+      "base_rank": 11,
+      "top20_selection_frequency": 0.7666666666666667,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "TMEM132D",
+      "base_rank": 12,
+      "top20_selection_frequency": 1.0,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "ITPR1",
+      "base_rank": 13,
+      "top20_selection_frequency": 0.9533333333333334,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "GRID2",
+      "base_rank": 14,
+      "top20_selection_frequency": 0.83,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "CACNA1E",
+      "base_rank": 15,
+      "top20_selection_frequency": 1.0,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "LRRC4C",
+      "base_rank": 16,
+      "top20_selection_frequency": 0.7366666666666667,
+      "top50_selection_frequency": 0.9366666666666666,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "CHL1",
+      "base_rank": 17,
+      "top20_selection_frequency": 0.9766666666666667,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "TRHDE",
+      "base_rank": 18,
+      "top20_selection_frequency": 0.6733333333333333,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "SORCS1",
+      "base_rank": 19,
+      "top20_selection_frequency": 0.6233333333333333,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "DOCK4",
+      "base_rank": 20,
+      "top20_selection_frequency": 0.8533333333333334,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "SCN1A",
+      "base_rank": 21,
+      "top20_selection_frequency": 0.35333333333333333,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "HCN1",
+      "base_rank": 22,
+      "top20_selection_frequency": 0.3433333333333333,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "CACNA1A",
+      "base_rank": 23,
+      "top20_selection_frequency": 0.26666666666666666,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "ERBB4",
+      "base_rank": 24,
+      "top20_selection_frequency": 0.0,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "EYA4",
+      "base_rank": 25,
+      "top20_selection_frequency": 0.013333333333333334,
+      "top50_selection_frequency": 0.8133333333333334,
+      "top100_selection_frequency": 0.99,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "CEMIP",
+      "base_rank": 26,
+      "top20_selection_frequency": 0.02,
+      "top50_selection_frequency": 0.8833333333333333,
+      "top100_selection_frequency": 0.99,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "COL19A1",
+      "base_rank": 27,
+      "top20_selection_frequency": 0.0,
+      "top50_selection_frequency": 0.99,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "GRM7",
+      "base_rank": 28,
+      "top20_selection_frequency": 0.0,
+      "top50_selection_frequency": 0.9933333333333333,
+      "top100_selection_frequency": 0.9966666666666667,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "ATRNL1",
+      "base_rank": 29,
+      "top20_selection_frequency": 0.056666666666666664,
+      "top50_selection_frequency": 0.9933333333333333,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "ANK1",
+      "base_rank": 30,
+      "top20_selection_frequency": 0.0,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "DCC",
+      "base_rank": 31,
+      "top20_selection_frequency": 0.0,
+      "top50_selection_frequency": 0.9533333333333334,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "TSHZ3",
+      "base_rank": 32,
+      "top20_selection_frequency": 0.04666666666666667,
+      "top50_selection_frequency": 0.9233333333333333,
+      "top100_selection_frequency": 0.99,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "ADCY2",
+      "base_rank": 33,
+      "top20_selection_frequency": 0.2833333333333333,
+      "top50_selection_frequency": 0.84,
+      "top100_selection_frequency": 0.9866666666666667,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "RGS12",
+      "base_rank": 34,
+      "top20_selection_frequency": 0.14666666666666667,
+      "top50_selection_frequency": 0.7333333333333333,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "LAMA4",
+      "base_rank": 35,
+      "top20_selection_frequency": 0.03,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "FSTL5",
+      "base_rank": 36,
+      "top20_selection_frequency": 0.0,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "RELN",
+      "base_rank": 37,
+      "top20_selection_frequency": 0.0,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "NRXN3",
+      "base_rank": 38,
+      "top20_selection_frequency": 0.0,
+      "top50_selection_frequency": 1.0,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "UNC13C",
+      "base_rank": 39,
+      "top20_selection_frequency": 0.0,
+      "top50_selection_frequency": 0.9666666666666667,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "SORCS3",
+      "base_rank": 40,
+      "top20_selection_frequency": 0.0,
+      "top50_selection_frequency": 0.7533333333333333,
+      "top100_selection_frequency": 0.99,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "TRPM3",
+      "base_rank": 41,
+      "top20_selection_frequency": 0.0,
+      "top50_selection_frequency": 0.6733333333333333,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "GALNT14",
+      "base_rank": 42,
+      "top20_selection_frequency": 0.0,
+      "top50_selection_frequency": 0.6333333333333333,
+      "top100_selection_frequency": 0.7966666666666666,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "KIT",
+      "base_rank": 43,
+      "top20_selection_frequency": 0.0,
+      "top50_selection_frequency": 0.6133333333333333,
+      "top100_selection_frequency": 0.9833333333333333,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "CNTN5",
+      "base_rank": 44,
+      "top20_selection_frequency": 0.0,
+      "top50_selection_frequency": 0.66,
+      "top100_selection_frequency": 0.99,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "HDAC9",
+      "base_rank": 45,
+      "top20_selection_frequency": 0.0,
+      "top50_selection_frequency": 0.6366666666666667,
+      "top100_selection_frequency": 0.94,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "PDZRN4",
+      "base_rank": 46,
+      "top20_selection_frequency": 0.0,
+      "top50_selection_frequency": 0.6333333333333333,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "RUNX1T1",
+      "base_rank": 47,
+      "top20_selection_frequency": 0.0,
+      "top50_selection_frequency": 0.5833333333333334,
+      "top100_selection_frequency": 0.9966666666666667,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "RYR3",
+      "base_rank": 48,
+      "top20_selection_frequency": 0.0,
+      "top50_selection_frequency": 0.58,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "SCN8A",
+      "base_rank": 49,
+      "top20_selection_frequency": 0.0,
+      "top50_selection_frequency": 0.5533333333333333,
+      "top100_selection_frequency": 1.0,
+      "top500_selection_frequency": 1.0
+    },
+    {
+      "gene": "KCND3",
+      "base_rank": 50,
+      "top20_selection_frequency": 0.0,
+      "top50_selection_frequency": 0.4766666666666667,
+      "top100_selection_frequency": 0.9533333333333334,
+      "top500_selection_frequency": 1.0
+    }
+  ]
+}
