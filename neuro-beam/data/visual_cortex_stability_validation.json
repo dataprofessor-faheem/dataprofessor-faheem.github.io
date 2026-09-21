@@ -1,0 +1,213 @@
+{
+  "status": "computed",
+  "n_neurons": 3654,
+  "n_features": 27,
+  "excluded_protocol_timing_features": [
+    "rheobase_sweep_num",
+    "thumbnail_sweep_num",
+    "peak_t_long_square",
+    "trough_t_long_square",
+    "fast_trough_t_long_square",
+    "threshold_t_long_square",
+    "peak_t_ramp",
+    "trough_t_ramp",
+    "fast_trough_t_ramp",
+    "threshold_t_ramp",
+    "peak_t_short_square",
+    "trough_t_short_square",
+    "fast_trough_t_short_square",
+    "threshold_t_short_square"
+  ],
+  "baseline_k": 5,
+  "baseline_cluster_sizes": {
+    "E1": 1601,
+    "E2": 294,
+    "E3": 975,
+    "E4": 775,
+    "E5": 9
+  },
+  "bootstrap_iterations": 200,
+  "bootstrap_ari_mean": 0.8497712738624591,
+  "bootstrap_ari_p05": 0.5641836555086124,
+  "bootstrap_ari_p95": 0.984548946086388,
+  "state_stability": {
+    "E1": {
+      "mean_jaccard": 0.8788818266788442,
+      "p05": 0.6381967748759679,
+      "p95": 0.9901142391712962,
+      "n": 1601
+    },
+    "E2": {
+      "mean_jaccard": 0.9451246455995745,
+      "p05": 0.8847261616511012,
+      "p95": 0.9932432432432432,
+      "n": 294
+    },
+    "E3": {
+      "mean_jaccard": 0.8643112348241524,
+      "p05": 0.5448390417702702,
+      "p95": 0.9887789253632487,
+      "n": 975
+    },
+    "E4": {
+      "mean_jaccard": 0.9706544564437161,
+      "p05": 0.9322986797811909,
+      "p95": 0.9987097605586963,
+      "n": 775
+    },
+    "E5": {
+      "mean_jaccard": 0.5353612078947395,
+      "p05": 0.0,
+      "p95": 1.0,
+      "n": 9
+    }
+  },
+  "gmm_comparison": [
+    {
+      "k": 2,
+      "bic": 92153.1088299424,
+      "aic": 91600.99041135493,
+      "silhouette": 0.16439186576654247
+    },
+    {
+      "k": 3,
+      "bic": 88976.25096203166,
+      "aic": 88144.97154528197,
+      "silhouette": 0.12906982712866347
+    },
+    {
+      "k": 4,
+      "bic": 87710.57893942558,
+      "aic": 86600.13852451369,
+      "silhouette": 0.14005147251856861
+    },
+    {
+      "k": 5,
+      "bic": 86460.3394974689,
+      "aic": 85070.7380843948,
+      "silhouette": 0.09108299328939548
+    },
+    {
+      "k": 6,
+      "bic": 85804.96930464132,
+      "aic": 84136.206893405,
+      "silhouette": 0.08855200550772319
+    },
+    {
+      "k": 7,
+      "bic": 83976.37182322607,
+      "aic": 82028.44841382756,
+      "silhouette": 0.10283300331587884
+    },
+    {
+      "k": 8,
+      "bic": 84445.23413616436,
+      "aic": 82218.14972860363,
+      "silhouette": 0.06505625220861808
+    }
+  ],
+  "gmm_best_k_bic": 7,
+  "gmm_vs_kmeans_ari": 0.2472627114428665,
+  "hdbscan_clusters": 4,
+  "hdbscan_noise_fraction": 0.8776683087027914,
+  "hdbscan_vs_kmeans_ari_nonnoise": 0.6844440445641042,
+  "label_reveal_n": 3654,
+  "biological_classes": {
+    "Sst": 1546,
+    "Pvalb": 719,
+    "Vip": 684,
+    "Lamp5": 448,
+    "Sncg": 214,
+    "Serpinf1": 43
+  },
+  "state_class_ari": 0.24333892654568445,
+  "state_class_nmi": 0.2838796996571408,
+  "state_class_chi2": 3053.6889254532357,
+  "state_class_p": 0.0,
+  "state_class_dof": 20,
+  "contingency": {
+    "E1": {
+      "Lamp5": 260,
+      "Pvalb": 17,
+      "Serpinf1": 21,
+      "Sncg": 62,
+      "Sst": 963,
+      "Vip": 278
+    },
+    "E2": {
+      "Lamp5": 7,
+      "Pvalb": 3,
+      "Serpinf1": 3,
+      "Sncg": 48,
+      "Sst": 137,
+      "Vip": 96
+    },
+    "E3": {
+      "Lamp5": 152,
+      "Pvalb": 32,
+      "Serpinf1": 19,
+      "Sncg": 104,
+      "Sst": 358,
+      "Vip": 310
+    },
+    "E4": {
+      "Lamp5": 23,
+      "Pvalb": 664,
+      "Serpinf1": 0,
+      "Sncg": 0,
+      "Sst": 88,
+      "Vip": 0
+    },
+    "E5": {
+      "Lamp5": 6,
+      "Pvalb": 3,
+      "Serpinf1": 0,
+      "Sncg": 0,
+      "Sst": 0,
+      "Vip": 0
+    }
+  },
+  "enrichment_observed_over_expected": {
+    "E1": {
+      "Lamp5": 1.3245627732667085,
+      "Pvalb": 0.053963143688880125,
+      "Serpinf1": 1.1146231279868686,
+      "Sncg": 0.6612339250585206,
+      "Sst": 1.4216543185735306,
+      "Vip": 0.9276110325783228
+    },
+    "E2": {
+      "Lamp5": 0.19419642857142858,
+      "Pvalb": 0.051857738923107494,
+      "Serpinf1": 0.867109634551495,
+      "Sncg": 2.787716955941255,
+      "Sst": 1.1013675845499908,
+      "Vip": 1.744360902255639
+    },
+    "E3": {
+      "Lamp5": 1.2715384615384615,
+      "Pvalb": 0.1667957633465283,
+      "Serpinf1": 1.6559570661896243,
+      "Sncg": 1.8213084112149533,
+      "Sst": 0.8678356055328889,
+      "Vip": 1.698515519568151
+    },
+    "E4": {
+      "Lamp5": 0.2420564516129032,
+      "Pvalb": 4.354176499618646,
+      "Serpinf1": 0.0,
+      "Sncg": 0.0,
+      "Sst": 0.2683737428535659,
+      "Vip": 0.0
+    },
+    "E5": {
+      "Lamp5": 5.4375,
+      "Pvalb": 1.694019471488178,
+      "Serpinf1": 0.0,
+      "Sncg": 0.0,
+      "Sst": 0.0,
+      "Vip": 0.0
+    }
+  },
+  "interpretation_guardrail": "Electrical states were created without biological labels. Biological correspondence is descriptive/associational, not causal."
+}
