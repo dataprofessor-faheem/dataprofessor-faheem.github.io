@@ -1,0 +1,19 @@
+{
+  "primary_harmonized_traits": [
+    {"vis":"vrest","m1":"Resting membrane potential (mV)","spearman":0.22939302586370483,"r2":-0.5501276114876459,"interpretation":"weak rank transfer; substantial calibration shift"},
+    {"vis":"ri","m1":"Input resistance (MOhm)","spearman":0.5561967401560213,"r2":0.11971178138626615,"interpretation":"moderate rank transfer with partial quantitative transfer"},
+    {"vis":"tau","m1":"Membrane time constant (ms)","spearman":0.4997263526635375,"r2":0.27482610004279395,"interpretation":"moderate rank and quantitative transfer"},
+    {"vis":"upstroke_downstroke_ratio_long_square","m1":"Upstroke-to-downstroke ratio","spearman":0.6271674024418086,"r2":0.1946049270983955,"interpretation":"strongest primary cross-region rank transfer"},
+    {"vis":"threshold_v_long_square","m1":"AP threshold (mV)","spearman":0.18495674056066805,"r2":-0.029006918295447104,"interpretation":"weak rank transfer"}
+  ],
+  "secondary_semantic_matches": [
+    {"vis":"latency","m1":"Latency (ms)","spearman":0.2554634732354029,"interpretation":"related protocol-dependent latency measure"},
+    {"vis":"threshold_i_long_square","m1":"Rheobase (pA)","spearman":0.6121202897426967,"interpretation":"strong rank concordance but threshold-current and rheobase are not treated as strictly identical"}
+  ],
+  "excluded_from_primary_external_claim": [
+    {"vis":"sag","m1":"Sag ratio","reason":"VIS sag feature scale is not directly equivalent to M1 Sag ratio; extreme R2 mismatch confirms non-comparable calibration"},
+    {"vis":"adaptation","m1":"Spike frequency adaptation","reason":"feature conventions/scales differ and external direction is reversed; not used for primary generalization claim"}
+  ],
+  "n_external_m1":1304,
+  "guardrail":"Trait inclusion/exclusion is based on semantic/scale harmonization, not on selecting only favourable performance."
+}
