@@ -771,3 +771,58 @@ Promise.all([
     document.getElementById("ml-external-chart").innerHTML='<p class="micro-note">Frozen M1 evaluation is being generated.</p>';
   }
 }).catch(err=>console.error("ML validation data unavailable",err));
+
+
+/* === NEURO-BEAM 3.0 Evidence Engine === */
+function nbTierClass(t){
+  if(String(t).startsWith("A"))return"tier-a";
+  if(String(t).startsWith("B"))return"tier-b";
+  return"tier-c";
+}
+function renderEvidenceEngine(pareto,neg,neuro){
+  const counts=pareto.counts||{};
+  document.getElementById("tier-a-count").textContent=counts["A — replicated"]||0;
+  document.getElementById("tier-b-count").textContent=counts["B — robust"]||0;
+  document.getElementById("pareto-front1-count").textContent=pareto.paretoFrontCounts?.["1"]||pareto.paretoFrontCounts?.[1]||0;
+  const deltas=(neg?.comparisons||[]).map(x=>Number(x.signal_over_null_delta)).filter(Number.isFinite);
+  document.getElementById("negative-null-gap").textContent=deltas.length?(deltas.reduce((a,b)=>a+b,0)/deltas.length).toFixed(3):"—";
+
+  const root=document.getElementById("pareto-evidence-table");
+  const rows=(pareto.top500||[]).slice(0,80);
+  root.innerHTML=
+    '<div class="evidence-gene-row header"><span>Pareto</span><span>Tier</span><span>Gene</span><span>BioE</span><span>Cancer</span><span>Stability</span><span class="optional-col">Predictive</span><span class="optional-col">M1 repl.</span></div>'+
+    rows.map(r=>`<div class="evidence-gene-row"><span>#${r.pareto_front}</span><span class="evidence-tier ${nbTierClass(r.evidence_tier)}">${r.evidence_tier.split(" — ")[0]}</span><b>${r.gene}</b><span>${Number(r.bioelectric_evidence_score).toFixed(3)}</span><span>${Number(r.cancer_evidence_score).toFixed(3)}</span><span>${Number(r.top100_selection_frequency).toFixed(2)}</span><span class="optional-col">${Number(r.importance_percentile).toFixed(2)}</span><span class="optional-col">${Number(r.external_replication_score).toFixed(2)}</span></div>`).join("");
+
+  const tierRoot=document.getElementById("tier-composition");
+  const tierData=[
+    ["A — replicated",counts["A — replicated"]||0],
+    ["B — robust",counts["B — robust"]||0],
+    ["C — exploratory",counts["C — exploratory"]||0]
+  ];
+  const mx=Math.max(1,...tierData.map(x=>x[1]));
+  tierRoot.innerHTML=tierData.map(([k,v])=>`<div class="mini-bar-row"><span>${k}</span><div class="mini-bar"><span style="width:${(v/mx*100).toFixed(1)}%"></span></div><b>${v}</b></div>`).join("");
+
+  const nc=document.getElementById("negative-control-chart");
+  const nrows=(neg?.comparisons||[]).sort((a,b)=>Number(b.grouped_spearman)-Number(a.grouped_spearman));
+  nc.innerHTML=nrows.map(x=>`<div class="mini-bar-row"><span title="${x.target}">${String(x.target).replaceAll("_"," ").slice(0,18)}</span><div class="mini-bar"><span style="width:${Math.max(0,Number(x.grouped_spearman))*100}%"></span></div><b>${Number(x.grouped_spearman).toFixed(2)} / null ${Number(x.permuted_mean_spearman).toFixed(2)}</b></div>`).join("");
+
+  if(neuro){
+    const nr=document.getElementById("neuro-disease-evidence");
+    const diseases=[...new Set((neuro.rows||[]).map(x=>x.disease))];
+    const genes=[...new Set((neuro.rows||[]).map(x=>x.gene))];
+    const by={};(neuro.rows||[]).forEach(x=>by[`${x.gene}|${x.disease}`]=x.open_targets_association_score);
+    const selected=(pareto.top500||[]).filter(x=>genes.includes(x.gene)).slice(0,40);
+    let h='<table class="heatmap-table"><thead><tr><th>Gene</th><th>Tier</th>'+diseases.map(d=>`<th>${d}</th>`).join('')+'</tr></thead><tbody>';
+    selected.forEach(g=>{
+      h+=`<tr><td><b>${g.gene}</b></td><td>${g.evidence_tier.split(" — ")[0]}</td>`;
+      diseases.forEach(d=>{const v=by[`${g.gene}|${d}`];h+=`<td class="heat-cell">${v==null?'—':Number(v).toFixed(3)}</td>`;});
+      h+='</tr>';
+    });h+='</tbody></table>';
+    nr.innerHTML=h||'<p class="micro-note">No overlapping neurological-disease evidence.</p>';
+  }
+}
+Promise.all([
+  fetch("data/neurobeam_pareto_evidence.json").then(r=>r.json()),
+  fetch("data/ml_negative_controls.json").then(r=>r.json()),
+  fetch("data/neurological_disease_evidence.json").then(r=>r.ok?r.json():null).catch(()=>null)
+]).then(([p,n,d])=>renderEvidenceEngine(p,n,d)).catch(err=>console.error("Evidence engine unavailable",err));
