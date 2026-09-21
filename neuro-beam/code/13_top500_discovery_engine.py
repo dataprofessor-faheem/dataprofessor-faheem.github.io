@@ -212,6 +212,7 @@ def main():
         "cancer_cohort_breadth","cancer_cohort_gt1pct"
     ]
     top[top_cols].to_csv(DATA/"top500_gene_catalog.csv",index=False)
+    df[top_cols].to_csv(DATA/"cbef_full_gene_catalog.csv",index=False)
 
     # Long cancer and bioelectric matrices for downstream work.
     cancer_long=[]
@@ -226,6 +227,21 @@ def main():
                 "cbef_discovery_score":r["cbef_discovery_score"]
             })
     pd.DataFrame(cancer_long).to_csv(DATA/"top500_cancer_matrix.csv",index=False)
+
+    full_cancer_long=[]
+    for _,r in df.iterrows():
+        g=r["gene"]
+        for sm in study_meta:
+            sid=sm["studyId"]
+            full_cancer_long.append({
+                "rank":int(r["rank"]),"gene":g,"mouse_gene":r["mouse_gene"],"study_id":sid,
+                "study_name":sm["name"],"cancer_type":sm["cancerTypeName"],"mutation_sequenced_n":sm["denominator"],
+                "mutation_percent":mut_by_gene_study[g].get(sid),"mutation_events":event_by_gene_study[g].get(sid),
+                "bioelectric_evidence_score":r["bioelectric_evidence_score"],
+                "cancer_evidence_score":r["cancer_evidence_score"],
+                "cbef_discovery_score":r["cbef_discovery_score"]
+            })
+    pd.DataFrame(full_cancer_long).to_csv(DATA/"cbef_full_cancer_matrix.csv",index=False)
 
     top_mouse=set(top["mouse_gene"].astype(str))
     bio_long=assoc[assoc["gene"].astype(str).isin(top_mouse)].copy()
