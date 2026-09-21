@@ -43,7 +43,7 @@
       <div><strong>NEURO-BEAM</strong><span>Neuronal BioElectricity–Activity–Molecular Atlas</span></div>
     </div>
     <nav>
-      <a href="#atlas">Atlas</a><a href="#live-data">Live Data</a><a href="#dynamic-neuron">Dynamic Neuron</a><a href="#stability">Stability</a><a href="#disease-explorer">Disease Explorer</a><a href="#platform-about">About</a><a href="#datasets">Datasets</a>
+      <a href="#atlas">Atlas</a><a href="#live-data">Live Data</a><a href="#discovery-engine">Discovery Engine</a><a href="#dynamic-neuron">Dynamic Neuron</a><a href="#stability">Stability</a><a href="#disease-explorer">Disease Explorer</a><a href="#platform-about">About</a><a href="#datasets">Datasets</a>
       <a href="#signature-explorer">Signature Explorer</a><a href="#statistics">Statistics</a>
       
     </nav>
@@ -113,6 +113,101 @@
     </section>
 
     
+
+    <section class="section discovery-engine-section" id="discovery-engine">
+      <div class="section-head"><span>AI+</span><div><h2>NEURO-BEAM Discovery Engine</h2><p>Top-500 Cross-Domain Bioelectric Evidence Fusion with gene-driven counterfactual neuronal dynamics.</p></div></div>
+
+      <div class="discovery-hero">
+        <div>
+          <div class="eyebrow">CBEF v1.0 · TOP-500 DISCOVERY</div>
+          <h3>From ranked evidence to testable bioelectric hypotheses.</h3>
+          <p>The engine fuses same-cell neuronal electrophysiology–transcriptomics with independent human cancer-genomics evidence. Select any ranked gene to inspect the evidence decomposition and drive a normalized counterfactual neuron model.</p>
+        </div>
+        <div class="discovery-hero-metrics">
+          <article><b id="cbe-top-count">—</b><span>ranked genes</span></article>
+          <article><b id="cbe-mapped-count">—</b><span>mapped genes</span></article>
+          <article><b id="cbe-cohort-count">—</b><span>cancer cohorts</span></article>
+          <article><b id="cbe-model-mode">—</b><span>selected model mode</span></article>
+        </div>
+      </div>
+
+      <div class="discovery-controls">
+        <label>Search / select gene
+          <input id="cbe-gene-search" list="cbe-gene-options" placeholder="e.g. SCN1A, EGFR, KCNQ3"/>
+          <datalist id="cbe-gene-options"></datalist>
+        </label>
+        <label>Ranking window
+          <select id="cbe-rank-window">
+            <option value="50">Top 50</option>
+            <option value="100">Top 100</option>
+            <option value="250">Top 250</option>
+            <option value="500" selected>Top 500</option>
+          </select>
+        </label>
+        <label>Counterfactual gene activity
+          <input id="cbe-strength" type="range" min="-100" max="100" value="60"/>
+          <span id="cbe-strength-label">+0.60 normalized units</span>
+        </label>
+        <label>Drive current
+          <input id="cbe-drive" type="range" min="20" max="100" value="60"/>
+          <span id="cbe-drive-label">60%</span>
+        </label>
+      </div>
+
+      <div class="research-actions">
+        <a class="btn primary" href="data/top500_gene_catalog.csv" download>Top-500 catalog CSV</a>
+        <a class="btn" href="data/top500_cancer_matrix.csv" download>Cancer matrix CSV</a>
+        <a class="btn" href="data/top500_bioelectric_matrix.csv" download>Bioelectric matrix CSV</a>
+        <a class="btn" href="data/top500_dynamic_model_parameters.csv" download>Dynamic-model parameters CSV</a>
+        <a class="btn" href="docs/CBEF_method.md" target="_blank">CBEF method</a>
+      </div>
+
+      <div class="discovery-grid">
+        <article class="viz-card ranked-gene-card">
+          <div class="viz-title"><h3>Ranked gene discovery table</h3><span>click a row to model that gene</span></div>
+          <div class="discovery-table-head">
+            <span>Rank</span><span>Gene</span><span>CBEF</span><span>Bioelectric</span><span>Cancer</span><span>Best electrical trait</span>
+          </div>
+          <div id="cbe-ranked-list" class="discovery-ranked-list"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Selected-gene evidence decomposition</h3><span id="cbe-selected-rank">—</span></div>
+          <div id="cbe-selected-summary" class="selected-gene-summary"></div>
+          <div id="cbe-evidence-bars" class="evidence-bars"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Electrical fingerprint</h3><span>same-cell Patch-seq</span></div>
+          <div id="cbe-electrical-profile" class="fingerprint-chart"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Cancer-cohort mutation profile</h3><span>% mutation-sequenced samples</span></div>
+          <div id="cbe-cancer-profile" class="module-burden-chart"></div>
+        </article>
+
+        <article class="viz-card wide-card cbe-simulator-card">
+          <div class="viz-title"><h3>Gene-driven neuron activity animation</h3><span id="cbe-sim-label">normalized counterfactual model</span></div>
+          <div class="cbe-sim-layout">
+            <div class="cbe-neuron-panel">
+              <canvas id="cbe-neuron-canvas" width="700" height="360" aria-label="Counterfactual neuron activity animation"></canvas>
+              <div class="cbe-sim-badge"><span class="dot"></span><span id="cbe-live-status">ready</span></div>
+            </div>
+            <div class="cbe-trace-panel">
+              <canvas id="cbe-membrane-canvas" width="900" height="360" aria-label="Baseline and counterfactual membrane potential dynamics"></canvas>
+              <div class="cbe-trace-legend">
+                <span><i class="legend-dot baseline-dot"></i>Baseline</span>
+                <span><i class="legend-dot model-dot"></i>Selected gene counterfactual</span>
+              </div>
+            </div>
+          </div>
+          <div id="cbe-model-readout" class="state-readout"></div>
+          <div class="data-note warning-note"><b>Model interpretation:</b> membrane dynamics are generated by an adaptive leaky-integrate-and-fire model whose normalized parameters are informed by observed gene–electrophysiology correlations. This is a hypothesis-generation counterfactual, not a causal prediction of gene perturbation or cancer mutation effects.</div>
+        </article>
+      </div>
+    </section>
+
     <section class="section dynamic-section" id="dynamic-neuron">
       <div class="section-head"><span>DYN</span><div><h2>Dynamic Neuronal Bioelectric Explorer</h2><p>Interactive electrical-state visualization derived from measured electrophysiology. This is not a raw in-vivo brain movie.</p></div></div>
       <div class="dynamic-grid">
@@ -523,5 +618,6 @@
   <div><span>Scientific research platform · <span id="year"></span></span></div>
 </footer>
   <script src="app.js"></script>
+  <script src="discovery-engine.js"></script>
 </body>
 </html>
