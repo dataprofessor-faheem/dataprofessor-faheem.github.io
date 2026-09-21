@@ -78,15 +78,13 @@ def sample_list(study):
     return study+"_all",[],"catalog-fallback"
 
 def mutations(profile,list_id):
-    page=0; size=1000
-    while True:
-        rows=get(f"/molecular-profiles/{profile}/mutations",{
-            "sampleListId":list_id,"projection":"DETAILED","pageSize":size,"pageNumber":page,"direction":"ASC"
-        })
-        if not rows: break
-        yield from rows
-        if len(rows)<size: break
-        page+=1
+    # Follow cBioPortal's documented GET example exactly: molecularProfileId
+    # is in the path; sampleListId + projection are the only query arguments.
+    rows=get(f"/molecular-profiles/{profile}/mutations",{
+        "sampleListId":list_id,
+        "projection":"DETAILED"
+    })
+    yield from rows
 
 def symbol(m):
     g=m.get("gene") or {}
@@ -109,6 +107,7 @@ def main():
         denom=len(set(sample_ids)) if sample_ids else int(meta.get("sampleCount") or 0)
 
         mutated=defaultdict(set); events=defaultdict(int); vartypes=defaultdict(int); total_events=0
+        fetch_ok=True
         try:
             for m in mutations(prof,lid):
                 total_events+=1
@@ -120,23 +119,31 @@ def main():
                     if samp: mutated[sym].add(samp)
                     events[sym]+=1
         except Exception as e:
+            fetch_ok=False
             errors.append({"studyId":sid,"error":repr(e),"profile":prof,"sampleListId":lid})
 
         for g in GENES:
-            n=len(mutated[g]); pct=(100*n/denom) if denom else None
-            matrix[g][sid]=pct; event_matrix[g][sid]=events[g]
+            if fetch_ok:
+                n=len(mutated[g]); pct=(100*n/denom) if denom else None
+                matrix[g][sid]=pct; event_matrix[g][sid]=events[g]
+            else:
+                matrix[g][sid]=None; event_matrix[g][sid]=None
 
         for mod,genes in MODULES.items():
-            union=set()
-            for g in genes: union |= mutated[g]
-            module_matrix[mod][sid]=(100*len(union)/denom) if denom else None
+            if fetch_ok:
+                union=set()
+                for g in genes: union |= mutated[g]
+                module_matrix[mod][sid]=(100*len(union)/denom) if denom else None
+            else:
+                module_matrix[mod][sid]=None
 
         mutation_type_counts[sid]=dict(sorted(vartypes.items(),key=lambda kv:kv[1],reverse=True)[:12])
         studies.append({
             "studyId":sid,"name":meta.get("name",sid),"cancerTypeName":meta.get("cancerTypeName",""),
             "catalogSampleCount":int(meta.get("sampleCount") or 0),
             "mutationProfileId":prof,"sampleListId":lid,"denominatorSource":denom_source,
-            "mutationSequencedDenominator":denom,"mutationEventsFetched":total_events
+            "mutationSequencedDenominator":denom,"mutationEventsFetched":total_events,
+            "mutationFetchOk":fetch_ok
         })
         time.sleep(.15)
 
@@ -198,7 +205,7 @@ def main():
             "geneStudyMatrix":"data/disease_bioelectric_gene_study_matrix.csv",
             "moduleMatrix":"data/disease_bioelectric_module_matrix.csv"
         },
-        "interpretation":"Cancer somatic-mutation frequencies provide disease-genomic context only. They do not establish causation of neuronal electrical phenotypes and should not be extrapolated to non-cancer neurological disease."
+        "interpretation":"Cancer somatic-mutation frequencies provide disease-genomic context only. Failed API retrievals are encoded as null/NA, never as zero. Values do not establish causation of neuronal electrical phenotypes and should not be extrapolated to non-cancer neurological disease."
     }
     (DATA/"disease_bioelectric_bridge.json").write_text(json.dumps(payload,indent=2),encoding="utf-8")
     print(json.dumps({"studies":len(studies),"genes":len(GENES),"errors":len(errors),"top":gene_summary[:8]},indent=2))
