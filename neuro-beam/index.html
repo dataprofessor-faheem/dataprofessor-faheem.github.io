@@ -15,7 +15,7 @@
     </div>
     <nav>
       <a href="#atlas">Atlas</a><a href="#live-data">Live Data</a><a href="#dynamic-neuron">Dynamic Neuron</a><a href="#stability">Stability</a><a href="#disease-explorer">Disease Explorer</a><a href="#pipeline">Pipeline</a><a href="#datasets">Datasets</a>
-      <a href="#statistics">Statistics</a><a href="#code">Code</a>
+      <a href="#signature-explorer">Signature Explorer</a><a href="#statistics">Statistics</a><a href="#code">Code</a>
       <a class="pill" href="https://github.com/dataprofessor-faheem/dataprofessor-faheem.github.io/tree/main/neuro-beam">GitHub</a>
     </nav>
   </header>
@@ -338,6 +338,93 @@
         <article class="card"><div class="tag">SPATIAL</div><h3>Allen ABC Atlas</h3><p>Whole-brain transcriptomic and MERFISH reference for spatial projection.</p><a href="https://brain-map.org/bkp/explore/abc-atlas" target="_blank">Open atlas ↗</a></article>
         <article class="card"><div class="tag">CONNECTOME</div><h3>MICrONS</h3><p>High-resolution cortical circuitry, EM reconstructions and functional imaging.</p><a href="https://www.microns-explorer.org/" target="_blank">Open explorer ↗</a></article>
         <article class="card"><div class="tag">DNA / GENOME</div><h3>4DN + SMaHT</h3><p>Regulatory chromatin context and somatic-mosaicism resources for later integration.</p><a href="https://data.4dnucleome.org/" target="_blank">4DN ↗</a> · <a href="https://commonfund.nih.gov/smaht" target="_blank">SMaHT ↗</a></article>
+      </div>
+    </section>
+
+
+    <section class="section signature-lab" id="signature-explorer">
+      <div class="section-head"><span>SIG</span><div><h2>Cancer × Gene × Bioelectric Signature Explorer</h2><p>Exact numerical exploration of cohort mutation prevalence against same-neuron electrophysiology–transcriptome associations.</p></div></div>
+
+      <div class="signature-hero">
+        <div>
+          <div class="eyebrow">FULL RESEARCH CUBE</div>
+          <h3>10 cohorts × 15 genes × 18 electrical signals = 2,700 reproducible records</h3>
+          <p>Select the cancer cohorts, a gene and a neuronal electrical signal. The explorer reports the exact mutation frequency, Spearman correlation, BH-FDR, matched-neuron n, and signed/absolute bioelectric-weighted score for each cohort.</p>
+        </div>
+        <div class="signature-actions">
+          <a class="btn primary" href="data/cancer_gene_bioelectric_signature_cube.csv" download>Download full 2,700-row CSV</a>
+          <button class="btn" id="download-filtered-signature">Export current selection CSV</button>
+          <a class="btn" href="docs/signature_explorer_plan.md" target="_blank">Analysis plan</a>
+          <a class="btn" href="docs/signature_explorer_master_prompt.md" target="_blank">Master prompt</a>
+        </div>
+      </div>
+
+      <div class="signature-controls">
+        <div class="control-block cohort-control-block">
+          <label>Cancer cohorts <span id="signature-cohort-count">10 / 10</span></label>
+          <div id="signature-cohort-selector" class="cohort-selector"></div>
+        </div>
+        <div class="control-block">
+          <label for="signature-gene-select">Gene</label>
+          <select id="signature-gene-select"></select>
+        </div>
+        <div class="control-block">
+          <label for="signature-signal-select">Electrical signal</label>
+          <select id="signature-signal-select"></select>
+        </div>
+        <div class="control-block">
+          <label for="signature-metric-select">Comparison metric</label>
+          <select id="signature-metric-select">
+            <option value="mutation_percent">Mutation prevalence (%)</option>
+            <option value="spearman_rho">Spearman rho</option>
+            <option value="signed_mutation_bioelectric_score">Signed mutation × bioelectric score</option>
+            <option value="absolute_mutation_bioelectric_score">Absolute mutation × bioelectric score</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="signature-kpis">
+        <article><span>Selected gene</span><b id="sig-kpi-gene">—</b><small id="sig-kpi-mouse">—</small></article>
+        <article><span>Electrical signal</span><b id="sig-kpi-signal">—</b><small>same-cell Patch-seq</small></article>
+        <article><span>Spearman ρ</span><b id="sig-kpi-rho">—</b><small id="sig-kpi-direction">—</small></article>
+        <article><span>BH-FDR q</span><b id="sig-kpi-q">—</b><small id="sig-kpi-n">—</small></article>
+        <article><span>Bioelectric coupling</span><b id="sig-kpi-bcs">—</b><small id="sig-kpi-consistency">—</small></article>
+      </div>
+
+      <div class="signature-grid">
+        <article class="viz-card wide-card">
+          <div class="viz-title"><h3>Cohort comparison</h3><span id="signature-chart-label">exact numerical comparison</span></div>
+          <div id="signature-cohort-bars" class="signature-bars"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Gene electrical fingerprint</h3><span>all 18 measured traits</span></div>
+          <div id="gene-electrical-fingerprint" class="fingerprint-chart"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Selected signal details</h3><span>direction + significance</span></div>
+          <div id="signature-detail-card" class="signature-detail-card"></div>
+        </article>
+
+        <article class="viz-card wide-card">
+          <div class="viz-title"><h3>Selected gene × electrical-signal cohort matrix</h3><span>signed mutation-weighted neuronal association</span></div>
+          <div id="signature-signal-matrix" class="heatmap-wrap"></div>
+        </article>
+
+        <article class="viz-card wide-card">
+          <div class="viz-title"><h3>Exact numerical table</h3><span>analysis-ready values; no dashboard-only rounding in CSV</span></div>
+          <div id="signature-exact-table" class="matrix-wrap"></div>
+        </article>
+
+        <article class="viz-card wide-card">
+          <div class="viz-title"><h3>How to interpret the signal</h3><span>research-integrity layer</span></div>
+          <div class="signature-equations">
+            <div><code>Signed score = (mutation % / 100) × Spearman ρ</code><p>Preserves whether neuronal expression of the selected gene is positively or negatively associated with the chosen electrical phenotype.</p></div>
+            <div><code>Absolute score = (mutation % / 100) × |Spearman ρ|</code><p>Useful for prioritizing the magnitude of cross-domain overlap without interpreting the sign as a disease effect.</p></div>
+          </div>
+          <div class="data-note"><b>Critical interpretation:</b> the electrical association comes from mouse visual-cortex Patch-seq neurons, while the mutation prevalence comes from human cancer cohorts. Their integration is a reproducible hypothesis-generation framework, not evidence that a cancer mutation causes that neuronal electrical phenotype.</div>
+        </article>
       </div>
     </section>
 
