@@ -1,0 +1,4745 @@
+{
+  "nGenes": 473,
+  "nM1Cells": 1328,
+  "traits": {
+    "vrest": "Resting membrane potential (mV)",
+    "ri": "Input resistance (MOhm)",
+    "tau": "Membrane time constant (ms)",
+    "latency": "Latency (ms)",
+    "upstroke_downstroke_ratio_long_square": "Upstroke-to-downstroke ratio",
+    "threshold_i_long_square": "Rheobase (pA)"
+  },
+  "summary": [
+    {
+      "gene": "GABRD",
+      "mouse_gene": "Gabrd",
+      "rank": 295,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.3312376921927572,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.86186638453493
+    },
+    {
+      "gene": "GALNT14",
+      "mouse_gene": "Galnt14",
+      "rank": 42,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.2699705743873467,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.8189794020711426
+    },
+    {
+      "gene": "RTN1",
+      "mouse_gene": "Rtn1",
+      "rank": 194,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.23700693034237352,
+      "trait_fingerprint_spearman": 1.0,
+      "external_replication_score": 0.8159048512396614
+    },
+    {
+      "gene": "ESRRG",
+      "mouse_gene": "Esrrg",
+      "rank": 209,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.22340101802390092,
+      "trait_fingerprint_spearman": 0.9999999999999999,
+      "external_replication_score": 0.8063807126167306
+    },
+    {
+      "gene": "CEMIP",
+      "mouse_gene": "Cemip",
+      "rank": 26,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.3324146447353992,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.8026902513147794
+    },
+    {
+      "gene": "TRPS1",
+      "mouse_gene": "Trps1",
+      "rank": 55,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.23753517352439543,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.7962746214670767
+    },
+    {
+      "gene": "NRXN3",
+      "mouse_gene": "Nrxn3",
+      "rank": 38,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.20786712784560057,
+      "trait_fingerprint_spearman": 0.9999999999999999,
+      "external_replication_score": 0.7955069894919203
+    },
+    {
+      "gene": "GRIN3A",
+      "mouse_gene": "Grin3a",
+      "rank": 8,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.20467151419968857,
+      "trait_fingerprint_spearman": 0.942857142857143,
+      "external_replication_score": 0.7818414885112106
+    },
+    {
+      "gene": "COL11A1",
+      "mouse_gene": "Col11a1",
+      "rank": 64,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1756806610446332,
+      "trait_fingerprint_spearman": 1.0,
+      "external_replication_score": 0.7729764627312432
+    },
+    {
+      "gene": "FMN1",
+      "mouse_gene": "Fmn1",
+      "rank": 119,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.17541297635865902,
+      "trait_fingerprint_spearman": 1.0,
+      "external_replication_score": 0.7727890834510613
+    },
+    {
+      "gene": "CNR1",
+      "mouse_gene": "Cnr1",
+      "rank": 187,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1889071679883798,
+      "trait_fingerprint_spearman": 0.942857142857143,
+      "external_replication_score": 0.7708064461632944
+    },
+    {
+      "gene": "MAP1A",
+      "mouse_gene": "Map1a",
+      "rank": 245,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.17070918918785244,
+      "trait_fingerprint_spearman": 1.0,
+      "external_replication_score": 0.7694964324314968
+    },
+    {
+      "gene": "CNTNAP4",
+      "mouse_gene": "Cntnap4",
+      "rank": 9,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1693252670204413,
+      "trait_fingerprint_spearman": 1.0,
+      "external_replication_score": 0.768527686914309
+    },
+    {
+      "gene": "LAMP5",
+      "mouse_gene": "Lamp5",
+      "rank": 370,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.21804577448504014,
+      "trait_fingerprint_spearman": 0.8285714285714287,
+      "external_replication_score": 0.7683463278538138
+    },
+    {
+      "gene": "DOCK4",
+      "mouse_gene": "Dock4",
+      "rank": 20,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.19107642310697617,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.7637534961748833
+    },
+    {
+      "gene": "PROX1",
+      "mouse_gene": "Prox1",
+      "rank": 98,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1872347802543717,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.7610643461780602
+    },
+    {
+      "gene": "RPH3A",
+      "mouse_gene": "Rph3a",
+      "rank": 157,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1743594166215038,
+      "trait_fingerprint_spearman": 0.942857142857143,
+      "external_replication_score": 0.7606230202064813
+    },
+    {
+      "gene": "RARB",
+      "mouse_gene": "Rarb",
+      "rank": 276,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.15764402037288944,
+      "trait_fingerprint_spearman": 0.9999999999999999,
+      "external_replication_score": 0.7603508142610226
+    },
+    {
+      "gene": "PLCXD3",
+      "mouse_gene": "Plcxd3",
+      "rank": 230,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.18399815776084655,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.7587987104325925
+    },
+    {
+      "gene": "APLP1",
+      "mouse_gene": "Aplp1",
+      "rank": 143,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1700303257614937,
+      "trait_fingerprint_spearman": 0.942857142857143,
+      "external_replication_score": 0.7575926566044742
+    },
+    {
+      "gene": "DGKG",
+      "mouse_gene": "Dgkg",
+      "rank": 140,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1689233604001973,
+      "trait_fingerprint_spearman": 0.942857142857143,
+      "external_replication_score": 0.7568177808515667
+    },
+    {
+      "gene": "NTN4",
+      "mouse_gene": "Ntn4",
+      "rank": 288,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.14727459446258592,
+      "trait_fingerprint_spearman": 1.0,
+      "external_replication_score": 0.75309221612381
+    },
+    {
+      "gene": "ADARB2",
+      "mouse_gene": "Adarb2",
+      "rank": 141,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1737593187504432,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.7516315231253102
+    },
+    {
+      "gene": "FRMPD4",
+      "mouse_gene": "Frmpd4",
+      "rank": 148,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.14365587940849248,
+      "trait_fingerprint_spearman": 0.9999999999999999,
+      "external_replication_score": 0.7505591155859447
+    },
+    {
+      "gene": "VIP",
+      "mouse_gene": "Vip",
+      "rank": 443,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.22891794065042986,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.7502425584553009
+    },
+    {
+      "gene": "CHL1",
+      "mouse_gene": "Chl1",
+      "rank": 17,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.20790465231507863,
+      "trait_fingerprint_spearman": 0.7714285714285715,
+      "external_replication_score": 0.7498189709062693
+    },
+    {
+      "gene": "PPIP5K2",
+      "mouse_gene": "Ppip5k2",
+      "rank": 243,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.13893272740463788,
+      "trait_fingerprint_spearman": 1.0,
+      "external_replication_score": 0.7472529091832465
+    },
+    {
+      "gene": "DLGAP1",
+      "mouse_gene": "Dlgap1",
+      "rank": 222,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.13569705511182928,
+      "trait_fingerprint_spearman": 1.0,
+      "external_replication_score": 0.7449879385782805
+    },
+    {
+      "gene": "ARID5B",
+      "mouse_gene": "Arid5b",
+      "rank": 162,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.16276560152978148,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.7439359210708469
+    },
+    {
+      "gene": "RGS12",
+      "mouse_gene": "Rgs12",
+      "rank": 34,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.14928249586058243,
+      "trait_fingerprint_spearman": 0.942857142857143,
+      "external_replication_score": 0.7430691756738363
+    },
+    {
+      "gene": "ACSL3",
+      "mouse_gene": "Acsl3",
+      "rank": 310,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.13157901952889714,
+      "trait_fingerprint_spearman": 0.9999999999999999,
+      "external_replication_score": 0.7421053136702279
+    },
+    {
+      "gene": "NCAM1",
+      "mouse_gene": "Ncam1",
+      "rank": 173,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1468484901193091,
+      "trait_fingerprint_spearman": 0.942857142857143,
+      "external_replication_score": 0.741365371654945
+    },
+    {
+      "gene": "LUZP1",
+      "mouse_gene": "Luzp1",
+      "rank": 210,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.14317569449912254,
+      "trait_fingerprint_spearman": 0.942857142857143,
+      "external_replication_score": 0.7387944147208144
+    },
+    {
+      "gene": "ARHGAP5",
+      "mouse_gene": "Arhgap5",
+      "rank": 84,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.15357683713386047,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.7375037859937023
+    },
+    {
+      "gene": "SLC35F3",
+      "mouse_gene": "Slc35f3",
+      "rank": 189,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1734034113595427,
+      "trait_fingerprint_spearman": 0.8285714285714287,
+      "external_replication_score": 0.7370966736659657
+    },
+    {
+      "gene": "USP25",
+      "mouse_gene": "Usp25",
+      "rank": 183,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.18007367839747224,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.7360515748782306
+    },
+    {
+      "gene": "CPNE4",
+      "mouse_gene": "Cpne4",
+      "rank": 381,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.12261321437653501,
+      "trait_fingerprint_spearman": 1.0,
+      "external_replication_score": 0.7358292500635746
+    },
+    {
+      "gene": "RPS6KA2",
+      "mouse_gene": "Rps6ka2",
+      "rank": 359,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.12211326729178562,
+      "trait_fingerprint_spearman": 1.0,
+      "external_replication_score": 0.7354792871042499
+    },
+    {
+      "gene": "CACNA2D3",
+      "mouse_gene": "Cacna2d3",
+      "rank": 4,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.23536482802330747,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.7347553796163152
+    },
+    {
+      "gene": "NCAM2",
+      "mouse_gene": "Ncam2",
+      "rank": 169,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1535805996937573,
+      "trait_fingerprint_spearman": 0.8857142857142858,
+      "external_replication_score": 0.7346492769284872
+    },
+    {
+      "gene": "KCNQ3",
+      "mouse_gene": "Kcnq3",
+      "rank": 68,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.11843474635197312,
+      "trait_fingerprint_spearman": 1.0,
+      "external_replication_score": 0.7329043224463812
+    },
+    {
+      "gene": "GABRB2",
+      "mouse_gene": "Gabrb2",
+      "rank": 105,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.16675943652959013,
+      "trait_fingerprint_spearman": 0.8285714285714287,
+      "external_replication_score": 0.7324458912849989
+    },
+    {
+      "gene": "ETV6",
+      "mouse_gene": "Etv6",
+      "rank": 179,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.17380602514766555,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.731664217603366
+    },
+    {
+      "gene": "SLC4A8",
+      "mouse_gene": "Slc4a8",
+      "rank": 353,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.11145311231659658,
+      "trait_fingerprint_spearman": 1.0,
+      "external_replication_score": 0.7280171786216176
+    },
+    {
+      "gene": "GRIA4",
+      "mouse_gene": "Gria4",
+      "rank": 71,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.12758100064528313,
+      "trait_fingerprint_spearman": 0.942857142857143,
+      "external_replication_score": 0.7278781290231268
+    },
+    {
+      "gene": "SEZ6",
+      "mouse_gene": "Sez6",
+      "rank": 166,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.13868181333461055,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.7270772693342273
+    },
+    {
+      "gene": "PPFIA2",
+      "mouse_gene": "Ppfia2",
+      "rank": 196,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.16449441765561487,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.7251460923589305
+    },
+    {
+      "gene": "AHI1",
+      "mouse_gene": "Ahi1",
+      "rank": 428,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.16356868319011622,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.7244980782330814
+    },
+    {
+      "gene": "STRBP",
+      "mouse_gene": "Strbp",
+      "rank": 377,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.10333855827714042,
+      "trait_fingerprint_spearman": 0.9999999999999999,
+      "external_replication_score": 0.7223369907939983
+    },
+    {
+      "gene": "SCN1A",
+      "mouse_gene": "Scn1a",
+      "rank": 21,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.2271231381916634,
+      "trait_fingerprint_spearman": 0.9999999999999999,
+      "external_replication_score": 0.7189861967341644
+    },
+    {
+      "gene": "KCNT1",
+      "mouse_gene": "Kcnt1",
+      "rank": 94,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.12449039420228573,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.7171432759416
+    },
+    {
+      "gene": "TRIO",
+      "mouse_gene": "Trio",
+      "rank": 108,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.12356730839671534,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.7164971158777007
+    },
+    {
+      "gene": "NHS",
+      "mouse_gene": "Nhs",
+      "rank": 275,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1602012245385285,
+      "trait_fingerprint_spearman": 0.7714285714285715,
+      "external_replication_score": 0.7164265714626843
+    },
+    {
+      "gene": "TSHZ3",
+      "mouse_gene": "Tshz3",
+      "rank": 32,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.12343756308386336,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.7164062941587043
+    },
+    {
+      "gene": "TLL1",
+      "mouse_gene": "Tll1",
+      "rank": 78,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1429499649621365,
+      "trait_fingerprint_spearman": 0.8285714285714287,
+      "external_replication_score": 0.7157792611877813
+    },
+    {
+      "gene": "CUX1",
+      "mouse_gene": "Cux1",
+      "rank": 113,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1488815840945137,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.7142171088661596
+    },
+    {
+      "gene": "DLGAP2",
+      "mouse_gene": "Dlgap2",
+      "rank": 101,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.11989681885867132,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.7139277732010698
+    },
+    {
+      "gene": "UNC13C",
+      "mouse_gene": "Unc13c",
+      "rank": 39,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.13921592844912953,
+      "trait_fingerprint_spearman": 0.8285714285714287,
+      "external_replication_score": 0.7131654356286765
+    },
+    {
+      "gene": "SLC35F4",
+      "mouse_gene": "Slc35f4",
+      "rank": 390,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.11492854596371363,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.7104499821745995
+    },
+    {
+      "gene": "ATP2A2",
+      "mouse_gene": "Atp2a2",
+      "rank": 221,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.13372898002716113,
+      "trait_fingerprint_spearman": 0.8285714285714287,
+      "external_replication_score": 0.7093245717332985
+    },
+    {
+      "gene": "LINGO2",
+      "mouse_gene": "Lingo2",
+      "rank": 57,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.16517014926258414,
+      "trait_fingerprint_spearman": 0.7142857142857143,
+      "external_replication_score": 0.7084762473409518
+    },
+    {
+      "gene": "CLEC16A",
+      "mouse_gene": "Clec16a",
+      "rank": 338,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1402468691479169,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.7081728084035419
+    },
+    {
+      "gene": "USP11",
+      "mouse_gene": "Usp11",
+      "rank": 457,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.09843391152120462,
+      "trait_fingerprint_spearman": 0.942857142857143,
+      "external_replication_score": 0.7074751666362719
+    },
+    {
+      "gene": "GRIA1",
+      "mouse_gene": "Gria1",
+      "rank": 153,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1358555012512897,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.7050988508759028
+    },
+    {
+      "gene": "ITPR1",
+      "mouse_gene": "Itpr1",
+      "rank": 13,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.26692773281477605,
+      "trait_fingerprint_spearman": 0.7142857142857143,
+      "external_replication_score": 0.7047065558274861
+    },
+    {
+      "gene": "ARHGAP21",
+      "mouse_gene": "Arhgap21",
+      "rank": 151,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1348825583526997,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.7044177908468898
+    },
+    {
+      "gene": "IL1RAPL1",
+      "mouse_gene": "Il1rapl1",
+      "rank": 83,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1906860834073239,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.7034802583851267
+    },
+    {
+      "gene": "SGK1",
+      "mouse_gene": "Sgk1",
+      "rank": 456,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1380533159991559,
+      "trait_fingerprint_spearman": 0.7714285714285715,
+      "external_replication_score": 0.7009230354851235
+    },
+    {
+      "gene": "PTPRN",
+      "mouse_gene": "Ptprn",
+      "rank": 134,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.15691944429350996,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.699843611005457
+    },
+    {
+      "gene": "ADCY2",
+      "mouse_gene": "Adcy2",
+      "rank": 33,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.2411605840805727,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.6988124088564008
+    },
+    {
+      "gene": "GABRA1",
+      "mouse_gene": "Gabra1",
+      "rank": 186,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.21592977919192688,
+      "trait_fingerprint_spearman": 0.48571428571428577,
+      "external_replication_score": 0.698293702577206
+    },
+    {
+      "gene": "SRRM4",
+      "mouse_gene": "Srrm4",
+      "rank": 107,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.16639369513009708,
+      "trait_fingerprint_spearman": 0.6571428571428573,
+      "external_replication_score": 0.6979041580196395
+    },
+    {
+      "gene": "GRID2",
+      "mouse_gene": "Grid2",
+      "rank": 14,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.19106167350448455,
+      "trait_fingerprint_spearman": 0.942857142857143,
+      "external_replication_score": 0.6973146000245678
+    },
+    {
+      "gene": "PTPRE",
+      "mouse_gene": "Ptpre",
+      "rank": 147,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.16547604260935186,
+      "trait_fingerprint_spearman": 0.6571428571428573,
+      "external_replication_score": 0.6972618012551177
+    },
+    {
+      "gene": "DSCAM",
+      "mouse_gene": "Dscam",
+      "rank": 3,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.23846403047437334,
+      "trait_fingerprint_spearman": 0.7714285714285715,
+      "external_replication_score": 0.6962105356177757
+    },
+    {
+      "gene": "SH3GL3",
+      "mouse_gene": "Sh3gl3",
+      "rank": 413,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.15106697856159898,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.6957468849931193
+    },
+    {
+      "gene": "SV2C",
+      "mouse_gene": "Sv2c",
+      "rank": 382,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.11326411455555563,
+      "trait_fingerprint_spearman": 0.8285714285714287,
+      "external_replication_score": 0.6949991659031747
+    },
+    {
+      "gene": "CSRNP3",
+      "mouse_gene": "Csrnp3",
+      "rank": 374,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.11943036509185034,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.6936012555642953
+    },
+    {
+      "gene": "LRRC4C",
+      "mouse_gene": "Lrrc4c",
+      "rank": 16,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.17477212632237796,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.6923404884256645
+    },
+    {
+      "gene": "TRERF1",
+      "mouse_gene": "Trerf1",
+      "rank": 146,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.11493283576305732,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.6904529850341402
+    },
+    {
+      "gene": "DCC",
+      "mouse_gene": "Dcc",
+      "rank": 31,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.12145495352001294,
+      "trait_fingerprint_spearman": 0.7714285714285715,
+      "external_replication_score": 0.6893041817497234
+    },
+    {
+      "gene": "AK5",
+      "mouse_gene": "Ak5",
+      "rank": 406,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.11303706538975032,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.6891259457728253
+    },
+    {
+      "gene": "CDH4",
+      "mouse_gene": "Cdh4",
+      "rank": 73,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.14057499514116728,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.6884024965988171
+    },
+    {
+      "gene": "NDST3",
+      "mouse_gene": "Ndst3",
+      "rank": 135,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.21090005836869666,
+      "trait_fingerprint_spearman": 0.8285714285714287,
+      "external_replication_score": 0.6883443265723734
+    },
+    {
+      "gene": "SORCS3",
+      "mouse_gene": "Sorcs3",
+      "rank": 40,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.21357928864310136,
+      "trait_fingerprint_spearman": 1.0,
+      "external_replication_score": 0.687005502050171
+    },
+    {
+      "gene": "PPARGC1A",
+      "mouse_gene": "Ppargc1a",
+      "rank": 53,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.17435432557838362,
+      "trait_fingerprint_spearman": 0.942857142857143,
+      "external_replication_score": 0.6856194564762972
+    },
+    {
+      "gene": "SORCS2",
+      "mouse_gene": "Sorcs2",
+      "rank": 121,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1807278854605642,
+      "trait_fingerprint_spearman": 0.5428571428571429,
+      "external_replication_score": 0.6850809483938236
+    },
+    {
+      "gene": "GABBR1",
+      "mouse_gene": "Gabbr1",
+      "rank": 433,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.0827392783919071,
+      "trait_fingerprint_spearman": 0.8857142857142858,
+      "external_replication_score": 0.6850603520171922
+    },
+    {
+      "gene": "PRKD1",
+      "mouse_gene": "Prkd1",
+      "rank": 185,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.11354893562885353,
+      "trait_fingerprint_spearman": 0.7714285714285715,
+      "external_replication_score": 0.6837699692259118
+    },
+    {
+      "gene": "RBFOX1",
+      "mouse_gene": "Rbfox1",
+      "rank": 80,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.13394623777274312,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.6837623664409201
+    },
+    {
+      "gene": "SLIT2",
+      "mouse_gene": "Slit2",
+      "rank": 1,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.2364629325421083,
+      "trait_fingerprint_spearman": 0.7142857142857143,
+      "external_replication_score": 0.6833811956366187
+    },
+    {
+      "gene": "CELF4",
+      "mouse_gene": "Celf4",
+      "rank": 424,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.16709110057144674,
+      "trait_fingerprint_spearman": 0.942857142857143,
+      "external_replication_score": 0.6805351989714413
+    },
+    {
+      "gene": "MPDZ",
+      "mouse_gene": "Mpdz",
+      "rank": 128,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.10872477827995906,
+      "trait_fingerprint_spearman": 0.7714285714285715,
+      "external_replication_score": 0.6803930590816856
+    },
+    {
+      "gene": "RASGRF2",
+      "mouse_gene": "Rasgrf2",
+      "rank": 217,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.07440255183442572,
+      "trait_fingerprint_spearman": 0.8857142857142858,
+      "external_replication_score": 0.6792246434269552
+    },
+    {
+      "gene": "DENND5B",
+      "mouse_gene": "Dennd5b",
+      "rank": 304,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.09831315321138476,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.6788192072479694
+    },
+    {
+      "gene": "KIF21A",
+      "mouse_gene": "Kif21a",
+      "rank": 371,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.0969693412733227,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.6778785388913259
+    },
+    {
+      "gene": "IQSEC1",
+      "mouse_gene": "Iqsec1",
+      "rank": 311,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.09639677203777111,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.6774777404264398
+    },
+    {
+      "gene": "NTRK3",
+      "mouse_gene": "Ntrk3",
+      "rank": 54,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.15075269579202347,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.6755268870544164
+    },
+    {
+      "gene": "DAPK1",
+      "mouse_gene": "Dapk1",
+      "rank": 258,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.10032582480715047,
+      "trait_fingerprint_spearman": 0.7714285714285715,
+      "external_replication_score": 0.6745137916507196
+    },
+    {
+      "gene": "CACNB2",
+      "mouse_gene": "Cacnb2",
+      "rank": 138,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1201440364842263,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.6741008255389584
+    },
+    {
+      "gene": "MAGI2",
+      "mouse_gene": "Magi2",
+      "rank": 120,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.09111789768275248,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.6737825283779267
+    },
+    {
+      "gene": "SPTAN1",
+      "mouse_gene": "Sptan1",
+      "rank": 405,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.09019869196683354,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.6731390843767835
+    },
+    {
+      "gene": "PLD3",
+      "mouse_gene": "Pld3",
+      "rank": 451,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.14710042940933998,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.672970300586538
+    },
+    {
+      "gene": "SPTBN4",
+      "mouse_gene": "Sptbn4",
+      "rank": 255,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.08655350083380933,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.6705874505836665
+    },
+    {
+      "gene": "RXFP1",
+      "mouse_gene": "Rxfp1",
+      "rank": 364,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.08646796890356244,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.6705275782324938
+    },
+    {
+      "gene": "FSTL5",
+      "mouse_gene": "Fstl5",
+      "rank": 36,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.2136062752834042,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.669524392698383
+    },
+    {
+      "gene": "MAGI1",
+      "mouse_gene": "Magi1",
+      "rank": 171,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.11158279249666088,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.6681079547476626
+    },
+    {
+      "gene": "MYT1L",
+      "mouse_gene": "Myt1l",
+      "rank": 248,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1114939888992563,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.6680457922294795
+    },
+    {
+      "gene": "CDH13",
+      "mouse_gene": "Cdh13",
+      "rank": 262,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.14827527880574995,
+      "trait_fingerprint_spearman": 0.942857142857143,
+      "external_replication_score": 0.6673641237354535
+    },
+    {
+      "gene": "KIT",
+      "mouse_gene": "Kit",
+      "rank": 43,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.13778377577363726,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.666448643041546
+    },
+    {
+      "gene": "IL1RAPL2",
+      "mouse_gene": "Il1rapl2",
+      "rank": 273,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.10759999235877635,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.6653199946511434
+    },
+    {
+      "gene": "SPARCL1",
+      "mouse_gene": "Sparcl1",
+      "rank": 265,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.1777302621194419,
+      "trait_fingerprint_spearman": 0.8285714285714287,
+      "external_replication_score": 0.6651254691978952
+    },
+    {
+      "gene": "UNC5D",
+      "mouse_gene": "Unc5d",
+      "rank": 137,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.17765483387749584,
+      "trait_fingerprint_spearman": 0.8285714285714287,
+      "external_replication_score": 0.6650726694285328
+    },
+    {
+      "gene": "ATRNL1",
+      "mouse_gene": "Atrnl1",
+      "rank": 29,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.177164494320199,
+      "trait_fingerprint_spearman": 0.8285714285714287,
+      "external_replication_score": 0.6647294317384251
+    },
+    {
+      "gene": "RELN",
+      "mouse_gene": "Reln",
+      "rank": 37,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.13517675014145517,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.6646237250990186
+    },
+    {
+      "gene": "TSC22D1",
+      "mouse_gene": "Tsc22d1",
+      "rank": 471,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.14352216856225852,
+      "trait_fingerprint_spearman": 0.942857142857143,
+      "external_replication_score": 0.6640369465650096
+    },
+    {
+      "gene": "SCN3A",
+      "mouse_gene": "Scn3a",
+      "rank": 66,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.10520000283834056,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.6636400019868384
+    },
+    {
+      "gene": "IGF1",
+      "mouse_gene": "Igf1",
+      "rank": 441,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.24030988250628282,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.663216917754398
+    },
+    {
+      "gene": "SEMA5B",
+      "mouse_gene": "Sema5b",
+      "rank": 237,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.10285759462559411,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.6620003162379159
+    },
+    {
+      "gene": "NR2F2",
+      "mouse_gene": "Nr2f2",
+      "rank": 278,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.13092332989652702,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.661646330927569
+    },
+    {
+      "gene": "ITSN1",
+      "mouse_gene": "Itsn1",
+      "rank": 305,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.10149515057516509,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.6610466054026156
+    },
+    {
+      "gene": "DPP6",
+      "mouse_gene": "Dpp6",
+      "rank": 223,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.1372329579798746,
+      "trait_fingerprint_spearman": 0.942857142857143,
+      "external_replication_score": 0.6596344991573408
+    },
+    {
+      "gene": "PRMT8",
+      "mouse_gene": "Prmt8",
+      "rank": 325,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.16630009449649316,
+      "trait_fingerprint_spearman": 0.8285714285714287,
+      "external_replication_score": 0.657124351861831
+    },
+    {
+      "gene": "GOT1",
+      "mouse_gene": "Got1",
+      "rank": 396,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.1432817102124396,
+      "trait_fingerprint_spearman": 0.8857142857142858,
+      "external_replication_score": 0.6524400542915649
+    },
+    {
+      "gene": "KCND3",
+      "mouse_gene": "Kcnd3",
+      "rank": 50,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.18963389179524026,
+      "trait_fingerprint_spearman": 0.7142857142857143,
+      "external_replication_score": 0.650600867113811
+    },
+    {
+      "gene": "FAM135B",
+      "mouse_gene": "Fam135b",
+      "rank": 2,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.18610966984416077,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.6502767688909126
+    },
+    {
+      "gene": "NELL2",
+      "mouse_gene": "Nell2",
+      "rank": 251,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1698499843869704,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.6488949890708793
+    },
+    {
+      "gene": "KCNJ3",
+      "mouse_gene": "Kcnj3",
+      "rank": 322,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1412386726851398,
+      "trait_fingerprint_spearman": 0.48571428571428577,
+      "external_replication_score": 0.646009928022455
+    },
+    {
+      "gene": "NAV2",
+      "mouse_gene": "Nav2",
+      "rank": 356,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.07965203273345738,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.6457564229134202
+    },
+    {
+      "gene": "TRPM3",
+      "mouse_gene": "Trpm3",
+      "rank": 41,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1650915395751791,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.6455640777026254
+    },
+    {
+      "gene": "KCTD8",
+      "mouse_gene": "Kctd8",
+      "rank": 266,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.15019843962457538,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.6451389077372027
+    },
+    {
+      "gene": "DOK5",
+      "mouse_gene": "Dok5",
+      "rank": 383,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.18052281869971865,
+      "trait_fingerprint_spearman": 0.7142857142857143,
+      "external_replication_score": 0.6442231159469459
+    },
+    {
+      "gene": "CORO6",
+      "mouse_gene": "Coro6",
+      "rank": 445,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.2207163587902559,
+      "trait_fingerprint_spearman": 0.942857142857143,
+      "external_replication_score": 0.6430728797246077
+    },
+    {
+      "gene": "GABRG3",
+      "mouse_gene": "Gabrg3",
+      "rank": 163,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.15960532016746756,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.6417237241172272
+    },
+    {
+      "gene": "RALGAPA2",
+      "mouse_gene": "Ralgapa2",
+      "rank": 164,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.11584173403922729,
+      "trait_fingerprint_spearman": 0.9999999999999999,
+      "external_replication_score": 0.6410892138274591
+    },
+    {
+      "gene": "PLCH1",
+      "mouse_gene": "Plch1",
+      "rank": 287,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.06798579571001835,
+      "trait_fingerprint_spearman": 0.7142857142857143,
+      "external_replication_score": 0.6404471998541558
+    },
+    {
+      "gene": "TRPC5",
+      "mouse_gene": "Trpc5",
+      "rank": 150,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.14685191007578857,
+      "trait_fingerprint_spearman": 1.0,
+      "external_replication_score": 0.6402963370530521
+    },
+    {
+      "gene": "CAP2",
+      "mouse_gene": "Cap2",
+      "rank": 350,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.2066954119646135,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.6396867883752294
+    },
+    {
+      "gene": "NPAS3",
+      "mouse_gene": "Npas3",
+      "rank": 182,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.22289639843631714,
+      "trait_fingerprint_spearman": 0.5428571428571429,
+      "external_replication_score": 0.6395989074768507
+    },
+    {
+      "gene": "GAP43",
+      "mouse_gene": "Gap43",
+      "rank": 244,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.17376986740341013,
+      "trait_fingerprint_spearman": 0.7142857142857143,
+      "external_replication_score": 0.6394960500395299
+    },
+    {
+      "gene": "SIRPA",
+      "mouse_gene": "Sirpa",
+      "rank": 430,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.06967855027177514,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.6387749851902426
+    },
+    {
+      "gene": "CLIP4",
+      "mouse_gene": "Clip4",
+      "rank": 286,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.12159261260912739,
+      "trait_fingerprint_spearman": 0.8857142857142858,
+      "external_replication_score": 0.6372576859692463
+    },
+    {
+      "gene": "RGS7",
+      "mouse_gene": "Rgs7",
+      "rank": 235,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.13884726470655262,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.6371930852945868
+    },
+    {
+      "gene": "RAPGEF5",
+      "mouse_gene": "Rapgef5",
+      "rank": 168,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.16921628299446137,
+      "trait_fingerprint_spearman": 0.7142857142857143,
+      "external_replication_score": 0.6363085409532658
+    },
+    {
+      "gene": "LMO7",
+      "mouse_gene": "Lmo7",
+      "rank": 427,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.1348422661055874,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.6343895862739112
+    },
+    {
+      "gene": "DAB1",
+      "mouse_gene": "Dab1",
+      "rank": 279,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.10806450705177184,
+      "trait_fingerprint_spearman": 0.5428571428571429,
+      "external_replication_score": 0.634216583507669
+    },
+    {
+      "gene": "WWP1",
+      "mouse_gene": "Wwp1",
+      "rank": 434,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.10576980859675218,
+      "trait_fingerprint_spearman": 0.9999999999999999,
+      "external_replication_score": 0.6340388660177265
+    },
+    {
+      "gene": "NLGN1",
+      "mouse_gene": "Nlgn1",
+      "rank": 432,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.13305835325141616,
+      "trait_fingerprint_spearman": 0.8285714285714287,
+      "external_replication_score": 0.6338551329902771
+    },
+    {
+      "gene": "EFR3A",
+      "mouse_gene": "Efr3a",
+      "rank": 281,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.13728993989256044,
+      "trait_fingerprint_spearman": 1.0,
+      "external_replication_score": 0.6336029579247924
+    },
+    {
+      "gene": "TENM4",
+      "mouse_gene": "Tenm4",
+      "rank": 63,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.16100765297293534,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.6327053570810548
+    },
+    {
+      "gene": "TRPC3",
+      "mouse_gene": "Trpc3",
+      "rank": 75,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.14661224736418071,
+      "trait_fingerprint_spearman": 0.7714285714285715,
+      "external_replication_score": 0.6319142874406407
+    },
+    {
+      "gene": "ADCY8",
+      "mouse_gene": "Adcy8",
+      "rank": 125,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.1019661043408161,
+      "trait_fingerprint_spearman": 0.9999999999999999,
+      "external_replication_score": 0.6313762730385712
+    },
+    {
+      "gene": "OSBPL8",
+      "mouse_gene": "Osbpl8",
+      "rank": 365,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.12913778166695392,
+      "trait_fingerprint_spearman": 0.8285714285714287,
+      "external_replication_score": 0.6311107328811535
+    },
+    {
+      "gene": "MGAT5",
+      "mouse_gene": "Mgat5",
+      "rank": 482,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.14491316877721794,
+      "trait_fingerprint_spearman": 0.7714285714285715,
+      "external_replication_score": 0.6307249324297668
+    },
+    {
+      "gene": "UST",
+      "mouse_gene": "Ust",
+      "rank": 379,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.11736497297708877,
+      "trait_fingerprint_spearman": 0.48571428571428577,
+      "external_replication_score": 0.6292983382268194
+    },
+    {
+      "gene": "ANO5",
+      "mouse_gene": "Ano5",
+      "rank": 296,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.09893652128918745,
+      "trait_fingerprint_spearman": 0.9999999999999999,
+      "external_replication_score": 0.6292555649024312
+    },
+    {
+      "gene": "GRIN2A",
+      "mouse_gene": "Grin2a",
+      "rank": 132,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1410535718260459,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.628737500278232
+    },
+    {
+      "gene": "PHACTR1",
+      "mouse_gene": "Phactr1",
+      "rank": 333,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.17426853687147423,
+      "trait_fingerprint_spearman": 0.6571428571428573,
+      "external_replication_score": 0.6284165472386034
+    },
+    {
+      "gene": "DOCK9",
+      "mouse_gene": "Dock9",
+      "rank": 96,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.12318962158997637,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.6262327351129835
+    },
+    {
+      "gene": "ANO4",
+      "mouse_gene": "Ano4",
+      "rank": 126,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.12179603536244846,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.6252572247537139
+    },
+    {
+      "gene": "EGFR",
+      "mouse_gene": "Egfr",
+      "rank": 5,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.12147042702374897,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.6250292989166243
+    },
+    {
+      "gene": "NEBL",
+      "mouse_gene": "Nebl",
+      "rank": 81,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.12496768241099537,
+      "trait_fingerprint_spearman": 1.0,
+      "external_replication_score": 0.6249773776876968
+    },
+    {
+      "gene": "KCNH7",
+      "mouse_gene": "Kcnh7",
+      "rank": 11,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.24379937568621832,
+      "trait_fingerprint_spearman": 0.7714285714285715,
+      "external_replication_score": 0.6249452772660671
+    },
+    {
+      "gene": "ENOX1",
+      "mouse_gene": "Enox1",
+      "rank": 331,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.12421837355273369,
+      "trait_fingerprint_spearman": 1.0,
+      "external_replication_score": 0.6244528614869136
+    },
+    {
+      "gene": "PENK",
+      "mouse_gene": "Penk",
+      "rank": 268,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.13330387825279247,
+      "trait_fingerprint_spearman": 0.7714285714285715,
+      "external_replication_score": 0.622598429062669
+    },
+    {
+      "gene": "GRIA3",
+      "mouse_gene": "Gria3",
+      "rank": 225,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.14437854266886188,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.6210649798682034
+    },
+    {
+      "gene": "GRID1",
+      "mouse_gene": "Grid1",
+      "rank": 246,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.0720461548021309,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.6204323083614917
+    },
+    {
+      "gene": "ROBO1",
+      "mouse_gene": "Robo1",
+      "rank": 369,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.06969725226145378,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.6187880765830176
+    },
+    {
+      "gene": "CDH9",
+      "mouse_gene": "Cdh9",
+      "rank": 233,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.11514754177980636,
+      "trait_fingerprint_spearman": 1.0,
+      "external_replication_score": 0.6181032792458645
+    },
+    {
+      "gene": "SEMA6D",
+      "mouse_gene": "Sema6d",
+      "rank": 145,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.11008377237191415,
+      "trait_fingerprint_spearman": 0.8285714285714287,
+      "external_replication_score": 0.6177729263746257
+    },
+    {
+      "gene": "MCC",
+      "mouse_gene": "Mcc",
+      "rank": 88,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.10987455677559561,
+      "trait_fingerprint_spearman": 0.8285714285714287,
+      "external_replication_score": 0.6176264754572027
+    },
+    {
+      "gene": "DYNC2H1",
+      "mouse_gene": "Dync2h1",
+      "rank": 316,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.06769014111429361,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.6173830987800055
+    },
+    {
+      "gene": "MICAL2",
+      "mouse_gene": "Mical2",
+      "rank": 226,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.17054046908082499,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.6168783283565775
+    },
+    {
+      "gene": "ANK1",
+      "mouse_gene": "Ank1",
+      "rank": 30,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.168500256842944,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.6154501797900608
+    },
+    {
+      "gene": "LAMA4",
+      "mouse_gene": "Lama4",
+      "rank": 35,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.1637882993611958,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.614651809552837
+    },
+    {
+      "gene": "PRKCA",
+      "mouse_gene": "Prkca",
+      "rank": 231,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.22016595818843315,
+      "trait_fingerprint_spearman": 0.49999999999999994,
+      "external_replication_score": 0.6141161707319033
+    },
+    {
+      "gene": "PRICKLE1",
+      "mouse_gene": "Prickle1",
+      "rank": 361,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.19083384160696276,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.6135836891248739
+    },
+    {
+      "gene": "ABR",
+      "mouse_gene": "Abr",
+      "rank": 337,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.10110447801413161,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.6107731346098921
+    },
+    {
+      "gene": "SLC24A2",
+      "mouse_gene": "Slc24a2",
+      "rank": 254,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.11598077622013658,
+      "trait_fingerprint_spearman": 0.7714285714285715,
+      "external_replication_score": 0.6104722576398098
+    },
+    {
+      "gene": "GRIK3",
+      "mouse_gene": "Grik3",
+      "rank": 79,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.1145007276859491,
+      "trait_fingerprint_spearman": 0.7714285714285715,
+      "external_replication_score": 0.6094362236658787
+    },
+    {
+      "gene": "EXOC4",
+      "mouse_gene": "Exoc4",
+      "rank": 176,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.09695404100805471,
+      "trait_fingerprint_spearman": 0.8285714285714287,
+      "external_replication_score": 0.608582114419924
+    },
+    {
+      "gene": "FSTL4",
+      "mouse_gene": "Fstl4",
+      "rank": 216,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.15802715283383398,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.6081190069836838
+    },
+    {
+      "gene": "GALNTL6",
+      "mouse_gene": "Galntl6",
+      "rank": 403,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.15379555340967305,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.6076568873867711
+    },
+    {
+      "gene": "GNPTAB",
+      "mouse_gene": "Gnptab",
+      "rank": 343,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.09912897196164311,
+      "trait_fingerprint_spearman": 1.0,
+      "external_replication_score": 0.6068902803731502
+    },
+    {
+      "gene": "DGKI",
+      "mouse_gene": "Dgki",
+      "rank": 52,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.12490228069466085,
+      "trait_fingerprint_spearman": 0.7142857142857143,
+      "external_replication_score": 0.6052887393434054
+    },
+    {
+      "gene": "ATP8A2",
+      "mouse_gene": "Atp8a2",
+      "rank": 207,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.1080114815294521,
+      "trait_fingerprint_spearman": 0.7714285714285715,
+      "external_replication_score": 0.6048937513563308
+    },
+    {
+      "gene": "TMTC1",
+      "mouse_gene": "Tmtc1",
+      "rank": 297,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.1208286619188164,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.6045800633431715
+    },
+    {
+      "gene": "DOCK10",
+      "mouse_gene": "Dock10",
+      "rank": 70,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.10545956870693951,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.6038216980948576
+    },
+    {
+      "gene": "TMEM132C",
+      "mouse_gene": "Tmem132c",
+      "rank": 192,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.16459096509758694,
+      "trait_fingerprint_spearman": 0.942857142857143,
+      "external_replication_score": 0.6037851041397395
+    },
+    {
+      "gene": "HCN1",
+      "mouse_gene": "Hcn1",
+      "rank": 22,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.17605749748537977,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.6032402482397659
+    },
+    {
+      "gene": "DYNC1I1",
+      "mouse_gene": "Dync1i1",
+      "rank": 313,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.10373333114608585,
+      "trait_fingerprint_spearman": 0.7714285714285715,
+      "external_replication_score": 0.6018990460879744
+    },
+    {
+      "gene": "GCC2",
+      "mouse_gene": "Gcc2",
+      "rank": 282,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.08731180506430178,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.6011182635450113
+    },
+    {
+      "gene": "SGCZ",
+      "mouse_gene": "Sgcz",
+      "rank": 362,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.14456826215809493,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.5986977835106665
+    },
+    {
+      "gene": "TMEM132D",
+      "mouse_gene": "Tmem132d",
+      "rank": 12,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.21261344026843784,
+      "trait_fingerprint_spearman": 0.3714285714285715,
+      "external_replication_score": 0.5981151224736208
+    },
+    {
+      "gene": "GOLIM4",
+      "mouse_gene": "Golim4",
+      "rank": 378,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.11124020459668138,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.597868143217677
+    },
+    {
+      "gene": "KCNMA1",
+      "mouse_gene": "Kcnma1",
+      "rank": 85,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.1369289960134016,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.5958502972093812
+    },
+    {
+      "gene": "CNTN5",
+      "mouse_gene": "Cntn5",
+      "rank": 44,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.09292809676087913,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.5950496677326154
+    },
+    {
+      "gene": "NOL4",
+      "mouse_gene": "Nol4",
+      "rank": 320,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.0911474683581008,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.5938032278506705
+    },
+    {
+      "gene": "CUX2",
+      "mouse_gene": "Cux2",
+      "rank": 109,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.13697795926579426,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.5933845714860561
+    },
+    {
+      "gene": "TMEM130",
+      "mouse_gene": "Tmem130",
+      "rank": 312,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.21347343713265418,
+      "trait_fingerprint_spearman": 0.7142857142857143,
+      "external_replication_score": 0.5922885488500008
+    },
+    {
+      "gene": "TOX3",
+      "mouse_gene": "Tox3",
+      "rank": 328,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.1644010869837913,
+      "trait_fingerprint_spearman": 0.8857142857142858,
+      "external_replication_score": 0.592223618031511
+    },
+    {
+      "gene": "EEPD1",
+      "mouse_gene": "Eepd1",
+      "rank": 426,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.10562399855613026,
+      "trait_fingerprint_spearman": 0.7142857142857143,
+      "external_replication_score": 0.5917939418464341
+    },
+    {
+      "gene": "FOCAD",
+      "mouse_gene": "Focad",
+      "rank": 467,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.059051459782178226,
+      "trait_fingerprint_spearman": 0.49999999999999994,
+      "external_replication_score": 0.5913360218475248
+    },
+    {
+      "gene": "ZMAT4",
+      "mouse_gene": "Zmat4",
+      "rank": 368,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.08861387939146985,
+      "trait_fingerprint_spearman": 0.7714285714285715,
+      "external_replication_score": 0.5913154298597432
+    },
+    {
+      "gene": "PDE1C",
+      "mouse_gene": "Pde1c",
+      "rank": 93,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.15744951847621563,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.5902146629333509
+    },
+    {
+      "gene": "NPAS2",
+      "mouse_gene": "Npas2",
+      "rank": 351,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.1562038286684906,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.5893426800679434
+    },
+    {
+      "gene": "PARM1",
+      "mouse_gene": "Parm1",
+      "rank": 158,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.13372238878800305,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.5886056721516022
+    },
+    {
+      "gene": "ASIC2",
+      "mouse_gene": "Asic2",
+      "rank": 400,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.13270940916670718,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.587896586416695
+    },
+    {
+      "gene": "HS3ST4",
+      "mouse_gene": "Hs3st4",
+      "rank": 463,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.12821317109972874,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.5872492197698101
+    },
+    {
+      "gene": "SOX5",
+      "mouse_gene": "Sox5",
+      "rank": 97,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.2342443156536047,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.5839710209575233
+    },
+    {
+      "gene": "KIF26B",
+      "mouse_gene": "Kif26b",
+      "rank": 272,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.08995667603617942,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.5829696732253257
+    },
+    {
+      "gene": "PLXNA4",
+      "mouse_gene": "Plxna4",
+      "rank": 112,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.12447653732703208,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.5821335761289225
+    },
+    {
+      "gene": "TMEM108",
+      "mouse_gene": "Tmem108",
+      "rank": 270,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.172305516499635,
+      "trait_fingerprint_spearman": 0.4285714285714286,
+      "external_replication_score": 0.5813281472640303
+    },
+    {
+      "gene": "CACNA1A",
+      "mouse_gene": "Cacna1a",
+      "rank": 23,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.1199487064999137,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.5789640945499396
+    },
+    {
+      "gene": "THSD7A",
+      "mouse_gene": "Thsd7a",
+      "rank": 301,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.11678861706963062,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.5767520319487414
+    },
+    {
+      "gene": "PRKG1",
+      "mouse_gene": "Prkg1",
+      "rank": 170,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.1361711678549132,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.5753198174984393
+    },
+    {
+      "gene": "MYO5A",
+      "mouse_gene": "Myo5a",
+      "rank": 402,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.053311837639473315,
+      "trait_fingerprint_spearman": 1.0,
+      "external_replication_score": 0.5748182863476314
+    },
+    {
+      "gene": "TENM2",
+      "mouse_gene": "Tenm2",
+      "rank": 62,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.11010409524214824,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.5745728666695038
+    },
+    {
+      "gene": "CSMD3",
+      "mouse_gene": "Csmd3",
+      "rank": 10,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.1030049539555253,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.5721034677688678
+    },
+    {
+      "gene": "BCL11B",
+      "mouse_gene": "Bcl11b",
+      "rank": 236,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.10200223580141292,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.571401565060989
+    },
+    {
+      "gene": "CCSER1",
+      "mouse_gene": "Ccser1",
+      "rank": 435,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.0599655783308293,
+      "trait_fingerprint_spearman": 0.7714285714285715,
+      "external_replication_score": 0.5712616191172948
+    },
+    {
+      "gene": "TOX2",
+      "mouse_gene": "Tox2",
+      "rank": 219,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.10065827927691776,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.5704607954938424
+    },
+    {
+      "gene": "HSPA12A",
+      "mouse_gene": "Hspa12a",
+      "rank": 283,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.10670799686218103,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.5696955978035267
+    },
+    {
+      "gene": "WNK2",
+      "mouse_gene": "Wnk2",
+      "rank": 344,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.10145516572718696,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.5685186160090309
+    },
+    {
+      "gene": "TRPM2",
+      "mouse_gene": "Trpm2",
+      "rank": 102,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.12987949138524132,
+      "trait_fingerprint_spearman": 0.8857142857142858,
+      "external_replication_score": 0.5680585011125261
+    },
+    {
+      "gene": "SRGAP3",
+      "mouse_gene": "Srgap3",
+      "rank": 347,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.09550794007135825,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.5668555580499508
+    },
+    {
+      "gene": "PTPRO",
+      "mouse_gene": "Ptpro",
+      "rank": 156,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.09848727547164751,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.5664410928301533
+    },
+    {
+      "gene": "ADAMTS17",
+      "mouse_gene": "Adamts17",
+      "rank": 215,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.1018064154825843,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.5662644908378089
+    },
+    {
+      "gene": "BSN",
+      "mouse_gene": "Bsn",
+      "rank": 454,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.09792486691641392,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.5660474068414898
+    },
+    {
+      "gene": "CAMTA1",
+      "mouse_gene": "Camta1",
+      "rank": 76,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.08609888604265811,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.5602692202298607
+    },
+    {
+      "gene": "RIMBP2",
+      "mouse_gene": "Rimbp2",
+      "rank": 69,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.1674577446968161,
+      "trait_fingerprint_spearman": 0.7142857142857143,
+      "external_replication_score": 0.5600775641449142
+    },
+    {
+      "gene": "NRXN1",
+      "mouse_gene": "Nrxn1",
+      "rank": 6,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.1669962722347087,
+      "trait_fingerprint_spearman": 0.7142857142857143,
+      "external_replication_score": 0.559754533421439
+    },
+    {
+      "gene": "ABCC8",
+      "mouse_gene": "Abcc8",
+      "rank": 280,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.1242468346934611,
+      "trait_fingerprint_spearman": 0.9999999999999999,
+      "external_replication_score": 0.5569727842854227
+    },
+    {
+      "gene": "KCNC1",
+      "mouse_gene": "Kcnc1",
+      "rank": 154,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.19470693848769716,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.5562948569413879
+    },
+    {
+      "gene": "SYTL2",
+      "mouse_gene": "Sytl2",
+      "rank": 306,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.19284656247064694,
+      "trait_fingerprint_spearman": 0.3,
+      "external_replication_score": 0.5549925937294529
+    },
+    {
+      "gene": "ITPK1",
+      "mouse_gene": "Itpk1",
+      "rank": 472,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.10673199975891987,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.554712399831244
+    },
+    {
+      "gene": "CIT",
+      "mouse_gene": "Cit",
+      "rank": 201,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.06303481105355516,
+      "trait_fingerprint_spearman": 0.3,
+      "external_replication_score": 0.5541243677374886
+    },
+    {
+      "gene": "KIF5C",
+      "mouse_gene": "Kif5c",
+      "rank": 363,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.07611972938770381,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.5532838105713926
+    },
+    {
+      "gene": "COL19A1",
+      "mouse_gene": "Col19a1",
+      "rank": 27,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.10322221479549232,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.5522555503568447
+    },
+    {
+      "gene": "EPHB6",
+      "mouse_gene": "Ephb6",
+      "rank": 99,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.10294348472610024,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.5520604393082702
+    },
+    {
+      "gene": "MMP16",
+      "mouse_gene": "Mmp16",
+      "rank": 240,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.07779212660909424,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.551954488626366
+    },
+    {
+      "gene": "PCLO",
+      "mouse_gene": "Pclo",
+      "rank": 149,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.08634125236578026,
+      "trait_fingerprint_spearman": 0.942857142857143,
+      "external_replication_score": 0.5490103052274748
+    },
+    {
+      "gene": "NRG3",
+      "mouse_gene": "Nrg3",
+      "rank": 358,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.06927028420453232,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.5484891989431726
+    },
+    {
+      "gene": "LRRTM3",
+      "mouse_gene": "Lrrtm3",
+      "rank": 391,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.11185516472551751,
+      "trait_fingerprint_spearman": 0.09999999999999999,
+      "external_replication_score": 0.5482986153078623
+    },
+    {
+      "gene": "KCNT2",
+      "mouse_gene": "Kcnt2",
+      "rank": 7,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.15059511590968513,
+      "trait_fingerprint_spearman": 0.7142857142857143,
+      "external_replication_score": 0.5482737239939225
+    },
+    {
+      "gene": "PTPRR",
+      "mouse_gene": "Ptprr",
+      "rank": 392,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.09737909511096686,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.5481653665776769
+    },
+    {
+      "gene": "SIPA1L1",
+      "mouse_gene": "Sipa1l1",
+      "rank": 247,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.14018035179978522,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.5481262462598496
+    },
+    {
+      "gene": "SYNJ2",
+      "mouse_gene": "Synj2",
+      "rank": 260,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.13899798741011876,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.5472985911870831
+    },
+    {
+      "gene": "CDKL5",
+      "mouse_gene": "Cdkl5",
+      "rank": 334,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.09079439829271112,
+      "trait_fingerprint_spearman": 0.5428571428571429,
+      "external_replication_score": 0.5471275073763264
+    },
+    {
+      "gene": "NFIB",
+      "mouse_gene": "Nfib",
+      "rank": 373,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.18100229798801648,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.5442016085916115
+    },
+    {
+      "gene": "TENM1",
+      "mouse_gene": "Tenm1",
+      "rank": 167,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.0768865927056245,
+      "trait_fingerprint_spearman": 0.19999999999999998,
+      "external_replication_score": 0.5438206148939372
+    },
+    {
+      "gene": "LIMCH1",
+      "mouse_gene": "Limch1",
+      "rank": 388,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.132875979667534,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.5430131857672738
+    },
+    {
+      "gene": "HIVEP2",
+      "mouse_gene": "Hivep2",
+      "rank": 211,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.11011577507092533,
+      "trait_fingerprint_spearman": 0.8285714285714287,
+      "external_replication_score": 0.5427953282639335
+    },
+    {
+      "gene": "RGS6",
+      "mouse_gene": "Rgs6",
+      "rank": 290,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.15679177326734645,
+      "trait_fingerprint_spearman": 0.6571428571428573,
+      "external_replication_score": 0.5411828127157139
+    },
+    {
+      "gene": "TLE4",
+      "mouse_gene": "Tle4",
+      "rank": 241,
+      "traits_evaluated": 3,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.12843701153741363,
+      "trait_fingerprint_spearman": NaN,
+      "external_replication_score": 0.5399059080761895
+    },
+    {
+      "gene": "FUT9",
+      "mouse_gene": "Fut9",
+      "rank": 263,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.08519632911065822,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.5396374303774608
+    },
+    {
+      "gene": "ATXN1",
+      "mouse_gene": "Atxn1",
+      "rank": 429,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.10484549577950752,
+      "trait_fingerprint_spearman": 0.8285714285714287,
+      "external_replication_score": 0.539106132759941
+    },
+    {
+      "gene": "CYFIP2",
+      "mouse_gene": "Cyfip2",
+      "rank": 417,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.11682997177423597,
+      "trait_fingerprint_spearman": 0.7714285714285715,
+      "external_replication_score": 0.5360666945276795
+    },
+    {
+      "gene": "ADCY1",
+      "mouse_gene": "Adcy1",
+      "rank": 100,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.13153226267288473,
+      "trait_fingerprint_spearman": 0.7142857142857143,
+      "external_replication_score": 0.5349297267281622
+    },
+    {
+      "gene": "GRM5",
+      "mouse_gene": "Grm5",
+      "rank": 129,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.1311227356866482,
+      "trait_fingerprint_spearman": 0.7142857142857143,
+      "external_replication_score": 0.5346430578377966
+    },
+    {
+      "gene": "SLC24A3",
+      "mouse_gene": "Slc24a3",
+      "rank": 174,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.15359981894008842,
+      "trait_fingerprint_spearman": 0.2571428571428572,
+      "external_replication_score": 0.5339484446866334
+    },
+    {
+      "gene": "THSD7B",
+      "mouse_gene": "Thsd7b",
+      "rank": 61,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.10271383018768547,
+      "trait_fingerprint_spearman": 0.49999999999999994,
+      "external_replication_score": 0.5318996811313799
+    },
+    {
+      "gene": "KCNAB1",
+      "mouse_gene": "Kcnab1",
+      "rank": 367,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.12651772938131642,
+      "trait_fingerprint_spearman": 0.7142857142857143,
+      "external_replication_score": 0.5314195534240643
+    },
+    {
+      "gene": "GRIK1",
+      "mouse_gene": "Grik1",
+      "rank": 474,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.15188475376610763,
+      "trait_fingerprint_spearman": 1.0,
+      "external_replication_score": 0.5313193276362753
+    },
+    {
+      "gene": "RUNX1T1",
+      "mouse_gene": "Runx1t1",
+      "rank": 47,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.11589510687368408,
+      "trait_fingerprint_spearman": 0.3714285714285715,
+      "external_replication_score": 0.5304122890972932
+    },
+    {
+      "gene": "GABBR2",
+      "mouse_gene": "Gabbr2",
+      "rank": 160,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.09690371196978957,
+      "trait_fingerprint_spearman": 0.4285714285714286,
+      "external_replication_score": 0.5285468840931384
+    },
+    {
+      "gene": "MYRIP",
+      "mouse_gene": "Myrip",
+      "rank": 345,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.09788649563478762,
+      "trait_fingerprint_spearman": 0.49999999999999994,
+      "external_replication_score": 0.5285205469443514
+    },
+    {
+      "gene": "TTBK2",
+      "mouse_gene": "Ttbk2",
+      "rank": 450,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.043750700359330735,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.5281254902515315
+    },
+    {
+      "gene": "BDP1",
+      "mouse_gene": "Bdp1",
+      "rank": 319,
+      "traits_evaluated": 3,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.1115357711951495,
+      "trait_fingerprint_spearman": NaN,
+      "external_replication_score": 0.5280750398366046
+    },
+    {
+      "gene": "SORL1",
+      "mouse_gene": "Sorl1",
+      "rank": 395,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.1047390132757845,
+      "trait_fingerprint_spearman": 0.7714285714285715,
+      "external_replication_score": 0.5276030235787634
+    },
+    {
+      "gene": "DAAM1",
+      "mouse_gene": "Daam1",
+      "rank": 496,
+      "traits_evaluated": 3,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.11055982997278953,
+      "trait_fingerprint_spearman": NaN,
+      "external_replication_score": 0.5273918809809527
+    },
+    {
+      "gene": "NAV3",
+      "mouse_gene": "Nav3",
+      "rank": 103,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.16762031414485906,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.5273342199014014
+    },
+    {
+      "gene": "PRICKLE2",
+      "mouse_gene": "Prickle2",
+      "rank": 190,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.15209637422244662,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.5264674619557126
+    },
+    {
+      "gene": "SCN8A",
+      "mouse_gene": "Scn8a",
+      "rank": 49,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.11847443103383247,
+      "trait_fingerprint_spearman": 0.7142857142857143,
+      "external_replication_score": 0.5257892445808255
+    },
+    {
+      "gene": "DGKD",
+      "mouse_gene": "Dgkd",
+      "rank": 494,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.04861483208271522,
+      "trait_fingerprint_spearman": 0.19999999999999998,
+      "external_replication_score": 0.5240303824579007
+    },
+    {
+      "gene": "GABRG2",
+      "mouse_gene": "Gabrg2",
+      "rank": 198,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.10629427030299021,
+      "trait_fingerprint_spearman": 0.3714285714285715,
+      "external_replication_score": 0.5236917034978075
+    },
+    {
+      "gene": "NTNG1",
+      "mouse_gene": "Ntng1",
+      "rank": 372,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.1466890403495965,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.5226823282447175
+    },
+    {
+      "gene": "GPR158",
+      "mouse_gene": "Gpr158",
+      "rank": 332,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.09939120273845578,
+      "trait_fingerprint_spearman": 0.8999999999999998,
+      "external_replication_score": 0.519573841916919
+    },
+    {
+      "gene": "MAP7D2",
+      "mouse_gene": "Map7d2",
+      "rank": 420,
+      "traits_evaluated": 3,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.0992322599051788,
+      "trait_fingerprint_spearman": NaN,
+      "external_replication_score": 0.5194625819336252
+    },
+    {
+      "gene": "ZFYVE28",
+      "mouse_gene": "Zfyve28",
+      "rank": 354,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.15445764711499627,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.5181203529804974
+    },
+    {
+      "gene": "VPS13D",
+      "mouse_gene": "Vps13d",
+      "rank": 199,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.08509622234860284,
+      "trait_fingerprint_spearman": 0.6000000000000001,
+      "external_replication_score": 0.5170673556440221
+    },
+    {
+      "gene": "LUZP2",
+      "mouse_gene": "Luzp2",
+      "rank": 155,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.12074934286758372,
+      "trait_fingerprint_spearman": 0.6571428571428573,
+      "external_replication_score": 0.5159531114358801
+    },
+    {
+      "gene": "MEF2C",
+      "mouse_gene": "Mef2c",
+      "rank": 410,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.20198412508550798,
+      "trait_fingerprint_spearman": 0.3714285714285715,
+      "external_replication_score": 0.5156746018455699
+    },
+    {
+      "gene": "OXR1",
+      "mouse_gene": "Oxr1",
+      "rank": 300,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.11986087300853783,
+      "trait_fingerprint_spearman": 0.6571428571428573,
+      "external_replication_score": 0.5153311825345479
+    },
+    {
+      "gene": "SLC44A5",
+      "mouse_gene": "Slc44a5",
+      "rank": 206,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.14943727872517193,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.5146060951076203
+    },
+    {
+      "gene": "EYA4",
+      "mouse_gene": "Eya4",
+      "rank": 25,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.16571098256717987,
+      "trait_fingerprint_spearman": 0.48571428571428577,
+      "external_replication_score": 0.513140544939883
+    },
+    {
+      "gene": "EPHA3",
+      "mouse_gene": "Epha3",
+      "rank": 181,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.04633354442117904,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.5124334810948253
+    },
+    {
+      "gene": "KCNQ5",
+      "mouse_gene": "Kcnq5",
+      "rank": 72,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.1482749123409989,
+      "trait_fingerprint_spearman": 0.5428571428571429,
+      "external_replication_score": 0.5123638672101278
+    },
+    {
+      "gene": "PCDH9",
+      "mouse_gene": "Pcdh9",
+      "rank": 136,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.13408737911347968,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.5113611653794358
+    },
+    {
+      "gene": "PDZD2",
+      "mouse_gene": "Pdzd2",
+      "rank": 92,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.08846978349621633,
+      "trait_fingerprint_spearman": 0.3714285714285715,
+      "external_replication_score": 0.5112145627330658
+    },
+    {
+      "gene": "GRM7",
+      "mouse_gene": "Grm7",
+      "rank": 28,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.14645659909522654,
+      "trait_fingerprint_spearman": 0.5428571428571429,
+      "external_replication_score": 0.5110910479380872
+    },
+    {
+      "gene": "OSBPL6",
+      "mouse_gene": "Osbpl6",
+      "rank": 352,
+      "traits_evaluated": 3,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.08290598953123016,
+      "trait_fingerprint_spearman": NaN,
+      "external_replication_score": 0.5080341926718611
+    },
+    {
+      "gene": "SYT7",
+      "mouse_gene": "Syt7",
+      "rank": 486,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.12571731018442853,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.5080021171290999
+    },
+    {
+      "gene": "HECW2",
+      "mouse_gene": "Hecw2",
+      "rank": 468,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.11745463799400234,
+      "trait_fingerprint_spearman": 1.0,
+      "external_replication_score": 0.5072182465958017
+    },
+    {
+      "gene": "PLCB1",
+      "mouse_gene": "Plcb1",
+      "rank": 309,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.09527980955507673,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.5066958666885537
+    },
+    {
+      "gene": "OPCML",
+      "mouse_gene": "Opcml",
+      "rank": 202,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.1063850438387308,
+      "trait_fingerprint_spearman": 0.6571428571428573,
+      "external_replication_score": 0.505898102115683
+    },
+    {
+      "gene": "CACNA1B",
+      "mouse_gene": "Cacna1b",
+      "rank": 204,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.09413853039616471,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.5058969712773154
+    },
+    {
+      "gene": "RAPGEF4",
+      "mouse_gene": "Rapgef4",
+      "rank": 284,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.06329937525147092,
+      "trait_fingerprint_spearman": 0.49999999999999994,
+      "external_replication_score": 0.5043095626760297
+    },
+    {
+      "gene": "MYO16",
+      "mouse_gene": "Myo16",
+      "rank": 118,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.08959787324419898,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.5027185112709393
+    },
+    {
+      "gene": "MCTP1",
+      "mouse_gene": "Mctp1",
+      "rank": 293,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.089460584623973,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.5026224092367811
+    },
+    {
+      "gene": "TRHDE",
+      "mouse_gene": "Trhde",
+      "rank": 18,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.15023770321858318,
+      "trait_fingerprint_spearman": 0.48571428571428577,
+      "external_replication_score": 0.5023092493958654
+    },
+    {
+      "gene": "CNTN3",
+      "mouse_gene": "Cntn3",
+      "rank": 218,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.13159403233147643,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.5021158226320335
+    },
+    {
+      "gene": "FAT1",
+      "mouse_gene": "Fat1",
+      "rank": 289,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.07490111658747363,
+      "trait_fingerprint_spearman": 0.3714285714285715,
+      "external_replication_score": 0.5017164958969459
+    },
+    {
+      "gene": "SPHKAP",
+      "mouse_gene": "Sphkap",
+      "rank": 212,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.11843293880039168,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.5004030571602742
+    },
+    {
+      "gene": "PTPRN2",
+      "mouse_gene": "Ptprn2",
+      "rank": 398,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.08529494823863261,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.49970646376704286
+    },
+    {
+      "gene": "GAS7",
+      "mouse_gene": "Gas7",
+      "rank": 453,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.18467637280621746,
+      "trait_fingerprint_spearman": 0.49999999999999994,
+      "external_replication_score": 0.4992734609643522
+    },
+    {
+      "gene": "OSBPL1A",
+      "mouse_gene": "Osbpl1a",
+      "rank": 142,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.1769229554118071,
+      "trait_fingerprint_spearman": 0.3714285714285715,
+      "external_replication_score": 0.49813178307397926
+    },
+    {
+      "gene": "NYAP2",
+      "mouse_gene": "Nyap2",
+      "rank": 139,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.16095852430672705,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.4976709670147089
+    },
+    {
+      "gene": "MACROD2",
+      "mouse_gene": "Macrod2",
+      "rank": 488,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.11375761912387053,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.4971303333867094
+    },
+    {
+      "gene": "MYH10",
+      "mouse_gene": "Myh10",
+      "rank": 200,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.10993020038740431,
+      "trait_fingerprint_spearman": 0.3,
+      "external_replication_score": 0.49695114027118303
+    },
+    {
+      "gene": "CHRM3",
+      "mouse_gene": "Chrm3",
+      "rank": 65,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.14242920871311918,
+      "trait_fingerprint_spearman": 0.48571428571428577,
+      "external_replication_score": 0.49684330324204057
+    },
+    {
+      "gene": "GARNL3",
+      "mouse_gene": "Garnl3",
+      "rank": 389,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.09971191029041643,
+      "trait_fingerprint_spearman": 0.2571428571428572,
+      "external_replication_score": 0.4962269086318629
+    },
+    {
+      "gene": "RASAL2",
+      "mouse_gene": "Rasal2",
+      "rank": 229,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.1228512169621278,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.4959958518734895
+    },
+    {
+      "gene": "TACC1",
+      "mouse_gene": "Tacc1",
+      "rank": 416,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.11690769420974709,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.49183538594682297
+    },
+    {
+      "gene": "ADAM23",
+      "mouse_gene": "Adam23",
+      "rank": 440,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.10148780343624304,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.48854146240537016
+    },
+    {
+      "gene": "SETBP1",
+      "mouse_gene": "Setbp1",
+      "rank": 195,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.06862297308855622,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.48803608116198943
+    },
+    {
+      "gene": "BRINP2",
+      "mouse_gene": "Brinp2",
+      "rank": 117,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.1396405946030882,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.48774841622216175
+    },
+    {
+      "gene": "PTK2B",
+      "mouse_gene": "Ptk2b",
+      "rank": 497,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.15546457933751512,
+      "trait_fingerprint_spearman": 0.19999999999999998,
+      "external_replication_score": 0.4863252055362606
+    },
+    {
+      "gene": "LRP1B",
+      "mouse_gene": "Lrp1b",
+      "rank": 111,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.051776432055363884,
+      "trait_fingerprint_spearman": 0.3714285714285715,
+      "external_replication_score": 0.485529216724469
+    },
+    {
+      "gene": "ANKRD26",
+      "mouse_gene": "Ankrd26",
+      "rank": 421,
+      "traits_evaluated": 3,
+      "sign_concordance_fraction": 1.0,
+      "mean_geometric_abs_strength": 0.049746447672122766,
+      "trait_fingerprint_spearman": NaN,
+      "external_replication_score": 0.48482251337048593
+    },
+    {
+      "gene": "PTPRG",
+      "mouse_gene": "Ptprg",
+      "rank": 448,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.059836371286678035,
+      "trait_fingerprint_spearman": 0.7142857142857143,
+      "external_replication_score": 0.48474260275781744
+    },
+    {
+      "gene": "CLSTN2",
+      "mouse_gene": "Clstn2",
+      "rank": 208,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.07539325549780056,
+      "trait_fingerprint_spearman": 0.6571428571428573,
+      "external_replication_score": 0.48420385027703183
+    },
+    {
+      "gene": "EPHA6",
+      "mouse_gene": "Epha6",
+      "rank": 340,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.07461881867402709,
+      "trait_fingerprint_spearman": 0.6571428571428573,
+      "external_replication_score": 0.4836617445003904
+    },
+    {
+      "gene": "SLC8A1",
+      "mouse_gene": "Slc8a1",
+      "rank": 220,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.8333333333333334,
+      "mean_geometric_abs_strength": 0.12789651260526305,
+      "trait_fingerprint_spearman": 0.08571428571428573,
+      "external_replication_score": 0.48167041596654125
+    },
+    {
+      "gene": "BRINP3",
+      "mouse_gene": "Brinp3",
+      "rank": 87,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.10153346151927159,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.4810734230634901
+    },
+    {
+      "gene": "FRAS1",
+      "mouse_gene": "Fras1",
+      "rank": 91,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.15742020524563838,
+      "trait_fingerprint_spearman": 0.49999999999999994,
+      "external_replication_score": 0.48019414367194685
+    },
+    {
+      "gene": "CADM2",
+      "mouse_gene": "Cadm2",
+      "rank": 253,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.1282343341948218,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.4797640339363753
+    },
+    {
+      "gene": "CACNB4",
+      "mouse_gene": "Cacnb4",
+      "rank": 478,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.18057218100930958,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.4764005267065167
+    },
+    {
+      "gene": "ANO3",
+      "mouse_gene": "Ano3",
+      "rank": 180,
+      "traits_evaluated": 3,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.2502179411418187,
+      "trait_fingerprint_spearman": NaN,
+      "external_replication_score": 0.4751525587992731
+    },
+    {
+      "gene": "PI4KA",
+      "mouse_gene": "Pi4ka",
+      "rank": 130,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.07844383406740936,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.47491068384718654
+    },
+    {
+      "gene": "LRFN2",
+      "mouse_gene": "Lrfn2",
+      "rank": 90,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.1484760712314018,
+      "trait_fingerprint_spearman": 0.49999999999999994,
+      "external_replication_score": 0.47393324986198127
+    },
+    {
+      "gene": "HDAC9",
+      "mouse_gene": "Hdac9",
+      "rank": 45,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.09070252400088122,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.4734917668006169
+    },
+    {
+      "gene": "TOX",
+      "mouse_gene": "Tox",
+      "rank": 411,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.12196877439743224,
+      "trait_fingerprint_spearman": 0.4285714285714286,
+      "external_replication_score": 0.4710924277924883
+    },
+    {
+      "gene": "PTPRT",
+      "mouse_gene": "Ptprt",
+      "rank": 213,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.12142368926110346,
+      "trait_fingerprint_spearman": 0.7999999999999999,
+      "external_replication_score": 0.46999658248277243
+    },
+    {
+      "gene": "BCL11A",
+      "mouse_gene": "Bcl11a",
+      "rank": 291,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.15337195922403926,
+      "trait_fingerprint_spearman": -0.09999999999999999,
+      "external_replication_score": 0.4673603714568275
+    },
+    {
+      "gene": "CACNA2D1",
+      "mouse_gene": "Cacna2d1",
+      "rank": 51,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.25,
+      "mean_geometric_abs_strength": 0.21913914082264616,
+      "trait_fingerprint_spearman": 1.0,
+      "external_replication_score": 0.46589739857585233
+    },
+    {
+      "gene": "COL25A1",
+      "mouse_gene": "Col25a1",
+      "rank": 227,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.11179675551674727,
+      "trait_fingerprint_spearman": 0.4285714285714286,
+      "external_replication_score": 0.4639720145760088
+    },
+    {
+      "gene": "XYLT1",
+      "mouse_gene": "Xylt1",
+      "rank": 152,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.8,
+      "mean_geometric_abs_strength": 0.1483345683221416,
+      "trait_fingerprint_spearman": -0.09999999999999999,
+      "external_replication_score": 0.4638341978254992
+    },
+    {
+      "gene": "MAP3K5",
+      "mouse_gene": "Map3k5",
+      "rank": 161,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.17936945883952435,
+      "trait_fingerprint_spearman": -0.19999999999999998,
+      "external_replication_score": 0.46305862118766705
+    },
+    {
+      "gene": "HTR2C",
+      "mouse_gene": "Htr2c",
+      "rank": 250,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.061018143152756756,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.46271270020692973
+    },
+    {
+      "gene": "PCDH15",
+      "mouse_gene": "Pcdh15",
+      "rank": 257,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.07285743749211568,
+      "trait_fingerprint_spearman": 0.7,
+      "external_replication_score": 0.461000206244481
+    },
+    {
+      "gene": "PLCL2",
+      "mouse_gene": "Plcl2",
+      "rank": 292,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.12138345878366685,
+      "trait_fingerprint_spearman": 0.3714285714285715,
+      "external_replication_score": 0.45925413543428106
+    },
+    {
+      "gene": "DYNC1H1",
+      "mouse_gene": "Dync1h1",
+      "rank": 386,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.03819643790480718,
+      "trait_fingerprint_spearman": 0.6571428571428573,
+      "external_replication_score": 0.4581660779619365
+    },
+    {
+      "gene": "EPHA4",
+      "mouse_gene": "Epha4",
+      "rank": 460,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.15256755803023733,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.45679729062116614
+    },
+    {
+      "gene": "CACNA1E",
+      "mouse_gene": "Cacna1e",
+      "rank": 15,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.18217102199152793,
+      "trait_fingerprint_spearman": 0.14285714285714288,
+      "external_replication_score": 0.4560911439654981
+    },
+    {
+      "gene": "PDZRN3",
+      "mouse_gene": "Pdzrn3",
+      "rank": 104,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.18612140582189837,
+      "trait_fingerprint_spearman": 0.48571428571428577,
+      "external_replication_score": 0.45242784121818597
+    },
+    {
+      "gene": "GRM3",
+      "mouse_gene": "Grm3",
+      "rank": 116,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.1571060968028458,
+      "trait_fingerprint_spearman": -0.19999999999999998,
+      "external_replication_score": 0.44747426776199206
+    },
+    {
+      "gene": "ARAP2",
+      "mouse_gene": "Arap2",
+      "rank": 95,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.16477216128542183,
+      "trait_fingerprint_spearman": 0.3,
+      "external_replication_score": 0.4453405128997953
+    },
+    {
+      "gene": "PPFIBP1",
+      "mouse_gene": "Ppfibp1",
+      "rank": 473,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.1318603522998843,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.44230224660991907
+    },
+    {
+      "gene": "DGKH",
+      "mouse_gene": "Dgkh",
+      "rank": 267,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.15250670635236765,
+      "trait_fingerprint_spearman": 0.3,
+      "external_replication_score": 0.4367546944466574
+    },
+    {
+      "gene": "SORBS2",
+      "mouse_gene": "Sorbs2",
+      "rank": 122,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.14770920522756775,
+      "trait_fingerprint_spearman": 0.3,
+      "external_replication_score": 0.43339644365929747
+    },
+    {
+      "gene": "ATP1A3",
+      "mouse_gene": "Atp1a3",
+      "rank": 274,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.14157456335692212,
+      "trait_fingerprint_spearman": 0.5428571428571429,
+      "external_replication_score": 0.4326736229212741
+    },
+    {
+      "gene": "PKD1",
+      "mouse_gene": "Pkd1",
+      "rank": 188,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.07326674194360973,
+      "trait_fingerprint_spearman": 0.7714285714285715,
+      "external_replication_score": 0.4305724336462411
+    },
+    {
+      "gene": "RYR3",
+      "mouse_gene": "Ryr3",
+      "rank": 48,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.11268860597786884,
+      "trait_fingerprint_spearman": 0.2571428571428572,
+      "external_replication_score": 0.4303105956130796
+    },
+    {
+      "gene": "NETO1",
+      "mouse_gene": "Neto1",
+      "rank": 56,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.11227975977253242,
+      "trait_fingerprint_spearman": 0.2571428571428572,
+      "external_replication_score": 0.4300244032693441
+    },
+    {
+      "gene": "DLC1",
+      "mouse_gene": "Dlc1",
+      "rank": 355,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.07445495635744916,
+      "trait_fingerprint_spearman": 0.19999999999999998,
+      "external_replication_score": 0.4296184694502144
+    },
+    {
+      "gene": "KIDINS220",
+      "mouse_gene": "Kidins220",
+      "rank": 394,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.04511312556285597,
+      "trait_fingerprint_spearman": 0.48571428571428577,
+      "external_replication_score": 0.4287220450368563
+    },
+    {
+      "gene": "PDE1A",
+      "mouse_gene": "Pde1a",
+      "rank": 144,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.1953955046677924,
+      "trait_fingerprint_spearman": 0.09999999999999999,
+      "external_replication_score": 0.42677685326745474
+    },
+    {
+      "gene": "SLC6A17",
+      "mouse_gene": "Slc6a17",
+      "rank": 387,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.06668090801708525,
+      "trait_fingerprint_spearman": 0.7714285714285715,
+      "external_replication_score": 0.42596234989767395
+    },
+    {
+      "gene": "UNC5C",
+      "mouse_gene": "Unc5c",
+      "rank": 469,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.12441410598384241,
+      "trait_fingerprint_spearman": 0.0,
+      "external_replication_score": 0.4245898741886897
+    },
+    {
+      "gene": "LRFN5",
+      "mouse_gene": "Lrfn5",
+      "rank": 256,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.1300876482590727,
+      "trait_fingerprint_spearman": 0.3,
+      "external_replication_score": 0.4210613537813509
+    },
+    {
+      "gene": "SLIT3",
+      "mouse_gene": "Slit3",
+      "rank": 74,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.15661558239114529,
+      "trait_fingerprint_spearman": 0.4285714285714286,
+      "external_replication_score": 0.42034519338808746
+    },
+    {
+      "gene": "STARD13",
+      "mouse_gene": "Stard13",
+      "rank": 407,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.05685136112511818,
+      "trait_fingerprint_spearman": 0.7714285714285715,
+      "external_replication_score": 0.419081667073297
+    },
+    {
+      "gene": "MAST3",
+      "mouse_gene": "Mast3",
+      "rank": 470,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.12176440716005482,
+      "trait_fingerprint_spearman": 0.5428571428571429,
+      "external_replication_score": 0.418806513583467
+    },
+    {
+      "gene": "ARHGAP20",
+      "mouse_gene": "Arhgap20",
+      "rank": 269,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.1262576234047041,
+      "trait_fingerprint_spearman": 0.3,
+      "external_replication_score": 0.41838033638329286
+    },
+    {
+      "gene": "GABRB1",
+      "mouse_gene": "Gabrb1",
+      "rank": 397,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.12288555209944949,
+      "trait_fingerprint_spearman": 0.3,
+      "external_replication_score": 0.41601988646961463
+    },
+    {
+      "gene": "CDK14",
+      "mouse_gene": "Cdk14",
+      "rank": 380,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.4,
+      "mean_geometric_abs_strength": 0.15790526808046337,
+      "trait_fingerprint_spearman": 0.6,
+      "external_replication_score": 0.41053368765632436
+    },
+    {
+      "gene": "STXBP5L",
+      "mouse_gene": "Stxbp5l",
+      "rank": 259,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.10094358281681377,
+      "trait_fingerprint_spearman": -0.19999999999999998,
+      "external_replication_score": 0.40816050797176967
+    },
+    {
+      "gene": "GDA",
+      "mouse_gene": "Gda",
+      "rank": 444,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.17084566183323327,
+      "trait_fingerprint_spearman": 0.3142857142857143,
+      "external_replication_score": 0.4074491061404062
+    },
+    {
+      "gene": "KCNB2",
+      "mouse_gene": "Kcnb2",
+      "rank": 124,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.13439713891137314,
+      "trait_fingerprint_spearman": 0.4285714285714286,
+      "external_replication_score": 0.40479228295224695
+    },
+    {
+      "gene": "SOX6",
+      "mouse_gene": "Sox6",
+      "rank": 89,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.16655169786656288,
+      "trait_fingerprint_spearman": 0.3142857142857143,
+      "external_replication_score": 0.4044433313637369
+    },
+    {
+      "gene": "FHOD3",
+      "mouse_gene": "Fhod3",
+      "rank": 234,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.1464734067227619,
+      "trait_fingerprint_spearman": 0.3714285714285715,
+      "external_replication_score": 0.40181709899164764
+    },
+    {
+      "gene": "CHSY3",
+      "mouse_gene": "Chsy3",
+      "rank": 308,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.25,
+      "mean_geometric_abs_strength": 0.12723671002566023,
+      "trait_fingerprint_spearman": 1.0,
+      "external_replication_score": 0.4015656970179622
+    },
+    {
+      "gene": "CADPS",
+      "mouse_gene": "Cadps",
+      "rank": 341,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.75,
+      "mean_geometric_abs_strength": 0.08251258216210793,
+      "trait_fingerprint_spearman": -0.39999999999999997,
+      "external_replication_score": 0.3952588075134756
+    },
+    {
+      "gene": "KALRN",
+      "mouse_gene": "Kalrn",
+      "rank": 439,
+      "traits_evaluated": 3,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.1355944598478265,
+      "trait_fingerprint_spearman": NaN,
+      "external_replication_score": 0.3949161218934785
+    },
+    {
+      "gene": "CNTN6",
+      "mouse_gene": "Cntn6",
+      "rank": 384,
+      "traits_evaluated": 3,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.13224918494565824,
+      "trait_fingerprint_spearman": NaN,
+      "external_replication_score": 0.39257442946196075
+    },
+    {
+      "gene": "MARK1",
+      "mouse_gene": "Mark1",
+      "rank": 465,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.1249696348555268,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.39247874439886876
+    },
+    {
+      "gene": "L3MBTL4",
+      "mouse_gene": "L3mbtl4",
+      "rank": 481,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.09545541512898,
+      "trait_fingerprint_spearman": 0.48571428571428577,
+      "external_replication_score": 0.3889616477331431
+    },
+    {
+      "gene": "ELAVL2",
+      "mouse_gene": "Elavl2",
+      "rank": 159,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.10625351827148548,
+      "trait_fingerprint_spearman": 0.19999999999999998,
+      "external_replication_score": 0.3843774627900398
+    },
+    {
+      "gene": "COL16A1",
+      "mouse_gene": "Col16a1",
+      "rank": 339,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.11283707470683918,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.38398595229478744
+    },
+    {
+      "gene": "DIP2A",
+      "mouse_gene": "Dip2a",
+      "rank": 205,
+      "traits_evaluated": 3,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.11844340567448357,
+      "trait_fingerprint_spearman": NaN,
+      "external_replication_score": 0.3829103839721385
+    },
+    {
+      "gene": "CACNA1C",
+      "mouse_gene": "Cacna1c",
+      "rank": 329,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.07506609697476249,
+      "trait_fingerprint_spearman": 0.3,
+      "external_replication_score": 0.38254626788233376
+    },
+    {
+      "gene": "ERBB4",
+      "mouse_gene": "Erbb4",
+      "rank": 24,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.22366107782758163,
+      "trait_fingerprint_spearman": -0.08571428571428573,
+      "external_replication_score": 0.3815627544793071
+    },
+    {
+      "gene": "CNTN4",
+      "mouse_gene": "Cntn4",
+      "rank": 203,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.07176573558058814,
+      "trait_fingerprint_spearman": 0.3,
+      "external_replication_score": 0.38023601490641173
+    },
+    {
+      "gene": "ALK",
+      "mouse_gene": "Alk",
+      "rank": 58,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.11009987584670071,
+      "trait_fingerprint_spearman": 0.3714285714285715,
+      "external_replication_score": 0.3763556273784048
+    },
+    {
+      "gene": "SDK1",
+      "mouse_gene": "Sdk1",
+      "rank": 106,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.08404543381000479,
+      "trait_fingerprint_spearman": 0.08571428571428573,
+      "external_replication_score": 0.3759746608098605
+    },
+    {
+      "gene": "ADRA1A",
+      "mouse_gene": "Adra1a",
+      "rank": 323,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.10516736537052528,
+      "trait_fingerprint_spearman": 0.3714285714285715,
+      "external_replication_score": 0.372902870045082
+    },
+    {
+      "gene": "SPOCK1",
+      "mouse_gene": "Spock1",
+      "rank": 436,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.10484344633927382,
+      "trait_fingerprint_spearman": 0.3714285714285715,
+      "external_replication_score": 0.37267612672320594
+    },
+    {
+      "gene": "WASF3",
+      "mouse_gene": "Wasf3",
+      "rank": 324,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.10480502195469017,
+      "trait_fingerprint_spearman": 0.3714285714285715,
+      "external_replication_score": 0.3726492296539974
+    },
+    {
+      "gene": "NIN",
+      "mouse_gene": "Nin",
+      "rank": 438,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.09225346505131439,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.3695774255359201
+    },
+    {
+      "gene": "ZBTB16",
+      "mouse_gene": "Zbtb16",
+      "rank": 238,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.07418211021301203,
+      "trait_fingerprint_spearman": 0.08571428571428573,
+      "external_replication_score": 0.36907033429196556
+    },
+    {
+      "gene": "PDZRN4",
+      "mouse_gene": "Pdzrn4",
+      "rank": 46,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.13132421209945863,
+      "trait_fingerprint_spearman": 0.2571428571428572,
+      "external_replication_score": 0.3683555198981925
+    },
+    {
+      "gene": "TMEM132B",
+      "mouse_gene": "Tmem132b",
+      "rank": 492,
+      "traits_evaluated": 3,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.09659781441830262,
+      "trait_fingerprint_spearman": NaN,
+      "external_replication_score": 0.3676184700928118
+    },
+    {
+      "gene": "CACNA1D",
+      "mouse_gene": "Cacna1d",
+      "rank": 459,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.07853274006953485,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.35997291804867443
+    },
+    {
+      "gene": "KIF1A",
+      "mouse_gene": "Kif1a",
+      "rank": 491,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.07641842837980756,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.3584928998658653
+    },
+    {
+      "gene": "XKR4",
+      "mouse_gene": "Xkr4",
+      "rank": 302,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.4,
+      "mean_geometric_abs_strength": 0.10846760612808562,
+      "trait_fingerprint_spearman": 0.49999999999999994,
+      "external_replication_score": 0.3559273242896599
+    },
+    {
+      "gene": "MAP1B",
+      "mouse_gene": "Map1b",
+      "rank": 349,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.05456552334464331,
+      "trait_fingerprint_spearman": 0.08571428571428573,
+      "external_replication_score": 0.35533872348410744
+    },
+    {
+      "gene": "NELL1",
+      "mouse_gene": "Nell1",
+      "rank": 60,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.1332324474190208,
+      "trait_fingerprint_spearman": 0.14285714285714288,
+      "external_replication_score": 0.34683414176474314
+    },
+    {
+      "gene": "PLD5",
+      "mouse_gene": "Pld5",
+      "rank": 336,
+      "traits_evaluated": 3,
+      "sign_concordance_fraction": 0.6666666666666666,
+      "mean_geometric_abs_strength": 0.0625003643235131,
+      "trait_fingerprint_spearman": NaN,
+      "external_replication_score": 0.3437502550264592
+    },
+    {
+      "gene": "PLCB4",
+      "mouse_gene": "Plcb4",
+      "rank": 431,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.0761501982722145,
+      "trait_fingerprint_spearman": 0.09999999999999999,
+      "external_replication_score": 0.3433051387905502
+    },
+    {
+      "gene": "SLC6A1",
+      "mouse_gene": "Slc6a1",
+      "rank": 193,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.4,
+      "mean_geometric_abs_strength": 0.2318629462992749,
+      "trait_fingerprint_spearman": -0.19999999999999998,
+      "external_replication_score": 0.3423040624094924
+    },
+    {
+      "gene": "GABRA2",
+      "mouse_gene": "Gabra2",
+      "rank": 197,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.16548316881657962,
+      "trait_fingerprint_spearman": -0.028571428571428574,
+      "external_replication_score": 0.34083821817160576
+    },
+    {
+      "gene": "PCSK2",
+      "mouse_gene": "Pcsk2",
+      "rank": 114,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.3333333333333333,
+      "mean_geometric_abs_strength": 0.19548906897249332,
+      "trait_fingerprint_spearman": 0.2571428571428572,
+      "external_replication_score": 0.3382709197093167
+    },
+    {
+      "gene": "SORCS1",
+      "mouse_gene": "Sorcs1",
+      "rank": 19,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.3333333333333333,
+      "mean_geometric_abs_strength": 0.160550342900487,
+      "trait_fingerprint_spearman": 0.3714285714285715,
+      "external_replication_score": 0.3366709543160552
+    },
+    {
+      "gene": "ASTN1",
+      "mouse_gene": "Astn1",
+      "rank": 500,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.04334729061518887,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.33534310343063223
+    },
+    {
+      "gene": "PCDH11X",
+      "mouse_gene": "Pcdh11x",
+      "rank": 77,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.08319845769832923,
+      "trait_fingerprint_spearman": 0.2571428571428572,
+      "external_replication_score": 0.3346674918174019
+    },
+    {
+      "gene": "GRM8",
+      "mouse_gene": "Grm8",
+      "rank": 175,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.154512812734952,
+      "trait_fingerprint_spearman": -0.19999999999999998,
+      "external_replication_score": 0.3331589689144664
+    },
+    {
+      "gene": "KCNB1",
+      "mouse_gene": "Kcnb1",
+      "rank": 335,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.1128430182283741,
+      "trait_fingerprint_spearman": 0.14285714285714288,
+      "external_replication_score": 0.33256154133129046
+    },
+    {
+      "gene": "GAD1",
+      "mouse_gene": "Gad1",
+      "rank": 366,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.4,
+      "mean_geometric_abs_strength": 0.2124428223077015,
+      "trait_fingerprint_spearman": -0.7999999999999999,
+      "external_replication_score": 0.32870997561539106
+    },
+    {
+      "gene": "CDH22",
+      "mouse_gene": "Cdh22",
+      "rank": 393,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.4,
+      "mean_geometric_abs_strength": 0.12601630716106982,
+      "trait_fingerprint_spearman": 0.3,
+      "external_replication_score": 0.3282114150127489
+    },
+    {
+      "gene": "SV2A",
+      "mouse_gene": "Sv2a",
+      "rank": 480,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.4,
+      "mean_geometric_abs_strength": 0.12520759151481436,
+      "trait_fingerprint_spearman": 0.3,
+      "external_replication_score": 0.32764531406037006
+    },
+    {
+      "gene": "BAIAP2",
+      "mouse_gene": "Baiap2",
+      "rank": 452,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.4,
+      "mean_geometric_abs_strength": 0.19955885836330087,
+      "trait_fingerprint_spearman": -0.19999999999999998,
+      "external_replication_score": 0.31969120085431063
+    },
+    {
+      "gene": "KCNC2",
+      "mouse_gene": "Kcnc2",
+      "rank": 165,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.25,
+      "mean_geometric_abs_strength": 0.18077405798771568,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.319041840591401
+    },
+    {
+      "gene": "RAPGEF2",
+      "mouse_gene": "Rapgef2",
+      "rank": 418,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.05572546248395524,
+      "trait_fingerprint_spearman": 0.2571428571428572,
+      "external_replication_score": 0.3154363951673401
+    },
+    {
+      "gene": "KHDRBS2",
+      "mouse_gene": "Khdrbs2",
+      "rank": 277,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.3333333333333333,
+      "mean_geometric_abs_strength": 0.15853738553387603,
+      "trait_fingerprint_spearman": 0.2571428571428572,
+      "external_replication_score": 0.3124047413022846
+    },
+    {
+      "gene": "DOCK3",
+      "mouse_gene": "Dock3",
+      "rank": 261,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.4,
+      "mean_geometric_abs_strength": 0.07157317875943178,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.31010122513160226
+    },
+    {
+      "gene": "APBA1",
+      "mouse_gene": "Apba1",
+      "rank": 314,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.05563313361179706,
+      "trait_fingerprint_spearman": 0.0,
+      "external_replication_score": 0.30894319352825794
+    },
+    {
+      "gene": "TLN2",
+      "mouse_gene": "Tln2",
+      "rank": 404,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.4,
+      "mean_geometric_abs_strength": 0.09471209134076745,
+      "trait_fingerprint_spearman": 0.3,
+      "external_replication_score": 0.3062984639385372
+    },
+    {
+      "gene": "CDH10",
+      "mouse_gene": "Cdh10",
+      "rank": 357,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.11587419971517736,
+      "trait_fingerprint_spearman": 0.0,
+      "external_replication_score": 0.3061119398006241
+    },
+    {
+      "gene": "CACNG3",
+      "mouse_gene": "Cacng3",
+      "rank": 249,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.3333333333333333,
+      "mean_geometric_abs_strength": 0.17605973509451434,
+      "trait_fingerprint_spearman": 0.14285714285714288,
+      "external_replication_score": 0.3018132431375886
+    },
+    {
+      "gene": "SORBS1",
+      "mouse_gene": "Sorbs1",
+      "rank": 307,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.1064490131900112,
+      "trait_fingerprint_spearman": -0.2571428571428572,
+      "external_replication_score": 0.2995143092330078
+    },
+    {
+      "gene": "COL24A1",
+      "mouse_gene": "Col24a1",
+      "rank": 330,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.6,
+      "mean_geometric_abs_strength": 0.04027545803906464,
+      "trait_fingerprint_spearman": -0.3,
+      "external_replication_score": 0.29819282062734526
+    },
+    {
+      "gene": "NR3C2",
+      "mouse_gene": "Nr3c2",
+      "rank": 419,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.4,
+      "mean_geometric_abs_strength": 0.07410397360378786,
+      "trait_fingerprint_spearman": 0.3,
+      "external_replication_score": 0.2918727815226515
+    },
+    {
+      "gene": "SERPINI1",
+      "mouse_gene": "Serpini1",
+      "rank": 299,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.4,
+      "mean_geometric_abs_strength": 0.13102316936812958,
+      "trait_fingerprint_spearman": 0.09999999999999999,
+      "external_replication_score": 0.29171621855769075
+    },
+    {
+      "gene": "ARPP21",
+      "mouse_gene": "Arpp21",
+      "rank": 86,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.2,
+      "mean_geometric_abs_strength": 0.19606244750323423,
+      "trait_fingerprint_spearman": 0.3,
+      "external_replication_score": 0.28724371325226394
+    },
+    {
+      "gene": "CCDC136",
+      "mouse_gene": "Ccdc136",
+      "rank": 172,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.3333333333333333,
+      "mean_geometric_abs_strength": 0.12191532922958133,
+      "trait_fingerprint_spearman": 0.2571428571428572,
+      "external_replication_score": 0.28676930188927835
+    },
+    {
+      "gene": "CDH12",
+      "mouse_gene": "Cdh12",
+      "rank": 178,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.4,
+      "mean_geometric_abs_strength": 0.1237144076385485,
+      "trait_fingerprint_spearman": 0.09999999999999999,
+      "external_replication_score": 0.286600085346984
+    },
+    {
+      "gene": "SLC9A9",
+      "mouse_gene": "Slc9a9",
+      "rank": 376,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.25,
+      "mean_geometric_abs_strength": 0.1322005720990436,
+      "trait_fingerprint_spearman": 0.39999999999999997,
+      "external_replication_score": 0.28504040046933055
+    },
+    {
+      "gene": "REV3L",
+      "mouse_gene": "Rev3l",
+      "rank": 484,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.08490543349607388,
+      "trait_fingerprint_spearman": -0.39999999999999997,
+      "external_replication_score": 0.2844338034472517
+    },
+    {
+      "gene": "OSBPL3",
+      "mouse_gene": "Osbpl3",
+      "rank": 131,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.5,
+      "mean_geometric_abs_strength": 0.0815127152011914,
+      "trait_fingerprint_spearman": -0.08571428571428573,
+      "external_replication_score": 0.282058900640834
+    },
+    {
+      "gene": "PDE4B",
+      "mouse_gene": "Pde4b",
+      "rank": 315,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.3333333333333333,
+      "mean_geometric_abs_strength": 0.15522415911333284,
+      "trait_fingerprint_spearman": 0.08571428571428573,
+      "external_replication_score": 0.2757997685221901
+    },
+    {
+      "gene": "ROBO2",
+      "mouse_gene": "Robo2",
+      "rank": 242,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.3333333333333333,
+      "mean_geometric_abs_strength": 0.05614676250823953,
+      "trait_fingerprint_spearman": 0.4285714285714286,
+      "external_replication_score": 0.2750170194700534
+    },
+    {
+      "gene": "ITGA8",
+      "mouse_gene": "Itga8",
+      "rank": 191,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.4,
+      "mean_geometric_abs_strength": 0.1349541974079465,
+      "trait_fingerprint_spearman": -0.19999999999999998,
+      "external_replication_score": 0.2744679381855626
+    },
+    {
+      "gene": "PKP2",
+      "mouse_gene": "Pkp2",
+      "rank": 342,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.4,
+      "mean_geometric_abs_strength": 0.10329188903778634,
+      "trait_fingerprint_spearman": 0.09999999999999999,
+      "external_replication_score": 0.27230432232645047
+    },
+    {
+      "gene": "HECW1",
+      "mouse_gene": "Hecw1",
+      "rank": 348,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.4,
+      "mean_geometric_abs_strength": 0.12754596202218116,
+      "trait_fingerprint_spearman": -0.6,
+      "external_replication_score": 0.26928217341552685
+    },
+    {
+      "gene": "SMARCA2",
+      "mouse_gene": "Smarca2",
+      "rank": 346,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.4,
+      "mean_geometric_abs_strength": 0.06908116623294554,
+      "trait_fingerprint_spearman": 0.19999999999999998,
+      "external_replication_score": 0.2683568163630619
+    },
+    {
+      "gene": "LRRC7",
+      "mouse_gene": "Lrrc7",
+      "rank": 67,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.3333333333333333,
+      "mean_geometric_abs_strength": 0.12525185019103038,
+      "trait_fingerprint_spearman": 0.14285714285714288,
+      "external_replication_score": 0.2662477237051498
+    },
+    {
+      "gene": "RALYL",
+      "mouse_gene": "Ralyl",
+      "rank": 321,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.3333333333333333,
+      "mean_geometric_abs_strength": 0.1653317330533969,
+      "trait_fingerprint_spearman": -0.2571428571428572,
+      "external_replication_score": 0.2657322131373778
+    },
+    {
+      "gene": "NXPH1",
+      "mouse_gene": "Nxph1",
+      "rank": 437,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.2,
+      "mean_geometric_abs_strength": 0.22197541309532548,
+      "trait_fingerprint_spearman": 0.09999999999999999,
+      "external_replication_score": 0.26538278916672786
+    },
+    {
+      "gene": "MLIP",
+      "mouse_gene": "Mlip",
+      "rank": 298,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.3333333333333333,
+      "mean_geometric_abs_strength": 0.12245678046296694,
+      "trait_fingerprint_spearman": 0.14285714285714288,
+      "external_replication_score": 0.2642911748955054
+    },
+    {
+      "gene": "BMPER",
+      "mouse_gene": "Bmper",
+      "rank": 82,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.4,
+      "mean_geometric_abs_strength": 0.11594373127094001,
+      "trait_fingerprint_spearman": -0.19999999999999998,
+      "external_replication_score": 0.261160611889658
+    },
+    {
+      "gene": "PTPRD",
+      "mouse_gene": "Ptprd",
+      "rank": 327,
+      "traits_evaluated": 3,
+      "sign_concordance_fraction": 0.3333333333333333,
+      "mean_geometric_abs_strength": 0.15396549051198008,
+      "trait_fingerprint_spearman": NaN,
+      "external_replication_score": 0.25777584335838605
+    },
+    {
+      "gene": "FREM1",
+      "mouse_gene": "Frem1",
+      "rank": 127,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.4,
+      "mean_geometric_abs_strength": 0.0755395816451292,
+      "trait_fingerprint_spearman": 0.09999999999999999,
+      "external_replication_score": 0.25287770715159047
+    },
+    {
+      "gene": "KCNH5",
+      "mouse_gene": "Kcnh5",
+      "rank": 264,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.3333333333333333,
+      "mean_geometric_abs_strength": 0.1428784486305906,
+      "trait_fingerprint_spearman": -0.48571428571428577,
+      "external_replication_score": 0.2500149140414134
+    },
+    {
+      "gene": "PLXNA2",
+      "mouse_gene": "Plxna2",
+      "rank": 294,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.3333333333333333,
+      "mean_geometric_abs_strength": 0.08017641623930673,
+      "trait_fingerprint_spearman": 0.2,
+      "external_replication_score": 0.2461234913675147
+    },
+    {
+      "gene": "TNIK",
+      "mouse_gene": "Tnik",
+      "rank": 318,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.4,
+      "mean_geometric_abs_strength": 0.08736641787637527,
+      "trait_fingerprint_spearman": -0.19999999999999998,
+      "external_replication_score": 0.24115649251346272
+    },
+    {
+      "gene": "SHANK2",
+      "mouse_gene": "Shank2",
+      "rank": 224,
+      "traits_evaluated": 3,
+      "sign_concordance_fraction": 0.3333333333333333,
+      "mean_geometric_abs_strength": 0.12643245855456126,
+      "trait_fingerprint_spearman": NaN,
+      "external_replication_score": 0.23850272098819286
+    },
+    {
+      "gene": "SPOCK3",
+      "mouse_gene": "Spock3",
+      "rank": 303,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.2,
+      "mean_geometric_abs_strength": 0.1262959849123347,
+      "trait_fingerprint_spearman": 0.3,
+      "external_replication_score": 0.23840718943863431
+    },
+    {
+      "gene": "KLF12",
+      "mouse_gene": "Klf12",
+      "rank": 408,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.2,
+      "mean_geometric_abs_strength": 0.12032061587615799,
+      "trait_fingerprint_spearman": 0.3,
+      "external_replication_score": 0.2342244311133106
+    },
+    {
+      "gene": "ERC2",
+      "mouse_gene": "Erc2",
+      "rank": 271,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.3333333333333333,
+      "mean_geometric_abs_strength": 0.11656230533575007,
+      "trait_fingerprint_spearman": -0.08571428571428573,
+      "external_replication_score": 0.23159361373502504
+    },
+    {
+      "gene": "GALNT18",
+      "mouse_gene": "Galnt18",
+      "rank": 399,
+      "traits_evaluated": 3,
+      "sign_concordance_fraction": 0.3333333333333333,
+      "mean_geometric_abs_strength": 0.10605825498914183,
+      "trait_fingerprint_spearman": NaN,
+      "external_replication_score": 0.22424077849239926
+    },
+    {
+      "gene": "FGF13",
+      "mouse_gene": "Fgf13",
+      "rank": 401,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.3333333333333333,
+      "mean_geometric_abs_strength": 0.09389825533923225,
+      "trait_fingerprint_spearman": 0.028571428571428574,
+      "external_replication_score": 0.2214430644517483
+    },
+    {
+      "gene": "DLG2",
+      "mouse_gene": "Dlg2",
+      "rank": 214,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.3333333333333333,
+      "mean_geometric_abs_strength": 0.09243804034189562,
+      "trait_fingerprint_spearman": 0.028571428571428574,
+      "external_replication_score": 0.22042091395361266
+    },
+    {
+      "gene": "CNTNAP2",
+      "mouse_gene": "Cntnap2",
+      "rank": 133,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.2,
+      "mean_geometric_abs_strength": 0.15640116090780537,
+      "trait_fingerprint_spearman": 0.09999999999999999,
+      "external_replication_score": 0.21948081263546373
+    },
+    {
+      "gene": "GHR",
+      "mouse_gene": "Ghr",
+      "rank": 409,
+      "traits_evaluated": 3,
+      "sign_concordance_fraction": 0.3333333333333333,
+      "mean_geometric_abs_strength": 0.09503201561730192,
+      "trait_fingerprint_spearman": NaN,
+      "external_replication_score": 0.21652241093211133
+    },
+    {
+      "gene": "ASTN2",
+      "mouse_gene": "Astn2",
+      "rank": 177,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.25,
+      "mean_geometric_abs_strength": 0.09126582990643002,
+      "trait_fingerprint_spearman": 0.19999999999999998,
+      "external_replication_score": 0.21638608093450104
+    },
+    {
+      "gene": "MGAT4C",
+      "mouse_gene": "Mgat4c",
+      "rank": 232,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.3333333333333333,
+      "mean_geometric_abs_strength": 0.09296732426214131,
+      "trait_fingerprint_spearman": -0.08571428571428573,
+      "external_replication_score": 0.2150771269834989
+    },
+    {
+      "gene": "PTCHD4",
+      "mouse_gene": "Ptchd4",
+      "rank": 447,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.3333333333333333,
+      "mean_geometric_abs_strength": 0.08436279715204183,
+      "trait_fingerprint_spearman": -0.5428571428571429,
+      "external_replication_score": 0.20905395800642929
+    },
+    {
+      "gene": "DNER",
+      "mouse_gene": "Dner",
+      "rank": 285,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.2,
+      "mean_geometric_abs_strength": 0.16869529418986623,
+      "trait_fingerprint_spearman": -0.7,
+      "external_replication_score": 0.20808670593290635
+    },
+    {
+      "gene": "FMN2",
+      "mouse_gene": "Fmn2",
+      "rank": 360,
+      "traits_evaluated": 3,
+      "sign_concordance_fraction": 0.3333333333333333,
+      "mean_geometric_abs_strength": 0.07714802829615641,
+      "trait_fingerprint_spearman": NaN,
+      "external_replication_score": 0.20400361980730947
+    },
+    {
+      "gene": "HIVEP3",
+      "mouse_gene": "Hivep3",
+      "rank": 422,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.3333333333333333,
+      "mean_geometric_abs_strength": 0.07135516914156433,
+      "trait_fingerprint_spearman": -0.3142857142857143,
+      "external_replication_score": 0.19994861839909503
+    },
+    {
+      "gene": "DSCAML1",
+      "mouse_gene": "Dscaml1",
+      "rank": 375,
+      "traits_evaluated": 3,
+      "sign_concordance_fraction": 0.3333333333333333,
+      "mean_geometric_abs_strength": 0.0710199604679641,
+      "trait_fingerprint_spearman": NaN,
+      "external_replication_score": 0.19971397232757487
+    },
+    {
+      "gene": "FAT3",
+      "mouse_gene": "Fat3",
+      "rank": 184,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.2,
+      "mean_geometric_abs_strength": 0.15133315036953426,
+      "trait_fingerprint_spearman": -0.39999999999999997,
+      "external_replication_score": 0.19593320525867397
+    },
+    {
+      "gene": "NF1",
+      "mouse_gene": "Nf1",
+      "rank": 317,
+      "traits_evaluated": 3,
+      "sign_concordance_fraction": 0.3333333333333333,
+      "mean_geometric_abs_strength": 0.06313609296099755,
+      "trait_fingerprint_spearman": NaN,
+      "external_replication_score": 0.19419526507269827
+    },
+    {
+      "gene": "DGKB",
+      "mouse_gene": "Dgkb",
+      "rank": 110,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.2,
+      "mean_geometric_abs_strength": 0.14462301321804186,
+      "trait_fingerprint_spearman": 0.0,
+      "external_replication_score": 0.1912361092526293
+    },
+    {
+      "gene": "PTPRM",
+      "mouse_gene": "Ptprm",
+      "rank": 59,
+      "traits_evaluated": 6,
+      "sign_concordance_fraction": 0.16666666666666666,
+      "mean_geometric_abs_strength": 0.1548989222967636,
+      "trait_fingerprint_spearman": 0.028571428571428574,
+      "external_replication_score": 0.18914353132202025
+    },
+    {
+      "gene": "PCDH7",
+      "mouse_gene": "Pcdh7",
+      "rank": 326,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.2,
+      "mean_geometric_abs_strength": 0.13184674270504865,
+      "trait_fingerprint_spearman": 0.0,
+      "external_replication_score": 0.18229271989353407
+    },
+    {
+      "gene": "CDH8",
+      "mouse_gene": "Cdh8",
+      "rank": 115,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.2,
+      "mean_geometric_abs_strength": 0.10122360123748446,
+      "trait_fingerprint_spearman": 0.09999999999999999,
+      "external_replication_score": 0.18085652086623913
+    },
+    {
+      "gene": "RYR2",
+      "mouse_gene": "Ryr2",
+      "rank": 123,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.2,
+      "mean_geometric_abs_strength": 0.1285765618946229,
+      "trait_fingerprint_spearman": -0.39999999999999997,
+      "external_replication_score": 0.18000359332623606
+    },
+    {
+      "gene": "DMD",
+      "mouse_gene": "Dmd",
+      "rank": 252,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.2,
+      "mean_geometric_abs_strength": 0.12710003070342898,
+      "trait_fingerprint_spearman": 0.0,
+      "external_replication_score": 0.1789700214924003
+    },
+    {
+      "gene": "CSMD1",
+      "mouse_gene": "Csmd1",
+      "rank": 228,
+      "traits_evaluated": 4,
+      "sign_concordance_fraction": 0.25,
+      "mean_geometric_abs_strength": 0.0859668333012067,
+      "trait_fingerprint_spearman": -1.0,
+      "external_replication_score": 0.17267678331084468
+    },
+    {
+      "gene": "CSMD2",
+      "mouse_gene": "Csmd2",
+      "rank": 466,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.2,
+      "mean_geometric_abs_strength": 0.10435101230989605,
+      "trait_fingerprint_spearman": 0.0,
+      "external_replication_score": 0.16304570861692724
+    },
+    {
+      "gene": "MAGI3",
+      "mouse_gene": "Magi3",
+      "rank": 239,
+      "traits_evaluated": 5,
+      "sign_concordance_fraction": 0.2,
+      "mean_geometric_abs_strength": 0.07159105380073065,
+      "trait_fingerprint_spearman": 0.0,
+      "external_replication_score": 0.14011373766051147
+    }
+  ],
+  "guardrail": "M1 replication is based only on semantically closest traits and gene-expression/electrical rank associations. It is not a gene perturbation test."
+}
