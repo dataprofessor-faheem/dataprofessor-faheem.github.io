@@ -541,3 +541,204 @@ document.getElementById("copy-platform-citation")?.addEventListener("click",asyn
   const citation="Khan MF, Ahmad K. NEURO-BEAM: Neuronal BioElectricity–Activity–Molecular Atlas. GDRN Network. Available at: https://www.gdrnetwork.org/neuro-beam/";
   try{await navigator.clipboard.writeText(citation);e.target.textContent="Citation copied";setTimeout(()=>e.target.textContent="Copy citation",1600);}catch(_){}
 });
+
+
+/* === NEURO-BEAM Top-500 Discovery Studio === */
+let nbTop500=null, nbCancerRows=[], nbBioRows=[], nbModelLib=null;
+let nbSelectedGene=null, nbLatestSim=null, nbGeneAnimPhase=0;
+
+function nbParseCSV(text){
+  const lines=text.trim().split(/\r?\n/); if(lines.length<2)return[];
+  function split(line){let a=[],c="",q=false;for(let i=0;i<line.length;i++){let ch=line[i];if(ch==='"'){if(q&&line[i+1]==='"'){c+='"';i++;}else q=!q;}else if(ch===','&&!q){a.push(c);c="";}else c+=ch;}a.push(c);return a;}
+  const h=split(lines[0]);
+  return lines.slice(1).filter(Boolean).map(line=>{const a=split(line),o={};h.forEach((k,i)=>o[k]=a[i]??"");return o;});
+}
+function nbNum(v){const n=Number(v);return Number.isFinite(n)?n:null;}
+function nbInterpolate(base,target,strength){
+  const out={};Object.keys(base).forEach(k=>{const b=Number(base[k]);const t=Number(target[k]??b);out[k]=b+(t-b)*strength;});return out;
+}
+function nbSimulate(params,currentPA){
+  const dt=.1,T=1000,n=Math.round(T/dt),Vtrace=new Float32Array(n),spikes=[];
+  let V=params.E_L_mV,w=0,h=.15,refr=0;
+  const tauh=120,Eh=params.E_h_mV??-35;
+  const stepStart=Math.max(30,100+(params.latency_bias_ms||0)),stepEnd=900;
+  for(let i=0;i<n;i++){
+    const t=i*dt;
+    const I=(t>=stepStart&&t<=stepEnd)?currentPA*(params.input_gain||1):0;
+    const hinf=1/(1+Math.exp((V+75)/5.5));
+    h+=(hinf-h)/tauh*dt;
+    const Ih=(params.g_h_relative||0)*80*h*((Eh-V)/40);
+    w+=(-w/(params.tau_w_ms||120))*dt;
+    if(refr>0){refr-=dt;V=params.V_reset_mV;}
+    else{
+      const drive=(params.R_MOhm||100)*(I-w+Ih)/1000;
+      V+=(-(V-params.E_L_mV)+drive)/(params.tau_m_ms||20)*dt;
+      if(V>=params.V_threshold_mV){
+        spikes.push(t);Vtrace[i]=30;V=params.V_reset_mV;
+        w+=(params.adaptation_b_pA||0);refr=params.refractory_ms||2;continue;
+      }
+    }
+    Vtrace[i]=V;
+  }
+  const active=spikes.filter(x=>x>=stepStart&&x<=stepEnd);
+  const isi=active.slice(1).map((x,i)=>x-active[i]);
+  let sum=0,min=Infinity,max=-Infinity;
+  for(const v of Vtrace){sum+=v;if(v<min)min=v;if(v>max)max=v;}
+  return {
+    dt,T,trace:Vtrace,spikes,stepStart,stepEnd,
+    stats:{
+      spikeCount:active.length,
+      firingRateHz:active.length/((stepEnd-stepStart)/1000),
+      firstSpikeLatencyMs:active.length?active[0]-stepStart:null,
+      meanISI:isi.length?isi.reduce((a,b)=>a+b,0)/isi.length:null,
+      meanVm:sum/Vtrace.length,minVm:min,maxVm:max
+    }
+  };
+}
+function nbGetGeneModel(gene){
+  return nbModelLib?.genes?.find(x=>x.gene===gene)||null;
+}
+function nbConditionParams(model){
+  const cond=document.getElementById("dynamic-condition")?.value||"baseline";
+  const strength=Number(document.getElementById("dynamic-strength")?.value||100)/100;
+  if(cond==="baseline")return {...model.baseline};
+  const target=cond==="high"?model.highExpressionLike:model.lowExpressionLike;
+  return nbInterpolate(model.baseline,target,strength);
+}
+function nbRenderTopTable(){
+  const root=document.getElementById("top500-table");if(!root||!nbTop500)return;
+  const rows=nbTop500.top500.slice(0,500);
+  let h='<table class="top500-table"><thead><tr><th>Rank / gene</th><th>DPS</th><th>BioE</th><th>Cancer</th><th>Best ρ</th></tr></thead><tbody>';
+  rows.forEach(r=>{
+    h+=`<tr data-topgene="${r.gene}" class="${r.gene===nbSelectedGene?'selected':''}"><td><b>#${r.rank} ${r.gene}</b><br><small>${r.mouse_gene||''}</small></td><td>${Number(r.discovery_priority_score).toFixed(3)}</td><td>${Number(r.bioelectric_score).toFixed(3)}</td><td>${Number(r.cancer_score).toFixed(3)}</td><td class="${Number(r.best_rho)>=0?'rho-pos':'rho-neg'}">${Number(r.best_rho)>=0?'+':''}${Number(r.best_rho).toFixed(3)}</td></tr>`;
+  });
+  h+='</tbody></table>';root.innerHTML=h;
+  root.querySelectorAll("[data-topgene]").forEach(tr=>tr.addEventListener("click",()=>nbSelectGene(tr.dataset.topgene)));
+}
+function nbRenderCancer(gene){
+  const rows=nbCancerRows.filter(r=>r.gene===gene);
+  const root=document.getElementById("top500-cancer-profile");if(!root)return;
+  const mx=Math.max(.01,...rows.map(r=>nbNum(r.mutation_percent)||0));
+  root.innerHTML=rows.sort((a,b)=>(nbNum(b.mutation_percent)||0)-(nbNum(a.mutation_percent)||0)).map(r=>{
+    const v=nbNum(r.mutation_percent)||0;
+    return `<div class="signature-bar-row"><span class="signature-bar-label" title="${r.study_name}">${r.cancer_type}</span><div class="signature-bar-track"><div class="signature-bar-fill" style="width:${(v/mx*100).toFixed(1)}%"></div></div><span class="signature-bar-value">${v.toFixed(2)}%</span></div>`;
+  }).join("");
+}
+function nbRenderFingerprint(gene){
+  const rows=nbBioRows.filter(r=>r.gene===gene);
+  const root=document.getElementById("top500-electrical-fingerprint");if(!root)return;
+  const mx=Math.max(.001,...rows.map(r=>Math.abs(nbNum(r.rho)||0)));
+  root.innerHTML=rows.sort((a,b)=>Math.abs(nbNum(b.rho)||0)-Math.abs(nbNum(a.rho)||0)).map(r=>{
+    const v=nbNum(r.rho)||0,pct=Math.min(50,Math.abs(v)/mx*50);
+    const style=v>=0?`left:50%;width:${pct}%`:`right:50%;width:${pct}%`;
+    return `<div class="fingerprint-row"><span class="fingerprint-label" title="${r.feature}">${r.feature.replaceAll("_"," ")}</span><div class="fingerprint-axis"><span class="fingerprint-seg ${v>=0?'pos':'neg'}" style="${style}"></span></div><span class="fingerprint-value ${v>=0?'rho-pos':'rho-neg'}">${v>=0?'+':''}${v.toFixed(3)}</span></div>`;
+  }).join("");
+}
+function nbDrawVoltage(baseSim,condSim){
+  const c=document.getElementById("gene-voltage-canvas");if(!c)return;const ctx=c.getContext("2d"),w=c.width,h=c.height;
+  ctx.clearRect(0,0,w,h);ctx.fillStyle="#07131c";ctx.fillRect(0,0,w,h);
+  ctx.strokeStyle="#173140";ctx.lineWidth=1;
+  for(let y=45;y<h-30;y+=55){ctx.beginPath();ctx.moveTo(55,y);ctx.lineTo(w-20,y);ctx.stroke();}
+  const minV=-90,maxV=35;
+  function yof(v){return 28+(maxV-v)/(maxV-minV)*(h-65)}
+  function draw(sim,color){
+    ctx.strokeStyle=color;ctx.lineWidth=2;ctx.beginPath();
+    const step=Math.max(1,Math.floor(sim.trace.length/(w-75)));
+    let px=0;
+    for(let i=0;i<sim.trace.length;i+=step){
+      const x=55+i/(sim.trace.length-1)*(w-75),y=yof(sim.trace[i]);
+      if(px++===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
+    }ctx.stroke();
+  }
+  draw(baseSim,"#9baeb9");draw(condSim,"#58dfff");
+  ctx.fillStyle="#7f98a7";ctx.font="11px system-ui";ctx.fillText("Vm (mV)",8,22);ctx.fillText("0",52,h-12);ctx.fillText("1000 ms",w-65,h-12);
+  const sx=55+baseSim.stepStart/baseSim.T*(w-75),ex=55+baseSim.stepEnd/baseSim.T*(w-75);
+  ctx.strokeStyle="rgba(89,229,178,.5)";ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(sx,h-22);ctx.lineTo(ex,h-22);ctx.stroke();
+}
+function nbRenderStats(baseSim,condSim){
+  const root=document.getElementById("dynamic-output-grid");if(!root)return;
+  const B=baseSim.stats,C=condSim.stats;
+  const f=(v,d=2)=>v==null?"NA":Number(v).toFixed(d);
+  const rows=[
+    ["Spike count",B.spikeCount,C.spikeCount],
+    ["Firing rate",f(B.firingRateHz)+" Hz",f(C.firingRateHz)+" Hz"],
+    ["First-spike latency",f(B.firstSpikeLatencyMs)+" ms",f(C.firstSpikeLatencyMs)+" ms"],
+    ["Mean ISI",f(B.meanISI)+" ms",f(C.meanISI)+" ms"],
+    ["Mean Vm",f(B.meanVm)+" mV",f(C.meanVm)+" mV"],
+    ["Minimum Vm",f(B.minVm)+" mV",f(C.minVm)+" mV"]
+  ];
+  root.innerHTML=rows.map(([k,b,c])=>`<div><span>${k}</span><b>${c}</b><small>baseline: ${b}</small></div>`).join("");
+}
+function nbRenderParams(model,params){
+  const root=document.getElementById("dynamic-parameter-table");if(!root)return;
+  const keys=["E_L_mV","V_threshold_mV","V_reset_mV","tau_m_ms","R_MOhm","adaptation_b_pA","g_h_relative","input_gain","latency_bias_ms","refractory_ms"];
+  let h='<table class="matrix-table"><thead><tr><th>Parameter</th><th>Baseline</th><th>Conditioned</th><th>Δ</th></tr></thead><tbody>';
+  keys.forEach(k=>{const b=Number(model.baseline[k]),v=Number(params[k]);h+=`<tr><td>${k}</td><td>${b.toFixed(3)}</td><td>${v.toFixed(3)}</td><td class="${v-b>=0?'rho-pos':'rho-neg'}">${v-b>=0?'+':''}${(v-b).toFixed(3)}</td></tr>`;});
+  h+='</tbody></table>';root.innerHTML=h;
+}
+function nbDrawNeuronAnim(){
+  const c=document.getElementById("gene-neuron-canvas");if(!c||!nbLatestSim){requestAnimationFrame(nbDrawNeuronAnim);return;}
+  const ctx=c.getContext("2d"),w=c.width,h=c.height;ctx.clearRect(0,0,w,h);ctx.fillStyle="#07131c";ctx.fillRect(0,0,w,h);
+  nbGeneAnimPhase=(nbGeneAnimPhase+3)%1000;
+  const sim=nbLatestSim.conditioned;
+  const near=sim.spikes.some(t=>Math.abs(t-nbGeneAnimPhase)<15);
+  const col=near?"#ffffff":"#58dfff",cx=w*.5,cy=h*.5;
+  const glow=ctx.createRadialGradient(cx,cy,5,cx,cy,near?120:70);glow.addColorStop(0,near?"rgba(255,255,255,.9)":"rgba(88,223,255,.6)");glow.addColorStop(1,"rgba(88,223,255,0)");ctx.fillStyle=glow;ctx.beginPath();ctx.arc(cx,cy,near?120:70,0,Math.PI*2);ctx.fill();
+  ctx.strokeStyle=col;ctx.fillStyle=col;ctx.lineWidth=3;ctx.lineCap="round";ctx.beginPath();ctx.arc(cx,cy,21,0,Math.PI*2);ctx.fill();
+  const br=[[-190,-85],[-190,60],[-100,-145],[155,-125],[190,-30],[165,105],[35,155],[-105,140]];
+  br.forEach(([dx,dy],i)=>{ctx.beginPath();ctx.moveTo(cx,cy);ctx.quadraticCurveTo(cx+dx*.5,cy+dy*.5,cx+dx,cy+dy);ctx.stroke();if(near||((nbGeneAnimPhase/30+i)%10<1)){ctx.beginPath();ctx.arc(cx+dx,cy+dy,5,0,Math.PI*2);ctx.fill();}});
+  ctx.fillStyle="#8da6b5";ctx.font="12px system-ui";ctx.fillText(`${nbSelectedGene||''} · t=${Math.round(nbGeneAnimPhase)} ms`,18,24);
+  requestAnimationFrame(nbDrawNeuronAnim);
+}
+function nbRunDynamic(){
+  if(!nbSelectedGene||!nbModelLib)return;
+  const model=nbGetGeneModel(nbSelectedGene);if(!model)return;
+  const strength=Number(document.getElementById("dynamic-strength").value)/100;
+  const cond=document.getElementById("dynamic-condition").value;
+  let params={...model.baseline};
+  if(cond!=="baseline"){
+    const target=cond==="high"?model.highExpressionLike:model.lowExpressionLike;
+    params=nbInterpolate(model.baseline,target,strength);
+  }
+  const current=Number(document.getElementById("dynamic-current").value);
+  const base=nbSimulate(model.baseline,current), conditioned=nbSimulate(params,current);
+  nbLatestSim={base,conditioned};
+  nbDrawVoltage(base,conditioned);nbRenderStats(base,conditioned);nbRenderParams(model,params);
+  document.getElementById("gene-sim-status").textContent=`${nbSelectedGene} · ${cond} · ${current} pA`;
+}
+function nbSelectGene(gene){
+  if(!nbTop500?.top500.some(r=>r.gene===gene))return;
+  nbSelectedGene=gene;document.getElementById("top500-gene-search").value=gene;
+  const r=nbTop500.top500.find(x=>x.gene===gene);
+  document.getElementById("disc-rank").textContent="#"+r.rank;
+  document.getElementById("disc-score").textContent=Number(r.discovery_priority_score).toFixed(3);
+  document.getElementById("disc-components").textContent=`cancer ${Number(r.cancer_score).toFixed(3)} · bioelectric ${Number(r.bioelectric_score).toFixed(3)}`;
+  document.getElementById("disc-best-trait").textContent=String(r.best_feature).replaceAll("_"," ");
+  document.getElementById("disc-best-rho").textContent=`ρ ${Number(r.best_rho)>=0?'+':''}${Number(r.best_rho).toFixed(3)} · q ${Number(r.best_q).toExponential(1)}`;
+  document.getElementById("disc-cancer-mean").textContent=Number(r.mean_mutation_percent).toFixed(2)+"%";
+  document.getElementById("disc-cancer-max").textContent=`max ${Number(r.max_mutation_percent).toFixed(2)}% · ${r.cohorts_with_mutation}/10 cohorts`;
+  document.getElementById("disc-sig-traits").textContent=`${r.significant_trait_count}/${r.n_traits_tested}`;
+  nbRenderTopTable();nbRenderCancer(gene);nbRenderFingerprint(gene);nbRunDynamic();
+}
+Promise.all([
+  fetch("data/top500_cancer_bioelectric_genes.json").then(r=>r.json()),
+  fetch("data/top500_cancer_matrix.csv").then(r=>r.text()).then(nbParseCSV),
+  fetch("data/top500_bioelectric_matrix.csv").then(r=>r.text()).then(nbParseCSV),
+  fetch("data/top500_dynamic_model_library.json").then(r=>r.json())
+]).then(([top,cancer,bio,models])=>{
+  nbTop500=top;nbCancerRows=cancer;nbBioRows=bio;nbModelLib=models;
+  const dl=document.getElementById("top500-gene-list");
+  dl.innerHTML=top.top500.map(r=>`<option value="${r.gene}">#${r.rank} · DPS ${Number(r.discovery_priority_score).toFixed(3)}</option>`).join("");
+  const search=document.getElementById("top500-gene-search");
+  search.addEventListener("change",()=>nbSelectGene(search.value.trim().toUpperCase()));
+  search.addEventListener("keydown",e=>{if(e.key==="Enter")nbSelectGene(search.value.trim().toUpperCase());});
+  document.getElementById("dynamic-condition").addEventListener("change",nbRunDynamic);
+  document.getElementById("dynamic-strength").addEventListener("input",e=>{document.getElementById("dynamic-strength-label").textContent=e.target.value+"%";nbRunDynamic();});
+  document.getElementById("dynamic-current").addEventListener("input",e=>{document.getElementById("dynamic-current-label").textContent=e.target.value+" pA";nbRunDynamic();});
+  nbRenderTopTable();
+  nbSelectGene(top.top500[0]?.gene||"SCN1A");
+  requestAnimationFrame(nbDrawNeuronAnim);
+}).catch(err=>{
+  console.error("Top500 Discovery Studio unavailable",err);
+  const el=document.getElementById("top500-table");if(el)el.innerHTML='<div class="data-note warning-note"><b>Discovery data unavailable:</b> the Top-500 build pipeline has not completed successfully.</div>';
+});
