@@ -43,7 +43,7 @@
       <div><strong>NEURO-BEAM</strong><span>Neuronal BioElectricity–Activity–Molecular Atlas</span></div>
     </div>
     <nav>
-      <a href="#atlas">Atlas</a><a href="#live-data">Live Data</a><a href="#discovery-engine">Discovery Engine</a><a href="#dynamic-neuron">Dynamic Neuron</a><a href="#stability">Stability</a><a href="#disease-explorer">Disease Explorer</a><a href="#platform-about">About</a><a href="#datasets">Datasets</a>
+      <a href="#atlas">Atlas</a><a href="#live-data">Live Data</a><a href="#discovery-engine">Discovery Engine</a><a href="#model-validation">Validation</a><a href="#dynamic-neuron">Dynamic Neuron</a><a href="#stability">Stability</a><a href="#disease-explorer">Disease Explorer</a><a href="#platform-about">About</a><a href="#datasets">Datasets</a>
       <a href="#signature-explorer">Signature Explorer</a><a href="#statistics">Statistics</a>
       
     </nav>
@@ -247,6 +247,32 @@
     </section>
 
     
+
+    <section class="section" id="model-validation">
+      <div class="section-head"><span>ML</span><div><h2>Predictive Generalization & Method Validation</h2><p>Leakage-safe subject-grouped prediction, independent motor-cortex transfer, and CBEF stability/ablation evidence.</p></div></div>
+      <div class="validation-summary-grid">
+        <article><span>Best internal model</span><b id="ml-best-model">—</b><small id="ml-best-r2">—</small></article>
+        <article><span>Mean held-out Spearman</span><b id="ml-internal-rho">—</b><small>5-fold subject-grouped CV</small></article>
+        <article><span>External M1 Spearman</span><b id="ml-external-rho">—</b><small>CBEF Top-500 Ridge</small></article>
+        <article><span>Best external trait</span><b id="ml-external-best">—</b><small id="ml-external-best-rho">—</small></article>
+      </div>
+      <div class="advanced-grid">
+        <article class="viz-card">
+          <div class="viz-title"><h3>Internal predictive benchmark</h3><span>mean across 18 electrical traits</span></div>
+          <div id="ml-model-bars" class="module-burden-chart"></div>
+        </article>
+        <article class="viz-card">
+          <div class="viz-title"><h3>Independent M1 transfer</h3><span>trait-wise Spearman correlation</span></div>
+          <div id="ml-external-bars" class="module-burden-chart"></div>
+        </article>
+        <article class="viz-card wide-card">
+          <div class="viz-title"><h3>CBEF robustness</h3><span>weights · cohort bootstrap · negative controls</span></div>
+          <div id="ml-cbef-stability" class="validation-stability-panel"><p class="micro-note">CBEF sensitivity results will populate automatically after the full-gene rerun completes.</p></div>
+        </article>
+      </div>
+      <div class="data-note"><b>Interpretation:</b> internal prediction demonstrates that transcriptomic variation contains information about electrical phenotypes. External motor-cortex transfer is trait-dependent and currently supports selective, not universal, cross-region generalization.</div>
+    </section>
+
     <section class="section" id="stability">
       <div class="section-head"><span>VAL</span><div><h2>State Stability & Biological Validation</h2><p>Bootstrap stability, alternative clustering support and blinded label-reveal analysis.</p></div></div>
       <div class="live-kpis validation-kpis">
@@ -619,5 +645,6 @@
 </footer>
   <script src="app.js"></script>
   <script src="discovery-engine.js"></script>
+  <script src="validation-dashboard.js"></script>
 </body>
 </html>
