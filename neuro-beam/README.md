@@ -23,3 +23,15 @@ NEURO-BEAM is a reproducible public-data research framework designed to discover
 - Association is not described as causal without perturbational evidence.
 
 Large raw neuroscience data are not committed to this repository. They remain at their authoritative public archives and are accessed programmatically or selectively streamed.
+
+
+### First verified data ingestion
+The external-validation M1 Patch-seq processed release is now ingested at metadata/feature level:
+- 1,329 metadata neurons
+- 1,328 matched electrophysiology neurons
+- 266 unique mice
+- 29 electrophysiological features
+- sex: 645 male, 684 female
+- major RNA families: Pvalb 289, Sst 272, IT 254, Vip 153, CT 106, Lamp5 91
+
+This cohort remains excluded from discovery tuning and is reserved for frozen-signature validation.
