@@ -22,10 +22,10 @@ ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer A
 gbm_tcga_pan_can_atlas_2018,"Glioblastoma Multiforme (TCGA, PanCancer Atlas)",Diffuse Glioma,DNA damage / chromatin,35.012594458438286,397
 lgg_tcga_pan_can_atlas_2018,"Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",Diffuse Glioma,DNA damage / chromatin,49.80544747081712,514
 brca_tcga_pan_can_atlas_2018,"Breast Invasive Carcinoma (TCGA, PanCancer Atlas)",Invasive Breast Carcinoma,DNA damage / chromatin,37.80487804878049,1066
-luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,DNA damage / chromatin,61.83745583038869,566
-coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,DNA damage / chromatin,71.34831460674157,534
+luad_tcga_pan_can_atlas_2018,"Lung Adenocarcinoma (TCGA, PanCancer Atlas)",Lung Adenocarcinoma,DNA damage / chromatin,62.19081272084806,566
+coadread_tcga_pan_can_atlas_2018,"Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",Colorectal Adenocarcinoma,DNA damage / chromatin,71.53558052434457,534
 paad_tcga_pan_can_atlas_2018,"Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",Pancreatic Adenocarcinoma,DNA damage / chromatin,65.36312849162012,179
-skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,DNA damage / chromatin,41.59090909090909,440
+skcm_tcga_pan_can_atlas_2018,"Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",Cutaneous Melanoma,DNA damage / chromatin,41.81818181818182,440
 prad_tcga_pan_can_atlas_2018,"Prostate Adenocarcinoma (TCGA, PanCancer Atlas)",Prostate Adenocarcinoma,DNA damage / chromatin,17.206477732793523,494
 ucec_tcga_pan_can_atlas_2018,"Uterine Corpus Endometrial Carcinoma (TCGA, PanCancer Atlas)",Endometrial Carcinoma,DNA damage / chromatin,59.57446808510638,517
 ov_tcga_pan_can_atlas_2018,"Ovarian Serous Cystadenocarcinoma (TCGA, PanCancer Atlas)",High-Grade Serous Ovarian Cancer,DNA damage / chromatin,72.08413001912047,523

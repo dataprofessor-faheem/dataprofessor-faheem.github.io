@@ -80,7 +80,7 @@
       "denominatorSource": "mutation-sequenced",
       "mutationSequencedDenominator": 397,
       "mutationEventsFetched": 620,
-      "mutationFetchOk": false
+      "mutationFetchOk": true
     },
     {
       "studyId": "lgg_tcga_pan_can_atlas_2018",
@@ -92,8 +92,8 @@
       "retrievalSampleListId": "lgg_tcga_pan_can_atlas_2018_all",
       "denominatorSource": "mutation-sequenced",
       "mutationSequencedDenominator": 514,
-      "mutationEventsFetched": 519,
-      "mutationFetchOk": false
+      "mutationEventsFetched": 520,
+      "mutationFetchOk": true
     },
     {
       "studyId": "brca_tcga_pan_can_atlas_2018",
@@ -106,7 +106,7 @@
       "denominatorSource": "mutation-sequenced",
       "mutationSequencedDenominator": 1066,
       "mutationEventsFetched": 1233,
-      "mutationFetchOk": false
+      "mutationFetchOk": true
     },
     {
       "studyId": "luad_tcga_pan_can_atlas_2018",
@@ -118,8 +118,8 @@
       "retrievalSampleListId": "luad_tcga_pan_can_atlas_2018_all",
       "denominatorSource": "mutation-sequenced",
       "mutationSequencedDenominator": 566,
-      "mutationEventsFetched": 1424,
-      "mutationFetchOk": false
+      "mutationEventsFetched": 1427,
+      "mutationFetchOk": true
     },
     {
       "studyId": "coadread_tcga_pan_can_atlas_2018",
@@ -131,8 +131,8 @@
       "retrievalSampleListId": "coadread_tcga_pan_can_atlas_2018_all",
       "denominatorSource": "mutation-sequenced",
       "mutationSequencedDenominator": 534,
-      "mutationEventsFetched": 1773,
-      "mutationFetchOk": false
+      "mutationEventsFetched": 1776,
+      "mutationFetchOk": true
     },
     {
       "studyId": "paad_tcga_pan_can_atlas_2018",
@@ -145,7 +145,7 @@
       "denominatorSource": "mutation-sequenced",
       "mutationSequencedDenominator": 179,
       "mutationEventsFetched": 341,
-      "mutationFetchOk": false
+      "mutationFetchOk": true
     },
     {
       "studyId": "skcm_tcga_pan_can_atlas_2018",
@@ -157,8 +157,8 @@
       "retrievalSampleListId": "skcm_tcga_pan_can_atlas_2018_all",
       "denominatorSource": "mutation-sequenced",
       "mutationSequencedDenominator": 440,
-      "mutationEventsFetched": 1729,
-      "mutationFetchOk": false
+      "mutationEventsFetched": 1731,
+      "mutationFetchOk": true
     },
     {
       "studyId": "prad_tcga_pan_can_atlas_2018",
@@ -170,8 +170,8 @@
       "retrievalSampleListId": "prad_tcga_pan_can_atlas_2018_all",
       "denominatorSource": "mutation-sequenced",
       "mutationSequencedDenominator": 494,
-      "mutationEventsFetched": 219,
-      "mutationFetchOk": false
+      "mutationEventsFetched": 220,
+      "mutationFetchOk": true
     },
     {
       "studyId": "ucec_tcga_pan_can_atlas_2018",
@@ -183,8 +183,8 @@
       "retrievalSampleListId": "ucec_tcga_pan_can_atlas_2018_all",
       "denominatorSource": "mutation-sequenced",
       "mutationSequencedDenominator": 517,
-      "mutationEventsFetched": 3566,
-      "mutationFetchOk": false
+      "mutationEventsFetched": 3568,
+      "mutationFetchOk": true
     },
     {
       "studyId": "ov_tcga_pan_can_atlas_2018",
@@ -196,8 +196,8 @@
       "retrievalSampleListId": "ov_tcga_pan_can_atlas_2018_all",
       "denominatorSource": "mutation-sequenced",
       "mutationSequencedDenominator": 523,
-      "mutationEventsFetched": 586,
-      "mutationFetchOk": false
+      "mutationEventsFetched": 587,
+      "mutationFetchOk": true
     }
   ],
   "geneByStudyPercent": {
@@ -418,16 +418,16 @@
       "ov_tcga_pan_can_atlas_2018": 0.0
     },
     "H2AFX": {
-      "gbm_tcga_pan_can_atlas_2018": null,
-      "lgg_tcga_pan_can_atlas_2018": null,
-      "brca_tcga_pan_can_atlas_2018": null,
-      "luad_tcga_pan_can_atlas_2018": null,
-      "coadread_tcga_pan_can_atlas_2018": null,
-      "paad_tcga_pan_can_atlas_2018": null,
-      "skcm_tcga_pan_can_atlas_2018": null,
-      "prad_tcga_pan_can_atlas_2018": null,
-      "ucec_tcga_pan_can_atlas_2018": null,
-      "ov_tcga_pan_can_atlas_2018": null
+      "gbm_tcga_pan_can_atlas_2018": 0.0,
+      "lgg_tcga_pan_can_atlas_2018": 0.19455252918287938,
+      "brca_tcga_pan_can_atlas_2018": 0.0,
+      "luad_tcga_pan_can_atlas_2018": 0.5300353356890459,
+      "coadread_tcga_pan_can_atlas_2018": 0.5617977528089888,
+      "paad_tcga_pan_can_atlas_2018": 0.0,
+      "skcm_tcga_pan_can_atlas_2018": 0.45454545454545453,
+      "prad_tcga_pan_can_atlas_2018": 0.20242914979757085,
+      "ucec_tcga_pan_can_atlas_2018": 0.38684719535783363,
+      "ov_tcga_pan_can_atlas_2018": 0.19120458891013384
     },
     "HCN1": {
       "gbm_tcga_pan_can_atlas_2018": 3.526448362720403,
@@ -912,16 +912,16 @@
       "ov_tcga_pan_can_atlas_2018": 0
     },
     "H2AFX": {
-      "gbm_tcga_pan_can_atlas_2018": null,
-      "lgg_tcga_pan_can_atlas_2018": null,
-      "brca_tcga_pan_can_atlas_2018": null,
-      "luad_tcga_pan_can_atlas_2018": null,
-      "coadread_tcga_pan_can_atlas_2018": null,
-      "paad_tcga_pan_can_atlas_2018": null,
-      "skcm_tcga_pan_can_atlas_2018": null,
-      "prad_tcga_pan_can_atlas_2018": null,
-      "ucec_tcga_pan_can_atlas_2018": null,
-      "ov_tcga_pan_can_atlas_2018": null
+      "gbm_tcga_pan_can_atlas_2018": 0,
+      "lgg_tcga_pan_can_atlas_2018": 1,
+      "brca_tcga_pan_can_atlas_2018": 0,
+      "luad_tcga_pan_can_atlas_2018": 3,
+      "coadread_tcga_pan_can_atlas_2018": 3,
+      "paad_tcga_pan_can_atlas_2018": 0,
+      "skcm_tcga_pan_can_atlas_2018": 2,
+      "prad_tcga_pan_can_atlas_2018": 1,
+      "ucec_tcga_pan_can_atlas_2018": 2,
+      "ov_tcga_pan_can_atlas_2018": 1
     },
     "HCN1": {
       "gbm_tcga_pan_can_atlas_2018": 15,
@@ -1217,10 +1217,10 @@
       "gbm_tcga_pan_can_atlas_2018": 35.012594458438286,
       "lgg_tcga_pan_can_atlas_2018": 49.80544747081712,
       "brca_tcga_pan_can_atlas_2018": 37.80487804878049,
-      "luad_tcga_pan_can_atlas_2018": 61.83745583038869,
-      "coadread_tcga_pan_can_atlas_2018": 71.34831460674157,
+      "luad_tcga_pan_can_atlas_2018": 62.19081272084806,
+      "coadread_tcga_pan_can_atlas_2018": 71.53558052434457,
       "paad_tcga_pan_can_atlas_2018": 65.36312849162012,
-      "skcm_tcga_pan_can_atlas_2018": 41.59090909090909,
+      "skcm_tcga_pan_can_atlas_2018": 41.81818181818182,
       "prad_tcga_pan_can_atlas_2018": 17.206477732793523,
       "ucec_tcga_pan_can_atlas_2018": 59.57446808510638,
       "ov_tcga_pan_can_atlas_2018": 72.08413001912047
@@ -1269,7 +1269,7 @@
       "Frame_Shift_Del": 20,
       "In_Frame_Del": 16,
       "Splice_Site": 16,
-      "Frame_Shift_Ins": 10,
+      "Frame_Shift_Ins": 11,
       "Splice_Region": 4,
       "Translation_Start_Site": 2
     },
@@ -1284,7 +1284,7 @@
       "In_Frame_Ins": 1
     },
     "luad_tcga_pan_can_atlas_2018": {
-      "Missense_Mutation": 1134,
+      "Missense_Mutation": 1137,
       "Nonsense_Mutation": 124,
       "Frame_Shift_Del": 51,
       "Splice_Site": 44,
@@ -1294,7 +1294,7 @@
       "In_Frame_Ins": 3
     },
     "coadread_tcga_pan_can_atlas_2018": {
-      "Missense_Mutation": 1450,
+      "Missense_Mutation": 1453,
       "Nonsense_Mutation": 127,
       "Frame_Shift_Del": 90,
       "Frame_Shift_Ins": 41,
@@ -1316,7 +1316,7 @@
       "In_Frame_Ins": 1
     },
     "skcm_tcga_pan_can_atlas_2018": {
-      "Missense_Mutation": 1513,
+      "Missense_Mutation": 1515,
       "Nonsense_Mutation": 117,
       "Splice_Region": 37,
       "Splice_Site": 34,
@@ -1327,7 +1327,7 @@
       "In_Frame_Ins": 1
     },
     "prad_tcga_pan_can_atlas_2018": {
-      "Missense_Mutation": 163,
+      "Missense_Mutation": 164,
       "Frame_Shift_Del": 26,
       "Splice_Site": 10,
       "Frame_Shift_Ins": 9,
@@ -1336,7 +1336,7 @@
       "Nonstop_Mutation": 1
     },
     "ucec_tcga_pan_can_atlas_2018": {
-      "Missense_Mutation": 2780,
+      "Missense_Mutation": 2782,
       "Nonsense_Mutation": 334,
       "Frame_Shift_Del": 206,
       "Frame_Shift_Ins": 101,
@@ -1348,7 +1348,7 @@
       "Translation_Start_Site": 1
     },
     "ov_tcga_pan_can_atlas_2018": {
-      "Missense_Mutation": 376,
+      "Missense_Mutation": 377,
       "Nonsense_Mutation": 59,
       "Frame_Shift_Del": 57,
       "Splice_Site": 40,
@@ -1683,10 +1683,10 @@
     {
       "gene": "H2AFX",
       "module": "DNA damage / chromatin",
-      "meanPercent": null,
-      "medianPercent": null,
-      "maxPercent": null,
-      "studiesWithMutation": 0
+      "meanPercent": 0.2521412006291907,
+      "medianPercent": 0.1984908394902251,
+      "maxPercent": 0.5617977528089888,
+      "studiesWithMutation": 7
     }
   ],
   "geneEntrezMap": {
@@ -1708,7 +1708,7 @@
     "EGR1": 1958,
     "FOS": 2353,
     "GPX4": 2879,
-    "H2AFX": null,
+    "H2AFX": 3014,
     "HCN1": 348980,
     "KCNA1": 3736,
     "KCNC1": 3746,
@@ -1733,128 +1733,7 @@
     "TP53": 7157
   },
   "geneResolutionErrors": [],
-  "errors": [
-    {
-      "studyId": "gbm_tcga_pan_can_atlas_2018",
-      "geneFetchFailures": [
-        {
-          "gene": "H2AFX",
-          "error": "Entrez ID unresolved"
-        }
-      ],
-      "profile": "gbm_tcga_pan_can_atlas_2018_mutations",
-      "retrievalSampleListId": "gbm_tcga_pan_can_atlas_2018_all",
-      "denominatorSampleListId": "gbm_tcga_pan_can_atlas_2018_sequenced"
-    },
-    {
-      "studyId": "lgg_tcga_pan_can_atlas_2018",
-      "geneFetchFailures": [
-        {
-          "gene": "H2AFX",
-          "error": "Entrez ID unresolved"
-        }
-      ],
-      "profile": "lgg_tcga_pan_can_atlas_2018_mutations",
-      "retrievalSampleListId": "lgg_tcga_pan_can_atlas_2018_all",
-      "denominatorSampleListId": "lgg_tcga_pan_can_atlas_2018_sequenced"
-    },
-    {
-      "studyId": "brca_tcga_pan_can_atlas_2018",
-      "geneFetchFailures": [
-        {
-          "gene": "H2AFX",
-          "error": "Entrez ID unresolved"
-        }
-      ],
-      "profile": "brca_tcga_pan_can_atlas_2018_mutations",
-      "retrievalSampleListId": "brca_tcga_pan_can_atlas_2018_all",
-      "denominatorSampleListId": "brca_tcga_pan_can_atlas_2018_sequenced"
-    },
-    {
-      "studyId": "luad_tcga_pan_can_atlas_2018",
-      "geneFetchFailures": [
-        {
-          "gene": "H2AFX",
-          "error": "Entrez ID unresolved"
-        }
-      ],
-      "profile": "luad_tcga_pan_can_atlas_2018_mutations",
-      "retrievalSampleListId": "luad_tcga_pan_can_atlas_2018_all",
-      "denominatorSampleListId": "luad_tcga_pan_can_atlas_2018_sequenced"
-    },
-    {
-      "studyId": "coadread_tcga_pan_can_atlas_2018",
-      "geneFetchFailures": [
-        {
-          "gene": "H2AFX",
-          "error": "Entrez ID unresolved"
-        }
-      ],
-      "profile": "coadread_tcga_pan_can_atlas_2018_mutations",
-      "retrievalSampleListId": "coadread_tcga_pan_can_atlas_2018_all",
-      "denominatorSampleListId": "coadread_tcga_pan_can_atlas_2018_sequenced"
-    },
-    {
-      "studyId": "paad_tcga_pan_can_atlas_2018",
-      "geneFetchFailures": [
-        {
-          "gene": "H2AFX",
-          "error": "Entrez ID unresolved"
-        }
-      ],
-      "profile": "paad_tcga_pan_can_atlas_2018_mutations",
-      "retrievalSampleListId": "paad_tcga_pan_can_atlas_2018_all",
-      "denominatorSampleListId": "paad_tcga_pan_can_atlas_2018_sequenced"
-    },
-    {
-      "studyId": "skcm_tcga_pan_can_atlas_2018",
-      "geneFetchFailures": [
-        {
-          "gene": "H2AFX",
-          "error": "Entrez ID unresolved"
-        }
-      ],
-      "profile": "skcm_tcga_pan_can_atlas_2018_mutations",
-      "retrievalSampleListId": "skcm_tcga_pan_can_atlas_2018_all",
-      "denominatorSampleListId": "skcm_tcga_pan_can_atlas_2018_sequenced"
-    },
-    {
-      "studyId": "prad_tcga_pan_can_atlas_2018",
-      "geneFetchFailures": [
-        {
-          "gene": "H2AFX",
-          "error": "Entrez ID unresolved"
-        }
-      ],
-      "profile": "prad_tcga_pan_can_atlas_2018_mutations",
-      "retrievalSampleListId": "prad_tcga_pan_can_atlas_2018_all",
-      "denominatorSampleListId": "prad_tcga_pan_can_atlas_2018_sequenced"
-    },
-    {
-      "studyId": "ucec_tcga_pan_can_atlas_2018",
-      "geneFetchFailures": [
-        {
-          "gene": "H2AFX",
-          "error": "Entrez ID unresolved"
-        }
-      ],
-      "profile": "ucec_tcga_pan_can_atlas_2018_mutations",
-      "retrievalSampleListId": "ucec_tcga_pan_can_atlas_2018_all",
-      "denominatorSampleListId": "ucec_tcga_pan_can_atlas_2018_sequenced"
-    },
-    {
-      "studyId": "ov_tcga_pan_can_atlas_2018",
-      "geneFetchFailures": [
-        {
-          "gene": "H2AFX",
-          "error": "Entrez ID unresolved"
-        }
-      ],
-      "profile": "ov_tcga_pan_can_atlas_2018_mutations",
-      "retrievalSampleListId": "ov_tcga_pan_can_atlas_2018_all",
-      "denominatorSampleListId": "ov_tcga_pan_can_atlas_2018_sequenced"
-    }
-  ],
+  "errors": [],
   "downloads": {
     "geneStudyMatrix": "data/disease_bioelectric_gene_study_matrix.csv",
     "moduleMatrix": "data/disease_bioelectric_module_matrix.csv"
