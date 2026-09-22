@@ -92,3 +92,37 @@ The strengthened release now includes:
 - 199 Top-500 genes with at least one neurological-disease evidence record
 
 Negative experimental results are retained transparently: CBEF-guided latent priors do not materially outperform the unweighted latent model, and BEAM-Factor does not improve average external M1 reproducibility. These modules remain ablations rather than headline novelty.
+
+
+## End-to-End Workflow Release
+
+NEURO-BEAM now exposes the complete computational chain:
+
+Brain region → Neuron identity → Bioelectric state → Gene regulation → Regulatory context → Prediction
+
+Key release artifacts:
+- `data/end_to_end_workflow.json`
+- `data/end_to_end_stage_summary.csv`
+- `data/prediction_console.csv`
+- `docs/end_to_end_release_report.md`
+
+Validated prediction baseline:
+- ExtraTrees regression
+- fold-local top-300 variance genes
+- 5-fold GroupKFold by subject ID
+- 3,654 matched VIS Patch-seq neurons
+- 936 subjects
+- 1,302 genes
+- cross-conformal 90/95% uncertainty coverage
+- response-permutation negative controls
+- untouched primary motor cortex external validation for compatible traits
+
+The framework name **NeuroBEAM-Net** refers to the integrated prediction architecture. The current validated production model is explicitly reported as ExtraTrees rather than implying an unvalidated deep neural network.
+
+Evidence classes are separated throughout the portal:
+- measured same-cell evidence;
+- held-out external evidence;
+- proxy/contextual regulatory evidence;
+- model-predicted outputs.
+
+The engineering/integrity release gate currently passes 24/24 checks. This is not a guarantee of journal acceptance or a causal/clinical validation claim.
