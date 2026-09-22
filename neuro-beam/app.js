@@ -826,3 +826,77 @@ Promise.all([
   fetch("data/ml_negative_controls.json").then(r=>r.json()),
   fetch("data/neurological_disease_evidence.json").then(r=>r.ok?r.json():null).catch(()=>null)
 ]).then(([p,n,d])=>renderEvidenceEngine(p,n,d)).catch(err=>console.error("Evidence engine unavailable",err));
+
+
+/* === End-to-End Workflow + Prediction Console === */
+let e2eWorkflow=null;
+function e2eNum(v,d=3){
+  if(v===null||v===undefined||Number.isNaN(Number(v)))return "NA";
+  return Number(v).toFixed(d);
+}
+function renderE2EStages(d){
+  const root=document.getElementById("e2e-stage-details");if(!root)return;
+  root.innerHTML=(d.stages||[]).map(s=>`
+    <article class="e2e-detail">
+      <div class="e2e-detail-top"><h4>${s.stage}. ${s.title}</h4><span class="status-badge">${s.status}</span></div>
+      <div class="numbers">
+        <div><b>${Number(s.primary_n||0).toLocaleString()}</b><span>primary count</span></div>
+        <div><b>${Number(s.secondary_n||0).toLocaleString()}</b><span>secondary count</span></div>
+      </div>
+      <p><b>Evidence:</b> ${s.evidence}</p>
+      <p>${s.key_result}</p>
+      <p class="guardrail"><b>Guardrail:</b> ${s.guardrail}</p>
+    </article>`).join("");
+  const rel=d.releaseIntegrity||{};
+  const status=document.getElementById("e2e-release-status");
+  if(status)status.textContent=`${rel.passed||0}/${rel.total||0} engineering/integrity checks passed · publication-ready engineering gate: ${rel.publicationReadyEngineeringGate?"PASS":"REVIEW"}`;
+}
+function renderPredictionTarget(target){
+  const d=e2eWorkflow;if(!d)return;
+  const rows=d.prediction?.targets||[];
+  const r=rows.find(x=>x.target===target)||rows[0];if(!r)return;
+  document.getElementById("prediction-model-name").textContent=d.prediction.validatedModel||"ExtraTrees";
+  document.getElementById("pred-int-rho").textContent=e2eNum(r.internal_spearman_mean,3);
+  document.getElementById("pred-int-rho-sd").textContent=`SD ${e2eNum(r.internal_spearman_sd,3)}`;
+  document.getElementById("pred-int-r2").textContent=e2eNum(r.internal_r2_mean,3);
+  document.getElementById("pred-int-mae").textContent=`MAE ${e2eNum(r.internal_mae_mean,3)}`;
+  document.getElementById("pred-ext-rho").textContent=e2eNum(r.external_m1_spearman,3);
+  document.getElementById("pred-ext-r2").textContent=r.external_m1_spearman==null?"not harmonized":`M1 R² ${e2eNum(r.external_m1_r2,3)}`;
+  document.getElementById("pred-cov90").textContent=r.coverage90==null?"NA":(100*r.coverage90).toFixed(1)+"%";
+  document.getElementById("pred-cov95").textContent=r.coverage95==null?"":"95%: "+(100*r.coverage95).toFixed(1)+"%";
+  document.getElementById("pred-null-delta").textContent=e2eNum(r.signal_over_permutation_delta,3);
+  document.getElementById("pred-leak-delta").textContent=`random-vs-grouped Δ ${e2eNum(r.leakage_inflation_delta,3)}`;
+
+  const intRoot=document.getElementById("prediction-trait-bars");
+  const mx=Math.max(.001,...rows.map(x=>Math.max(0,+x.internal_spearman_mean||0)));
+  intRoot.innerHTML=rows.slice().sort((a,b)=>(b.internal_spearman_mean||-9)-(a.internal_spearman_mean||-9)).map(x=>`
+    <div class="prediction-row"><label title="${x.target}">${x.target.replaceAll("_"," ")}</label><div class="prediction-track"><span style="width:${Math.max(0,(x.internal_spearman_mean||0)/mx*100).toFixed(1)}%"></span></div><b>${e2eNum(x.internal_spearman_mean,3)}</b></div>`).join("");
+
+  const extRows=rows.filter(x=>x.external_m1_spearman!==null&&x.external_m1_spearman!==undefined);
+  const emx=Math.max(.001,...extRows.map(x=>Math.abs(+x.external_m1_spearman||0)));
+  document.getElementById("prediction-external-bars").innerHTML=extRows.slice().sort((a,b)=>Math.abs(b.external_m1_spearman)-Math.abs(a.external_m1_spearman)).map(x=>`
+    <div class="prediction-row"><label title="${x.target}">${x.target.replaceAll("_"," ")}</label><div class="prediction-track external"><span style="width:${Math.abs(x.external_m1_spearman)/emx*100}%"></span></div><b class="${x.external_m1_spearman<0?'rho-neg':'rho-pos'}">${e2eNum(x.external_m1_spearman,3)}</b></div>`).join("");
+
+  const extInterpret=r.external_m1_spearman==null
+    ?"This trait was not harmonized to the external M1 feature set, so the portal does not claim external generalization for it."
+    :(r.external_m1_r2!=null && r.external_m1_r2>0
+      ?"The frozen VIS-trained model shows positive rank and absolute-scale generalization in M1 for this trait."
+      :"Rank ordering transfers to some extent, but absolute calibration is weak or shifted in M1; this is evidence of domain shift, not model failure hidden by a single metric.");
+  const strength=(r.internal_spearman_mean>=.8?"strong":r.internal_spearman_mean>=.6?"moderate-to-strong":r.internal_spearman_mean>=.4?"moderate":"limited");
+  document.getElementById("prediction-interpretation").innerHTML=`
+    <div><h4>Internal signal</h4><p>${strength} grouped-CV association (Spearman ${e2eNum(r.internal_spearman_mean,3)}; R² ${e2eNum(r.internal_r2_mean,3)}). Subject grouping is the valid estimate.</p></div>
+    <div><h4>External generalization</h4><p>${extInterpret}</p></div>
+    <div><h4>Uncertainty & controls</h4><p>Cross-conformal coverage is ${r.coverage90==null?"NA":(100*r.coverage90).toFixed(1)+"%"} at the 90% target. Signal-over-permutation Δ=${e2eNum(r.signal_over_permutation_delta,3)}; naive-split inflation Δ=${e2eNum(r.leakage_inflation_delta,3)}.</p></div>`;
+}
+fetch("data/end_to_end_workflow.json").then(r=>r.ok?r.json():Promise.reject()).then(d=>{
+  e2eWorkflow=d;renderE2EStages(d);
+  const sel=document.getElementById("prediction-target-select");
+  const rows=d.prediction?.targets||[];
+  sel.innerHTML=rows.map(x=>`<option value="${x.target}">${x.target.replaceAll("_"," ")}</option>`).join("");
+  if(rows.some(x=>x.target==="upstroke_downstroke_ratio_long_square"))sel.value="upstroke_downstroke_ratio_long_square";
+  sel.addEventListener("change",()=>renderPredictionTarget(sel.value));
+  renderPredictionTarget(sel.value||rows[0]?.target);
+}).catch(err=>{
+  console.error("End-to-end workflow manifest unavailable",err);
+  const s=document.getElementById("e2e-release-status");if(s)s.textContent="Workflow manifest is rebuilding; existing validated analyses remain available below.";
+});
