@@ -1,0 +1,4 @@
+comparison,metric,n_traits,all_genes_mean,top500_mean,mean_advantage_top500,traits_improved_top500,wilcoxon_stat,p_value
+CBE Top500 Ridge vs all-shared-gene Ridge,external_spearman,8,0.23381856854031907,0.27804437822490935,0.0442258096845902,7,8.0,0.1953125
+CBE Top500 Ridge vs all-shared-gene Ridge,external_r2,8,-0.2497201459231825,-0.03590047153533146,0.213819674387851,8,0.0,0.0078125
+CBE Top500 Ridge vs all-shared-gene Ridge,external_mae_z,8,0.8482197515920928,0.7591523416407079,0.08906740995138501,8,0.0,0.0078125

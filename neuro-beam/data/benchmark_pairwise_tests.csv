@@ -1,0 +1,4 @@
+comparison,metric,n_paired_fold_targets,extra_trees_mean,ridge_mean,mean_advantage_et,median_advantage_et,wilcoxon_stat,p_value,direction_definition
+ExtraTrees vs Ridge,spearman,55,0.6719105651398961,0.5265767720734541,0.14533379306644184,0.13372725717017697,0.0,1.1076151546135735e-10,positive advantage favors ExtraTrees; for MAE advantage = Ridge MAE - ExtraTrees MAE
+ExtraTrees vs Ridge,r2,55,0.38741937509517405,0.10014898554471995,0.28727038955045414,0.2218807501248805,3.0,1.3070729488682975e-10,positive advantage favors ExtraTrees; for MAE advantage = Ridge MAE - ExtraTrees MAE
+ExtraTrees vs Ridge,mae,55,10.413464126167707,12.861064647522745,2.447600521355041,0.8760657780216836,0.0,1.1076151546135735e-10,positive advantage favors ExtraTrees; for MAE advantage = Ridge MAE - ExtraTrees MAE
