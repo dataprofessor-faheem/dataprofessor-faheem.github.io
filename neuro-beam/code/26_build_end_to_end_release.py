@@ -22,7 +22,7 @@ def main():
     pareto=loadj("neurobeam_pareto_evidence.json")
     neuro=loadj("neurological_disease_evidence.json")
 
-    cal_rows=calibration.get("summary", calibration.get("calibrationSummary", []))
+    cal_rows=calibration.get("metrics", calibration.get("summary", calibration.get("calibrationSummary", [])))
     cov_rows=calibration.get("coverageSummary", [])
     cal={(x.get("model"),x.get("target")):x for x in cal_rows}
     cov={(x.get("model"),x.get("target")):x for x in cov_rows}
@@ -69,7 +69,11 @@ def main():
         try:
             pc=pd.read_csv(D/"top500_evidence_tiers.csv")
             col=next(c for c in pc.columns if "tier" in c.lower())
-            tier_counts={str(k):int(v) for k,v in pc[col].value_counts().to_dict().items()}
+            raw={str(k):int(v) for k,v in pc[col].value_counts().to_dict().items()}
+            tier_counts=raw.copy()
+            tier_counts["A"]=sum(v for k,v in raw.items() if str(k).strip().upper().startswith("A"))
+            tier_counts["B"]=sum(v for k,v in raw.items() if str(k).strip().upper().startswith("B"))
+            tier_counts["C"]=sum(v for k,v in raw.items() if str(k).strip().upper().startswith("C"))
         except Exception:
             tier_counts={}
 
