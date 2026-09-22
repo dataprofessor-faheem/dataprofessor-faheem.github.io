@@ -886,7 +886,7 @@ function renderPredictionTarget(target){
   document.getElementById("prediction-interpretation").innerHTML=`
     <div><h4>Internal signal</h4><p>${strength} grouped-CV association (Spearman ${e2eNum(r.internal_spearman_mean,3)}; R² ${e2eNum(r.internal_r2_mean,3)}). Subject grouping is the valid estimate.</p></div>
     <div><h4>External generalization</h4><p>${extInterpret}</p></div>
-    <div><h4>Uncertainty & controls</h4><p>Cross-conformal coverage is ${r.coverage90==null?"NA":(100*r.coverage90).toFixed(1)+"%"} at the 90% target. Signal-over-permutation Δ=${e2eNum(r.signal_over_permutation_delta,3)}; naive-split inflation Δ=${e2eNum(r.leakage_inflation_delta,3)}.</p></div>`;
+    <div><h4>Uncertainty & controls</h4><p>Cross-conformal coverage is ${r.coverage90==null?"NA":(100*r.coverage90).toFixed(1)+"%"} at the 90% target. Calibration slope=${e2eNum(r.calibration_slope,3)}, intercept=${e2eNum(r.calibration_intercept,3)}. Signal-over-permutation Δ=${e2eNum(r.signal_over_permutation_delta,3)}; naive-split inflation Δ=${e2eNum(r.leakage_inflation_delta,3)}.</p></div>`;
 }
 fetch("data/end_to_end_workflow.json").then(r=>r.ok?r.json():Promise.reject()).then(d=>{
   e2eWorkflow=d;renderE2EStages(d);
