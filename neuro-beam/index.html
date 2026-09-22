@@ -43,7 +43,7 @@
       <div><strong>NEURO-BEAM</strong><span>Neuronal BioElectricity–Activity–Molecular Atlas</span></div>
     </div>
     <nav>
-      <a href="#atlas">Atlas</a><a href="#live-data">Live Data</a><a href="#discovery-engine">Discovery Engine</a><a href="#model-validation">Validation</a><a href="#dynamic-neuron">Dynamic Neuron</a><a href="#stability">Stability</a><a href="#disease-explorer">Disease Explorer</a><a href="#platform-about">About</a><a href="#datasets">Datasets</a>
+      <a href="#full-workflow">Full Workflow</a><a href="#atlas">Atlas</a><a href="#live-data">Live Data</a><a href="#discovery-engine">Discovery Engine</a><a href="#model-validation">Validation</a><a href="#dynamic-neuron">Dynamic Neuron</a><a href="#stability">Stability</a><a href="#disease-explorer">Disease Explorer</a><a href="#platform-about">About</a><a href="#datasets">Datasets</a>
       <a href="#evidence-engine">Evidence Engine</a><a href="#discovery-studio">Discovery Studio</a><a href="#signature-explorer">Signature Explorer</a><a href="#statistics">Statistics</a>
       
     </nav>
@@ -461,6 +461,74 @@
           </div>
           <div class="data-note"><b>Interpretation:</b> this layer links independent observational evidence across matched neuronal Patch-seq and cancer genomics. It identifies testable candidates; it does not prove that a cancer mutation changes neuronal voltage or that a bioelectric state causes disease.</div>
         </article>
+      </div>
+    </section>
+
+
+    <section class="section full-workflow-section" id="full-workflow">
+      <div class="section-head"><span>END</span><div><h2>Complete End-to-End NEURO-BEAM Workflow</h2><p>Brain region → neuron identity → bioelectric state → gene regulation → regulatory context → prediction, with evidence class and validation status shown explicitly.</p></div></div>
+
+      <div class="workflow-release-banner">
+        <div><span class="release-dot"></span><b>End-to-end computational release</b><small id="e2e-release-status">Loading validated workflow manifest…</small></div>
+        <div class="workflow-release-actions">
+          <a class="btn" href="data/end_to_end_stage_summary.csv" download>Download stage summary</a>
+          <a class="btn" href="data/prediction_console.csv" download>Download prediction console</a>
+          <a class="btn" href="docs/end_to_end_release_report.md" target="_blank">Release report</a>
+        </div>
+      </div>
+
+      <div class="e2e-flow" id="e2e-stage-flow">
+        <article class="e2e-stage"><span>01</span><h3>Brain region</h3><p>VIS discovery · M1 external validation · ABC Atlas/MERFISH spatial reference</p><div class="evidence-chip external">external/reference</div></article>
+        <i>→</i>
+        <article class="e2e-stage"><span>02</span><h3>Neuron identity</h3><p>Same-cell Patch-seq transcriptomics + electrophysiology</p><div class="evidence-chip measured">measured</div></article>
+        <i>→</i>
+        <article class="e2e-stage accent-cyan"><span>03</span><h3>Bioelectric state</h3><p>Vm · AP · firing · rheobase · latent state structure</p><div class="evidence-chip measured">measured</div></article>
+        <i>→</i>
+        <article class="e2e-stage accent-violet"><span>04</span><h3>Gene regulation</h3><p>RNA–ephys coupling · Top-500 · evidence tiers</p><div class="evidence-chip measured">same-cell association</div></article>
+        <i>→</i>
+        <article class="e2e-stage"><span>05</span><h3>Regulatory context</h3><p>DNA repair · chromatin modules · neurological evidence</p><div class="evidence-chip proxy">proxy/context</div></article>
+        <i>→</i>
+        <article class="e2e-stage accent-pink"><span>06</span><h3>Prediction</h3><p>NeuroBEAM-Net framework · validated ExtraTrees baseline</p><div class="evidence-chip predicted">predicted + validated</div></article>
+      </div>
+
+      <div class="e2e-stage-details" id="e2e-stage-details"></div>
+
+      <div class="prediction-console">
+        <div class="viz-title"><h3>Prediction Console</h3><span>subject-grouped internal validation + untouched M1 external evaluation</span></div>
+        <div class="prediction-head">
+          <label>Prediction target
+            <select id="prediction-target-select"></select>
+          </label>
+          <div class="prediction-model-badge"><span>Validated model</span><b id="prediction-model-name">ExtraTrees</b></div>
+          <div class="prediction-model-badge"><span>Framework</span><b>NeuroBEAM-Net</b></div>
+        </div>
+
+        <div class="prediction-kpis">
+          <article><span>Internal Spearman</span><b id="pred-int-rho">—</b><small id="pred-int-rho-sd">—</small></article>
+          <article><span>Internal R²</span><b id="pred-int-r2">—</b><small id="pred-int-mae">—</small></article>
+          <article><span>External M1 Spearman</span><b id="pred-ext-rho">—</b><small id="pred-ext-r2">—</small></article>
+          <article><span>90% uncertainty coverage</span><b id="pred-cov90">—</b><small id="pred-cov95">—</small></article>
+          <article><span>Signal over permutation</span><b id="pred-null-delta">—</b><small id="pred-leak-delta">—</small></article>
+        </div>
+
+        <div class="prediction-grid">
+          <article class="viz-card">
+            <div class="viz-title"><h3>Internal predictive performance</h3><span>5-fold GroupKFold by subject</span></div>
+            <div id="prediction-trait-bars" class="prediction-trait-bars"></div>
+          </article>
+          <article class="viz-card">
+            <div class="viz-title"><h3>External M1 generalization</h3><span>frozen model / compatible traits</span></div>
+            <div id="prediction-external-bars" class="prediction-trait-bars"></div>
+          </article>
+          <article class="viz-card wide-card">
+            <div class="viz-title"><h3>Prediction interpretation</h3><span>strength, uncertainty and domain shift</span></div>
+            <div id="prediction-interpretation" class="prediction-interpretation"></div>
+          </article>
+        </div>
+      </div>
+
+      <div class="workflow-integrity-note">
+        <b>Evidence separation is enforced:</b> measured same-cell evidence, held-out external validation, regulatory proxy/context and model predictions are displayed as different evidence classes. They are not collapsed into a single causal claim.
       </div>
     </section>
 
