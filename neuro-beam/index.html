@@ -43,7 +43,7 @@
       <div><strong>NEURO-BEAM</strong><span>Neuronal BioElectricity–Activity–Molecular Atlas</span></div>
     </div>
     <nav>
-      <a href="#full-workflow">Full Workflow</a><a href="#atlas">Atlas</a><a href="#live-data">Live Data</a><a href="#discovery-engine">Discovery Engine</a><a href="#model-validation">Validation</a><a href="#dynamic-neuron">Dynamic Neuron</a><a href="#stability">Stability</a><a href="#disease-explorer">Disease Explorer</a><a href="#platform-about">About</a><a href="#datasets">Datasets</a>
+      <a href="#full-workflow">Full Workflow</a><a href="#benchmarking">Benchmark</a><a href="#atlas">Atlas</a><a href="#live-data">Live Data</a><a href="#discovery-engine">Discovery Engine</a><a href="#model-validation">Validation</a><a href="#dynamic-neuron">Dynamic Neuron</a><a href="#stability">Stability</a><a href="#disease-explorer">Disease Explorer</a><a href="#platform-about">About</a><a href="#datasets">Datasets</a>
       <a href="#evidence-engine">Evidence Engine</a><a href="#discovery-studio">Discovery Studio</a><a href="#signature-explorer">Signature Explorer</a><a href="#statistics">Statistics</a>
       
     </nav>
@@ -529,6 +529,79 @@
 
       <div class="workflow-integrity-note">
         <b>Evidence separation is enforced:</b> measured same-cell evidence, held-out external validation, regulatory proxy/context and model predictions are displayed as different evidence classes. They are not collapsed into a single causal claim.
+      </div>
+    </section>
+
+
+    <section class="section benchmark-section" id="benchmarking">
+      <div class="section-head"><span>BENCH</span><div><h2>Analytical & Comparative Benchmarking</h2><p>Direct model-vs-model evaluation, paired statistical testing, external M1 transfer, negative controls, uncertainty calibration, feature-selection benchmarking and cross-domain fusion ablations.</p></div></div>
+
+      <div class="benchmark-banner">
+        <div>
+          <div class="eyebrow">VALIDATED COMPARATIVE RELEASE</div>
+          <h3>Head-to-head comparisons use the same NEURO-BEAM data and validation design.</h3>
+          <p>Literature methods are shown separately as methodological context because their datasets, endpoints and splits are not identical.</p>
+        </div>
+        <div class="benchmark-actions">
+          <a class="btn" href="data/comparative_benchmark.json" target="_blank">Open benchmark JSON</a>
+          <a class="btn" href="data/benchmark_pairwise_tests.csv" download>Pairwise tests CSV</a>
+          <a class="btn" href="data/benchmark_external_feature_selection.csv" download>External feature-selection CSV</a>
+          <a class="btn" href="docs/comparative_benchmark_report.md" target="_blank">Benchmark report</a>
+        </div>
+      </div>
+
+      <div class="benchmark-kpis">
+        <article><span>ExtraTrees mean ρ</span><b id="bench-et-rho">—</b><small>18-trait benchmark</small></article>
+        <article><span>ExtraTrees mean R²</span><b id="bench-et-r2">—</b><small>18-trait benchmark</small></article>
+        <article><span>External M1 mean ρ</span><b id="bench-ext-rho">—</b><small>compatible traits</small></article>
+        <article><span>Real − permutation Δρ</span><b id="bench-null-gap">—</b><small>grouped validation</small></article>
+        <article><span>Positive external R²</span><b id="bench-ext-posr2">—</b><small id="bench-ext-posr2-note">—</small></article>
+      </div>
+
+      <div class="benchmark-grid">
+        <article class="viz-card">
+          <div class="viz-title"><h3>Direct model comparison</h3><span>same benchmark definition</span></div>
+          <div id="benchmark-model-table" class="matrix-wrap"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Paired statistical tests</h3><span>55 fold × trait pairs</span></div>
+          <div id="benchmark-pairwise" class="benchmark-stat-list"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>External M1 transfer</h3><span>frozen model</span></div>
+          <div id="benchmark-external" class="benchmark-stat-list"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Top-500 feature selection</h3><span>external Ridge benchmark</span></div>
+          <div id="benchmark-top500" class="benchmark-stat-list"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Multitask vs nonlinear baseline</h3><span>CBEF prior vs ExtraTrees</span></div>
+          <div id="benchmark-multitask" class="benchmark-stat-list"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Fusion sensitivity</h3><span>ranking stability / ablation</span></div>
+          <div id="benchmark-fusion" class="benchmark-stat-list"></div>
+        </article>
+
+        <article class="viz-card wide-card">
+          <div class="viz-title"><h3>Benchmark interpretation</h3><span>strengths and limitations</span></div>
+          <div class="benchmark-interpretation">
+            <div><h4>Strengths</h4><ul id="benchmark-strengths"></ul></div>
+            <div><h4>Limitations</h4><ul id="benchmark-limitations"></ul></div>
+          </div>
+        </article>
+
+        <article class="viz-card wide-card">
+          <div class="viz-title"><h3>Literature context</h3><span>context only — not a direct leaderboard</span></div>
+          <div id="benchmark-literature" class="literature-context-grid"></div>
+          <div class="data-note"><b>Comparability rule:</b> NEURO-BEAM is only ranked head-to-head against methods rerun on the same data/splits. Published Patch-seq, UnitedNet, PERSIST and statistical-biophysical models are contextual comparators until they are reproduced under the identical NEURO-BEAM benchmark.</div>
+        </article>
       </div>
     </section>
 
