@@ -900,3 +900,68 @@ fetch("data/end_to_end_workflow.json").then(r=>r.ok?r.json():Promise.reject()).t
   console.error("End-to-end workflow manifest unavailable",err);
   const s=document.getElementById("e2e-release-status");if(s)s.textContent="Workflow manifest is rebuilding; existing validated analyses remain available below.";
 });
+
+
+/* === Comparative Benchmarking Dashboard === */
+function benchFmt(v,d=3){
+  if(v===null||v===undefined||Number.isNaN(Number(v)))return "NA";
+  const n=Number(v); return Math.abs(n)>0&&Math.abs(n)<.0001?n.toExponential(2):n.toFixed(d);
+}
+function renderComparativeBenchmark(d){
+  const h=d.headline||{};
+  document.getElementById("bench-et-rho").textContent=benchFmt(h.extraTreesMeanSpearman18Traits,3);
+  document.getElementById("bench-et-r2").textContent=benchFmt(h.extraTreesMeanR2_18Traits,3);
+  document.getElementById("bench-ext-rho").textContent=benchFmt(h.externalFrozenET?.mean_spearman,3);
+  document.getElementById("bench-null-gap").textContent=benchFmt(h.negativeControls?.mean_signal_over_permuted,3);
+  document.getElementById("bench-ext-posr2").textContent=`${h.externalFrozenET?.positive_r2_traits??"—"} / ${h.externalFrozenET?.n_traits??"—"}`;
+  document.getElementById("bench-ext-posr2-note").textContent="compatible M1 traits";
+
+  const models=[
+    {name:"ExtraTrees",rho:h.extraTreesMeanSpearman18Traits,r2:h.extraTreesMeanR2_18Traits,genes:400},
+    {name:"PLS",rho:h.plsMeanSpearman18Traits,r2:null,genes:1302},
+    {name:"Ridge Top-500",rho:h.cbeTop500RidgeMeanSpearman18Traits,r2:null,genes:500}
+  ];
+  let mt='<table class="matrix-table"><thead><tr><th>Model</th><th>Genes</th><th>Mean ρ</th><th>Mean R²</th></tr></thead><tbody>';
+  models.forEach(m=>mt+=`<tr><td><b>${m.name}</b></td><td>${m.genes}</td><td>${benchFmt(m.rho,3)}</td><td>${benchFmt(m.r2,3)}</td></tr>`);
+  mt+='</tbody></table>';document.getElementById("benchmark-model-table").innerHTML=mt;
+
+  document.getElementById("benchmark-pairwise").innerHTML=(d.pairwiseFoldTests||[]).map(x=>{
+    const label=x.metric==="mae"?"MAE reduction":x.metric.toUpperCase()+" gain";
+    return `<div class="benchmark-stat"><div class="top"><b>${label}</b><strong class="good">+${benchFmt(x.mean_advantage_et,3)}</strong></div><p>ExtraTrees ${benchFmt(x.extra_trees_mean,3)} vs Ridge ${benchFmt(x.ridge_mean,3)} · paired n=${x.n_paired_fold_targets} · Wilcoxon p=${benchFmt(x.p_value,3)}</p></div>`;
+  }).join("");
+
+  const e=h.externalFrozenET||{};
+  document.getElementById("benchmark-external").innerHTML=[
+    ["Mean Spearman",benchFmt(e.mean_spearman,3),"${e.positive_spearman_traits||0} of ${e.n_traits||0} traits positive"],
+    ["Best external trait",String(e.best_external_trait||"—").replaceAll("_"," "),`ρ=${benchFmt(e.best_external_spearman,3)}`],
+    ["Positive absolute-scale R²",`${e.positive_r2_traits||0}/${e.n_traits||0}`,"Negative R² on other traits indicates protocol/region calibration shift"]
+  ].map(([a,b,c])=>`<div class="benchmark-stat"><div class="top"><b>${a}</b><strong>${b}</strong></div><p>${c}</p></div>`).join("");
+
+  document.getElementById("benchmark-top500").innerHTML=(d.externalFeatureSelectionTests||[]).map(x=>{
+    const cls=x.p_value<.05?"good":"warn";
+    return `<div class="benchmark-stat"><div class="top"><b>${x.metric.replaceAll("_"," ")}</b><strong class="${cls}">Δ ${benchFmt(x.mean_advantage_top500,3)}</strong></div><p>Top-500 improves ${x.traits_improved_top500}/${x.n_traits} traits · Wilcoxon p=${benchFmt(x.p_value,3)}</p></div>`;
+  }).join("");
+
+  const mtb=d.multitaskVsBaseline||{};
+  document.getElementById("benchmark-multitask").innerHTML=[
+    ["Mean ΔR²",benchFmt(mtb.meanDeltaR2,3),`Multitask higher on ${mtb.traitsMultitaskHigherR2}/${mtb.nTraits} traits`],
+    ["Mean ΔSpearman",benchFmt(mtb.meanDeltaSpearman,3),`Multitask higher on ${mtb.traitsMultitaskHigherSpearman}/${mtb.nTraits} traits`]
+  ].map(([a,b,c])=>`<div class="benchmark-stat"><div class="top"><b>${a}</b><strong class="${Number(b)>0?'good':'warn'}">${b}</strong></div><p>${c}</p></div>`).join("");
+
+  document.getElementById("benchmark-fusion").innerHTML=(d.fusionAblations||[]).filter(x=>x.method!=="default_cbef").map(x=>`
+    <div class="benchmark-stat"><div class="top"><b>${x.method.replaceAll("_"," ")}</b><strong>${benchFmt(x.rank_spearman_vs_default,3)}</strong></div><p>Rank correlation vs default · Top-100 Jaccard ${benchFmt(x.top100_jaccard,3)} · Top-500 Jaccard ${benchFmt(x.top500_jaccard,3)}</p></div>`).join("");
+
+  document.getElementById("benchmark-strengths").innerHTML=(d.interpretation?.strengths||[]).map(x=>`<li>${x}</li>`).join("");
+  document.getElementById("benchmark-limitations").innerHTML=(d.interpretation?.limitations||[]).map(x=>`<li>${x}</li>`).join("");
+
+  const literature=[
+    ["Patch-seq foundational","Context","Established transcriptome–physiology predictability in single neurons."],
+    ["UnitedNet","Context","Joint multimodal representation and cross-modal Patch-seq prediction; different benchmark endpoints."],
+    ["PERSIST","Context","Predictive gene-panel selection for Patch-seq electrophysiological properties."],
+    ["Statistical-biophysical","Context","Mechanistic gene→ion-channel-parameter modeling complements NEURO-BEAM's predictive framework."]
+  ];
+  document.getElementById("benchmark-literature").innerHTML=literature.map(([a,b,c])=>`<div class="literature-context-card"><span>${b}</span><h4>${a}</h4><p>${c}</p></div>`).join("");
+}
+fetch("data/comparative_benchmark.json").then(r=>r.ok?r.json():Promise.reject()).then(renderComparativeBenchmark).catch(err=>{
+  console.error("Comparative benchmark unavailable",err);
+});
