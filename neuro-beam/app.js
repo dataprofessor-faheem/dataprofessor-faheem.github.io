@@ -965,3 +965,28 @@ function renderComparativeBenchmark(d){
 fetch("data/comparative_benchmark.json").then(r=>r.ok?r.json():Promise.reject()).then(renderComparativeBenchmark).catch(err=>{
   console.error("Comparative benchmark unavailable",err);
 });
+
+/* Comparative Benchmarking */
+fetch("data/comparative_benchmark.json").then(r=>r.json()).then(d=>{
+ const h=d.headline||{};
+ document.getElementById("bm-et-rho").textContent=(h.extraTreesMeanSpearman18Traits??0).toFixed(3);
+ document.getElementById("bm-et-r2").textContent=(h.extraTreesMeanR2_18Traits??0).toFixed(3);
+ document.getElementById("bm-ext-rho").textContent=(h.externalFrozenET?.mean_spearman??0).toFixed(3);
+ document.getElementById("bm-null-gap").textContent=(h.negativeControls?.mean_signal_over_permuted??0).toFixed(3);
+
+ const models=[
+   ["ExtraTrees",h.extraTreesMeanSpearman18Traits],
+   ["PLS",h.plsMeanSpearman18Traits],
+   ["CBE Top500 Ridge",h.cbeTop500RidgeMeanSpearman18Traits]
+ ];
+ const mx=Math.max(...models.map(x=>x[1]||0),.001);
+ document.getElementById("bm-model-bars").innerHTML=models.map(([n,v])=>`<div class="prediction-row"><label>${n}</label><div class="prediction-track"><span style="width:${100*v/mx}%"></span></div><b>${v.toFixed(3)}</b></div>`).join("");
+
+ document.getElementById("bm-pairwise").innerHTML=(d.pairwiseFoldTests||[]).map(x=>`<div class="benchmark-stat"><span>${x.metric.toUpperCase()} · Wilcoxon p=${Number(x.p_value).toExponential(2)}</span><b>Δ ${x.mean_advantage_et.toFixed(3)}</b></div>`).join("");
+
+ document.getElementById("bm-external-feature").innerHTML=(d.externalFeatureSelectionTests||[]).map(x=>`<div class="benchmark-stat"><span>${x.metric} · improved ${x.traits_improved_top500}/${x.n_traits} traits</span><b>Δ ${x.mean_advantage_top500.toFixed(3)}</b></div>`).join("");
+
+ const st=(d.interpretation?.strengths||[]).slice(0,3).map(x=>`<p>• ${x}</p>`).join("");
+ const li=(d.interpretation?.limitations||[]).slice(0,3).map(x=>`<p>• ${x}</p>`).join("");
+ document.getElementById("bm-interpretation").innerHTML=`<div><h4>Strengths</h4>${st}</div><div><h4>Limitations</h4>${li}</div>`;
+}).catch(()=>{});
