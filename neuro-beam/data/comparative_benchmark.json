@@ -1,6 +1,6 @@
 {
   "project": "NEURO-BEAM",
-  "benchmarkVersion": "1.0",
+  "benchmarkVersion": "2.0",
   "benchmarkDesign": {
     "internal": "5-fold subject-grouped CV; fold-local preprocessing/feature selection",
     "external": "untouched primary motor cortex M1 cohort",
@@ -33,7 +33,32 @@
       "n_traits": 11,
       "mean_abs_slope_deviation_from_1": 0.2915195979919493,
       "median_abs_slope_deviation_from_1": 0.2538049529525497,
-      "mean_abs_intercept": 9.30986558084061
+      "mean_abs_intercept": 9.30986558084061,
+      "mean_coverage90": 0.900058910412901,
+      "mean_coverage95": 0.9494442352804889
+    },
+    "cbefStability": {
+      "median_rank_spearman_weights": 0.9881716787213799,
+      "min_rank_spearman_weights": 0.9045873422540031,
+      "mean_top50_cohort_bootstrap_jaccard": 0.8178053670892493,
+      "mean_top100_cohort_bootstrap_jaccard": 0.8543657235667538,
+      "permutation_empirical_p": 0.000999000999000999
+    },
+    "beamFactorExternal": {
+      "rawMeanSpearman": 0.39700641041118373,
+      "ephysFactorMeanSpearman": 0.39703960933916016,
+      "jointFactorMeanSpearman": 0.39612546780307595
+    },
+    "evidenceTierCounts": {
+      "Outside Top-500": 768,
+      "C \u2014 exploratory": 424,
+      "B \u2014 robust": 51,
+      "A \u2014 replicated": 25
+    },
+    "releaseIntegrity": {
+      "passed": 24,
+      "total": 24,
+      "publicationReadyEngineeringGate": true
     }
   },
   "pairwiseFoldTests": [
@@ -172,13 +197,15 @@
       "Nonlinear ExtraTrees consistently improves subject-grouped prediction over Ridge across the measured electrical traits.",
       "Permutation controls are close to null while real grouped-CV signal is substantially positive.",
       "CBE Top500 feature selection improves external Ridge transfer on most compatible M1 traits compared with using all shared genes.",
-      "Several electrical traits generalize in rank to M1, especially AP waveform ratio, rheobase, input resistance and membrane time constant."
+      "Several electrical traits generalize in rank to M1, especially AP waveform ratio, rheobase, input resistance and membrane time constant.",
+      "CBEF ranking is stable across weight perturbations and cohort bootstrap, with an empirical permutation p-value supporting non-random cross-domain ranking structure."
     ],
     "limitations": [
       "External M1 absolute-scale R2 is negative for several traits, indicating substantial protocol/region/domain shift.",
       "Resting potential and threshold-voltage prediction remain comparatively weak.",
       "Multitask/cancer priors do not uniformly outperform the strongest nonlinear single-task baseline.",
-      "BEAM-Factor cross-domain fusion introduces an ephys\u2013cancer reconstruction tradeoff; joint structure should be interpreted as shared statistical structure, not causality."
+      "BEAM-Factor cross-domain fusion introduces an ephys\u2013cancer reconstruction tradeoff; joint structure should be interpreted as shared statistical structure, not causality.",
+      "Cross-paper literature comparisons are contextual only because datasets, targets, feature definitions and train/test designs differ."
     ]
   },
   "guardrail": "Benchmarking evaluates predictive/statistical performance in the available datasets. It does not establish clinical utility or causal biological mechanisms."
