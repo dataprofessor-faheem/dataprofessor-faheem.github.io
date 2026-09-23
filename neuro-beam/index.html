@@ -43,7 +43,7 @@
       <div><strong>NEURO-BEAM</strong><span>Neuronal BioElectricity–Activity–Molecular Atlas</span></div>
     </div>
     <nav>
-      <a href="#full-workflow">Full Workflow</a><a href="#benchmarking">Benchmark</a><a href="#atlas">Atlas</a><a href="#live-data">Live Data</a><a href="#discovery-engine">Discovery Engine</a><a href="#model-validation">Validation</a><a href="#dynamic-neuron">Dynamic Neuron</a><a href="#stability">Stability</a><a href="#disease-explorer">Disease Explorer</a><a href="#platform-about">About</a><a href="#datasets">Datasets</a>
+      <a href="#full-workflow">Full Workflow</a><a href="#benchmarking">Benchmark</a><a href="#atlas">Atlas</a><a href="#live-data">Live Data</a><a href="#discovery-engine">Discovery Engine</a><a href="#model-validation">Validation</a><a href="#comparative-benchmark">Benchmark</a><a href="#dynamic-neuron">Dynamic Neuron</a><a href="#stability">Stability</a><a href="#disease-explorer">Disease Explorer</a><a href="#platform-about">About</a><a href="#datasets">Datasets</a>
       <a href="#evidence-engine">Evidence Engine</a><a href="#discovery-studio">Discovery Studio</a><a href="#signature-explorer">Signature Explorer</a><a href="#statistics">Statistics</a>
       
     </nav>
@@ -248,6 +248,83 @@
     </section>
 
     
+
+
+    <section class="section" id="comparative-benchmark">
+      <div class="section-head"><span>BM</span><div><h2>Analytical & Comparative Benchmarking</h2><p>Direct same-task model comparison, paired statistical testing, external M1 validation, calibration, negative controls, feature-selection effects, and multimodal ablations.</p></div></div>
+
+      <div class="benchmark-banner">
+        <div>
+          <div class="eyebrow">VALIDATED COMPARATIVE RELEASE</div>
+          <h3>Benchmark performance without collapsing different tasks into one headline score</h3>
+          <p>Internal models are compared only when they use the same prediction task. External M1 transfer, feature-selection experiments, cancer-context fusion and literature studies are shown separately so differences in datasets and objectives remain visible.</p>
+        </div>
+        <div class="benchmark-actions">
+          <a class="btn primary" href="data/comparative_benchmark.json" target="_blank">Open benchmark JSON</a>
+          <a class="btn" href="data/benchmark_model_summary.csv" download>Model summary CSV</a>
+          <a class="btn" href="data/benchmark_pairwise_tests.csv" download>Paired tests CSV</a>
+          <a class="btn" href="docs/comparative_benchmark_report.md" target="_blank">Benchmark report</a>
+        </div>
+      </div>
+
+      <div class="benchmark-kpis">
+        <article><span>ExtraTrees mean Spearman</span><b id="bench-et-rho">—</b><small>18-trait benchmark</small></article>
+        <article><span>ExtraTrees mean R²</span><b id="bench-et-r2">—</b><small>18-trait benchmark</small></article>
+        <article><span>Frozen M1 mean Spearman</span><b id="bench-ext-rho">—</b><small>external validation</small></article>
+        <article><span>Signal over permutation</span><b id="bench-null-gap">—</b><small>negative-control gap</small></article>
+        <article><span>Positive M1 R²</span><b id="bench-ext-posr2">—</b><small id="bench-ext-posr2-note">compatible traits</small></article>
+      </div>
+
+      <div class="benchmark-grid">
+        <article class="viz-card">
+          <div class="viz-title"><h3>Internal model benchmark</h3><span>same 18-trait task</span></div>
+          <div id="benchmark-model-table" class="matrix-wrap"></div>
+          <div id="bm-model-bars" class="prediction-trait-bars" style="margin-top:12px"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Paired fold-level tests</h3><span>ExtraTrees vs Ridge</span></div>
+          <div id="benchmark-pairwise" class="benchmark-stat-list"></div>
+          <div id="bm-pairwise" class="benchmark-stats" style="margin-top:10px"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>External M1 generalization</h3><span>untouched cortical region</span></div>
+          <div id="benchmark-external" class="benchmark-stat-list"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Top-500 feature-selection benchmark</h3><span>external Ridge transfer</span></div>
+          <div id="benchmark-top500" class="benchmark-stat-list"></div>
+          <div id="bm-external-feature" class="benchmark-stats" style="margin-top:10px"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Multitask vs strongest baseline</h3><span>descriptive architecture comparison</span></div>
+          <div id="benchmark-multitask" class="benchmark-stat-list"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Fusion ablation</h3><span>CBEF ranking robustness</span></div>
+          <div id="benchmark-fusion" class="benchmark-stat-list"></div>
+        </article>
+
+        <article class="viz-card wide-card">
+          <div class="viz-title"><h3>Benchmark interpretation</h3><span>strengths and limitations</span></div>
+          <div class="benchmark-interpretation">
+            <div><h4>Strengths</h4><ul id="benchmark-strengths"></ul></div>
+            <div><h4>Limitations</h4><ul id="benchmark-limitations"></ul></div>
+          </div>
+          <div id="bm-interpretation" class="benchmark-interpretation" style="margin-top:12px"></div>
+        </article>
+
+        <article class="viz-card wide-card">
+          <div class="viz-title"><h3>Literature context</h3><span>context only — not a cross-paper accuracy ranking</span></div>
+          <div id="benchmark-literature" class="literature-context-grid"></div>
+          <p class="micro-note">Published Patch-seq studies differ in cohort, target and objective. Their numerical metrics are therefore not treated as direct competitors to NEURO-BEAM unless the task is matched.</p>
+        </article>
+      </div>
+    </section>
 
     <section class="section" id="model-validation">
       <div class="section-head"><span>ML</span><div><h2>Predictive Generalization & Method Validation</h2><p>Leakage-safe subject-grouped prediction, independent motor-cortex transfer, and CBEF stability/ablation evidence.</p></div></div>
