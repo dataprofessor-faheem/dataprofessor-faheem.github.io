@@ -8,6 +8,10 @@ on:
       - "neuro-beam/code/27_comparative_benchmark.py"
       - "neuro-beam/data/ml_grouped_cv_metrics_by_fold.csv"
       - "neuro-beam/data/m1_external_validation_metrics.csv"
+      - "neuro-beam/data/cbef_sensitivity_summary.json"
+      - "neuro-beam/data/beam_factor_results.json"
+      - "neuro-beam/data/ml_calibration_uncertainty.json"
+      - "neuro-beam/data/neurobeam_pareto_evidence.json"
 
 permissions:
   contents: write
