@@ -1002,3 +1002,51 @@ fetch("data/comparative_benchmark.json").then(r=>r.json()).then(d=>{
  const li=(d.interpretation?.limitations||[]).slice(0,3).map(x=>`<p>• ${x}</p>`).join("");
  document.getElementById("bm-interpretation").innerHTML=`<div><h4>Strengths</h4>${st}</div><div><h4>Limitations</h4>${li}</div>`;
 }).catch(()=>{});
+
+
+/* === Analytical & Comparative Benchmarking === */
+function bmkFmt(v,d=3){return v===null||v===undefined||Number.isNaN(Number(v))?"NA":Number(v).toFixed(d)}
+function renderBenchmark(d){
+  const scale=d.dataScale||{};
+  const sc=document.getElementById("benchmark-scale");
+  if(sc)sc.textContent=`${Number(scale.cells||0).toLocaleString()} cells · ${Number(scale.subjects||0).toLocaleString()} subjects · ${Number(scale.genes||0).toLocaleString()} genes · ${Number(scale.externalM1Cells||0).toLocaleString()} external M1 cells`;
+
+  const models=(d.internalModels||[]).slice().sort((a,b)=>(b.mean_spearman||0)-(a.mean_spearman||0));
+  const best=models[0]||{};
+  document.getElementById("bmk-best-rho").textContent=bmkFmt(best.mean_spearman);
+  document.getElementById("bmk-best-model").textContent=best.model||"—";
+  const grouped=(d.groupedCvSummary||[]).find(x=>x.model==="ExtraTrees")||{};
+  document.getElementById("bmk-grouped-rho").textContent=bmkFmt(grouped.mean_spearman);
+  document.getElementById("bmk-external-rho").textContent=bmkFmt(d.externalM1Summary?.mean_abs_spearman);
+  document.getElementById("bmk-external-count").textContent=`${d.externalM1Summary?.positive_r2_traits||0}/${d.externalM1Summary?.n_traits||0} traits positive external R²`;
+  document.getElementById("bmk-null-delta").textContent=bmkFmt(d.negativeControlSummary?.mean_signal_over_null_delta);
+  document.getElementById("bmk-maturity").textContent=(100*(d.descriptiveMaturityScore_0_1||0)).toFixed(1)+"%";
+
+  const mm=Math.max(.001,...models.map(x=>x.mean_spearman||0));
+  document.getElementById("benchmark-model-bars").innerHTML=models.map(x=>`
+    <div class="prediction-row"><label>${x.model}</label><div class="prediction-track"><span style="width:${(x.mean_spearman/mm*100).toFixed(1)}%"></span></div><b>${bmkFmt(x.mean_spearman)}</b></div>`).join("");
+
+  fetch("data/benchmark_external_m1.csv").then(r=>r.text()).then(t=>{
+    const lines=t.trim().split(/\r?\n/);const h=lines[0].split(",");const rows=lines.slice(1).map(l=>{const a=l.split(",");const o={};h.forEach((k,i)=>o[k]=a[i]);return o;});
+    const mx=Math.max(.001,...rows.map(x=>Math.abs(Number(x.spearman)||0)));
+    document.getElementById("benchmark-external-bars").innerHTML=rows.sort((a,b)=>Math.abs(Number(b.spearman))-Math.abs(Number(a.spearman))).map(x=>`
+      <div class="prediction-row"><label title="${x.target_vis}">${x.target_vis.replaceAll("_"," ")}</label><div class="prediction-track external"><span style="width:${Math.abs(Number(x.spearman))/mx*100}%"></span></div><b class="${Number(x.spearman)<0?'rho-neg':'rho-pos'}">${bmkFmt(x.spearman)}</b></div>`).join("");
+  }).catch(()=>{});
+
+  document.getElementById("benchmark-dimension-bars").innerHTML=(d.benchmarkDimensions||[]).map(x=>`
+    <div class="prediction-row"><label title="${x.evidence}">${x.dimension}</label><div class="prediction-track"><span style="width:${(100*x.score_0_1).toFixed(1)}%"></span></div><b>${(100*x.score_0_1).toFixed(0)}%</b></div>`).join("");
+
+  const e=d.evidenceTierSummary||{};
+  document.getElementById("benchmark-evidence-tiers").innerHTML=[
+    ["Tier A — replicated",e.tier_A],["Tier B — robust",e.tier_B],["Tier C — exploratory",e.tier_C],["M1 genes evaluated",d.geneReplicationSummary?.n_genes_evaluated]
+  ].map(([k,v])=>`<div class="benchmark-tier"><b>${Number(v||0).toLocaleString()}</b><span>${k}</span></div>`).join("");
+
+  document.getElementById("benchmark-findings").innerHTML=(d.conclusions||[]).map(x=>`<div class="benchmark-finding"><b>${x.finding}</b><p>${x.evidence}</p></div>`).join("");
+
+  const f=d.beamFactorSummary||{};
+  document.getElementById("benchmark-ablation").innerHTML=`
+    <div><span>Raw neuronal representation</span><b>${bmkFmt(f.raw_mean_external_spearman)}</b><small>mean external Spearman</small></div>
+    <div><span>Ephys factor representation</span><b>${bmkFmt(f.ephys_factor_mean_external_spearman)}</b><small>mean external Spearman</small></div>
+    <div><span>Joint ephys + cancer factor</span><b>${bmkFmt(f.joint_factor_mean_external_spearman)}</b><small>Δ vs raw ${bmkFmt(f.joint_minus_raw,4)}</small></div>`;
+}
+fetch("data/analytical_comparative_benchmark.json").then(r=>r.ok?r.json():Promise.reject()).then(renderBenchmark).catch(err=>console.error("Benchmark unavailable",err));
