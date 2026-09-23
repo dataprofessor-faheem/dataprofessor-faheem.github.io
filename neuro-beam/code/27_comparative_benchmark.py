@@ -34,6 +34,11 @@ def main():
     neg=pd.read_csv(D/"ml_negative_control_summary.csv")
     cal=pd.read_csv(D/"ml_calibration_uncertainty.csv")
     beam=pd.read_csv(D/"beam_factor_cv.csv")
+    cal_json=json.loads((D/"ml_calibration_uncertainty.json").read_text(encoding="utf-8"))
+    sens=json.loads((D/"cbef_sensitivity_summary.json").read_text(encoding="utf-8"))
+    beam_json=json.loads((D/"beam_factor_results.json").read_text(encoding="utf-8"))
+    pareto=json.loads((D/"neurobeam_pareto_evidence.json").read_text(encoding="utf-8"))
+    release=json.loads((D/"release_status.json").read_text(encoding="utf-8"))
 
     # 1) paired fold-level ExtraTrees vs Ridge (valid grouped-CV benchmark)
     wide=grouped.pivot_table(index=["fold","target"],columns="model",values=["r2","mae","spearman"])
@@ -87,6 +92,7 @@ def main():
         model_summary.append({
             "model":m,
             "n_traits":int(len(sub)),
+            "n_genes":int(sub["n_genes"].iloc[0]) if "n_genes" in sub.columns and len(sub) else None,
             "mean_r2":mean_safe(sub.mean_r2),
             "median_r2":float(sub.mean_r2.median()),
             "mean_spearman":mean_safe(sub.mean_spearman),
@@ -147,11 +153,15 @@ def main():
 
     # 6) calibration summary
     cet=cal[cal.model=="ExtraTrees"]
+    cov=pd.DataFrame(cal_json.get("coverageSummary",[]))
+    cov_et=cov[cov.model=="ExtraTrees"] if len(cov) else pd.DataFrame()
     calibration_summary={
       "n_traits":int(len(cet)),
       "mean_abs_slope_deviation_from_1":float(np.mean(np.abs(cet.calibration_slope-1))),
       "median_abs_slope_deviation_from_1":float(np.median(np.abs(cet.calibration_slope-1))),
-      "mean_abs_intercept":float(np.mean(np.abs(cet.calibration_intercept)))
+      "mean_abs_intercept":float(np.mean(np.abs(cet.calibration_intercept))),
+      "mean_coverage90":float(cov_et.coverage90.mean()) if len(cov_et) else None,
+      "mean_coverage95":float(cov_et.coverage95.mean()) if len(cov_et) else None
     }
 
     # 7) CBEF multitask vs broad ET benchmark (descriptive: different architectures)
@@ -190,7 +200,7 @@ def main():
 
     benchmark={
       "project":"NEURO-BEAM",
-      "benchmarkVersion":"1.0",
+      "benchmarkVersion":"2.0",
       "benchmarkDesign":{
         "internal":"5-fold subject-grouped CV; fold-local preprocessing/feature selection",
         "external":"untouched primary motor cortex M1 cohort",
@@ -205,7 +215,17 @@ def main():
         "cbeTop500RidgeMeanSpearman18Traits":ridge500["mean_spearman"],
         "externalFrozenET":external_summary,
         "negativeControls":negative_summary,
-        "calibration":calibration_summary
+        "calibration":calibration_summary,
+        "cbefStability":{
+          "median_rank_spearman_weights":sens.get("weightSensitivity",{}).get("medianRankSpearman"),
+          "min_rank_spearman_weights":sens.get("weightSensitivity",{}).get("minRankSpearman"),
+          "mean_top50_cohort_bootstrap_jaccard":sens.get("cohortBootstrap",{}).get("meanTop50Jaccard"),
+          "mean_top100_cohort_bootstrap_jaccard":sens.get("cohortBootstrap",{}).get("meanTop100Jaccard"),
+          "permutation_empirical_p":sens.get("permutationNegativeControl",{}).get("empiricalP")
+        },
+        "beamFactorExternal":beam_json.get("externalSummary",{}),
+        "evidenceTierCounts":pareto.get("counts",{}),
+        "releaseIntegrity":{"passed":release.get("passed"),"total":release.get("total"),"publicationReadyEngineeringGate":release.get("publicationReady")}
       },
       "pairwiseFoldTests":pair_rows,
       "externalFeatureSelectionTests":ext_rows,
@@ -223,13 +243,15 @@ def main():
           "Nonlinear ExtraTrees consistently improves subject-grouped prediction over Ridge across the measured electrical traits.",
           "Permutation controls are close to null while real grouped-CV signal is substantially positive.",
           "CBE Top500 feature selection improves external Ridge transfer on most compatible M1 traits compared with using all shared genes.",
-          "Several electrical traits generalize in rank to M1, especially AP waveform ratio, rheobase, input resistance and membrane time constant."
+          "Several electrical traits generalize in rank to M1, especially AP waveform ratio, rheobase, input resistance and membrane time constant.",
+          "CBEF ranking is stable across weight perturbations and cohort bootstrap, with an empirical permutation p-value supporting non-random cross-domain ranking structure."
         ],
         "limitations":[
           "External M1 absolute-scale R2 is negative for several traits, indicating substantial protocol/region/domain shift.",
           "Resting potential and threshold-voltage prediction remain comparatively weak.",
           "Multitask/cancer priors do not uniformly outperform the strongest nonlinear single-task baseline.",
-          "BEAM-Factor cross-domain fusion introduces an ephys–cancer reconstruction tradeoff; joint structure should be interpreted as shared statistical structure, not causality."
+          "BEAM-Factor cross-domain fusion introduces an ephys–cancer reconstruction tradeoff; joint structure should be interpreted as shared statistical structure, not causality.",
+          "Cross-paper literature comparisons are contextual only because datasets, targets, feature definitions and train/test designs differ."
         ]
       },
       "guardrail":"Benchmarking evaluates predictive/statistical performance in the available datasets. It does not establish clinical utility or causal biological mechanisms."
@@ -248,6 +270,11 @@ def main():
         f'- CBE Top500 Ridge mean Spearman: **{ridge500["mean_spearman"]:.3f}**.',
         f'- Frozen ExtraTrees external M1 mean Spearman across {external_summary["n_traits"]} compatible traits: **{external_summary["mean_spearman"]:.3f}**.',
         f'- Mean real-vs-permuted grouped Spearman gap: **{negative_summary["mean_signal_over_permuted"]:.3f}**.',
+        f'- Mean 90% / 95% empirical uncertainty coverage: **{calibration_summary.get("mean_coverage90", float("nan")):.3f} / {calibration_summary.get("mean_coverage95", float("nan")):.3f}**.',
+        f'- CBEF median rank Spearman across weight perturbations: **{sens.get("weightSensitivity",{}).get("medianRankSpearman")}**.',
+        f'- CBEF mean Top-50 cohort-bootstrap Jaccard: **{sens.get("cohortBootstrap",{}).get("meanTop50Jaccard")}**.',
+        f'- CBEF permutation empirical p: **{sens.get("permutationNegativeControl",{}).get("empiricalP")}**.',
+        f'- BEAM-Factor external mean Spearman (raw/ephys-factor/joint-factor): **{beam_json.get("externalSummary",{}).get("rawMeanSpearman")} / {beam_json.get("externalSummary",{}).get("ephysFactorMeanSpearman")} / {beam_json.get("externalSummary",{}).get("jointFactorMeanSpearman")}**.'
         "",
         "## Interpretation","",
         "NEURO-BEAM is strongest for AP waveform ratio, membrane time constant, rheobase/threshold current and input resistance. External rank transfer is meaningful for several traits, while absolute calibration remains vulnerable to region/protocol domain shift.",
