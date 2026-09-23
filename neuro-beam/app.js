@@ -955,10 +955,11 @@ function renderComparativeBenchmark(d){
   document.getElementById("benchmark-limitations").innerHTML=(d.interpretation?.limitations||[]).map(x=>`<li>${x}</li>`).join("");
 
   const literature=[
-    ["Patch-seq foundational","Context","Established transcriptome–physiology predictability in single neurons."],
-    ["UnitedNet","Context","Joint multimodal representation and cross-modal Patch-seq prediction; different benchmark endpoints."],
-    ["PERSIST","Context","Predictive gene-panel selection for Patch-seq electrophysiological properties."],
-    ["Statistical-biophysical","Context","Mechanistic gene→ion-channel-parameter modeling complements NEURO-BEAM's predictive framework."]
+    ["Cadwell et al. 2016","Patch-seq foundation","58 neocortical cells; established direct transcriptome–electrophysiology–morphology profiling."],
+    ["Gouwens et al. 2019","Morpho-electric taxonomy","Large-scale visual-cortex electrophysiology/morphology taxonomy; different objective from trait prediction."],
+    ["Mouse M1 Patch-seq 2021","External-domain atlas",">1,300 M1 neurons; used by NEURO-BEAM as an untouched external validation domain."],
+    ["NMA 2021","Multimodal alignment","4,435 visual-cortex Patch-seq neurons; aligns transcriptomic and electrophysiological manifolds."],
+    ["NEUROeSTIMator 2024","Activity-score modeling","Uses Allen Patch-seq/electrophysiology context but predicts a different neuronal-activity endpoint."]
   ];
   document.getElementById("benchmark-literature").innerHTML=literature.map(([a,b,c])=>`<div class="literature-context-card"><span>${b}</span><h4>${a}</h4><p>${c}</p></div>`).join("");
 }
