@@ -1,0 +1,7 @@
+dimension,score_0_1,evidence
+Internal predictive signal,0.7653954120333442,best mean Spearman=0.612
+Negative-control separation,0.8314214577168128,mean signal-null delta=0.665
+Leakage resistance,0.8291953045866265,max |naive-grouped delta|=0.0085
+External M1 transfer,0.6950127177071046,mean |external Spearman|=0.417
+Uncertainty calibration,0.9928360304126289,mean 90% coverage=0.900
+Replicated gene evidence,1.0,Tier A genes=25

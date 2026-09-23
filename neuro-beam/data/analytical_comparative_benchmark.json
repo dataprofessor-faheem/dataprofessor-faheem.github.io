@@ -1,0 +1,187 @@
+{
+  "project": "NEURO-BEAM",
+  "benchmarkVersion": "Analytical Comparative Benchmark 1.0",
+  "dataScale": {
+    "cells": 3654,
+    "subjects": 936,
+    "genes": 1302,
+    "externalM1Cells": 1304
+  },
+  "internalModels": [
+    {
+      "benchmark_layer": "18-trait internal model comparison",
+      "model": "extra_trees_var400",
+      "n_traits": 18,
+      "n_genes": 400,
+      "mean_r2": 0.3410932463396873,
+      "median_r2": 0.26851029176499697,
+      "mean_spearman": 0.6123163296266754,
+      "mean_mae": 16.989027967002983
+    },
+    {
+      "benchmark_layer": "18-trait internal model comparison",
+      "model": "pls_all",
+      "n_traits": 18,
+      "n_genes": 1302,
+      "mean_r2": 0.3079418532774475,
+      "median_r2": 0.2038179335732731,
+      "mean_spearman": 0.5747991770924358,
+      "mean_mae": 18.96750112255286
+    },
+    {
+      "benchmark_layer": "18-trait internal model comparison",
+      "model": "ridge_cbe_top500",
+      "n_traits": 18,
+      "n_genes": 500,
+      "mean_r2": 0.2795102117790306,
+      "median_r2": 0.20162720646502327,
+      "mean_spearman": 0.5603658660903243,
+      "mean_mae": 18.057175564645515
+    },
+    {
+      "benchmark_layer": "18-trait internal model comparison",
+      "model": "ridge_all",
+      "n_traits": 18,
+      "n_genes": 1302,
+      "mean_r2": 0.016570692090884437,
+      "median_r2": -0.055038916320259756,
+      "mean_spearman": 0.4755035352730083,
+      "mean_mae": 21.062335604346405
+    }
+  ],
+  "groupedCvSummary": [
+    {
+      "model": "ExtraTrees",
+      "n_traits": 11,
+      "mean_r2": 0.38741937509517405,
+      "median_r2": 0.28654085950248664,
+      "mean_spearman": 0.671910565139896,
+      "median_spearman": 0.6782408219495691,
+      "mean_mae_unscaled": 10.413464126167709
+    },
+    {
+      "model": "Ridge",
+      "n_traits": 11,
+      "mean_r2": 0.10014898554471992,
+      "median_r2": -0.0009554511291816059,
+      "mean_spearman": 0.5265767720734542,
+      "median_spearman": 0.5020957956495351,
+      "mean_mae_unscaled": 12.861064647522749
+    }
+  ],
+  "externalM1Summary": {
+    "n_traits": 9,
+    "mean_spearman": 0.314501559339981,
+    "mean_abs_spearman": 0.4170076306242627,
+    "positive_spearman_traits": 8,
+    "positive_r2_traits": 3
+  },
+  "calibrationSummary": {
+    "mean_spearman": 0.6718459935135823,
+    "mean_calibration_slope": 1.2915195979919494,
+    "median_calibration_slope": 1.2538049529525495,
+    "mean_coverage90": 0.900058910412901,
+    "mean_coverage95": 0.9494442352804889,
+    "coverage90_abs_error_from_nominal": 0.00035819847936855646,
+    "coverage95_abs_error_from_nominal": 0.0006747439918363432
+  },
+  "negativeControlSummary": {
+    "mean_grouped_spearman": 0.6706726411743428,
+    "mean_permuted_spearman": 0.0055354750008926165,
+    "mean_signal_over_null_delta": 0.6651371661734502,
+    "mean_leakage_inflation_delta": -0.00014530070846947472,
+    "max_abs_leakage_inflation_delta": 0.008540234770668675
+  },
+  "geneReplicationSummary": {
+    "n_genes_evaluated": 473,
+    "mean_external_replication_score": 0.5349655897282807,
+    "median_external_replication_score": 0.5541243677374886,
+    "mean_sign_concordance": 0.7349894291754757,
+    "genes_sign_concordance_100pct": 132
+  },
+  "evidenceTierSummary": {
+    "tier_A": 25,
+    "tier_B": 51,
+    "tier_C": 424,
+    "outside_top500": 768
+  },
+  "beamFactorSummary": {
+    "raw_mean_external_spearman": 0.39700641041118373,
+    "ephys_factor_mean_external_spearman": 0.39703960933916016,
+    "joint_factor_mean_external_spearman": 0.39612546780307595,
+    "joint_minus_raw": -0.000880942608107782
+  },
+  "benchmarkDimensions": [
+    {
+      "dimension": "Internal predictive signal",
+      "score_0_1": 0.7653954120333442,
+      "evidence": "best mean Spearman=0.612"
+    },
+    {
+      "dimension": "Negative-control separation",
+      "score_0_1": 0.8314214577168128,
+      "evidence": "mean signal-null delta=0.665"
+    },
+    {
+      "dimension": "Leakage resistance",
+      "score_0_1": 0.8291953045866265,
+      "evidence": "max |naive-grouped delta|=0.0085"
+    },
+    {
+      "dimension": "External M1 transfer",
+      "score_0_1": 0.6950127177071046,
+      "evidence": "mean |external Spearman|=0.417"
+    },
+    {
+      "dimension": "Uncertainty calibration",
+      "score_0_1": 0.9928360304126289,
+      "evidence": "mean 90% coverage=0.900"
+    },
+    {
+      "dimension": "Replicated gene evidence",
+      "score_0_1": 1.0,
+      "evidence": "Tier A genes=25"
+    }
+  ],
+  "descriptiveMaturityScore_0_1": 0.8523101537427529,
+  "conclusions": [
+    {
+      "finding": "Nonlinear modelling improves internal prediction.",
+      "evidence": "ExtraTrees is the best broad benchmark model (mean Spearman 0.612, mean R\u00b2 0.341)."
+    },
+    {
+      "finding": "Predictability is strongly trait-dependent.",
+      "evidence": "Best grouped-CV trait: upstroke_downstroke_ratio_long_square (Spearman 0.909, R\u00b2 0.732); weakest: vrest (Spearman 0.325)."
+    },
+    {
+      "finding": "Several electrical phenotypes generalize across cortical regions, but not all.",
+      "evidence": "Best external M1 |Spearman|: upstroke_downstroke_ratio_long_square=0.627; weakest: threshold_v_long_square=0.185; only 3/9 traits have positive external R\u00b2."
+    },
+    {
+      "finding": "Permutation controls support genuine transcriptome\u2013electrophysiology signal.",
+      "evidence": "Mean grouped Spearman=0.671, mean permuted=0.006, mean signal-null delta=0.665."
+    },
+    {
+      "finding": "Subject grouping has little inflation relative to naive splitting in this dataset.",
+      "evidence": "Mean naive-minus-grouped delta=-0.0001; max absolute delta=0.0085. Grouped splitting remains the valid design."
+    },
+    {
+      "finding": "Uncertainty coverage is well aligned with nominal targets.",
+      "evidence": "Mean empirical coverage: 90% target=0.900; 95% target=0.949."
+    },
+    {
+      "finding": "Cancer-informed joint factorization does not improve external neuronal prediction.",
+      "evidence": "Raw mean external Spearman=0.397; joint-factor=0.396; delta=-0.0009."
+    },
+    {
+      "finding": "Gene-level evidence includes an externally replicated core, not just discovery ranking.",
+      "evidence": "25 Tier-A replicated genes, 51 Tier-B robust genes; 473 genes evaluated in M1 replication."
+    }
+  ],
+  "releaseIntegrity": {
+    "passed": 24,
+    "total": 24,
+    "engineeringGate": true
+  },
+  "guardrail": "The composite maturity score is an internal descriptive scorecard, not a validated universal benchmark or ranking against other published projects. Cross-paper metrics are not treated as head-to-head unless datasets and endpoints are directly comparable."
+}
