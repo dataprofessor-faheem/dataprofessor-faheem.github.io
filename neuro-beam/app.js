@@ -915,6 +915,8 @@ function renderComparativeBenchmark(d){
   document.getElementById("bench-null-gap").textContent=benchFmt(h.negativeControls?.mean_signal_over_permuted,3);
   document.getElementById("bench-ext-posr2").textContent=`${h.externalFrozenET?.positive_r2_traits??"—"} / ${h.externalFrozenET?.n_traits??"—"}`;
   document.getElementById("bench-ext-posr2-note").textContent="compatible M1 traits";
+  document.getElementById("bench-cov90").textContent=h.calibration?.mean_coverage90==null?"NA":(100*h.calibration.mean_coverage90).toFixed(1)+"%";
+  document.getElementById("bench-cbef-stability").textContent=benchFmt(h.cbefStability?.median_rank_spearman_weights,3);
 
   const models=[
     {name:"ExtraTrees",rho:h.extraTreesMeanSpearman18Traits,r2:h.extraTreesMeanR2_18Traits,genes:400},
@@ -950,6 +952,15 @@ function renderComparativeBenchmark(d){
 
   document.getElementById("benchmark-fusion").innerHTML=(d.fusionAblations||[]).filter(x=>x.method!=="default_cbef").map(x=>`
     <div class="benchmark-stat"><div class="top"><b>${x.method.replaceAll("_"," ")}</b><strong>${benchFmt(x.rank_spearman_vs_default,3)}</strong></div><p>Rank correlation vs default · Top-100 Jaccard ${benchFmt(x.top100_jaccard,3)} · Top-500 Jaccard ${benchFmt(x.top500_jaccard,3)}</p></div>`).join("");
+
+  const rb=h.cbefStability||{}, cal=h.calibration||{}, bf=h.beamFactorExternal||{};
+  document.getElementById("benchmark-robustness").innerHTML=[
+    ["90% / 95% empirical coverage", (cal.mean_coverage90==null?"NA":(100*cal.mean_coverage90).toFixed(1)+"%")+" / "+(cal.mean_coverage95==null?"NA":(100*cal.mean_coverage95).toFixed(1)+"%"), "Cross-conformal empirical coverage"],
+    ["CBEF weight stability", benchFmt(rb.median_rank_spearman_weights,3), "Minimum tested rank Spearman "+benchFmt(rb.min_rank_spearman_weights,3)],
+    ["Cohort bootstrap Top-50", benchFmt(rb.mean_top50_cohort_bootstrap_jaccard,3), "Top-100 Jaccard "+benchFmt(rb.mean_top100_cohort_bootstrap_jaccard,3)],
+    ["CBEF permutation control", rb.permutation_empirical_p==null?"NA":Number(rb.permutation_empirical_p).toExponential(2), "Empirical p-value"],
+    ["BEAM external mean ρ", benchFmt(bf.jointFactorMeanSpearman,3), "Raw "+benchFmt(bf.rawMeanSpearman,3)+" · ephys-factor "+benchFmt(bf.ephysFactorMeanSpearman,3)]
+  ].map(([a,b,c])=>`<div class="benchmark-stat"><div class="top"><b>${a}</b><strong>${b}</strong></div><p>${c}</p></div>`).join("");
 
   document.getElementById("benchmark-strengths").innerHTML=(d.interpretation?.strengths||[]).map(x=>`<li>${x}</li>`).join("");
   document.getElementById("benchmark-limitations").innerHTML=(d.interpretation?.limitations||[]).map(x=>`<li>${x}</li>`).join("");
