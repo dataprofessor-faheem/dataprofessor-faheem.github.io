@@ -273,6 +273,8 @@
         <article><span>Frozen M1 mean Spearman</span><b id="bench-ext-rho">—</b><small>external validation</small></article>
         <article><span>Signal over permutation</span><b id="bench-null-gap">—</b><small>negative-control gap</small></article>
         <article><span>Positive M1 R²</span><b id="bench-ext-posr2">—</b><small id="bench-ext-posr2-note">compatible traits</small></article>
+        <article><span>90% empirical coverage</span><b id="bench-cov90">—</b><small>cross-conformal uncertainty</small></article>
+        <article><span>CBEF weight stability</span><b id="bench-cbef-stability">—</b><small>median rank Spearman</small></article>
       </div>
 
       <div class="benchmark-grid">
@@ -307,6 +309,11 @@
         <article class="viz-card">
           <div class="viz-title"><h3>Fusion ablation</h3><span>CBEF ranking robustness</span></div>
           <div id="benchmark-fusion" class="benchmark-stat-list"></div>
+        </article>
+
+        <article class="viz-card">
+          <div class="viz-title"><h3>Calibration & ranking stability</h3><span>uncertainty · bootstrap · permutation</span></div>
+          <div id="benchmark-robustness" class="benchmark-stat-list"></div>
         </article>
 
         <article class="viz-card wide-card">
