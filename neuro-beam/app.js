@@ -1050,3 +1050,22 @@ function renderBenchmark(d){
     <div><span>Joint ephys + cancer factor</span><b>${bmkFmt(f.joint_factor_mean_external_spearman)}</b><small>Δ vs raw ${bmkFmt(f.joint_minus_raw,4)}</small></div>`;
 }
 fetch("data/analytical_comparative_benchmark.json").then(r=>r.ok?r.json():Promise.reject()).then(renderBenchmark).catch(err=>console.error("Benchmark unavailable",err));
+
+
+/* === Analytical & Comparative Benchmark Dashboard === */
+Promise.all([fetch("data/analytical_comparative_benchmark.json").then(r=>r.json()),fetch("data/comparative_benchmark.json").then(r=>r.json()),fetch("data/comparative_literature_context.csv").then(r=>r.text()),fetch("data/benchmark_external_m1.csv").then(r=>r.text())]).then(([a,b,litcsv,extcsv])=>{
+ const models=(a.internalModels||[]).slice().sort((x,y)=>(y.mean_spearman||0)-(x.mean_spearman||0)); const best=models[0]||{};
+ const bm=document.getElementById("bench-best-model"); if(bm) bm.textContent=best.model||"—";
+ const bmm=document.getElementById("bench-best-model-metric"); if(bmm) bmm.textContent=best.model?("mean ρ "+Number(best.mean_spearman).toFixed(3)+" · R² "+Number(best.mean_r2).toFixed(3)):"—";
+ const er=document.getElementById("bench-ext-rho"); if(er) er.textContent=Number(a.externalM1Summary?.mean_abs_spearman||0).toFixed(3);
+ const er2=document.getElementById("bench-ext-r2"); if(er2) er2.textContent=(a.externalM1Summary?.positive_r2_traits||0)+"/"+(a.externalM1Summary?.n_traits||0)+" traits with positive R²";
+ const nd=document.getElementById("bench-null-delta"); if(nd) nd.textContent=Number(a.negativeControlSummary?.mean_signal_over_null_delta||0).toFixed(3);
+ const ta=document.getElementById("bench-tier-a"); if(ta) ta.textContent=a.evidenceTierSummary?.tier_A??"—";
+ const ig=document.getElementById("bench-integrity"); if(ig) ig.textContent=(a.releaseIntegrity?.passed||0)+"/"+(a.releaseIntegrity?.total||0);
+ const mm=Math.max(.001,...models.map(x=>Number(x.mean_spearman)||0)); const mroot=document.getElementById("bench-model-bars"); if(mroot) mroot.innerHTML=models.map(x=>"<div class=\"prediction-row\"><label>"+x.model+"</label><div class=\"prediction-track\"><span style=\"width:"+(((Number(x.mean_spearman)||0)/mm)*100).toFixed(1)+"%\"></span></div><b>"+Number(x.mean_spearman||0).toFixed(3)+"</b></div>").join("");
+ const erows=parseCSV(extcsv); const emx=Math.max(.001,...erows.map(x=>Math.abs(Number(x.spearman)||0))); const exroot=document.getElementById("bench-external-bars"); if(exroot) exroot.innerHTML=erows.sort((x,y)=>Math.abs(Number(y.spearman))-Math.abs(Number(x.spearman))).map(x=>"<div class=\"prediction-row\"><label>"+String(x.target_vis||"").replaceAll("_"," ")+"</label><div class=\"prediction-track external\"><span style=\"width:"+((Math.abs(Number(x.spearman)||0)/emx)*100).toFixed(1)+"%\"></span></div><b class=\""+(Number(x.spearman)<0?"rho-neg":"rho-pos")+"\">"+Number(x.spearman||0).toFixed(3)+"</b></div>").join("");
+ const froot=document.getElementById("bench-findings"); if(froot) froot.innerHTML=(a.conclusions||[]).map(x=>"<div class=\"benchmark-finding\"><b>"+x.finding+"</b><p>"+x.evidence+"</p></div>").join("");
+ const sroot=document.getElementById("bench-strengths"); if(sroot) sroot.innerHTML=(b.interpretation?.strengths||[]).map(x=>"<div>"+x+"</div>").join("");
+ const lroot=document.getElementById("bench-limitations"); if(lroot){lroot.classList.add("limit"); lroot.innerHTML=(b.interpretation?.limitations||[]).map(x=>"<div>"+x+"</div>").join("");}
+ const lit=parseCSV(litcsv); let h="<table class=\"matrix-table\"><thead><tr><th>Study/method</th><th>Role</th><th>Scale</th><th>Comparison status</th></tr></thead><tbody>"; lit.forEach(x=>{h+="<tr><td><b>"+x.study+"</b></td><td>"+x.role+"</td><td>"+x.sample_scale+"</td><td>"+x.direct_metric_comparability+"</td></tr>";}); h+="</tbody></table>"; const lr=document.getElementById("bench-literature"); if(lr) lr.innerHTML=h;
+}).catch(e=>console.error("Benchmark dashboard unavailable",e));
