@@ -5,7 +5,7 @@ on:
   push:
     paths:
       - ".github/workflows/neurobeam-comparative-benchmark.yml"
-      - "neuro-beam/code/27_comparative_benchmark.py"
+      - "neuro-beam/code/27_analytical_comparative_benchmark.py"
       - "neuro-beam/data/ml_grouped_cv_metrics_by_fold.csv"
       - "neuro-beam/data/m1_external_validation_metrics.csv"
       - "neuro-beam/data/cbef_sensitivity_summary.json"
@@ -24,13 +24,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: pip install pandas numpy scipy
-      - run: python neuro-beam/code/27_comparative_benchmark.py
+      - run: pip install pandas numpy scipy tabulate
+      - run: python neuro-beam/code/27_analytical_comparative_benchmark.py
       - name: Commit benchmark outputs
         run: |
           git config user.name "neuro-beam-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add neuro-beam/data/comparative_benchmark.json neuro-beam/data/benchmark_pairwise_tests.csv neuro-beam/data/benchmark_internal_trait_comparison.csv neuro-beam/data/benchmark_model_summary.csv neuro-beam/data/benchmark_external_feature_selection.csv neuro-beam/data/benchmark_multitask_vs_baseline.csv neuro-beam/data/benchmark_beam_factor_tradeoff.csv neuro-beam/docs/comparative_benchmark_report.md
+          git add neuro-beam/data/analytical_comparative_benchmark.json neuro-beam/data/benchmark_model_comparison.csv neuro-beam/data/benchmark_grouped_cv_summary.csv neuro-beam/data/benchmark_trait_comparison.csv neuro-beam/data/benchmark_external_m1.csv neuro-beam/data/benchmark_negative_controls.csv neuro-beam/data/benchmark_scorecard.csv neuro-beam/docs/analytical_comparative_benchmark_report.md
           git diff --cached --quiet || git commit -m "Update NEURO-BEAM comparative benchmark"
           git pull --rebase origin main
           git push origin main
