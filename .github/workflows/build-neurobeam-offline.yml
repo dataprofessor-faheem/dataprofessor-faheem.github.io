@@ -1,0 +1,220 @@
+name: Build Offline NEURO-BEAM Package
+
+on:
+  push:
+    branches:
+      - offline-neurobeam-package
+    paths:
+      - ".github/workflows/build-neurobeam-offline.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Assemble offline folder
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/NEURO-BEAM-OFFLINE
+          cp -R neuro-beam/. build/NEURO-BEAM-OFFLINE/
+
+          cat > build/NEURO-BEAM-OFFLINE/offline_server.py <<'PY'
+          from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
+          from pathlib import Path
+          import os, threading, webbrowser
+
+          ROOT = Path(__file__).resolve().parent
+          os.chdir(ROOT)
+          HOST = "127.0.0.1"
+          PORT = 8765
+
+          class Handler(SimpleHTTPRequestHandler):
+              def end_headers(self):
+                  self.send_header("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0")
+                  self.send_header("Pragma", "no-cache")
+                  self.send_header("Expires", "0")
+                  super().end_headers()
+
+          url = f"http://{HOST}:{PORT}/"
+          print("=" * 72)
+          print(" NEURO-BEAM OFFLINE RESEARCH EDITION")
+          print("=" * 72)
+          print(f" Local portal: {url}")
+          print(" Keep this window open while using NEURO-BEAM.")
+          print(" Press Ctrl+C to stop the local server.")
+          print("=" * 72)
+          threading.Timer(1.0, lambda: webbrowser.open(url)).start()
+          try:
+              ThreadingHTTPServer((HOST, PORT), Handler).serve_forever()
+          except KeyboardInterrupt:
+              print("\nNEURO-BEAM offline server stopped.")
+          PY
+
+          cat > build/NEURO-BEAM-OFFLINE/START_NEURO_BEAM.bat <<'BAT'
+          @echo off
+          title NEURO-BEAM Offline
+          cd /d "%~dp0"
+          where py >nul 2>nul
+          if %errorlevel%==0 (
+            py -3 offline_server.py
+            goto :eof
+          )
+          where python >nul 2>nul
+          if %errorlevel%==0 (
+            python offline_server.py
+            goto :eof
+          )
+          echo.
+          echo Python 3 was not found on this computer.
+          echo Install Python 3, then double-click START_NEURO_BEAM.bat again.
+          echo The NEURO-BEAM files themselves are already fully offline.
+          echo.
+          pause
+          BAT
+
+          cat > build/NEURO-BEAM-OFFLINE/START_NEURO_BEAM.ps1 <<'PS1'
+          Set-Location $PSScriptRoot
+          if (Get-Command py -ErrorAction SilentlyContinue) {
+            py -3 offline_server.py
+          } elseif (Get-Command python -ErrorAction SilentlyContinue) {
+            python offline_server.py
+          } else {
+            Write-Host "Python 3 was not found. Install Python 3 and run this launcher again."
+            Read-Host "Press Enter to close"
+          }
+          PS1
+
+          cat > build/NEURO-BEAM-OFFLINE/start_neuro_beam.sh <<'SH'
+          #!/usr/bin/env bash
+          set -e
+          cd "$(dirname "$0")"
+          if command -v python3 >/dev/null 2>&1; then
+            python3 offline_server.py
+          elif command -v python >/dev/null 2>&1; then
+            python offline_server.py
+          else
+            echo "Python 3 is required to run the local offline server."
+            exit 1
+          fi
+          SH
+          chmod +x build/NEURO-BEAM-OFFLINE/start_neuro_beam.sh
+
+          cat > build/NEURO-BEAM-OFFLINE/OFFLINE_README.txt <<'TXT'
+          NEURO-BEAM — OFFLINE RESEARCH EDITION
+          =====================================
+
+          PURPOSE
+          -------
+          This package is a self-contained offline copy of the NEURO-BEAM research
+          portal. It includes the portal interface, processed analysis outputs,
+          CSV/JSON research data, documentation, modelling code and manuscript
+          support files available at the time the package was built.
+
+          WINDOWS — EASIEST START
+          -----------------------
+          1. Extract the ZIP to any folder.
+          2. Open the NEURO-BEAM-OFFLINE folder.
+          3. Double-click START_NEURO_BEAM.bat.
+          4. Your default browser will open:
+             http://127.0.0.1:8765/
+
+          Keep the black terminal window open while using the portal.
+          Press Ctrl+C in that window to stop NEURO-BEAM.
+
+          WHY A LOCAL SERVER IS USED
+          --------------------------
+          Modern browsers block JavaScript from loading local JSON/CSV files when an
+          HTML file is opened directly with file://. The included Python local server
+          avoids that restriction. It runs only on your own computer at 127.0.0.1
+          and does not publish the project on the internet.
+
+          REQUIREMENT
+          -----------
+          Python 3 is required only to run the local web server. No Python packages
+          are required for ordinary portal viewing.
+
+          OFFLINE BEHAVIOUR
+          -----------------
+          The research dashboards and bundled datasets work locally.
+          Links labelled as external sources (cBioPortal, DANDI, Allen, GitHub, etc.)
+          naturally require internet if you choose to open them. They are not needed
+          for the bundled offline analyses.
+
+          IMPORTANT SCIENTIFIC NOTE
+          -------------------------
+          NEURO-BEAM separates:
+          - measured same-cell evidence,
+          - external validation evidence,
+          - regulatory/contextual proxy evidence,
+          - computational predictions.
+
+          Model-based neuron animations and membrane-potential dynamics are
+          explanatory computational representations and should not be treated as
+          direct experimental recordings unless explicitly labelled as such.
+
+          FUTURE ONLINE DEPLOYMENT
+          ------------------------
+          This offline folder can later be deployed to a static host. Keep the
+          relative folder structure unchanged when moving it online.
+
+          MAIN FILES
+          ----------
+          index.html                  Main portal
+          app.js                      Core interactive logic
+          styles.css                  Portal styling
+          data/                       Analysis-ready CSV/JSON outputs
+          code/                       Reproducibility / analysis scripts
+          docs/                       Methods and release documentation
+          manuscript/                 Manuscript support files
+          OFFLINE_README.txt          This guide
+          offline_server.py           Local-only HTTP server
+          START_NEURO_BEAM.bat        Windows launcher
+          TXT
+
+          python - <<'PY'
+          from pathlib import Path
+          import json, datetime
+
+          root = Path("build/NEURO-BEAM-OFFLINE")
+          index = root / "index.html"
+          html = index.read_text(encoding="utf-8")
+
+          banner = """
+          <div id="offline-edition-banner" style="position:sticky;top:0;z-index:99999;background:#10202b;border-bottom:1px solid #2f596c;color:#b9dcec;padding:8px 16px;text-align:center;font:600 12px/1.3 system-ui,sans-serif;letter-spacing:.02em">
+            NEURO-BEAM — OFFLINE RESEARCH EDITION · Local data and prediction outputs loaded from this computer
+          </div>
+          """
+          marker = "<body>"
+          if "offline-edition-banner" not in html and marker in html:
+              html = html.replace(marker, marker + banner, 1)
+          index.write_text(html, encoding="utf-8")
+
+          data_dir = root / "data"
+          files = sorted(str(p.relative_to(root)) for p in root.rglob("*") if p.is_file())
+          manifest = {
+              "edition": "NEURO-BEAM OFFLINE RESEARCH EDITION",
+              "builtUTC": datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z",
+              "fileCount": len(files),
+              "dataFileCount": len(list(data_dir.glob("*"))) if data_dir.exists() else 0,
+              "entryPoint": "index.html",
+              "localServer": "http://127.0.0.1:8765/",
+              "files": files
+          }
+          (root / "offline_manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+          PY
+
+          find build/NEURO-BEAM-OFFLINE -type f | sort > build/NEURO-BEAM-OFFLINE/OFFLINE_FILE_LIST.txt
+
+      - name: Upload offline package
+        uses: actions/upload-artifact@v4
+        with:
+          name: NEURO-BEAM-OFFLINE
+          path: build/NEURO-BEAM-OFFLINE
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 6
