@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Chlamydia AI MathFusion | GDR Network</title>
+<meta name="description" content="Research prototype for AI-assisted segmentation and quantification of Chlamydia inclusion bodies in Giemsa and fluorescence microscopy."/>
+<style>
+:root{--ink:#0b1220;--muted:#5f6b7a;--line:#dce3ea;--paper:#fff;--soft:#f6f8fb;--accent:#0d6efd;--ok:#0f9d76;--warn:#b76a00}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--soft);color:var(--ink)}
+.wrap{max-width:1180px;margin:auto;padding:0 22px}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.brand{font-weight:800;letter-spacing:-.02em}.brand span{color:var(--accent)}.nav a{color:var(--ink);text-decoration:none;margin-left:22px;font-size:14px}
+.hero{padding:74px 0 44px;background:linear-gradient(135deg,#ffffff 0%,#eef4ff 100%);border-bottom:1px solid var(--line)}
+.kicker{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:clamp(38px,6vw,72px);line-height:.98;letter-spacing:-.055em;margin:14px 0 18px;max-width:900px}
+.lead{font-size:19px;line-height:1.65;max-width:820px;color:var(--muted)}.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.badge{padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}.section{padding:42px 0}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 8px 30px rgba(12,24,46,.04)}
+.upload{grid-column:span 7}.status{grid-column:span 5}.drop{border:2px dashed #b8c4d3;border-radius:16px;padding:28px;text-align:center;background:#fbfcfe;cursor:pointer}.drop:hover{border-color:var(--accent)}
+input[type=file]{display:none}#preview{max-width:100%;max-height:430px;border-radius:12px;margin-top:18px;display:none}.meta{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.metric{padding:14px;border-radius:12px;background:var(--soft)}.metric b{display:block;font-size:20px}.metric small{color:var(--muted)}
+.notice{padding:14px 16px;border-left:4px solid var(--warn);background:#fff8ed;border-radius:10px;color:#6b4700;line-height:1.5}.ok{border-left-color:var(--ok);background:#eefaf6;color:#075b45}
+h2{font-size:30px;letter-spacing:-.03em;margin:0 0 18px}h3{margin:0 0 8px;font-size:17px}p{line-height:1.6;color:var(--muted)}
+.model{grid-column:span 4;min-height:180px}.tag{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}
+.flow{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;align-items:center}.node{padding:14px 10px;border-radius:12px;background:#fff;border:1px solid var(--line);text-align:center;font-size:13px;font-weight:700}.arrow{text-align:center;color:#8b98a8}.eq{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#0b1220;color:#dce9ff;padding:20px;border-radius:14px;overflow:auto;line-height:1.7}
+footer{padding:34px 0 50px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+.btn{display:inline-block;margin-top:16px;background:var(--ink);color:#fff;text-decoration:none;padding:11px 16px;border-radius:10px;font-weight:700;font-size:14px}
+@media(max-width:900px){.upload,.status,.model{grid-column:1/-1}.flow{grid-template-columns:1fr}.arrow{transform:rotate(90deg)}.nav .links{display:none}.meta{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="nav"><div class="wrap" style="width:100%;display:flex;justify-content:space-between;align-items:center">
+<div class="brand">Chlamydia AI <span>MathFusion</span></div><div class="links"><a href="#analyze">Analyze</a><a href="#models">Models</a><a href="#math">Mathematics</a><a href="#validation">Validation</a></div>
+</div></div>
+
+<header class="hero"><div class="wrap">
+<div class="kicker">Research-use microscopy AI</div>
+<h1>Cell-level Chlamydia inclusion analysis from microscopy.</h1>
+<div class="lead">A research prototype combining cellular foundation models, instance segmentation, calibrated teacher fusion, geometry-aware loss functions, cross-modality consistency and uncertainty-aware reporting for Giemsa and DFA/fluorescence microscopy.</div>
+<div class="badges"><span class="badge">CellSAM</span><span class="badge">Cellpose-SAM / CPDINO</span><span class="badge">micro-SAM</span><span class="badge">StarDist</span><span class="badge">YOLO26-seg</span></div>
+</div></header>
+
+<main class="wrap">
+<section id="analyze" class="section grid">
+<div class="card upload">
+<div class="tag">Microscopy workspace</div><h2>Upload an image</h2>
+<label class="drop" for="file"><strong>Select a PNG/JPEG microscopy image</strong><br><span style="color:#6e7a89;font-size:13px">Local browser preview only. No image is uploaded by this static demo.</span></label>
+<input id="file" type="file" accept="image/png,image/jpeg,image/webp"/>
+<img id="preview" alt="Microscopy preview"/>
+<div class="meta">
+<div class="metric"><b id="dims">—</b><small>Dimensions</small></div>
+<div class="metric"><b id="type">—</b><small>Image type</small></div>
+<div class="metric"><b>Local</b><small>Preview processing</small></div>
+</div>
+</div>
+<div class="card status">
+<div class="tag">Deployment status</div><h2>Research prototype</h2>
+<div class="notice ok"><strong>Website live:</strong> the user interface and research architecture are deployed through GitHub Pages.</div>
+<div class="notice" style="margin-top:12px"><strong>Inference intentionally disabled:</strong> a Chlamydia-specific checkpoint has not yet been trained and independently validated. The site will not fabricate an infection result from a generic pretrained model.</div>
+<p>After a leakage-controlled training dataset and held-out validation are completed, the deployment student can be exported to ONNX/WebGPU or called through a secure inference API.</p>
+</div>
+</section>
+
+<section id="models" class="section">
+<div class="tag">Five-model teacher system</div><h2>What each model contributes</h2>
+<div class="grid">
+<div class="card model"><h3>CellSAM</h3><p>Generalist host-cell segmentation. Proposed primarily for HeLa-cell boundary masks and morphology.</p></div>
+<div class="card model"><h3>Cellpose-SAM / CPDINO</h3><p>General cellular instance segmentation and strong morphology representation for cells and candidate inclusions.</p></div>
+<div class="card model"><h3>micro-SAM</h3><p>Microscopy-adapted interactive and automatic segmentation for annotation refinement and hard examples.</p></div>
+<div class="card model"><h3>StarDist</h3><p>Geometry-driven instance segmentation baseline for compact fluorescence-associated structures.</p></div>
+<div class="card model"><h3>YOLO26-seg</h3><p>Fast deployable student after Chlamydia-specific fine-tuning and teacher knowledge distillation.</p></div>
+<div class="card model"><h3>MathFusion layer</h3><p>Learns calibrated teacher weights, quantifies disagreement and distills consensus into a lighter student.</p></div>
+</div>
+</section>
+
+<section class="section">
+<div class="tag">Analysis path</div><h2>Proposed result flow</h2>
+<div class="flow">
+<div class="node">Giemsa / DFA image</div><div class="arrow">→</div><div class="node">HeLa cell masks</div><div class="arrow">→</div><div class="node">Inclusion masks</div><div class="arrow">→</div><div class="node">Cell–inclusion assignment</div>
+</div>
+<div class="flow" style="margin-top:10px">
+<div class="node">Calibrated fusion</div><div class="arrow">→</div><div class="node">Infection burden</div><div class="arrow">→</div><div class="node">Confidence + uncertainty</div><div class="arrow">→</div><div class="node">Manual-review flag</div>
+</div>
+</section>
+
+<section id="math" class="section">
+<div class="tag">Mathematical upgrade</div><h2>Calibrated, geometry-aware learning</h2>
+<div class="eq">q(y|x) = Σₖ wₖ pₖ(y|x),   wₖ = exp(aₖ) / Σⱼ exp(aⱼ)
+
+L = λ₁ L_Focal-Tversky + λ₂ L_Dice + λ₃ L_Boundary
+  + λ₄ L_SDF + λ₅ L_KD + λ₆ L_CrossModal + λ₇ L_Brier
+
+L_cross = JS(P_Giemsa, P_DFA) + η Wε(E_Giemsa, E_DFA)
+
+Uncertainty = predictive entropy + teacher disagreement</div>
+<p>Teacher weights are learned on validation data under a simplex constraint. Cross-modality consistency can use Jensen–Shannon divergence and, where paired fields are available, entropy-regularized optimal transport between image representations.</p>
+</section>
+
+<section id="validation" class="section grid">
+<div class="card" style="grid-column:span 6"><h3>Required validation</h3><p>Dice, IoU, precision, recall, F1, AP50, AP50–95, count agreement, calibration/Brier score, inference time and experiment-level bootstrap confidence intervals.</p></div>
+<div class="card" style="grid-column:span 6"><h3>Leakage control</h3><p>Train/validation/test splitting must occur by experiment, plate, well or biological replicate—not by random crops from the same microscopy field.</p></div>
+</section>
+</main>
+
+<footer><div class="wrap">Chlamydia AI MathFusion · Research-use prototype · GDR Network. Not a validated clinical diagnostic device.</div></footer>
+<script>
+const input=document.getElementById('file'),img=document.getElementById('preview'),dims=document.getElementById('dims'),type=document.getElementById('type');
+input.addEventListener('change',()=>{
+ const f=input.files&&input.files[0]; if(!f)return;
+ const url=URL.createObjectURL(f);
+ img.onload=()=>{dims.textContent=img.naturalWidth+' × '+img.naturalHeight;type.textContent=(f.type||'image').replace('image/','').toUpperCase();img.style.display='block';URL.revokeObjectURL(url)};
+ img.src=url;
+});
+</script>
+</body></html>
