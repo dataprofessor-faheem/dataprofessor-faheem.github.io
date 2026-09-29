@@ -1,15 +1,29 @@
 # Chlamydia AI MathFusion
 
-Live research prototype for AI-assisted Chlamydia inclusion-body analysis in Giemsa and DFA/fluorescence microscopy.
+Research prototype for AI-assisted Chlamydia inclusion-body analysis in Giemsa and DFA/fluorescence microscopy.
 
-## Live site
-Published as a subdirectory of the GDR Network GitHub Pages site:
-`/chlamydia-ai/`
+## Hosting status
+
+The source is committed and deployment-ready. GitHub Pages is currently unavailable because the repository-level Pages service is not enabled for the connected integration. A Render Blueprint is now present at the repository root (`/render.yaml`) and targets this directory as a static site.
+
+### Deploy on Render
+
+Use Render with this repository and the root-level `render.yaml` Blueprint.
+
+Repository:
+`https://github.com/dataprofessor-faheem/dataprofessor-faheem.github.io`
+
+Expected Render service name:
+`chlamydia-ai-mathfusion`
+
+Because the repository is private, Render must be granted GitHub access to this repository before the Blueprint can clone and deploy it.
 
 ## Scientific status
-The front end is live. Chlamydia-specific inference remains intentionally disabled until a Chlamydia-labelled model has been trained and independently validated. Generic pretrained cell models must not be represented as a validated pathogen diagnostic.
+
+The web interface is a research/demo interface. Chlamydia-specific inference remains intentionally disabled until a Chlamydia-labelled model has been trained and independently validated. Generic pretrained cell models must not be represented as a validated pathogen diagnostic.
 
 ## Architecture
+
 Teacher stack:
 - CellSAM
 - Cellpose-SAM / CPDINO
@@ -29,4 +43,5 @@ Mathematical layer:
 - Brier calibration and uncertainty-based manual review
 
 ## Leakage rule
+
 Split by experiment / plate / well / biological replicate. Never split random crops from the same microscopy field across train and test sets.
