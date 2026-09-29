@@ -2,25 +2,18 @@
 
 Research prototype for AI-assisted Chlamydia inclusion-body analysis in Giemsa and DFA/fluorescence microscopy.
 
-## Hosting status
+## Hosting
 
-The source is committed and deployment-ready. GitHub Pages is currently unavailable because the repository-level Pages service is not enabled for the connected integration. A Render Blueprint is now present at the repository root (`/render.yaml`) and targets this directory as a static site.
+This project is stored in `chlamydia-ai/` inside the GitHub Pages repository.
 
-### Deploy on Render
+Target public path:
+`https://www.gdrnetwork.org/chlamydia-ai/`
 
-Use Render with this repository and the root-level `render.yaml` Blueprint.
-
-Repository:
-`https://github.com/dataprofessor-faheem/dataprofessor-faheem.github.io`
-
-Expected Render service name:
-`chlamydia-ai-mathfusion`
-
-Because the repository is private, Render must be granted GitHub access to this repository before the Blueprint can clone and deploy it.
+The repository uses the standard GitHub Actions Pages workflow in `.github/workflows/pages.yml`.
 
 ## Scientific status
 
-The web interface is a research/demo interface. Chlamydia-specific inference remains intentionally disabled until a Chlamydia-labelled model has been trained and independently validated. Generic pretrained cell models must not be represented as a validated pathogen diagnostic.
+The web interface is a research/demo interface. Chlamydia-specific inference remains disabled until a Chlamydia-labelled model has been trained and independently validated.
 
 ## Architecture
 
@@ -34,14 +27,13 @@ Deployable student:
 - YOLO26-seg after Chlamydia-specific fine-tuning/distillation
 
 Mathematical layer:
-- simplex-constrained calibrated teacher weighting
-- Focal-Tversky + Dice loss
+- calibrated teacher weighting
+- Focal-Tversky + Dice
 - boundary and signed-distance geometry
 - knowledge distillation
-- Giemsa/DFA Jensen-Shannon consistency
-- optional entropy-regularized optimal transport for paired embeddings
-- Brier calibration and uncertainty-based manual review
+- Giemsa/DFA consistency
+- calibration and uncertainty-aware review
 
 ## Leakage rule
 
-Split by experiment / plate / well / biological replicate. Never split random crops from the same microscopy field across train and test sets.
+Split by experiment / plate / well / biological replicate. Never split random crops from the same field across train and test sets.
