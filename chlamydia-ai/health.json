@@ -1,0 +1,7 @@
+{
+  "service": "chlamydia-ai-mathfusion",
+  "status": "deployment-ready",
+  "hosting": "Render blueprint configured",
+  "inference": "disabled-until-validated",
+  "path": "/"
+}
