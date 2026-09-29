@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: chlamydia-ai-mathfusion
+    runtime: static
+    branch: main
+    rootDir: chlamydia-ai
+    buildCommand: echo "Chlamydia AI MathFusion static site ready"
+    staticPublishPath: .
+    autoDeployTrigger: commit
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
