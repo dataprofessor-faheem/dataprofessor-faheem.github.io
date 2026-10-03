@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="GDR-MaizeGP — an academic maize genome and proteome browser integrating B73 NAM 5.0, live protein search, chromosome navigation and curated Indian maize germplasm.">
+<meta name="theme-color" content="#123c2b">
+<title>GDR-MaizeGP | Maize Genome & Proteome Browser</title>
+<style>
+:root{--ink:#16211b;--muted:#617067;--green:#123c2b;--green2:#1c5a40;--maize:#d8a928;--cream:#f7f6f0;--line:#dfe5df;--white:#fff;--soft:#eef3ef;--danger:#8b3d2e;--shadow:0 12px 36px rgba(18,60,43,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:#fff;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}a{color:inherit}.wrap{width:min(1220px,92vw);margin:auto}.topline{background:#0e2e21;color:#dfeae3;font-size:13px}.topline .wrap{display:flex;justify-content:space-between;gap:24px;padding:8px 0}.topline a{color:#fff;text-decoration:none}.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.navin{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:72px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none}.mark{width:42px;height:42px;border:1px solid #cfdad1;border-radius:10px;display:grid;place-items:center;background:#fff}.brand strong{display:block;font-family:Georgia,"Times New Roman",serif;font-size:21px;color:var(--green);letter-spacing:.1px}.brand small{display:block;color:var(--muted);font-size:11px;letter-spacing:.08em;text-transform:uppercase}.links{display:flex;align-items:center;gap:22px}.links a{text-decoration:none;font-size:14px;color:#334139}.links a:hover{color:var(--green)}.btn{border:0;border-radius:6px;padding:11px 15px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:7px;font-size:14px}.btn.primary{background:var(--green);color:white}.btn.secondary{background:white;color:var(--green);border:1px solid #b9c8bd}.hero{background:linear-gradient(180deg,#f8faf7,#fff);border-bottom:1px solid var(--line);padding:64px 0 44px}.heroGrid{display:grid;grid-template-columns:1.18fr .82fr;gap:52px;align-items:center}.kicker{font-weight:800;color:var(--green2);font-size:12px;text-transform:uppercase;letter-spacing:.16em}.hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(40px,5.2vw,68px);line-height:1.02;margin:12px 0 18px;font-weight:600;letter-spacing:-.025em}.hero h1 em{font-style:normal;color:var(--green)}.lede{font-size:18px;color:#4c5c53;max-width:760px}.searchBox{margin-top:28px;background:#fff;border:1px solid #cfd8d1;border-radius:8px;box-shadow:var(--shadow);padding:10px;display:flex;gap:8px}.searchBox input{flex:1;border:0;outline:0;padding:10px 12px;font-size:16px;min-width:0}.quick{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.chip{border:1px solid #d5ded7;background:#fff;border-radius:999px;padding:6px 10px;font-size:12px;color:#435149;cursor:pointer}.heroPanel{border:1px solid #cad6cd;background:#fff;border-radius:10px;box-shadow:var(--shadow);overflow:hidden}.panelHead{padding:16px 18px;background:var(--green);color:white;display:flex;justify-content:space-between;align-items:center}.panelHead strong{font-family:Georgia,"Times New Roman",serif;font-size:18px}.reference{padding:22px}.reference dl{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0}.reference div{border-bottom:1px solid var(--line);padding-bottom:9px}.reference dt{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.07em}.reference dd{margin:3px 0 0;font-weight:750}.reference .wide{grid-column:1/-1}.sourceLine{font-size:12px;color:var(--muted);margin-top:14px}.sourceLine a{color:var(--green)}.stats{border-bottom:1px solid var(--line);background:#fff}.statsGrid{display:grid;grid-template-columns:repeat(5,1fr)}.stat{padding:20px;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat strong{display:block;font-family:Georgia,"Times New Roman",serif;font-size:27px;color:var(--green)}.stat span{font-size:12px;color:var(--muted)}.section{padding:68px 0}.section.alt{background:var(--cream);border-top:1px solid #ebe9dd;border-bottom:1px solid #ebe9dd}.head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:28px}.head h2{font-family:Georgia,"Times New Roman",serif;font-size:36px;line-height:1.1;margin:6px 0 0;font-weight:600}.head p{max-width:650px;color:var(--muted);margin:0}.browserShell{border:1px solid #cad5cd;border-radius:10px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}.browserTools{padding:12px;background:#f6f8f6;border-bottom:1px solid var(--line);display:flex;gap:8px;flex-wrap:wrap}.browserTools select,.browserTools input{border:1px solid #c7d2ca;border-radius:5px;padding:9px 10px;background:#fff}.browserTools input{min-width:250px;flex:1}.browserFrame{height:620px;background:#fafafa}.browserFrame iframe{width:100%;height:100%;border:0}.notice{font-size:12px;color:var(--muted);padding:10px 14px;border-top:1px solid var(--line);background:#fbfcfb}.proteinGrid{display:grid;grid-template-columns:.34fr .66fr;gap:24px}.searchCard,.resultCard{border:1px solid #d4ddd6;background:#fff;border-radius:9px;padding:20px}.searchCard h3,.resultCard h3{font-family:Georgia,"Times New Roman",serif;margin-top:0}.searchCard input{width:100%;border:1px solid #c7d2ca;border-radius:5px;padding:11px;margin:7px 0 10px}.helper{font-size:12px;color:var(--muted)}.proteinList{display:grid;gap:10px;max-height:580px;overflow:auto}.protein{border:1px solid #e0e6e1;border-radius:7px;padding:13px}.proteinTop{display:flex;justify-content:space-between;gap:10px}.protein a{color:var(--green);font-weight:800;text-decoration:none}.protein .name{font-size:13px;margin-top:4px}.protein .meta{font-size:12px;color:var(--muted);margin-top:8px}.protein .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.tag{font-size:10px;background:var(--soft);border:1px solid #d8e3da;border-radius:3px;padding:3px 5px;color:#44554b}.tableWrap{overflow:auto;border:1px solid #d9dfda;border-radius:9px;background:#fff}table{border-collapse:collapse;width:100%;min-width:920px}th,td{padding:13px 14px;text-align:left;border-bottom:1px solid #e4e8e4;font-size:13px;vertical-align:top}th{background:#f2f5f2;color:#314138;font-size:11px;text-transform:uppercase;letter-spacing:.06em}td strong{color:var(--green)}.status{display:inline-block;border-radius:999px;padding:4px 8px;font-size:10px;font-weight:800}.status.meta{background:#f3efe1;color:#725915}.sources{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.source{border:1px solid #d6ded8;border-radius:8px;padding:17px;background:#fff;text-decoration:none}.source span{display:block;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}.source strong{display:block;margin:5px 0;color:var(--green)}.source p{margin:0;font-size:12px;color:var(--muted)}.aboutGrid{display:grid;grid-template-columns:1fr 1fr;gap:30px}.aboutCard{border-top:3px solid var(--green);padding:20px 0}.aboutCard h3{font-family:Georgia,"Times New Roman",serif}.departments{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.dept{background:white;border:1px solid #d4ddd6;padding:18px;border-radius:7px}.dept b{color:var(--green)}footer{background:#10291e;color:#d8e3dc;padding:38px 0 20px}.footerGrid{display:grid;grid-template-columns:1.3fr .7fr .7fr;gap:30px}.footerGrid a{color:#d8e3dc;text-decoration:none;display:block;margin:7px 0;font-size:13px}.footerBottom{border-top:1px solid rgba(255,255,255,.15);margin-top:26px;padding-top:16px;display:flex;justify-content:space-between;gap:20px;font-size:11px;color:#9db1a5}.loading{padding:30px;text-align:center;color:var(--muted)}.error{padding:13px;border:1px solid #e5c8bf;background:#fff5f2;color:var(--danger);border-radius:6px;font-size:13px}
+@media(max-width:900px){.links a:not(.btn){display:none}.heroGrid,.proteinGrid,.aboutGrid{grid-template-columns:1fr}.statsGrid{grid-template-columns:repeat(2,1fr)}.stat{border-bottom:1px solid var(--line)}.sources,.departments{grid-template-columns:1fr}.browserFrame{height:520px}.topline .wrap,.head,.footerBottom{align-items:flex-start;flex-direction:column}.footerGrid{grid-template-columns:1fr}.hero{padding-top:40px}} 
+</style>
+</head>
+<body>
+<div class="topline"><div class="wrap"><span>GDR Network • Plant genomics research resource</span><span>Reference release: B73 NAM 5.0 / RefSeq annotation 2025-02</span></div></div>
+<header class="nav"><div class="wrap navin">
+<a class="brand" href="#top">
+<span class="mark" aria-hidden="true"><svg viewBox="0 0 48 48" width="31" height="31"><path d="M17 39c8-7 9-19 8-31" fill="none" stroke="#123c2b" stroke-width="2.3"/><path d="M24 12c7 1 11 5 12 11-7 0-11-4-12-11Z" fill="#d8a928"/><path d="M22 20c-6 0-10 3-12 8 6 1 11-2 12-8Z" fill="#1c5a40"/><path d="M26 26c6 0 10 3 12 8-6 1-11-2-12-8Z" fill="#d8a928"/><circle cx="19" cy="12" r="2.1" fill="#1c5a40"/><circle cx="20" cy="18" r="2.1" fill="#1c5a40"/><circle cx="21" cy="24" r="2.1" fill="#1c5a40"/></svg></span>
+<span><strong>GDR-MaizeGP</strong><small>Genome & Proteome Browser</small></span></a>
+<nav class="links"><a href="#genome">Genome</a><a href="#proteome">Proteome</a><a href="#germplasm">Indian Germplasm</a><a href="#sources">Sources</a><a href="#about">About</a><a class="btn secondary" href="/gdr/">GDR Network</a></nav>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap heroGrid">
+<div><div class="kicker">Zea mays • genomics • proteomics • germplasm</div>
+<h1>A focused research portal for the <em>maize genome and proteome.</em></h1>
+<p class="lede">Explore the B73 NAM 5.0 reference genome, search live maize protein records, navigate chromosomes, and review curated Indian maize germplasm metadata with explicit source provenance.</p>
+<div class="searchBox"><input id="globalSearch" aria-label="Search genome" placeholder="Search a gene ID or genomic region, e.g. Zm00001eb067740 or chr1:1..5000000"><button class="btn primary" id="globalGo">Open in genome browser</button></div>
+<div class="quick"><button class="chip" data-loc="Zm00001eb067740">Example gene: Zm00001eb067740</button><button class="chip" data-loc="chr1:1..5000000">Chr1: first 5 Mb</button><button class="chip" data-loc="chr10:1000000..8000000">Chr10 region</button></div>
+</div>
+<aside class="heroPanel"><div class="panelHead"><strong>B73 reference backbone</strong><span>NAM 5.0</span></div><div class="reference"><dl>
+<div class="wide"><dt>Assembly</dt><dd>Zm-B73-REFERENCE-NAM-5.0</dd></div>
+<div><dt>NCBI accession</dt><dd>GCF_902167145.1</dd></div><div><dt>Taxon</dt><dd>Zea mays (4577)</dd></div>
+<div><dt>Assembly length</dt><dd>2.182 Gb</dd></div><div><dt>Chromosomes</dt><dd>10</dd></div>
+<div><dt>Reference status</dt><dd>Designated Reference</dd></div><div><dt>Gene model set</dt><dd>Zm00001eb.1</dd></div>
+</dl><p class="sourceLine">Genome metadata: <a href="https://genomes.jbrowse.org/accession/GCF_902167145.1/" target="_blank" rel="noopener">JBrowse Genomes / NCBI</a>. Gene model source: <a href="https://maizegdb.org/gene_center/gene" target="_blank" rel="noopener">MaizeGDB</a>.</p></div></aside>
+</div></section>
+
+<section class="stats"><div class="wrap statsGrid">
+<div class="stat"><strong>10</strong><span>chromosomes</span></div>
+<div class="stat"><strong>49,888</strong><span>RefSeq genes (2025-02 annotation)</span></div>
+<div class="stat"><strong>34,313</strong><span>protein-coding genes</span></div>
+<div class="stat"><strong>47%</strong><span>assembly GC content</span></div>
+<div class="stat"><strong>2.182 Gb</strong><span>assembly length</span></div>
+</div></section>
+
+<section class="section" id="genome"><div class="wrap">
+<div class="head"><div><div class="kicker">Interactive genome</div><h2>B73 NAM 5.0 genome browser</h2></div><p>The embedded JBrowse 2 view uses the designated B73 reference assembly. Select a chromosome or enter a coordinate/gene identifier and load it directly.</p></div>
+<div class="browserShell">
+<div class="browserTools"><select id="chrSelect" aria-label="Chromosome"><option value="chr1">Chromosome 1</option><option value="chr2">Chromosome 2</option><option value="chr3">Chromosome 3</option><option value="chr4">Chromosome 4</option><option value="chr5">Chromosome 5</option><option value="chr6">Chromosome 6</option><option value="chr7">Chromosome 7</option><option value="chr8">Chromosome 8</option><option value="chr9">Chromosome 9</option><option value="chr10">Chromosome 10</option></select><input id="regionInput" value="chr1:1..5000000" aria-label="Genome location"><button class="btn primary" id="loadRegion">Load region</button><a class="btn secondary" id="openJBrowse" target="_blank" rel="noopener">Open full screen</a></div>
+<div class="browserFrame"><iframe id="jbrowse" title="JBrowse 2 maize B73 NAM 5.0 genome browser" loading="lazy"></iframe></div>
+<div class="notice">Hosted genome visualization is provided by JBrowse 2 Genomes for NCBI accession GCF_902167145.1. This portal does not duplicate the ~2.18 Gb assembly inside GitHub Pages.</div>
+</div></div></section>
+
+<section class="section alt" id="proteome"><div class="wrap">
+<div class="head"><div><div class="kicker">Live protein search</div><h2>Maize Proteome Explorer</h2></div><p>Search UniProtKB live for <em>Zea mays</em> (NCBI Taxonomy 4577). Results are retrieved at query time and linked back to the source record.</p></div>
+<div class="proteinGrid">
+<div class="searchCard"><h3>Search proteins</h3><label for="proteinQuery" class="helper">Gene, protein name, keyword, or UniProt accession</label><input id="proteinQuery" value="opaque2"><button class="btn primary" id="proteinGo" style="width:100%">Search UniProtKB</button><p class="helper">Try: <b>opaque2</b>, <b>liguleless</b>, <b>DREB</b>, <b>kinase</b>, or a UniProt accession. FASTA downloads are served directly by UniProt.</p></div>
+<div class="resultCard"><h3 id="proteinTitle">Protein results</h3><div id="proteinResults" class="proteinList"><div class="loading">Run a search to retrieve live maize protein records.</div></div></div>
+</div></div></section>
+
+<section class="section" id="germplasm"><div class="wrap">
+<div class="head"><div><div class="kicker">India-focused layer</div><h2>Indian maize germplasm catalogue</h2></div><p>These are curated cultivar/hybrid metadata records. They are not labelled as sequenced genomes unless an authoritative public assembly/accession is verified.</p></div>
+<div class="tableWrap"><table><thead><tr><th>Cultivar / hybrid</th><th>Class</th><th>Verified reported features</th><th>Genome status in GDR-MaizeGP</th><th>Source</th></tr></thead><tbody>
+<tr><td><strong>Pusa Vivek QPM 9 Improved</strong></td><td>Biofortified QPM hybrid</td><td>Provitamin-A 8.15 ppm; lysine 2.67% in protein; tryptophan 0.74% in protein; reported grain yield 55.9 q/ha (NHZ) and 59.2 q/ha (PZ).</td><td><span class="status meta">Metadata only — assembly not integrated</span></td><td><a href="https://icar.gov.in/en/crop-science/maize" target="_blank" rel="noopener">ICAR</a></td></tr>
+<tr><td><strong>DMRH 1308</strong></td><td>High-yielding hybrid</td><td>ICAR describes wider adaptability and reports grain yield of 100 q/ha.</td><td><span class="status meta">Metadata only — assembly not integrated</span></td><td><a href="https://icar.gov.in/en/crop-science/maize" target="_blank" rel="noopener">ICAR</a></td></tr>
+<tr><td><strong>Pusa HM4 Male Sterile Baby Corn (Shishu) (ABSH4-1)</strong></td><td>Baby corn hybrid</td><td>Reported baby-corn yield 70.7 q/ha with husk and 22.7 q/ha without husk; green fodder 270.1 q/ha; first picking at 53 days.</td><td><span class="status meta">Metadata only — assembly not integrated</span></td><td><a href="https://icar.gov.in/en/crop-science/maize" target="_blank" rel="noopener">ICAR</a></td></tr>
+</tbody></table></div>
+</div></section>
+
+<section class="section alt" id="sources"><div class="wrap">
+<div class="head"><div><div class="kicker">Provenance</div><h2>Authoritative data sources</h2></div><p>GDR-MaizeGP keeps source systems visible rather than obscuring provenance behind a custom interface.</p></div>
+<div class="sources">
+<a class="source" href="https://maizegdb.org/" target="_blank" rel="noopener"><span>Genome & annotation</span><strong>MaizeGDB</strong><p>B73 NAM 5.0 downloads, official maize gene models and annotation resources.</p></a>
+<a class="source" href="https://genomes.jbrowse.org/accession/GCF_902167145.1/" target="_blank" rel="noopener"><span>Genome visualization</span><strong>JBrowse 2 Genomes</strong><p>Hosted B73 NAM 5.0 genome browser based on NCBI assembly accession GCF_902167145.1.</p></a>
+<a class="source" href="https://www.uniprot.org/" target="_blank" rel="noopener"><span>Protein knowledgebase</span><strong>UniProtKB</strong><p>Live protein queries for Zea mays taxonomy ID 4577, with source record and FASTA links.</p></a>
+<a class="source" href="https://icar.gov.in/en/crop-science/maize" target="_blank" rel="noopener"><span>Indian cultivar metadata</span><strong>ICAR</strong><p>Official crop-science descriptions used for the India-focused germplasm catalogue.</p></a>
+</div></div></section>
+
+<section class="section" id="about"><div class="wrap">
+<div class="head"><div><div class="kicker">Academic project profile</div><h2>Built for plant science, bioinformatics and microbiology research</h2></div><p>Version 1.0 emphasizes a trustworthy reference backbone, live external knowledgebase queries, transparent provenance and a structure that can expand to Indian accession-scale genomics.</p></div>
+<div class="departments"><div class="dept"><b>Department of Plant Sciences</b><p>Plant genetics, crop biology, germplasm and phenotype interpretation.</p></div><div class="dept"><b>Department of Bioinformatics</b><p>Genome annotation, sequence analysis, proteomics and computational integration.</p></div><div class="dept"><b>Department of Microbiology</b><p>Host–microbe biology, stress response and functional interpretation.</p></div></div>
+<div class="aboutGrid" style="margin-top:28px"><div class="aboutCard"><h3>Institutional presentation</h3><p>GDR Network research resource with the project profile supplied for the Departments of Plant Sciences, Bioinformatics and Microbiology, Jai Prakash University. Formal institutional endorsement is not independently asserted by this website.</p></div><div class="aboutCard"><h3>Scientific boundary</h3><p>Indian cultivar records are kept separate from sequenced reference assemblies. Future cultivar-specific genome tracks should only be activated after public assembly/variant accessions and provenance are verified.</p></div></div>
+</div></section>
+</main>
+
+<footer><div class="wrap footerGrid"><div><div class="brand"><span class="mark">🌽</span><span><strong style="color:white">GDR-MaizeGP</strong><small style="color:#a9bbb0">Genome & Proteome Browser</small></span></div><p style="max-width:520px;font-size:13px;color:#a9bbb0">A GDR Network academic bioinformatics resource for maize genome, proteome and Indian germplasm exploration.</p></div><div><strong>Explore</strong><a href="#genome">Genome Browser</a><a href="#proteome">Proteome</a><a href="#germplasm">Indian Germplasm</a></div><div><strong>Network</strong><a href="/gdr/">GDR Network</a><a href="https://github.com/dataprofessor-faheem/dataprofessor-faheem.github.io" target="_blank" rel="noopener">GitHub repository</a><a href="#sources">Data provenance</a></div></div>
+<div class="wrap footerBottom"><span>© 2026 GDR Network • GDR-MaizeGP v1.0</span><span>Reference biology remains attributable to the authoritative source databases linked above.</span></div></footer>
+
+<script>
+const baseJBrowse='https://jbrowse.org/code/jb2/main/?config=%2Fhubs%2Fgenark%2FGCF%2F902%2F167%2F145%2FGCF_902167145.1%2Fconfig.json';
+function jbrowseUrl(loc){return baseJBrowse+'&loc='+encodeURIComponent(loc||'chr1:1..5000000')}
+function loadGenome(loc){
+ const clean=(loc||document.getElementById('regionInput').value||'chr1:1..5000000').trim();
+ document.getElementById('regionInput').value=clean;
+ const url=jbrowseUrl(clean);
+ document.getElementById('jbrowse').src=url;
+ document.getElementById('openJBrowse').href=url;
+}
+document.getElementById('loadRegion').addEventListener('click',()=>loadGenome());
+document.getElementById('chrSelect').addEventListener('change',e=>loadGenome(e.target.value+':1..5000000'));
+document.getElementById('globalGo').addEventListener('click',()=>loadGenome(document.getElementById('globalSearch').value));
+document.getElementById('globalSearch').addEventListener('keydown',e=>{if(e.key==='Enter')loadGenome(e.target.value)});
+document.querySelectorAll('[data-loc]').forEach(x=>x.addEventListener('click',()=>loadGenome(x.dataset.loc)));
+loadGenome('chr1:1..5000000');
+
+function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function proteinName(r){
+ const p=r.proteinDescription||{};
+ return p.recommendedName?.fullName?.value||p.submissionNames?.[0]?.fullName?.value||p.alternativeNames?.[0]?.fullName?.value||r.uniProtkbId||'Uncharacterized protein';
+}
+function geneName(r){return r.genes?.[0]?.geneName?.value||r.genes?.[0]?.synonyms?.[0]?.value||'—'}
+function xrefs(r,db){return (r.uniProtKBCrossReferences||[]).filter(x=>x.database===db).map(x=>x.id)}
+async function searchProteins(){
+ const box=document.getElementById('proteinResults'), q=document.getElementById('proteinQuery').value.trim();
+ if(!q){box.innerHTML='<div class="error">Enter a gene, protein name, keyword or accession.</div>';return}
+ box.innerHTML='<div class="loading">Querying UniProtKB for Zea mays…</div>';
+ document.getElementById('proteinTitle').textContent='Protein results — '+q;
+ try{
+   const query='organism_id:4577 AND ('+q+')';
+   const url='https://rest.uniprot.org/uniprotkb/search?format=json&size=20&query='+encodeURIComponent(query);
+   const res=await fetch(url,{headers:{Accept:'application/json'}});
+   if(!res.ok) throw new Error('UniProt returned HTTP '+res.status);
+   const data=await res.json(), rows=data.results||[];
+   if(!rows.length){box.innerHTML='<div class="error">No UniProtKB maize records matched this query. Try a gene symbol, protein term, or accession.</div>';return}
+   box.innerHTML=rows.map(r=>{
+     const acc=r.primaryAccession, gos=xrefs(r,'GO').slice(0,4), ips=xrefs(r,'InterPro').slice(0,4);
+     return '<article class="protein"><div class="proteinTop"><div><a href="https://www.uniprot.org/uniprotkb/'+encodeURIComponent(acc)+'/entry" target="_blank" rel="noopener">'+esc(acc)+'</a><div class="name">'+esc(proteinName(r))+'</div></div><a class="btn secondary" style="font-size:11px;padding:7px 9px" href="https://rest.uniprot.org/uniprotkb/'+encodeURIComponent(acc)+'.fasta" target="_blank" rel="noopener">FASTA</a></div><div class="meta">Gene: <b>'+esc(geneName(r))+'</b> • Length: <b>'+esc(r.sequence?.length||'—')+' aa</b> • Entry: '+esc(r.uniProtkbId||'—')+'</div><div class="tags">'+gos.map(x=>'<span class="tag">'+esc(x)+'</span>').join('')+ips.map(x=>'<span class="tag">InterPro '+esc(x)+'</span>').join('')+'</div></article>';
+   }).join('');
+ }catch(err){
+   box.innerHTML='<div class="error"><b>Live query could not be completed.</b><br>'+esc(err.message)+'<br><br><a href="https://www.uniprot.org/uniprotkb?query=taxonomy_id%3A4577" target="_blank" rel="noopener">Open Zea mays directly in UniProtKB →</a></div>';
+ }
+}
+document.getElementById('proteinGo').addEventListener('click',searchProteins);
+document.getElementById('proteinQuery').addEventListener('keydown',e=>{if(e.key==='Enter')searchProteins()});
+searchProteins();
+</script>
+</body>
+</html>
