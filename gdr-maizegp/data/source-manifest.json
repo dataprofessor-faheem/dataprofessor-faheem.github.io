@@ -1,0 +1,39 @@
+{
+  "project": "GDR-MaizeGP",
+  "version": "1.0.0",
+  "last_updated": "2026-10-03",
+  "reference": {
+    "organism": "Zea mays",
+    "taxonomy_id": 4577,
+    "assembly": "Zm-B73-REFERENCE-NAM-5.0",
+    "ncbi_accession": "GCF_902167145.1",
+    "gene_model_set": "Zm00001eb.1",
+    "assembly_source": "MaizeGDB / NCBI",
+    "genome_browser": "JBrowse 2 Genomes"
+  },
+  "sources": [
+    {
+      "name": "MaizeGDB",
+      "role": "reference genome downloads, maize gene models and annotations",
+      "url": "https://maizegdb.org/",
+      "download_url": "https://download.maizegdb.org/Zm-B73-REFERENCE-NAM-5.0/"
+    },
+    {
+      "name": "JBrowse 2 Genomes",
+      "role": "hosted interactive B73 NAM 5.0 genome visualization",
+      "url": "https://genomes.jbrowse.org/accession/GCF_902167145.1/"
+    },
+    {
+      "name": "UniProtKB",
+      "role": "live Zea mays protein records and FASTA retrieval",
+      "url": "https://www.uniprot.org/",
+      "query_taxonomy_id": 4577
+    },
+    {
+      "name": "Indian Council of Agricultural Research",
+      "role": "curated Indian maize cultivar/hybrid metadata",
+      "url": "https://icar.gov.in/en/crop-science/maize"
+    }
+  ],
+  "scientific_policy": "Cultivar metadata must not be represented as a sequenced genome unless an authoritative assembly or variant accession has been verified."
+}
