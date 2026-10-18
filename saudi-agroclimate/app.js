@@ -42,7 +42,75 @@ const regions=[
 {slug:'al-jouf',name:'Al-Jouf',lat:29.9697,lon:40.2064,x:39,y:17,climate:'Northern interior agriculture with Mediterranean influence in winter.',stress:'Drought, frost/heat range, irrigation demand',desc:'Nationally important olive, wheat, date and fruit production environment.',crops:['olive','wheat','date-palm','grape','apple','fig','watermelon','alfalfa']}
 ];
 
+
+
+const cityProfiles=[
+{id:'riyadh-city',region:'riyadh',name:'Riyadh',lat:24.7136,lon:46.6753,crops:['date-palm','tomato','cucumber','alfalfa']},
+{id:'al-kharj',region:'riyadh',name:'Al-Kharj',lat:24.1556,lon:47.3120,crops:['date-palm','wheat','alfalfa','tomato','cucumber']},
+{id:'wadi-dawasir',region:'riyadh',name:'Wadi Al-Dawasir',lat:20.4607,lon:44.7871,crops:['date-palm','wheat','alfalfa','tomato']},
+{id:'majmaah',region:'riyadh',name:"Al-Majma'ah",lat:25.9044,lon:45.3566,crops:['wheat','barley','date-palm','alfalfa']},
+{id:'zulfi',region:'riyadh',name:'Zulfi',lat:26.2994,lon:44.8154,crops:['date-palm','wheat','barley','alfalfa']},
+
+{id:'makkah-city',region:'makkah',name:'Makkah',lat:21.3891,lon:39.8579,crops:['date-palm','tomato','fig']},
+{id:'taif',region:'makkah',name:'Taif',lat:21.2854,lon:40.4158,crops:['grape','pomegranate','fig','tomato','olive']},
+{id:'jeddah',region:'makkah',name:'Jeddah',lat:21.5433,lon:39.1728,crops:['tomato','cucumber','date-palm']},
+{id:'qunfudhah',region:'makkah',name:'Al-Qunfudhah',lat:19.1264,lon:41.0789,crops:['mango','maize','sesame','tomato','watermelon']},
+
+{id:'madinah-city',region:'madinah',name:'Madinah',lat:24.5247,lon:39.5692,crops:['date-palm','grape','tomato']},
+{id:'yanbu',region:'madinah',name:'Yanbu',lat:24.0895,lon:38.0618,crops:['date-palm','mango','tomato','watermelon']},
+{id:'khaybar',region:'madinah',name:'Khaybar',lat:25.6980,lon:39.2930,crops:['date-palm','grape','alfalfa']},
+
+{id:'buraydah',region:'qassim',name:'Buraydah',lat:26.3592,lon:43.9818,crops:['date-palm','wheat','barley','tomato','cucumber']},
+{id:'unaizah',region:'qassim',name:'Unaizah',lat:26.0843,lon:43.9936,crops:['date-palm','wheat','tomato','grape','pomegranate']},
+{id:'al-rass',region:'qassim',name:'Al-Rass',lat:25.8694,lon:43.4973,crops:['wheat','barley','date-palm','alfalfa']},
+{id:'bukayriyah',region:'qassim',name:'Al-Bukayriyah',lat:26.1442,lon:43.6578,crops:['date-palm','grape','pomegranate','tomato']},
+
+{id:'hofuf',region:'eastern',name:'Al-Ahsa / Hofuf',lat:25.3830,lon:49.5860,crops:['date-palm','citrus','tomato','cucumber','alfalfa']},
+{id:'dammam',region:'eastern',name:'Dammam',lat:26.4207,lon:50.0888,crops:['date-palm','tomato','cucumber']},
+{id:'qatif',region:'eastern',name:'Qatif',lat:26.5652,lon:50.0089,crops:['date-palm','citrus','tomato','cucumber']},
+{id:'jubail',region:'eastern',name:'Jubail',lat:27.0174,lon:49.6225,crops:['date-palm','tomato','cucumber']},
+
+{id:'abha',region:'asir',name:'Abha',lat:18.2164,lon:42.5053,crops:['coffee','grape','pomegranate','fig','maize']},
+{id:'khamis',region:'asir',name:'Khamis Mushait',lat:18.3064,lon:42.7293,crops:['grape','pomegranate','maize','tomato']},
+{id:'muhayil',region:'asir',name:'Muhayil Asir',lat:18.5453,lon:42.0535,crops:['mango','maize','sesame','tomato']},
+{id:'namas',region:'asir',name:'Al-Namas',lat:19.1217,lon:42.1356,crops:['coffee','grape','fig','olive','apple']},
+
+{id:'tabuk-city',region:'tabuk',name:'Tabuk',lat:28.3838,lon:36.5550,crops:['wheat','potato','grape','olive','apple']},
+{id:'tayma',region:'tabuk',name:'Tayma',lat:27.6203,lon:38.5219,crops:['date-palm','grape','olive','wheat']},
+{id:'duba',region:'tabuk',name:'Duba',lat:27.3513,lon:35.6901,crops:['date-palm','grape','tomato']},
+{id:'haql',region:'tabuk',name:'Haql',lat:29.2833,lon:34.9500,crops:['grape','olive','tomato','apple']},
+
+{id:'hail-city',region:'hail',name:'Hail',lat:27.5114,lon:41.7208,crops:['wheat','barley','date-palm','olive','grape','potato']},
+{id:'baqaa',region:'hail',name:"Baqa'a",lat:27.8833,lon:42.4167,crops:['wheat','barley','alfalfa']},
+{id:'ghazalah',region:'hail',name:'Al-Ghazalah',lat:26.7850,lon:41.8170,crops:['date-palm','wheat','barley']},
+
+{id:'arar',region:'northern-borders',name:'Arar',lat:30.9753,lon:41.0381,crops:['wheat','barley','alfalfa','tomato']},
+{id:'rafha',region:'northern-borders',name:'Rafha',lat:29.6270,lon:43.4940,crops:['wheat','barley','alfalfa']},
+{id:'turaif',region:'northern-borders',name:'Turaif',lat:31.6725,lon:38.6637,crops:['wheat','barley','tomato']},
+
+{id:'jazan-city',region:'jazan',name:'Jazan',lat:16.8892,lon:42.5511,crops:['mango','banana','tomato','watermelon']},
+{id:'sabya',region:'jazan',name:'Sabya',lat:17.1495,lon:42.6254,crops:['mango','banana','maize','sesame']},
+{id:'abu-arish',region:'jazan',name:'Abu Arish',lat:16.9689,lon:42.8325,crops:['mango','banana','maize','sesame','tomato']},
+{id:'baish',region:'jazan',name:'Baish',lat:17.3881,lon:42.5241,crops:['mango','banana','maize']},
+{id:'samtah',region:'jazan',name:'Samtah',lat:16.5964,lon:42.9444,crops:['mango','banana','sesame','maize']},
+
+{id:'najran-city',region:'najran',name:'Najran',lat:17.5656,lon:44.2289,crops:['date-palm','wheat','barley','grape','pomegranate','mango']},
+{id:'sharurah',region:'najran',name:'Sharurah',lat:17.4667,lon:47.1167,crops:['date-palm','wheat','alfalfa']},
+{id:'hubuna',region:'najran',name:'Hubuna',lat:17.8370,lon:44.0230,crops:['date-palm','grape','pomegranate']},
+
+{id:'bahah-city',region:'al-bahah',name:'Al-Bahah',lat:20.0129,lon:41.4677,crops:['coffee','pomegranate','grape','fig','olive']},
+{id:'makhwah',region:'al-bahah',name:'Al-Makhwah',lat:19.7794,lon:41.4394,crops:['coffee','mango','maize','sesame']},
+{id:'mandaq',region:'al-bahah',name:'Al-Mandaq',lat:20.1060,lon:41.2830,crops:['coffee','pomegranate','grape','fig']},
+{id:'qilwah',region:'al-bahah',name:'Qilwah',lat:19.7520,lon:41.4300,crops:['coffee','mango','maize']},
+
+{id:'sakaka',region:'al-jouf',name:'Sakaka',lat:29.9697,lon:40.2064,crops:['olive','wheat','date-palm','grape','apple']},
+{id:'dumat',region:'al-jouf',name:'Dumat Al-Jandal',lat:29.8158,lon:39.8664,crops:['olive','date-palm','grape','wheat']},
+{id:'qurayyat',region:'al-jouf',name:'Al-Qurayyat',lat:31.3318,lon:37.3428,crops:['olive','wheat','grape','apple']},
+{id:'tabarjal',region:'al-jouf',name:'Tabarjal',lat:30.5007,lon:38.2143,crops:['wheat','olive','alfalfa']}
+];
+
 let currentRegion=3;
+let activeCityId='regional';
 let activeCoords=null;
 let lastWeather=null;
 let lastRows=[];
@@ -53,8 +121,10 @@ function init(){
   $('locationSelect').innerHTML=regions.map((r,i)=>`<option value="${i}">${r.name}</option>`).join('');
   $('farmZone').innerHTML=regions.map((r,i)=>`<option value="${i}">${r.name}</option>`).join('');
   $('locationSelect').value=String(currentRegion);
+  populateCityOptions();
   updateCropOptions();
-  $('locationSelect').addEventListener('change',()=>{currentRegion=+$('locationSelect').value;activeCoords=null;updateCropOptions();updateLocationReadout();loadData();});
+  $('locationSelect').addEventListener('change',()=>{currentRegion=+$('locationSelect').value;activeCityId='regional';activeCoords=null;populateCityOptions();updateCropOptions();updateLocationReadout();loadData();});
+  $('citySelect').addEventListener('change',()=>{activeCityId=$('citySelect').value;activeCoords=null;updateCropOptions();updateLocationReadout();loadData();});
   $('cropSelect').addEventListener('change',loadData);
   $('horizonSelect').addEventListener('change',loadData);
   $('refreshBtn').addEventListener('click',loadData);
@@ -71,21 +141,35 @@ function init(){
   loadData();
 }
 
+function citiesForRegion(){return cityProfiles.filter(c=>c.region===regions[currentRegion].slug);}
+function getSelectedCity(){return activeCityId==='regional'?null:cityProfiles.find(c=>c.id===activeCityId)||null;}
+function populateCityOptions(){
+  const cities=citiesForRegion();
+  $('citySelect').innerHTML='<option value="regional">Regional analysis</option>'+cities.map(c=>`<option value="${c.id}">${c.name}</option>`).join('');
+  if(!cities.some(c=>c.id===activeCityId)) activeCityId='regional';
+  $('citySelect').value=activeCityId;
+}
 function updateCropOptions(){
-  const region=regions[currentRegion],previous=$('cropSelect').value;
-  $('cropSelect').innerHTML=region.crops.map(k=>`<option value="${k}">${cropProfiles[k].name}</option>`).join('');
-  if(region.crops.includes(previous)) $('cropSelect').value=previous;
+  const region=regions[currentRegion],city=getSelectedCity(),previous=$('cropSelect').value;
+  const cropKeys=city?.crops?.length?city.crops:region.crops;
+  $('cropSelect').innerHTML=cropKeys.map(k=>`<option value="${k}">${cropProfiles[k].name}</option>`).join('');
+  if(cropKeys.includes(previous)) $('cropSelect').value=previous;
   renderRegion(currentRegion);
 }
-
 function updateLocationReadout(){
-  const region=regions[currentRegion];
+  const region=regions[currentRegion],city=getSelectedCity();
   if(activeCoords){
-    $('locationReadout').textContent=`Farm GPS: ${activeCoords.lat.toFixed(5)}°, ${activeCoords.lon.toFixed(5)}° • nearest regional profile: ${region.name}`;
+    $('locationReadout').textContent=`Farm GPS: ${activeCoords.lat.toFixed(5)}°, ${activeCoords.lon.toFixed(5)}° • ${region.name}`;
     $('statusLocation').textContent='Farm GPS';
+    if($('statusCity')) $('statusCity').textContent='GPS';
+  }else if(city){
+    $('locationReadout').textContent=`${city.name}: ${city.lat.toFixed(4)}°, ${city.lon.toFixed(4)}° • ${region.name}`;
+    $('statusLocation').textContent='City';
+    if($('statusCity')) $('statusCity').textContent=city.name;
   }else{
     $('locationReadout').textContent=`Regional reference: ${region.lat.toFixed(4)}°, ${region.lon.toFixed(4)}° • ${region.name}`;
-    $('statusLocation').textContent='Regional reference';
+    $('statusLocation').textContent='Region';
+    if($('statusCity')) $('statusCity').textContent='Regional';
   }
 }
 
@@ -95,7 +179,7 @@ function useFarmGps(){
   navigator.geolocation.getCurrentPosition(pos=>{
     const lat=pos.coords.latitude,lon=pos.coords.longitude;
     if(lat<15.5||lat>33.7||lon<34||lon>56.8){activeCoords=null;$('gpsStatus').textContent='Device location is outside the Saudi operating extent; regional reference mode remains active.';updateLocationReadout();return;}
-    const nearest=nearestRegion(lat,lon);currentRegion=nearest;$('locationSelect').value=String(nearest);activeCoords={lat,lon,accuracy:pos.coords.accuracy};updateCropOptions();updateLocationReadout();$('gpsStatus').textContent=`GPS accepted • estimated accuracy ±${Math.round(pos.coords.accuracy)} m • weather will use the farm coordinate.`;loadData();
+    const nearest=nearestRegion(lat,lon);currentRegion=nearest;activeCityId='regional';$('locationSelect').value=String(nearest);populateCityOptions();activeCoords={lat,lon,accuracy:pos.coords.accuracy};updateCropOptions();updateLocationReadout();$('gpsStatus').textContent=`GPS accepted • estimated accuracy ±${Math.round(pos.coords.accuracy)} m • weather will use the farm coordinate.`;loadData();
   },err=>{$('gpsStatus').textContent=err.code===1?'Location permission was not granted; regional reference mode remains active.':'Location could not be resolved; regional reference mode remains active.';},{enableHighAccuracy:true,timeout:12000,maximumAge:300000});
 }
 
@@ -103,10 +187,10 @@ function nearestRegion(lat,lon){let best=0,bestD=Infinity;regions.forEach((r,i)=
 function haversine(a,b,c,d){const R=6371,toRad=x=>x*Math.PI/180;const dLat=toRad(c-a),dLon=toRad(d-b);const q=Math.sin(dLat/2)**2+Math.cos(toRad(a))*Math.cos(toRad(c))*Math.sin(dLon/2)**2;return 2*R*Math.asin(Math.sqrt(q));}
 
 async function loadData(){
-  const region=regions[currentRegion],crop=cropProfiles[$('cropSelect').value],horizon=+$('horizonSelect').value;
-  const coords=activeCoords||{lat:region.lat,lon:region.lon};
+  const region=regions[currentRegion],city=getSelectedCity(),crop=cropProfiles[$('cropSelect').value],horizon=+$('horizonSelect').value;
+  const coords=activeCoords||(city?{lat:city.lat,lon:city.lon}:{lat:region.lat,lon:region.lon});
   $('apiStatus').innerHTML='<i class="live-dot"></i> Connecting live data';
-  $('statusRegion').textContent=region.name;$('statusCrop').textContent=crop.name;$('statusHorizon').textContent=horizon===24?'24 hours':horizon===72?'72 hours':'7 days';
+  $('statusRegion').textContent=region.name;if($('statusCity'))$('statusCity').textContent=activeCoords?'GPS':(city?city.name:'Regional');$('statusCrop').textContent=crop.name;$('statusHorizon').textContent=horizon===24?'24 hours':horizon===72?'72 hours':'7 days';
   renderRegion(currentRegion);updateLocationReadout();
   const hourly=['temperature_2m','relative_humidity_2m','precipitation','wind_speed_10m','et0_fao_evapotranspiration','soil_moisture_0_to_1cm'].join(',');
   const current=['temperature_2m','relative_humidity_2m','precipitation','wind_speed_10m'].join(',');
@@ -209,11 +293,11 @@ function generateNabatReport(){
   if(!window.jspdf||!window.jspdf.jsPDF){alert('PDF engine is not available. Refresh the page and try again.');return;}
   const {jsPDF}=window.jspdf;
   const doc=new jsPDF({unit:'mm',format:'a4',orientation:'portrait'});
-  const region=regions[currentRegion],crop=cropProfiles[$('cropSelect').value],horizon=+$('horizonSelect').value;
+  const region=regions[currentRegion],city=getSelectedCity(),crop=cropProfiles[$('cropSelect').value],horizon=+$('horizonSelect').value;
   const s=summarizeRows(lastRows,crop),score=parseInt(($('riskScore').textContent||'0').replace(/\D/g,''),10)||0;
   const confidence=parseInt(($('confidenceScore').textContent||'0').replace(/\D/g,''),10)||0;
-  const mode=activeCoords?'Farm GPS':'Regional reference';
-  const lat=activeCoords?activeCoords.lat:region.lat,lon=activeCoords?activeCoords.lon:region.lon;
+  const mode=activeCoords?'Farm GPS':(city?'City':'Regional reference');
+  const lat=activeCoords?activeCoords.lat:(city?city.lat:region.lat),lon=activeCoords?activeCoords.lon:(city?city.lon:region.lon);
   const actions=[...document.querySelectorAll('#farmerActions li')].map(x=>x.textContent.trim());
   const corr=[...document.querySelectorAll('#correlationTable .corr-item')].map(x=>x.textContent.replace(/\s+/g,' ').trim());
   const generated=new Date();
@@ -266,7 +350,7 @@ function generateNabatReport(){
   header(true);
   doc.setFillColor(...soft);doc.roundedRect(margin,34,contentW,45,2,2,'F');
   doc.setTextColor(...dark);doc.setFont('helvetica','bold');doc.setFontSize(21);doc.text('Intelligence Report',margin+7,47);
-  doc.setFontSize(12);doc.text(crop.name+' • '+region.name,margin+7,56);
+  doc.setFontSize(12);doc.text(crop.name+' • '+(city?city.name+' / ':'')+region.name,margin+7,56);
   doc.setFont('helvetica','normal');doc.setFontSize(8.5);doc.setTextColor(...muted);
   doc.text(mode+' • '+lat.toFixed(5)+', '+lon.toFixed(5)+' • '+horizon+' h',margin+7,64);
   doc.text('Generated '+generated.toLocaleString(),margin+7,71);
@@ -317,7 +401,7 @@ function generateNabatReport(){
   sec('Provenance');
   para('Platform: NABAT — Saudi AgroClimate & Crop Health Intelligence. Development: GDR Network Bio-IT. Individual developer/inventor names will be inserted after final spelling and authorship confirmation. Report generated from the live NABAT client-side decision workspace.');
   footer();
-  const safe=(crop.name+'_'+region.name).replace(/[^A-Za-z0-9]+/g,'_');
+  const safe=(crop.name+'_'+(city?city.name+'_':'')+region.name).replace(/[^A-Za-z0-9]+/g,'_');
   doc.save('NABAT_'+safe+'_'+generated.toISOString().slice(0,10)+'.pdf');
 }
 
