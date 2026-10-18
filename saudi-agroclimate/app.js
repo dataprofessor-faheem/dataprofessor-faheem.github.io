@@ -58,7 +58,8 @@ function init(){
   $('cropSelect').addEventListener('change',loadData);
   $('horizonSelect').addEventListener('change',loadData);
   $('refreshBtn').addEventListener('click',loadData);
-  $('useGpsBtn').addEventListener('click',useFarmGps);\n  $('downloadReportBtn').addEventListener('click',generateNabatReport);
+  $('useGpsBtn').addEventListener('click',useFarmGps);
+  $('downloadReportBtn').addEventListener('click',generateNabatReport);
   $('signInBtn').addEventListener('click',signIn);
   $('signUpBtn').addEventListener('click',signUp);
   $('signOutBtn').addEventListener('click',()=>sb.auth.signOut());
