@@ -399,7 +399,7 @@ function generateNabatReport(){
   para('Operational decisions should combine forecast evidence, direct crop observation and locally approved agronomic practice. The system is intended to prioritize observation and decision timing; treatment selection is outside the current model scope.',8.5,[92,76,42]);
 
   sec('Provenance');
-  para('Platform: NABAT — Saudi AgroClimate & Crop Health Intelligence. Development: GDR Network Bio-IT. Individual developer/inventor names will be inserted after final spelling and authorship confirmation. Report generated from the live NABAT client-side decision workspace.');
+  para('Platform: NABAT — Saudi AgroClimate & Crop Health Intelligence. Core Developers: Dr. Mohd. Faheem Khan and Dr. Saeed. Development unit: GDR Network Bio-IT. Report generated from the live NABAT decision workspace.');
   footer();
   const safe=(crop.name+'_'+(city?city.name+'_':'')+region.name).replace(/[^A-Za-z0-9]+/g,'_');
   doc.save('NABAT_'+safe+'_'+generated.toISOString().slice(0,10)+'.pdf');
