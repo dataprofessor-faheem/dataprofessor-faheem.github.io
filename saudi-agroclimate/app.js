@@ -4,69 +4,26 @@ const sb=window.supabase.createClient(SB_URL,SB_KEY);
 const $=id=>document.getElementById(id);
 
 const cropProfiles={
-'date-palm':{name:'Date palm',heatOpt:[25,42],heatCritical:46,humidDisease:68,soilLow:.08,etoHigh:.36,diseases:[
-{name:'Black scorch',note:'Warm, humid conditions can increase fungal suitability; field symptoms require confirmation.',rh:65,t:[20,38],rain:true},
-{name:'Inflorescence rot',note:'Moisture and humidity around flowering structures can favor fungal infection windows.',rh:72,t:[18,32],rain:true},
-{name:'Red palm weevil climate pressure',note:'Weather suitability indicator only; pheromone trapping and field inspection remain essential.',rh:45,t:[24,38],rain:false}]},
-'wheat':{name:'Wheat',heatOpt:[12,28],heatCritical:35,humidDisease:74,soilLow:.12,etoHigh:.32,diseases:[
-{name:'Rust weather suitability',note:'Moderate temperatures plus prolonged humidity can favor rust development.',rh:72,t:[10,26],rain:true},
-{name:'Powdery mildew suitability',note:'Cool-to-moderate temperatures with elevated humidity can increase suitability.',rh:68,t:[12,24],rain:false},
-{name:'Heat stress at grain filling',note:'High temperature during reproductive development can reduce performance.',rh:0,t:[32,50],rain:false,abiotic:true}]},
-'barley':{name:'Barley',heatOpt:[12,30],heatCritical:37,humidDisease:72,soilLow:.11,etoHigh:.33,diseases:[
-{name:'Leaf blotch suitability',note:'Moist leaf surfaces and moderate temperatures can favor foliar disease.',rh:72,t:[12,27],rain:true},
-{name:'Rust suitability',note:'Humidity and mild temperatures can support rust infection windows.',rh:70,t:[10,26],rain:true}]},
-'alfalfa':{name:'Alfalfa',heatOpt:[18,35],heatCritical:42,humidDisease:74,soilLow:.13,etoHigh:.40,diseases:[
-{name:'Foliar disease pressure',note:'High humidity can raise general foliar-disease suitability.',rh:74,t:[18,32],rain:true},
-{name:'Heat / water stress',note:'High evaporative demand with low soil moisture increases crop stress.',rh:0,t:[38,50],rain:false,abiotic:true}]},
-'tomato':{name:'Tomato',heatOpt:[18,30],heatCritical:36,humidDisease:75,soilLow:.14,etoHigh:.34,diseases:[
-{name:'Early/late blight weather window',note:'Leaf wetness proxies, humidity and moderate temperatures increase disease suitability.',rh:78,t:[16,28],rain:true},
-{name:'Powdery mildew suitability',note:'Warm conditions with elevated humidity can increase canopy risk.',rh:70,t:[20,31],rain:false},
-{name:'Heat-set stress',note:'High temperature can impair flowering and fruit set.',rh:0,t:[34,50],rain:false,abiotic:true}]},
-'cucumber':{name:'Cucumber',heatOpt:[20,30],heatCritical:36,humidDisease:78,soilLow:.16,etoHigh:.34,diseases:[
-{name:'Downy mildew suitability',note:'High humidity and wet-canopy conditions favor disease development.',rh:80,t:[16,27],rain:true},
-{name:'Powdery mildew suitability',note:'Warm humid conditions can increase disease pressure.',rh:70,t:[20,31],rain:false}]},
-'potato':{name:'Potato',heatOpt:[15,26],heatCritical:33,humidDisease:78,soilLow:.16,etoHigh:.31,diseases:[
-{name:'Late blight weather suitability',note:'Cool-to-moderate temperatures with high humidity are a classic risk combination.',rh:80,t:[10,24],rain:true},
-{name:'Heat/tuber stress',note:'Sustained heat can reduce tuber development and quality.',rh:0,t:[30,50],rain:false,abiotic:true}]},
-'onion':{name:'Onion',heatOpt:[13,28],heatCritical:36,humidDisease:76,soilLow:.12,etoHigh:.33,diseases:[
-{name:'Downy mildew suitability',note:'Cool humid conditions can favor foliar disease.',rh:80,t:[10,24],rain:true},
-{name:'Heat / bulb stress',note:'High temperature and water deficit can increase crop stress.',rh:0,t:[35,50],rain:false,abiotic:true}]},
-'citrus':{name:'Citrus',heatOpt:[18,34],heatCritical:43,humidDisease:72,soilLow:.13,etoHigh:.38,diseases:[
-{name:'Citrus fungal pressure',note:'Warm humid weather and rainfall can elevate general fungal suitability.',rh:75,t:[18,32],rain:true},
-{name:'Heat / sunburn stress',note:'Extreme heat and high evaporative demand can injure exposed fruit and canopy.',rh:0,t:[41,50],rain:false,abiotic:true}]},
-'grape':{name:'Grape',heatOpt:[18,32],heatCritical:40,humidDisease:72,soilLow:.12,etoHigh:.36,diseases:[
-{name:'Powdery mildew suitability',note:'Mild-to-warm humid conditions can support disease development.',rh:65,t:[18,30],rain:false},
-{name:'Downy mildew suitability',note:'Rainfall and high humidity increase risk windows.',rh:78,t:[12,28],rain:true}]},
-'olive':{name:'Olive',heatOpt:[15,34],heatCritical:43,humidDisease:72,soilLow:.09,etoHigh:.38,diseases:[
-{name:'Peacock spot suitability',note:'Cooler wet periods increase environmental suitability.',rh:78,t:[10,24],rain:true},
-{name:'Verticillium surveillance',note:'Field history and soil evidence are more important than weather alone.',rh:55,t:[18,30],rain:false}]},
-'mango':{name:'Mango',heatOpt:[24,35],heatCritical:43,humidDisease:75,soilLow:.13,etoHigh:.38,diseases:[
-{name:'Anthracnose weather suitability',note:'Warm, wet and humid periods are important environmental drivers.',rh:80,t:[22,32],rain:true},
-{name:'Powdery mildew suitability',note:'Moderate temperatures with elevated humidity can favor infection.',rh:70,t:[18,30],rain:false}]},
-'banana':{name:'Banana',heatOpt:[24,32],heatCritical:39,humidDisease:80,soilLow:.18,etoHigh:.36,diseases:[
-{name:'Leaf-spot weather suitability',note:'Warm, humid environments can support foliar disease pressure.',rh:82,t:[22,31],rain:true},
-{name:'Heat / water stress',note:'Banana is sensitive to high evaporative demand and moisture deficit.',rh:0,t:[37,50],rain:false,abiotic:true}]},
-'coffee':{name:'Arabian coffee',heatOpt:[18,27],heatCritical:34,humidDisease:75,soilLow:.16,etoHigh:.30,diseases:[
-{name:'Coffee leaf rust suitability',note:'Humidity, leaf wetness and mild temperatures can increase suitability.',rh:78,t:[18,26],rain:true},
-{name:'Heat / drought stress',note:'High temperature and water deficit can stress coffee in mountain systems.',rh:0,t:[31,50],rain:false,abiotic:true}]},
-'pomegranate':{name:'Pomegranate',heatOpt:[18,34],heatCritical:42,humidDisease:72,soilLow:.11,etoHigh:.37,diseases:[
-{name:'Fruit rot weather pressure',note:'Humidity and rainfall can increase fruit-rot suitability.',rh:76,t:[18,31],rain:true},
-{name:'Heat / fruit-cracking stress',note:'Rapid water-status changes and heat can elevate physiological stress.',rh:0,t:[39,50],rain:false,abiotic:true}]},
-'fig':{name:'Fig',heatOpt:[18,35],heatCritical:43,humidDisease:72,soilLow:.10,etoHigh:.37,diseases:[
-{name:'Fruit rot suitability',note:'Humidity and rainfall around ripening can increase spoilage pressure.',rh:78,t:[18,32],rain:true},
-{name:'Heat / water stress',note:'High evaporative demand can increase physiological stress.',rh:0,t:[40,50],rain:false,abiotic:true}]},
-'apple':{name:'Apple',heatOpt:[12,28],heatCritical:36,humidDisease:75,soilLow:.14,etoHigh:.32,diseases:[
-{name:'Apple scab weather suitability',note:'Mild temperatures and wet foliage favor infection windows.',rh:78,t:[10,24],rain:true},
-{name:'Heat stress',note:'High temperatures can reduce fruit quality and increase sunburn risk.',rh:0,t:[34,50],rain:false,abiotic:true}]},
-'watermelon':{name:'Watermelon',heatOpt:[22,34],heatCritical:42,humidDisease:72,soilLow:.12,etoHigh:.39,diseases:[
-{name:'Foliar disease pressure',note:'Warm humid periods can increase general foliar-disease suitability.',rh:76,t:[20,32],rain:true},
-{name:'Heat / water stress',note:'High evaporative demand and dry soil elevate crop stress.',rh:0,t:[40,50],rain:false,abiotic:true}]},
-'maize':{name:'Maize / sorghum',heatOpt:[20,34],heatCritical:42,humidDisease:74,soilLow:.13,etoHigh:.39,diseases:[
-{name:'Foliar disease suitability',note:'Warm humid conditions can support several foliar pathogens.',rh:76,t:[20,32],rain:true},
-{name:'Heat / drought stress',note:'High temperatures and low soil moisture increase reproductive stress.',rh:0,t:[39,50],rain:false,abiotic:true}]},
-'sesame':{name:'Sesame',heatOpt:[24,35],heatCritical:43,humidDisease:72,soilLow:.09,etoHigh:.38,diseases:[
-{name:'Leaf / stem disease pressure',note:'Wet and humid periods increase general fungal suitability.',rh:76,t:[22,32],rain:true},
-{name:'Waterlogging sensitivity',note:'Rainfall and saturated soil can create stress in poorly drained fields.',rh:0,t:[0,50],rain:true,abiotic:true}]}
+'date-palm':{name:'Date palm',heatOpt:[25,42],heatCritical:46,humidDisease:68,soilLow:.08,etoHigh:.36,diseases:[{name:'Black scorch',note:'Warm, humid conditions can increase fungal suitability; field symptoms require confirmation.',rh:65,t:[20,38],rain:true},{name:'Inflorescence rot',note:'Moisture and humidity around flowering structures can favor fungal infection windows.',rh:72,t:[18,32],rain:true},{name:'Red palm weevil climate pressure',note:'Weather suitability indicator; pheromone trapping and field inspection provide the biological evidence.',rh:45,t:[24,38],rain:false}]},
+'wheat':{name:'Wheat',heatOpt:[12,28],heatCritical:35,humidDisease:74,soilLow:.12,etoHigh:.32,diseases:[{name:'Rust weather suitability',note:'Moderate temperatures plus prolonged humidity can favor rust development.',rh:72,t:[10,26],rain:true},{name:'Powdery mildew suitability',note:'Cool-to-moderate temperatures with elevated humidity can increase suitability.',rh:68,t:[12,24],rain:false},{name:'Heat stress at grain filling',note:'High temperature during reproductive development can reduce performance.',rh:0,t:[32,50],rain:false,abiotic:true}]},
+'barley':{name:'Barley',heatOpt:[12,30],heatCritical:37,humidDisease:72,soilLow:.11,etoHigh:.33,diseases:[{name:'Leaf blotch suitability',note:'Moist leaf surfaces and moderate temperatures can favor foliar disease.',rh:72,t:[12,27],rain:true},{name:'Rust suitability',note:'Humidity and mild temperatures can support rust infection windows.',rh:70,t:[10,26],rain:true}]},
+'alfalfa':{name:'Alfalfa',heatOpt:[18,35],heatCritical:42,humidDisease:74,soilLow:.13,etoHigh:.40,diseases:[{name:'Foliar disease pressure',note:'High humidity can raise general foliar-disease suitability.',rh:74,t:[18,32],rain:true},{name:'Heat / water stress',note:'High evaporative demand with low soil moisture increases crop stress.',rh:0,t:[38,50],rain:false,abiotic:true}]},
+'tomato':{name:'Tomato',heatOpt:[18,30],heatCritical:36,humidDisease:75,soilLow:.14,etoHigh:.34,diseases:[{name:'Blight weather window',note:'Leaf-wetness proxies, humidity and moderate temperatures increase disease suitability.',rh:78,t:[16,28],rain:true},{name:'Powdery mildew suitability',note:'Warm conditions with elevated humidity can increase canopy risk.',rh:70,t:[20,31],rain:false},{name:'Heat-set stress',note:'High temperature can impair flowering and fruit set.',rh:0,t:[34,50],rain:false,abiotic:true}]},
+'cucumber':{name:'Cucumber',heatOpt:[20,30],heatCritical:36,humidDisease:78,soilLow:.16,etoHigh:.34,diseases:[{name:'Downy mildew suitability',note:'High humidity and wet-canopy conditions favor disease development.',rh:80,t:[16,27],rain:true},{name:'Powdery mildew suitability',note:'Warm humid conditions can increase disease pressure.',rh:70,t:[20,31],rain:false}]},
+'potato':{name:'Potato',heatOpt:[15,26],heatCritical:33,humidDisease:78,soilLow:.16,etoHigh:.31,diseases:[{name:'Late blight weather suitability',note:'Cool-to-moderate temperatures with high humidity form a classic risk combination.',rh:80,t:[10,24],rain:true},{name:'Heat / tuber stress',note:'Sustained heat can reduce tuber development and quality.',rh:0,t:[30,50],rain:false,abiotic:true}]},
+'onion':{name:'Onion',heatOpt:[13,28],heatCritical:36,humidDisease:76,soilLow:.12,etoHigh:.33,diseases:[{name:'Downy mildew suitability',note:'Cool humid conditions can favor foliar disease.',rh:80,t:[10,24],rain:true},{name:'Heat / bulb stress',note:'High temperature and water deficit can increase crop stress.',rh:0,t:[35,50],rain:false,abiotic:true}]},
+'citrus':{name:'Citrus',heatOpt:[18,34],heatCritical:43,humidDisease:72,soilLow:.13,etoHigh:.38,diseases:[{name:'Citrus fungal pressure',note:'Warm humid weather and rainfall can elevate general fungal suitability.',rh:75,t:[18,32],rain:true},{name:'Heat / sunburn stress',note:'Extreme heat and high evaporative demand can injure exposed fruit and canopy.',rh:0,t:[41,50],rain:false,abiotic:true}]},
+'grape':{name:'Grape',heatOpt:[18,32],heatCritical:40,humidDisease:72,soilLow:.12,etoHigh:.36,diseases:[{name:'Powdery mildew suitability',note:'Mild-to-warm humid conditions can support disease development.',rh:65,t:[18,30],rain:false},{name:'Downy mildew suitability',note:'Rainfall and high humidity increase risk windows.',rh:78,t:[12,28],rain:true}]},
+'olive':{name:'Olive',heatOpt:[15,34],heatCritical:43,humidDisease:72,soilLow:.09,etoHigh:.38,diseases:[{name:'Peacock spot suitability',note:'Cooler wet periods increase environmental suitability.',rh:78,t:[10,24],rain:true},{name:'Verticillium surveillance',note:'Field history and soil evidence are more important than weather alone.',rh:55,t:[18,30],rain:false}]},
+'mango':{name:'Mango',heatOpt:[24,35],heatCritical:43,humidDisease:75,soilLow:.13,etoHigh:.38,diseases:[{name:'Anthracnose weather suitability',note:'Warm, wet and humid periods are important environmental drivers.',rh:80,t:[22,32],rain:true},{name:'Powdery mildew suitability',note:'Moderate temperatures with elevated humidity can favor infection.',rh:70,t:[18,30],rain:false}]},
+'banana':{name:'Banana',heatOpt:[24,32],heatCritical:39,humidDisease:80,soilLow:.18,etoHigh:.36,diseases:[{name:'Leaf-spot weather suitability',note:'Warm, humid environments can support foliar disease pressure.',rh:82,t:[22,31],rain:true},{name:'Heat / water stress',note:'Banana is sensitive to high evaporative demand and moisture deficit.',rh:0,t:[37,50],rain:false,abiotic:true}]},
+'coffee':{name:'Arabian coffee',heatOpt:[18,27],heatCritical:34,humidDisease:75,soilLow:.16,etoHigh:.30,diseases:[{name:'Coffee leaf rust suitability',note:'Humidity, leaf wetness and mild temperatures can increase suitability.',rh:78,t:[18,26],rain:true},{name:'Heat / drought stress',note:'High temperature and water deficit can stress coffee in mountain systems.',rh:0,t:[31,50],rain:false,abiotic:true}]},
+'pomegranate':{name:'Pomegranate',heatOpt:[18,34],heatCritical:42,humidDisease:72,soilLow:.11,etoHigh:.37,diseases:[{name:'Fruit rot weather pressure',note:'Humidity and rainfall can increase fruit-rot suitability.',rh:76,t:[18,31],rain:true},{name:'Heat / fruit-cracking stress',note:'Rapid water-status changes and heat can elevate physiological stress.',rh:0,t:[39,50],rain:false,abiotic:true}]},
+'fig':{name:'Fig',heatOpt:[18,35],heatCritical:43,humidDisease:72,soilLow:.10,etoHigh:.37,diseases:[{name:'Fruit rot suitability',note:'Humidity and rainfall around ripening can increase spoilage pressure.',rh:78,t:[18,32],rain:true},{name:'Heat / water stress',note:'High evaporative demand can increase physiological stress.',rh:0,t:[40,50],rain:false,abiotic:true}]},
+'apple':{name:'Apple',heatOpt:[12,28],heatCritical:36,humidDisease:75,soilLow:.14,etoHigh:.32,diseases:[{name:'Apple scab weather suitability',note:'Mild temperatures and wet foliage favor infection windows.',rh:78,t:[10,24],rain:true},{name:'Heat stress',note:'High temperatures can reduce fruit quality and increase sunburn risk.',rh:0,t:[34,50],rain:false,abiotic:true}]},
+'watermelon':{name:'Watermelon',heatOpt:[22,34],heatCritical:42,humidDisease:72,soilLow:.12,etoHigh:.39,diseases:[{name:'Foliar disease pressure',note:'Warm humid periods can increase general foliar-disease suitability.',rh:76,t:[20,32],rain:true},{name:'Heat / water stress',note:'High evaporative demand and dry soil elevate crop stress.',rh:0,t:[40,50],rain:false,abiotic:true}]},
+'maize':{name:'Maize / sorghum',heatOpt:[20,34],heatCritical:42,humidDisease:74,soilLow:.13,etoHigh:.39,diseases:[{name:'Foliar disease suitability',note:'Warm humid conditions can support several foliar pathogens.',rh:76,t:[20,32],rain:true},{name:'Heat / drought stress',note:'High temperatures and low soil moisture increase reproductive stress.',rh:0,t:[39,50],rain:false,abiotic:true}]},
+'sesame':{name:'Sesame',heatOpt:[24,35],heatCritical:43,humidDisease:72,soilLow:.09,etoHigh:.38,diseases:[{name:'Leaf / stem disease pressure',note:'Wet and humid periods increase general fungal suitability.',rh:76,t:[22,32],rain:true},{name:'Waterlogging sensitivity',note:'Rainfall and saturated soil can create stress in poorly drained fields.',rh:0,t:[0,50],rain:true,abiotic:true}]}
 };
 
 const regions=[
@@ -78,167 +35,169 @@ const regions=[
 {slug:'asir',name:'Asir',lat:18.2164,lon:42.5053,x:42,y:75,climate:'Southwestern highlands with milder temperatures and seasonal rainfall.',stress:'Rain variability, humidity, erosion, localized heat',desc:'Highland agriculture supports coffee, fruits, cereals and vegetables.',crops:['coffee','grape','pomegranate','fig','olive','mango','maize']},
 {slug:'tabuk',name:'Tabuk',lat:28.3838,lon:36.5550,x:25,y:25,climate:'Northern arid agriculture with cool winters and large seasonal range.',stress:'Cold–heat variability, drought, wind',desc:'Large commercial crop production with grapes, olives, fruits, cereals and vegetables.',crops:['wheat','potato','grape','olive','apple','pomegranate','fig','mango','date-palm']},
 {slug:'hail',name:'Hail',lat:27.5114,lon:41.7208,x:45,y:31,climate:'Northern-central continental arid environment.',stress:'Temperature extremes, drought, wind',desc:'Important cereal, date and northern-fruit production environment.',crops:['wheat','barley','date-palm','olive','grape','potato','alfalfa']},
-{slug:'northern-borders',name:'Northern Borders',lat:30.9753,lon:41.0381,x:48,y:12,climate:'Northern desert with cold winters and hot dry summers.',stress:'Frost/cold events, drought, wind, heat',desc:'Lower-intensity agriculture with cereals, forage, grapes and protected production in suitable sites.',crops:['wheat','barley','grape','alfalfa','tomato']},
-{slug:'jazan',name:'Jazan',lat:16.8892,lon:42.5511,x:40,y:86,climate:'Southwestern Tihamah coastal plain and mountain gradient.',stress:'Humidity, heat, intense rainfall, disease pressure',desc:'Saudi Arabia’s strongest tropical-crop environment, notable for mango, banana and papaya systems.',crops:['mango','banana','maize','sesame','tomato','watermelon','date-palm']},
-{slug:'najran',name:'Najran',lat:17.5656,lon:44.2289,x:50,y:82,climate:'Southern interior valley agriculture with hot dry conditions.',stress:'Heat, water deficit, dust and irrigation stress',desc:'Valley agriculture supports dates, cereals, grapes and fruit crops.',crops:['date-palm','wheat','barley','grape','pomegranate','mango','alfalfa']},
-{slug:'al-bahah',name:'Al-Bahah',lat:20.0129,lon:41.4677,x:36,y:68,climate:'Southwestern highlands with comparatively mild, wetter conditions.',stress:'Rainfall variability, humidity, slope and erosion',desc:'Mountain agriculture includes fruits, coffee, olives and cereals in suitable elevations.',crops:['coffee','pomegranate','grape','fig','olive','mango','maize']},
+{slug:'northern-borders',name:'Northern Borders',lat:30.9753,lon:41.0381,x:48,y:12,climate:'Northern desert with cold winters and hot dry summers.',stress:'Frost/cold events, drought, wind, heat',desc:'Cereal, forage, grape and protected production occur in suitable sites.',crops:['wheat','barley','grape','alfalfa','tomato']},
+{slug:'jazan',name:'Jazan',lat:16.8892,lon:42.5511,x:40,y:86,climate:'Southwestern Tihamah coastal plain and mountain gradient.',stress:'Humidity, heat, intense rainfall, disease pressure',desc:'Saudi Arabia’s strongest tropical-crop environment, notable for mango and banana systems.',crops:['mango','banana','maize','sesame','tomato','watermelon','date-palm']},
+{slug:'najran',name:'Najran',lat:17.5656,lon:44.2289,x:50,y:82,climate:'Southern interior valley agriculture with hot dry conditions.',stress:'Heat, water deficit, dust and irrigation stress',desc:'Valley agriculture supports dates, cereals, grapes and fruit crops.',crops:['date-palm','wheat','barley','grape','pomegranate','mango','alfalfa','citrus']},
+{slug:'al-bahah',name:'Al-Bahah',lat:20.0129,lon:41.4677,x:36,y:68,climate:'Southwestern highlands with comparatively mild, wetter conditions.',stress:'Rainfall variability, humidity, slope and erosion',desc:'Mountain agriculture includes fruits, coffee, olives and cereals at suitable elevations.',crops:['coffee','pomegranate','grape','fig','olive','mango','maize']},
 {slug:'al-jouf',name:'Al-Jouf',lat:29.9697,lon:40.2064,x:39,y:17,climate:'Northern interior agriculture with Mediterranean influence in winter.',stress:'Drought, frost/heat range, irrigation demand',desc:'Nationally important olive, wheat, date and fruit production environment.',crops:['olive','wheat','date-palm','grape','apple','fig','watermelon','alfalfa']}
 ];
 
-let currentRegion=3,lastWeather=null,lastSeries=[],lastSummary=null;
+let currentRegion=3;
+let activeCoords=null;
+let lastWeather=null;
+let lastRows=[];
+let lastDiseaseScores=[];
+const charts={};
 
 function init(){
-  $('locationSelect').innerHTML=regions.map((r,i)=>'<option value="'+i+'">'+r.name+'</option>').join('');
-  $('farmZone').innerHTML=regions.map((r,i)=>'<option value="'+i+'">'+r.name+'</option>').join('');
+  $('locationSelect').innerHTML=regions.map((r,i)=>`<option value="${i}">${r.name}</option>`).join('');
+  $('farmZone').innerHTML=regions.map((r,i)=>`<option value="${i}">${r.name}</option>`).join('');
   $('locationSelect').value=String(currentRegion);
   updateCropOptions();
-  ['locationSelect','horizonSelect'].forEach(id=>$(id).addEventListener('change',()=>{if(id==='locationSelect'){currentRegion=+$('locationSelect').value;updateCropOptions();}loadData();}));
+  $('locationSelect').addEventListener('change',()=>{currentRegion=+$('locationSelect').value;activeCoords=null;updateCropOptions();updateLocationReadout();loadData();});
   $('cropSelect').addEventListener('change',loadData);
+  $('horizonSelect').addEventListener('change',loadData);
   $('refreshBtn').addEventListener('click',loadData);
+  $('useGpsBtn').addEventListener('click',useFarmGps);
   $('signInBtn').addEventListener('click',signIn);
   $('signUpBtn').addEventListener('click',signUp);
   $('signOutBtn').addEventListener('click',()=>sb.auth.signOut());
   $('farmForm').addEventListener('submit',saveFarm);
   sb.auth.onAuthStateChange(()=>refreshAuth());
   renderAllRegions();
+  updateLocationReadout();
   refreshAuth();
   loadData();
 }
 
 function updateCropOptions(){
-  const region=regions[currentRegion];
-  const previous=$('cropSelect').value;
-  $('cropSelect').innerHTML=region.crops.map(k=>'<option value="'+k+'">'+cropProfiles[k].name+'</option>').join('');
+  const region=regions[currentRegion],previous=$('cropSelect').value;
+  $('cropSelect').innerHTML=region.crops.map(k=>`<option value="${k}">${cropProfiles[k].name}</option>`).join('');
   if(region.crops.includes(previous)) $('cropSelect').value=previous;
   renderRegion(currentRegion);
 }
 
+function updateLocationReadout(){
+  const region=regions[currentRegion];
+  if(activeCoords){
+    $('locationReadout').textContent=`Farm GPS: ${activeCoords.lat.toFixed(5)}°, ${activeCoords.lon.toFixed(5)}° • nearest regional profile: ${region.name}`;
+    $('statusLocation').textContent='Farm GPS';
+  }else{
+    $('locationReadout').textContent=`Regional reference: ${region.lat.toFixed(4)}°, ${region.lon.toFixed(4)}° • ${region.name}`;
+    $('statusLocation').textContent='Regional reference';
+  }
+}
+
+function useFarmGps(){
+  if(!navigator.geolocation){$('gpsStatus').textContent='Browser geolocation is not available; regional reference mode remains active.';return;}
+  $('gpsStatus').textContent='Requesting device location…';
+  navigator.geolocation.getCurrentPosition(pos=>{
+    const lat=pos.coords.latitude,lon=pos.coords.longitude;
+    if(lat<15.5||lat>33.7||lon<34||lon>56.8){activeCoords=null;$('gpsStatus').textContent='Device location is outside the Saudi operating extent; regional reference mode remains active.';updateLocationReadout();return;}
+    const nearest=nearestRegion(lat,lon);currentRegion=nearest;$('locationSelect').value=String(nearest);activeCoords={lat,lon,accuracy:pos.coords.accuracy};updateCropOptions();updateLocationReadout();$('gpsStatus').textContent=`GPS accepted • estimated accuracy ±${Math.round(pos.coords.accuracy)} m • weather will use the farm coordinate.`;loadData();
+  },err=>{$('gpsStatus').textContent=err.code===1?'Location permission was not granted; regional reference mode remains active.':'Location could not be resolved; regional reference mode remains active.';},{enableHighAccuracy:true,timeout:12000,maximumAge:300000});
+}
+
+function nearestRegion(lat,lon){let best=0,bestD=Infinity;regions.forEach((r,i)=>{const d=haversine(lat,lon,r.lat,r.lon);if(d<bestD){bestD=d;best=i;}});return best;}
+function haversine(a,b,c,d){const R=6371,toRad=x=>x*Math.PI/180;const dLat=toRad(c-a),dLon=toRad(d-b);const q=Math.sin(dLat/2)**2+Math.cos(toRad(a))*Math.cos(toRad(c))*Math.sin(dLon/2)**2;return 2*R*Math.asin(Math.sqrt(q));}
+
 async function loadData(){
   const region=regions[currentRegion],crop=cropProfiles[$('cropSelect').value],horizon=+$('horizonSelect').value;
+  const coords=activeCoords||{lat:region.lat,lon:region.lon};
   $('apiStatus').innerHTML='<i class="live-dot"></i> Connecting live data';
   $('statusRegion').textContent=region.name;$('statusCrop').textContent=crop.name;$('statusHorizon').textContent=horizon===24?'24 hours':horizon===72?'72 hours':'7 days';
-  renderRegion(currentRegion);
+  renderRegion(currentRegion);updateLocationReadout();
   const hourly=['temperature_2m','relative_humidity_2m','precipitation','wind_speed_10m','et0_fao_evapotranspiration','soil_moisture_0_to_1cm'].join(',');
   const current=['temperature_2m','relative_humidity_2m','precipitation','wind_speed_10m'].join(',');
-  const url='https://api.open-meteo.com/v1/forecast?latitude='+region.lat+'&longitude='+region.lon+'&current='+current+'&hourly='+hourly+'&forecast_days=7&timezone=Asia%2FRiyadh';
+  const url=`https://api.open-meteo.com/v1/forecast?latitude=${coords.lat}&longitude=${coords.lon}&current=${current}&hourly=${hourly}&forecast_days=7&timezone=Asia%2FRiyadh`;
   try{
-    const res=await fetch(url);if(!res.ok) throw new Error('Weather feed unavailable');
-    const d=await res.json();lastWeather=d;
+    const res=await fetch(url);if(!res.ok)throw new Error('Weather feed unavailable');const d=await res.json();lastWeather=d;
     $('apiStatus').innerHTML='<i class="live-dot"></i> Live weather connected';$('statusWeather').textContent='Operational';
     renderCurrent(d);analyze(d,crop,horizon);renderAllRegions();
   }catch(err){
-    $('apiStatus').textContent='Weather feed unavailable';$('statusWeather').textContent='Temporarily unavailable';
-    $('decisionHeadline').textContent='Live meteorological data could not be retrieved';
-    $('farmerDecision').textContent='Retry the live feed before taking a weather-dependent decision.';
-    $('researchDecision').textContent='No forecast inference is generated when required weather inputs are unavailable.';
+    $('apiStatus').textContent='Weather feed unavailable';$('statusWeather').textContent='Temporarily unavailable';$('decisionHeadline').textContent='Meteorological feed unavailable';$('researchDecision').textContent='No risk inference is issued when the required forecast variables are unavailable.';$('farmerActions').innerHTML='<li>Refresh the weather feed before using this decision workspace for farm operations.</li>';
   }
 }
 
 function renderCurrent(d){
-  const c=d.current||{},h=d.hourly||{};
-  const ix=Math.max(0,(h.time||[]).findIndex(t=>t.startsWith((c.time||'').slice(0,13))));
-  $('temp').textContent=num(c.temperature_2m,'°C');$('humidity').textContent=num(c.relative_humidity_2m,'%');
-  $('precip').textContent=num(c.precipitation,' mm');$('wind').textContent=num(c.wind_speed_10m,' km/h');
-  $('eto').textContent=num((h.et0_fao_evapotranspiration||[])[ix],' mm/h',2);$('soil').textContent=num((h.soil_moisture_0_to_1cm||[])[ix],' m³/m³',3);
-  $('updatedAt').textContent='Updated '+new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+  const c=d.current||{},h=d.hourly||{},ix=Math.max(0,(h.time||[]).findIndex(t=>t.startsWith((c.time||'').slice(0,13))));
+  $('temp').textContent=num(c.temperature_2m,'°C');$('humidity').textContent=num(c.relative_humidity_2m,'%');$('precip').textContent=num(c.precipitation,' mm');$('wind').textContent=num(c.wind_speed_10m,' km/h');$('eto').textContent=num((h.et0_fao_evapotranspiration||[])[ix],' mm/h',2);$('soil').textContent=num((h.soil_moisture_0_to_1cm||[])[ix],' m³/m³',3);$('updatedAt').textContent=`Updated ${new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}`;
 }
-function num(v,u,d=1){return Number.isFinite(v)?v.toFixed(d)+u:'—'}
+function num(v,u,d=1){return Number.isFinite(v)?`${v.toFixed(d)}${u}`:'—'}
 
 function analyze(d,crop,horizon){
-  const h=d.hourly,n=Math.min(horizon,h.time.length);const biotic=[],abiotic=[],combined=[];
+  const h=d.hourly,n=Math.min(horizon,h.time.length),rows=[];
   for(let i=0;i<n;i++){
     const t=h.temperature_2m[i],rh=h.relative_humidity_2m[i],p=h.precipitation[i]||0,wind=h.wind_speed_10m[i]||0,eto=h.et0_fao_evapotranspiration[i]||0,sm=h.soil_moisture_0_to_1cm[i];
-    let b=6;
-    if(rh>=crop.humidDisease)b+=32;else if(rh>=crop.humidDisease-12)b+=16;
-    if(p>0)b+=14;if(t>=crop.heatOpt[0]&&t<=crop.heatOpt[1])b+=16;if(rh>82&&t>15)b+=10;if(wind<7&&rh>75)b+=6;b=Math.min(100,b);
-    let a=7;if(t>crop.heatOpt[1])a+=Math.min(42,(t-crop.heatOpt[1])*6);if(t>=crop.heatCritical)a+=18;
-    if(Number.isFinite(sm)&&sm<crop.soilLow)a+=25;if(eto>crop.etoHigh)a+=16;if(wind>32)a+=9;a=Math.min(100,a);
-    biotic.push(Math.round(b));abiotic.push(Math.round(a));combined.push(Math.round(.48*b+.52*a));
+    let biotic=6;if(rh>=crop.humidDisease)biotic+=32;else if(rh>=crop.humidDisease-12)biotic+=16;if(p>0)biotic+=14;if(t>=crop.heatOpt[0]&&t<=crop.heatOpt[1])biotic+=16;if(rh>82&&t>15)biotic+=10;if(wind<7&&rh>75)biotic+=6;biotic=Math.min(100,biotic);
+    let abiotic=7;if(t>crop.heatOpt[1])abiotic+=Math.min(42,(t-crop.heatOpt[1])*6);if(t>=crop.heatCritical)abiotic+=18;if(Number.isFinite(sm)&&sm<crop.soilLow)abiotic+=25;if(eto>crop.etoHigh)abiotic+=16;if(wind>32)abiotic+=9;abiotic=Math.min(100,abiotic);
+    const risk=Math.round(.48*biotic+.52*abiotic);
+    rows.push({time:h.time[i],t,rh,p,wind,eto,sm,biotic:Math.round(biotic),abiotic:Math.round(abiotic),risk});
   }
-  const mean=a=>a.reduce((x,y)=>x+y,0)/Math.max(a.length,1),peak=Math.max(...combined),score=Math.round(.62*peak+.38*mean(combined));
-  const bscore=Math.round(Math.max(...biotic)),ascore=Math.round(Math.max(...abiotic));
-  const available=[h.temperature_2m,h.relative_humidity_2m,h.precipitation,h.wind_speed_10m,h.et0_fao_evapotranspiration,h.soil_moisture_0_to_1cm].filter(a=>Array.isArray(a)&&a.slice(0,n).some(Number.isFinite)).length;
-  const horizonPenalty=horizon===24?0:horizon===72?5:12;const confidence=Math.max(45,Math.min(94,Math.round(60+available*6-horizonPenalty)));
-  lastSeries=combined;lastSummary={score,bscore,ascore,confidence};
-  renderRisk(score,bscore,ascore,confidence,h,n,crop,combined);renderDiseases(h,n,crop);renderChart(h.time.slice(0,n),combined);
+  lastRows=rows;
+  const score=Math.round(.62*Math.max(...rows.map(r=>r.risk))+.38*mean(rows.map(r=>r.risk))),bscore=Math.max(...rows.map(r=>r.biotic)),ascore=Math.max(...rows.map(r=>r.abiotic));
+  const available=['t','rh','p','wind','eto','sm'].filter(k=>rows.some(r=>Number.isFinite(r[k]))).length,horizonPenalty=horizon===24?0:horizon===72?5:12,confidence=Math.max(45,Math.min(94,Math.round(60+available*6-horizonPenalty)));
+  lastDiseaseScores=calculateDiseaseScores(rows,crop);
+  renderRisk(score,bscore,ascore,confidence,rows,crop);renderDiseases(crop);renderAnalytics(rows,crop,confidence);renderFarmerActions(rows,crop,score,confidence,lastDiseaseScores);
 }
 
-function renderRisk(score,bscore,ascore,confidence,h,n,crop,series){
+function renderRisk(score,bscore,ascore,confidence,rows,crop){
   const level=riskLevel(score),title=score>=75?'Critical environmental risk window':score>=50?'High-priority crop-health watch':score>=25?'Moderate crop-health pressure':'Low current environmental pressure';
-  $('riskScore').textContent=score+'%';$('riskLevel').textContent=level;$('riskTitle').textContent=title;
-  $('scoreRing').style.background='conic-gradient('+riskColor(score)+' '+(score*3.6)+'deg,#e8ece9 '+(score*3.6)+'deg)';
-  $('bioticScore').textContent=bscore+'%';$('abioticScore').textContent=ascore+'%';$('confidenceScore').textContent=confidence+'%';
-  $('bioticBar').style.width=bscore+'%';$('abioticBar').style.width=ascore+'%';$('confidenceBar').style.width=confidence+'%';
-  const temps=h.temperature_2m.slice(0,n),rhs=h.relative_humidity_2m.slice(0,n),rain=h.precipitation.slice(0,n),etos=h.et0_fao_evapotranspiration.slice(0,n),sms=h.soil_moisture_0_to_1cm.slice(0,n).filter(Number.isFinite);
-  const maxT=Math.max(...temps),maxRH=Math.max(...rhs),rainSum=rain.reduce((a,b)=>a+(b||0),0),maxEto=Math.max(...etos.map(x=>x||0)),minSM=sms.length?Math.min(...sms):NaN;
-  const drivers=[];if(maxT>crop.heatOpt[1])drivers.push('Heat '+maxT.toFixed(1)+'°C');if(maxRH>=crop.humidDisease)drivers.push('Humidity '+maxRH.toFixed(0)+'%');if(rainSum>0)drivers.push('Rain '+rainSum.toFixed(1)+' mm');if(maxEto>crop.etoHigh)drivers.push('High ET₀');if(Number.isFinite(minSM)&&minSM<crop.soilLow)drivers.push('Low surface soil moisture');if(!drivers.length)drivers.push('No dominant severe driver');
-  $('drivers').innerHTML=drivers.map(x=>'<span>'+x+'</span>').join('');
-  $('riskExplanation').textContent='For '+crop.name+', the index integrates crop-specific thermal range, humidity, precipitation, wind, ET₀ and surface soil-moisture signals across the selected forecast horizon.';
-  const peakIndex=series.indexOf(Math.max(...series)),peakTime=new Date(h.time[peakIndex]);
-  $('peakTiming').textContent=peakTime.toLocaleString([],{weekday:'short',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})+' • '+series[peakIndex]+'% modeled risk';
-  const q=Math.max(1,Math.floor(series.length/3)),early=avg(series.slice(0,q)),late=avg(series.slice(-q)),delta=late-early;
-  $('riskTrend').textContent=delta>8?'Increasing across the forecast window (+'+Math.round(delta)+' points).':delta<-8?'Decreasing across the forecast window ('+Math.round(delta)+' points).':'Broadly stable across the forecast window.';
-  $('decisionHeadline').textContent=level+' risk • '+crop.name+' • '+regions[currentRegion].name;
-  $('farmerDecision').textContent=farmerAdvice(score,drivers,crop.name);
-  $('researchDecision').textContent='Peak biotic suitability '+bscore+'%, peak abiotic stress '+ascore+'%, model confidence '+confidence+'%. Dominant modeled drivers: '+drivers.join(', ')+'. Validate against field observations before causal interpretation.';
+  $('riskScore').textContent=`${score}%`;$('riskLevel').textContent=level;$('riskTitle').textContent=title;$('scoreRing').style.background=`conic-gradient(${riskColor(score)} ${score*3.6}deg,#e8ece9 ${score*3.6}deg)`;
+  $('bioticScore').textContent=`${bscore}%`;$('abioticScore').textContent=`${ascore}%`;$('confidenceScore').textContent=`${confidence}%`;$('bioticBar').style.width=`${bscore}%`;$('abioticBar').style.width=`${ascore}%`;$('confidenceBar').style.width=`${confidence}%`;
+  const s=summarizeRows(rows,crop),drivers=[];if(s.maxT>crop.heatOpt[1])drivers.push(`Heat ${s.maxT.toFixed(1)}°C`);if(s.maxRH>=crop.humidDisease)drivers.push(`Humidity ${s.maxRH.toFixed(0)}%`);if(s.rain>0)drivers.push(`Rain ${s.rain.toFixed(1)} mm`);if(s.maxEto>crop.etoHigh)drivers.push('High ET₀');if(Number.isFinite(s.minSM)&&s.minSM<crop.soilLow)drivers.push('Low surface soil moisture');if(s.maxWind>32)drivers.push('Strong wind');if(!drivers.length)drivers.push('No dominant severe driver');$('drivers').innerHTML=drivers.map(x=>`<span>${x}</span>`).join('');
+  $('riskExplanation').textContent=`For ${crop.name}, the index combines crop-specific thermal range, atmospheric moisture, rainfall, wind, evapotranspiration and surface soil-moisture signals across the selected forecast period.`;
+  const peakRow=rows.reduce((a,b)=>b.risk>a.risk?b:a,rows[0]);$('peakTiming').textContent=`${fmtDateTime(peakRow.time)} • ${peakRow.risk}% modeled risk`;
+  const q=Math.max(1,Math.floor(rows.length/3)),delta=mean(rows.slice(-q).map(r=>r.risk))-mean(rows.slice(0,q).map(r=>r.risk));$('riskTrend').textContent=delta>8?`Increasing across the forecast window (+${Math.round(delta)} points).`:delta<-8?`Decreasing across the forecast window (${Math.round(delta)} points).`:'Broadly stable across the forecast window.';
+  $('decisionHeadline').textContent=`${level} risk • ${crop.name} • ${regions[currentRegion].name}`;$('researchDecision').textContent=`Peak biotic suitability ${bscore}%, peak abiotic stress ${ascore}%, forecast confidence ${confidence}%. Primary environmental drivers: ${drivers.join(', ')}.`;
 }
 
-function farmerAdvice(score,drivers,cropName){
-  if(score>=75)return 'Prioritise field inspection for '+cropName+' during the identified peak window. Review irrigation, canopy condition and disease/pest scouting immediately; consult locally approved agronomic guidance before treatment decisions.';
-  if(score>=50)return 'Increase scouting frequency for '+cropName+', verify irrigation and crop water status, and inspect areas with prior disease or pest history before the peak-risk period.';
-  if(score>=25)return 'Maintain closer-than-routine monitoring. Check crop water status and inspect representative plants after meaningful humidity, rainfall or heat changes.';
-  return 'Continue routine crop monitoring and irrigation scheduling. No strong environmental hazard signal is present in the selected forecast window.';
-}
-function avg(a){return a.length?a.reduce((x,y)=>x+y,0)/a.length:0}
-function riskLevel(v){return v>=75?'CRITICAL':v>=50?'HIGH':v>=25?'MODERATE':'LOW'}
-function riskColor(v){return v>=75?'#9f3f3f':v>=50?'#b96d2e':v>=25?'#a87c2b':'#3c7a63'}
+function summarizeRows(rows,crop){const sms=rows.map(r=>r.sm).filter(Number.isFinite);return{meanT:mean(rows.map(r=>r.t)),maxT:Math.max(...rows.map(r=>r.t)),minT:Math.min(...rows.map(r=>r.t)),maxRH:Math.max(...rows.map(r=>r.rh)),meanRH:mean(rows.map(r=>r.rh)),rain:sum(rows.map(r=>r.p)),eto:sum(rows.map(r=>r.eto)),maxEto:Math.max(...rows.map(r=>r.eto)),minSM:sms.length?Math.min(...sms):NaN,meanSM:sms.length?mean(sms):NaN,maxWind:Math.max(...rows.map(r=>r.wind)),crop};}
+function mean(a){const f=a.filter(Number.isFinite);return f.length?f.reduce((x,y)=>x+y,0)/f.length:NaN;}function sum(a){return a.filter(Number.isFinite).reduce((x,y)=>x+y,0);}
+function fmtDateTime(t){return new Date(t).toLocaleString([],{weekday:'short',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});}function riskLevel(v){return v>=75?'CRITICAL':v>=50?'HIGH':v>=25?'MODERATE':'LOW'}function riskColor(v){return v>=75?'#9f3f3f':v>=50?'#b96d2e':v>=25?'#a87c2b':'#3c7a63'}
 
-function renderChart(times,values){
-  const step=values.length>100?3:values.length>48?2:1;let out='';
-  for(let i=0;i<values.length;i+=step){const v=values[i],label=new Date(times[i]).toLocaleString([],{weekday:'short',hour:'2-digit'});out+='<div class="bar" style="height:'+Math.max(8,v*1.85)+'px;background:'+riskColor(v)+'" data-tip="'+label+' • '+v+'%"></div>'}
-  $('forecastChart').innerHTML=out;
-}
+function calculateDiseaseScores(rows,crop){const s=summarizeRows(rows,crop);return crop.diseases.map(d=>{let score=10;if(d.abiotic){if(s.meanT>=d.t[0]&&s.meanT<=d.t[1])score+=45;if(d.rain&&s.rain>0)score+=18;}else{if(s.maxRH>=d.rh)score+=35;else if(s.maxRH>=d.rh-10)score+=18;if(s.meanT>=d.t[0]&&s.meanT<=d.t[1])score+=30;if(d.rain&&s.rain>0)score+=18;}return{...d,score:Math.min(95,score)};}).sort((a,b)=>b.score-a.score);}
+function renderDiseases(crop){$('diseaseGrid').innerHTML=lastDiseaseScores.map(d=>`<article class="disease-card"><span class="label">${d.abiotic?'ABIOTIC WATCH':'ENVIRONMENTAL SUITABILITY'}</span><h3>${d.name}</h3><p>${d.note}</p><strong>${d.score}%</strong><div class="meter"><i style="width:${d.score}%;background:${riskColor(d.score)}"></i></div><small>${riskLevel(d.score)} surveillance priority</small></article>`).join('');}
 
-function renderRegion(index){
-  const r=regions[index];$('regionTitle').textContent=r.name;$('regionDescription').textContent=r.desc;$('regionClimate').textContent=r.climate;$('regionStress').textContent=r.stress;$('regionCrops').textContent=r.crops.map(k=>cropProfiles[k].name).join(' • ');
-}
-function renderAllRegions(){
-  $('regionMap').innerHTML=regions.map((r,i)=>'<button class="map-node" style="left:'+r.x+'%;top:'+r.y+'%" data-label="'+r.name+'" onclick="selectRegion('+i+')" aria-label="Select '+r.name+'"></button>').join('');
-  $('regionCards').innerHTML=regions.map((r,i)=>'<article class="region-card" onclick="selectRegion('+i+')"><strong>'+r.name+'</strong><span>'+r.climate+'</span><p>'+r.crops.slice(0,5).map(k=>cropProfiles[k].name).join(' • ')+(r.crops.length>5?' • +'+(r.crops.length-5)+' more':'')+'</p></article>').join('');
-}
-window.selectRegion=i=>{currentRegion=i;$('locationSelect').value=String(i);updateCropOptions();renderRegion(i);document.getElementById('regions').scrollIntoView({behavior:'smooth',block:'start'});loadData()};
-
-function renderDiseases(h,n,crop){
-  const temps=h.temperature_2m.slice(0,n),rhs=h.relative_humidity_2m.slice(0,n),rain=h.precipitation.slice(0,n),avgT=avg(temps),maxRH=Math.max(...rhs),rainSum=rain.reduce((a,b)=>a+(b||0),0);
-  $('diseaseGrid').innerHTML=crop.diseases.map(d=>{
-    let s=10;
-    if(d.abiotic){
-      if(avgT>=d.t[0]&&avgT<=d.t[1])s+=45;if(d.rain&&rainSum>0)s+=18;
-    }else{
-      if(maxRH>=d.rh)s+=35;else if(maxRH>=d.rh-10)s+=18;if(avgT>=d.t[0]&&avgT<=d.t[1])s+=30;if(d.rain&&rainSum>0)s+=18;
-    }
-    s=Math.min(95,s);
-    return '<article class="disease-card"><span class="label">'+(d.abiotic?'ABIOTIC WATCH':'ENVIRONMENTAL SUITABILITY')+'</span><h3>'+d.name+'</h3><p>'+d.note+'</p><strong>'+s+'%</strong><div class="meter"><i style="width:'+s+'%;background:'+riskColor(s)+'"></i></div><small>'+riskLevel(s)+' modeled suitability • not a diagnosis</small></article>';
-  }).join('');
+function renderFarmerActions(rows,crop,score,confidence,diseaseScores){
+  const s=summarizeRows(rows,crop),peak=rows.reduce((a,b)=>b.risk>a.risk?b:a,rows[0]),topDisease=diseaseScores[0];
+  const actions=[];
+  actions.push(score>=75?`Treat ${fmtDateTime(peak.time)} as the priority inspection window: walk the crop before and after this period and document visible stress, pests or disease symptoms.`:score>=50?`Increase field scouting around ${fmtDateTime(peak.time)}, when the combined environmental risk is forecast to peak.`:score>=25?`Add a focused crop inspection around ${fmtDateTime(peak.time)} while maintaining the normal monitoring schedule.`:`Continue routine monitoring; the current forecast does not show a strong combined hazard window for ${crop.name}.`);
+  if(Number.isFinite(s.minSM)&&s.minSM<crop.soilLow) actions.push(`Review irrigation timing because modeled surface soil moisture falls to ${s.minSM.toFixed(3)} m³/m³ while cumulative ET₀ is ${s.eto.toFixed(2)} mm. Compare this with the farm’s irrigation plan and root-zone measurements.`); else if(s.eto>crop.etoHigh*rows.length*.65) actions.push(`Evaporative demand is meaningful (cumulative ET₀ ${s.eto.toFixed(2)} mm). Check irrigation uniformity and crop water status before the highest-demand hours.`); else actions.push(`Water-stress indicators are presently limited; keep irrigation aligned with crop stage, soil/root-zone measurements and the farm schedule.`);
+  if(topDisease&&!topDisease.abiotic&&topDisease.score>=50) actions.push(`Prioritise scouting for ${topDisease.name}; the weather-suitability score is ${topDisease.score}%. Inspect representative plants and previous problem areas rather than relying on weather alone.`); else actions.push(`No crop-health weather window currently dominates the disease watch; continue routine scouting and record any symptoms for future model calibration.`);
+  if(s.maxT>=crop.heatCritical) actions.push(`Prepare for critical heat up to ${s.maxT.toFixed(1)}°C. Check plant water status, exposed fruit/canopy condition and heat-sensitive growth stages during the hottest hours.`); else if(s.maxT>crop.heatOpt[1]) actions.push(`Temperatures rise above the crop’s preferred range to ${s.maxT.toFixed(1)}°C. Inspect for midday heat stress and verify water availability.`); else actions.push(`Forecast temperature remains within or near the crop’s working thermal range; no special heat response is indicated beyond routine observation.`);
+  if(s.rain>0||s.maxRH>=crop.humidDisease) actions.push(`Humidity/wetness conditions are relevant (peak RH ${s.maxRH.toFixed(0)}%, forecast rain ${s.rain.toFixed(1)} mm). Inspect canopy ventilation and re-check foliage after wet periods.`); else actions.push(`The forecast remains comparatively dry (peak RH ${s.maxRH.toFixed(0)}%). Give greater attention to heat and water balance than moisture-driven disease conditions.`);
+  actions.push(`Re-open the NABAT forecast after a major weather change or within the next 24 hours. Current forecast confidence is ${confidence}%; record field observations so future calibrated models can compare prediction with outcome.`);
+  $('farmerActions').innerHTML=actions.slice(0,6).map(a=>`<li>${a}</li>`).join('');
 }
 
-async function refreshAuth(){
-  const {data:{user}}=await sb.auth.getUser();$('authLoggedOut').hidden=!!user;$('authLoggedIn').hidden=!user;
-  if(user){$('userEmail').textContent=user.email;await loadFarms()}else{$('farmList').innerHTML='<p class="muted">Sign in to load your registered sites.</p>';$('farmCount').textContent='0 sites'}
+function renderAnalytics(rows,crop,confidence){
+  const s=summarizeRows(rows,crop);$('statMeanTemp').textContent=`${s.meanT.toFixed(1)}°C`;$('statMaxTemp').textContent=`${s.maxT.toFixed(1)}°C`;$('statRain').textContent=`${s.rain.toFixed(1)} mm`;$('statEto').textContent=`${s.eto.toFixed(2)} mm`;$('statSoil').textContent=Number.isFinite(s.minSM)?s.minSM.toFixed(3):'—';
+  const corrs={Temperature:pearson(rows.map(r=>r.t),rows.map(r=>r.risk)),Humidity:pearson(rows.map(r=>r.rh),rows.map(r=>r.risk)),'ET₀':pearson(rows.map(r=>r.eto),rows.map(r=>r.risk)),'Soil moisture':pearson(rows.map(r=>r.sm),rows.map(r=>r.risk)),Wind:pearson(rows.map(r=>r.wind),rows.map(r=>r.risk))};
+  const strongest=Object.entries(corrs).filter(([,v])=>Number.isFinite(v)).sort((a,b)=>Math.abs(b[1])-Math.abs(a[1]))[0]||['—',NaN];$('statAssociation').textContent=Number.isFinite(strongest[1])?`${strongest[0]} r=${strongest[1].toFixed(2)}`:'—';
+  $('correlationTable').innerHTML=Object.entries(corrs).map(([k,v])=>`<div class="corr-item"><span>${k} vs risk</span><strong>${Number.isFinite(v)?v.toFixed(2):'—'}</strong></div>`).join('');
+  $('researchAnalyticsText').textContent=Number.isFinite(strongest[1])?`Across the selected forecast window, ${strongest[0].toLowerCase()} has the strongest linear association with the modeled risk trajectory (Pearson r=${strongest[1].toFixed(2)}). This is an exploratory association within model outputs, not evidence of causality. Forecast confidence is ${confidence}%.`:`The forecast window does not contain enough variable variation for a stable correlation summary. Forecast confidence is ${confidence}%.`;
+  $('statAssociation').title='Exploratory Pearson correlation between the hourly variable and modeled risk';
+  drawClimateChart(rows);drawDailyRiskChart(rows);drawDriverRadar(rows,crop);drawScatter(rows);
 }
-async function signIn(){const email=$('authEmail').value.trim(),password=$('authPassword').value;const {error}=await sb.auth.signInWithPassword({email,password});$('authMessage').textContent=error?error.message:'Signed in successfully.'}
-async function signUp(){const email=$('authEmail').value.trim(),password=$('authPassword').value;if(password.length<6){$('authMessage').textContent='Use at least 6 characters for the password.';return}const {error}=await sb.auth.signUp({email,password});$('authMessage').textContent=error?error.message:'Account created. Check email confirmation if enabled.'}
-async function saveFarm(e){
-  e.preventDefault();const {data:{user}}=await sb.auth.getUser();if(!user){$('farmMessage').textContent='Please sign in before saving a site.';return}
-  const r=regions[+$('farmZone').value],payload={user_id:user.id,name:$('farmName').value.trim(),latitude:r.lat,longitude:r.lon,area_hectares:$('farmArea').value?+$('farmArea').value:null,irrigation_type:$('irrigation').value};
-  const {data:z}=await sb.from('agro_zones').select('id').eq('slug',r.slug).maybeSingle();if(z)payload.zone_id=z.id;
-  const {error}=await sb.from('agro_farms').insert(payload);$('farmMessage').textContent=error?error.message:'Site saved securely.';if(!error){e.target.reset();await loadFarms()}
-}
-async function loadFarms(){
-  const {data,error}=await sb.from('agro_farms').select('id,name,area_hectares,irrigation_type,latitude,longitude,created_at').order('created_at',{ascending:false});
-  if(error){$('farmList').innerHTML='<p class="muted">'+error.message+'</p>';return}
-  $('farmCount').textContent=data.length+' site'+(data.length===1?'':'s');
-  $('farmList').innerHTML=data.length?data.map(f=>'<article class="farm-card"><strong>'+escapeHtml(f.name)+'</strong><span>'+(f.area_hectares??'—')+' ha • '+(f.irrigation_type??'unspecified')+'</span><span>'+Number(f.latitude).toFixed(3)+'°, '+Number(f.longitude).toFixed(3)+'°</span></article>').join(''):'<p class="muted">No registered sites yet.</p>';
-}
-function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function pearson(a,b){const pairs=a.map((x,i)=>[x,b[i]]).filter(([x,y])=>Number.isFinite(x)&&Number.isFinite(y));if(pairs.length<3)return NaN;const xs=pairs.map(p=>p[0]),ys=pairs.map(p=>p[1]),mx=mean(xs),my=mean(ys);let num=0,dx=0,dy=0;for(let i=0;i<xs.length;i++){const vx=xs[i]-mx,vy=ys[i]-my;num+=vx*vy;dx+=vx*vx;dy+=vy*vy;}return dx&&dy?num/Math.sqrt(dx*dy):NaN;}
+function destroyChart(name){if(charts[name]){charts[name].destroy();charts[name]=null;}}
+function sampleRows(rows,max=48){const step=Math.max(1,Math.ceil(rows.length/max));return rows.filter((_,i)=>i%step===0);}
+function drawClimateChart(rows){destroyChart('climate');const r=sampleRows(rows,56);charts.climate=new Chart($('climateTrendChart'),{type:'line',data:{labels:r.map(x=>new Date(x.time).toLocaleString([],{weekday:'short',hour:'2-digit'})),datasets:[{label:'Temperature °C',data:r.map(x=>x.t),borderColor:'#b96d2e',backgroundColor:'rgba(185,109,46,.08)',yAxisID:'y',pointRadius:0,tension:.25},{label:'Relative humidity %',data:r.map(x=>x.rh),borderColor:'#527b8b',backgroundColor:'rgba(82,123,139,.08)',yAxisID:'y1',pointRadius:0,tension:.25}]},options:chartOptions({y:{position:'left',title:{display:true,text:'Temperature °C'}},y1:{position:'right',grid:{drawOnChartArea:false},title:{display:true,text:'RH %'}}})});}
+function drawDailyRiskChart(rows){destroyChart('daily');const groups={};rows.forEach(r=>{const k=r.time.slice(0,10);(groups[k]??=[]).push(r.risk);});const labels=Object.keys(groups),peak=labels.map(k=>Math.max(...groups[k])),avgRisk=labels.map(k=>mean(groups[k]));charts.daily=new Chart($('dailyRiskChart'),{data:{labels:labels.map(d=>new Date(d+'T12:00:00').toLocaleDateString([],{weekday:'short',day:'numeric'})),datasets:[{type:'bar',label:'Daily peak risk %',data:peak,backgroundColor:peak.map(riskColor),borderWidth:0},{type:'line',label:'Daily mean risk %',data:avgRisk,borderColor:'#285f4c',backgroundColor:'#285f4c',pointRadius:3,tension:.25}]},options:chartOptions({y:{min:0,max:100,title:{display:true,text:'Risk index'}}})});}
+function drawDriverRadar(rows,crop){destroyChart('radar');const s=summarizeRows(rows,crop);const heat=clamp(((s.maxT-crop.heatOpt[1])/(Math.max(4,crop.heatCritical-crop.heatOpt[1])))*100,0,100),humidity=clamp(((s.maxRH-(crop.humidDisease-20))/20)*100,0,100),water=Number.isFinite(s.minSM)?clamp(((crop.soilLow-s.minSM)/crop.soilLow)*100+clamp((s.maxEto-crop.etoHigh)*160,0,45),0,100):clamp((s.maxEto-crop.etoHigh)*180,0,100),wetness=clamp((s.rain>0?40+Math.min(45,s.rain*5):0)+(s.maxRH>80?25:0),0,100),wind=clamp((s.maxWind-18)*4,0,100);charts.radar=new Chart($('driverRadarChart'),{type:'radar',data:{labels:['Heat','Humidity','Water deficit','Wetness','Wind'],datasets:[{label:'Relative pressure',data:[heat,humidity,water,wetness,wind],borderColor:'#285f4c',backgroundColor:'rgba(40,95,76,.16)',pointBackgroundColor:'#285f4c',pointRadius:3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{r:{min:0,max:100,ticks:{display:false},grid:{color:'#dfe6e2'},angleLines:{color:'#dfe6e2'},pointLabels:{font:{size:10},color:'#52645e'}}}}});}
+function drawScatter(rows){destroyChart('scatter');const r=sampleRows(rows,80);charts.scatter=new Chart($('riskScatterChart'),{type:'scatter',data:{datasets:[{label:'Forecast hours',data:r.map(x=>({x:x.t,y:x.rh,r:x.risk})),pointBackgroundColor:r.map(x=>riskColor(x.risk)),pointRadius:r.map(x=>3+Math.round(x.risk/35)),pointHoverRadius:7}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`Temp ${c.raw.x.toFixed(1)}°C • RH ${c.raw.y.toFixed(0)}% • risk ${c.raw.r}%`}}},scales:{x:{title:{display:true,text:'Temperature °C'},grid:{color:'#edf1ee'}},y:{title:{display:true,text:'Relative humidity %'},grid:{color:'#edf1ee'}}}}});}
+function chartOptions(scales){return{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{labels:{boxWidth:10,font:{size:10},color:'#52645e'}},tooltip:{titleFont:{size:10},bodyFont:{size:10}}},scales:Object.fromEntries(Object.entries(scales).map(([k,v])=>[k,{grid:{color:'#edf1ee',...(v.grid||{})},ticks:{font:{size:9},color:'#6d7d77'},...v}]))};}
+function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
+
+function renderRegion(index){const r=regions[index];$('regionTitle').textContent=r.name;$('regionDescription').textContent=r.desc;$('regionClimate').textContent=r.climate;$('regionStress').textContent=r.stress;$('regionCrops').textContent=r.crops.map(k=>cropProfiles[k].name).join(' • ');}
+function renderAllRegions(){$('regionMap').innerHTML=regions.map((r,i)=>`<button class="map-node" style="left:${r.x}%;top:${r.y}%" data-label="${r.name}" onclick="selectRegion(${i})" aria-label="Select ${r.name}"></button>`).join('');$('regionCards').innerHTML=regions.map((r,i)=>`<article class="region-card" onclick="selectRegion(${i})"><strong>${r.name}</strong><span>${r.climate}</span><p>${r.crops.slice(0,5).map(k=>cropProfiles[k].name).join(' • ')}${r.crops.length>5?` • +${r.crops.length-5} more`:''}</p></article>`).join('');}
+window.selectRegion=i=>{currentRegion=i;activeCoords=null;$('locationSelect').value=String(i);updateCropOptions();renderRegion(i);updateLocationReadout();document.getElementById('regions').scrollIntoView({behavior:'smooth',block:'start'});loadData();};
+
+async function refreshAuth(){const {data:{user}}=await sb.auth.getUser();$('authLoggedOut').hidden=!!user;$('authLoggedIn').hidden=!user;if(user){$('userEmail').textContent=user.email;await loadFarms();}else{$('farmList').innerHTML='<p class="muted">Sign in to load your registered sites.</p>';$('farmCount').textContent='0 sites';}}
+async function signIn(){const email=$('authEmail').value.trim(),password=$('authPassword').value;const {error}=await sb.auth.signInWithPassword({email,password});$('authMessage').textContent=error?error.message:'Signed in successfully.';}
+async function signUp(){const email=$('authEmail').value.trim(),password=$('authPassword').value;if(password.length<6){$('authMessage').textContent='Use at least 6 characters for the password.';return;}const {error}=await sb.auth.signUp({email,password});$('authMessage').textContent=error?error.message:'Account created. Check email confirmation if enabled.';}
+async function saveFarm(e){e.preventDefault();const {data:{user}}=await sb.auth.getUser();if(!user){$('farmMessage').textContent='Please sign in before saving a site.';return;}const r=regions[+$('farmZone').value],payload={user_id:user.id,name:$('farmName').value.trim(),latitude:r.lat,longitude:r.lon,area_hectares:$('farmArea').value?+$('farmArea').value:null,irrigation_type:$('irrigation').value};const {data:z}=await sb.from('agro_zones').select('id').eq('slug',r.slug).maybeSingle();if(z)payload.zone_id=z.id;const {error}=await sb.from('agro_farms').insert(payload);$('farmMessage').textContent=error?error.message:'Site saved securely.';if(!error){e.target.reset();await loadFarms();}}
+async function loadFarms(){const {data,error}=await sb.from('agro_farms').select('id,name,area_hectares,irrigation_type,latitude,longitude,created_at').order('created_at',{ascending:false});if(error){$('farmList').innerHTML=`<p class="muted">${escapeHtml(error.message)}</p>`;return;}$('farmCount').textContent=`${data.length} site${data.length===1?'':'s'}`;$('farmList').innerHTML=data.length?data.map(f=>`<article class="farm-card"><strong>${escapeHtml(f.name)}</strong><span>${f.area_hectares??'—'} ha • ${escapeHtml(f.irrigation_type??'unspecified')}</span><span>${Number(f.latitude).toFixed(3)}°, ${Number(f.longitude).toFixed(3)}°</span></article>`).join(''):'<p class="muted">No registered sites yet.</p>';}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
 document.addEventListener('DOMContentLoaded',init);
