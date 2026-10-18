@@ -1,1 +1,249 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Saudi AgroClimate Intelligence & Crop Health Decision Support System"><title>Saudi AgroClimate DSS | GDR Network</title><link rel="stylesheet" href="./styles.css?v=2"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script></head><body><header class="topbar"><div class="brand"><div class="mark">SA</div><div><strong>Saudi AgroClimate DSS</strong><small>GDR Network • Climate × Crop × AI</small></div></div><nav><a href="#dashboard">Dashboard</a><a href="#map">Risk Map</a><a href="#diseases">Disease Engine</a><a href="#farmer">Farmer Portal</a></nav><div class="status"><span class="pulse"></span><span id="apiStatus">Connecting live data…</span></div></header><main><section class="hero"><div><p class="eyebrow">National agricultural intelligence prototype</p><h1>Climate-driven crop health<br><em>early warning for Saudi Arabia</em></h1><p class="lead">Real-time weather, agro-climatic zoning, transparent disease suitability and abiotic stress intelligence for farmers, researchers and national decision-makers.</p></div><div class="hero-card"><span>Operational horizon</span><strong>NOW → 7 DAYS → 2050</strong><p>Current conditions, early warning and climate-resilience planning in one platform.</p></div></section><section id="dashboard" class="controls panel"><div class="field"><label>Agro-climatic location</label><select id="locationSelect"></select></div><div class="field"><label>Crop</label><select id="cropSelect"><option value="date-palm">Date palm</option><option value="wheat">Wheat</option><option value="potato">Potato</option><option value="tomato">Tomato / protected crop</option></select></div><div class="field"><label>Forecast horizon</label><select id="horizonSelect"><option value="24">Next 24 hours</option><option value="72" selected>Next 72 hours</option><option value="168">Next 7 days</option></select></div><button id="refreshBtn">Refresh intelligence</button></section><section class="metrics"><article><span>Temperature</span><strong id="temp">—</strong><small>Current 2 m air temperature</small></article><article><span>Relative humidity</span><strong id="humidity">—</strong><small>Current atmospheric moisture</small></article><article><span>Precipitation</span><strong id="precip">—</strong><small>Current precipitation</small></article><article><span>Wind</span><strong id="wind">—</strong><small>10 m wind speed</small></article><article><span>ET₀</span><strong id="eto">—</strong><small>Reference evapotranspiration</small></article><article><span>Soil moisture</span><strong id="soil">—</strong><small>Upper soil layer</small></article></section><section class="grid2"><article class="panel risk-panel"><div class="section-head"><div><p class="eyebrow">Explainable risk engine</p><h2>Crop health risk</h2></div><span id="updatedAt">—</span></div><div class="risk-wrap"><div class="gauge"><div id="gaugeFill" class="gauge-fill"></div><div class="gauge-center"><strong id="riskScore">—</strong><span id="riskLevel">Calculating</span></div></div><div class="risk-copy"><h3 id="riskTitle">Analyzing environmental suitability…</h3><p id="riskExplanation"></p><div id="drivers" class="chips"></div></div></div><div class="notice"><strong>Decision-support only.</strong> Risk means environmental suitability/stress, not confirmed infection. Field scouting and locally approved agronomic guidance remain essential.</div></article><article class="panel"><div class="section-head"><div><p class="eyebrow">Agro-climatic context</p><h2 id="zoneName">—</h2></div><span class="tag" id="zoneTag">ZONE</span></div><p id="zoneDescription" class="zone-description"></p><div class="mini-grid"><div><span>Coordinates</span><strong id="coords">—</strong></div><div><span>Primary stress</span><strong id="primaryStress">—</strong></div><div><span>Selected crop</span><strong id="selectedCrop">—</strong></div><div><span>Data mode</span><strong>Live API + DSS</strong></div></div></article></section><section id="map" class="panel map-panel"><div class="section-head"><div><p class="eyebrow">National view</p><h2>Saudi agro-climatic risk map</h2></div><span>Click any zone</span></div><div class="map-layout"><div class="saudi-map" id="saudiMap"></div><div><h3 id="mapZoneTitle">Select a zone</h3><p id="mapZoneText" class="zone-description">Each marker is linked to a live weather query and crop-risk calculation.</p><div class="legend"><span><i class="low"></i>Low</span><span><i class="moderate"></i>Moderate</span><span><i class="high"></i>High</span><span><i class="critical"></i>Critical</span></div></div></div></section><section class="panel forecast-panel"><div class="section-head"><div><p class="eyebrow">Early-warning window</p><h2>Hourly environmental risk outlook</h2></div><span id="forecastPeriod">72 h</span></div><div class="chart" id="forecastChart"><p>Loading forecast…</p></div></section><section id="diseases" class="panel"><div class="section-head"><div><p class="eyebrow">Date-palm intelligence module</p><h2>Disease & pest suitability watch</h2></div><span>Phase 2 prototype</span></div><div id="diseaseGrid" class="disease-grid"></div></section><section class="three"><article class="panel"><p class="eyebrow">Biotic engine</p><h3>Disease & pest suitability</h3><p>Weather and crop-specific conditions are converted into interpretable environmental suitability scores.</p><div class="progress"><i id="bioticBar"></i></div><strong id="bioticScore">—</strong></article><article class="panel"><p class="eyebrow">Abiotic engine</p><h3>Heat & water stress</h3><p>Heat load, evapotranspiration and soil-moisture deficit are converted into transparent stress indicators.</p><div class="progress"><i id="abioticBar"></i></div><strong id="abioticScore">—</strong></article><article class="panel"><p class="eyebrow">Production connector</p><h3>Saudi NCM ready</h3><p>The architecture can accept authenticated NCM observations, forecasts, agricultural parameters and gridded feeds without exposing private API keys.</p><a href="https://api-doc.ncm.gov.sa/" target="_blank" rel="noopener">Saudi NCM API documentation ↗</a></article></section><section id="farmer" class="portal-grid"><article class="panel"><p class="eyebrow">Farmer / researcher account</p><h2>Secure farm portal</h2><div id="authLoggedOut"><div class="form-grid"><input id="authEmail" type="email" placeholder="Email address"><input id="authPassword" type="password" placeholder="Password (minimum 6 characters)"></div><div class="button-row"><button id="signInBtn">Sign in</button><button class="secondary" id="signUpBtn">Create account</button></div><p class="form-status" id="authMessage">Your farm records are protected by account-level database security.</p></div><div id="authLoggedIn" hidden><p>Signed in as <strong id="userEmail"></strong></p><button class="secondary" id="signOutBtn">Sign out</button></div></article><article class="panel"><p class="eyebrow">Register a farm</p><h2>Add agricultural site</h2><form id="farmForm"><div class="form-grid"><input id="farmName" required placeholder="Farm name"><select id="farmZone" required></select><input id="farmArea" type="number" min="0" step="0.1" placeholder="Area (hectares)"><select id="irrigation"><option value="drip">Drip irrigation</option><option value="center-pivot">Center pivot</option><option value="surface">Surface irrigation</option><option value="other">Other</option></select></div><button type="submit">Save farm securely</button><p class="form-status" id="farmMessage">Sign in first to save a farm.</p></form></article></section><section class="panel"><div class="section-head"><div><p class="eyebrow">My farms</p><h2>Personal monitoring portfolio</h2></div><span id="farmCount">0 farms</span></div><div id="farmList" class="farm-list"><p class="zone-description">Sign in to load your farms.</p></div></section><section class="architecture panel"><p class="eyebrow">Production architecture</p><h2>From national data to farmer action</h2><div class="flow"><div>NCM / Weather APIs<small>observations + forecast</small></div><b>→</b><div>Satellite & Soil<small>crop condition</small></div><b>→</b><div>Risk Engine<small>biotic + abiotic</small></div><b>→</b><div>Decision Support<small>probability + confidence</small></div><b>→</b><div>Farmer / Government<small>alerts + national dashboard</small></div></div></section></main><footer><span>Saudi AgroClimate Intelligence & Crop Health DSS • Founding MVP 2026</span><span>GDR Network research technology project</span></footer><script src="./app.js?v=2"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="NABAT — Saudi AgroClimate & Crop Health Intelligence. Regional crop-weather forecasting and decision support for farmers and researchers.">
+<title>NABAT | Saudi AgroClimate & Crop Health Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css?v=4">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<div class="utility-bar">
+  <div class="shell utility-inner">
+    <span><strong>GDR Network</strong> • Saudi Agricultural Decision Support</span>
+    <div class="utility-links"><a href="#method">Methodology</a><a href="#data">Data sources</a><a href="#portal">Research portal</a><span id="apiStatus"><i class="live-dot"></i> Connecting live data</span></div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="shell masthead">
+    <a class="identity" href="#top" aria-label="NABAT home">
+      <span class="logo-mark" aria-hidden="true"><b>N</b><i></i></span>
+      <span class="identity-copy"><strong>NABAT</strong><small>Saudi AgroClimate & Crop Health Intelligence</small></span>
+    </a>
+    <div class="masthead-meta">
+      <span>Research-grade decision support</span>
+      <span>Kingdom of Saudi Arabia</span>
+    </div>
+  </div>
+  <nav class="primary-nav" aria-label="Primary navigation">
+    <div class="shell nav-inner">
+      <a href="#overview">Overview</a>
+      <a href="#forecast">Forecasting</a>
+      <a href="#regions">Regions & crops</a>
+      <a href="#diseases">Crop health</a>
+      <a href="#workflow">How it works</a>
+      <a href="#portal">Farm portal</a>
+      <a href="#about">About</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+<section id="top" class="hero">
+  <img class="hero-image" src="https://saudipedia.com/var/site/storage/images/2/5/3/1/5901352-1-fra-FR/0ea00bf6c9d2-65449.jpg" alt="Irrigated date palm farms in Al-Qassim, Saudi Arabia">
+  <div class="hero-shade"></div>
+  <div class="shell hero-content">
+    <div class="hero-copy">
+      <p class="kicker">National agro-climate intelligence</p>
+      <h1>Forecast climate risk.<br>Protect the crop.<br><em>Support the decision.</em></h1>
+      <p>NABAT translates live weather, crop requirements and environmental disease suitability into clear, time-specific guidance for farmers and transparent technical evidence for researchers.</p>
+      <div class="hero-actions"><a class="btn primary" href="#forecast">Open forecast workspace</a><a class="btn ghost" href="#workflow">How to read NABAT</a></div>
+    </div>
+    <div class="hero-facts">
+      <div><strong>13</strong><span>Saudi administrative regions</span></div>
+      <div><strong>20+</strong><span>regional crop profiles</span></div>
+      <div><strong>7 days</strong><span>decision forecast horizon</span></div>
+    </div>
+  </div>
+  <div class="image-credit">Agricultural image: Al-Qassim regional agriculture • source reference: Saudipedia/SPA</div>
+</section>
+
+<div class="system-strip">
+  <div class="shell status-grid">
+    <div><span>LIVE WEATHER</span><strong id="statusWeather">Connecting…</strong></div>
+    <div><span>REGION</span><strong id="statusRegion">Al-Qassim</strong></div>
+    <div><span>CROP</span><strong id="statusCrop">Date palm</strong></div>
+    <div><span>FORECAST</span><strong id="statusHorizon">72 hours</strong></div>
+    <div><span>MODEL</span><strong>NABAT v0.4 transparent DSS</strong></div>
+  </div>
+</div>
+
+<div class="shell page-grid">
+  <aside class="sidebar" aria-label="Section navigation">
+    <div class="side-title">NABAT Navigator</div>
+    <nav>
+      <a class="active" href="#overview"><span>01</span>Overview</a>
+      <a href="#forecast"><span>02</span>Forecast workspace</a>
+      <a href="#regions"><span>03</span>Regions & crops</a>
+      <a href="#diseases"><span>04</span>Crop health watch</a>
+      <a href="#workflow"><span>05</span>Decision workflow</a>
+      <a href="#interpretation"><span>06</span>Risk interpretation</a>
+      <a href="#portal"><span>07</span>Farm portal</a>
+      <a href="#method"><span>08</span>Methods & limitations</a>
+    </nav>
+    <div class="side-card">
+      <span class="side-label">Connected intelligence</span>
+      <a href="https://api-doc.ncm.gov.sa/" target="_blank" rel="noopener">Saudi NCM API ↗</a>
+      <a href="https://power.larc.nasa.gov/" target="_blank" rel="noopener">NASA POWER ↗</a>
+      <a href="https://cds.climate.copernicus.eu/" target="_blank" rel="noopener">Copernicus CDS ↗</a>
+      <small>Production integration will prioritize authenticated Saudi NCM data and use international sources for validation and historical context.</small>
+    </div>
+  </aside>
+
+  <div class="content-column">
+    <section id="overview" class="section-block intro-block">
+      <p class="eyebrow">Decision support, not black-box prediction</p>
+      <div class="two-col-head">
+        <h2>A national crop-weather intelligence layer for Saudi agriculture.</h2>
+        <p>NABAT combines region, crop, live climate, forecast conditions and transparent risk rules. Every output identifies the forecast period, dominant drivers and confidence so users can understand <em>why</em> the score changed.</p>
+      </div>
+      <div class="audience-grid">
+        <article><span>FOR FARMERS</span><h3>What should I check or prepare for?</h3><p>Plain-language risk levels, peak-risk timing and field actions such as inspection, irrigation review and targeted scouting.</p></article>
+        <article><span>FOR RESEARCHERS</span><h3>What environmental signal produced the forecast?</h3><p>Variable summaries, crop thresholds, risk components, time horizon, confidence and limitations suitable for validation studies.</p></article>
+        <article><span>FOR PROGRAMMES</span><h3>Where is agricultural pressure increasing?</h3><p>Regional overview across all 13 administrative regions and their characteristic crop systems.</p></article>
+      </div>
+    </section>
+
+    <section id="forecast" class="section-block">
+      <div class="section-heading">
+        <div><p class="eyebrow">Forecast workspace</p><h2>Crop-specific regional intelligence</h2></div>
+        <div class="source-badge"><span class="live-dot"></span> Live meteorological feed</div>
+      </div>
+      <div class="control-grid">
+        <label><span>Saudi region</span><select id="locationSelect"></select></label>
+        <label><span>Crop profile</span><select id="cropSelect"></select></label>
+        <label><span>Decision horizon</span><select id="horizonSelect"><option value="24">Next 24 hours</option><option value="72" selected>Next 72 hours</option><option value="168">Next 7 days</option></select></label>
+        <button id="refreshBtn">Update forecast</button>
+      </div>
+
+      <div class="metrics">
+        <article><span>Air temperature</span><strong id="temp">—</strong><small>Current 2 m temperature</small></article>
+        <article><span>Relative humidity</span><strong id="humidity">—</strong><small>Atmospheric moisture</small></article>
+        <article><span>Precipitation</span><strong id="precip">—</strong><small>Current precipitation</small></article>
+        <article><span>Wind speed</span><strong id="wind">—</strong><small>10 m wind speed</small></article>
+        <article><span>ET₀</span><strong id="eto">—</strong><small>FAO reference evapotranspiration</small></article>
+        <article><span>Soil moisture</span><strong id="soil">—</strong><small>Surface layer estimate</small></article>
+      </div>
+
+      <div class="forecast-grid">
+        <article class="card risk-card">
+          <div class="card-head"><div><span class="label">COMBINED CROP-HEALTH INDEX</span><h3>Environmental risk</h3></div><small id="updatedAt">—</small></div>
+          <div class="risk-main">
+            <div class="score-ring" id="scoreRing"><div><strong id="riskScore">—</strong><span id="riskLevel">Calculating</span></div></div>
+            <div class="risk-text"><h3 id="riskTitle">Analysing forecast conditions…</h3><p id="riskExplanation">NABAT is evaluating crop-specific climatic stress and disease-favourable conditions.</p><div id="drivers" class="chips"></div></div>
+          </div>
+          <div class="component-grid">
+            <div><span>Biotic suitability</span><strong id="bioticScore">—</strong><i><b id="bioticBar"></b></i></div>
+            <div><span>Abiotic stress</span><strong id="abioticScore">—</strong><i><b id="abioticBar"></b></i></div>
+            <div><span>Forecast confidence</span><strong id="confidenceScore">—</strong><i><b id="confidenceBar"></b></i></div>
+          </div>
+        </article>
+        <article class="card decision-card">
+          <span class="label">DECISION SUMMARY</span>
+          <h3 id="decisionHeadline">Preparing decision guidance…</h3>
+          <div class="decision-section"><span>Farmer action</span><p id="farmerDecision">—</p></div>
+          <div class="decision-section"><span>Research interpretation</span><p id="researchDecision">—</p></div>
+          <div class="decision-section"><span>Peak-risk timing</span><p id="peakTiming">—</p></div>
+          <div class="decision-section"><span>Trend</span><p id="riskTrend">—</p></div>
+        </article>
+      </div>
+
+      <article class="card chart-card">
+        <div class="card-head"><div><span class="label">TIME-RESOLVED OUTLOOK</span><h3>Hourly risk trajectory</h3></div><small id="forecastPeriod">72 h</small></div>
+        <div id="forecastChart" class="chart"><p>Loading forecast…</p></div>
+        <div class="chart-scale"><span>Low</span><span>Moderate</span><span>High</span><span>Critical</span></div>
+      </article>
+    </section>
+
+    <section id="regions" class="section-block">
+      <div class="section-heading"><div><p class="eyebrow">National coverage</p><h2>13 regions. Region-specific crop intelligence.</h2></div><small>Crop lists are representative and expandable as official datasets are incorporated.</small></div>
+      <div class="region-layout">
+        <div id="regionMap" class="region-map" aria-label="Interactive schematic map of Saudi agricultural regions"></div>
+        <article class="region-detail">
+          <span class="label">SELECTED REGION</span><h3 id="regionTitle">Al-Qassim</h3><p id="regionDescription">—</p>
+          <dl><div><dt>Agro-climatic character</dt><dd id="regionClimate">—</dd></div><div><dt>Priority stresses</dt><dd id="regionStress">—</dd></div><div><dt>Representative crops</dt><dd id="regionCrops">—</dd></div></dl>
+        </article>
+      </div>
+      <div id="regionCards" class="region-cards"></div>
+    </section>
+
+    <section id="diseases" class="section-block">
+      <div class="section-heading"><div><p class="eyebrow">Crop health watch</p><h2>Environmental disease & pest suitability</h2></div><span class="model-note">Suitability ≠ confirmed infection</span></div>
+      <p class="section-intro">Disease cards adapt to the selected crop. They represent weather suitability for known hazard windows and are intended to guide inspection priorities, not replace field diagnosis or laboratory confirmation.</p>
+      <div id="diseaseGrid" class="disease-grid"></div>
+    </section>
+
+    <section id="workflow" class="section-block workflow-section">
+      <p class="eyebrow">How NABAT works</p><h2>From observation to decision in six transparent steps.</h2>
+      <div class="workflow">
+        <article><b>1</b><span>INPUT</span><h3>Region & crop</h3><p>Select the administrative region and crop relevant to the farm or study.</p></article>
+        <i>→</i><article><b>2</b><span>CLIMATE</span><h3>Live + forecast</h3><p>Temperature, humidity, rain, wind, ET₀ and soil moisture are collected.</p></article>
+        <i>→</i><article><b>3</b><span>MODEL</span><h3>Crop thresholds</h3><p>Climate is compared with crop-specific heat, moisture and disease-favourable windows.</p></article>
+        <i>→</i><article><b>4</b><span>RISK</span><h3>Biotic + abiotic</h3><p>Separate hazard components are calculated before the combined index.</p></article>
+        <i>→</i><article><b>5</b><span>CONFIDENCE</span><h3>Evidence quality</h3><p>Completeness, forecast horizon and availability of key variables affect confidence.</p></article>
+        <i>→</i><article><b>6</b><span>OUTPUT</span><h3>Actionable guidance</h3><p>Farmer action, researcher interpretation, drivers and peak timing are presented together.</p></article>
+      </div>
+    </section>
+
+    <section id="interpretation" class="section-block interpretation">
+      <p class="eyebrow">Reading the output</p><h2>What does a NABAT risk value mean?</h2>
+      <div class="risk-bands">
+        <article class="band-low"><strong>0–24</strong><span>LOW</span><p>No strong climate hazard signal. Continue routine monitoring.</p></article>
+        <article class="band-moderate"><strong>25–49</strong><span>MODERATE</span><p>One or more conditions are becoming favourable for stress or disease. Increase observation.</p></article>
+        <article class="band-high"><strong>50–74</strong><span>HIGH</span><p>Meaningful environmental hazard window. Prioritise field scouting and management review.</p></article>
+        <article class="band-critical"><strong>75–100</strong><span>CRITICAL</span><p>Strong combined climate signal. Rapid field assessment and expert agronomic decision are advised.</p></article>
+      </div>
+      <div class="scientific-note"><strong>Important:</strong> NABAT reports environmental suitability and crop stress—not diagnosis, infection prevalence, yield loss or pesticide need. Operational recommendations must be validated against local field observations and Saudi-approved agronomic guidance.</div>
+    </section>
+
+    <section id="portal" class="section-block">
+      <div class="section-heading"><div><p class="eyebrow">Secure farm & research portal</p><h2>Connect forecasts to real farms and field observations.</h2></div><span class="secure-badge">RLS-protected records</span></div>
+      <div class="portal-grid">
+        <article class="card">
+          <span class="label">ACCOUNT</span><h3>Farmer / researcher access</h3>
+          <div id="authLoggedOut"><div class="form-grid"><label>Email<input id="authEmail" type="email" placeholder="name@example.com"></label><label>Password<input id="authPassword" type="password" placeholder="Minimum 6 characters"></label></div><div class="button-row"><button id="signInBtn">Sign in</button><button class="button-secondary" id="signUpBtn">Create account</button></div><p id="authMessage" class="form-status">Account records are protected by Supabase Row Level Security.</p></div>
+          <div id="authLoggedIn" hidden><p>Signed in as <strong id="userEmail"></strong></p><button class="button-secondary" id="signOutBtn">Sign out</button></div>
+        </article>
+        <article class="card">
+          <span class="label">REGISTER SITE</span><h3>Add a farm or research location</h3>
+          <form id="farmForm"><div class="form-grid"><label>Site name<input id="farmName" required placeholder="Farm / field name"></label><label>Region<select id="farmZone" required></select></label><label>Area (ha)<input id="farmArea" type="number" min="0" step="0.1" placeholder="e.g. 12.5"></label><label>Irrigation<select id="irrigation"><option value="drip">Drip irrigation</option><option value="center-pivot">Center pivot</option><option value="surface">Surface irrigation</option><option value="sprinkler">Sprinkler</option><option value="other">Other / mixed</option></select></label></div><button type="submit">Save site securely</button><p id="farmMessage" class="form-status">Sign in first to save a site.</p></form>
+        </article>
+      </div>
+      <article class="card">
+        <div class="card-head"><div><span class="label">MY PORTFOLIO</span><h3>Registered monitoring sites</h3></div><small id="farmCount">0 sites</small></div>
+        <div id="farmList" class="farm-list"><p class="muted">Sign in to load your registered sites.</p></div>
+      </article>
+    </section>
+
+    <section id="method" class="section-block method-grid">
+      <article><p class="eyebrow">Methodological status</p><h2>Transparent now. Calibrated next.</h2><p>The current NABAT engine is deliberately interpretable. It uses explicit crop-specific climate thresholds and forecast signals. Future model versions should be calibrated against Saudi field-confirmed disease, pest, phenology and yield observations using spatial and temporal external validation.</p></article>
+      <article id="data"><span class="label">DATA ROADMAP</span><ul><li>Saudi NCM observations, forecasts, leaf wetness, GDD and gridded products</li><li>MEWA / GASTAT regional crop and production data</li><li>Sentinel-2 / Landsat vegetation and thermal indicators</li><li>ERA5-Land historical climate and CMIP6 future scenarios</li><li>Farm IoT soil, canopy and microclimate sensors</li><li>Field-confirmed disease and pest observations</li></ul></article>
+    </section>
+
+    <section id="about" class="section-block about-block">
+      <p class="eyebrow">About NABAT</p>
+      <div class="two-col-head"><h2>A GDR Network agricultural bio-IT initiative.</h2><p>NABAT is designed as an extensible research and decision-support platform connecting agrometeorology, crop science, plant pathology, remote sensing, machine learning and farm-level observation. The objective is scientifically traceable forecasting that can be evaluated, improved and validated—not opaque automated advice.</p></div>
+    </section>
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div><div class="footer-brand"><span class="logo-mark small"><b>N</b><i></i></span><div><strong>NABAT</strong><small>Saudi AgroClimate & Crop Health Intelligence</small></div></div><p>Research technology for climate-resilient agriculture and crop-health decision support.</p></div>
+    <div><strong>Platform</strong><a href="#forecast">Forecasting</a><a href="#regions">Regions & crops</a><a href="#workflow">Workflow</a><a href="#portal">Farm portal</a></div>
+    <div><strong>Scientific links</strong><a href="https://api-doc.ncm.gov.sa/" target="_blank" rel="noopener">Saudi NCM</a><a href="https://www.mewa.gov.sa/" target="_blank" rel="noopener">MEWA</a><a href="https://www.stats.gov.sa/" target="_blank" rel="noopener">GASTAT</a></div>
+    <div><strong>Development</strong><span>GDR Network Bio-IT</span><span>Dr. Muhammad Fahim Khan</span><span>Dr. Saeed</span></div>
+  </div>
+  <div class="shell copyright">© 2026 GDR Network & Saudi DSS. All rights reserved. NABAT is a research and decision-support platform; it does not constitute a plant-disease diagnosis or regulatory agronomic instruction.</div>
+</footer>
+<script src="./app.js?v=4"></script>
+</body>
+</html>
