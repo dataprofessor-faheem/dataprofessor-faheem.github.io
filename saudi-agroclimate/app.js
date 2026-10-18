@@ -58,7 +58,7 @@ function init(){
   $('cropSelect').addEventListener('change',loadData);
   $('horizonSelect').addEventListener('change',loadData);
   $('refreshBtn').addEventListener('click',loadData);
-  $('useGpsBtn').addEventListener('click',useFarmGps);
+  $('useGpsBtn').addEventListener('click',useFarmGps);\n  $('downloadReportBtn').addEventListener('click',generateNabatReport);
   $('signInBtn').addEventListener('click',signIn);
   $('signUpBtn').addEventListener('click',signUp);
   $('signOutBtn').addEventListener('click',()=>sb.auth.signOut());
@@ -200,4 +200,122 @@ async function signUp(){const email=$('authEmail').value.trim(),password=$('auth
 async function saveFarm(e){e.preventDefault();const {data:{user}}=await sb.auth.getUser();if(!user){$('farmMessage').textContent='Please sign in before saving a site.';return;}const r=regions[+$('farmZone').value],payload={user_id:user.id,name:$('farmName').value.trim(),latitude:r.lat,longitude:r.lon,area_hectares:$('farmArea').value?+$('farmArea').value:null,irrigation_type:$('irrigation').value};const {data:z}=await sb.from('agro_zones').select('id').eq('slug',r.slug).maybeSingle();if(z)payload.zone_id=z.id;const {error}=await sb.from('agro_farms').insert(payload);$('farmMessage').textContent=error?error.message:'Site saved securely.';if(!error){e.target.reset();await loadFarms();}}
 async function loadFarms(){const {data,error}=await sb.from('agro_farms').select('id,name,area_hectares,irrigation_type,latitude,longitude,created_at').order('created_at',{ascending:false});if(error){$('farmList').innerHTML=`<p class="muted">${escapeHtml(error.message)}</p>`;return;}$('farmCount').textContent=`${data.length} site${data.length===1?'':'s'}`;$('farmList').innerHTML=data.length?data.map(f=>`<article class="farm-card"><strong>${escapeHtml(f.name)}</strong><span>${f.area_hectares??'—'} ha • ${escapeHtml(f.irrigation_type??'unspecified')}</span><span>${Number(f.latitude).toFixed(3)}°, ${Number(f.longitude).toFixed(3)}°</span></article>`).join(''):'<p class="muted">No registered sites yet.</p>';}
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
+
+function generateNabatReport(){
+  if(!lastRows.length){alert('Run the forecast before exporting a report.');return;}
+  if(!window.jspdf||!window.jspdf.jsPDF){alert('PDF engine is not available. Refresh the page and try again.');return;}
+  const {jsPDF}=window.jspdf;
+  const doc=new jsPDF({unit:'mm',format:'a4',orientation:'portrait'});
+  const region=regions[currentRegion],crop=cropProfiles[$('cropSelect').value],horizon=+$('horizonSelect').value;
+  const s=summarizeRows(lastRows,crop),score=parseInt(($('riskScore').textContent||'0').replace(/\D/g,''),10)||0;
+  const confidence=parseInt(($('confidenceScore').textContent||'0').replace(/\D/g,''),10)||0;
+  const mode=activeCoords?'Farm GPS':'Regional reference';
+  const lat=activeCoords?activeCoords.lat:region.lat,lon=activeCoords?activeCoords.lon:region.lon;
+  const actions=[...document.querySelectorAll('#farmerActions li')].map(x=>x.textContent.trim());
+  const corr=[...document.querySelectorAll('#correlationTable .corr-item')].map(x=>x.textContent.replace(/\s+/g,' ').trim());
+  const generated=new Date();
+  const green=[39,93,75],dark=[23,50,43],muted=[95,112,105],line=[217,225,221],soft=[246,248,246],gold=[168,124,43];
+
+  const pageW=210,margin=17,contentW=176;
+  let y=18,page=1;
+  function header(first=false){
+    if(!first){doc.addPage();page++;y=18;}
+    doc.setFillColor(...green);doc.rect(0,0,5,297,'F');
+    doc.setTextColor(...green);doc.setFont('helvetica','bold');doc.setFontSize(17);doc.text('NABAT',margin,17);
+    doc.setFontSize(8.5);doc.setFont('helvetica','normal');doc.setTextColor(...muted);doc.text('Saudi AgroClimate & Crop Health Intelligence',margin,22);
+    doc.setDrawColor(...line);doc.line(margin,27,pageW-margin,27);y=34;
+  }
+  function footer(){
+    const total=doc.getNumberOfPages();
+    for(let p=1;p<=total;p++){
+      doc.setPage(p);doc.setDrawColor(...line);doc.line(margin,284,pageW-margin,284);
+      doc.setTextColor(...muted);doc.setFontSize(7.5);doc.setFont('helvetica','normal');
+      doc.text('NABAT Intelligence Report • GDR Network Bio-IT',margin,289);
+      doc.text('Page '+p+' of '+total,pageW-margin,289,{align:'right'});
+    }
+  }
+  function ensure(h){if(y+h>277) header(false);}
+  function title(txt,sub){
+    ensure(22);doc.setTextColor(...dark);doc.setFont('helvetica','bold');doc.setFontSize(18);doc.text(txt,margin,y);y+=7;
+    if(sub){doc.setFont('helvetica','normal');doc.setFontSize(9);doc.setTextColor(...muted);const ls=doc.splitTextToSize(sub,contentW);doc.text(ls,margin,y);y+=ls.length*4.2+3;}
+  }
+  function sec(txt){
+    ensure(12);doc.setFillColor(...soft);doc.rect(margin,y-4,contentW,8,'F');doc.setTextColor(...green);doc.setFont('helvetica','bold');doc.setFontSize(9);doc.text(txt.toUpperCase(),margin+2,y+1);y+=10;
+  }
+  function para(txt,size=9,color=dark){
+    const lines=doc.splitTextToSize(txt,contentW);ensure(lines.length*4.5+3);doc.setFont('helvetica','normal');doc.setFontSize(size);doc.setTextColor(...color);doc.text(lines,margin,y);y+=lines.length*4.5+3;
+  }
+  function keyval(label,value,x,w){
+    doc.setFont('helvetica','normal');doc.setFontSize(7.5);doc.setTextColor(...muted);doc.text(label,x,y);
+    doc.setFont('helvetica','bold');doc.setFontSize(11);doc.setTextColor(...dark);doc.text(String(value),x,y+5.2);
+  }
+  function bullet(txt){
+    const lines=doc.splitTextToSize(txt,contentW-7);ensure(lines.length*4.3+4);doc.setFillColor(...green);doc.circle(margin+1.5,y-1,1.1,'F');doc.setFont('helvetica','normal');doc.setFontSize(8.8);doc.setTextColor(...dark);doc.text(lines,margin+6,y);y+=lines.length*4.3+3;
+  }
+  function chart(canvasId,caption,w=176,h=68){
+    const cv=$(canvasId);if(!cv)return;
+    ensure(h+14);try{
+      const img=cv.toDataURL('image/png',1.0);doc.addImage(img,'PNG',margin,y,w,h);
+      y+=h+4;doc.setFont('helvetica','italic');doc.setFontSize(7.5);doc.setTextColor(...muted);doc.text(caption,margin,y);y+=7;
+    }catch(e){}
+  }
+
+  header(true);
+  doc.setFillColor(...soft);doc.roundedRect(margin,34,contentW,45,2,2,'F');
+  doc.setTextColor(...dark);doc.setFont('helvetica','bold');doc.setFontSize(21);doc.text('Intelligence Report',margin+7,47);
+  doc.setFontSize(12);doc.text(crop.name+' • '+region.name,margin+7,56);
+  doc.setFont('helvetica','normal');doc.setFontSize(8.5);doc.setTextColor(...muted);
+  doc.text(mode+' • '+lat.toFixed(5)+', '+lon.toFixed(5)+' • '+horizon+' h',margin+7,64);
+  doc.text('Generated '+generated.toLocaleString(),margin+7,71);
+  y=88;
+
+  sec('Decision snapshot');
+  ensure(26);
+  const xs=[margin,margin+45,margin+89,margin+133];
+  keyval('Risk',score+'%',xs[0],40);keyval('Confidence',confidence+'%',xs[1],40);
+  keyval('Peak temperature',s.maxT.toFixed(1)+' °C',xs[2],40);keyval('Rainfall',s.rain.toFixed(1)+' mm',xs[3],40);y+=14;
+  const level=riskLevel(score);
+  para('Priority: '+level+'. '+($('decisionHeadline').textContent||'').replace(/^.*?•\s*/,'')+'. Peak risk: '+$('peakTiming').textContent+'.');
+  
+  sec('Farmer brief');
+  actions.forEach(bullet);
+
+  sec('Research summary');
+  para($('researchAnalyticsText').textContent||'');
+  ensure(24);
+  const statItems=[
+    ['Mean temp',s.meanT.toFixed(1)+' °C'],['Max RH',s.maxRH.toFixed(0)+'%'],['ET₀',s.eto.toFixed(2)+' mm'],
+    ['Min soil moisture',Number.isFinite(s.minSM)?s.minSM.toFixed(3):'NA'],['Max wind',s.maxWind.toFixed(1)+' km/h'],['Risk',score+'%']
+  ];
+  statItems.forEach((kv,i)=>{const col=i%3,row=Math.floor(i/3);const x=margin+col*59;const yy=y+row*12;doc.setFontSize(7);doc.setTextColor(...muted);doc.text(kv[0],x,yy);doc.setFontSize(10);doc.setFont('helvetica','bold');doc.setTextColor(...dark);doc.text(kv[1],x,yy+4.5);doc.setFont('helvetica','normal');});
+  y+=28;
+  if(corr.length){doc.setFontSize(8);doc.setTextColor(...muted);doc.text('Exploratory Pearson associations',margin,y);y+=5;corr.forEach(x=>bullet(x));}
+
+  sec('Surveillance');
+  lastDiseaseScores.slice(0,6).forEach(d=>bullet(d.name+': '+d.score+'% environmental suitability ('+riskLevel(d.score)+'). '+d.note));
+
+  header(false);
+  title('Scientific Analytics','Graphical exploration generated from the same hourly forecast inputs used by the decision engine.');
+  chart('climateTrendChart','Figure 1. Hourly temperature and relative-humidity trajectory.');
+  chart('dailyRiskChart','Figure 2. Daily mean and peak modeled crop-health risk.');
+  chart('driverRadarChart','Figure 3. Standardized environmental driver profile.');
+  chart('riskScatterChart','Figure 4. Temperature-humidity-risk exploration; each point represents a forecast hour.');
+
+  sec('Methods');
+  para('NABAT v0.5 computes an interpretable environmental decision index from hourly temperature, relative humidity, precipitation, wind speed, FAO reference evapotranspiration (ET₀) and surface soil moisture. Crop-specific thermal, moisture and disease-favourable windows contribute to separate biotic-suitability and abiotic-stress components. The combined index is a decision-priority indicator, not a disease diagnosis or prevalence estimate.');
+  para('Operational weather source in the public MVP: Open-Meteo forecast API. Production architecture is designed for server-side Saudi NCM observations, forecasts, leaf-wetness, growing-degree-day and gridded products when authorized credentials are available. Remote-sensing integration is planned through Sentinel-2 field-polygon time series.');
+
+  sec('Secondary research use');
+  para('The exported statistics, graphs and forecast-derived associations can be used as descriptive or exploratory secondary data when the report date, coordinates, crop profile, forecast horizon, NABAT version and data source are stated. Pearson correlations shown here describe association within the modelled forecast window and must not be interpreted as causal effects. Disease-suitability scores require field-confirmed labels and independent spatial/temporal validation before they can be reported as predictive probabilities.');
+  
+  sec('Evidence');
+  para('Operational decisions should combine forecast evidence, direct crop observation and locally approved agronomic practice. The system is intended to prioritize observation and decision timing; treatment selection is outside the current model scope.',8.5,[92,76,42]);
+
+  sec('Provenance');
+  para('Platform: NABAT — Saudi AgroClimate & Crop Health Intelligence. Development: GDR Network Bio-IT. Individual developer/inventor names will be inserted after final spelling and authorship confirmation. Report generated from the live NABAT client-side decision workspace.');
+  footer();
+  const safe=(crop.name+'_'+region.name).replace(/[^A-Za-z0-9]+/g,'_');
+  doc.save('NABAT_'+safe+'_'+generated.toISOString().slice(0,10)+'.pdf');
+}
+
 document.addEventListener('DOMContentLoaded',init);
