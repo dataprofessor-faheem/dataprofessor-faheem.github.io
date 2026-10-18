@@ -139,7 +139,8 @@ function analyze(d,crop,horizon){
   const score=Math.round(.62*Math.max(...rows.map(r=>r.risk))+.38*mean(rows.map(r=>r.risk))),bscore=Math.max(...rows.map(r=>r.biotic)),ascore=Math.max(...rows.map(r=>r.abiotic));
   const available=['t','rh','p','wind','eto','sm'].filter(k=>rows.some(r=>Number.isFinite(r[k]))).length,horizonPenalty=horizon===24?0:horizon===72?5:12,confidence=Math.max(45,Math.min(94,Math.round(60+available*6-horizonPenalty)));
   lastDiseaseScores=calculateDiseaseScores(rows,crop);
-  renderRisk(score,bscore,ascore,confidence,rows,crop);renderDiseases(crop);renderAnalytics(rows,crop,confidence);renderFarmerActions(rows,crop,score,confidence,lastDiseaseScores);
+  renderRisk(score,bscore,ascore,confidence,rows,crop);renderDiseases(crop);renderFarmerActions(rows,crop,score,confidence,lastDiseaseScores);
+  try{renderAnalytics(rows,crop,confidence);}catch(err){console.error('NABAT analytics rendering error',err);const note=$('researchAnalyticsText');if(note)note.textContent='Statistical summaries are available; graphical rendering could not be completed in this browser session.';}
 }
 
 function renderRisk(score,bscore,ascore,confidence,rows,crop){
@@ -179,6 +180,7 @@ function renderAnalytics(rows,crop,confidence){
   $('correlationTable').innerHTML=Object.entries(corrs).map(([k,v])=>`<div class="corr-item"><span>${k} vs risk</span><strong>${Number.isFinite(v)?v.toFixed(2):'—'}</strong></div>`).join('');
   $('researchAnalyticsText').textContent=Number.isFinite(strongest[1])?`Across the selected forecast window, ${strongest[0].toLowerCase()} has the strongest linear association with the modeled risk trajectory (Pearson r=${strongest[1].toFixed(2)}). This is an exploratory association within model outputs, not evidence of causality. Forecast confidence is ${confidence}%.`:`The forecast window does not contain enough variable variation for a stable correlation summary. Forecast confidence is ${confidence}%.`;
   $('statAssociation').title='Exploratory Pearson correlation between the hourly variable and modeled risk';
+  if(typeof Chart==='undefined'){const note=$('researchAnalyticsText');if(note)note.textContent+=' Interactive chart library is unavailable in this browser session; refresh the page to reload visual analytics.';return;}
   drawClimateChart(rows);drawDailyRiskChart(rows);drawDriverRadar(rows,crop);drawScatter(rows);
 }
 function pearson(a,b){const pairs=a.map((x,i)=>[x,b[i]]).filter(([x,y])=>Number.isFinite(x)&&Number.isFinite(y));if(pairs.length<3)return NaN;const xs=pairs.map(p=>p[0]),ys=pairs.map(p=>p[1]),mx=mean(xs),my=mean(ys);let num=0,dx=0,dy=0;for(let i=0;i<xs.length;i++){const vx=xs[i]-mx,vy=ys[i]-my;num+=vx*vy;dx+=vx*vx;dy+=vy*vy;}return dx&&dy?num/Math.sqrt(dx*dy):NaN;}
