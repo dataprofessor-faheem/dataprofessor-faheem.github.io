@@ -25,3 +25,6 @@ The repository GitHub Actions workflow at .github/workflows/oxtoxml-smoke.yml ch
 ## Maintenance
 
 Keep the original GDR Network homepage, DNS and other applications unchanged. Review and version-control backend source before making changes to its computational algorithms.
+## October 20, 2026: Research insight interface v0.4
+
+Additional interactive panels have been deployed: RDKit molecular-weight/logP/TPSA distributions, closest within-panel fingerprint analogues, contextual tool-capability comparison (SwissADME / ProTox 3.0 / ADMETlab 3.0), and the prespecified methodological requirements for an endpoint-matched benchmark. These are descriptive capabilities; the server does not expose trained Tox21 or ClinTox model probabilities. Operational validation (JavaScript syntax, public home page, service health, 5/7/15 reference molecular sets, PDF generation) passed in [GitHub Actions run 39409063389](https://github.com/dataprofessor-faheem/dataprofessor-faheem.github.io/actions/runs/39409063389).
