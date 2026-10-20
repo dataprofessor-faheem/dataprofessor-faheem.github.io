@@ -1,0 +1,53 @@
+name: OxToxML live scientific smoke test
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'oxtoxml/**'
+      - '.github/workflows/oxtoxml-smoke.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Verify public GDR Network portal and RDKit API
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, urllib.request
+          BASE="https://oxtoxml-gdrn-portal.vercel.app"
+          def fetch(url, payload=None):
+              headers={"User-Agent":"GDRNetwork-OxToxML-SmokeTest/1.0"}
+              if payload is not None:
+                  headers["Content-Type"]="application/json"
+              request=urllib.request.Request(url,data=json.dumps(payload).encode() if payload is not None else None,headers=headers)
+              with urllib.request.urlopen(request,timeout=65) as r:
+                  assert r.status==200, (url,r.status)
+                  return r.read(),r.headers.get("Content-Type","")
+          main,_=fetch("https://www.gdrnetwork.org/oxtoxml/")
+          assert b"OxToxML" in main and b"Research Portal" in main
+          print("PASS: GDR Network OxToxML page")
+          data,_=fetch(BASE+"/api/health")
+          info=json.loads(data)
+          assert info["status"]=="ok" and info["models"] is False
+          print("PASS: RDKit API health",info)
+          for n in [5,7,15]:
+              b,_=fetch(BASE+"/api/examples?count="+str(n))
+              examples=json.loads(b)["rows"]
+              assert len(examples)==n
+              payload={"rows":examples,"threshold":0.65}
+              b,_=fetch(BASE+"/api/analyze",payload)
+              result=json.loads(b)
+              assert result["valid"]==n,(n,result)
+              assert len(result["molecules"])==n
+              assert len(result["similarity"])==n
+              assert "mean_qed" in result["metrics"]
+              print("PASS: validated",n,"molecules; SHA256:",result["sha256"][:12])
+              if n==15:
+                  pdf,typ=fetch(BASE+"/api/report",payload)
+                  assert pdf[:4]==b"%PDF" and len(pdf)>1500, (typ,len(pdf))
+                  print("PASS: downloadable PDF",len(pdf),"bytes")
+          print("ALL LIVE OXTOXML SMOKE TESTS PASSED")
+          PY
