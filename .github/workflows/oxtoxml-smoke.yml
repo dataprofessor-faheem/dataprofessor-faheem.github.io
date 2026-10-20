@@ -12,6 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 4
     steps:
+      - name: Checkout versioned portal
+        uses: actions/checkout@v4
+      - name: Validate upgraded research visualization script
+        run: node --check oxtoxml/insights.js
       - name: Verify public GDR Network portal and RDKit API
         shell: bash
         run: |
