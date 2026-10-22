@@ -1,14 +1,14 @@
 name: OxToxML live scientific smoke test
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - 'oxtoxml/**'
-      - '.github/workflows/oxtoxml-smoke.yml'
+  workflow_run:
+    workflows: ['Deploy static site to GitHub Pages']
+    types: [completed]
 permissions:
   contents: read
 jobs:
   verify:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 4
     steps:
@@ -36,7 +36,7 @@ jobs:
         shell: bash
         run: |
           python - <<'PY'
-          import json, urllib.request
+          import json, urllib.request, time
           BASE="https://oxtoxml-gdrn-portal.vercel.app"
           def fetch(url, payload=None):
               headers={"User-Agent":"GDRNetwork-OxToxML-SmokeTest/1.0"}
@@ -46,7 +46,26 @@ jobs:
               with urllib.request.urlopen(request,timeout=65) as r:
                   assert r.status==200, (url,r.status)
                   return r.read(),r.headers.get("Content-Type","")
-          main,_=fetch("https://www.gdrnetwork.org/oxtoxml/")
+          def retry_get(url,expect=None,attempts=5):
+              for i in range(attempts):
+                  try:
+                      content,typ=fetch(url)
+                      if expect is not None and expect not in content:
+                          raise AssertionError('latest version not available at '+url)
+                      return content,typ
+                  except Exception as ex:
+                      if i==attempts-1:
+                          raise
+                      print('RETRY',i+1,url,str(ex)[:120],flush=True)
+                      time.sleep(8)
+          main,_=retry_get('https://www.gdrnetwork.org/oxtoxml/',b'benchmark.html')
+          dashboard,_=retry_get('https://www.gdrnetwork.org/oxtoxml/benchmark.html',b'Historical toxicity benchmarks')
+          aggregates,_=retry_get('https://www.gdrnetwork.org/oxtoxml/benchmark-data.json')
+          public=json.loads(aggregates)
+          assert public['schema']=='oxtoxml.aggregate_benchmark.v1'
+          assert public['trained_models_live'] is False and len(public['rows'])==6
+          assert sum(z[1] for z in public['rows'])==4891
+          print('PASS: fresh public benchmark dashboard + same-version JSON')
           assert b"OxToxML" in main and b"Research Portal" in main
           print("PASS: GDR Network OxToxML page")
           data,_=fetch(BASE+"/api/health")
