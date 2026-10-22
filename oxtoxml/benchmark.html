@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OxToxML | Audited Historical Research Benchmarks</title>
+<meta name="description" content="Audited historical OxToxML toxicity benchmarks and retrospective screening enrichment. This page does not provide live model predictions.">
+<style>
+:root{--navy:#153746;--teal:#087e83;--line:#dae9eb;--sub:#57727d}
+*{box-sizing:border-box}body{margin:0;color:var(--navy);background:#f4f9fa;font:15px/1.65 system-ui,Arial,sans-serif}a{color:#087e83}
+.wrap{width:min(1100px,calc(100% - 34px));margin:auto}.top{background:#102d3b;color:white;padding:17px 0}.top .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.top a{color:#ace3df}
+.hero{padding:50px 0;background:linear-gradient(120deg,#123544,#175863);color:#fff}.hero h1{font-size:clamp(31px,4vw,49px);line-height:1.14;letter-spacing:-.035em;max-width:820px;margin:12px 0}.hero p{max-width:830px;color:#c9e0e1}.eyebrow{font-weight:800;letter-spacing:.16em;color:#8bd9d3;font-size:11px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card{padding:18px;border-radius:9px;background:#fff;border:1px solid var(--line)}.card strong{display:block;font-size:27px}.card small{font-size:11px;color:var(--sub)}.hero .cards{margin-top:28px}.hero .card{background:#ffffff14;border-color:#ffffff33}.hero .card small{color:#d0e3e3}
+.notice{margin:27px 0;border:1px solid var(--line);border-left:4px solid #a27941;background:#fff;border-radius:8px;padding:18px;font-size:13px}
+.section{margin:36px 0}.section h2{margin:0 0 5px;font-size:24px;letter-spacing:-.025em}.section>p{color:var(--sub);font-size:13px}
+.panel{padding:20px;background:#fff;border:1px solid var(--line);border-radius:9px}
+.controls{display:flex;gap:13px;flex-wrap:wrap;align-items:end;margin-bottom:20px}label{display:grid;gap:5px;font-size:12px;font-weight:750}
+select{padding:10px;border:1px solid #b8d2d5;border-radius:6px;background:#fff;color:var(--navy);min-width:175px}
+button{border:0;border-radius:6px;padding:11px 15px;background:var(--teal);color:white;font-weight:750;cursor:pointer}
+.bar{display:grid;grid-template-columns:110px minmax(0,1fr) 65px;gap:11px;align-items:center;margin:13px 0;font-size:12px;font-weight:750}
+.track{height:15px;background:#e9f3f3;border-radius:30px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,#25a1a6,#116978);border-radius:30px}
+.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:720px;font-size:12px}
+td,th{text-align:left;padding:11px;border-bottom:1px solid #e3eeee}th{background:#f0f7f7;text-transform:uppercase;color:#4b6770;font-size:10px;letter-spacing:.06em}
+.muted{font-size:12px;color:var(--sub)}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.tile h3{font-size:16px;margin:5px 0}.tile p{font-size:13px;color:var(--sub)}.tag{display:inline-block;background:#e4f2f1;color:#12616a;font-weight:750;font-size:10px;padding:4px 7px;border-radius:4px}
+footer{padding:27px 0;margin-top:54px;background:#102e3b;color:#c0d7db;font-size:12px}footer a{color:#a1e1dc}
+@media(max-width:750px){.cards{grid-template-columns:repeat(2,1fr)}.three{grid-template-columns:1fr}.panel{padding:14px}.bar{grid-template-columns:74px 1fr 50px;gap:6px}.hero{padding:30px 0}}
+</style></head><body>
+<header class="top"><div class="wrap"><strong>⬡ GDR NETWORK / OXTOXML</strong><a href="./">← Molecular analysis workbench</a></div></header>
+<section class="hero"><div class="wrap"><div class="eyebrow">Verified research evidence · release v0.5</div>
+<h1>Historical toxicity benchmarks and screening prioritization</h1>
+<p>Explore independently rechecked original model performance, positive-class imbalance, model uncertainty, and retrospective assay-screening enrichment. This dashboard describes the original research rather than making new toxicity predictions.</p>
+<div class="cards"><div class="card"><strong>6</strong><small>RESEARCH ENDPOINTS</small></div><div class="card"><strong>4,891</strong><small>ARCHIVED TEST PREDICTIONS AUDITED</small></div><div class="card"><strong>30 / 30</strong><small>ORIGINAL METRIC VALUES REPRODUCED</small></div><div class="card"><strong>0</strong><small>OVERLAPPING SCAFFOLDS BETWEEN SPLITS</small></div></div></div></section>
+<main class="wrap"><aside class="notice"><strong>Scientific boundary:</strong> The model results are from historically inspected <strong>internal scaffold-test sets, not independent external validation</strong>. The live OxToxML workbench computes RDKit-based structural properties only. The six trained models are not deployed, and this page provides <strong>no new-molecule toxicity probabilities</strong>. Assay activity must not be interpreted as clinical safety or human risk.</aside>
+<section class="section"><h2>1 · Reproduced model benchmark</h2><p>Select a metric. All values correspond to the original preserved assay-specific model outputs; thresholds were not optimized using the test set in this audit.</p>
+<div class="panel"><div class="controls"><label>Metric<select id="metric"><option value="3">ROC–AUC</option><option value="4">Average precision</option><option value="5">Balanced accuracy</option><option value="6">MCC</option><option value="7">Brier score (lower is better)</option></select></label>
+<button id="download" type="button">Download aggregate CSV</button></div><div id="bars" aria-live="polite"></div><p class="muted" id="metricNote"></p></div></section>
+<section class="section"><h2>2 · Candidate-screening budget analysis</h2><p>See how many historical assay-positive compounds fall within the highest-probability 5%, 10%, or 20% of the already tested compounds. Analyses are retrospective and exploratory.</p>
+<div class="panel"><div class="controls"><label>Screening budget<select id="budget"><option value="0">Top 5%</option><option value="1" selected>Top 10%</option><option value="2">Top 20%</option></select></label>
+<label>Endpoint<select id="filter"><option value="all">All six assays</option></select></label></div><div class="tablewrap"><table><thead><tr><th>Endpoint</th><th>Test n</th><th>Actives</th><th>Selected</th><th>Active hits</th><th>Precision</th><th>Fold enrichment</th><th>Recall</th></tr></thead><tbody id="ranking"></tbody></table></div><p class="muted">Precision = active hits / selected compounds. Fold enrichment = precision / assay active prevalence. Recall = active hits / all actives on the historical test. None is a new external prediction estimate.</p></div></section>
+<section class="section"><h2>3 · Assay-level uncertainty</h2><p>Published 95% confidence intervals and active class prevalence contextualize the reported discriminative performance.</p><div class="controls"><label>Select endpoint<select id="detail"></select></label></div><div class="three" id="uncertainty" aria-live="polite"></div><p class="muted">CT_TOX contained only 13 positive records in the archived held-out test. No individual prediction interval, uncertainty model or validated external prospective prediction is served here.</p></section>
+<section class="section"><h2>4 · Platform capabilities and limitations</h2><div class="three">
+<article class="card tile"><span class="tag">Available live</span><h3>Molecular structure explorer</h3><p>RDKit chemical descriptors, radius-two Morgan fingerprints, Tanimoto similarity, scaffolds, clustering and PDF/CSV/JSON structure reports.</p><a href="./">Open workbench →</a></article>
+<article class="card tile"><span class="tag">Historical research</span><h3>Six assay prediction models</h3><p>Original offline model assessments are reproduced above. The trained prediction bundles are not currently publicly available or executed by the portal.</p><a href="https://github.com/drfaheem-007/OxToxML">Code documentation →</a></article>
+<article class="card tile"><span class="tag">Not established</span><h3>Independent external benchmark</h3><p>No new matched external assay dataset or like-for-like third-party toxicity predictor accuracy study has been completed. Tool feature comparisons cannot establish model superiority.</p><a href="#evidence">Evidence disclosures ↓</a></article></div></section>
+<section class="section"><h2>5 · Archived software-output audit</h2><div class="cards"><div class="card"><strong>210 / 210</strong><small>STRUCTURAL FIELDS AGREED</small></div><div class="card"><strong>45 / 45</strong><small>NEAREST NEIGHBORS AGREED</small></div><div class="card"><strong>15</strong><small>ILLUSTRATIVE STRUCTURES</small></div><div class="card"><strong>14.19 ms</strong><small>LOCAL RDKIT COMPUTATION MEDIAN</small></div></div><p class="muted">These checks reproduce SAVED molecular-output snapshots. The local runtime covers 30 standalone RDKit calculation repetitions and is not live HTTP latency, a clinical result, or comparison with third-party services.</p></section>
+<section class="section" id="evidence"><h2>6 · Source provenance and reporting integrity</h2><div class="panel"><p>The historical aggregate data are openly inspectable in <a href="./benchmark-data.json">benchmark-data.json</a>. The source workbook contains restricted study-derived records and third-party database material, which have not been publicly redistributed on this site.</p><p>SwissADME, ProTox 3.0, and ADMETlab 3.0 have different endpoints and tasks. No directly comparable superiority claim is made. Future independent predictive validation will require recovered trained models, externally sourced compound labels, overlap checks, and a locked evaluation protocol.</p><p class="muted" id="state" role="status">Loading audited aggregate values…</p></div></section></main>
+<footer><div class="wrap">OxToxML / GDR Network · Preclinical research support, not clinical or regulatory safety assessment · <a href="./">Molecular workbench</a></div></footer>
+<script>
+"use strict";
+const el=id=>document.getElementById(id),pc=x=>(100*x).toFixed(1)+"%",ff=x=>(+x).toFixed(3);
+let rows=[];
+function plot(){let m=+el("metric").value,scale=m===7?.2:1;
+el("bars").innerHTML=rows.map(r=>'<div class="bar"><span>'+r[0]+'</span><div class="track" role="img" aria-label="'+r[0]+' '+ff(r[m])+'"><div class="fill" style="width:'+Math.min(100,100*r[m]/scale)+'%"></div></div><strong>'+ff(r[m])+'</strong></div>').join("");
+el("metricNote").textContent=m===7?"Brier scores measure probability error; smaller is better.":m===6?"MCC is threshold dependent; a high ROC–AUC does not ensure useful threshold-based classification.":m===4?"Average precision must be interpreted against the underlying assay-positive prevalence.":"Only the original internal scaffold-test benchmark is represented here.";}
+function rank(){const j=+el("budget").value,a=el("filter").value==="all"?rows:rows.filter(r=>r[0]===el("filter").value);
+el("ranking").innerHTML=a.map(r=>{let k=r[10][j],p=k[1]/k[0];return '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td><td>'+k[0]+'</td><td>'+k[1]+'</td><td>'+pc(p)+'</td><td>'+(p/(r[2]/r[1])).toFixed(2)+'×</td><td>'+pc(k[1]/r[2])+'</td></tr>'}).join("");}
+function detail(){let r=rows.find(x=>x[0]===el("detail").value);if(!r)return;
+el("uncertainty").innerHTML='<div class="card tile"><span class="tag">Sample</span><h3>'+r[1]+' compounds</h3><p>'+r[2]+' assay actives; prevalence '+pc(r[2]/r[1])+'.</p></div><div class="card tile"><span class="tag">Discrimination</span><h3>ROC–AUC '+ff(r[3])+'</h3><p>Reported 95% CI '+ff(r[8][0])+'–'+ff(r[8][1])+'.</p></div><div class="card tile"><span class="tag">Positive retrieval</span><h3>AP '+ff(r[4])+'</h3><p>Reported 95% CI '+ff(r[9][0])+'–'+ff(r[9][1])+'. Balanced accuracy '+ff(r[5])+'; MCC '+ff(r[6])+'.</p></div>';}
+function exportCsv(){let h=["endpoint","n_test","n_active","ROC_AUC","AP","balanced_accuracy","MCC","Brier","top10_selected","top10_actives_found"];
+let csv=[h.join(",")].concat(rows.map(r=>[r[0],r[1],r[2],r[3],r[4],r[5],r[6],r[7],r[10][1][0],r[10][1][1]].join(","))).join("\r\n");
+let u=URL.createObjectURL(new Blob([csv],{type:"text/csv"})),a=document.createElement("a");a.href=u;a.download="OxToxML_historical_aggregate_benchmark.csv";a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);}
+fetch("./benchmark-data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("aggregate data unavailable");return r.json()}).then(d=>{
+if(d.schema!=="oxtoxml.aggregate_benchmark.v1"||d.trained_models_live!==false||d.rows.length!==6||d.rows.reduce((s,r)=>s+r[1],0)!==4891||!d.rows.every(r=>r[10].length===3&&r[10].every(z=>z[1]<=z[0])))throw Error("aggregate integrity check failed");
+rows=d.rows;rows.forEach(r=>{el("detail").add(new Option(r[0],r[0]));el("filter").add(new Option(r[0],r[0]));});
+el("metric").addEventListener("change",plot);el("budget").addEventListener("change",rank);el("filter").addEventListener("change",rank);el("detail").addEventListener("change",detail);el("download").addEventListener("click",exportCsv);
+plot();rank();detail();el("state").textContent="Verified schema "+d.schema+"; audit date "+d.audit_date+"; live model inference unavailable.";
+}).catch(e=>{el("state").textContent="Benchmark display unavailable: "+e.message;el("state").setAttribute("role","alert");});
+</script></body></html>
