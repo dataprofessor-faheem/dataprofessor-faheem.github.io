@@ -47,7 +47,7 @@ footer{padding:27px 0;margin-top:54px;background:#102e3b;color:#c0d7db;font-size
 "use strict";
 const el=id=>document.getElementById(id),pc=x=>(100*x).toFixed(1)+"%",ff=x=>(+x).toFixed(3);
 let rows=[];
-function plot(){let m=+el("metric").value,scale=m===7?.2:1;
+function plot(){let m=+el("metric").value,scale=m===7 ? 0.2 : 1;
 el("bars").innerHTML=rows.map(r=>'<div class="bar"><span>'+r[0]+'</span><div class="track" role="img" aria-label="'+r[0]+' '+ff(r[m])+'"><div class="fill" style="width:'+Math.min(100,100*r[m]/scale)+'%"></div></div><strong>'+ff(r[m])+'</strong></div>').join("");
 el("metricNote").textContent=m===7?"Brier scores measure probability error; smaller is better.":m===6?"MCC is threshold dependent; a high ROC–AUC does not ensure useful threshold-based classification.":m===4?"Average precision must be interpreted against the underlying assay-positive prevalence.":"Only the original internal scaffold-test benchmark is represented here.";}
 function rank(){const j=+el("budget").value,a=el("filter").value==="all"?rows:rows.filter(r=>r[0]===el("filter").value);
