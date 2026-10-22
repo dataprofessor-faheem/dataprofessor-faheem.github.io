@@ -15,7 +15,23 @@ jobs:
       - name: Checkout versioned portal
         uses: actions/checkout@v4
       - name: Validate upgraded research visualization script
-        run: node --check oxtoxml/insights.js
+        run: |
+          node --check oxtoxml/insights.js
+          python - <<'PY'
+          import pathlib,json
+          html=pathlib.Path("oxtoxml/benchmark.html").read_text()
+          script=html.rsplit("<script>",1)[1].split("</script>",1)[0]
+          pathlib.Path("/tmp/oxtox_benchmark_check.js").write_text(script)
+          data=json.loads(pathlib.Path("oxtoxml/benchmark-data.json").read_text())
+          assert data["schema"]=="oxtoxml.aggregate_benchmark.v1" and data["trained_models_live"] is False
+          assert data["n_record_level_predictions_audited"]==4891
+          assert len(data["rows"])==6 and sum(row[1] for row in data["rows"])==4891
+          assert all(len(row[10])==3 and all(x[0]>=x[1]>=0 for x in row[10]) for row in data["rows"])
+          assert "not independent external validation" in html.lower()
+          assert "benchmark.html" in pathlib.Path("oxtoxml/index.html").read_text()
+          print("PASS: historical benchmark dataset, boundaries and navigation")
+          PY
+          node --check /tmp/oxtox_benchmark_check.js
       - name: Verify public GDR Network portal and RDKit API
         shell: bash
         run: |
