@@ -1,24 +1,29 @@
-# GDRN-VaxForge · hosted sequence research prototype (v0.1)
+# GDRN-VaxForge · GDRN research workbench (v0.2.0)
 
-This isolated directory provides the browser-only demo at `/gdrn-vaxforge/`.
+This isolated directory contains the browser workbench at `/gdrn-vaxforge/`. It does **not** modify the GDR Network homepage, custom-domain settings or DNS.
 
-## Implemented in the hosted browser demo
+## What runs in the hosted browser workbench
 
-- Input and validate protein FASTA data (no external file transfer).
-- Perform basic sequence QC: record count, identical sequence count, lengths and gap count.
-- Calculate descriptive per-position conservation for a **user-verified, already aligned** MSA.
-- Download results as JSON.
+- Local FASTA validation for protein, DNA and RNA inputs.
+- Descriptive QC: sequence counts, duplicate sequences, lengths and gap count.
+- Per-position consensus, residue conservation, Shannon entropy and gap frequency for **user-verified aligned** sequences.
+- Interactive conservation profile and downloadable JSON/CSV reports.
+- All pasted/uploaded FASTA data stay in the browser (no network submission).
 
-This website does **not** retrieve external sequences, construct an alignment, predict B/T-cell epitopes, design vaccines, or demonstrate efficacy. The full experimental Python research-core package (including unit tests, benchmark metrics, tool registry, documentation and synthetic examples) was prepared separately and delivered with the research review; it is not yet contained in this GitHub Pages subdirectory.
+## Separate Python research-core release (v0.2.0)
 
-## Next integration milestones
+A tested Python source archive was produced separately for the project's development workflow, with modules for (1) explicit NCBI/UniProt public accession retrieval and SHA-256 provenance, (2) QC → user-provided MSA or optional MAFFT → conservation, (3) *unsubmitted* IEDB NextGen MHC-I request construction, and (4) labeled paired model comparison with group bootstrap and permutation testing.
 
-1. Reproducible reference sequence ingestion, accession manifest and approved MSA adapter.
-2. Branch-aware pathogen and cancer inputs; version-controlled tool manifests.
-3. Authorized IEDB next-generation API adapter with async job status, no website scraping.
-4. Independent experimental benchmark datasets, leakage audit, uncertainty and HPC cost profiles.
-5. Secure compute backend for private research files; never upload sensitive files to public Pages.
+The archive includes CLI, scientific documentation, tests, and synthetic examples. **That entire Python archive is not currently mirrored in this GitHub Pages repository and does not run on GitHub Pages.**
 
-**Scientific basis**: Khamjan et al. *Vaccines* 2023;11(6):1090. https://doi.org/10.3390/vaccines11061090
+## Stage 2 verification and scientific limitations
 
-**Important**: Model predictions and conservation scores are neither proof of natural immunogenicity nor evidence of protective vaccine efficacy. License terms of each third-party software component must be reviewed prior to integration, especially in commercial contexts.
+- Python automated checks: **11/11 passed** in the development environment.
+- Browser: HTML/JS checks and local functional tests with toy protein, DNA and RNA inputs passed.
+- Network retrieval: HTTP calls were mocked in tests; real API interoperability was not tested in the restricted environment.
+- Benchmark example: synthetic data for engineering demonstration only; not evidence of diagnostic, antigenic, immunogenic or vaccine-protection performance.
+- Disease-specific pan-genome software and external epitope predictors are **not yet connected or validated**.
+
+[Read Stage 2 release notes](./RELEASE_v0.2.md) · [Original study](https://doi.org/10.3390/vaccines11061090)
+
+**Production priorities:** verify hosted deployment; connect authorized public data APIs; run real versioned alignment; acquire independent experimental benchmark datasets; audit third-party licenses; then build authenticated compute services. Never commit or upload private patient, unpublished or embargoed datasets to a public site.
