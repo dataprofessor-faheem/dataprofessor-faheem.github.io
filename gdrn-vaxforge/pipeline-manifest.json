@@ -1,0 +1,101 @@
+{
+  "schema": "gdrn.vaxforge.pipeline_manifest.v1",
+  "release": "0.2.0",
+  "as_of": "2026-11-04",
+  "scope": "Computational research workbench; no vaccine-efficacy claims",
+  "data_policy": "Browser local-only; public sequence retrieval only by explicit Python command",
+  "nodes": [
+    {
+      "id": "input_qc",
+      "depends_on": [],
+      "status": "tested",
+      "output": "Validated FASTA, SHA-256 and QC"
+    },
+    {
+      "id": "public_accession",
+      "depends_on": [],
+      "status": "implemented_mock_tested",
+      "output": "NCBI/UniProt FASTA and provenance"
+    },
+    {
+      "id": "msa",
+      "depends_on": [
+        "input_qc"
+      ],
+      "status": "optional_local_adapter_unavailable_during_test",
+      "output": "MAFFT alignment if installed"
+    },
+    {
+      "id": "conservation",
+      "depends_on": [
+        "msa"
+      ],
+      "status": "tested_on_supplied_msa",
+      "output": "Residue frequencies, entropy and gap statistics"
+    },
+    {
+      "id": "genome_wide_pangenome",
+      "depends_on": [
+        "public_accession"
+      ],
+      "status": "not_implemented",
+      "output": "none"
+    },
+    {
+      "id": "antigen_prioritization",
+      "depends_on": [
+        "genome_wide_pangenome"
+      ],
+      "status": "not_implemented",
+      "output": "none"
+    },
+    {
+      "id": "mhci_request",
+      "depends_on": [
+        "input_qc"
+      ],
+      "status": "offline_request_only",
+      "output": "Unsubmitted IEDB JSON"
+    },
+    {
+      "id": "mhcii_and_bcell",
+      "depends_on": [
+        "antigen_prioritization"
+      ],
+      "status": "not_implemented",
+      "output": "none"
+    },
+    {
+      "id": "experimental_benchmark",
+      "depends_on": [],
+      "status": "tested_on_synthetic_labels",
+      "output": "AUROC/AP, group-bootstrap CI and paired permutation p"
+    },
+    {
+      "id": "reporting",
+      "depends_on": [
+        "input_qc",
+        "conservation"
+      ],
+      "status": "partial",
+      "output": "JSON, CSV and run manifest"
+    },
+    {
+      "id": "vaccine_validation",
+      "depends_on": [],
+      "status": "requires_experiments",
+      "output": "none"
+    }
+  ],
+  "gates": [
+    "Independent experimental datasets for predictive claims",
+    "Third-party API, licence and data-use audit",
+    "No private data on GitHub Pages",
+    "Experimental validation for immune efficacy"
+  ],
+  "references": [
+    "https://doi.org/10.3390/vaccines11061090",
+    "https://nextgen-tools.iedb.org/docs/api/endpoints/",
+    "https://www.ncbi.nlm.nih.gov/home/develop/api/"
+  ]
+}
