@@ -1,32 +1,53 @@
 'use strict';
-const fs = require('node:fs');
-const path = require('node:path');
-const assert = require('node:assert/strict');
-const vm = require('node:vm');
-const candidates = [path.join(__dirname, '..', 'index.html'), path.join(__dirname, '..', 'web', 'index.html')];
-const filename = candidates.find(fs.existsSync);
-assert(filename, 'Expected a hosted or development HTML workbench');
-const html = fs.readFileSync(filename, 'utf8');
-for (const id of ['fasta','molecule','aligned','analyze','save','csv','trace','status']) {
-  assert(html.includes('id="' + id + '"'), 'Missing control: ' + id);
-}
-assert(html.includes('gdrn.vaxforge.browser.v2'), 'The v0.2 schema must be present');
-const match = html.match(/<script>([\s\S]*?)<\/script>/);
-assert(match, 'Expected inline scientific JavaScript');
-new vm.Script(match[1], {filename:'gdrn_vaxforge_browser.js'});
-const cut = match[1].indexOf("$('file').addEventListener");
-assert(cut > 0, 'Could not isolate pure scientific calculations');
-const tests = `
-const p = parseFasta('>p1\\nACDE\\n>p2\\nAC-E', 'protein', true);
-const m = summarize(p, true, 'protein');
-if (m.columns.length !== 4 || m.qc.n_records !== 2 || m.columns[2].gap_fraction !== 0.5) throw Error('Conservation QC mismatch');
-const dna = parseFasta('>d1\\nACGTN', 'dna', false);
-if (dna.length !== 1 || dna[0].sequence !== 'ACGTN') throw Error('DNA FASTA mismatch');
-const rna = parseFasta('>r1\\nACGUN', 'rna', false);
-if (rna.length !== 1) throw Error('RNA FASTA mismatch');
-let rejected = false;
-try { parseFasta('>bad\\nACGT-', 'dna', false); } catch (err) { rejected = true; }
-if (!rejected) throw Error('Ungapped DNA parser accepted a gap');
-`;
-vm.runInNewContext(match[1].slice(0,cut)+tests, {console}, {timeout:1000});
-console.log('PASS: UI controls, JavaScript compilation, protein QC, DNA/RNA QC, invalid input');
+const fs=require('node:fs');
+const path=require('node:path');
+const assert=require('node:assert/strict');
+const vm=require('node:vm');
+const root=path.resolve(__dirname,'..');
+const core=require(path.join(root,'core.js'));
+const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
+const app=fs.readFileSync(path.join(root,'app.js'),'utf8');
+const source=fs.readFileSync(path.join(root,'core.js'),'utf8');
+const all=()=>{let n=0;return (title,run)=>{run();n++;console.log('PASS '+n+' '+title);};};
+const test=all();
+test('v0.3 browser version',()=>assert.equal(core.VERSION,'0.3.0'));
+test('protein FASTA parse',()=>assert.equal(core.parseFasta('>p1 Protein\nACDE\n>p2\nAC-E','protein',true).length,2));
+test('DNA alphabet and base QC',()=>{const r=core.analyze('>x\nACGTRYN', {molecule:'dna'});assert.equal(r.qc.n_records,1);assert.equal(r.qc.gc_fraction_unambiguous,0.5);});
+test('RNA alphabet',()=>assert.equal(core.parseFasta('>rna\nACGUN','rna',false)[0].sequence,'ACGUN'));
+test('duplicate headers rejected',()=>assert.throws(()=>core.parseFasta('>x\nAC\n>x\nAC','dna',false),/Duplicate/));
+test('invalid residue rejected',()=>assert.throws(()=>core.parseFasta('>x\nACGU','dna',false),/Invalid/));
+test('gap without aligned mode rejected',()=>assert.throws(()=>core.parseFasta('>x\nAC-A','dna',false),/Invalid/));
+test('unequal MSA rejected',()=>assert.throws(()=>core.parseFasta('>x\nACG\n>y\nAC','dna',true),/equal lengths/));
+test('aligned conservation and variable columns',()=>{
+const r=core.analyze('>a\nACGTA\n>b\nACGAA\n>c\nACGTA',{molecule:'dna',aligned:true,minLength:3});
+assert.equal(r.columns.length,5);
+assert.equal(r.summary.variable_columns,1);
+assert.equal(r.summary.completely_covered_invariant_columns,4);
+assert(Math.abs(r.columns[3].modal_fraction-(2/3))<1e-12);
+assert(Math.abs(r.columns[3].shannon_bits-0.918295834)<1e-6);
+assert.equal(r.conserved_regions[0].start_1based,1);
+assert.equal(r.conserved_regions[0].end_1based,3);
+assert.equal(r.conserved_regions[0].consensus,'ACG');
+assert.equal(r.pairwise.pairs.find(p=>p.id_a==='a'&&p.id_b==='b').identity,.8);
+});
+test('gap fraction and comparison denominator',()=>{
+const r=core.analyze('>a\nAC-G\n>b\nACTG',{molecule:'dna',aligned:true,minLength:1});
+assert.equal(r.columns[2].gap_fraction,0.5);
+assert.equal(r.pairwise.pairs[0].compared_sites,3);
+assert.equal(r.pairwise.pairs[0].identity,1);
+});
+test('all-gap column is not a conserved region',()=>{
+const r=core.analyze('>a\nA-C\n>b\nA-C',{molecule:'dna',aligned:true,minLength:1});
+assert.equal(r.columns[1].modal_fraction,null);
+assert.equal(r.summary.all_gap_columns,1);
+assert.equal(r.conserved_regions.length,2);
+});
+test('constant complexity guard',()=>assert.throws(()=>core.analyze('>x\nAC\n>y\nAC',{molecule:'dna',aligned:true,minLength:0}),/Invalid/));
+test('CSV escape',()=>assert.match(core.csv([{id:'x,"y',x:2}],['id','x']),/"x,""y"/));
+test('HTML binds scripts and live controls',()=>{
+for(const id of ['fasta','file','accession','uniprot','molecule','aligned','threshold','occupancy','minlen','run','example','reset','status','report','profile','export-json','export-columns','export-regions'])assert(html.includes('id="'+id+'"'),'missing '+id);
+assert(html.includes('./core.js')&&html.includes('./app.js'));
+});
+test('browser scripts compile',()=>{new vm.Script(app,{filename:'app.js'});new vm.Script(source,{filename:'core.js'});});
+test('explicit scope prevents false vaccine efficacy claims',()=>{assert(html.includes('does not generate a multiple-sequence alignment'));assert(html.includes('do not establish vaccine efficacy'));});
+console.log('All browser research-core smoke tests passed.');
