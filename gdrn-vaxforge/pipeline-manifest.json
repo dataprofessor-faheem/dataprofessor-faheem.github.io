@@ -1,37 +1,45 @@
 {
   "schema": "gdrn.vaxforge.pipeline_manifest.v1",
-  "release": "0.2.0",
-  "as_of": "2026-11-04",
-  "scope": "Computational research workbench; no vaccine-efficacy claims",
-  "data_policy": "Browser local-only; public sequence retrieval only by explicit Python command",
+  "release": "0.3.0",
+  "as_of": "2026-11-07",
+  "scope": "Analysis-ready live-browser descriptive sequence workbench; external vaccine pipelines are planned, not active.",
+  "data_policy": "Input FASTA remains in browser. Explicit accession lookups call UniProt REST using accession only.",
   "nodes": [
     {
       "id": "input_qc",
       "depends_on": [],
-      "status": "tested",
-      "output": "Validated FASTA, SHA-256 and QC"
+      "status": "implemented_browser",
+      "output": "Validated protein, DNA or RNA FASTA, duplicate counts, sequence lengths, GC"
     },
     {
       "id": "public_accession",
       "depends_on": [],
-      "status": "implemented_mock_tested",
-      "output": "NCBI/UniProt FASTA and provenance"
+      "status": "browser_api_implemented_network_not_independently_verified",
+      "output": "Single UniProtKB FASTA imported by accession"
     },
     {
       "id": "msa",
       "depends_on": [
         "input_qc"
       ],
-      "status": "optional_local_adapter_unavailable_during_test",
-      "output": "MAFFT alignment if installed"
+      "status": "requires_precomputed_external_alignment",
+      "output": "User-supplied MSA only"
     },
     {
       "id": "conservation",
       "depends_on": [
         "msa"
       ],
-      "status": "tested_on_supplied_msa",
-      "output": "Residue frequencies, entropy and gap statistics"
+      "status": "implemented_browser",
+      "output": "Per-position consensus, occupancy, entropy, variants and conserved windows"
+    },
+    {
+      "id": "pairwise",
+      "depends_on": [
+        "msa"
+      ],
+      "status": "implemented_browser_bounded",
+      "output": "Pairwise identity and compared-site counts"
     },
     {
       "id": "genome_wide_pangenome",
@@ -39,7 +47,7 @@
         "public_accession"
       ],
       "status": "not_implemented",
-      "output": "none"
+      "output": null
     },
     {
       "id": "antigen_prioritization",
@@ -47,15 +55,15 @@
         "genome_wide_pangenome"
       ],
       "status": "not_implemented",
-      "output": "none"
+      "output": null
     },
     {
-      "id": "mhci_request",
+      "id": "mhci_prediction",
       "depends_on": [
-        "input_qc"
+        "antigen_prioritization"
       ],
-      "status": "offline_request_only",
-      "output": "Unsubmitted IEDB JSON"
+      "status": "not_implemented",
+      "output": null
     },
     {
       "id": "mhcii_and_bcell",
@@ -63,35 +71,44 @@
         "antigen_prioritization"
       ],
       "status": "not_implemented",
-      "output": "none"
+      "output": null
     },
     {
-      "id": "experimental_benchmark",
+      "id": "construct_design",
+      "depends_on": [
+        "mhci_prediction",
+        "mhcii_and_bcell"
+      ],
+      "status": "not_implemented",
+      "output": null
+    },
+    {
+      "id": "benchmarks",
       "depends_on": [],
-      "status": "tested_on_synthetic_labels",
-      "output": "AUROC/AP, group-bootstrap CI and paired permutation p"
+      "status": "research_core_only_not_executed_for_vaccine_models",
+      "output": null
     },
     {
-      "id": "reporting",
+      "id": "export",
       "depends_on": [
         "input_qc",
         "conservation"
       ],
-      "status": "partial",
-      "output": "JSON, CSV and run manifest"
+      "status": "implemented_browser",
+      "output": "JSON + CSV"
     },
     {
-      "id": "vaccine_validation",
+      "id": "experimental_validation",
       "depends_on": [],
-      "status": "requires_experiments",
-      "output": "none"
+      "status": "not_implemented_requires_experimental_study",
+      "output": null
     }
   ],
   "gates": [
-    "Independent experimental datasets for predictive claims",
-    "Third-party API, licence and data-use audit",
-    "No private data on GitHub Pages",
-    "Experimental validation for immune efficacy"
+    "GitHub Actions smoke tests must pass before merge",
+    "GitHub Pages deployment must succeed",
+    "Third-party CORS and external service availability independently verify",
+    "Experimental datasets required before predictive claims"
   ],
   "references": [
     "https://doi.org/10.3390/vaccines11061090",
