@@ -1,29 +1,36 @@
-# GDRN-VaxForge · GDRN research workbench (v0.2.0)
+# GDRN-VaxForge — live browser sequence workbench v0.3.0
 
-This isolated directory contains the browser workbench at `/gdrn-vaxforge/`. It does **not** modify the GDR Network homepage, custom-domain settings or DNS.
+GDRN-VaxForge is an open, local-first research interface at `/gdrn-vaxforge/` on the GDRN static portal.
 
-## What runs in the hosted browser workbench
+## Implemented now
 
-- Local FASTA validation for protein, DNA and RNA inputs.
-- Descriptive QC: sequence counts, duplicate sequences, lengths and gap count.
-- Per-position consensus, residue conservation, Shannon entropy and gap frequency for **user-verified aligned** sequences.
-- Interactive conservation profile and downloadable JSON/CSV reports.
-- All pasted/uploaded FASTA data stay in the browser (no network submission).
+- Manual and local file FASTA import for **protein, DNA and RNA**, with alphabet validation and deduplication counts.
+- Optional on-demand public UniProtKB FASTA retrieval via `rest.uniprot.org`. Subject to network and CORS access.
+- User-supplied **verified MSA** conservation: per-site consensus, modal fraction, occupancy, Shannon entropy and variant counts.
+- Conserved-window **exploration** with configurable thresholds. These are not predicted epitopes.
+- Pairwise identity where input size permits. No-gap overlap is the denominator.
+- Full reproducibility JSON with method versions and SHA-256 of the input (if WebCrypto available).
+- Column-level and window-level CSV export.
+- Comprehensive browser-core tests run in GitHub Actions.
+- New navigation entry from the existing GDR researcher portal. No authentication logic or DNS settings were changed.
 
-## Separate Python research-core release (v0.2.0)
+**Processing limit:** 500 sequences and 3,000,000 total sequence characters. Pairwise calculations capped at 24 sequences x 15,000 aligned positions.
 
-A tested Python source archive was produced separately for the project's development workflow, with modules for (1) explicit NCBI/UniProt public accession retrieval and SHA-256 provenance, (2) QC → user-provided MSA or optional MAFFT → conservation, (3) *unsubmitted* IEDB NextGen MHC-I request construction, and (4) labeled paired model comparison with group bootstrap and permutation testing.
+## Limitations and interpretation
 
-The archive includes CLI, scientific documentation, tests, and synthetic examples. **That entire Python archive is not currently mirrored in this GitHub Pages repository and does not run on GitHub Pages.**
+The browser does **not** perform sequence alignment or full bacterial/viral pan-genome analysis. Equal-length FASTA records alone do not prove a valid multiple sequence alignment. Current analyses are descriptive, not statistical significance tests. No antigen target selection, B-/T-cell epitope predictions, vaccine constructs, immune response, toxicity or efficacy are calculated. Clinical efficacy and immune protection require appropriate independent experimental evidence.
 
-## Stage 2 verification and scientific limitations
+The browser does not upload user FASTA data to GDRN. Public UniProt retrieval transmits the accession only to the third-party API. Do not paste confidential, patient-identifying or embargoed sequences into an unaudited third-party tool.
 
-- Python automated checks: **11/11 passed** in the development environment.
-- Browser: HTML/JS checks and local functional tests with toy protein, DNA and RNA inputs passed.
-- Network retrieval: HTTP calls were mocked in tests; real API interoperability was not tested in the restricted environment.
-- Benchmark example: synthetic data for engineering demonstration only; not evidence of diagnostic, antigenic, immunogenic or vaccine-protection performance.
-- Disease-specific pan-genome software and external epitope predictors are **not yet connected or validated**.
+## Sequential roadmap
 
-[Read Stage 2 release notes](./RELEASE_v0.2.md) · [Original study](https://doi.org/10.3390/vaccines11061090)
+1. Public accession QC, provenance and data normalization — browser import and separate research-core adapters.
+2. Verified MSA using MAFFT or another controlled alignment backend — pending.
+3. Disease-specific pan-genome/pan-proteome analysis — pending.
+4. Evidence-based B-cell, MHC-I and MHC-II prediction via authorized software/API — pending.
+5. Independent experimental datasets, homology-aware benchmarking, confidence intervals and bias assessment — pending.
+6. Construct-type-specific safety and scientific review — pending.
 
-**Production priorities:** verify hosted deployment; connect authorized public data APIs; run real versioned alignment; acquire independent experimental benchmark datasets; audit third-party licenses; then build authenticated compute services. Never commit or upload private patient, unpublished or embargoed datasets to a public site.
+[Public methods reference](https://doi.org/10.3390/vaccines11061090) · [Pipeline manifest](./pipeline-manifest.json)
+
+This is an analysis-ready **sequence exploration module**; it is not an end-to-end vaccine engineering engine.
